@@ -1,0 +1,32 @@
+{
+  "sRGB": true,
+  "wrapMode": 0,
+  "filterMode": 1,
+  "anisoLevel": 4,
+  "readWrite": false,
+  "mipmap": true,
+  "pma": false,
+  "hdrEncodeFormat": 0,
+  "files": [
+    {
+      "file": "",
+      "ext": "png",
+      "format": 1
+    },
+    {
+      "file": "1",
+      "ext": "ktx",
+      "format": 19
+    },
+    {
+      "file": "2",
+      "ext": "ktx",
+      "format": 20
+    }
+  ],
+  "platforms": {
+    "0": 0,
+    "1": 1,
+    "2": 2
+  }
+}

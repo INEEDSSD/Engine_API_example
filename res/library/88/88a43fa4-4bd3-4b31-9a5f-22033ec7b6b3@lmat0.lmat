@@ -1,0 +1,82 @@
+{
+  "version": "LAYAMATERIAL:04",
+  "props": {
+    "textures": [
+      {
+        "path": "res://cfc7b70a-68d1-475d-8738-60aca82260b4",
+        "constructParams": [
+          0,
+          0,
+          1,
+          true,
+          false,
+          true
+        ],
+        "propertyParams": {
+          "filterMode": 1,
+          "wrapModeU": 0,
+          "wrapModeV": 0,
+          "anisoLevel": 1
+        },
+        "name": "u_BaseColorTexture"
+      },
+      {
+        "path": "res://de8eba92-1523-4c42-a4d7-ca322c8248cd",
+        "constructParams": [
+          0,
+          0,
+          1,
+          true,
+          false,
+          false
+        ],
+        "propertyParams": {
+          "filterMode": 1,
+          "wrapModeU": 0,
+          "wrapModeV": 0,
+          "anisoLevel": 1
+        },
+        "name": "u_MetallicRoughnessTexture"
+      }
+    ],
+    "type": "glTFPBR",
+    "renderQueue": 2000,
+    "materialRenderMode": 0,
+    "u_NormalScale": 1,
+    "u_OcclusionStrength": 1,
+    "u_ClearCoatFactor": 0,
+    "u_ClearCoatRoughness": 0,
+    "u_AnisotropyStrength": 0,
+    "u_AnisotropyRotation": 0,
+    "u_AlphaTestValue": 0.5,
+    "s_Cull": 2,
+    "s_Blend": 0,
+    "s_BlendSrc": 1,
+    "s_BlendDst": 0,
+    "s_BlendSrcRGB": 1,
+    "s_BlendDstRGB": 0,
+    "s_BlendSrcAlpha": 1,
+    "s_BlendDstAlpha": 0,
+    "s_DepthTest": 1,
+    "s_DepthWrite": true,
+    "u_BaseColorFactor": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "u_MetallicFactor": 1,
+    "u_RoughnessFactor": 1,
+    "u_EmissionFactor": [
+      0,
+      0,
+      0
+    ],
+    "u_EmissionStrength": 1,
+    "u_ClearCoatNormalScale": 1,
+    "defines": [
+      "BASECOLORMAP",
+      "METALLICROUGHNESSMAP"
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "version": "LAYAMATERIAL:04",
+  "props": {
+    "textures": [
+      {
+        "path": "res://5603cc60-2f77-4e85-b225-08ae407987a1",
+        "constructParams": [
+          0,
+          0,
+          1,
+          true,
+          false,
+          false
+        ],
+        "propertyParams": {
+          "filterMode": 1,
+          "wrapModeU": 0,
+          "wrapModeV": 0,
+          "anisoLevel": 1
+        },
+        "name": "u_NormalTexture"
+      },
+      {
+        "path": "res://3208ee0c-1fc9-4389-81d1-03846de9d40c",
+        "constructParams": [
+          0,
+          0,
+          1,
+          true,
+          false,
+          true
+        ],
+        "propertyParams": {
+          "filterMode": 1,
+          "wrapModeU": 0,
+          "wrapModeV": 0,
+          "anisoLevel": 1
+        },
+        "name": "u_BaseColorTexture"
+      },
+      {
+        "path": "res://2d0a2d62-d5dc-4324-b41e-ba8b6f34153a",
+        "constructParams": [
+          0,
+          0,
+          1,
+          true,
+          false,
+          false
+        ],
+        "propertyParams": {
+          "filterMode": 1,
+          "wrapModeU": 0,
+          "wrapModeV": 0,
+          "anisoLevel": 1
+        },
+        "name": "u_MetallicRoughnessTexture"
+      }
+    ],
+    "type": "glTFPBR",
+    "renderQueue": 2000,
+    "materialRenderMode": 0,
+    "u_NormalScale": 1,
+    "u_OcclusionStrength": 1,
+    "u_ClearCoatFactor": 0,
+    "u_ClearCoatRoughness": 0,
+    "u_AnisotropyStrength": 0,
+    "u_AnisotropyRotation": 0,
+    "u_AlphaTestValue": 0.5,
+    "s_Cull": 0,
+    "s_Blend": 0,
+    "s_BlendSrc": 1,
+    "s_BlendDst": 0,
+    "s_BlendSrcRGB": 1,
+    "s_BlendDstRGB": 0,
+    "s_BlendSrcAlpha": 1,
+    "s_BlendDstAlpha": 0,
+    "s_DepthTest": 1,
+    "s_DepthWrite": true,
+    "u_BaseColorFactor": [
+      0.4986373484134674,
+      0.4986373484134674,
+      0.4986373484134674,
+      1
+    ],
+    "u_MetallicFactor": 0.4986373484134674,
+    "u_RoughnessFactor": 1,
+    "u_EmissionFactor": [
+      0,
+      0,
+      0
+    ],
+    "u_EmissionStrength": 1,
+    "u_ClearCoatNormalScale": 1,
+    "defines": [
+      "NORMALMAP",
+      "BASECOLORMAP",
+      "METALLICROUGHNESSMAP"
+    ]
+  }
+}

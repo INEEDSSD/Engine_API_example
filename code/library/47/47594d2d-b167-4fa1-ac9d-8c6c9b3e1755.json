@@ -1,0 +1,246 @@
+{
+  "name": "Shader.glTFPBR",
+  "caption": "glTFPBR",
+  "base": "ShaderData",
+  "properties": [
+    {
+      "type": "number",
+      "default": 0.5,
+      "name": "u_AlphaTestValue",
+      "tips": "u_AlphaTestValue",
+      "nullable": false
+    },
+    {
+      "type": "Vector4",
+      "default": {
+        "x": 1,
+        "y": 1,
+        "z": 1,
+        "w": 1
+      },
+      "name": "u_BaseColorFactor",
+      "tips": "u_BaseColorFactor",
+      "nullable": false
+    },
+    {
+      "type": "Texture2D",
+      "options": {
+        "define": "BASECOLORMAP"
+      },
+      "name": "u_BaseColorTexture",
+      "tips": "u_BaseColorTexture",
+      "default": "",
+      "nullable": false
+    },
+    {
+      "type": "number",
+      "default": 1,
+      "name": "u_MetallicFactor",
+      "tips": "u_MetallicFactor",
+      "nullable": false
+    },
+    {
+      "type": "number",
+      "default": 1,
+      "name": "u_RoughnessFactor",
+      "tips": "u_RoughnessFactor",
+      "nullable": false
+    },
+    {
+      "type": "Texture2D",
+      "options": {
+        "define": "METALLICROUGHNESSMAP"
+      },
+      "name": "u_MetallicRoughnessTexture",
+      "tips": "u_MetallicRoughnessTexture",
+      "default": "",
+      "nullable": false
+    },
+    {
+      "type": "Texture2D",
+      "options": {
+        "define": "NORMALMAP"
+      },
+      "name": "u_NormalTexture",
+      "tips": "u_NormalTexture",
+      "default": "",
+      "nullable": false
+    },
+    {
+      "type": "number",
+      "default": 1,
+      "hidden": "!data.u_NormalTexture",
+      "name": "u_NormalScale",
+      "tips": "u_NormalScale",
+      "nullable": false
+    },
+    {
+      "type": "Texture2D",
+      "options": {
+        "define": "OCCLUSIONMAP"
+      },
+      "name": "u_OcclusionTexture",
+      "tips": "u_OcclusionTexture",
+      "default": "",
+      "nullable": false
+    },
+    {
+      "type": "number",
+      "default": 1,
+      "name": "u_OcclusionStrength",
+      "tips": "u_OcclusionStrength",
+      "nullable": false
+    },
+    {
+      "type": "Vector3",
+      "default": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "hidden": "!data.EMISSION",
+      "name": "u_EmissionFactor",
+      "tips": "u_EmissionFactor",
+      "nullable": false
+    },
+    {
+      "type": "Texture2D",
+      "options": {
+        "define": "EMISSIONMAP"
+      },
+      "hidden": "!data.EMISSION",
+      "name": "u_EmissionTexture",
+      "tips": "u_EmissionTexture",
+      "default": "",
+      "nullable": false
+    },
+    {
+      "type": "number",
+      "default": 1,
+      "hidden": "!data.EMISSION",
+      "name": "u_EmissionStrength",
+      "tips": "u_EmissionStrength",
+      "nullable": false
+    },
+    {
+      "type": "number",
+      "default": 0,
+      "hidden": "!data.CLEARCOAT",
+      "name": "u_ClearCoatFactor",
+      "tips": "u_ClearCoatFactor",
+      "nullable": false
+    },
+    {
+      "type": "Texture2D",
+      "options": {
+        "define": "CLEARCOATMAP"
+      },
+      "hidden": "!data.CLEARCOAT",
+      "name": "u_ClearCoatTexture",
+      "tips": "u_ClearCoatTexture",
+      "default": "",
+      "nullable": false
+    },
+    {
+      "type": "number",
+      "default": 0,
+      "hidden": "!data.CLEARCOAT",
+      "name": "u_ClearCoatRoughness",
+      "tips": "u_ClearCoatRoughness",
+      "nullable": false
+    },
+    {
+      "type": "Texture2D",
+      "options": {
+        "define": "CLEARCOAT_ROUGHNESSMAP"
+      },
+      "hidden": "!data.CLEARCOAT",
+      "name": "u_ClearCoatRoughnessTexture",
+      "tips": "u_ClearCoatRoughnessTexture",
+      "default": "",
+      "nullable": false
+    },
+    {
+      "type": "Texture2D",
+      "options": {
+        "define": "CLEARCOAT_NORMAL"
+      },
+      "hidden": "!data.CLEARCOAT",
+      "name": "u_ClearCoatNormalTexture",
+      "tips": "u_ClearCoatNormalTexture",
+      "default": "",
+      "nullable": false
+    },
+    {
+      "type": "number",
+      "default": 1,
+      "hidden": "!data.CLEARCOAT",
+      "name": "u_ClearCoatNormalScale",
+      "tips": "u_ClearCoatNormalScale",
+      "nullable": false
+    },
+    {
+      "type": "number",
+      "default": 0,
+      "hidden": "!data.ANISOTROPIC",
+      "name": "u_AnisotropyStrength",
+      "tips": "u_AnisotropyStrength",
+      "nullable": false
+    },
+    {
+      "type": "number",
+      "default": 0,
+      "hidden": "!data.ANISOTROPIC",
+      "name": "u_AnisotropyRotation",
+      "tips": "u_AnisotropyRotation",
+      "nullable": false
+    },
+    {
+      "type": "Texture2D",
+      "options": {
+        "define": "ANISOTROPYMAP"
+      },
+      "hidden": "!data.ANISOTROPIC",
+      "name": "u_AnisotropyTexture",
+      "tips": "u_AnisotropyTexture",
+      "default": "",
+      "nullable": false
+    },
+    {
+      "type": "boolean",
+      "default": false,
+      "position": "before u_EmissionFactor",
+      "name": "ENABLEVERTEXCOLOR",
+      "options": {
+        "define": "-"
+      }
+    },
+    {
+      "type": "boolean",
+      "default": false,
+      "position": "before u_EmissionFactor",
+      "name": "EMISSION",
+      "options": {
+        "define": "-"
+      }
+    },
+    {
+      "type": "boolean",
+      "default": false,
+      "position": "before u_ClearCoatFactor",
+      "name": "CLEARCOAT",
+      "options": {
+        "define": "-"
+      }
+    },
+    {
+      "type": "boolean",
+      "default": false,
+      "position": "before u_AnisotropyStrength",
+      "name": "ANISOTROPIC",
+      "options": {
+        "define": "-"
+      }
+    }
+  ]
+}

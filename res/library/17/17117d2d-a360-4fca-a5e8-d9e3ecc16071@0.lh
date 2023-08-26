@@ -1,0 +1,645 @@
+{
+  "_$ver": 1,
+  "_$id": "ofyikdkt",
+  "_$type": "Sprite3D",
+  "name": "Scene",
+  "_$comp": [
+    {
+      "_$type": "Animator",
+      "controllerLayers": [
+        {
+          "_$type": "AnimatorControllerLayer",
+          "name": "AnimatorLayer",
+          "states": [
+            {
+              "_$type": "AnimatorState",
+              "name": "Take 001",
+              "clipStart": 0,
+              "clip": {
+                "_$uuid": "17117d2d-a360-4fca-a5e8-d9e3ecc16071@lani0",
+                "_$type": "AnimationClip"
+              },
+              "soloTransitions": []
+            }
+          ],
+          "defaultStateName": "Take 001"
+        }
+      ]
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "#24",
+      "_$type": "Sprite3D",
+      "name": "Sketchfab_model",
+      "transform": {
+        "localRotation": {
+          "_$type": "Quaternion",
+          "x": -0.70710693019814,
+          "w": 0.7071066321749235
+        },
+        "localScale": {
+          "_$type": "Vector3",
+          "x": 0.014607236720621586,
+          "y": 0.014607238583266735,
+          "z": 0.014607238583266735
+        }
+      },
+      "_$child": [
+        {
+          "_$id": "#23",
+          "_$type": "Sprite3D",
+          "name": "0dd0e33017854dd1b5fa5b44b650faf7.fbx",
+          "transform": {
+            "localRotation": {
+              "_$type": "Quaternion",
+              "x": 0.707106900395829,
+              "w": 0.7071066619772459
+            }
+          },
+          "_$child": [
+            {
+              "_$id": "#22",
+              "_$type": "Sprite3D",
+              "name": "Object_2",
+              "_$child": [
+                {
+                  "_$id": "#21",
+                  "_$type": "Sprite3D",
+                  "name": "RootNode",
+                  "_$child": [
+                    {
+                      "_$id": "#20",
+                      "_$type": "Sprite3D",
+                      "name": "Object_4",
+                      "_$child": [
+                        {
+                          "_$id": "#16",
+                          "_$type": "Sprite3D",
+                          "name": "0",
+                          "_$comp": [
+                            {
+                              "_$type": "MeshFilter",
+                              "sharedMesh": {
+                                "_$uuid": "17117d2d-a360-4fca-a5e8-d9e3ecc16071@lm6",
+                                "_$type": "Mesh"
+                              }
+                            },
+                            {
+                              "_$type": "SkinnedMeshRenderer",
+                              "receiveShadow": true,
+                              "castShadow": true,
+                              "sharedMaterials": [
+                                {
+                                  "_$uuid": "17117d2d-a360-4fca-a5e8-d9e3ecc16071@lmat0",
+                                  "_$type": "Material"
+                                }
+                              ],
+                              "morphTargetValues": {
+                                "_$type": "Record",
+                                "target_0": 0,
+                                "target_1": 0,
+                                "target_2": 0,
+                                "target_3": 0,
+                                "target_4": 0,
+                                "target_5": 0,
+                                "target_6": 0,
+                                "target_7": 0,
+                                "target_8": 0,
+                                "target_9": 0,
+                                "target_10": 0,
+                                "target_11": 0,
+                                "target_12": 0,
+                                "target_13": 0,
+                                "target_14": 0,
+                                "target_15": 0,
+                                "target_16": 0,
+                                "target_17": 0,
+                                "target_18": 0,
+                                "target_19": 0,
+                                "target_20": 0,
+                                "target_21": 0,
+                                "target_22": 0,
+                                "target_23": 0,
+                                "target_24": 0,
+                                "target_25": 0,
+                                "target_26": 0,
+                                "target_27": 0,
+                                "target_28": 0,
+                                "target_29": 0,
+                                "target_30": 0,
+                                "target_31": 0,
+                                "target_32": 0,
+                                "target_33": 0,
+                                "target_34": 0,
+                                "target_35": 0,
+                                "target_36": 0,
+                                "target_37": 0,
+                                "target_38": 0,
+                                "target_39": 0,
+                                "target_40": 0,
+                                "target_41": 0,
+                                "target_42": 0,
+                                "target_43": 0,
+                                "target_44": 0,
+                                "target_45": 0,
+                                "target_46": 0,
+                                "target_47": 0,
+                                "target_48": 0,
+                                "target_49": 0,
+                                "target_50": 0,
+                                "target_51": 0,
+                                "target_52": 0
+                              },
+                              "_bones": [
+                                {
+                                  "_$ref": "#15"
+                                },
+                                {
+                                  "_$ref": "#14"
+                                },
+                                {
+                                  "_$ref": "#13"
+                                },
+                                {
+                                  "_$ref": "#3"
+                                },
+                                {
+                                  "_$ref": "#6"
+                                },
+                                {
+                                  "_$ref": "#9"
+                                }
+                              ],
+                              "rootBone": {
+                                "_$ref": "#15"
+                              },
+                              "localBounds": {
+                                "_$type": "Bounds",
+                                "min": {
+                                  "_$type": "Vector3",
+                                  "x": -74.5533888141747,
+                                  "y": -101.71914581506684,
+                                  "z": -66.0405151460123
+                                },
+                                "max": {
+                                  "_$type": "Vector3",
+                                  "x": 74.55476684287629,
+                                  "y": 89.73515284190243,
+                                  "z": 60.83971535099169
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "_$id": "#17",
+                          "_$type": "Sprite3D",
+                          "name": "Head_Mesh"
+                        },
+                        {
+                          "_$id": "#18",
+                          "_$type": "Sprite3D",
+                          "name": "Object_6"
+                        },
+                        {
+                          "_$id": "#19",
+                          "_$type": "Sprite3D",
+                          "name": "Object_7"
+                        },
+                        {
+                          "_$id": "#15",
+                          "_$type": "Sprite3D",
+                          "name": "_rootJoint",
+                          "transform": {
+                            "localRotation": {
+                              "_$type": "Quaternion",
+                              "x": -1,
+                              "y": 2.928983021579227e-16,
+                              "z": -1.7114274442064925e-8,
+                              "w": 8.557137221032463e-9
+                            },
+                            "localScale": {
+                              "_$type": "Vector3",
+                              "x": 1,
+                              "y": 0.9999999403953552,
+                              "z": 0.9999999403953552
+                            }
+                          },
+                          "_$child": [
+                            {
+                              "_$id": "#14",
+                              "_$type": "Sprite3D",
+                              "name": "Neck_04",
+                              "transform": {
+                                "localPosition": {
+                                  "_$type": "Vector3",
+                                  "x": -5.86683199799154e-7,
+                                  "y": 21.114534378051758,
+                                  "z": 17.140174865722656
+                                },
+                                "localRotation": {
+                                  "_$type": "Quaternion",
+                                  "x": -3.9878430020926624e-8,
+                                  "y": 0.25743300092826926,
+                                  "z": -0.966296150273333,
+                                  "w": 1.943564448460524e-8
+                                },
+                                "localScale": {
+                                  "_$type": "Vector3",
+                                  "x": 1,
+                                  "y": 1.0000001192092896,
+                                  "z": 1.0000004768371582
+                                }
+                              },
+                              "_$child": [
+                                {
+                                  "_$id": "#13",
+                                  "_$type": "Sprite3D",
+                                  "name": "Head_02",
+                                  "transform": {
+                                    "localPosition": {
+                                      "_$type": "Vector3",
+                                      "x": 4.466764664812217e-7,
+                                      "y": 40.43528747558594,
+                                      "z": 3.825355052947998
+                                    },
+                                    "localRotation": {
+                                      "_$type": "Quaternion",
+                                      "x": 3.987852704490818e-8,
+                                      "y": -0.2574327764832928,
+                                      "z": 0.9662962100681658,
+                                      "w": 1.943564506592655e-8
+                                    },
+                                    "localScale": {
+                                      "_$type": "Vector3",
+                                      "x": 1,
+                                      "y": 1,
+                                      "z": 0.9999998211860657
+                                    }
+                                  },
+                                  "_$child": [
+                                    {
+                                      "_$id": "#3",
+                                      "_$type": "Sprite3D",
+                                      "name": "Jaw_03",
+                                      "transform": {
+                                        "localPosition": {
+                                          "_$type": "Vector3",
+                                          "x": 6.805437919865653e-7,
+                                          "y": 1.9192861318588257,
+                                          "z": -19.882448196411133
+                                        },
+                                        "localRotation": {
+                                          "_$type": "Quaternion",
+                                          "x": -6.009985042965115e-8,
+                                          "y": -1.7114185624222922e-8,
+                                          "z": -4.344790281403986e-15,
+                                          "w": 0.999999999999998
+                                        },
+                                        "localScale": {
+                                          "_$type": "Vector3",
+                                          "x": 0.9999999403953552,
+                                          "y": 0.9999998807907104,
+                                          "z": 1
+                                        }
+                                      },
+                                      "_$child": [
+                                        {
+                                          "_$id": "#2",
+                                          "_$type": "Sprite3D",
+                                          "name": "Jaw_Mesh_lower",
+                                          "transform": {
+                                            "localPosition": {
+                                              "_$type": "Vector3",
+                                              "x": -2.7460116971099457e-14,
+                                              "y": 13.106199264526367,
+                                              "z": 19.541025161743164
+                                            },
+                                            "localRotation": {
+                                              "_$type": "Quaternion",
+                                              "x": -0.9999999999999978,
+                                              "y": -5.7726495413503496e-21,
+                                              "z": -2.4958771442464984e-22,
+                                              "w": 6.71793571882516e-8
+                                            },
+                                            "localScale": {
+                                              "_$type": "Vector3",
+                                              "x": 0.9999998807907104,
+                                              "y": 0.9999998807907104,
+                                              "z": 1.0000001192092896
+                                            }
+                                          },
+                                          "_$child": [
+                                            {
+                                              "_$id": "#0",
+                                              "_$type": "Sprite3D",
+                                              "name": "Jaw_Mesh_lower_Teeth_0",
+                                              "_$comp": [
+                                                {
+                                                  "_$type": "MeshFilter",
+                                                  "sharedMesh": {
+                                                    "_$uuid": "17117d2d-a360-4fca-a5e8-d9e3ecc16071@lm0",
+                                                    "_$type": "Mesh"
+                                                  }
+                                                },
+                                                {
+                                                  "_$type": "MeshRenderer",
+                                                  "receiveShadow": true,
+                                                  "castShadow": true,
+                                                  "sharedMaterials": [
+                                                    {
+                                                      "_$uuid": "17117d2d-a360-4fca-a5e8-d9e3ecc16071@lmat1",
+                                                      "_$type": "Material"
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "_$id": "#1",
+                                              "_$type": "Sprite3D",
+                                              "name": "Jaw_Mesh_lower_Teethridge_0",
+                                              "_$comp": [
+                                                {
+                                                  "_$type": "MeshFilter",
+                                                  "sharedMesh": {
+                                                    "_$uuid": "17117d2d-a360-4fca-a5e8-d9e3ecc16071@lm1",
+                                                    "_$type": "Mesh"
+                                                  }
+                                                },
+                                                {
+                                                  "_$type": "MeshRenderer",
+                                                  "receiveShadow": true,
+                                                  "castShadow": true,
+                                                  "sharedMaterials": [
+                                                    {
+                                                      "_$uuid": "17117d2d-a360-4fca-a5e8-d9e3ecc16071@lmat2",
+                                                      "_$type": "Material"
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "_$id": "#6",
+                                      "_$type": "Sprite3D",
+                                      "name": "EyeL_00",
+                                      "transform": {
+                                        "localPosition": {
+                                          "_$type": "Vector3",
+                                          "x": 1.1686500656082899e-8,
+                                          "y": 15.864487648010254,
+                                          "z": -0.3414272665977478
+                                        },
+                                        "localRotation": {
+                                          "_$type": "Quaternion",
+                                          "x": -1.408589600515597e-8,
+                                          "y": -1.7114171413368237e-8,
+                                          "z": -3.78894015636141e-15,
+                                          "w": 0.9999999999999998
+                                        },
+                                        "localScale": {
+                                          "_$type": "Vector3",
+                                          "x": 0.9999999403953552,
+                                          "y": 0.9999998807907104,
+                                          "z": 1
+                                        }
+                                      },
+                                      "_$child": [
+                                        {
+                                          "_$id": "#5",
+                                          "_$type": "Sprite3D",
+                                          "name": "EyeL_Mesh",
+                                          "transform": {
+                                            "localPosition": {
+                                              "_$type": "Vector3",
+                                              "x": 1.5702994460298214e-12,
+                                              "y": -0.000002687728738237638,
+                                              "z": -0.000004795542736246716
+                                            },
+                                            "localRotation": {
+                                              "_$type": "Quaternion",
+                                              "x": -0.9999999999999978,
+                                              "y": -8.069528961811933e-21,
+                                              "z": -3.015480006329639e-22,
+                                              "w": 6.717942824252517e-8
+                                            },
+                                            "localScale": {
+                                              "_$type": "Vector3",
+                                              "x": 8.750039100646973,
+                                              "y": 8.750040054321289,
+                                              "z": 8.750041961669922
+                                            }
+                                          },
+                                          "_$child": [
+                                            {
+                                              "_$id": "#4",
+                                              "_$type": "Sprite3D",
+                                              "name": "EyeL_Mesh_Eyes_0",
+                                              "_$comp": [
+                                                {
+                                                  "_$type": "MeshFilter",
+                                                  "sharedMesh": {
+                                                    "_$uuid": "17117d2d-a360-4fca-a5e8-d9e3ecc16071@lm2",
+                                                    "_$type": "Mesh"
+                                                  }
+                                                },
+                                                {
+                                                  "_$type": "MeshRenderer",
+                                                  "receiveShadow": true,
+                                                  "castShadow": true,
+                                                  "sharedMaterials": [
+                                                    {
+                                                      "_$uuid": "17117d2d-a360-4fca-a5e8-d9e3ecc16071@lmat3",
+                                                      "_$type": "Material"
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "_$id": "#9",
+                                      "_$type": "Sprite3D",
+                                      "name": "EyeR_01",
+                                      "transform": {
+                                        "localPosition": {
+                                          "_$type": "Vector3",
+                                          "x": 1.1686500656082899e-8,
+                                          "y": 15.864487648010254,
+                                          "z": -0.3414272665977478
+                                        },
+                                        "localRotation": {
+                                          "_$type": "Quaternion",
+                                          "x": -1.408589600515597e-8,
+                                          "y": -1.7114171413368237e-8,
+                                          "z": -3.78894015636141e-15,
+                                          "w": 0.9999999999999998
+                                        },
+                                        "localScale": {
+                                          "_$type": "Vector3",
+                                          "x": 0.9999999403953552,
+                                          "y": 0.9999998807907104,
+                                          "z": 1
+                                        }
+                                      },
+                                      "_$child": [
+                                        {
+                                          "_$id": "#8",
+                                          "_$type": "Sprite3D",
+                                          "name": "EyeR_Mesh",
+                                          "transform": {
+                                            "localPosition": {
+                                              "_$type": "Vector3",
+                                              "x": 1.5702994460298214e-12,
+                                              "y": -0.0000026877337404584978,
+                                              "z": -0.000004795542736246716
+                                            },
+                                            "localRotation": {
+                                              "_$type": "Quaternion",
+                                              "x": -0.9999999999999978,
+                                              "y": -8.069528961811933e-21,
+                                              "z": -3.015480006329639e-22,
+                                              "w": 6.717942824252517e-8
+                                            },
+                                            "localScale": {
+                                              "_$type": "Vector3",
+                                              "x": 8.750039100646973,
+                                              "y": 8.750040054321289,
+                                              "z": 8.750041961669922
+                                            }
+                                          },
+                                          "_$child": [
+                                            {
+                                              "_$id": "#7",
+                                              "_$type": "Sprite3D",
+                                              "name": "EyeR_Mesh_Eyes_0",
+                                              "_$comp": [
+                                                {
+                                                  "_$type": "MeshFilter",
+                                                  "sharedMesh": {
+                                                    "_$uuid": "17117d2d-a360-4fca-a5e8-d9e3ecc16071@lm3",
+                                                    "_$type": "Mesh"
+                                                  }
+                                                },
+                                                {
+                                                  "_$type": "MeshRenderer",
+                                                  "receiveShadow": true,
+                                                  "castShadow": true,
+                                                  "sharedMaterials": [
+                                                    {
+                                                      "_$uuid": "17117d2d-a360-4fca-a5e8-d9e3ecc16071@lmat3",
+                                                      "_$type": "Material"
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "_$id": "#12",
+                                      "_$type": "Sprite3D",
+                                      "name": "Jaw_Mesh_upper",
+                                      "transform": {
+                                        "localPosition": {
+                                          "_$type": "Vector3",
+                                          "x": 5.482231693349632e-14,
+                                          "y": 15.025497436523438,
+                                          "z": -0.3414281904697418
+                                        },
+                                        "localRotation": {
+                                          "_$type": "Quaternion",
+                                          "x": -0.9999999999999978,
+                                          "y": -1.2329485695616453e-16,
+                                          "z": -8.881862547548854e-16,
+                                          "w": 6.717942113709782e-8
+                                        },
+                                        "localScale": {
+                                          "_$type": "Vector3",
+                                          "x": 0.9999998807907104,
+                                          "y": 1.0000001192092896,
+                                          "z": 1.0000001192092896
+                                        }
+                                      },
+                                      "_$child": [
+                                        {
+                                          "_$id": "#10",
+                                          "_$type": "Sprite3D",
+                                          "name": "Jaw_Mesh_upper_Teeth_0",
+                                          "_$comp": [
+                                            {
+                                              "_$type": "MeshFilter",
+                                              "sharedMesh": {
+                                                "_$uuid": "17117d2d-a360-4fca-a5e8-d9e3ecc16071@lm4",
+                                                "_$type": "Mesh"
+                                              }
+                                            },
+                                            {
+                                              "_$type": "MeshRenderer",
+                                              "receiveShadow": true,
+                                              "castShadow": true,
+                                              "sharedMaterials": [
+                                                {
+                                                  "_$uuid": "17117d2d-a360-4fca-a5e8-d9e3ecc16071@lmat1",
+                                                  "_$type": "Material"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "_$id": "#11",
+                                          "_$type": "Sprite3D",
+                                          "name": "Jaw_Mesh_upper_Teethridge_0",
+                                          "_$comp": [
+                                            {
+                                              "_$type": "MeshFilter",
+                                              "sharedMesh": {
+                                                "_$uuid": "17117d2d-a360-4fca-a5e8-d9e3ecc16071@lm5",
+                                                "_$type": "Mesh"
+                                              }
+                                            },
+                                            {
+                                              "_$type": "MeshRenderer",
+                                              "receiveShadow": true,
+                                              "castShadow": true,
+                                              "sharedMaterials": [
+                                                {
+                                                  "_$uuid": "17117d2d-a360-4fca-a5e8-d9e3ecc16071@lmat2",
+                                                  "_$type": "Material"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
