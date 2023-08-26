@@ -1,0 +1,642 @@
+{
+	"demoList": [
+		{
+			"title": "Sprite",
+			"content": [
+				{
+					"name": "显示图片",
+					"scene": "Sprite/Sprite_DisplayImage",
+					"desc": "Sprite.loadImage可以直接加载外部，也可以从缓冲区读取图片。Graphics.drawTexture绘制纹理。如果使用Sprite.loadImage显示图集中一张图，则图集必须已被加载"
+				},
+				{
+					"name": "使用二进制图片",
+					"scene": "Sprite/Sprite_BinaryImage",
+					"desc": "加载二进制数据，并选取图片数据ArrayBuffer，创建Image的Blob对象，转换为Base64或者Texture2D",
+					"minigame": false
+				},
+				{
+					"name": "屏幕截图",
+					"scene": "Sprite/Sprite_ScreenShot",
+					"desc": "Sprite支持屏幕截图",
+					"minigame": false
+				},				
+				{
+					"name": "容器",
+					"scene": "Sprite/Sprite_Container",
+					"desc": "Sprite能够作为其他显示对象的容器"
+				},
+				{
+					"name": "旋转缩放",
+					"scene": "Sprite/Sprite_RoateAndScale",
+					"desc": "设置Sprite的旋转角度和缩放系数"
+				},
+				{
+					"name": "根据数据绘制路径",
+					"scene": "Sprite/Sprite_DrawPath",
+					"desc": "drawPath可以绘制路径点"
+				},
+				{
+					"name": "遮罩-放大镜",
+					"scene": "Sprite/Sprite_MagnifyingGlass",
+					"desc": "移动鼠标观看放大的效果"
+				},
+				{
+					"name": "绘制各种形状",
+					"scene": "Sprite/Sprite_DrawShapes",
+					"desc": "使用Graphics绘制矢量图形"
+				},
+				{
+					"name": "缓存为静态图像",
+					"scene": "Sprite/Sprite_Cache",
+					"desc": "通过将多个显示对象缓存成静态图像可以大幅提升渲染效率，关于注意事项参见文档"
+				},
+				{
+					"name": "节点控制",
+					"scene": "Sprite/Sprite_NodeControl",
+					"desc": "通过控制容器改变自身以及子级外观"
+				},
+				{
+					"name": "轴心点",
+					"scene": "Sprite/Sprite_Pivot",
+					"desc": "改变pivot可以控制旋转和缩放的中心"
+				},
+				{
+					"name": "切换纹理",
+					"scene": "Sprite/Sprite_SwitchTexture",
+					"desc": "点击猩猩切换纹理。这里使用graphics.drawTexture，也可以使用loadImage"
+				},
+				{
+					"name": "新手引导",
+					"scene": "Sprite/Sprite_Guide",
+					"desc": "模拟游戏的入手流程引导"
+				}
+			]
+		},
+		{
+			"title": "动画",
+			"content": [
+				{
+					"name": "SWF动画",
+					"scene": "Animation/Animation_SWF",
+					"desc": "MovieClip可以加载并播放SWF动画。SWF由Flash IDE创建，这类SWF不能包含代码"
+				},
+				{
+					"name": "图集动画",
+					"scene": "Animation/Animation_Altas",
+					"desc": "Animation可以加载并播放图集动画。图集可以使用LayaAir IDE或者TexturePacker导出"
+				}
+			]
+		},
+		{
+			"title": "骨骼动画",
+			"content": [
+				{
+					"name": "多纹理",
+					"scene": "Skeleton/Skeleton_MultiTexture",
+					"desc": ""
+				},
+				{
+					"name": "Spine事件",
+					"scene": "Skeleton/Skeleton_SpineEvent",
+					"desc": ""
+				},
+				{
+					"name": "橡胶人",
+					"scene": "Skeleton/Skeleton_SpineStretchyman",
+					"desc": ""
+				},
+				{
+					"name": "藤蔓",
+					"scene": "Skeleton/Skeleton_SpineVine",
+					"desc": ""
+				},
+				{
+					"name": "换装",
+					"scene": "Skeleton/Skeleton_ChangeSkin",
+					"desc": ""
+				},
+				{
+					"name": "适配版Spine",
+					"scene": "Skeleton/Skeleton_SpineAdapted",
+					"desc": ""
+				}
+			]
+		},
+		{
+			"title": "混合模式",
+			"content": [
+				{
+					"name": "Lighter",
+					"scene": "BlendMode/BlendMode_Lighter",
+					"desc": "设置blendMode指定混合模式"
+				}
+			]
+		},
+		{
+			"title": "区块地图",
+			"content": [
+				{
+					"name": "带动画的地图",
+					"scene": "TiledMap/TiledMap_AnimationTile",
+					"desc": ""
+				},
+				{
+					"name": "等角地图",
+					"scene": "TiledMap/TiledMap_IsometricWorld",
+					"desc": ""
+				},
+				{
+					"name": "PerspectiveWall",
+					"scene": "TiledMap/TiledMap_PerspectiveWall",
+					"desc": ""
+				},
+				{
+					"name": "滚动地图",
+					"scene": "TiledMap/TiledMap_SimpleDemo",
+					"desc": ""
+				}
+			]
+		},
+		{
+			"title": "滤镜",
+			"content": [
+				{
+					"name": "发光滤镜",
+					"scene": "Filters/Filters_Glow",
+					"desc": ""
+				},
+				{
+					"name": "模糊滤镜",
+					"scene": "Filters/Filters_Blur",
+					"desc": ""
+				},
+				{
+					"name": "颜色滤镜",
+					"scene": "Filters/Filters_Color",
+					"desc": ""
+				}
+			]
+		},
+		{
+			"title": "音频",
+			"content": [
+				{
+					"name": "播放演示",
+					"scene": "Sound/Sound_SimpleDemo",
+					"desc": ""
+				}
+			]
+		},
+		{
+			"title": "文本",
+			"content": [
+				{
+					"name": "自动调整文本尺寸",
+					"scene": "Text/Text_AutoSize",
+					"desc": "autosize可以根据文本内容自适应其大小"
+				},
+				{
+					"name": "位图字体",
+					"scene": "Text/Text_BitmapFont",
+					"desc": "使用BitmapFont加载显示位图字体",
+					"minigame": false
+				},
+				{
+					"name": "复杂的文本样式",
+					"scene": "Text/Text_ComplexStyle",
+					"desc": "对齐、字号、字体、粗体、行距、描边、边框等多种设置"
+				},
+				{
+					"name": "禁止编辑",
+					"scene": "Text/Text_Editable",
+					"desc": "只在PC生效，使文件不可编辑，只允许复制"
+				},
+				{
+					"name": "Overflow",
+					"scene": "Text/Text_Overflow",
+					"desc": "设置overflow定义文本超出的行为。visible不进行任何裁切。scroll不显示文本域外的字符像素，并且支持scroll接口。hidden不显示超出文本域的字符。性能从高至低为：hidden > visible > scroll"
+				},
+				{
+					"name": "下划线",
+					"scene": "Text/Text_Underline",
+					"desc": "设置underline和underlineColor"
+				},
+				{
+					"name": "HTML文本",
+					"scene": "Text/Text_HTML",
+					"desc": ""
+				},
+				{
+					"name": "UBB文本",
+					"scene": "Text/Text_UBB",
+					"desc": ""
+				},
+				{
+					"name": "单行输入",
+					"scene": "Text/Text_InputSingleline",
+					"desc": ""
+				},
+				{
+					"name": "多行输入",
+					"scene": "Text/Text_InputMultiline",
+					"desc": "多行输入框可以使用Enter键"
+				},
+				{
+					"name": "字数限制",
+					"scene": "Text/Text_MaxChars",
+					"desc": "设置maxChars限制字符数量"
+				},
+				{
+					"name": "字符限制",
+					"scene": "Text/Text_Restrict",
+					"desc": "设置restrict限制字符"
+				},
+				{
+					"name": "滚动文本",
+					"scene": "Text/Text_Scroll",
+					"desc": "设置overflow为scroll，并且使用scroll接口滚动文本"
+				},
+				{
+					"name": "自动换行",
+					"scene": "Text/Text_WordWrap",
+					"desc": "设置wordWrap为true使文本可以换行"
+				}
+			]
+		},
+		{
+			"title": "UI",
+			"content": [
+				{
+					"name": "Label",
+					"scene": "UI/UI_Label",
+					"desc": ""
+				},
+				{
+					"name": "Button",
+					"scene": "UI/UI_Button",
+					"desc": ""
+				},
+				{
+					"name": "RadioGroup",
+					"scene": "UI/UI_RadioGroup",
+					"desc": ""
+				},
+				{
+					"name": "CheckBox",
+					"scene": "UI/UI_CheckBox",
+					"desc": ""
+				},
+				{
+					"name": "Clip",
+					"scene": "UI/UI_Clip",
+					"desc": ""
+				},
+				{
+					"name": "FontClip",
+					"scene": "UI/UI_FontClip",
+					"desc": ""
+				},
+				{
+					"name": "ColorPicker",
+					"scene": "UI/UI_ColorPicker",
+					"desc": ""
+				},
+				{
+					"name": "ComboBox",
+					"scene": "UI/UI_ComboBox",
+					"desc": ""
+				},
+				{
+					"name": "Dialog",
+					"scene": "UI/UI_Dialog",
+					"desc": ""
+				},
+				{
+					"name": "ScrollBar",
+					"scene": "UI/UI_ScrollBar",
+					"desc": ""
+				},
+				{
+					"name": "Slider",
+					"scene": "UI/UI_Slider",
+					"desc": ""
+				},
+				{
+					"name": "Image",
+					"scene": "UI/UI_Image",
+					"desc": ""
+				},
+				{
+					"name": "List",
+					"scene": "UI/UI_List",
+					"desc": ""
+				},
+				{
+					"name": "Panel",
+					"scene": "UI/UI_Panel",
+					"desc": ""
+				},
+				{
+					"name": "ProgressBar",
+					"scene": "UI/UI_ProgressBar",
+					"desc": ""
+				},
+				{
+					"name": "Tab",
+					"scene": "UI/UI_Tab",
+					"desc": ""
+				},
+				{
+					"name": "Input",
+					"scene": "UI/UI_Input",
+					"desc": ""
+				},
+				{
+					"name": "TextArea",
+					"scene": "UI/UI_TextArea",
+					"desc": ""
+				},
+				{
+					"name": "Tree",
+					"scene": "UI/UI_Tree",
+					"desc": ""
+				}
+			]
+		},
+		{
+			"title": "计时器",
+			"content": [
+				{
+					"name": "延迟调用",
+					"scene": "Timer/Timer_CallLater",
+					"desc": ""
+				},
+				{
+					"name": "延迟执行",
+					"scene": "Timer/Timer_DelayExcute",
+					"desc": ""
+				},
+				{
+					"name": "间隔循环",
+					"scene": "Timer/Timer_Interval",
+					"desc": ""
+				}
+			]
+		},
+		{
+			"title": "缓动",
+			"content": [
+				{
+					"name": "简单的Tween",
+					"scene": "Tween/Tween_SimpleSample",
+					"desc": ""
+				},
+				{
+					"name": "逐字缓动",
+					"scene": "Tween/Tween_Letters",
+					"desc": ""
+				},
+				{
+					"name": "缓动函数演示",
+					"scene": "Tween/Tween_EaseFunctionsDemo",
+					"desc": ""
+				},
+				{
+					"name": "时间线",
+					"scene": "Tween/Tween_TimeLine",
+					"desc": ""
+				}
+			]
+		},
+		{
+			"title": "2D物理",
+			"content": [
+				{
+					"name": "复合碰撞器",
+					"scene": "Physics/Physics_Tumbler",
+					"desc": ""
+				},
+				{
+					"name": "碰撞过滤器",
+					"scene": "Physics/Physics_CollisionFiltering",
+					"desc": ""
+				},
+				{
+					"name": "碰撞事件与传感器",
+					"scene": "Physics/Physics_CollisionEvent",
+					"desc": ""
+				},				
+				{
+					"name": "桥",
+					"scene": "Physics/Physics_Bridge",
+					"desc": ""
+				},
+				{
+					"name": "仿生机器人",
+					"scene": "Physics/Physics_Strandbeests",
+					"desc": ""
+				}
+			]
+		},
+		{
+			"title": "鼠标交互",
+			"content": [
+				{
+					"name": "Hold",
+					"scene": "Interaction/Interaction_Hold",
+					"desc": "持续按住猩猩两秒后产生互动"
+				},
+				{
+					"name": "拖动",
+					"scene": "Interaction/Interaction_Drag",
+					"desc": "拖动显示对象，在超出边界后可以看到回弹效果"
+				},
+				{
+					"name": "双指旋转（多点触控）",
+					"scene": "Interaction/Interaction_Rotate",
+					"desc": "以旋转手势旋转矩形。请在支持多点触控的设备中查看。"
+				},
+				{
+					"name": "双指缩放（多点触控）",
+					"scene": "Interaction/Interaction_Scale",
+					"desc": "以扩张和挤压的手势缩放矩形。请在支持多点触控的设备中查看。"
+				},
+				{
+					"name": "滑动",
+					"scene": "Interaction/Interaction_Swipe",
+					"desc": ""
+				},
+				{
+					"name": "自定义事件",
+					"scene": "Interaction/Interaction_CustomEvent",
+					"desc": "点击矩形触发自定义旋转事件"
+				},
+				{
+					"name": "键盘交互",
+					"scene": "Interaction/Interaction_Keyboard",
+					"desc": "敲击键盘查看对应键控代码。需要在新标签中查看本示例"
+				},
+				{
+					"name": "鼠标交互",
+					"scene": "Interaction/Interaction_Mouse",
+					"desc": ""
+				},
+				{
+					"name": "修正交互区域",
+					"scene": "Interaction/Interaction_FixInteractiveRegion",
+					"desc": "API mouseThrough命名具有误导性。该接口用于修正交互的区域，设置后，交互响应区会变成非空白内容边界区域。点击任意显示对象查看交互目标"
+				}
+			]
+		},
+		{
+			"title": "加载",
+			"content": [
+				{
+					"name": "销毁Texture使用的图片资源",
+					"scene": "Loader/Loader_ClearTextureRes",
+					"desc": "销毁Texture使用的图片资源，保留texture壳，如果下次渲染的时候，发现texture使用的图片资源不存在，则会自动恢复；相比clearRes，clearTextureRes只是清理texture里面使用的图片资源，并不销毁texture，再次使用到的时候会自动恢复图片资源；而clearRes会彻底销毁texture，导致不能再使用；clearTextureRes能确保立即销毁图片资源，并且不用担心销毁错误，clearRes则采用引用计数方式销毁；"
+				},
+				{
+					"name": "单一类型资源加载",
+					"scene": "Loader/Loader_SingleType",
+					"desc": ""
+				},
+				{
+					"name": "多种类型资源加载",
+					"scene": "Loader/Loader_MultipleType",
+					"desc": ""
+				},
+				{
+					"name": "加载序列",
+					"scene": "Loader/Loader_Sequence",
+					"desc": ""
+				},
+				{
+					"name": "错误处理和进度",
+					"scene": "Loader/Loader_ProgressAndErrorHandle",
+					"desc": ""
+				}
+			]
+		},
+		{
+			"title": "输入设备",
+			"content": [
+				{
+					"name": "指南针",
+					"scene": "InputDevice/InputDevice_Compasss",
+					"desc": "请在支持陀螺仪的设备上观赏。能够获取地球坐标系的浏览器能够正确识别方位，否则使用设备坐标系时，以设备初始朝向为北。罗盘中心的十字准星表示当前朝向"
+				},
+				{
+					"name": "摇一摇",
+					"scene": "InputDevice/InputDevice_Shake",
+					"desc": "请在支持重力感应的设备上观赏。摇晃三次后，不再侦听设备摇晃"
+				},
+				{
+					"name": "贪吃蛇（重力感应）",
+					"scene": "InputDevice/InputDevice_GluttonousSnake",
+					"desc": "通过倾斜设备移动蛇，猎食增加长度。这条蛇不咬自己"
+				}
+			]
+		},
+		{
+			"title": "网络和格式",
+			"content": [
+				{
+					"name": "POST",
+					"scene": "Network/Network_POST",
+					"desc": ""
+				},
+				{
+					"name": "GET",
+					"scene": "Network/Network_GET",
+					"desc": ""
+				},
+				{
+					"name": "XML",
+					"scene": "Network/Network_XML",
+					"desc": "使用DOMParser解析XML，打开控制台查看结果"
+				},
+				{
+					"name": "Socket",
+					"scene": "Network/NetWork_Socket",
+					"desc": "由于服务器是ws协议，因此https协议下会报错"
+				},
+				{
+					"name": "ProtocolBuffer",
+					"scene": "Network/Network_ProtocolBuffer",
+					"desc": "使用protobuf.js（演示使用的decodeIO的版本），在控制台查看结果",
+					"minigame": false
+				}
+			]
+		},
+		{
+			"title": "DOM元素",
+			"content": [
+				{
+					"name": "表单输入",
+					"scene": "DOM/DOM_Form",
+					"desc": "使用H5 表达输入 API，感受原生的输入体验",
+					"minigame": false
+				},				
+				{
+					"name": "视频",
+					"scene": "DOM/DOM_Video",
+					"desc": "使用H5 video API，能够得到比canvas渲染更优的性能优势",
+					"minigame": false
+				}
+			]
+			
+		},
+		{
+			"title": "性能测试",
+			"content": [
+				{
+					"name": "虫子（慎入）",
+					"scene": "PerformanceTest/PerformanceTest_Maggots",
+					"desc": "5000只虫子每一帧执行位移、旋转、缩放"
+				},
+				{
+					"name": "卡通人物",
+					"scene": "PerformanceTest/PerformanceTest_Cartoon",
+					"desc": "500个角色旋转和位移"
+				},
+				{
+					"name": "卡通人物2",
+					"scene": "PerformanceTest/PerformanceTest_Cartoon2",
+					"desc": "500个动画乱序移动"
+				},
+				{
+					"name": "骨骼",
+					"scene": "PerformanceTest/PerformanceTest_Skeleton",
+					"desc": "100个骨骼动画。点击切换动作"
+				}
+			]
+		},
+		{
+			"title": "其他引擎的Demo",
+			"content": [
+				{
+					"name": "PIXI_Example_1",
+					"scene": "PIXI/PIXI_Example_1",
+					"desc": "原Pixi.js Demo"
+				},
+				{
+					"name": "PIXI_Example_2",
+					"scene": "PIXI/PIXI_Example_2",
+					"desc": ""
+				},
+				{
+					"name": "PIXI_Example_3",
+					"scene": "PIXI/PIXI_Example_3",
+					"desc": ""
+				},
+				{
+					"name": "PIXI_Example_4",
+					"scene": "PIXI/PIXI_Example_4",
+					"desc": ""
+				}
+			]
+		}
+		
+	]
+}

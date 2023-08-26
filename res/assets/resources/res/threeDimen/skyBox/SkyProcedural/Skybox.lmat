@@ -1,0 +1,37 @@
+{
+  "version": "LAYAMATERIAL:04",
+  "props": {
+    "textures": [],
+    "type": "SkyProcedural",
+    "renderQueue": 2000,
+    "materialRenderMode": 0,
+    "s_Cull": 0,
+    "s_Blend": 0,
+    "s_BlendSrc": 1,
+    "s_BlendDst": 0,
+    "s_DepthTest": 3,
+    "s_DepthWrite": false,
+    "u_Exposure": 1,
+    "u_SunSize": 0.04,
+    "u_SunSizeConvergence": 5,
+    "u_AtmosphereThickness": 1,
+    "u_SkyTint": [
+      1,
+      0.5,
+      0.5,
+      1
+    ],
+    "u_GroundTint": [
+      0.369,
+      0.349,
+      0.341,
+      1
+    ],
+    "SUN_HIGH_QUALITY": false,
+    "SUN_SIMPLE": false,
+    "SUN_NODE": true,
+    "defines": [
+      "SUN_NODE"
+    ]
+  }
+}

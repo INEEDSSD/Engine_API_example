@@ -1,0 +1,23 @@
+{
+  "_$ver": 1,
+  "_$id": "mmhhvwz3xd",
+  "_$type": "Box",
+  "name": "Box",
+  "width": 256,
+  "height": 256,
+  "_$child": [
+    {
+      "_$id": "slaxhs1d",
+      "_$type": "ProgressBar",
+      "name": "ProgressBar",
+      "x": 78,
+      "y": 173,
+      "width": 100,
+      "height": 10,
+      "centerX": 0,
+      "centerY": 50,
+      "skin": "res://e3f75e9a-5823-4fc3-b826-0a0d7c1cccc9",
+      "value": 0.5
+    }
+  ]
+}

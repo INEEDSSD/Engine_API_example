@@ -1,0 +1,11 @@
+{
+  "uuid": "f50b6a3d-5937-4364-82c4-822fa506fe81",
+  "importer": {
+    "textureShape": 1,
+    "hdrEncodeFormat": 1,
+    "cubemapSize": 256,
+    "cubemapFileMode": "R8G8B8A8",
+    "sRGB": true,
+    "generateMipmap": true
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "_$ver": 1,
+  "_$id": "e5xol8zk",
+  "_$type": "Sprite3D",
+  "name": "BoneLinkScene",
+  "layer": 0,
+  "transform": {
+    "localRotation": {
+      "_$type": "Quaternion",
+      "w": -1
+    }
+  },
+  "_$child": [
+    {
+      "_$id": "1hyzdfq4",
+      "_$type": "Sprite3D",
+      "name": "R_kl_H_001",
+      "layer": 0,
+      "transform": {
+        "localRotation": {
+          "_$type": "Quaternion",
+          "w": -1
+        }
+      },
+      "_$comp": [
+        {
+          "_$type": "Animator",
+          "cullingMode": 0,
+          "controllerLayers": [
+            {
+              "_$type": "AnimatorControllerLayer",
+              "name": "Base Layer",
+              "states": [
+                {
+                  "_$type": "AnimatorState",
+                  "name": "Take 001",
+                  "clipStart": 0,
+                  "clip": {
+                    "_$uuid": "083c4a58-4f25-4666-82a2-a8b3015a44f7",
+                    "_$type": "AnimationClip"
+                  },
+                  "soloTransitions": []
+                }
+              ],
+              "defaultStateName": "Take 001"
+            }
+          ]
+        }
+      ],
+      "_$child": [
+        {
+          "_$id": "wam8dzx3",
+          "_$type": "Sprite3D",
+          "name": "R_kl_H_001",
+          "layer": 0,
+          "transform": {
+            "localRotation": {
+              "_$type": "Quaternion",
+              "x": 0.7071068311865479,
+              "w": -0.7071067311865435
+            }
+          },
+          "_$comp": [
+            {
+              "_$type": "MeshFilter",
+              "sharedMesh": {
+                "_$uuid": "6809bbdb-328b-4226-9691-65a3e90309ae",
+                "_$type": "Mesh"
+              }
+            },
+            {
+              "_$type": "SkinnedMeshRenderer",
+              "_scaleInLightmap": 1,
+              "sharedMaterials": [
+                {
+                  "_$uuid": "e6bc2c1a-d3c5-4397-a829-0d339ae9cc7c",
+                  "_$type": "Material"
+                }
+              ],
+              "rootBone": {
+                "_$ref": "wam8dzx3"
+              },
+              "localBounds": {
+                "_$type": "Bounds",
+                "min": {
+                  "_$type": "Vector3",
+                  "x": -0.8973169,
+                  "y": -0.9575936,
+                  "z": -0.6615602
+                },
+                "max": {
+                  "_$type": "Vector3",
+                  "x": 1.565554,
+                  "y": 1.117313,
+                  "z": 0.6524881
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

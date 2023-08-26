@@ -1,0 +1,188 @@
+{
+  "_$ver": 1,
+  "_$id": "9424xjskyt",
+  "_$type": "Box",
+  "name": "Box",
+  "width": 512,
+  "height": 512,
+  "mouseEnabled": true,
+  "bgColor": "rgba(103, 102, 102, 1)",
+  "_$child": [
+    {
+      "_$id": "b5xn3qfo",
+      "_$type": "Image",
+      "name": "Image",
+      "width": 512,
+      "height": 512,
+      "skin": "res://61e02a94-f94b-4aed-83ac-d9e4270d034a",
+      "sizeGrid": "19,18,19,21,0",
+      "color": "#ffffff"
+    },
+    {
+      "_$id": "ec948fja",
+      "_$type": "Tab",
+      "name": "Tab",
+      "x": 97,
+      "y": 10,
+      "width": 310,
+      "height": 60,
+      "mouseEnabled": true,
+      "skin": "res://0aea6574-4ba9-47d0-8e7b-460fbde2bb3c",
+      "stateNum": null,
+      "labels": "tab1,tab2",
+      "space": 0,
+      "selectedIndex": 0,
+      "labelFont": null,
+      "labelSize": 20,
+      "labelStroke": null,
+      "labelStrokeColor": null,
+      "labelAlign": null,
+      "strokeColors": null,
+      "_$child": [
+        {
+          "_$id": "ess09pq9",
+          "_$type": "Box",
+          "name": "page1",
+          "x": -86,
+          "width": 490,
+          "height": 482,
+          "visible": false,
+          "mouseEnabled": true,
+          "_$child": [
+            {
+              "_$id": "vwcf9rdv",
+              "_$type": "List",
+              "name": "List",
+              "x": 32,
+              "y": 96,
+              "width": 434,
+              "height": 368,
+              "mouseEnabled": true,
+              "itemTemplate": {
+                "_$ref": "pakzjtqh",
+                "_$tmpl": "itemRender"
+              },
+              "repeatX": 1,
+              "repeatY": 20,
+              "scrollType": 2,
+              "_$child": [
+                {
+                  "_$id": "pakzjtqh",
+                  "_$type": "Box",
+                  "name": "Box",
+                  "width": 200,
+                  "height": 44,
+                  "mouseEnabled": true,
+                  "_$child": [
+                    {
+                      "_$id": "7l8q8nb1",
+                      "_$type": "Radio",
+                      "name": "Radio",
+                      "width": 135,
+                      "height": 44,
+                      "mouseEnabled": true,
+                      "skin": "res://f5ca8f03-753c-439c-aeaa-ee0b2a4b44a2",
+                      "label": "测试",
+                      "labelSize": 20,
+                      "labelColors": "#f0f5f8,#32cc6b,#ff0000,#c0c0c0",
+                      "labelAlign": "left",
+                      "labelPadding": "11,0,-37,21"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_$id": "chphr4z6",
+              "_$type": "Image",
+              "name": "Image",
+              "x": 216,
+              "y": 145,
+              "width": 220,
+              "height": 275,
+              "skin": "res://92c3383f-0205-47b5-8c51-dcc1ddb99c60",
+              "useSourceSize": true,
+              "color": "#ffffff"
+            }
+          ]
+        },
+        {
+          "_$id": "9h2n955q",
+          "_$type": "Box",
+          "name": "page2",
+          "x": -85,
+          "width": 490,
+          "height": 492,
+          "mouseEnabled": true,
+          "_$child": [
+            {
+              "_$id": "4kpuvlt0",
+              "_$type": "Button",
+              "name": "Button",
+              "x": 185,
+              "y": 429,
+              "width": 120,
+              "height": 40,
+              "mouseEnabled": true,
+              "skin": "res://1725fa21-9b5d-4531-87dc-b46471c5ae9e",
+              "label": "",
+              "labelSize": 20
+            },
+            {
+              "_$id": "8c8htl7m",
+              "_$type": "CheckBox",
+              "name": "CheckBox",
+              "x": 157,
+              "y": 375,
+              "width": 167,
+              "height": 35,
+              "mouseEnabled": true,
+              "skin": "res://b30f29b0-a6b7-477e-9e70-a9b9345d69ab",
+              "label": "checkbox",
+              "labelSize": 20,
+              "labelColors": "#f3f6f8,#32cc6b,#ff0000,#c0c0c0",
+              "labelAlign": "left",
+              "labelPadding": "7,-70,-90,28"
+            },
+            {
+              "_$id": "petusggy",
+              "_$type": "ColorPicker",
+              "name": "ColorPicker",
+              "x": 375,
+              "y": 372,
+              "width": 61,
+              "height": 59,
+              "mouseEnabled": true,
+              "bgColor": "#ffffff",
+              "inputBgColor": "#efefef",
+              "skin": "res://8ee8353e-c312-481d-9dd7-812db7db08ed"
+            },
+            {
+              "_$id": "6olco69s",
+              "_$type": "TextArea",
+              "name": "TextArea",
+              "x": 43,
+              "y": 76,
+              "width": 416,
+              "height": 269,
+              "mouseEnabled": true,
+              "text": "测试文本输入框\n",
+              "fontSize": 20,
+              "color": "rgba(4, 4, 4, 1)",
+              "overflow": "scroll",
+              "leading": 0,
+              "padding": "77,8,6,8",
+              "skin": "res://f75d9745-7a82-450c-8d61-335be6f4ea79",
+              "sizeGrid": "84,12,51,12,0",
+              "type": "text",
+              "maxChars": 100000,
+              "restrict": "",
+              "prompt": "",
+              "promptColor": "#A9A9A9"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

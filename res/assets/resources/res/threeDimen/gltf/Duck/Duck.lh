@@ -1,0 +1,96 @@
+{
+  "_$ver": 1,
+  "_$id": "81e958vp",
+  "_$type": "Sprite3D",
+  "name": "Duck",
+  "layer": 0,
+  "transform": {
+    "localPosition": {
+      "_$type": "Vector3",
+      "x": -5.5,
+      "y": 2,
+      "z": 5.5
+    },
+    "localRotation": {
+      "_$type": "Quaternion"
+    }
+  },
+  "_$child": [
+    {
+      "_$id": "#0",
+      "_$type": "Sprite3D",
+      "name": "node_0",
+      "layer": 0,
+      "transform": {
+        "localRotation": {
+          "_$type": "Quaternion"
+        },
+        "localScale": {
+          "_$type": "Vector3",
+          "x": 0.009999999776482582,
+          "y": 0.009999999776482582,
+          "z": 0.009999999776482582
+        }
+      },
+      "_$child": [
+        {
+          "_$id": "#2",
+          "_$type": "Sprite3D",
+          "name": "node_2",
+          "layer": 0,
+          "transform": {
+            "localRotation": {
+              "_$type": "Quaternion"
+            }
+          },
+          "_$comp": [
+            {
+              "_$type": "MeshFilter",
+              "sharedMesh": {
+                "_$uuid": "3ad03930-cf8e-4b16-970c-15bf2e95e2ca@lm0",
+                "_$type": "Mesh"
+              }
+            },
+            {
+              "_$type": "MeshRenderer",
+              "_scaleInLightmap": 1,
+              "sharedMaterials": [
+                {
+                  "_$uuid": "3ad03930-cf8e-4b16-970c-15bf2e95e2ca@lmat0",
+                  "_$type": "Material"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "#1",
+          "_$type": "Sprite3D",
+          "name": "node_1",
+          "layer": 0,
+          "transform": {
+            "localPosition": {
+              "_$type": "Vector3",
+              "x": 400.1130065917969,
+              "y": 463.2640075683594,
+              "z": -431.0780334472656
+            },
+            "localRotation": {
+              "_$type": "Quaternion",
+              "x": -0.12106388134957627,
+              "y": 0.8780589476022519,
+              "z": 0.3057724922440401,
+              "w": 0.3476481039141014
+            },
+            "localScale": {
+              "_$type": "Vector3",
+              "x": 1.0000000113971144,
+              "y": 0.9999999976071305,
+              "z": 1.0000000316240416
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

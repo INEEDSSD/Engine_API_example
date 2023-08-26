@@ -1,0 +1,403 @@
+{
+  "_$type": "Animator",
+  "cullingMode": 0,
+  "controllerLayers": [
+    {
+      "_$type": "AnimatorControllerLayer",
+      "name": "Base Layer",
+      "states": [
+        {
+          "id": "-1",
+          "name": "进入",
+          "nexts": [],
+          "soloTransitions": [
+            {
+              "id": 0
+            }
+          ],
+          "scripts": [],
+          "x": -131.98498721275809,
+          "y": 39.09949430876776
+        },
+        {
+          "id": "-2",
+          "name": "任何状态",
+          "x": 697,
+          "scripts": [],
+          "y": 80.92840410433153
+        },
+        {
+          "id": 0,
+          "name": "PickUp",
+          "clip": {
+            "_$uuid": "a4a61e41-61cf-4538-8742-351edc67044c"
+          },
+          "x": -11.17995714295282,
+          "y": 34.67448584748593,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 1,
+          "name": "PotionDrink",
+          "clip": {
+            "_$uuid": "6991db41-f112-4d5e-b7d4-c0d8b9b0dcb5"
+          },
+          "x": -21.469145374349047,
+          "y": 96.17574243944165,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 2,
+          "name": "VictoryMaintain",
+          "clip": {
+            "_$uuid": "a448b1c3-a18f-40ee-b299-995a2835e02f"
+          },
+          "x": 481.7042354294026,
+          "y": -18.775879355717848,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 3,
+          "name": "VictoryStart",
+          "clip": {
+            "_$uuid": "c385ebfd-fd98-42c1-926c-0544f9487f10"
+          },
+          "x": -8.235488391599354,
+          "y": 330.0954181678806,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 4,
+          "name": "WalkForward",
+          "clip": {
+            "_$uuid": "45f47d79-58d0-4226-be00-53840c831ab7"
+          },
+          "x": -19.58474720632661,
+          "y": 220.296918324957,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 5,
+          "name": "JumpUpAttack",
+          "clip": {
+            "_$uuid": "9349c80a-72be-43f8-bd5a-a1a93e8f71af"
+          },
+          "x": -22.422798887667838,
+          "y": 163.65827736583037,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 6,
+          "name": "JumpUp",
+          "clip": {
+            "_$uuid": "a22216d2-b0f5-4bda-9279-744d5095b66b"
+          },
+          "x": 342.11096954593853,
+          "y": 145.14884991751822,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 7,
+          "name": "JumpStart",
+          "clip": {
+            "_$uuid": "34e7bbcf-48a4-48b0-9239-e2ee90646f1e"
+          },
+          "x": 504.3349937272534,
+          "y": 103.1931084671348,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 8,
+          "name": "JumpEnd",
+          "clip": {
+            "_$uuid": "0c403c40-c5ae-429a-a707-7cfbd87dd9e8"
+          },
+          "x": 174.51681133813835,
+          "y": 148.55543175364514,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 9,
+          "name": "JumpAirAttack",
+          "clip": {
+            "_$uuid": "f24ba865-c005-4cf8-96e8-1a59e92f15a3"
+          },
+          "x": 333.57873477804793,
+          "y": 312.29234722124085,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 10,
+          "name": "JumpAir",
+          "clip": {
+            "_$uuid": "5ab62c49-9863-4410-84b6-8b98b206bb2b"
+          },
+          "x": 342.30682057733776,
+          "y": 87.86578863288511,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 11,
+          "name": "Interact",
+          "clip": {
+            "_$uuid": "72044aec-c878-4426-9eb1-9178c6487109"
+          },
+          "x": 5.939511814831967,
+          "y": 435.37271444830134,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 12,
+          "name": "Idle03",
+          "clip": {
+            "_$uuid": "655fd0c1-8163-4c66-ba05-374c93441229"
+          },
+          "x": 347.3287841687063,
+          "y": 31.80086451299691,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 13,
+          "name": "Idle02",
+          "clip": {
+            "_$uuid": "a6ad22a9-2801-4c42-b964-2d64551ef33b"
+          },
+          "x": 347.95851210045845,
+          "y": 199.61749638685293,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 14,
+          "name": "Idle01",
+          "clip": {
+            "_$uuid": "61670b6c-832e-400f-afd7-3af61b4e8595"
+          },
+          "x": 177.5438887229681,
+          "y": 425.6722775319909,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 15,
+          "name": "GetHit",
+          "clip": {
+            "_$uuid": "9b10ed5e-bc09-462c-af5f-ad4450b851ab"
+          },
+          "x": 339.4054274563934,
+          "y": -23.204796164963696,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 16,
+          "name": "Dizzy",
+          "clip": {
+            "_$uuid": "55ee3cdc-84fd-4f1d-bc06-3f23cea8ed45"
+          },
+          "x": 185.19304035461653,
+          "y": 202.71662721217288,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 17,
+          "name": "DieRecovery",
+          "clip": {
+            "_$uuid": "150c7e13-3676-472b-b8eb-8c07200da759"
+          },
+          "x": 166.6912095135568,
+          "y": 371.13475641614576,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 18,
+          "name": "Die",
+          "clip": {
+            "_$uuid": "067a624e-d708-463e-9c1b-627a5c8097c1"
+          },
+          "x": 192.63936159469256,
+          "y": 95.35235741892228,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 19,
+          "name": "DefendStart",
+          "clip": {
+            "_$uuid": "2bc1332d-ceb3-4acb-9a3d-bf2af161bcad"
+          },
+          "x": 160.77055409304515,
+          "y": -17.71342773729843,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 20,
+          "name": "DefendMaintain",
+          "clip": {
+            "_$uuid": "8620d146-b0d5-41c4-9f8e-54a82913c1ed"
+          },
+          "x": -14.96510059318198,
+          "y": 490.67170346402224,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 21,
+          "name": "DefendHit",
+          "clip": {
+            "_$uuid": "33c8641e-20aa-4dbe-9419-1943ad7c3adf"
+          },
+          "x": -12.254930579057778,
+          "y": 274.8337279282697,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 22,
+          "name": "BattleWalkRight",
+          "clip": {
+            "_$uuid": "dcf5b509-c507-49c9-99cb-c5cd28205f8e"
+          },
+          "x": -28.675022146016488,
+          "y": -19.110699899330122,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 23,
+          "name": "BattleWalkLeft",
+          "clip": {
+            "_$uuid": "d9643dd4-838e-4bd8-888c-3595b3170821"
+          },
+          "x": 338.79417058893523,
+          "y": 469.2867088360676,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 24,
+          "name": "BattleWalkForward",
+          "clip": {
+            "_$uuid": "13c7c642-4091-4930-b8f7-ba2c48d475ec"
+          },
+          "x": 327.33100126116153,
+          "y": 364.15846615939415,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 25,
+          "name": "BattleWalkBack",
+          "clip": {
+            "_$uuid": "7e928ec4-991f-465e-a290-ea1c7b1e91d4"
+          },
+          "x": 319.7040957963961,
+          "y": 413.3872645694253,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 26,
+          "name": "BattleRunForward",
+          "clip": {
+            "_$uuid": "d9011d06-2655-4860-9525-078160dbb80d"
+          },
+          "x": 478.28394230314393,
+          "y": 40.92778497256372,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 27,
+          "name": "Attack04",
+          "clip": {
+            "_$uuid": "93c6ec27-ff9c-4582-86e7-86d602aeb5fe"
+          },
+          "x": 172.10428545211852,
+          "y": 38.473519489952736,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 28,
+          "name": "Attack03Start",
+          "clip": {
+            "_$uuid": "303b7f23-7f0a-44dc-8e1b-dc4318d2f9d4"
+          },
+          "x": -17.201717004413048,
+          "y": 385.59208985859885,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 29,
+          "name": "Attack03Maintain",
+          "clip": {
+            "_$uuid": "508cbc03-28a7-4fa8-b90a-c79ffc985d7f"
+          },
+          "x": 160.7470820290219,
+          "y": 254.53423759742753,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 30,
+          "name": "Attack02Start",
+          "clip": {
+            "_$uuid": "a43df7c3-1967-49fd-8fdd-948ee185b83f"
+          },
+          "x": 333.95547985352306,
+          "y": 253.42707772116546,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 31,
+          "name": "Attack02Maintain",
+          "clip": {
+            "_$uuid": "f343c950-b823-430f-82e5-3d53304949f5"
+          },
+          "x": 490.4038238330629,
+          "y": 163.26759290832703,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 32,
+          "name": "Attack01",
+          "clip": {
+            "_$uuid": "94a31d20-db90-417e-a050-000f2f78ce91"
+          },
+          "x": 187.04090597550552,
+          "y": 316.66668417428053,
+          "clipEnd": 1,
+          "speed": 1
+        }
+      ],
+      "defaultStateName": "PickUp",
+      "stageX": 255.31289648868375,
+      "stageY": 271.53696701578247,
+      "stageScale": 0.6000000000000001,
+      "playOnWake": true,
+      "blendingMode": 0,
+      "defaultWeight": 1
+    }
+  ],
+  "layerW": 150
+}

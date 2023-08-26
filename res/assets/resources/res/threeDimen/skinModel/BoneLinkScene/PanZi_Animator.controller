@@ -1,0 +1,56 @@
+{
+  "_$type": "Animator",
+  "enabled": true,
+  "controller": null,
+  "cullingMode": 0,
+  "controllerLayers": [
+    {
+      "_$type": "AnimatorControllerLayer",
+      "name": "Base Layer",
+      "playOnWake": true,
+      "blendingMode": 0,
+      "defaultWeight": 1,
+      "states": [
+        {
+          "_$type": "AnimatorState",
+          "name": "Take 001",
+          "speed": 1,
+          "clipStart": 0,
+          "clipEnd": 1,
+          "clip": {
+            "_$uuid": "28c30c22-3afa-4006-a203-b2ad4c6857e3",
+            "_$type": "AnimationClip"
+          },
+          "soloTransitions": [],
+          "scripts": null,
+          "x": 287.0154429020848,
+          "y": 126.52036477169995,
+          "id": "0"
+        },
+        {
+          "x": 10,
+          "y": 100,
+          "id": "-1",
+          "name": "进入",
+          "speed": 1,
+          "clipEnd": 1,
+          "soloTransitions": [
+            {
+              "id": "0"
+            }
+          ]
+        },
+        {
+          "x": 713,
+          "y": 100,
+          "id": "-2",
+          "name": "任何状态",
+          "speed": 1,
+          "clipEnd": 1
+        }
+      ],
+      "defaultStateName": "Take 001"
+    }
+  ],
+  "layerW": 150
+}

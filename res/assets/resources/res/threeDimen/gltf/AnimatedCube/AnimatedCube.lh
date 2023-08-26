@@ -1,0 +1,76 @@
+{
+  "_$ver": 1,
+  "_$id": "lza3ib39",
+  "_$type": "Sprite3D",
+  "name": "AnimatedCube",
+  "layer": 0,
+  "transform": {
+    "localPosition": {
+      "_$type": "Vector3",
+      "x": -5.5,
+      "y": 2,
+      "z": 5.5
+    },
+    "localRotation": {
+      "_$type": "Quaternion"
+    }
+  },
+  "_$comp": [
+    {
+      "_$type": "Animator",
+      "controllerLayers": [
+        {
+          "_$type": "AnimatorControllerLayer",
+          "name": "AnimatorLayer",
+          "states": [
+            {
+              "_$type": "AnimatorState",
+              "name": "animation_AnimatedCube",
+              "clipStart": 0,
+              "clip": {
+                "_$uuid": "88a43fa4-4bd3-4b31-9a5f-22033ec7b6b3@lani0",
+                "_$type": "AnimationClip"
+              },
+              "soloTransitions": []
+            }
+          ],
+          "defaultStateName": "animation_AnimatedCube"
+        }
+      ]
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "#0",
+      "_$type": "Sprite3D",
+      "name": "AnimatedCube",
+      "layer": 0,
+      "transform": {
+        "localRotation": {
+          "_$type": "Quaternion",
+          "y": -1,
+          "w": 0
+        }
+      },
+      "_$comp": [
+        {
+          "_$type": "MeshFilter",
+          "sharedMesh": {
+            "_$uuid": "88a43fa4-4bd3-4b31-9a5f-22033ec7b6b3@lm0",
+            "_$type": "Mesh"
+          }
+        },
+        {
+          "_$type": "MeshRenderer",
+          "_scaleInLightmap": 1,
+          "sharedMaterials": [
+            {
+              "_$uuid": "88a43fa4-4bd3-4b31-9a5f-22033ec7b6b3@lmat0",
+              "_$type": "Material"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

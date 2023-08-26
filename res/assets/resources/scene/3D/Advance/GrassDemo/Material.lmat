@@ -1,0 +1,26 @@
+{
+  "version": "LAYAMATERIAL:04",
+  "props": {
+    "textures": [
+      {
+        "name": "u_AlbedoTexture"
+      }
+    ],
+    "type": "Unlit",
+    "renderQueue": 2000,
+    "materialRenderMode": 0,
+    "s_Cull": 2,
+    "s_Blend": 0,
+    "s_BlendSrc": 1,
+    "s_BlendDst": 0,
+    "s_DepthTest": 1,
+    "s_DepthWrite": true,
+    "u_AlbedoColor": [
+      0.5372549019607843,
+      0.7294117647058823,
+      0.5176470588235295,
+      1
+    ],
+    "defines": []
+  }
+}

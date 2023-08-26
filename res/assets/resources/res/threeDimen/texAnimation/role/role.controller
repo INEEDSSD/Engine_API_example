@@ -1,0 +1,128 @@
+{
+  "_$type": "Animator",
+  "cullingMode": 0,
+  "controllerLayers": [
+    {
+      "_$type": "AnimatorControllerLayer",
+      "name": "Base Layer",
+      "states": [
+        {
+          "id": "-1",
+          "name": "进入",
+          "nexts": [],
+          "soloTransitions": [
+            {
+              "id": 8
+            }
+          ],
+          "scripts": [],
+          "x": 32.42072123829389,
+          "y": 179.94569770739335
+        },
+        {
+          "id": "-2",
+          "name": "任何状态",
+          "x": 550,
+          "scripts": [],
+          "y": 226.7670251478101
+        },
+        {
+          "id": 1,
+          "name": "DefendHit_SwordAndShield",
+          "clip": {
+            "_$uuid": "5c117c52-c309-44e2-9abf-84ca3834f0bc"
+          },
+          "x": 128.4828395471373,
+          "y": 410.7483342003921,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 2,
+          "name": "Defend_SwordAndShield",
+          "clip": {
+            "_$uuid": "d40b0ccc-6a36-4b02-8815-e16b25de5137"
+          },
+          "x": 145.0996703152036,
+          "y": 306.5835259044445,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 3,
+          "name": "Attack04_SwordAndShiled",
+          "clip": {
+            "_$uuid": "e3b6f579-c648-44c0-9130-6186f13425b4"
+          },
+          "x": 345.1769985766169,
+          "y": 192.67783280960427,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 4,
+          "name": "Attack04_Start_SwordAndShield",
+          "clip": {
+            "_$uuid": "b59e39db-552b-4910-b2b4-47194366ccf5"
+          },
+          "x": 135.08285126748595,
+          "y": 248.1802994328797,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 5,
+          "name": "Spinning_SwordAndShield",
+          "clip": {
+            "_$uuid": "71b0f7da-41c3-46da-a0fa-19557595f977"
+          },
+          "x": 353.6800703585521,
+          "y": 309.04890362338375,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 6,
+          "name": "SwordAndShiled2",
+          "clip": {
+            "_$uuid": "626cebc7-3232-40ee-84ac-6596f0fbff03"
+          },
+          "x": 143.0376985326198,
+          "y": 360.179049118602,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 7,
+          "name": "SwordAndShiled1",
+          "clip": {
+            "_$uuid": "95bee9af-440b-43f5-8a09-6a246fa96adc"
+          },
+          "x": 382.5729625064099,
+          "y": 247.20304563795457,
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "id": 8,
+          "name": "SwordAndShiled",
+          "clip": {
+            "_$uuid": "0861a1bf-1964-41ca-a51a-7144d392242a"
+          },
+          "x": 143.1539866564852,
+          "y": 192.8098286339559,
+          "clipEnd": 1,
+          "speed": 1
+        }
+      ],
+      "defaultStateName": "Die01_Stay_SwordAndShield",
+      "stageX": 189.56390610732038,
+      "stageY": 173.39112037559605,
+      "stageScale": 0.9,
+      "playOnWake": true,
+      "blendingMode": 0,
+      "defaultWeight": 1
+    }
+  ],
+  "layerW": 150
+}

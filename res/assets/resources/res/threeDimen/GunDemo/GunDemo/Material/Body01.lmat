@@ -1,0 +1,121 @@
+{
+  "version": "LAYAMATERIAL:04",
+  "props": {
+    "textures": [
+      {
+        "path": "res://8e806048-7560-4a71-8eff-049b2fe0403d",
+        "constructParams": [
+          4096,
+          4096,
+          1,
+          true,
+          false,
+          true
+        ],
+        "propertyParams": {
+          "filterMode": 1,
+          "wrapModeU": 0,
+          "wrapModeV": 0,
+          "anisoLevel": 1
+        },
+        "name": "u_AlbedoTexture"
+      },
+      {
+        "path": "res://e6e4aaf8-cd41-4299-9ec8-a2313f9b4fc5",
+        "constructParams": [
+          4096,
+          4096,
+          1,
+          true,
+          false,
+          false
+        ],
+        "propertyParams": {
+          "filterMode": 1,
+          "wrapModeU": 0,
+          "wrapModeV": 0,
+          "anisoLevel": 1
+        },
+        "name": "u_NormalTexture"
+      },
+      {
+        "name": "u_OcclusionTexture"
+      },
+      {
+        "name": "u_EmissionTexture"
+      },
+      {
+        "path": "res://d8030b6d-85b9-47f8-87db-0459dc093a56",
+        "constructParams": [
+          4096,
+          4096,
+          1,
+          true,
+          false,
+          false
+        ],
+        "propertyParams": {
+          "filterMode": 1,
+          "wrapModeU": 0,
+          "wrapModeV": 0,
+          "anisoLevel": 1
+        },
+        "name": "u_MetallicGlossTexture"
+      },
+      {
+        "name": "u_DetailAlbedoTexture"
+      },
+      {
+        "name": "u_DetailNormalTexture"
+      }
+    ],
+    "type": "PBR",
+    "renderQueue": 2000,
+    "materialRenderMode": 0,
+    "s_Cull": 0,
+    "s_Blend": 0,
+    "s_BlendSrc": 6,
+    "s_BlendDst": 7,
+    "s_DepthTest": 1,
+    "s_DepthWrite": true,
+    "u_AlbedoColor": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "u_TilingOffset": [
+      1,
+      1,
+      0,
+      0
+    ],
+    "u_NormalScale": 1,
+    "u_Smoothness": 0,
+    "u_SmoothnessScale": 0.646,
+    "u_OcclusionStrength": 0,
+    "u_EmissionColor": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "u_EmissionIntensity": 1,
+    "u_DetailTillingOffset": [
+      1,
+      1,
+      0,
+      0
+    ],
+    "u_DetailNormalScale": 1,
+    "u_Metallic": 0.419,
+    "u_AlphaTestValue": 0,
+    "defines": [
+      "ADDTIVEFOG",
+      "ALBEDOTEXTURE",
+      "NEEDTBN",
+      "NORMALTEXTURE",
+      "METALLICGLOSSTEXTURE"
+    ]
+  }
+}

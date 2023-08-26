@@ -1,0 +1,42 @@
+{
+  "version": "LAYAMATERIAL:04",
+  "props": {
+    "textures": [
+      {
+        "path": "res://f3c373b1-3e48-43a3-ba5a-5255f1be7178",
+        "constructParams": [
+          2,
+          2,
+          0,
+          true,
+          false,
+          false
+        ],
+        "propertyParams": {
+          "filterMode": 1,
+          "wrapModeU": 0,
+          "wrapModeV": 0,
+          "anisoLevel": 4
+        },
+        "name": "u_CubeTexture"
+      }
+    ],
+    "type": "SkyBox",
+    "renderQueue": 2000,
+    "s_Cull": 2,
+    "s_Blend": 0,
+    "s_BlendSrc": 1,
+    "s_BlendDst": 0,
+    "s_DepthTest": 3,
+    "s_DepthWrite": true,
+    "u_TintColor": [
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "u_Exposure": 1,
+    "u_Rotation": -60,
+    "defines": []
+  }
+}

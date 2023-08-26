@@ -1,0 +1,70 @@
+{
+  "_$type": "Animator",
+  "enabled": true,
+  "controller": null,
+  "cullingMode": 2,
+  "controllerLayers": [
+    {
+      "_$type": "AnimatorControllerLayer",
+      "name": "Base Layer",
+      "playOnWake": true,
+      "blendingMode": 0,
+      "defaultWeight": 1,
+      "states": [
+        {
+          "_$type": "AnimatorState",
+          "name": "Color",
+          "speed": 1,
+          "clipStart": 0,
+          "clipEnd": 1,
+          "clip": {
+            "_$uuid": "162526c0-b09f-4729-a846-d377669b32e5",
+            "_$type": "AnimationClip"
+          },
+          "soloTransitions": [],
+          "scripts": null,
+          "x": -112.91631970835473,
+          "y": 346.0540361450009,
+          "id": "0"
+        },
+        {
+          "x": -212.5000334079319,
+          "y": -37.5,
+          "id": "-1",
+          "name": "进入",
+          "speed": 1,
+          "clipEnd": 1,
+          "soloTransitions": [
+            {
+              "id": "0"
+            }
+          ]
+        },
+        {
+          "x": 166.24994238070178,
+          "y": 168.75,
+          "id": "-2",
+          "name": "任何状态",
+          "speed": 1,
+          "clipEnd": 1
+        },
+        {
+          "x": 260.2712698530747,
+          "y": -26.0921414224146,
+          "id": "1",
+          "name": "SpecularColor",
+          "speed": 1,
+          "clipEnd": 1,
+          "clip": {
+            "_$uuid": "9aa7a545-dc6f-484e-8f0d-0c980b989b86"
+          }
+        }
+      ],
+      "defaultStateName": "New Animation",
+      "stageX": 242.83492063492054,
+      "stageY": 148.43333333333334,
+      "stageScale": 0.40000000000000013
+    }
+  ],
+  "layerW": 150
+}

@@ -1,0 +1,37 @@
+{
+  "resolution": {
+    "designWidth": 1440,
+    "designHeight": 680,
+    "screenMode": "horizontal",
+    "backgroundColor": "rgba(0, 0, 0, 1)"
+  },
+  "2D": {
+    "useRetinalCanvas": true,
+    "webGL2D_MeshAllocMaxMem": false
+  },
+  "3D": {
+    "lightClusterCount": {
+      "x": 12,
+      "y": 12,
+      "z": 12
+    }
+  },
+  "modules": {
+    "laya.d3": true,
+    "laya.ui": true,
+    "laya.ani": true,
+    "laya.device": false,
+    "laya.html": true,
+    "laya.tiledmap": true,
+    "laya.particle": true,
+    "laya.spine": true,
+    "laya.gltf": true,
+    "laya.physics": true,
+    "laya.physics3D": true,
+    "laya.physics3D.wasm": false
+  },
+  "spineVersion": "4.0",
+  "splash": {
+    "fit": "center"
+  }
+}

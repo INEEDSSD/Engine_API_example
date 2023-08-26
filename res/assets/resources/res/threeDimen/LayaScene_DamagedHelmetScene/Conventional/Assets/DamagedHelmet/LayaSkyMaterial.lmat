@@ -1,0 +1,42 @@
+{
+  "version": "LAYAMATERIAL:04",
+  "props": {
+    "textures": [
+      {
+        "path": "res://ee0ea66e-cdf3-4846-b9a6-23f81da0a32b",
+        "constructParams": [
+          512,
+          256,
+          1,
+          true,
+          false,
+          true
+        ],
+        "propertyParams": {
+          "filterMode": 1,
+          "wrapModeU": 0,
+          "wrapModeV": 0,
+          "anisoLevel": 1
+        },
+        "name": "u_Texture"
+      }
+    ],
+    "type": "SkyPanoramic",
+    "renderQueue": 1000,
+    "s_Cull": 0,
+    "s_Blend": 0,
+    "s_BlendSrc": 1,
+    "s_BlendDst": 0,
+    "s_DepthTest": 3,
+    "s_DepthWrite": false,
+    "u_TintColor": [
+      0.5333333333333333,
+      0.5333333333333333,
+      0.5333333333333333,
+      1
+    ],
+    "u_Exposure": 1.2,
+    "u_Rotation": 0,
+    "defines": []
+  }
+}
