@@ -57,7 +57,7 @@ export class Sprite_ScreenShot extends BaseScript {
         btn.labelColors = "#ffffff";        
         btn.name = name;
         btn.right = 10;
-        btn.top = 10 + index * (btn.height + 10);
+        btn.top = 100 + index * (btn.height + 10);
 		return btn;
     }
 
@@ -101,7 +101,7 @@ export class Sprite_ScreenShot extends BaseScript {
             case this.nameArr[1]:
 
                 var ddrt = new RenderTexture2D(Browser.clientWidth*Browser.pixelRatio, Browser.clientHeight*Browser.pixelRatio, RenderTargetFormat.R8G8B8A8, RenderTargetFormat.None);
-                Laya.stage.drawToTexture(Browser.clientWidth*Browser.pixelRatio, Browser.clientHeight*Browser.pixelRatio, 0, 0, ddrt, true);
+                Laya.stage.drawToTexture(Browser.clientWidth*Browser.pixelRatio, Browser.clientHeight*Browser.pixelRatio, 0, 0, ddrt);
                 var text:Texture = new Texture(ddrt);
                 this.drawSp.graphics.drawTexture(text,0,0,this.drawSp.width,this.drawSp.height);
 

@@ -1,4 +1,6 @@
 {
   "uuid": "c5f5ecc9-7b8d-45fb-9595-1e3f857b2cf4",
-  "importer": {}
+  "importer": {
+    "import": true
+  }
 }

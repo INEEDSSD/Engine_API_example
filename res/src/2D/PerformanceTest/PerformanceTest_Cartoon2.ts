@@ -59,7 +59,7 @@ export class PerformanceTest_Cartoon2 extends BaseScript {
     onAwake(): void {
 
         super.base();
-        Stat.enable();
+        // Stat.enable();
 		
 		this.image = new Image();
 		this.image.skin = "resources/res/cartoon2/background.jpg";

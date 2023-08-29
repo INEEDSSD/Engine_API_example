@@ -8,6 +8,10 @@ vec4 sampleMainTex(sampler2D tex, vec2 uv)
 #ifdef Gamma_sssssDiffuseTexture
     mainSampler = gammaToLinear(mainSampler);
 #endif // Gamma_u_MainTex
+
+#ifdef Gamma_sssssSpecularTexture
+    mainSampler = gammaToLinear(mainSampler);
+#endif // Gamma_u_MainTex
     return mainSampler;
 }
 void main()

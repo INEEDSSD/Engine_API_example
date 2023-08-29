@@ -8,7 +8,7 @@ varying vec2 v_Texcoord0;
 vec4 sampleMainTex(sampler2D tex, vec2 uv)
 {
     vec4 mainSampler = texture2D(tex, uv);
-#ifdef Gamma_u_texture
+#ifdef Gamma_u_MainTex
     mainSampler = gammaToLinear(mainSampler);
 #endif // Gamma_u_MainTex
     return mainSampler;
@@ -36,7 +36,7 @@ vec4 sampleMainTex(sampler2D tex, vec2 uv)
         return normal;
     }
 
-#endif
+#endif 
 
 #ifdef DEPTH
     float getDepth(vec2 uv) {
@@ -44,12 +44,12 @@ vec4 sampleMainTex(sampler2D tex, vec2 uv)
         depth = Linear01Depth(depth, u_DepthBufferParams);
         return depth;
     }
-#endif
+#endif 
 
 void SobelSample(in vec2 uv,out vec3 colorG, out vec3 normalG, out vec3 depthG) {
 
     float offsetx = u_MainTex_TexelSize.x;
-    float offsety = u_MainTex_TexelSize.y;
+    float offsety = u_MainTex_TexelSize.y; 
     vec2 offsets[9];
     offsets[0] = vec2(-offsetx,  offsety); // 左上
     offsets[1] = vec2( 0.0,    offsety); // 正上
@@ -138,7 +138,7 @@ void main() {
     vec3 fillColor = u_EdgeColor.xyz;
 
     #ifdef SOURCE
-        fillColor = texture2D(u_MainTex, uv).rgb;
+        fillColor = sampleMainTex(u_MainTex, uv).rgb;
     #endif
 
     vec3 finalColor = mix(fillColor, edgeColor, edgeValue);

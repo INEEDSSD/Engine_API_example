@@ -3,11 +3,10 @@
   "_$id": "e5mhma6b",
   "_$runtime": "res://ad3cf108-21a0-4a90-9e86-6a401327d722",
   "_$type": "Scene",
-  "left": 0,
-  "right": 0,
-  "top": 0,
-  "bottom": 0,
   "name": "Scene2D",
+  "width": 1440,
+  "height": 680,
+  "visible": false,
   "_$child": [
     {
       "_$id": "0bglhl3s",
@@ -88,6 +87,39 @@
               "strength": 1,
               "angle": 0.526,
               "maxBounces": 1024
+            }
+          ]
+        },
+        {
+          "_$id": "zqt7q7kc",
+          "_$type": "Camera",
+          "name": "Camera",
+          "orthographicVerticalSize": 10,
+          "fieldOfView": 60,
+          "nearPlane": 0.3,
+          "farPlane": 1000,
+          "clearFlag": 0,
+          "clearColor": {
+            "_$type": "Color",
+            "r": 0.39215686274509803,
+            "g": 0.5843137254901961,
+            "b": 0.9294117647058824
+          },
+          "cullingMask": 2147483647,
+          "normalizedViewport": {
+            "_$type": "Viewport",
+            "width": 1,
+            "height": 1
+          },
+          "depthTextureFormat": 35,
+          "_$comp": [
+            {
+              "_$type": "Animator",
+              "controller": {
+                "_$uuid": "eefc9f11-72f1-4fde-8c54-14949519182f",
+                "_$type": "AnimationController"
+              },
+              "controllerLayers": []
             }
           ]
         }

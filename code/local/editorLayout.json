@@ -2,7 +2,7 @@
   "default": {
     "width": 1180,
     "height": 685,
-    "id": "ZWspAQCA",
+    "id": "YXaQ9p5D",
     "layout": 1,
     "children": [
       {
@@ -33,19 +33,19 @@
         ]
       },
       {
-        "width": 799,
+        "width": 580,
         "height": 685,
         "id": "bXVBGBox",
         "layout": 2,
         "children": [
           {
-            "width": 799,
+            "width": 580,
             "height": 435,
             "id": "Ug2tk3sB",
             "layout": 1,
             "children": [
               {
-                "width": 799,
+                "width": 580,
                 "height": 435,
                 "id": "7eatv6px",
                 "selected": 0,
@@ -59,7 +59,7 @@
             ]
           },
           {
-            "width": 799,
+            "width": 580,
             "height": 246,
             "id": "cTIBtkMA",
             "selected": 0,
@@ -86,6 +86,20 @@
             ]
           }
         ]
+      }
+    ],
+    "popups": [
+      {
+        "width": 520,
+        "height": 650,
+        "id": "4a-4WCF7",
+        "selected": 0,
+        "children": [
+          "BuildSettingsPanel"
+        ],
+        "x": 344,
+        "y": 188,
+        "show": true
       }
     ]
   }

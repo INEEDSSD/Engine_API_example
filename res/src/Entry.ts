@@ -216,8 +216,8 @@ export class entry extends Laya.Script {
 
 
 
-                // showDemo(DDD, "resources/scene/3D/");
-                showDemo(DD, "resources/scene/2D/");
+                showDemo(DDD, "resources/scene/3D/");
+                // showDemo(DD, "resources/scene/2D/");
                 // Demo_3D[index_3D]
             });
 

@@ -1,95 +1,90 @@
 {
-  "version": "LAYAMATERIAL:04",
-  "props": {
-    "textures": [
-      {
-        "path": "res://6cee8756-735a-44f1-b82a-ef7dbcf9954f",
-        "constructParams": [
-          512,
-          512,
-          1,
-          false,
-          false,
-          true
-        ],
-        "propertyParams": {
-          "filterMode": 1,
-          "wrapModeU": 0,
-          "wrapModeV": 0,
-          "anisoLevel": 4
-        },
-        "name": "u_AlbedoTexture"
-      },
-      {
-        "path": "res://f5faeff8-b20a-42ab-be3f-78aa739f6846",
-        "constructParams": [
-          200,
-          200,
-          1,
-          false,
-          false,
-          true
-        ],
-        "propertyParams": {
-          "filterMode": 1,
-          "wrapModeU": 0,
-          "wrapModeV": 0,
-          "anisoLevel": 4
-        },
-        "name": "u_MetallicGlossTexture"
-      }
-    ],
-    "type": "PBR",
-    "renderQueue": 2000,
-    "u_AlbedoColor": [
-      1,
-      1,
-      1,
-      1
-    ],
-    "u_TilingOffset": [
-      1,
-      1,
-      0,
-      0
-    ],
-    "u_NormalScale": -0.1,
-    "u_Smoothness": 1,
-    "u_OcclusionStrength": 1,
-    "u_ParallaxScale": 0.08,
-    "u_EmissionColor": [
-      0,
-      0,
-      0,
-      1
-    ],
-    "u_EmissionIntensity": 1,
-    "u_DetailTillingOffset": [
-      1,
-      1,
-      0,
-      0
-    ],
-    "u_DetailNormalScale": 1,
-    "u_Metallic": 0,
-    "u_AlphaTestValue": 0.5,
-    "s_Cull": 2,
-    "s_Blend": 0,
-    "s_BlendSrc": 1,
-    "s_BlendDst": 0,
-    "s_BlendSrcRGB": 1,
-    "s_BlendDstRGB": 0,
-    "s_BlendSrcAlpha": 1,
-    "s_BlendDstAlpha": 0,
-    "s_DepthTest": 3,
-    "s_DepthWrite": true,
-    "defines": [
-      "EMISSION",
-      "ALBEDOTEXTURE",
-      "METALLICGLOSSTEXTURE",
-      "_EMISSION",
-      "_METALLICGLOSSMAP",
-      "_NORMALMAP"
-    ]
-  }
+	"version":"LAYAMATERIAL:02",
+	"props":{
+		"type":"Laya.PBRStandardMaterial",
+		"name":"base color",
+		"textures":[
+			{
+				"name":"albedoTexture",
+				"path":"../../Textures/base-color.jpg",
+				"constructParams":[
+					512,
+					512,
+					0,
+					true
+				],
+				"propertyParams":{
+					"filterMode":0,
+					"wrapModeU":1,
+					"wrapModeV":1,
+					"anisoLevel":0
+				}
+			},
+			{
+				"name":"metallicGlossTexture",
+				"path":"../../Textures/mettalic.png",
+				"constructParams":[
+					200,
+					200,
+					1,
+					true
+				],
+				"propertyParams":{
+					"filterMode":1,
+					"wrapModeU":1,
+					"wrapModeV":1,
+					"anisoLevel":1
+				}
+			}
+		],
+		"vectors":[
+			{
+				"name":"albedoColor",
+				"value":[
+					1,
+					1,
+					1,
+					1
+				]
+			},
+			{
+				"name":"emissionColor",
+				"value":[
+					0,
+					0,
+					0,
+					1
+				]
+			},
+			{
+				"name":"tilingOffset",
+				"value":[
+					1,
+					1,
+					0,
+					0
+				]
+			}
+		],
+		"defines":[
+			"EMISSION",
+			"METALLICGLOSSTEXTURE",
+			"_EMISSION",
+			"_METALLICGLOSSMAP",
+			"_NORMALMAP"
+		],
+		"cull":2,
+		"blendSrc":1,
+		"blendDst":0,
+		"blend":0,
+		"depthWrite":true,
+		"depthTest":515,
+		"renderQueue":2000,
+		"smoothness":1,
+		"smoothnessTextureScale":1,
+		"metallic":0,
+		"normalTextureScale":-0.1,
+		"parallaxTextureScale":0.08,
+		"occlusionTextureStrength":1
+	}
 }

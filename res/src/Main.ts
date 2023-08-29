@@ -4,6 +4,7 @@ Laya.LayaEnv.beforeInit = function(config: Laya.IStageConfig) {
     //这里可以对config以及Laya.Config、Laya.Config3D进行自定义的修改
     Laya.Config.preserveDrawingBuffer =true;
     Laya.Config.isAlpha =true; 
+    Laya.Config.useWebGL2 = false;
 }
 
 import { MainBase } from "./Main.generated";

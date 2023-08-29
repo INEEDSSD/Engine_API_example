@@ -1251,114 +1251,69 @@
     regClass4("ad3cf108-21a0-4a90-9e86-6a401327d722", "../src/Main.ts")
   ], Main);
 
-  // src/2D/DOM/DOM_Form.ts
-  var Sprite = Laya.Sprite;
-  var SpriteUtils = Laya.SpriteUtils;
-  var Render = Laya.Render;
-  var Browser = Laya.Browser;
-  var Text = Laya.Text;
+  // src/2D/Animation/Animation_Altas.ts
+  var Animation = Laya.Animation;
+  var Loader = Laya.Loader;
   var { regClass: regClass5, property: property5 } = Laya;
-  var DOM_Form = class extends BaseScript {
+  var Animation_Altas = class extends BaseScript {
     constructor() {
       super();
-      this.rowHeight = 30;
-      this.rowSpacing = 10;
+      this.AniConfPath = "resources/res/fighter/fighter.json";
     }
     onAwake() {
       super.base();
-      this.box2D.bgColor = "#FFFFFF";
-      this.form = new Sprite();
-      this.form.size(250, 120);
-      this.form.pos((this.pageWidth - this.form.width) / 2, (this.pageHeight - this.form.height) / 2);
-      this.owner.addChild(this.form);
-      var rowHeightDelta = this.rowSpacing + this.rowHeight;
-      this.showLabel("\u90AE\u7BB1", 0, rowHeightDelta * 0);
-      this.showLabel("\u51FA\u751F\u65E5\u671F", 0, rowHeightDelta * 1);
-      this.showLabel("\u5BC6\u7801", 0, rowHeightDelta * 2);
-      this.emailInput = this.createInputElement();
-      this.birthdayInput = this.createInputElement();
-      this.passwordInput = this.createInputElement();
-      this.birthdayInput.type = "date";
-      this.passwordInput.type = "password";
-      var dom;
-      let all = [this.emailInput, this.birthdayInput, this.passwordInput];
-      for (var i = 0; i < all.length; i++) {
-        dom = all[i];
-        if (Index.curPage)
-          SpriteUtils.fitDOMElementInArea(dom, this.form, Index.pagePos.x + 100, Index.pagePos.y + i * (this.rowSpacing + this.rowHeight), 150, this.rowHeight);
-        else
-          SpriteUtils.fitDOMElementInArea(dom, this.form, 100, i * (this.rowSpacing + this.rowHeight), 150, this.rowHeight);
-      }
+      Laya.loader.load(this.AniConfPath, Loader.ATLAS).then(() => {
+        this.createAnimation();
+      });
     }
-    onDestroy() {
-      Browser.removeElement(this.emailInput);
-      Browser.removeElement(this.birthdayInput);
-      Browser.removeElement(this.passwordInput);
-    }
-    showLabel(label, x, y) {
-      var t = new Text();
-      t.height = this.rowHeight;
-      t.valign = "middle";
-      t.fontSize = 15;
-      t.font = "SimHei";
-      t.text = label;
-      t.pos(x, y);
-      this.form.addChild(t);
-    }
-    createInputElement() {
-      var input = Browser.createElement("input");
-      input.style.zIndex = Render.canvas.zIndex + 1;
-      input.style.width = "100px";
-      Browser.document.body.appendChild(input);
-      return input;
+    //通过Animation来创建动画
+    createAnimation(_e = null) {
+      var ani = new Animation();
+      ani.loadAtlas(this.AniConfPath);
+      ani.interval = 30;
+      ani.index = 1;
+      ani.play();
+      var bounds = ani.getGraphicBounds();
+      ani.pivot(bounds.width / 2, bounds.height / 2);
+      ani.pos(this.pageWidth / 2, this.pageHeight / 2);
+      this.owner.addChild(ani);
     }
   };
-  __name(DOM_Form, "DOM_Form");
-  DOM_Form = __decorateClass([
-    regClass5("1c782215-3a40-4f5d-8669-d905f1c1fdf1", "../src/2D/DOM/DOM_Form.ts")
-  ], DOM_Form);
+  __name(Animation_Altas, "Animation_Altas");
+  Animation_Altas = __decorateClass([
+    regClass5("bb1a4989-f1cb-40f1-ade0-043f8bf448f4", "../src/2D/Animation/Animation_Altas.ts")
+  ], Animation_Altas);
 
-  // src/2D/DOM/DOM_Video.ts
-  var Sprite2 = Laya.Sprite;
-  var SpriteUtils2 = Laya.SpriteUtils;
-  var Render2 = Laya.Render;
-  var Browser2 = Laya.Browser;
+  // src/2D/Animation/Animation_SWF.ts
+  var MovieClip = Laya.MovieClip;
   var { regClass: regClass6, property: property6 } = Laya;
-  var DOM_Video = class extends BaseScript {
+  var Animation_SWF = class extends BaseScript {
     constructor() {
       super();
+      this.SWFPath = "resources/res/swf/dragon.swf";
+      this.MCWidth = 318;
+      this.MCHeight = 406;
     }
     onAwake() {
       super.base();
-      var videoElement = Browser2.createElement("video");
-      Browser2.document.body.appendChild(videoElement);
-      this.video = videoElement;
-      videoElement.style.zInddex = Render2.canvas.style.zIndex + 1;
-      videoElement.src = Laya.URL.postFormatURL(Laya.URL.formatURL("resources/res/av/mov_bbb.mp4"));
-      videoElement.controls = true;
-      videoElement.setAttribute("webkit-playsinline", true);
-      videoElement.setAttribute("playsinline", true);
-      var reference = new Sprite2();
-      this.owner.addChild(reference);
-      reference.pos((this.pageWidth - 600) / 2, (this.pageHeight - 400) / 2);
-      reference.size(600, 400);
-      reference.graphics.drawRect(0, 0, reference.width, reference.height, "#000000");
-      if (Index.curPage)
-        SpriteUtils2.fitDOMElementInArea(videoElement, reference, Index.pagePos.x, Index.pagePos.y, reference.width, reference.height);
-      else
-        SpriteUtils2.fitDOMElementInArea(videoElement, reference, 0, 0, reference.width, reference.height);
+      this.createMovieClip();
     }
-    onDestroy() {
-      Browser2.removeElement(this.video);
+    //创建MovieClip组件创建动画
+    createMovieClip() {
+      var mc = new MovieClip();
+      mc.load(this.SWFPath);
+      mc.x = (this.pageWidth - this.MCWidth) / 2;
+      mc.y = (this.pageHeight - this.MCHeight) / 2;
+      this.owner.addChild(mc);
     }
   };
-  __name(DOM_Video, "DOM_Video");
-  DOM_Video = __decorateClass([
-    regClass6("185fc57b-dbf7-4008-bc7d-11e6ff6bd852", "../src/2D/DOM/DOM_Video.ts")
-  ], DOM_Video);
+  __name(Animation_SWF, "Animation_SWF");
+  Animation_SWF = __decorateClass([
+    regClass6("2d69f3c9-f041-497b-b922-0e1fae2231fc", "../src/2D/Animation/Animation_SWF.ts")
+  ], Animation_SWF);
 
   // src/2D/BlendMode/BlendMode_Lighter.ts
-  var Animation = Laya.Animation;
+  var Animation2 = Laya.Animation;
   var Handler = Laya.Handler;
   var Tween = Laya.Tween;
   var { regClass: regClass7, property: property7 } = Laya;
@@ -1400,7 +1355,7 @@
       for (var i = 1; i <= 25; ++i) {
         frames.push("resources/res/phoenix/phoenix" + this.preFixNumber(i, 4) + ".jpg");
       }
-      var animation = new Animation();
+      var animation = new Animation2();
       animation.loadImages(frames);
       this.box2D.addChild(animation);
       var clips = animation.frames.concat();
@@ -1472,13 +1427,289 @@
     regClass7("07612b84-7887-4044-8910-6e2fc2b0d0ab", "../src/2D/BlendMode/BlendMode_Lighter.ts")
   ], BlendMode_Lighter);
 
-  // src/2D/InputDevice/InputDevice_Compasss.ts
+  // src/2D/DOM/DOM_Form.ts
+  var Sprite = Laya.Sprite;
+  var SpriteUtils = Laya.SpriteUtils;
+  var Render = Laya.Render;
+  var Browser = Laya.Browser;
+  var Text = Laya.Text;
+  var { regClass: regClass8, property: property8 } = Laya;
+  var DOM_Form = class extends BaseScript {
+    constructor() {
+      super();
+      this.rowHeight = 30;
+      this.rowSpacing = 10;
+    }
+    onAwake() {
+      super.base();
+      this.box2D.bgColor = "#FFFFFF";
+      this.form = new Sprite();
+      this.form.size(250, 120);
+      this.form.pos((this.pageWidth - this.form.width) / 2, (this.pageHeight - this.form.height) / 2);
+      this.owner.addChild(this.form);
+      var rowHeightDelta = this.rowSpacing + this.rowHeight;
+      this.showLabel("\u90AE\u7BB1", 0, rowHeightDelta * 0);
+      this.showLabel("\u51FA\u751F\u65E5\u671F", 0, rowHeightDelta * 1);
+      this.showLabel("\u5BC6\u7801", 0, rowHeightDelta * 2);
+      this.emailInput = this.createInputElement();
+      this.birthdayInput = this.createInputElement();
+      this.passwordInput = this.createInputElement();
+      this.birthdayInput.type = "date";
+      this.passwordInput.type = "password";
+      var dom;
+      let all = [this.emailInput, this.birthdayInput, this.passwordInput];
+      for (var i = 0; i < all.length; i++) {
+        dom = all[i];
+        if (Index.curPage)
+          SpriteUtils.fitDOMElementInArea(dom, this.form, Index.pagePos.x + 100, Index.pagePos.y + i * (this.rowSpacing + this.rowHeight), 150, this.rowHeight);
+        else
+          SpriteUtils.fitDOMElementInArea(dom, this.form, 100, i * (this.rowSpacing + this.rowHeight), 150, this.rowHeight);
+      }
+    }
+    onDestroy() {
+      Browser.removeElement(this.emailInput);
+      Browser.removeElement(this.birthdayInput);
+      Browser.removeElement(this.passwordInput);
+    }
+    showLabel(label, x, y) {
+      var t = new Text();
+      t.height = this.rowHeight;
+      t.valign = "middle";
+      t.fontSize = 15;
+      t.font = "SimHei";
+      t.text = label;
+      t.pos(x, y);
+      this.form.addChild(t);
+    }
+    createInputElement() {
+      var input = Browser.createElement("input");
+      input.style.zIndex = Render.canvas.zIndex + 1;
+      input.style.width = "100px";
+      Browser.document.body.appendChild(input);
+      return input;
+    }
+  };
+  __name(DOM_Form, "DOM_Form");
+  DOM_Form = __decorateClass([
+    regClass8("1c782215-3a40-4f5d-8669-d905f1c1fdf1", "../src/2D/DOM/DOM_Form.ts")
+  ], DOM_Form);
+
+  // src/2D/DOM/DOM_Video.ts
+  var Sprite2 = Laya.Sprite;
+  var SpriteUtils2 = Laya.SpriteUtils;
+  var Render2 = Laya.Render;
+  var Browser2 = Laya.Browser;
+  var { regClass: regClass9, property: property9 } = Laya;
+  var DOM_Video = class extends BaseScript {
+    constructor() {
+      super();
+    }
+    onAwake() {
+      super.base();
+      var videoElement = Browser2.createElement("video");
+      Browser2.document.body.appendChild(videoElement);
+      this.video = videoElement;
+      videoElement.style.zInddex = Render2.canvas.style.zIndex + 1;
+      videoElement.src = Laya.URL.postFormatURL(Laya.URL.formatURL("resources/res/av/mov_bbb.mp4"));
+      videoElement.controls = true;
+      videoElement.setAttribute("webkit-playsinline", true);
+      videoElement.setAttribute("playsinline", true);
+      var reference = new Sprite2();
+      this.owner.addChild(reference);
+      reference.pos((this.pageWidth - 600) / 2, (this.pageHeight - 400) / 2);
+      reference.size(600, 400);
+      reference.graphics.drawRect(0, 0, reference.width, reference.height, "#000000");
+      if (Index.curPage)
+        SpriteUtils2.fitDOMElementInArea(videoElement, reference, Index.pagePos.x, Index.pagePos.y, reference.width, reference.height);
+      else
+        SpriteUtils2.fitDOMElementInArea(videoElement, reference, 0, 0, reference.width, reference.height);
+    }
+    onDestroy() {
+      Browser2.removeElement(this.video);
+    }
+  };
+  __name(DOM_Video, "DOM_Video");
+  DOM_Video = __decorateClass([
+    regClass9("185fc57b-dbf7-4008-bc7d-11e6ff6bd852", "../src/2D/DOM/DOM_Video.ts")
+  ], DOM_Video);
+
+  // src/2D/Filters/Filters_Blur.ts
   var Sprite3 = Laya.Sprite;
+  var BlurFilter = Laya.BlurFilter;
+  var { regClass: regClass10, property: property10 } = Laya;
+  var Filters_Blur = class extends BaseScript {
+    constructor() {
+      super();
+      this.apePath = "resources/res/apes/monkey2.png";
+    }
+    onAwake() {
+      super.base();
+      Laya.loader.load(this.apePath).then(() => {
+        this.createApe();
+      });
+    }
+    createApe(_e = null) {
+      var ape = new Sprite3();
+      ape.loadImage(this.apePath);
+      ape.x = (this.pageWidth - ape.width) / 2;
+      ape.y = (this.pageHeight - ape.height) / 2;
+      this.box2D.addChild(ape);
+      this.applayFilter(ape);
+    }
+    applayFilter(ape) {
+      var blurFilter = new BlurFilter();
+      blurFilter.strength = 5;
+      ape.filters = [blurFilter];
+    }
+  };
+  __name(Filters_Blur, "Filters_Blur");
+  Filters_Blur = __decorateClass([
+    regClass10("5a2d9f62-4b74-4b87-a22d-82ecd65fa568", "../src/2D/Filters/Filters_Blur.ts")
+  ], Filters_Blur);
+
+  // src/2D/Filters/Filters_Color.ts
+  var Sprite4 = Laya.Sprite;
+  var ColorFilter = Laya.ColorFilter;
+  var { regClass: regClass11, property: property11 } = Laya;
+  var Filters_Color = class extends BaseScript {
+    constructor() {
+      super();
+      this.ApePath = "resources/res/apes/monkey2.png";
+    }
+    onAwake() {
+      super.base();
+      Laya.loader.load(this.ApePath).then(() => {
+        this.setup();
+      });
+    }
+    setup(e = null) {
+      this.normalizeApe();
+      this.makeRedApe();
+      this.grayingApe();
+    }
+    normalizeApe() {
+      var originalApe = this.createApe();
+      this.apeTexture = Laya.loader.getRes(this.ApePath);
+      originalApe.x = (this.pageWidth - this.apeTexture.width) / 2 - this.apeTexture.width;
+      originalApe.y = (this.pageHeight - this.apeTexture.height) / 2;
+    }
+    makeRedApe() {
+      var redMat = [
+        1,
+        0,
+        0,
+        0,
+        0,
+        //R
+        0,
+        0,
+        0,
+        0,
+        0,
+        //G
+        0,
+        0,
+        0,
+        0,
+        0,
+        //B
+        0,
+        0,
+        0,
+        1,
+        0
+      ];
+      var redFilter = new ColorFilter(redMat);
+      var redApe = this.createApe();
+      redApe.filters = [redFilter];
+      redApe.x = (this.pageWidth - this.apeTexture.width) / 2;
+      redApe.y = (this.pageHeight - this.apeTexture.height) / 2;
+    }
+    grayingApe() {
+      var grayscaleMat = [
+        0.3086,
+        0.6094,
+        0.082,
+        0,
+        0,
+        0.3086,
+        0.6094,
+        0.082,
+        0,
+        0,
+        0.3086,
+        0.6094,
+        0.082,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ];
+      var grayscaleFilter = new ColorFilter(grayscaleMat);
+      var grayApe = this.createApe();
+      grayApe.filters = [grayscaleFilter];
+      grayApe.x = (this.pageWidth - this.apeTexture.width) / 2 + this.apeTexture.width;
+      grayApe.y = (this.pageHeight - this.apeTexture.height) / 2;
+    }
+    createApe() {
+      var ape = new Sprite4();
+      ape.loadImage("resources/res/apes/monkey2.png");
+      this.box2D.addChild(ape);
+      return ape;
+    }
+  };
+  __name(Filters_Color, "Filters_Color");
+  Filters_Color = __decorateClass([
+    regClass11("a191fef0-2f45-4ee6-b170-a95e6e080673", "../src/2D/Filters/Filters_Color.ts")
+  ], Filters_Color);
+
+  // src/2D/Filters/Filters_Glow.ts
+  var Sprite5 = Laya.Sprite;
+  var GlowFilter = Laya.GlowFilter;
+  var { regClass: regClass12, property: property12 } = Laya;
+  var Filters_Glow = class extends BaseScript {
+    constructor() {
+      super();
+      this.apePath = "resources/res/apes/monkey2.png";
+    }
+    onAwake() {
+      super.base();
+      Laya.loader.load(this.apePath).then((tex) => {
+        this.setup(tex);
+      });
+    }
+    setup(tex) {
+      this.createApe();
+      this.applayFilter();
+    }
+    createApe() {
+      this.ape = new Sprite5();
+      this.ape.loadImage(this.apePath);
+      var texture = Laya.loader.getRes(this.apePath);
+      this.ape.x = (this.pageWidth - texture.width) / 2;
+      this.ape.y = (this.pageHeight - texture.height) / 2;
+      this.box2D.addChild(this.ape);
+    }
+    applayFilter() {
+      var glowFilter = new GlowFilter("#ffff00", 10, 0, 0);
+      this.ape.filters = [glowFilter];
+    }
+  };
+  __name(Filters_Glow, "Filters_Glow");
+  Filters_Glow = __decorateClass([
+    regClass12("3245ae37-5b4f-4178-901d-4b22800bb84a", "../src/2D/Filters/Filters_Glow.ts")
+  ], Filters_Glow);
+
+  // src/2D/InputDevice/InputDevice_Compasss.ts
+  var Sprite6 = Laya.Sprite;
   var Event3 = Laya.Event;
   var Browser3 = Laya.Browser;
   var Text2 = Laya.Text;
   var Gyroscope = Laya.Gyroscope;
-  var { regClass: regClass8, property: property8 } = Laya;
+  var { regClass: regClass13, property: property13 } = Laya;
   var InputDevice_Compasss = class extends BaseScript {
     constructor() {
       super();
@@ -1499,14 +1730,14 @@
       Gyroscope.instance.on(Event3.CHANGE, this, this.onOrientationChange);
     }
     createCompass() {
-      this.compassImg = new Sprite3();
+      this.compassImg = new Sprite6();
       this.box2D.addChild(this.compassImg);
       this.compassImg.loadImage(this.compassImgPath);
       this.compassImg.pivot(this.compassImg.width / 2, this.compassImg.height / 2);
       this.compassImg.pos(this.pageWidth / 2, 400);
     }
     drawUI() {
-      var canvas = new Sprite3();
+      var canvas = new Sprite6();
       this.box2D.addChild(canvas);
       canvas.graphics.drawLine(this.compassImg.x, 50, this.compassImg.x, 182, "#FFFFFF", 3);
       canvas.graphics.drawLine(-140 + this.compassImg.x, this.compassImg.y, 140 + this.compassImg.x, this.compassImg.y, "#AAAAAA", 1);
@@ -1523,7 +1754,7 @@
     }
     // 方位指示器指向当前所朝方位。
     createDirectionIndicator() {
-      this.directionIndicator = new Sprite3();
+      this.directionIndicator = new Sprite6();
       this.box2D.addChild(this.directionIndicator);
       this.directionIndicator.alpha = 0.8;
       this.directionIndicator.graphics.drawCircle(0, 0, 70, "#343434");
@@ -1547,15 +1778,15 @@
   };
   __name(InputDevice_Compasss, "InputDevice_Compasss");
   InputDevice_Compasss = __decorateClass([
-    regClass8("bd6d133a-0360-4e2d-bd20-5c9ef850727d", "../src/2D/InputDevice/InputDevice_Compasss.ts")
+    regClass13("bd6d133a-0360-4e2d-bd20-5c9ef850727d", "../src/2D/InputDevice/InputDevice_Compasss.ts")
   ], InputDevice_Compasss);
 
   // src/2D/InputDevice/InputDevice_GluttonousSnake.ts
-  var Sprite4 = Laya.Sprite;
+  var Sprite7 = Laya.Sprite;
   var Event4 = Laya.Event;
   var Accelerator = Laya.Accelerator;
   var Point = Laya.Point;
-  var { regClass: regClass9, property: property9 } = Laya;
+  var { regClass: regClass14, property: property14 } = Laya;
   var InputDevice_GluttonousSnake = class extends BaseScript {
     constructor() {
       super();
@@ -1651,7 +1882,7 @@
     produceFood() {
       if (this.foods.length == 5)
         return;
-      var food = new Sprite4();
+      var food = new Sprite7();
       this.box2D.addChild(food);
       this.foods.push(food);
       const foodSize = 40;
@@ -1663,9 +1894,9 @@
   };
   __name(InputDevice_GluttonousSnake, "InputDevice_GluttonousSnake");
   InputDevice_GluttonousSnake = __decorateClass([
-    regClass9("06ea46e2-eb55-4c32-8d2b-6fa85bc8cf9c", "../src/2D/InputDevice/InputDevice_GluttonousSnake.ts")
+    regClass14("06ea46e2-eb55-4c32-8d2b-6fa85bc8cf9c", "../src/2D/InputDevice/InputDevice_GluttonousSnake.ts")
   ], InputDevice_GluttonousSnake);
-  var _Segment = class _Segment extends Sprite4 {
+  var _Segment = class _Segment extends Sprite7 {
     constructor(width, height) {
       super();
       this.size(width, height);
@@ -1691,7 +1922,7 @@
   var Handler2 = Laya.Handler;
   var Browser4 = Laya.Browser;
   var SpriteUtils3 = Laya.SpriteUtils;
-  var { regClass: regClass10, property: property10 } = Laya;
+  var { regClass: regClass15, property: property15 } = Laya;
   var InputDevice_Map = class extends BaseScript {
     constructor() {
       super();
@@ -1770,15 +2001,15 @@
   };
   __name(InputDevice_Map, "InputDevice_Map");
   InputDevice_Map = __decorateClass([
-    regClass10("8ec2c3be-7664-483d-9bb8-6844ba2e6eb4", "../src/2D/InputDevice/InputDevice_Map.ts")
+    regClass15("8ec2c3be-7664-483d-9bb8-6844ba2e6eb4", "../src/2D/InputDevice/InputDevice_Map.ts")
   ], InputDevice_Map);
 
   // src/2D/InputDevice/InputDevice_Shake.ts
-  var Sprite5 = Laya.Sprite;
+  var Sprite8 = Laya.Sprite;
   var Event5 = Laya.Event;
   var Shake = Laya.Shake;
   var Text4 = Laya.Text;
-  var { regClass: regClass11, property: property11 } = Laya;
+  var { regClass: regClass16, property: property16 } = Laya;
   var InputDevice_Shake = class extends BaseScript {
     constructor() {
       super();
@@ -1793,7 +2024,7 @@
       this.startShake();
     }
     showShakePic() {
-      var shakePic = new Sprite5();
+      var shakePic = new Sprite8();
       shakePic.loadImage("resources/res/inputDevice/shake.png");
       this.box2D.addChild(shakePic);
     }
@@ -1825,239 +2056,8 @@
   };
   __name(InputDevice_Shake, "InputDevice_Shake");
   InputDevice_Shake = __decorateClass([
-    regClass11("0d182ff5-c807-482f-93a4-71c520624de7", "../src/2D/InputDevice/InputDevice_Shake.ts")
+    regClass16("0d182ff5-c807-482f-93a4-71c520624de7", "../src/2D/InputDevice/InputDevice_Shake.ts")
   ], InputDevice_Shake);
-
-  // src/2D/Filters/Filters_Blur.ts
-  var Sprite6 = Laya.Sprite;
-  var BlurFilter = Laya.BlurFilter;
-  var { regClass: regClass12, property: property12 } = Laya;
-  var Filters_Blur = class extends BaseScript {
-    constructor() {
-      super();
-      this.apePath = "resources/res/apes/monkey2.png";
-    }
-    onAwake() {
-      super.base();
-      Laya.loader.load(this.apePath).then(() => {
-        this.createApe();
-      });
-    }
-    createApe(_e = null) {
-      var ape = new Sprite6();
-      ape.loadImage(this.apePath);
-      ape.x = (this.pageWidth - ape.width) / 2;
-      ape.y = (this.pageHeight - ape.height) / 2;
-      this.box2D.addChild(ape);
-      this.applayFilter(ape);
-    }
-    applayFilter(ape) {
-      var blurFilter = new BlurFilter();
-      blurFilter.strength = 5;
-      ape.filters = [blurFilter];
-    }
-  };
-  __name(Filters_Blur, "Filters_Blur");
-  Filters_Blur = __decorateClass([
-    regClass12("5a2d9f62-4b74-4b87-a22d-82ecd65fa568", "../src/2D/Filters/Filters_Blur.ts")
-  ], Filters_Blur);
-
-  // src/2D/Filters/Filters_Color.ts
-  var Sprite7 = Laya.Sprite;
-  var ColorFilter = Laya.ColorFilter;
-  var { regClass: regClass13, property: property13 } = Laya;
-  var Filters_Color = class extends BaseScript {
-    constructor() {
-      super();
-      this.ApePath = "resources/res/apes/monkey2.png";
-    }
-    onAwake() {
-      super.base();
-      Laya.loader.load(this.ApePath).then(() => {
-        this.setup();
-      });
-    }
-    setup(e = null) {
-      this.normalizeApe();
-      this.makeRedApe();
-      this.grayingApe();
-    }
-    normalizeApe() {
-      var originalApe = this.createApe();
-      this.apeTexture = Laya.loader.getRes(this.ApePath);
-      originalApe.x = (this.pageWidth - this.apeTexture.width) / 2 - this.apeTexture.width;
-      originalApe.y = (this.pageHeight - this.apeTexture.height) / 2;
-    }
-    makeRedApe() {
-      var redMat = [
-        1,
-        0,
-        0,
-        0,
-        0,
-        //R
-        0,
-        0,
-        0,
-        0,
-        0,
-        //G
-        0,
-        0,
-        0,
-        0,
-        0,
-        //B
-        0,
-        0,
-        0,
-        1,
-        0
-      ];
-      var redFilter = new ColorFilter(redMat);
-      var redApe = this.createApe();
-      redApe.filters = [redFilter];
-      redApe.x = (this.pageWidth - this.apeTexture.width) / 2;
-      redApe.y = (this.pageHeight - this.apeTexture.height) / 2;
-    }
-    grayingApe() {
-      var grayscaleMat = [
-        0.3086,
-        0.6094,
-        0.082,
-        0,
-        0,
-        0.3086,
-        0.6094,
-        0.082,
-        0,
-        0,
-        0.3086,
-        0.6094,
-        0.082,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        0
-      ];
-      var grayscaleFilter = new ColorFilter(grayscaleMat);
-      var grayApe = this.createApe();
-      grayApe.filters = [grayscaleFilter];
-      grayApe.x = (this.pageWidth - this.apeTexture.width) / 2 + this.apeTexture.width;
-      grayApe.y = (this.pageHeight - this.apeTexture.height) / 2;
-    }
-    createApe() {
-      var ape = new Sprite7();
-      ape.loadImage("resources/res/apes/monkey2.png");
-      this.box2D.addChild(ape);
-      return ape;
-    }
-  };
-  __name(Filters_Color, "Filters_Color");
-  Filters_Color = __decorateClass([
-    regClass13("a191fef0-2f45-4ee6-b170-a95e6e080673", "../src/2D/Filters/Filters_Color.ts")
-  ], Filters_Color);
-
-  // src/2D/Filters/Filters_Glow.ts
-  var Sprite8 = Laya.Sprite;
-  var GlowFilter = Laya.GlowFilter;
-  var { regClass: regClass14, property: property14 } = Laya;
-  var Filters_Glow = class extends BaseScript {
-    constructor() {
-      super();
-      this.apePath = "resources/res/apes/monkey2.png";
-    }
-    onAwake() {
-      super.base();
-      Laya.loader.load(this.apePath).then((tex) => {
-        this.setup(tex);
-      });
-    }
-    setup(tex) {
-      this.createApe();
-      this.applayFilter();
-    }
-    createApe() {
-      this.ape = new Sprite8();
-      this.ape.loadImage(this.apePath);
-      var texture = Laya.loader.getRes(this.apePath);
-      this.ape.x = (this.pageWidth - texture.width) / 2;
-      this.ape.y = (this.pageHeight - texture.height) / 2;
-      this.box2D.addChild(this.ape);
-    }
-    applayFilter() {
-      var glowFilter = new GlowFilter("#ffff00", 10, 0, 0);
-      this.ape.filters = [glowFilter];
-    }
-  };
-  __name(Filters_Glow, "Filters_Glow");
-  Filters_Glow = __decorateClass([
-    regClass14("3245ae37-5b4f-4178-901d-4b22800bb84a", "../src/2D/Filters/Filters_Glow.ts")
-  ], Filters_Glow);
-
-  // src/2D/Animation/Animation_Altas.ts
-  var Animation2 = Laya.Animation;
-  var Loader = Laya.Loader;
-  var { regClass: regClass15, property: property15 } = Laya;
-  var Animation_Altas = class extends BaseScript {
-    constructor() {
-      super();
-      this.AniConfPath = "resources/res/fighter/fighter.json";
-    }
-    onAwake() {
-      super.base();
-      Laya.loader.load(this.AniConfPath, Loader.ATLAS).then(() => {
-        this.createAnimation();
-      });
-    }
-    //通过Animation来创建动画
-    createAnimation(_e = null) {
-      var ani = new Animation2();
-      ani.loadAtlas(this.AniConfPath);
-      ani.interval = 30;
-      ani.index = 1;
-      ani.play();
-      var bounds = ani.getGraphicBounds();
-      ani.pivot(bounds.width / 2, bounds.height / 2);
-      ani.pos(this.pageWidth / 2, this.pageHeight / 2);
-      this.owner.addChild(ani);
-    }
-  };
-  __name(Animation_Altas, "Animation_Altas");
-  Animation_Altas = __decorateClass([
-    regClass15("bb1a4989-f1cb-40f1-ade0-043f8bf448f4", "../src/2D/Animation/Animation_Altas.ts")
-  ], Animation_Altas);
-
-  // src/2D/Animation/Animation_SWF.ts
-  var MovieClip = Laya.MovieClip;
-  var { regClass: regClass16, property: property16 } = Laya;
-  var Animation_SWF = class extends BaseScript {
-    constructor() {
-      super();
-      this.SWFPath = "resources/res/swf/dragon.swf";
-      this.MCWidth = 318;
-      this.MCHeight = 406;
-    }
-    onAwake() {
-      super.base();
-      this.createMovieClip();
-    }
-    //创建MovieClip组件创建动画
-    createMovieClip() {
-      var mc = new MovieClip();
-      mc.load(this.SWFPath);
-      mc.x = (this.pageWidth - this.MCWidth) / 2;
-      mc.y = (this.pageHeight - this.MCHeight) / 2;
-      this.owner.addChild(mc);
-    }
-  };
-  __name(Animation_SWF, "Animation_SWF");
-  Animation_SWF = __decorateClass([
-    regClass16("2d69f3c9-f041-497b-b922-0e1fae2231fc", "../src/2D/Animation/Animation_SWF.ts")
-  ], Animation_SWF);
 
   // src/2D/Interaction/Interaction_CustomEvent.ts
   var Sprite9 = Laya.Sprite;
@@ -4644,67 +4644,9 @@
   __name(_Laser, "Laser");
   var Laser = _Laser;
 
-  // src/2D/Sound/Sound_SimpleDemo.ts
-  var Sprite30 = Laya.Sprite;
-  var Event28 = Laya.Event;
-  var Handler4 = Laya.Handler;
-  var SoundManager = Laya.SoundManager;
-  var { regClass: regClass49, property: property49 } = Laya;
-  var Sound_SimpleDemo = class extends BaseScript {
-    constructor() {
-      super();
-    }
-    onAwake() {
-      super.base();
-      this.setup();
-    }
-    setup() {
-      var gap = 10;
-      var soundButton = this.createButton("\u64AD\u653E\u97F3\u6548");
-      soundButton.x = (this.pageWidth - soundButton.width * 2 + gap) / 2;
-      soundButton.y = (this.pageHeight - soundButton.height) / 2;
-      this.box2D.addChild(soundButton);
-      var musicButton = this.createButton("\u64AD\u653E\u97F3\u4E50");
-      musicButton.x = soundButton.x + gap + soundButton.width;
-      musicButton.y = soundButton.y;
-      this.box2D.addChild(musicButton);
-      soundButton.on(Event28.CLICK, this, this.onPlaySound);
-      musicButton.on(Event28.CLICK, this, this.onPlayMusic);
-    }
-    createButton(label) {
-      var w = 110;
-      var h = 40;
-      var button = new Sprite30();
-      button.size(w, h);
-      button.graphics.drawRect(0, 0, w, h, "#FF7F50");
-      button.graphics.fillText(label, w / 2, 8, "25px SimHei", "#FFFFFF", "center");
-      this.box2D.addChild(button);
-      return button;
-    }
-    onPlayMusic(e = null) {
-      console.log("\u64AD\u653E\u97F3\u4E50");
-      SoundManager.playMusic("resources/res/sounds/bgm.mp3", 1, new Handler4(this, this.onComplete));
-    }
-    onPlaySound(e = null) {
-      console.log("\u64AD\u653E\u97F3\u6548");
-      SoundManager.playSound("resources/res/sounds/btn.mp3", 1, new Handler4(this, this.onComplete));
-    }
-    onComplete() {
-      console.log("\u64AD\u653E\u5B8C\u6210");
-    }
-    onDestroy() {
-      SoundManager.stopAllSound();
-      SoundManager.stopMusic();
-    }
-  };
-  __name(Sound_SimpleDemo, "Sound_SimpleDemo");
-  Sound_SimpleDemo = __decorateClass([
-    regClass49("4284d2ac-4597-45fa-9ede-342369ccae35", "../src/2D/Sound/Sound_SimpleDemo.ts")
-  ], Sound_SimpleDemo);
-
   // src/2D/Skeleton/Skeleton_ChangeSkin.ts
-  var Event29 = Laya.Event;
-  var { regClass: regClass50, property: property50 } = Laya;
+  var Event28 = Laya.Event;
+  var { regClass: regClass49, property: property49 } = Laya;
   var Skeleton_ChangeSkin = class extends BaseScript {
     constructor() {
       super();
@@ -4722,7 +4664,7 @@
         this.mArmature.y = this.mStartY;
         this.mArmature.scale(0.8, 0.8);
         this.owner.addChild(this.mArmature);
-        this.mArmature.on(Event29.STOPPED, this, this.completeHandler);
+        this.mArmature.on(Event28.STOPPED, this, this.completeHandler);
         this.play();
         this.changeSkin();
         Laya.timer.loop(1e3, this, this.changeSkin);
@@ -4750,17 +4692,17 @@
         return;
       this.mArmature.stop();
       Laya.timer.clear(this, this.changeSkin);
-      this.mArmature.off(Event29.STOPPED, this, this.completeHandler);
+      this.mArmature.off(Event28.STOPPED, this, this.completeHandler);
     }
   };
   __name(Skeleton_ChangeSkin, "Skeleton_ChangeSkin");
   Skeleton_ChangeSkin = __decorateClass([
-    regClass50("59e4e0e5-27e8-4a7f-a675-4492c54c3589", "../src/2D/Skeleton/Skeleton_ChangeSkin.ts")
+    regClass49("59e4e0e5-27e8-4a7f-a675-4492c54c3589", "../src/2D/Skeleton/Skeleton_ChangeSkin.ts")
   ], Skeleton_ChangeSkin);
 
   // src/2D/Skeleton/Skeleton_MultiTexture.ts
-  var Event30 = Laya.Event;
-  var { regClass: regClass51, property: property51 } = Laya;
+  var Event29 = Laya.Event;
+  var { regClass: regClass50, property: property50 } = Laya;
   var Skeleton_MultiTexture = class extends BaseScript {
     constructor() {
       super();
@@ -4776,7 +4718,7 @@
         this.mArmature.y = this.mStartY;
         this.mArmature.scale(0.5, 0.5);
         this.owner.addChild(this.mArmature);
-        this.mArmature.on(Event30.STOPPED, this, this.completeHandler);
+        this.mArmature.on(Event29.STOPPED, this, this.completeHandler);
         this.play();
       });
     }
@@ -4794,19 +4736,19 @@
       if (this.mArmature == null)
         return;
       this.mArmature.stop();
-      this.mArmature.off(Event30.STOPPED, this, this.completeHandler);
+      this.mArmature.off(Event29.STOPPED, this, this.completeHandler);
     }
   };
   __name(Skeleton_MultiTexture, "Skeleton_MultiTexture");
   Skeleton_MultiTexture = __decorateClass([
-    regClass51("d548a72a-4abf-4aa2-9b7e-499d67b6e5c5", "../src/2D/Skeleton/Skeleton_MultiTexture.ts")
+    regClass50("d548a72a-4abf-4aa2-9b7e-499d67b6e5c5", "../src/2D/Skeleton/Skeleton_MultiTexture.ts")
   ], Skeleton_MultiTexture);
 
   // src/2D/Skeleton/Skeleton_SpineAdapted.ts
-  var Event31 = Laya.Event;
+  var Event30 = Laya.Event;
   var Loader6 = Laya.Loader;
   var SpineSkeleton = Laya.SpineSkeleton;
-  var { regClass: regClass52, property: property52 } = Laya;
+  var { regClass: regClass51, property: property51 } = Laya;
   var Skeleton_SpineAdapted = class extends BaseScript {
     constructor() {
       super();
@@ -4820,7 +4762,7 @@
         this.owner.addChild(this.skeleton);
         this.skeleton.pos(this.pageWidth / 2 - 200, this.pageHeight / 2 - 20);
         this.skeleton.scale(0.3, 0.3);
-        this.skeleton.on(Event31.STOPPED, this, this.play);
+        this.skeleton.on(Event30.STOPPED, this, this.play);
         this.play();
       });
     }
@@ -4833,15 +4775,15 @@
   };
   __name(Skeleton_SpineAdapted, "Skeleton_SpineAdapted");
   Skeleton_SpineAdapted = __decorateClass([
-    regClass52("50339b2f-a2d1-4727-9376-6e9008aa5a49", "../src/2D/Skeleton/Skeleton_SpineAdapted.ts")
+    regClass51("50339b2f-a2d1-4727-9376-6e9008aa5a49", "../src/2D/Skeleton/Skeleton_SpineAdapted.ts")
   ], Skeleton_SpineAdapted);
 
   // src/2D/Skeleton/Skeleton_SpineEvent.ts
-  var Sprite31 = Laya.Sprite;
-  var Event32 = Laya.Event;
-  var Handler5 = Laya.Handler;
+  var Sprite30 = Laya.Sprite;
+  var Event31 = Laya.Event;
+  var Handler4 = Laya.Handler;
   var Tween5 = Laya.Tween;
-  var { regClass: regClass53, property: property53 } = Laya;
+  var { regClass: regClass52, property: property52 } = Laya;
   var Skeleton_SpineEvent = class extends BaseScript {
     constructor() {
       super();
@@ -4851,15 +4793,15 @@
     }
     onAwake() {
       super.base();
-      this.mLabelSprite = new Sprite31();
+      this.mLabelSprite = new Sprite30();
       Laya.loader.load("resources/res/spine/spineRes6/alien.sk").then((templet) => {
         this.mArmature = templet.buildArmature(1);
         this.mArmature.x = this.mStartX;
         this.mArmature.y = this.mStartY;
         this.mArmature.scale(0.5, 0.5);
         this.owner.addChild(this.mArmature);
-        this.mArmature.on(Event32.LABEL, this, this.onEvent);
-        this.mArmature.on(Event32.STOPPED, this, this.completeHandler);
+        this.mArmature.on(Event31.LABEL, this, this.onEvent);
+        this.mArmature.on(Event31.STOPPED, this, this.completeHandler);
         this.play();
       });
     }
@@ -4880,7 +4822,7 @@
       this.mLabelSprite.y = this.mStartY;
       this.mLabelSprite.graphics.clear();
       this.mLabelSprite.graphics.fillText(tEventData.name, 0, 0, "20px Arial", "#ff0000", "center");
-      Tween5.to(this.mLabelSprite, { "y": this.mStartY - 200 }, 1e3, null, Handler5.create(this, this.playEnd));
+      Tween5.to(this.mLabelSprite, { "y": this.mStartY - 200 }, 1e3, null, Handler4.create(this, this.playEnd));
     }
     playEnd() {
       this.mLabelSprite.removeSelf();
@@ -4890,17 +4832,17 @@
         return;
       Tween5.clearAll(this.mLabelSprite);
       this.mArmature.stop();
-      this.mArmature.off(Event32.STOPPED, this, this.completeHandler);
+      this.mArmature.off(Event31.STOPPED, this, this.completeHandler);
     }
   };
   __name(Skeleton_SpineEvent, "Skeleton_SpineEvent");
   Skeleton_SpineEvent = __decorateClass([
-    regClass53("e21e30a8-95ad-4f26-b4a3-546f809e763b", "../src/2D/Skeleton/Skeleton_SpineEvent.ts")
+    regClass52("e21e30a8-95ad-4f26-b4a3-546f809e763b", "../src/2D/Skeleton/Skeleton_SpineEvent.ts")
   ], Skeleton_SpineEvent);
 
   // src/2D/Skeleton/Skeleton_SpineStretchyman.ts
-  var Event33 = Laya.Event;
-  var { regClass: regClass54, property: property54 } = Laya;
+  var Event32 = Laya.Event;
+  var { regClass: regClass53, property: property53 } = Laya;
   var Skeleton_SpineStretchyman = class extends BaseScript {
     constructor() {
       super();
@@ -4911,6 +4853,50 @@
     onAwake() {
       super.base();
       Laya.loader.load("resources/res/spine/spineRes4/stretchyman.sk").then((templet) => {
+        this.mArmature = templet.buildArmature(1);
+        this.mArmature.x = this.mStartX;
+        this.mArmature.y = this.mStartY;
+        this.mArmature.scale(0.5, 0.5);
+        this.owner.addChild(this.mArmature);
+        this.mArmature.on(Event32.STOPPED, this, this.completeHandler);
+        this.play();
+      });
+    }
+    completeHandler() {
+      this.play();
+    }
+    play() {
+      this.mCurrIndex++;
+      if (this.mCurrIndex >= this.mArmature.getAnimNum()) {
+        this.mCurrIndex = 0;
+      }
+      this.mArmature.play(this.mCurrIndex, false);
+    }
+    onDestroy() {
+      if (this.mArmature == null)
+        return;
+      this.mArmature.stop();
+      this.mArmature.off(Event32.STOPPED, this, this.completeHandler);
+    }
+  };
+  __name(Skeleton_SpineStretchyman, "Skeleton_SpineStretchyman");
+  Skeleton_SpineStretchyman = __decorateClass([
+    regClass53("9428bf05-d5f5-4e58-a562-90e01db5af80", "../src/2D/Skeleton/Skeleton_SpineStretchyman.ts")
+  ], Skeleton_SpineStretchyman);
+
+  // src/2D/Skeleton/Skeleton_SpineVine.ts
+  var { regClass: regClass54, property: property54 } = Laya;
+  var Event33 = Laya.Event;
+  var Skeleton_SpineVine = class extends BaseScript {
+    constructor() {
+      super();
+      this.mStartX = 400;
+      this.mStartY = 500;
+      this.mCurrIndex = 0;
+    }
+    onAwake() {
+      super.base();
+      Laya.loader.load("resources/res/spine/spineRes5/vine.sk").then((templet) => {
         this.mArmature = templet.buildArmature(1);
         this.mArmature.x = this.mStartX;
         this.mArmature.y = this.mStartY;
@@ -4937,54 +4923,68 @@
       this.mArmature.off(Event33.STOPPED, this, this.completeHandler);
     }
   };
-  __name(Skeleton_SpineStretchyman, "Skeleton_SpineStretchyman");
-  Skeleton_SpineStretchyman = __decorateClass([
-    regClass54("9428bf05-d5f5-4e58-a562-90e01db5af80", "../src/2D/Skeleton/Skeleton_SpineStretchyman.ts")
-  ], Skeleton_SpineStretchyman);
+  __name(Skeleton_SpineVine, "Skeleton_SpineVine");
+  Skeleton_SpineVine = __decorateClass([
+    regClass54("58d15757-1949-49e4-8863-0e26e5244c44", "../src/2D/Skeleton/Skeleton_SpineVine.ts")
+  ], Skeleton_SpineVine);
 
-  // src/2D/Skeleton/Skeleton_SpineVine.ts
-  var { regClass: regClass55, property: property55 } = Laya;
+  // src/2D/Sound/Sound_SimpleDemo.ts
+  var Sprite31 = Laya.Sprite;
   var Event34 = Laya.Event;
-  var Skeleton_SpineVine = class extends BaseScript {
+  var Handler5 = Laya.Handler;
+  var SoundManager = Laya.SoundManager;
+  var { regClass: regClass55, property: property55 } = Laya;
+  var Sound_SimpleDemo = class extends BaseScript {
     constructor() {
       super();
-      this.mStartX = 400;
-      this.mStartY = 500;
-      this.mCurrIndex = 0;
     }
     onAwake() {
       super.base();
-      Laya.loader.load("resources/res/spine/spineRes5/vine.sk").then((templet) => {
-        this.mArmature = templet.buildArmature(1);
-        this.mArmature.x = this.mStartX;
-        this.mArmature.y = this.mStartY;
-        this.mArmature.scale(0.5, 0.5);
-        this.owner.addChild(this.mArmature);
-        this.mArmature.on(Event34.STOPPED, this, this.completeHandler);
-        this.play();
-      });
+      this.setup();
     }
-    completeHandler() {
-      this.play();
+    setup() {
+      var gap = 10;
+      var soundButton = this.createButton("\u64AD\u653E\u97F3\u6548");
+      soundButton.x = (this.pageWidth - soundButton.width * 2 + gap) / 2;
+      soundButton.y = (this.pageHeight - soundButton.height) / 2;
+      this.box2D.addChild(soundButton);
+      var musicButton = this.createButton("\u64AD\u653E\u97F3\u4E50");
+      musicButton.x = soundButton.x + gap + soundButton.width;
+      musicButton.y = soundButton.y;
+      this.box2D.addChild(musicButton);
+      soundButton.on(Event34.CLICK, this, this.onPlaySound);
+      musicButton.on(Event34.CLICK, this, this.onPlayMusic);
     }
-    play() {
-      this.mCurrIndex++;
-      if (this.mCurrIndex >= this.mArmature.getAnimNum()) {
-        this.mCurrIndex = 0;
-      }
-      this.mArmature.play(this.mCurrIndex, false);
+    createButton(label) {
+      var w = 110;
+      var h = 40;
+      var button = new Sprite31();
+      button.size(w, h);
+      button.graphics.drawRect(0, 0, w, h, "#FF7F50");
+      button.graphics.fillText(label, w / 2, 8, "25px SimHei", "#FFFFFF", "center");
+      this.box2D.addChild(button);
+      return button;
+    }
+    onPlayMusic(e = null) {
+      console.log("\u64AD\u653E\u97F3\u4E50");
+      SoundManager.playMusic("resources/res/sounds/bgm.mp3", 1, new Handler5(this, this.onComplete));
+    }
+    onPlaySound(e = null) {
+      console.log("\u64AD\u653E\u97F3\u6548");
+      SoundManager.playSound("resources/res/sounds/btn.mp3", 1, new Handler5(this, this.onComplete));
+    }
+    onComplete() {
+      console.log("\u64AD\u653E\u5B8C\u6210");
     }
     onDestroy() {
-      if (this.mArmature == null)
-        return;
-      this.mArmature.stop();
-      this.mArmature.off(Event34.STOPPED, this, this.completeHandler);
+      SoundManager.stopAllSound();
+      SoundManager.stopMusic();
     }
   };
-  __name(Skeleton_SpineVine, "Skeleton_SpineVine");
-  Skeleton_SpineVine = __decorateClass([
-    regClass55("58d15757-1949-49e4-8863-0e26e5244c44", "../src/2D/Skeleton/Skeleton_SpineVine.ts")
-  ], Skeleton_SpineVine);
+  __name(Sound_SimpleDemo, "Sound_SimpleDemo");
+  Sound_SimpleDemo = __decorateClass([
+    regClass55("4284d2ac-4597-45fa-9ede-342369ccae35", "../src/2D/Sound/Sound_SimpleDemo.ts")
+  ], Sound_SimpleDemo);
 
   // src/2D/Sprite/Sprite_BinaryImage.ts
   var { regClass: regClass56, property: property56 } = Laya;
@@ -6055,205 +6055,9 @@
     regClass82("eb21fcf9-4f9b-44b9-8693-a1c6d99d55c6", "../src/2D/Text/Text_WordWrap.ts")
   ], Text_WordWrap);
 
-  // src/2D/TiledMap/TiledMap_AnimationTile.ts
-  var Handler6 = Laya.Handler;
-  var Rectangle3 = Laya.Rectangle;
-  var TiledMap = Laya.TiledMap;
-  var { regClass: regClass83, property: property83 } = Laya;
-  var TiledMap_AnimationTile = class extends BaseScript {
-    constructor() {
-      super();
-    }
-    onAwake() {
-      super.base();
-      this.createMap();
-    }
-    createMap() {
-      this.tiledMap = new TiledMap();
-      this.tiledMap.createMap("resources/res/tiledMap/orthogonal-test-movelayer.json", new Rectangle3(0, 0, this.pageWidth, this.pageHeight), Handler6.create(this, this.onLoaded));
-    }
-    onLoaded() {
-      this.tiledMap.mapSprite().removeSelf();
-      let map = this.tiledMap.mapSprite();
-      this.box2D.addChild(map);
-    }
-    dispose() {
-      if (this.tiledMap) {
-        this.tiledMap.mapSprite().removeChildren();
-        this.tiledMap.destroy();
-      }
-    }
-  };
-  __name(TiledMap_AnimationTile, "TiledMap_AnimationTile");
-  TiledMap_AnimationTile = __decorateClass([
-    regClass83("64708305-a2d1-438a-afd9-2cfb5f20370c", "../src/2D/TiledMap/TiledMap_AnimationTile.ts")
-  ], TiledMap_AnimationTile);
-
-  // src/2D/TiledMap/TiledMap_IsometricWorld.ts
-  var Sprite41 = Laya.Sprite;
-  var Rectangle4 = Laya.Rectangle;
-  var Point3 = Laya.Point;
-  var Handler7 = Laya.Handler;
-  var TiledMap2 = Laya.TiledMap;
-  var { regClass: regClass84, property: property84 } = Laya;
-  var TiledMap_IsometricWorld = class extends BaseScript {
-    constructor() {
-      super();
-    }
-    onAwake() {
-      super.base();
-      this.createMap();
-      this.box2D.on("click", this, this.onStageClick);
-    }
-    createMap() {
-      this.tiledMap = new TiledMap2();
-      this.tiledMap.createMap("resources/res/tiledMap/isometric_grass_and_water.json", new Rectangle4(0, 0, Index.pageWidth, Index.pageHeight), Handler7.create(this, this.mapLoaded), null, new Point3(1600, 800));
-    }
-    onStageClick(e = null) {
-      var p = new Point3(0, 0);
-      if (this.layer) {
-        this.layer.getTilePositionByScreenPos(e.target.mouseX, e.target.mouseY, p);
-        this.layer.getScreenPositionByTilePos(Math.floor(p.x), Math.floor(p.y), p);
-        this.sprite.pos(p.x, p.y);
-      }
-    }
-    mapLoaded(e = null) {
-      this.layer = this.tiledMap.getLayerByIndex(0);
-      var radiusX = 32;
-      var radiusY = Math.tan(180 / Math.PI * 30) * radiusX;
-      var color = "#FF7F50";
-      this.sprite = new Sprite41();
-      this.sprite.graphics.drawLine(0, 0, -radiusX, radiusY, color);
-      this.sprite.graphics.drawLine(0, 0, radiusX, radiusY, color);
-      this.sprite.graphics.drawLine(-radiusX, radiusY, 0, radiusY * 2, color);
-      this.sprite.graphics.drawLine(radiusX, radiusY, 0, radiusY * 2, color);
-      this.box2D.addChild(this.sprite);
-      this.sprite.zOrder = 99999;
-      this.tiledMap.mapSprite().removeSelf();
-      let map = this.tiledMap.mapSprite();
-      map.x -= (1600 - this.pageWidth) / 2;
-      this.box2D.addChild(map);
-    }
-    onDestroy() {
-      this.box2D.off("click", this, this.onStageClick);
-      if (this.tiledMap) {
-        this.tiledMap.mapSprite().removeChildren();
-        this.tiledMap.destroy();
-      }
-    }
-  };
-  __name(TiledMap_IsometricWorld, "TiledMap_IsometricWorld");
-  TiledMap_IsometricWorld = __decorateClass([
-    regClass84("36da897b-d4b1-430b-9e46-0d4640e6071a", "../src/2D/TiledMap/TiledMap_IsometricWorld.ts")
-  ], TiledMap_IsometricWorld);
-
-  // src/2D/TiledMap/TiledMap_PerspectiveWall.ts
-  var Rectangle5 = Laya.Rectangle;
-  var Handler8 = Laya.Handler;
-  var TiledMap3 = Laya.TiledMap;
-  var { regClass: regClass85, property: property85 } = Laya;
-  var TiledMap_PerspectiveWall = class extends BaseScript {
-    constructor() {
-      super();
-    }
-    onAwake() {
-      super.base();
-      this.createMap();
-    }
-    createMap() {
-      this.tiledMap = new TiledMap3();
-      this.tiledMap.createMap("resources/res/tiledMap/perspective_walls.json", new Rectangle5(0, 0, this.pageWidth, this.pageHeight), Handler8.create(this, this.onLoaded));
-    }
-    onLoaded() {
-      this.tiledMap.mapSprite().removeSelf();
-      this.box2D.addChild(this.tiledMap.mapSprite());
-    }
-    onDestroy() {
-      if (this.tiledMap) {
-        this.tiledMap.mapSprite().removeChildren();
-        this.tiledMap.destroy();
-      }
-    }
-  };
-  __name(TiledMap_PerspectiveWall, "TiledMap_PerspectiveWall");
-  TiledMap_PerspectiveWall = __decorateClass([
-    regClass85("a324d7b5-9adb-4b34-9170-139eb6f6f506", "../src/2D/TiledMap/TiledMap_PerspectiveWall.ts")
-  ], TiledMap_PerspectiveWall);
-
-  // src/2D/TiledMap/TiledMap_SimpleDemo.ts
-  var Event37 = Laya.Event;
-  var Rectangle6 = Laya.Rectangle;
-  var Handler9 = Laya.Handler;
-  var TiledMap4 = Laya.TiledMap;
-  var { regClass: regClass86, property: property86 } = Laya;
-  var TiledMap_SimpleDemo = class extends BaseScript {
-    constructor() {
-      super();
-      this.mLastMouseX = 0;
-      this.mLastMouseY = 0;
-      this.mX = 0;
-      this.mY = 0;
-    }
-    onAwake() {
-      super.base();
-      this.createMap();
-      this.box2D.on(Event37.MOUSE_DOWN, this, this.mouseDown);
-      this.box2D.on(Event37.MOUSE_UP, this, this.mouseUp);
-    }
-    //创建地图
-    createMap() {
-      this.tiledMap = new TiledMap4();
-      this.mX = this.mY = 0;
-      this.tiledMap.createMap("resources/res/tiledMap/desert.json", new Rectangle6(0, 0, this.pageWidth, this.pageHeight), new Handler9(this, this.completeHandler));
-    }
-    onLoaded() {
-      this.tiledMap.mapSprite().removeSelf();
-      this.box2D.addChild(this.tiledMap.mapSprite());
-    }
-    /**
-     * 地图加载完成的回调
-     */
-    completeHandler(e = null) {
-      this.box2D.on(Event37.RESIZE, this, this.resize);
-      this.resize();
-      this.onLoaded();
-    }
-    //鼠标按下拖动地图
-    mouseDown(e = null) {
-      this.mLastMouseX = e.target.mouseX;
-      this.mLastMouseY = e.target.mouseY;
-      this.box2D.on(Event37.MOUSE_MOVE, this, this.mouseMove);
-    }
-    mouseMove(e = null) {
-      this.tiledMap.moveViewPort(this.mX - (e.target.mouseX - this.mLastMouseX), this.mY - (e.target.mouseY - this.mLastMouseY));
-    }
-    mouseUp(e = null) {
-      this.mX = this.mX - (e.target.mouseX - this.mLastMouseX);
-      this.mY = this.mY - (e.target.mouseY - this.mLastMouseY);
-      this.box2D.off(Event37.MOUSE_MOVE, this, this.mouseMove);
-    }
-    // 窗口大小改变，把地图的视口区域重设下
-    resize(e = null) {
-      this.tiledMap.changeViewPort(this.mX, this.mY, this.pageWidth, this.pageHeight);
-    }
-    dispose() {
-      this.box2D.off(Event37.MOUSE_DOWN, this, this.mouseDown);
-      this.box2D.off(Event37.MOUSE_UP, this, this.mouseUp);
-      this.box2D.off(Event37.RESIZE, this, this.resize);
-      this.box2D.off(Event37.MOUSE_MOVE, this, this.mouseMove);
-      if (this.tiledMap) {
-        this.tiledMap.destroy();
-      }
-    }
-  };
-  __name(TiledMap_SimpleDemo, "TiledMap_SimpleDemo");
-  TiledMap_SimpleDemo = __decorateClass([
-    regClass86("05e90bf2-8094-404e-92ef-4f13b11f62b8", "../src/2D/TiledMap/TiledMap_SimpleDemo.ts")
-  ], TiledMap_SimpleDemo);
-
   // src/2D/Timer/Timer_CallLater.ts
   var Text22 = Laya.Text;
-  var { regClass: regClass87, property: property87 } = Laya;
+  var { regClass: regClass83, property: property83 } = Laya;
   var Timer_CallLater = class extends BaseScript {
     constructor() {
       super();
@@ -6283,13 +6087,13 @@
   };
   __name(Timer_CallLater, "Timer_CallLater");
   Timer_CallLater = __decorateClass([
-    regClass87("8015ee44-a6c5-40c2-9aa1-5c1c2ac1bf28", "../src/2D/Timer/Timer_CallLater.ts")
+    regClass83("8015ee44-a6c5-40c2-9aa1-5c1c2ac1bf28", "../src/2D/Timer/Timer_CallLater.ts")
   ], Timer_CallLater);
 
   // src/2D/Timer/Timer_DelayExcute.ts
-  var Sprite42 = Laya.Sprite;
-  var Event38 = Laya.Event;
-  var { regClass: regClass88, property: property88 } = Laya;
+  var Sprite41 = Laya.Sprite;
+  var Event37 = Laya.Event;
+  var { regClass: regClass84, property: property84 } = Laya;
   var Timer_DelayExcute = class extends BaseScript {
     constructor() {
       super();
@@ -6304,26 +6108,26 @@
       this.button1.x = (this.pageWidth - this.button1.width) / 2;
       this.button1.y = (this.pageHeight - this.button1.height - vGap) / 2;
       this.box2D.addChild(this.button1);
-      this.button1.on(Event38.CLICK, this, this.onDecreaseAlpha1);
+      this.button1.on(Event37.CLICK, this, this.onDecreaseAlpha1);
       this.button2 = this.createButton("\u70B9\u621160\u5E27\u4E4B\u540E alpha - 0.5");
       this.button2.pos(this.button1.x, this.button1.y + vGap);
       this.box2D.addChild(this.button2);
-      this.button2.on(Event38.CLICK, this, this.onDecreaseAlpha2);
+      this.button2.on(Event37.CLICK, this, this.onDecreaseAlpha2);
     }
     createButton(label) {
       var w = 300, h = 60;
-      var button = new Sprite42();
+      var button = new Sprite41();
       button.graphics.drawRect(0, 0, w, h, "#FF7F50");
       button.size(w, h);
       button.graphics.fillText(label, w / 2, 17, "20px simHei", "#ffffff", "center");
       return button;
     }
     onDecreaseAlpha1(e = null) {
-      this.button1.off(Event38.CLICK, this, this.onDecreaseAlpha1);
+      this.button1.off(Event37.CLICK, this, this.onDecreaseAlpha1);
       Laya.timer.once(3e3, this, this.onComplete1);
     }
     onDecreaseAlpha2(e = null) {
-      this.button2.off(Event38.CLICK, this, this.onDecreaseAlpha2);
+      this.button2.off(Event37.CLICK, this, this.onDecreaseAlpha2);
       Laya.timer.frameOnce(60, this, this.onComplete2);
     }
     onComplete1() {
@@ -6338,12 +6142,12 @@
   };
   __name(Timer_DelayExcute, "Timer_DelayExcute");
   Timer_DelayExcute = __decorateClass([
-    regClass88("d938c758-9e83-434b-b44d-d738431ec10e", "../src/2D/Timer/Timer_DelayExcute.ts")
+    regClass84("d938c758-9e83-434b-b44d-d738431ec10e", "../src/2D/Timer/Timer_DelayExcute.ts")
   ], Timer_DelayExcute);
 
   // src/2D/Timer/Timer_Interval.ts
   var Text23 = Laya.Text;
-  var { regClass: regClass89, property: property89 } = Laya;
+  var { regClass: regClass85, property: property85 } = Laya;
   var Timer_Interval = class extends BaseScript {
     constructor() {
       super();
@@ -6383,8 +6187,204 @@
   };
   __name(Timer_Interval, "Timer_Interval");
   Timer_Interval = __decorateClass([
-    regClass89("4f4156a7-8544-449e-b9ed-0970bded88d8", "../src/2D/Timer/Timer_Interval.ts")
+    regClass85("4f4156a7-8544-449e-b9ed-0970bded88d8", "../src/2D/Timer/Timer_Interval.ts")
   ], Timer_Interval);
+
+  // src/2D/TiledMap/TiledMap_AnimationTile.ts
+  var Handler6 = Laya.Handler;
+  var Rectangle3 = Laya.Rectangle;
+  var TiledMap = Laya.TiledMap;
+  var { regClass: regClass86, property: property86 } = Laya;
+  var TiledMap_AnimationTile = class extends BaseScript {
+    constructor() {
+      super();
+    }
+    onAwake() {
+      super.base();
+      this.createMap();
+    }
+    createMap() {
+      this.tiledMap = new TiledMap();
+      this.tiledMap.createMap("resources/res/tiledMap/orthogonal-test-movelayer.json", new Rectangle3(0, 0, this.pageWidth, this.pageHeight), Handler6.create(this, this.onLoaded));
+    }
+    onLoaded() {
+      this.tiledMap.mapSprite().removeSelf();
+      let map = this.tiledMap.mapSprite();
+      this.box2D.addChild(map);
+    }
+    dispose() {
+      if (this.tiledMap) {
+        this.tiledMap.mapSprite().removeChildren();
+        this.tiledMap.destroy();
+      }
+    }
+  };
+  __name(TiledMap_AnimationTile, "TiledMap_AnimationTile");
+  TiledMap_AnimationTile = __decorateClass([
+    regClass86("64708305-a2d1-438a-afd9-2cfb5f20370c", "../src/2D/TiledMap/TiledMap_AnimationTile.ts")
+  ], TiledMap_AnimationTile);
+
+  // src/2D/TiledMap/TiledMap_IsometricWorld.ts
+  var Sprite42 = Laya.Sprite;
+  var Rectangle4 = Laya.Rectangle;
+  var Point3 = Laya.Point;
+  var Handler7 = Laya.Handler;
+  var TiledMap2 = Laya.TiledMap;
+  var { regClass: regClass87, property: property87 } = Laya;
+  var TiledMap_IsometricWorld = class extends BaseScript {
+    constructor() {
+      super();
+    }
+    onAwake() {
+      super.base();
+      this.createMap();
+      this.box2D.on("click", this, this.onStageClick);
+    }
+    createMap() {
+      this.tiledMap = new TiledMap2();
+      this.tiledMap.createMap("resources/res/tiledMap/isometric_grass_and_water.json", new Rectangle4(0, 0, Index.pageWidth, Index.pageHeight), Handler7.create(this, this.mapLoaded), null, new Point3(1600, 800));
+    }
+    onStageClick(e = null) {
+      var p = new Point3(0, 0);
+      if (this.layer) {
+        this.layer.getTilePositionByScreenPos(e.target.mouseX, e.target.mouseY, p);
+        this.layer.getScreenPositionByTilePos(Math.floor(p.x), Math.floor(p.y), p);
+        this.sprite.pos(p.x, p.y);
+      }
+    }
+    mapLoaded(e = null) {
+      this.layer = this.tiledMap.getLayerByIndex(0);
+      var radiusX = 32;
+      var radiusY = Math.tan(180 / Math.PI * 30) * radiusX;
+      var color = "#FF7F50";
+      this.sprite = new Sprite42();
+      this.sprite.graphics.drawLine(0, 0, -radiusX, radiusY, color);
+      this.sprite.graphics.drawLine(0, 0, radiusX, radiusY, color);
+      this.sprite.graphics.drawLine(-radiusX, radiusY, 0, radiusY * 2, color);
+      this.sprite.graphics.drawLine(radiusX, radiusY, 0, radiusY * 2, color);
+      this.box2D.addChild(this.sprite);
+      this.sprite.zOrder = 99999;
+      this.tiledMap.mapSprite().removeSelf();
+      let map = this.tiledMap.mapSprite();
+      map.x -= (1600 - this.pageWidth) / 2;
+      this.box2D.addChild(map);
+    }
+    onDestroy() {
+      this.box2D.off("click", this, this.onStageClick);
+      if (this.tiledMap) {
+        this.tiledMap.mapSprite().removeChildren();
+        this.tiledMap.destroy();
+      }
+    }
+  };
+  __name(TiledMap_IsometricWorld, "TiledMap_IsometricWorld");
+  TiledMap_IsometricWorld = __decorateClass([
+    regClass87("36da897b-d4b1-430b-9e46-0d4640e6071a", "../src/2D/TiledMap/TiledMap_IsometricWorld.ts")
+  ], TiledMap_IsometricWorld);
+
+  // src/2D/TiledMap/TiledMap_PerspectiveWall.ts
+  var Rectangle5 = Laya.Rectangle;
+  var Handler8 = Laya.Handler;
+  var TiledMap3 = Laya.TiledMap;
+  var { regClass: regClass88, property: property88 } = Laya;
+  var TiledMap_PerspectiveWall = class extends BaseScript {
+    constructor() {
+      super();
+    }
+    onAwake() {
+      super.base();
+      this.createMap();
+    }
+    createMap() {
+      this.tiledMap = new TiledMap3();
+      this.tiledMap.createMap("resources/res/tiledMap/perspective_walls.json", new Rectangle5(0, 0, this.pageWidth, this.pageHeight), Handler8.create(this, this.onLoaded));
+    }
+    onLoaded() {
+      this.tiledMap.mapSprite().removeSelf();
+      this.box2D.addChild(this.tiledMap.mapSprite());
+    }
+    onDestroy() {
+      if (this.tiledMap) {
+        this.tiledMap.mapSprite().removeChildren();
+        this.tiledMap.destroy();
+      }
+    }
+  };
+  __name(TiledMap_PerspectiveWall, "TiledMap_PerspectiveWall");
+  TiledMap_PerspectiveWall = __decorateClass([
+    regClass88("a324d7b5-9adb-4b34-9170-139eb6f6f506", "../src/2D/TiledMap/TiledMap_PerspectiveWall.ts")
+  ], TiledMap_PerspectiveWall);
+
+  // src/2D/TiledMap/TiledMap_SimpleDemo.ts
+  var Event38 = Laya.Event;
+  var Rectangle6 = Laya.Rectangle;
+  var Handler9 = Laya.Handler;
+  var TiledMap4 = Laya.TiledMap;
+  var { regClass: regClass89, property: property89 } = Laya;
+  var TiledMap_SimpleDemo = class extends BaseScript {
+    constructor() {
+      super();
+      this.mLastMouseX = 0;
+      this.mLastMouseY = 0;
+      this.mX = 0;
+      this.mY = 0;
+    }
+    onAwake() {
+      super.base();
+      this.createMap();
+      this.box2D.on(Event38.MOUSE_DOWN, this, this.mouseDown);
+      this.box2D.on(Event38.MOUSE_UP, this, this.mouseUp);
+    }
+    //创建地图
+    createMap() {
+      this.tiledMap = new TiledMap4();
+      this.mX = this.mY = 0;
+      this.tiledMap.createMap("resources/res/tiledMap/desert.json", new Rectangle6(0, 0, this.pageWidth, this.pageHeight), new Handler9(this, this.completeHandler));
+    }
+    onLoaded() {
+      this.tiledMap.mapSprite().removeSelf();
+      this.box2D.addChild(this.tiledMap.mapSprite());
+    }
+    /**
+     * 地图加载完成的回调
+     */
+    completeHandler(e = null) {
+      this.box2D.on(Event38.RESIZE, this, this.resize);
+      this.resize();
+      this.onLoaded();
+    }
+    //鼠标按下拖动地图
+    mouseDown(e = null) {
+      this.mLastMouseX = e.target.mouseX;
+      this.mLastMouseY = e.target.mouseY;
+      this.box2D.on(Event38.MOUSE_MOVE, this, this.mouseMove);
+    }
+    mouseMove(e = null) {
+      this.tiledMap.moveViewPort(this.mX - (e.target.mouseX - this.mLastMouseX), this.mY - (e.target.mouseY - this.mLastMouseY));
+    }
+    mouseUp(e = null) {
+      this.mX = this.mX - (e.target.mouseX - this.mLastMouseX);
+      this.mY = this.mY - (e.target.mouseY - this.mLastMouseY);
+      this.box2D.off(Event38.MOUSE_MOVE, this, this.mouseMove);
+    }
+    // 窗口大小改变，把地图的视口区域重设下
+    resize(e = null) {
+      this.tiledMap.changeViewPort(this.mX, this.mY, this.pageWidth, this.pageHeight);
+    }
+    dispose() {
+      this.box2D.off(Event38.MOUSE_DOWN, this, this.mouseDown);
+      this.box2D.off(Event38.MOUSE_UP, this, this.mouseUp);
+      this.box2D.off(Event38.RESIZE, this, this.resize);
+      this.box2D.off(Event38.MOUSE_MOVE, this, this.mouseMove);
+      if (this.tiledMap) {
+        this.tiledMap.destroy();
+      }
+    }
+  };
+  __name(TiledMap_SimpleDemo, "TiledMap_SimpleDemo");
+  TiledMap_SimpleDemo = __decorateClass([
+    regClass89("05e90bf2-8094-404e-92ef-4f13b11f62b8", "../src/2D/TiledMap/TiledMap_SimpleDemo.ts")
+  ], TiledMap_SimpleDemo);
 
   // src/2D/Tween/Tween_EaseFunctionsDemo.ts
   var Label4 = Laya.Label;
@@ -9009,6 +9009,7 @@
         //reset Texture \r
         vec2 uv = (positionWS.xz-u_BoundSize.xy)/u_BoundSize.zw;\r
         baseColor = texture2D(u_albedoTexture, uv).rgb;\r
+        baseColor = gammaToLinear(baseColor);\r
         \r
         vec3 albedo = mix(u_GroundColor.xyz, baseColor, a_Position.y);\r
         v_Color = vec4(albedo, 1.0);\r
@@ -15712,230 +15713,8 @@ void main()\r
   __name(_TriggerCollisionScript, "TriggerCollisionScript");
   var TriggerCollisionScript = _TriggerCollisionScript;
 
-  // src/3D/Resource/GarbageCollection.ts
-  var Scene3D2 = Laya.Scene3D;
-  var Handler20 = Laya.Handler;
-  var Resource = Laya.Resource;
-  var { regClass: regClass183, property: property183 } = Laya;
-  var GarbageCollection = class extends BaseScript {
-    constructor() {
-      super();
-    }
-    onAwake() {
-      super.base(this.camera);
-      Scene3D2.load("resources/res/threeDimen/scene/LayaScene_dudeScene/Conventional/dudeSceneNoCamera.ls", Handler20.create(this, (scene) => {
-        this._scene = this.scene.addChildAt(scene, 0);
-        super.addBottomButton(["\u91CA\u653E\u663E\u5B58", "\u52A0\u8F7D\u573A\u666F"], this, [this.garbageCollection, this.loadScene]);
-      }));
-    }
-    loadScene() {
-      Laya.loader.load("resources/res/threeDimen/scene/LayaScene_dudeScene/Conventional/dudeSceneNoCamera.ls").then((res) => {
-        let scene = res.create();
-        let scene3D = scene.scene3D;
-        this._scene = this.scene.addChildAt(scene3D, 0);
-      });
-    }
-    garbageCollection() {
-      if (this._scene) {
-        this._scene.destroy();
-        this._scene = null;
-        Resource.destroyUnusedResources();
-      }
-    }
-  };
-  __name(GarbageCollection, "GarbageCollection");
-  __decorateClass([
-    property183(Laya.Camera)
-  ], GarbageCollection.prototype, "camera", 2);
-  __decorateClass([
-    property183(Laya.Scene3D)
-  ], GarbageCollection.prototype, "scene", 2);
-  GarbageCollection = __decorateClass([
-    regClass183("dfc7da98-20e0-474c-a6df-4fbab1af1a8f", "../src/3D/Resource/GarbageCollection.ts")
-  ], GarbageCollection);
-
-  // src/3D/Resource/LoadFbxRosource.ts
-  var Vector357 = Laya.Vector3;
-  var Loader18 = Laya.Loader;
-  var { regClass: regClass184, property: property184 } = Laya;
-  var LoadFbxRosource = class extends BaseScript {
-    constructor() {
-      super();
-    }
-    onAwake() {
-      super.base(this.camera);
-      this.camera.transform.position = new Vector357(0.5, 1.2, 4);
-      var Resource2 = [
-        //可以直接加载已经在IDE里制作好的lh，其中材质已经创建好
-        { url: "resources/res/threeDimen/fbx/Danding.lh", type: Loader18.HIERARCHY },
-        //可以直接加载FBX文件，并配置材质使用的shader和纹理贴图
-        { url: "resources/res/threeDimen/fbx/Stand.FBX", type: Loader18.HIERARCHY },
-        { url: "resources/res/threeDimen/fbx/Material.lmat", type: Loader18.MATERIAL },
-        { url: "resources/res/threeDimen/fbx/LayaMonkey.lmat", type: Loader18.MATERIAL }
-      ];
-      Laya.loader.load(Resource2).then((res) => {
-        this.onFBXComplete(res);
-        Laya.loader.load("resources/res/threeDimen/fbx/LayaMonkey.FBX", Loader18.HIERARCHY).then((fbx) => {
-          var LayaMonkey = fbx.create();
-          this.scene.addChild(LayaMonkey);
-          LayaMonkey.transform.position = new Vector357(2.5, 0, 0);
-          LayaMonkey.transform.setWorldLossyScale(new Vector357(0.6, 0.6, 0.6));
-          LayaMonkey.getChildAt(0).getComponent(Laya.MeshRenderer).material = res[3];
-        });
-      });
-    }
-    onFBXComplete(res) {
-      let Danding = res[0].create();
-      this.scene.addChild(Danding);
-      Danding.transform.position = new Vector357(-2, 0, 0);
-      var Stand = res[1].create();
-      this.scene.addChild(Stand);
-      Stand.transform.position = new Vector357(0, 0, 0);
-      Stand.getChildAt(0).getComponent(Laya.MeshRenderer).material = res[2];
-    }
-  };
-  __name(LoadFbxRosource, "LoadFbxRosource");
-  __decorateClass([
-    property184(Laya.Camera)
-  ], LoadFbxRosource.prototype, "camera", 2);
-  __decorateClass([
-    property184(Laya.Scene3D)
-  ], LoadFbxRosource.prototype, "scene", 2);
-  LoadFbxRosource = __decorateClass([
-    regClass184("97f3fc07-f23a-40f7-9b00-346bbca95ac5", "../src/3D/Resource/LoadFbxRosource.ts")
-  ], LoadFbxRosource);
-
-  // src/3D/Resource/LoadGltfRosource.ts
-  var Vector358 = Laya.Vector3;
-  var Loader19 = Laya.Loader;
-  var { regClass: regClass185, property: property185 } = Laya;
-  var LoadGltfRosource = class extends BaseScript {
-    constructor() {
-      super();
-    }
-    onAwake() {
-      super.base(this.camera);
-      this.camera.transform.position = new Vector358(0.5, 1.2, 4);
-      var gltfResource = [
-        { url: "resources/res/threeDimen/gltf/RiggedFigure/RiggedFigure.gltf", type: Loader19.HIERARCHY },
-        { url: "resources/res/threeDimen/gltf/Duck/Duck.lh", type: Loader19.HIERARCHY }
-      ];
-      Laya.loader.load(gltfResource).then((res) => {
-        this.onGLTFComplete(res);
-      });
-      Laya.loader.load("resources/res/threeDimen/gltf/AnimatedCube/AnimatedCube.gltf", Loader19.HIERARCHY).then((res) => {
-        var cube = res.create();
-        this.scene.addChild(cube);
-        cube.transform.position = new Vector358(2.5, 0.6, 0);
-        cube.transform.setWorldLossyScale(new Vector358(0.6, 0.6, 0.6));
-      });
-    }
-    onGLTFComplete(res) {
-      let riggedFigure = res[0].create();
-      this.scene.addChild(riggedFigure);
-      riggedFigure.transform.position = new Vector358(-2, 0, 0);
-      var duck = res[1].create();
-      this.scene.addChild(duck);
-      duck.transform.position = new Vector358(0, 0, 0);
-    }
-  };
-  __name(LoadGltfRosource, "LoadGltfRosource");
-  __decorateClass([
-    property185(Laya.Camera)
-  ], LoadGltfRosource.prototype, "camera", 2);
-  __decorateClass([
-    property185(Laya.Scene3D)
-  ], LoadGltfRosource.prototype, "scene", 2);
-  LoadGltfRosource = __decorateClass([
-    regClass185("94f58eab-aae6-4322-94c4-dd6654f2317a", "../src/3D/Resource/LoadGltfRosource.ts")
-  ], LoadGltfRosource);
-
-  // src/3D/Resource/LoadResourceDemo.ts
-  var MeshSprite3D28 = Laya.MeshSprite3D;
-  var Vector359 = Laya.Vector3;
-  var BlinnPhongMaterial20 = Laya.BlinnPhongMaterial;
-  var Quaternion10 = Laya.Quaternion;
-  var PrimitiveMesh26 = Laya.PrimitiveMesh;
-  var SkyBox3 = Laya.SkyBox;
-  var { regClass: regClass186, property: property186 } = Laya;
-  var LoadResourceDemo = class extends BaseScript {
-    constructor() {
-      super();
-    }
-    onAwake() {
-      super.base(this.camera);
-      let resArr = [
-        //加载不同类型的3D资源
-        { url: "resources/res/threeDimen/skyBox/skyBox2/skyBox2.lmat", type: Laya.Loader.MATERIAL },
-        { url: "resources/res/threeDimen/texture/earth.png", type: Laya.Loader.TEXTURE2D },
-        { url: "resources/res/threeDimen/skinModel/LayaMonkey/Assets/LayaMonkey/LayaMonkey-LayaMonkey.lm", type: Laya.Loader.MESH },
-        { url: "resources/res/threeDimen/skinModel/LayaMonkey/LayaMonkey.lh", type: Laya.Loader.HIERARCHY }
-      ];
-      Laya.loader.load(resArr, null, Laya.Handler.create(this, this.onLoading, null, false)).then((res) => {
-        this.loadingBar.visible = false;
-        this.onComplete(res);
-      });
-      Laya.loader.on(Laya.Event.ERROR, this, this.onError);
-    }
-    //加载资源
-    onComplete(res) {
-      var skyRenderer = this.camera.skyRenderer;
-      skyRenderer.mesh = SkyBox3.instance;
-      skyRenderer.material = res[0];
-      var earth1 = this.scene.addChild(new MeshSprite3D28(PrimitiveMesh26.createSphere(1)));
-      earth1.transform.position = new Laya.Vector3(0, 1, 0);
-      var earthMat = new BlinnPhongMaterial20();
-      earthMat.albedoTexture = res[1];
-      earthMat.albedoIntensity = 1;
-      earth1.meshRenderer.material = earthMat;
-      var layaMonkey = this.scene.addChild(new MeshSprite3D28(res[2]));
-      var layaMonkeyTrans = layaMonkey.transform;
-      var layaMonkeyScale = layaMonkeyTrans.localScale;
-      layaMonkeyScale.setValue(0.5, 0.5, 0.5);
-      layaMonkeyTrans.localScale = layaMonkeyScale;
-      layaMonkey.transform.rotation = new Quaternion10(0.7071068, 0, 0, -0.7071067);
-      layaMonkey.transform.translate(new Vector359(-2, 0, 0));
-      var layaMonkey2 = this.scene.addChild(res[3].create());
-      var layaMonkey2Trans = layaMonkey2.transform;
-      var layaMonkey2Scale = layaMonkey2Trans.localScale;
-      layaMonkey2Scale.setValue(5, 5, 5);
-      layaMonkey2Trans.localScale = layaMonkey2Scale;
-      layaMonkey2Trans.translate(new Vector359(2, 0, 0));
-    }
-    /**
-    * 当报错时打印错误
-    */
-    onError(err) {
-      console.log("\u52A0\u8F7D\u5931\u8D25: " + err);
-    }
-    /**
-     * 加载时侦听
-     */
-    onLoading(progress) {
-      if (progress > 0.92)
-        this.loadingBar.value = 0.95;
-      else {
-        this.loadingBar.value = progress;
-        console.log("\u52A0\u8F7D\u8FDB\u5EA6: " + progress, this.loadingBar.value);
-      }
-    }
-  };
-  __name(LoadResourceDemo, "LoadResourceDemo");
-  __decorateClass([
-    property186(Laya.Camera)
-  ], LoadResourceDemo.prototype, "camera", 2);
-  __decorateClass([
-    property186(Laya.Scene3D)
-  ], LoadResourceDemo.prototype, "scene", 2);
-  __decorateClass([
-    property186(Laya.ProgressBar)
-  ], LoadResourceDemo.prototype, "loadingBar", 2);
-  LoadResourceDemo = __decorateClass([
-    regClass186("dcc04071-d471-438c-933e-bfc361ac03a4", "../src/3D/Resource/LoadResourceDemo.ts")
-  ], LoadResourceDemo);
-
   // src/3D/PostProcess/PostProcessAO.ts
-  var { regClass: regClass187, property: property187 } = Laya;
+  var { regClass: regClass183, property: property183 } = Laya;
   var PostProcessAO = class extends BaseScript {
     constructor() {
       super();
@@ -15959,17 +15738,17 @@ void main()\r
   };
   __name(PostProcessAO, "PostProcessAO");
   __decorateClass([
-    property187(Laya.Camera)
+    property183(Laya.Camera)
   ], PostProcessAO.prototype, "camera", 2);
   __decorateClass([
-    property187(Laya.Scene3D)
+    property183(Laya.Scene3D)
   ], PostProcessAO.prototype, "scene", 2);
   PostProcessAO = __decorateClass([
-    regClass187("2cf6cd82-fb9a-4533-9cab-4f56553644d5", "../src/3D/PostProcess/PostProcessAO.ts")
+    regClass183("2cf6cd82-fb9a-4533-9cab-4f56553644d5", "../src/3D/PostProcess/PostProcessAO.ts")
   ], PostProcessAO);
 
   // src/3D/PostProcess/PostProcessBloom.ts
-  var { regClass: regClass188, property: property188 } = Laya;
+  var { regClass: regClass184, property: property184 } = Laya;
   var PostProcessBloom = class extends BaseScript {
     constructor() {
       super();
@@ -15980,17 +15759,17 @@ void main()\r
   };
   __name(PostProcessBloom, "PostProcessBloom");
   __decorateClass([
-    property188(Laya.Camera)
+    property184(Laya.Camera)
   ], PostProcessBloom.prototype, "camera", 2);
   __decorateClass([
-    property188(Laya.Scene3D)
+    property184(Laya.Scene3D)
   ], PostProcessBloom.prototype, "scene", 2);
   PostProcessBloom = __decorateClass([
-    regClass188("42295c88-4869-49a6-80ce-44c4e80ce451", "../src/3D/PostProcess/PostProcessBloom.ts")
+    regClass184("42295c88-4869-49a6-80ce-44c4e80ce451", "../src/3D/PostProcess/PostProcessBloom.ts")
   ], PostProcessBloom);
 
   // src/3D/PostProcess/PostProcessDoF.ts
-  var { regClass: regClass189, property: property189 } = Laya;
+  var { regClass: regClass185, property: property185 } = Laya;
   var PostProcessDoF = class extends BaseScript {
     constructor() {
       super();
@@ -16001,13 +15780,13 @@ void main()\r
   };
   __name(PostProcessDoF, "PostProcessDoF");
   __decorateClass([
-    property189(Laya.Camera)
+    property185(Laya.Camera)
   ], PostProcessDoF.prototype, "camera", 2);
   __decorateClass([
-    property189(Laya.Scene3D)
+    property185(Laya.Scene3D)
   ], PostProcessDoF.prototype, "scene", 2);
   PostProcessDoF = __decorateClass([
-    regClass189("ead5a66a-5863-4576-b5f0-2a010dd56bfa", "../src/3D/PostProcess/PostProcessDoF.ts")
+    regClass185("ead5a66a-5863-4576-b5f0-2a010dd56bfa", "../src/3D/PostProcess/PostProcessDoF.ts")
   ], PostProcessDoF);
 
   // src/3D/PostProcess/BlurShader/Blur.vs
@@ -16045,7 +15824,7 @@ void main()\r
   var RenderState4 = Laya.RenderState;
   var SubShader3 = Laya.SubShader;
   var VertexMesh3 = Laya.VertexMesh;
-  var { regClass: regClass190, property: property190 } = Laya;
+  var { regClass: regClass186, property: property186 } = Laya;
   var PostProcess_Blur = class extends BaseScript {
     constructor() {
       super();
@@ -16085,13 +15864,13 @@ void main()\r
   };
   __name(PostProcess_Blur, "PostProcess_Blur");
   __decorateClass([
-    property190(Laya.Camera)
+    property186(Laya.Camera)
   ], PostProcess_Blur.prototype, "camera", 2);
   __decorateClass([
-    property190(Laya.Scene3D)
+    property186(Laya.Scene3D)
   ], PostProcess_Blur.prototype, "scene", 2);
   PostProcess_Blur = __decorateClass([
-    regClass190("9eb21397-579f-4799-b104-b539e9971d86", "../src/3D/PostProcess/PostProcess_Blur.ts")
+    regClass186("9eb21397-579f-4799-b104-b539e9971d86", "../src/3D/PostProcess/PostProcess_Blur.ts")
   ], PostProcess_Blur);
   var _BlurEffect2 = class _BlurEffect2 extends PostProcessEffect {
     constructor() {
@@ -16279,7 +16058,7 @@ void main()\r
   var EdgeEffectVS_default = '#define SHADER_NAME EdgeEffectVS\r\n\r\n#include "Camera.glsl";\r\nvarying vec2 v_Texcoord0;\r\n\r\nvoid main() {\r\n	gl_Position = vec4(a_PositionTexcoord.xy, 0.0, 1.0);\r\n	v_Texcoord0 = a_PositionTexcoord.zw;\r\n	gl_Position = remapPositionZ(gl_Position);\r\n}\r\n';
 
   // src/3D/PostProcess/PostProcess_Edge/shader/EdgeEffectFS.fs
-  var EdgeEffectFS_default = '#define SHADER_NAME EdgeEffectFS\r\n#include "Color.glsl";\r\n#include "DepthNormalUtil.glsl";\r\n\r\nvarying vec2 v_Texcoord0;\r\n\r\n\r\nvec4 sampleMainTex(sampler2D tex, vec2 uv)\r\n{\r\n    vec4 mainSampler = texture2D(tex, uv);\r\n#ifdef Gamma_u_texture\r\n    mainSampler = gammaToLinear(mainSampler);\r\n#endif // Gamma_u_MainTex\r\n    return mainSampler;\r\n}\r\n\r\n#ifdef DEPTHNORMAL\r\n    void getDepthNormal(out float depth, out vec3 normal){\r\n        vec4 col = texture2D(u_DepthNormalTex, v_Texcoord0);\r\n        DecodeDepthNormal(col, depth, normal);\r\n    }\r\n\r\n    float getDepth(vec2 uv) {\r\n        float depth;\r\n        vec3 normal;\r\n        vec4 col = texture2D(u_DepthNormalTex, uv);\r\n        DecodeDepthNormal(col, depth, normal);\r\n        return depth;\r\n    }\r\n\r\n    vec3 getNormal(vec2 uv) {\r\n        float depth;\r\n        vec3 normal;\r\n        vec4 col = texture2D(u_DepthNormalTex, uv);\r\n        DecodeDepthNormal(col, depth, normal);\r\n        return normal;\r\n    }\r\n\r\n#endif\r\n\r\n#ifdef DEPTH\r\n    float getDepth(vec2 uv) {\r\n        float depth = texture2D(u_DepthTex, uv).r;\r\n        depth = Linear01Depth(depth, u_DepthBufferParams);\r\n        return depth;\r\n    }\r\n#endif\r\n\r\nvoid SobelSample(in vec2 uv,out vec3 colorG, out vec3 normalG, out vec3 depthG) {\r\n\r\n    float offsetx = u_MainTex_TexelSize.x;\r\n    float offsety = u_MainTex_TexelSize.y;\r\n    vec2 offsets[9];\r\n    offsets[0] = vec2(-offsetx,  offsety); // \u5DE6\u4E0A\r\n    offsets[1] = vec2( 0.0,    offsety); // \u6B63\u4E0A\r\n    offsets[2] = vec2( offsetx,  offsety); // \u53F3\u4E0A\r\n    offsets[3] = vec2(-offsetx,  0.0);   // \u5DE6\r\n    offsets[4] = vec2( 0.0,    0.0);   // \u4E2D\r\n    offsets[5] = vec2( offsetx,  0.0);   // \u53F3\r\n    offsets[6] = vec2(-offsetx, -offsety); // \u5DE6\u4E0B\r\n    offsets[7] = vec2( 0.0,   -offsety); // \u6B63\u4E0B\r\n    offsets[8] = vec2( offsetx, -offsety); // \u53F3\u4E0B\r\n\r\n    float Gx[9];\r\n    Gx[0] = -1.0; Gx[1] = 0.0; Gx[2] = 1.0; \r\n    Gx[3] = -2.0; Gx[4] = 0.0; Gx[5] = 2.0; \r\n    Gx[6] = -1.0; Gx[7] = 0.0; Gx[8] = 1.0; \r\n\r\n    float Gy[9];\r\n    Gy[0] = 1.0; Gy[1] = 2.0; Gy[2] = 1.0; \r\n    Gy[3] = 0.0; Gy[4] = 0.0; Gy[5] = 0.0; \r\n    Gy[6] = -1.0; Gy[7] = -2.0;Gy[8] = -1.0; \r\n\r\n    vec3 sampleTex[9];\r\n    float sampleDepth[9];\r\n    vec3 sampleNormal[9];\r\n    for (int i = 0; i < 9; i++)\r\n    {\r\n        vec2 uvOffset = uv + offsets[i];\r\n        sampleTex[i] = sampleMainTex(u_MainTex, uvOffset).rgb;\r\n        sampleDepth[i] = getDepth(uvOffset);\r\n        sampleNormal[i] = (getNormal(uvOffset) + 1.0) / 2.0;\r\n    }\r\n\r\n    vec3 colorGx = vec3(0.0);\r\n    vec3 colorGy = vec3(0.0);\r\n    float depthGx = 0.0;\r\n    float depthGy = 0.0;\r\n    vec3 normalGx = vec3(0.0);\r\n    vec3 normalGy = vec3(0.0);\r\n\r\n    for (int i = 0; i < 9; i++) {\r\n        colorGx += sampleTex[i] * Gx[i];\r\n        colorGy += sampleTex[i] * Gy[i];\r\n        depthGx += sampleDepth[i] * Gx[i];\r\n        depthGy += sampleDepth[i] * Gy[i];\r\n        normalGx += sampleNormal[i] * Gx[i];\r\n        normalGy += sampleNormal[i] * Gy[i];\r\n    }\r\n\r\n    float colDepthG = abs(depthGx) + abs(depthGy);\r\n    depthG = vec3(colDepthG);\r\n\r\n    colorG = abs(colorGx) + abs(colorGy);\r\n\r\n    normalG = abs(normalGx) + abs(normalGy);\r\n\r\n}\r\n\r\nfloat ColorGray(vec3 color) {\r\n    return (color.r + color.g + color.b) / 3.0;\r\n}\r\n\r\nvec3 getEdgeValue(float hold, vec3 valueG) {\r\n    return vec3(step(hold, ColorGray(valueG)));\r\n}\r\n\r\nvoid main() {\r\n    \r\n    vec2 uv = v_Texcoord0;\r\n\r\n    vec3 colorG, normalG, depthG;\r\n    SobelSample(uv, colorG, normalG, depthG);\r\n    vec3 edgeColor = vec3(0.2);\r\n\r\n    #if defined(DEPTHEDGE)\r\n        vec3 edgeValue = getEdgeValue(u_Depthhold, depthG);\r\n    #endif\r\n\r\n    #if defined(NORMALEDGE)\r\n        vec3 edgeValue = getEdgeValue(u_NormalHold, normalG);\r\n    #endif\r\n\r\n    #if defined(COLOREDGE)\r\n        vec3 edgeValue = getEdgeValue(u_ColorHold, colorG);\r\n    #endif\r\n\r\n    vec3 fillColor = u_EdgeColor.xyz;\r\n\r\n    #ifdef SOURCE\r\n        fillColor = texture2D(u_MainTex, uv).rgb;\r\n    #endif\r\n\r\n    vec3 finalColor = mix(fillColor, edgeColor, edgeValue);\r\n    gl_FragColor = vec4(finalColor, 1.0);\r\n	gl_FragColor = outputTransform(gl_FragColor);\r\n\r\n}';
+  var EdgeEffectFS_default = '#define SHADER_NAME EdgeEffectFS\r\n#include "Color.glsl";\r\n#include "DepthNormalUtil.glsl";\r\n\r\nvarying vec2 v_Texcoord0;\r\n\r\n\r\nvec4 sampleMainTex(sampler2D tex, vec2 uv)\r\n{\r\n    vec4 mainSampler = texture2D(tex, uv);\r\n#ifdef Gamma_u_MainTex\r\n    mainSampler = gammaToLinear(mainSampler);\r\n#endif // Gamma_u_MainTex\r\n    return mainSampler;\r\n}\r\n\r\n#ifdef DEPTHNORMAL\r\n    void getDepthNormal(out float depth, out vec3 normal){\r\n        vec4 col = texture2D(u_DepthNormalTex, v_Texcoord0);\r\n        DecodeDepthNormal(col, depth, normal);\r\n    }\r\n\r\n    float getDepth(vec2 uv) {\r\n        float depth;\r\n        vec3 normal;\r\n        vec4 col = texture2D(u_DepthNormalTex, uv);\r\n        DecodeDepthNormal(col, depth, normal);\r\n        return depth;\r\n    }\r\n\r\n    vec3 getNormal(vec2 uv) {\r\n        float depth;\r\n        vec3 normal;\r\n        vec4 col = texture2D(u_DepthNormalTex, uv);\r\n        DecodeDepthNormal(col, depth, normal);\r\n        return normal;\r\n    }\r\n\r\n#endif \r\n\r\n#ifdef DEPTH\r\n    float getDepth(vec2 uv) {\r\n        float depth = texture2D(u_DepthTex, uv).r;\r\n        depth = Linear01Depth(depth, u_DepthBufferParams);\r\n        return depth;\r\n    }\r\n#endif \r\n\r\nvoid SobelSample(in vec2 uv,out vec3 colorG, out vec3 normalG, out vec3 depthG) {\r\n\r\n    float offsetx = u_MainTex_TexelSize.x;\r\n    float offsety = u_MainTex_TexelSize.y; \r\n    vec2 offsets[9];\r\n    offsets[0] = vec2(-offsetx,  offsety); // \u5DE6\u4E0A\r\n    offsets[1] = vec2( 0.0,    offsety); // \u6B63\u4E0A\r\n    offsets[2] = vec2( offsetx,  offsety); // \u53F3\u4E0A\r\n    offsets[3] = vec2(-offsetx,  0.0);   // \u5DE6\r\n    offsets[4] = vec2( 0.0,    0.0);   // \u4E2D\r\n    offsets[5] = vec2( offsetx,  0.0);   // \u53F3\r\n    offsets[6] = vec2(-offsetx, -offsety); // \u5DE6\u4E0B\r\n    offsets[7] = vec2( 0.0,   -offsety); // \u6B63\u4E0B\r\n    offsets[8] = vec2( offsetx, -offsety); // \u53F3\u4E0B\r\n\r\n    float Gx[9];\r\n    Gx[0] = -1.0; Gx[1] = 0.0; Gx[2] = 1.0; \r\n    Gx[3] = -2.0; Gx[4] = 0.0; Gx[5] = 2.0; \r\n    Gx[6] = -1.0; Gx[7] = 0.0; Gx[8] = 1.0; \r\n\r\n    float Gy[9];\r\n    Gy[0] = 1.0; Gy[1] = 2.0; Gy[2] = 1.0; \r\n    Gy[3] = 0.0; Gy[4] = 0.0; Gy[5] = 0.0; \r\n    Gy[6] = -1.0; Gy[7] = -2.0;Gy[8] = -1.0; \r\n\r\n    vec3 sampleTex[9];\r\n    float sampleDepth[9];\r\n    vec3 sampleNormal[9];\r\n    for (int i = 0; i < 9; i++)\r\n    {\r\n        vec2 uvOffset = uv + offsets[i];\r\n        sampleTex[i] = sampleMainTex(u_MainTex, uvOffset).rgb;\r\n        sampleDepth[i] = getDepth(uvOffset);\r\n        sampleNormal[i] = (getNormal(uvOffset) + 1.0) / 2.0;\r\n    }\r\n\r\n    vec3 colorGx = vec3(0.0);\r\n    vec3 colorGy = vec3(0.0);\r\n    float depthGx = 0.0;\r\n    float depthGy = 0.0;\r\n    vec3 normalGx = vec3(0.0);\r\n    vec3 normalGy = vec3(0.0);\r\n\r\n    for (int i = 0; i < 9; i++) {\r\n        colorGx += sampleTex[i] * Gx[i];\r\n        colorGy += sampleTex[i] * Gy[i];\r\n        depthGx += sampleDepth[i] * Gx[i];\r\n        depthGy += sampleDepth[i] * Gy[i];\r\n        normalGx += sampleNormal[i] * Gx[i];\r\n        normalGy += sampleNormal[i] * Gy[i];\r\n    }\r\n\r\n    float colDepthG = abs(depthGx) + abs(depthGy);\r\n    depthG = vec3(colDepthG);\r\n\r\n    colorG = abs(colorGx) + abs(colorGy);\r\n\r\n    normalG = abs(normalGx) + abs(normalGy);\r\n\r\n}\r\n\r\nfloat ColorGray(vec3 color) {\r\n    return (color.r + color.g + color.b) / 3.0;\r\n}\r\n\r\nvec3 getEdgeValue(float hold, vec3 valueG) {\r\n    return vec3(step(hold, ColorGray(valueG)));\r\n}\r\n\r\nvoid main() {\r\n    \r\n    vec2 uv = v_Texcoord0;\r\n\r\n    vec3 colorG, normalG, depthG;\r\n    SobelSample(uv, colorG, normalG, depthG);\r\n    vec3 edgeColor = vec3(0.2);\r\n\r\n    #if defined(DEPTHEDGE)\r\n        vec3 edgeValue = getEdgeValue(u_Depthhold, depthG);\r\n    #endif\r\n\r\n    #if defined(NORMALEDGE)\r\n        vec3 edgeValue = getEdgeValue(u_NormalHold, normalG);\r\n    #endif\r\n\r\n    #if defined(COLOREDGE)\r\n        vec3 edgeValue = getEdgeValue(u_ColorHold, colorG);\r\n    #endif\r\n\r\n    vec3 fillColor = u_EdgeColor.xyz;\r\n\r\n    #ifdef SOURCE\r\n        fillColor = sampleMainTex(u_MainTex, uv).rgb;\r\n    #endif\r\n\r\n    vec3 finalColor = mix(fillColor, edgeColor, edgeValue);\r\n    gl_FragColor = vec4(finalColor, 1.0);\r\n	gl_FragColor = outputTransform(gl_FragColor);\r\n\r\n}';
 
   // src/3D/PostProcess/PostProcess_Edge.ts
   var PostProcessEffect2 = Laya.PostProcessEffect;
@@ -16294,41 +16073,41 @@ void main()\r
   var SubShader4 = Laya.SubShader;
   var VertexMesh4 = Laya.VertexMesh;
   var DirectionLight = Laya.DirectionLight;
-  var MeshSprite3D29 = Laya.MeshSprite3D;
-  var Vector360 = Laya.Vector3;
+  var MeshSprite3D28 = Laya.MeshSprite3D;
+  var Vector357 = Laya.Vector3;
   var Color21 = Laya.Color;
-  var Quaternion11 = Laya.Quaternion;
+  var Quaternion10 = Laya.Quaternion;
   var Event49 = Laya.Event;
   var HSlider2 = Laya.HSlider;
-  var PrimitiveMesh27 = Laya.PrimitiveMesh;
+  var PrimitiveMesh26 = Laya.PrimitiveMesh;
   var Button9 = Laya.Button;
   var PostProcess = Laya.PostProcess;
-  var Handler21 = Laya.Handler;
-  var { regClass: regClass191, property: property191 } = Laya;
+  var Handler20 = Laya.Handler;
+  var { regClass: regClass187, property: property187 } = Laya;
   var PostProcess_Edge = class extends BaseScript {
     constructor() {
       super();
     }
     onAwake() {
       super.base(this.camera);
-      this.camera.transform.position = new Vector360(0, 4, 10);
-      this.camera.transform.rotation = new Quaternion11(-0.2, 0, 0, 0.97);
+      this.camera.transform.position = new Vector357(0, 4, 10);
+      this.camera.transform.rotation = new Quaternion10(-0.2, 0, 0, 0.97);
       this.addLight();
       Laya.loader.load("resources/res/threeDimen/skinModel/dude/dude.lh").then((res) => {
-        let sphere = new MeshSprite3D29(PrimitiveMesh27.createSphere(1), "Sphere");
+        let sphere = new MeshSprite3D28(PrimitiveMesh26.createSphere(1), "Sphere");
         this.scene.addChild(sphere);
-        sphere.transform.position = new Vector360(0, 1, 0);
-        let plane = new MeshSprite3D29(PrimitiveMesh27.createPlane(), "Plane");
+        sphere.transform.position = new Vector357(0, 1, 0);
+        let plane = new MeshSprite3D28(PrimitiveMesh26.createPlane(), "Plane");
         this.scene.addChild(plane);
-        plane.transform.position = new Vector360(0, -0.5, 0);
-        let cube = new MeshSprite3D29(PrimitiveMesh27.createBox(1, 1, 1), "Cube");
+        plane.transform.position = new Vector357(0, -0.5, 0);
+        let cube = new MeshSprite3D28(PrimitiveMesh26.createBox(1, 1, 1), "Cube");
         this.scene.addChild(cube);
-        cube.transform.position = new Vector360(0, 3, 0);
+        cube.transform.position = new Vector357(0, 3, 0);
         this.camera.depthTextureMode |= DepthTextureMode2.DepthNormals;
         let dude = res.create();
         this.scene.addChild(dude);
-        dude.transform.position = new Vector360(1.5, 0, 0);
-        dude.transform.rotationEuler = new Vector360(0, 180, 0);
+        dude.transform.position = new Vector357(1.5, 0, 0);
+        dude.transform.rotationEuler = new Vector357(0, 180, 0);
         let postProcess = new PostProcess();
         this.camera.postProcess = postProcess;
         let edgeEffect = new EdgeEffect();
@@ -16337,11 +16116,11 @@ void main()\r
       });
     }
     addLight() {
-      let dirLightDirections = [new Vector360(-1, -1, -1), new Vector360(1, -1, -1)];
+      let dirLightDirections = [new Vector357(-1, -1, -1), new Vector357(1, -1, -1)];
       let lightColor = new Color21(0.6, 0.6, 0.6);
       for (let index = 0; index < dirLightDirections.length; index++) {
         let dir = dirLightDirections[index];
-        Vector360.normalize(dir, dirLightDirections[index]);
+        Vector357.normalize(dir, dirLightDirections[index]);
         let dirLight = new DirectionLight();
         this.scene.addChild(dirLight);
         dirLight.transform.worldMatrix.setForward(dirLightDirections[index]);
@@ -16406,20 +16185,20 @@ void main()\r
       slider.max = max;
       slider.value = value;
       slider.tick = tick;
-      slider.changeHandler = Handler21.create(this, changeFunc, [], false);
+      slider.changeHandler = Handler20.create(this, changeFunc, [], false);
       slider.visible = false;
       return slider;
     }
   };
   __name(PostProcess_Edge, "PostProcess_Edge");
   __decorateClass([
-    property191(Laya.Camera)
+    property187(Laya.Camera)
   ], PostProcess_Edge.prototype, "camera", 2);
   __decorateClass([
-    property191(Laya.Scene3D)
+    property187(Laya.Scene3D)
   ], PostProcess_Edge.prototype, "scene", 2);
   PostProcess_Edge = __decorateClass([
-    regClass191("f610bff8-ef8b-40b7-bf5d-5419c36a45cb", "../src/3D/PostProcess/PostProcess_Edge.ts")
+    regClass187("f610bff8-ef8b-40b7-bf5d-5419c36a45cb", "../src/3D/PostProcess/PostProcess_Edge.ts")
   ], PostProcess_Edge);
   var EdgeMode = /* @__PURE__ */ ((EdgeMode2) => {
     EdgeMode2[EdgeMode2["ColorEdge"] = 0] = "ColorEdge";
@@ -16439,7 +16218,7 @@ void main()\r
         _EdgeEffect.EdgeEffectShaderInit();
       }
       this._shader = Shader3D5.find("PostProcessEdge");
-      this.edgeColor = new Vector360(0, 0, 0);
+      this.edgeColor = new Vector357(0, 0, 0);
       this.colorHold = 0.7;
       this.normalHold = 0.7;
       this.depthHold = 0.7;
@@ -16571,8 +16350,436 @@ void main()\r
   _EdgeEffect._isShaderInit = false;
   var EdgeEffect = _EdgeEffect;
 
-  // src/3D/Script/ScriptDemo.ts
+  // src/3D/Resource/GarbageCollection.ts
+  var Scene3D2 = Laya.Scene3D;
+  var Handler21 = Laya.Handler;
+  var Resource = Laya.Resource;
+  var { regClass: regClass188, property: property188 } = Laya;
+  var GarbageCollection = class extends BaseScript {
+    constructor() {
+      super();
+    }
+    onAwake() {
+      super.base(this.camera);
+      Scene3D2.load("resources/res/threeDimen/scene/LayaScene_dudeScene/Conventional/dudeSceneNoCamera.ls", Handler21.create(this, (scene) => {
+        this._scene = this.scene.addChildAt(scene, 0);
+        super.addBottomButton(["\u91CA\u653E\u663E\u5B58", "\u52A0\u8F7D\u573A\u666F"], this, [this.garbageCollection, this.loadScene]);
+      }));
+    }
+    loadScene() {
+      Laya.loader.load("resources/res/threeDimen/scene/LayaScene_dudeScene/Conventional/dudeSceneNoCamera.ls").then((res) => {
+        let scene = res.create();
+        let scene3D = scene.scene3D;
+        this._scene = this.scene.addChildAt(scene3D, 0);
+      });
+    }
+    garbageCollection() {
+      if (this._scene) {
+        this._scene.destroy();
+        this._scene = null;
+        Resource.destroyUnusedResources();
+      }
+    }
+  };
+  __name(GarbageCollection, "GarbageCollection");
+  __decorateClass([
+    property188(Laya.Camera)
+  ], GarbageCollection.prototype, "camera", 2);
+  __decorateClass([
+    property188(Laya.Scene3D)
+  ], GarbageCollection.prototype, "scene", 2);
+  GarbageCollection = __decorateClass([
+    regClass188("dfc7da98-20e0-474c-a6df-4fbab1af1a8f", "../src/3D/Resource/GarbageCollection.ts")
+  ], GarbageCollection);
+
+  // src/3D/Resource/LoadFbxRosource.ts
+  var Vector358 = Laya.Vector3;
+  var Loader18 = Laya.Loader;
+  var { regClass: regClass189, property: property189 } = Laya;
+  var LoadFbxRosource = class extends BaseScript {
+    constructor() {
+      super();
+    }
+    onAwake() {
+      super.base(this.camera);
+      this.camera.transform.position = new Vector358(0.5, 1.2, 4);
+      var Resource2 = [
+        //可以直接加载已经在IDE里制作好的lh，其中材质已经创建好
+        { url: "resources/res/threeDimen/fbx/Danding.lh", type: Loader18.HIERARCHY },
+        //可以直接加载FBX文件，并配置材质使用的shader和纹理贴图
+        { url: "resources/res/threeDimen/fbx/Stand.FBX", type: Loader18.HIERARCHY },
+        { url: "resources/res/threeDimen/fbx/Material.lmat", type: Loader18.MATERIAL },
+        { url: "resources/res/threeDimen/fbx/LayaMonkey.lmat", type: Loader18.MATERIAL }
+      ];
+      Laya.loader.load(Resource2).then((res) => {
+        this.onFBXComplete(res);
+        Laya.loader.load("resources/res/threeDimen/fbx/LayaMonkey.FBX", Loader18.HIERARCHY).then((fbx) => {
+          var LayaMonkey = fbx.create();
+          this.scene.addChild(LayaMonkey);
+          LayaMonkey.transform.position = new Vector358(2.5, 0, 0);
+          LayaMonkey.transform.setWorldLossyScale(new Vector358(0.6, 0.6, 0.6));
+          LayaMonkey.getChildAt(0).getComponent(Laya.MeshRenderer).material = res[3];
+        });
+      });
+    }
+    onFBXComplete(res) {
+      let Danding = res[0].create();
+      this.scene.addChild(Danding);
+      Danding.transform.position = new Vector358(-2, 0, 0);
+      var Stand = res[1].create();
+      this.scene.addChild(Stand);
+      Stand.transform.position = new Vector358(0, 0, 0);
+      Stand.getChildAt(0).getComponent(Laya.MeshRenderer).material = res[2];
+    }
+  };
+  __name(LoadFbxRosource, "LoadFbxRosource");
+  __decorateClass([
+    property189(Laya.Camera)
+  ], LoadFbxRosource.prototype, "camera", 2);
+  __decorateClass([
+    property189(Laya.Scene3D)
+  ], LoadFbxRosource.prototype, "scene", 2);
+  LoadFbxRosource = __decorateClass([
+    regClass189("97f3fc07-f23a-40f7-9b00-346bbca95ac5", "../src/3D/Resource/LoadFbxRosource.ts")
+  ], LoadFbxRosource);
+
+  // src/3D/Resource/LoadGltfRosource.ts
+  var Vector359 = Laya.Vector3;
+  var Loader19 = Laya.Loader;
+  var { regClass: regClass190, property: property190 } = Laya;
+  var LoadGltfRosource = class extends BaseScript {
+    constructor() {
+      super();
+    }
+    onAwake() {
+      super.base(this.camera);
+      this.camera.transform.position = new Vector359(0.5, 1.2, 4);
+      var gltfResource = [
+        { url: "resources/res/threeDimen/gltf/RiggedFigure/RiggedFigure.gltf", type: Loader19.HIERARCHY },
+        { url: "resources/res/threeDimen/gltf/Duck/Duck.lh", type: Loader19.HIERARCHY }
+      ];
+      Laya.loader.load(gltfResource).then((res) => {
+        this.onGLTFComplete(res);
+      });
+      Laya.loader.load("resources/res/threeDimen/gltf/AnimatedCube/AnimatedCube.gltf", Loader19.HIERARCHY).then((res) => {
+        var cube = res.create();
+        this.scene.addChild(cube);
+        cube.transform.position = new Vector359(2.5, 0.6, 0);
+        cube.transform.setWorldLossyScale(new Vector359(0.6, 0.6, 0.6));
+      });
+    }
+    onGLTFComplete(res) {
+      let riggedFigure = res[0].create();
+      this.scene.addChild(riggedFigure);
+      riggedFigure.transform.position = new Vector359(-2, 0, 0);
+      var duck = res[1].create();
+      this.scene.addChild(duck);
+      duck.transform.position = new Vector359(0, 0, 0);
+    }
+  };
+  __name(LoadGltfRosource, "LoadGltfRosource");
+  __decorateClass([
+    property190(Laya.Camera)
+  ], LoadGltfRosource.prototype, "camera", 2);
+  __decorateClass([
+    property190(Laya.Scene3D)
+  ], LoadGltfRosource.prototype, "scene", 2);
+  LoadGltfRosource = __decorateClass([
+    regClass190("94f58eab-aae6-4322-94c4-dd6654f2317a", "../src/3D/Resource/LoadGltfRosource.ts")
+  ], LoadGltfRosource);
+
+  // src/3D/Resource/LoadResourceDemo.ts
+  var MeshSprite3D29 = Laya.MeshSprite3D;
+  var Vector360 = Laya.Vector3;
+  var BlinnPhongMaterial20 = Laya.BlinnPhongMaterial;
+  var Quaternion11 = Laya.Quaternion;
+  var PrimitiveMesh27 = Laya.PrimitiveMesh;
+  var SkyBox3 = Laya.SkyBox;
+  var { regClass: regClass191, property: property191 } = Laya;
+  var LoadResourceDemo = class extends BaseScript {
+    constructor() {
+      super();
+    }
+    onAwake() {
+      super.base(this.camera);
+      let resArr = [
+        //加载不同类型的3D资源
+        { url: "resources/res/threeDimen/skyBox/skyBox2/skyBox2.lmat", type: Laya.Loader.MATERIAL },
+        { url: "resources/res/threeDimen/texture/earth.png", type: Laya.Loader.TEXTURE2D },
+        { url: "resources/res/threeDimen/skinModel/LayaMonkey/Assets/LayaMonkey/LayaMonkey-LayaMonkey.lm", type: Laya.Loader.MESH },
+        { url: "resources/res/threeDimen/skinModel/LayaMonkey/LayaMonkey.lh", type: Laya.Loader.HIERARCHY }
+      ];
+      Laya.loader.load(resArr, null, Laya.Handler.create(this, this.onLoading, null, false)).then((res) => {
+        this.loadingBar.visible = false;
+        this.onComplete(res);
+      });
+      Laya.loader.on(Laya.Event.ERROR, this, this.onError);
+    }
+    //加载资源
+    onComplete(res) {
+      var skyRenderer = this.camera.skyRenderer;
+      skyRenderer.mesh = SkyBox3.instance;
+      skyRenderer.material = res[0];
+      var earth1 = this.scene.addChild(new MeshSprite3D29(PrimitiveMesh27.createSphere(1)));
+      earth1.transform.position = new Laya.Vector3(0, 1, 0);
+      var earthMat = new BlinnPhongMaterial20();
+      earthMat.albedoTexture = res[1];
+      earthMat.albedoIntensity = 1;
+      earth1.meshRenderer.material = earthMat;
+      var layaMonkey = this.scene.addChild(new MeshSprite3D29(res[2]));
+      var layaMonkeyTrans = layaMonkey.transform;
+      var layaMonkeyScale = layaMonkeyTrans.localScale;
+      layaMonkeyScale.setValue(0.5, 0.5, 0.5);
+      layaMonkeyTrans.localScale = layaMonkeyScale;
+      layaMonkey.transform.rotation = new Quaternion11(0.7071068, 0, 0, -0.7071067);
+      layaMonkey.transform.translate(new Vector360(-2, 0, 0));
+      var layaMonkey2 = this.scene.addChild(res[3].create());
+      var layaMonkey2Trans = layaMonkey2.transform;
+      var layaMonkey2Scale = layaMonkey2Trans.localScale;
+      layaMonkey2Scale.setValue(5, 5, 5);
+      layaMonkey2Trans.localScale = layaMonkey2Scale;
+      layaMonkey2Trans.translate(new Vector360(2, 0, 0));
+    }
+    /**
+    * 当报错时打印错误
+    */
+    onError(err) {
+      console.log("\u52A0\u8F7D\u5931\u8D25: " + err);
+    }
+    /**
+     * 加载时侦听
+     */
+    onLoading(progress) {
+      if (progress > 0.92)
+        this.loadingBar.value = 0.95;
+      else {
+        this.loadingBar.value = progress;
+        console.log("\u52A0\u8F7D\u8FDB\u5EA6: " + progress, this.loadingBar.value);
+      }
+    }
+  };
+  __name(LoadResourceDemo, "LoadResourceDemo");
+  __decorateClass([
+    property191(Laya.Camera)
+  ], LoadResourceDemo.prototype, "camera", 2);
+  __decorateClass([
+    property191(Laya.Scene3D)
+  ], LoadResourceDemo.prototype, "scene", 2);
+  __decorateClass([
+    property191(Laya.ProgressBar)
+  ], LoadResourceDemo.prototype, "loadingBar", 2);
+  LoadResourceDemo = __decorateClass([
+    regClass191("dcc04071-d471-438c-933e-bfc361ac03a4", "../src/3D/Resource/LoadResourceDemo.ts")
+  ], LoadResourceDemo);
+
+  // src/3D/Scene3D/EnvironmentalReflection.ts
+  var MeshSprite3D30 = Laya.MeshSprite3D;
+  var Vector361 = Laya.Vector3;
+  var AmbientMode = Laya.AmbientMode;
+  var CameraClearFlags10 = Laya.CameraClearFlags;
+  var SkyBox4 = Laya.SkyBox;
+  var PBRStandardMaterial5 = Laya.PBRStandardMaterial;
   var { regClass: regClass192, property: property192 } = Laya;
+  var EnvironmentalReflection = class extends BaseScript {
+    constructor() {
+      super();
+      this.teapot = null;
+    }
+    onAwake() {
+      super.base(this.camera);
+      this.scene.ambientMode = AmbientMode.SphericalHarmonics;
+      this.scene.reflectionIntensity = 1;
+      this.camera.transform.translate(new Vector361(0, 2, 3));
+      this.camera.transform.rotate(new Vector361(-15, 0, 0), true, false);
+      this.camera.clearFlag = CameraClearFlags10.Sky;
+      Laya.loader.load("resources/res/threeDimen/skyBox/DawnDusk/Skybox.lmat").then((res) => {
+        var skyRenderer = this.scene.skyRenderer;
+        skyRenderer.mesh = SkyBox4.instance;
+        skyRenderer.material = res;
+        res.exposure = 0.6 + 1;
+      });
+      Laya.loader.load("resources/res/threeDimen/staticModel/teapot/teapot-Teapot001.lm").then((res) => {
+        this.teapot = this.scene.addChild(new MeshSprite3D30(res));
+        this.teapot.transform.position = new Vector361(0, 1.75, 2);
+        this.teapot.transform.setWorldLossyScale(new Vector361(5, 5, 5));
+        this.teapot.transform.rotate(new Vector361(-90, 0, 0), false, false);
+        var pbrMat = new PBRStandardMaterial5();
+        pbrMat.metallic = 1;
+        this.teapot.meshRenderer.material = pbrMat;
+      });
+      this.loadEnvironmentalReflection();
+    }
+    removeEnvironmentalReflection() {
+      this.scene.sceneReflectionProb.iblTex = null;
+    }
+    loadEnvironmentalReflection() {
+      Laya.loader.load("resources/scene/3D/Scene3D/EnvironmentalReflection/EnvironmentalReflection.ktx").then((res) => {
+        this.scene.sceneReflectionProb.iblTex = res;
+      });
+    }
+  };
+  __name(EnvironmentalReflection, "EnvironmentalReflection");
+  __decorateClass([
+    property192(Laya.Camera)
+  ], EnvironmentalReflection.prototype, "camera", 2);
+  __decorateClass([
+    property192(Laya.Scene3D)
+  ], EnvironmentalReflection.prototype, "scene", 2);
+  EnvironmentalReflection = __decorateClass([
+    regClass192("d610a4a9-c75b-463a-a39a-848d8fa1ff89", "../src/3D/Scene3D/EnvironmentalReflection.ts")
+  ], EnvironmentalReflection);
+
+  // src/3D/Scene3D/GriendSkyAmbientDemo.ts
+  var Sprite3D14 = Laya.Sprite3D;
+  var MeshSprite3D31 = Laya.MeshSprite3D;
+  var Vector362 = Laya.Vector3;
+  var PrimitiveMesh28 = Laya.PrimitiveMesh;
+  var AmbientMode2 = Laya.AmbientMode;
+  var Color22 = Laya.Color;
+  var PBRStandardMaterial6 = Laya.PBRStandardMaterial;
+  var { regClass: regClass193, property: property193 } = Laya;
+  var GriendSkyAmbientDemo = class extends BaseScript {
+    constructor() {
+      super();
+    }
+    onAwake() {
+      super.base(this.camera);
+      this.camera.transform.position = new Vector362(0, 2, 3);
+      this.camera.transform.rotate(new Vector362(-15, 0, 0), true, false);
+      this.scene.ambientIntensity = 0.5;
+      this.sprite3D = this.scene.addChild(new Sprite3D14());
+      var mat = new PBRStandardMaterial6();
+      var box = this.sprite3D.addChild(new MeshSprite3D31(PrimitiveMesh28.createBox(0.5, 0.5, 0.5)));
+      box.transform.position = new Vector362(2, 0.25, 0.6);
+      box.transform.rotate(new Vector362(0, 45, 0), false, false);
+      box.meshRenderer.material = mat;
+      var sphere = this.sprite3D.addChild(new MeshSprite3D31(PrimitiveMesh28.createSphere(0.25, 20, 20)));
+      sphere.transform.position = new Vector362(1, 0.25, 0.6);
+      sphere.meshRenderer.material = mat;
+      var cylinder = this.sprite3D.addChild(new MeshSprite3D31(PrimitiveMesh28.createCylinder(0.25, 1, 20)));
+      cylinder.transform.position = new Vector362(0, 0.5, 0.6);
+      cylinder.meshRenderer.material = mat;
+      var capsule = this.sprite3D.addChild(new MeshSprite3D31(PrimitiveMesh28.createCapsule(0.25, 1, 10, 20)));
+      capsule.transform.position = new Vector362(-1, 0.5, 0.6);
+      capsule.meshRenderer.material = mat;
+      var cone = this.sprite3D.addChild(new MeshSprite3D31(PrimitiveMesh28.createCone(0.25, 0.75)));
+      cone.transform.position = new Vector362(-2, 0.375, 0.6);
+      cone.meshRenderer.material = mat;
+      super.addBottomButton(["\u56FA\u5B9A\u989C\u8272", "\u7403\u8C10\u5149\u7167"], this, [this.setSolidColor, this.setSphericalHarmonics]);
+    }
+    setSphericalHarmonics() {
+      this.scene.ambientMode = AmbientMode2.SphericalHarmonics;
+    }
+    setSolidColor() {
+      this.scene.ambientMode = AmbientMode2.SolidColor;
+      this.scene.ambientColor = new Color22(0.56, 0.89, 1);
+    }
+  };
+  __name(GriendSkyAmbientDemo, "GriendSkyAmbientDemo");
+  __decorateClass([
+    property193(Laya.Camera)
+  ], GriendSkyAmbientDemo.prototype, "camera", 2);
+  __decorateClass([
+    property193(Laya.Scene3D)
+  ], GriendSkyAmbientDemo.prototype, "scene", 2);
+  GriendSkyAmbientDemo = __decorateClass([
+    regClass193("a938acc9-7759-4f01-b580-ebd51eacad0b", "../src/3D/Scene3D/GriendSkyAmbientDemo.ts")
+  ], GriendSkyAmbientDemo);
+
+  // src/3D/Scene3D/LightmapScene.ts
+  var Lightmap = Laya.Lightmap;
+  var { regClass: regClass194, property: property194 } = Laya;
+  var LightmapScene = class extends BaseScript {
+    constructor() {
+      super();
+    }
+    //请进入场景查看光照贴图的设置 resources\res\threeDimen\LightmapScene\Scene.ls
+    //使用光照贴图，前提是在场景中先创建灯光设置，烘焙出光照贴图
+    onAwake() {
+      super.base(this.camera);
+      this.lightMaps = this.scene.lightmaps;
+      super.addBottomButton(["\u53D6\u6D88\u5149\u7167\u8D34\u56FE", "\u663E\u793A\u5149\u7167\u8D34\u56FE", "\u52A0\u8F7D\u5149\u7167\u8D34\u56FE"], this, [this.setLightmapOff, this.setLightmapOn, this.loadLightmap]);
+    }
+    setLightmapOff() {
+      this.scene.lightmaps = null;
+    }
+    setLightmapOn() {
+      this.scene.lightmaps = this.lightMaps;
+    }
+    loadLightmap() {
+      this.scene.lightmaps = null;
+      let newLightmap = new Lightmap();
+      Laya.loader.load("resources/res/threeDimen/LightmapScene/Scene/diffuse0.png").then((res) => {
+        newLightmap.lightmapColor = res;
+        newLightmap.lightmapDirection = null;
+      });
+      let newLightmaps = [];
+      newLightmaps.push(newLightmap);
+      this.scene.lightmaps = newLightmaps;
+    }
+  };
+  __name(LightmapScene, "LightmapScene");
+  __decorateClass([
+    property194(Laya.Camera)
+  ], LightmapScene.prototype, "camera", 2);
+  __decorateClass([
+    property194(Laya.Scene3D)
+  ], LightmapScene.prototype, "scene", 2);
+  LightmapScene = __decorateClass([
+    regClass194("405e2005-76bf-4c43-82c8-d1af69cf3061", "../src/3D/Scene3D/LightmapScene.ts")
+  ], LightmapScene);
+
+  // src/3D/Scene3D/SceneLoad1.ts
+  var { regClass: regClass195, property: property195 } = Laya;
+  var SceneLoad1 = class extends BaseScript {
+    constructor() {
+      super();
+    }
+    onAwake() {
+      super.base(this.camera);
+      Laya.loader.load("resources/res/threeDimen/scene/LayaScene_dudeScene/Conventional/dudeSceneNoCamera.ls", null, Laya.Handler.create(this, this.onLoading, null, false)).then((res) => {
+        this.loadingBar.visible = false;
+        let scene = res.create();
+        let scene3D = scene.scene3D;
+        this.scene.addChildAt(scene3D, 0);
+      });
+      Laya.loader.on(Laya.Event.ERROR, this, this.onError);
+    }
+    /**
+    * 当报错时打印错误
+    * @param err 报错信息
+    */
+    onError(err) {
+      console.log("\u52A0\u8F7D\u5931\u8D25: " + err);
+    }
+    /**
+     * 加载时侦听
+     */
+    onLoading(progress) {
+      if (progress > 0.92)
+        this.loadingBar.value = 0.95;
+      else {
+        this.loadingBar.value = progress;
+        console.log("\u52A0\u8F7D\u8FDB\u5EA6: " + progress, this.loadingBar.value);
+      }
+    }
+  };
+  __name(SceneLoad1, "SceneLoad1");
+  __decorateClass([
+    property195(Laya.Camera)
+  ], SceneLoad1.prototype, "camera", 2);
+  __decorateClass([
+    property195(Laya.Scene3D)
+  ], SceneLoad1.prototype, "scene", 2);
+  __decorateClass([
+    property195(Laya.ProgressBar)
+  ], SceneLoad1.prototype, "loadingBar", 2);
+  SceneLoad1 = __decorateClass([
+    regClass195("c6173b46-e841-4b3b-a762-0b55d1184ee8", "../src/3D/Scene3D/SceneLoad1.ts")
+  ], SceneLoad1);
+
+  // src/3D/Script/ScriptDemo.ts
+  var { regClass: regClass196, property: property196 } = Laya;
   var ScriptDemo = class extends BaseScript {
     constructor() {
       super();
@@ -16597,13 +16804,13 @@ void main()\r
   };
   __name(ScriptDemo, "ScriptDemo");
   __decorateClass([
-    property192(Laya.Camera)
+    property196(Laya.Camera)
   ], ScriptDemo.prototype, "camera", 2);
   __decorateClass([
-    property192(Laya.Scene3D)
+    property196(Laya.Scene3D)
   ], ScriptDemo.prototype, "scene", 2);
   ScriptDemo = __decorateClass([
-    regClass192("a9f82f8b-3ad9-4e61-9728-ecb2a33b85b4", "../src/3D/Script/ScriptDemo.ts")
+    regClass196("a9f82f8b-3ad9-4e61-9728-ecb2a33b85b4", "../src/3D/Script/ScriptDemo.ts")
   ], ScriptDemo);
   var _BoxControlScript = class _BoxControlScript extends Laya.Script3D {
     constructor() {
@@ -16634,15 +16841,15 @@ void main()\r
   // src/3D/Shader/Shader_GlowingEdge.ts
   var DirectionLight2 = Laya.DirectionLight;
   var Material5 = Laya.Material;
-  var MeshSprite3D30 = Laya.MeshSprite3D;
-  var Vector361 = Laya.Vector3;
-  var PrimitiveMesh28 = Laya.PrimitiveMesh;
+  var MeshSprite3D32 = Laya.MeshSprite3D;
+  var Vector363 = Laya.Vector3;
+  var PrimitiveMesh29 = Laya.PrimitiveMesh;
   var Shader3D6 = Laya.Shader3D;
-  var { regClass: regClass193, property: property193 } = Laya;
+  var { regClass: regClass197, property: property197 } = Laya;
   var Shader_GlowingEdge = class extends BaseScript {
     constructor() {
       super();
-      this.rotation = new Vector361(0, 0.01, 0);
+      this.rotation = new Vector363(0, 0.01, 0);
     }
     onAwake() {
       super.base(this.camera);
@@ -16662,8 +16869,8 @@ void main()\r
     onComplete(res) {
       var scene = this.scene;
       var camera = this.camera;
-      camera.transform.position = new Vector361(0, 1, 1);
-      camera.transform.rotate(new Vector361(-15, 0, 0), true, false);
+      camera.transform.position = new Vector363(0, 1, 1);
+      camera.transform.rotate(new Vector363(-15, 0, 0), true, false);
       var directionLight = new DirectionLight2();
       scene.addChild(directionLight);
       directionLight.color = new Laya.Color(1, 1, 1, 1);
@@ -16675,30 +16882,30 @@ void main()\r
       });
       var glowingEdgeMaterial1 = new GlowingEdgeMaterial();
       glowingEdgeMaterial1.diffuseTexture = res[1];
-      glowingEdgeMaterial1.marginalColor = new Vector361(1, 0.7, 0);
+      glowingEdgeMaterial1.marginalColor = new Vector363(1, 0.7, 0);
       var glowingEdgeMaterial2 = new GlowingEdgeMaterial();
       glowingEdgeMaterial2.diffuseTexture = res[2];
-      glowingEdgeMaterial2.marginalColor = new Vector361(1, 0.7, 0);
+      glowingEdgeMaterial2.marginalColor = new Vector363(1, 0.7, 0);
       var glowingEdgeMaterial3 = new GlowingEdgeMaterial();
       glowingEdgeMaterial3.diffuseTexture = res[3];
-      glowingEdgeMaterial3.marginalColor = new Vector361(1, 0.7, 0);
+      glowingEdgeMaterial3.marginalColor = new Vector363(1, 0.7, 0);
       var glowingEdgeMaterial4 = new GlowingEdgeMaterial();
       glowingEdgeMaterial4.diffuseTexture = res[4];
-      glowingEdgeMaterial4.marginalColor = new Vector361(1, 0.7, 0);
+      glowingEdgeMaterial4.marginalColor = new Vector363(1, 0.7, 0);
       var baseMaterials = [];
       baseMaterials[0] = glowingEdgeMaterial1;
       baseMaterials[1] = glowingEdgeMaterial2;
       baseMaterials[2] = glowingEdgeMaterial3;
       baseMaterials[3] = glowingEdgeMaterial4;
       dude.getChildAt(0).getChildAt(0).skinnedMeshRenderer.sharedMaterials = baseMaterials;
-      dude.transform.position = new Vector361(0, 0.5, 0);
-      dude.transform.setWorldLossyScale(new Vector361(0.2, 0.2, 0.2));
-      dude.transform.rotate(new Vector361(0, 180, 0), false, false);
-      var earth = scene.addChild(new MeshSprite3D30(PrimitiveMesh28.createSphere(0.5, 128, 128)));
+      dude.transform.position = new Vector363(0, 0.5, 0);
+      dude.transform.setWorldLossyScale(new Vector363(0.2, 0.2, 0.2));
+      dude.transform.rotate(new Vector363(0, 180, 0), false, false);
+      var earth = scene.addChild(new MeshSprite3D32(PrimitiveMesh29.createSphere(0.5, 128, 128)));
       var glowingEdgeMaterial = new GlowingEdgeMaterial();
       glowingEdgeMaterial.diffuseTexture = res[5];
       earth.meshRenderer.sharedMaterial = glowingEdgeMaterial;
-      glowingEdgeMaterial.marginalColor = new Vector361(0, 0.3, 1);
+      glowingEdgeMaterial.marginalColor = new Vector363(0, 0.3, 1);
       Laya.timer.frameLoop(1, this, () => {
         earth.transform.rotate(this.rotation, true);
       });
@@ -16715,13 +16922,13 @@ void main()\r
   };
   __name(Shader_GlowingEdge, "Shader_GlowingEdge");
   __decorateClass([
-    property193(Laya.Camera)
+    property197(Laya.Camera)
   ], Shader_GlowingEdge.prototype, "camera", 2);
   __decorateClass([
-    property193(Laya.Scene3D)
+    property197(Laya.Scene3D)
   ], Shader_GlowingEdge.prototype, "scene", 2);
   Shader_GlowingEdge = __decorateClass([
-    regClass193("e882ec65-5502-4ad4-ac29-9d77e3d022b7", "../src/3D/Shader/Shader_GlowingEdge.ts")
+    regClass197("e882ec65-5502-4ad4-ac29-9d77e3d022b7", "../src/3D/Shader/Shader_GlowingEdge.ts")
   ], Shader_GlowingEdge);
   var _GlowingEdgeMaterial = class _GlowingEdgeMaterial extends Material5 {
     constructor() {
@@ -16763,31 +16970,31 @@ void main()\r
   var GlowingEdgeMaterial = _GlowingEdgeMaterial;
 
   // src/3D/Shader/Shader_MultiplePassOutline.ts
-  var MeshSprite3D31 = Laya.MeshSprite3D;
-  var Vector362 = Laya.Vector3;
+  var MeshSprite3D33 = Laya.MeshSprite3D;
+  var Vector364 = Laya.Vector3;
   var Material6 = Laya.Material;
   var Shader3D7 = Laya.Shader3D;
-  var Color22 = Laya.Color;
+  var Color23 = Laya.Color;
   var ShaderDataType5 = Laya.ShaderDataType;
   var SubShader5 = Laya.SubShader;
   var RenderState5 = Laya.RenderState;
-  var { regClass: regClass194, property: property194 } = Laya;
+  var { regClass: regClass198, property: property198 } = Laya;
   var Shader_MultiplePassOutline = class extends BaseScript {
     constructor() {
       super();
-      this.rotation = new Vector362(0, 0.01, 0);
+      this.rotation = new Vector364(0, 0.01, 0);
     }
     onAwake() {
       super.base(this.camera);
       MultiplePassOutlineMaterial.initShader();
       var scene = this.scene;
       var camera = this.camera;
-      camera.transform.position = new Vector362(0, 1, 1.5);
-      camera.transform.rotate(new Vector362(-15, 0, 0), true, false);
+      camera.transform.position = new Vector364(0, 1, 1.5);
+      camera.transform.rotate(new Vector364(-15, 0, 0), true, false);
       this.directionLight.getComponent(Laya.DirectionLightCom).color = new Laya.Color(1, 1, 1, 1);
       Laya.loader.load("resources/res/threeDimen/skinModel/LayaMonkey/Assets/LayaMonkey/LayaMonkey-LayaMonkey.lm").then((mesh) => {
-        var layaMonkey = scene.addChild(new MeshSprite3D31(mesh));
-        layaMonkey.transform.localScale = new Vector362(0.3, 0.3, 0.3);
+        var layaMonkey = scene.addChild(new MeshSprite3D33(mesh));
+        layaMonkey.transform.localScale = new Vector364(0.3, 0.3, 0.3);
         layaMonkey.transform.rotation = new Laya.Quaternion(0.7071068, 0, 0, -0.7071067);
         var customMaterial = new MultiplePassOutlineMaterial();
         layaMonkey.meshRenderer.sharedMaterial = customMaterial;
@@ -16802,16 +17009,16 @@ void main()\r
   };
   __name(Shader_MultiplePassOutline, "Shader_MultiplePassOutline");
   __decorateClass([
-    property194(Laya.Camera)
+    property198(Laya.Camera)
   ], Shader_MultiplePassOutline.prototype, "camera", 2);
   __decorateClass([
-    property194(Laya.Scene3D)
+    property198(Laya.Scene3D)
   ], Shader_MultiplePassOutline.prototype, "scene", 2);
   __decorateClass([
-    property194(Laya.Sprite3D)
+    property198(Laya.Sprite3D)
   ], Shader_MultiplePassOutline.prototype, "directionLight", 2);
   Shader_MultiplePassOutline = __decorateClass([
-    regClass194("26062f24-2085-4285-a5ab-14930e991ee7", "../src/3D/Shader/Shader_MultiplePassOutline.ts")
+    regClass198("26062f24-2085-4285-a5ab-14930e991ee7", "../src/3D/Shader/Shader_MultiplePassOutline.ts")
   ], Shader_MultiplePassOutline);
   var _MultiplePassOutlineMaterial = class _MultiplePassOutlineMaterial extends Material6 {
     /**
@@ -16886,34 +17093,34 @@ void main()\r
       this.setShaderName("MultiplePassOutlineShader");
       this.setFloatByIndex(_MultiplePassOutlineMaterial.OUTLINEWIDTH, 0.01581197);
       this.setFloatByIndex(_MultiplePassOutlineMaterial.OUTLINELIGHTNESS, 1);
-      this.setColorByIndex(_MultiplePassOutlineMaterial.OUTLINECOLOR, new Color22(1, 1, 1, 0));
+      this.setColorByIndex(_MultiplePassOutlineMaterial.OUTLINECOLOR, new Color23(1, 1, 1, 0));
     }
   };
   __name(_MultiplePassOutlineMaterial, "MultiplePassOutlineMaterial");
   var MultiplePassOutlineMaterial = _MultiplePassOutlineMaterial;
 
   // src/3D/Shader/Shader_Simple.ts
-  var MeshSprite3D32 = Laya.MeshSprite3D;
-  var Vector363 = Laya.Vector3;
+  var MeshSprite3D34 = Laya.MeshSprite3D;
+  var Vector365 = Laya.Vector3;
   var Quaternion12 = Laya.Quaternion;
   var SubShader6 = Laya.SubShader;
   var MeshRenderer8 = Laya.MeshRenderer;
   var Shader3D8 = Laya.Shader3D;
   var Material7 = Laya.Material;
   var MaterialRenderMode = Laya.MaterialRenderMode;
-  var { regClass: regClass195, property: property195 } = Laya;
+  var { regClass: regClass199, property: property199 } = Laya;
   var Shader_Simple = class extends BaseScript {
     constructor() {
       super();
-      this.rotation = new Vector363(0, 0.01, 0);
+      this.rotation = new Vector365(0, 0.01, 0);
     }
     onAwake() {
       super.base(this.camera);
-      this.camera.transform.position = new Vector363(0, 0.5, 1.5);
+      this.camera.transform.position = new Vector365(0, 0.5, 1.5);
       this.initShader();
       Laya.loader.load("resources/res/threeDimen/skinModel/LayaMonkey/Assets/LayaMonkey/LayaMonkey-LayaMonkey.lm").then((mesh) => {
-        var layaMonkey = this.scene.addChild(new MeshSprite3D32(mesh));
-        layaMonkey.transform.localScale = new Vector363(0.3, 0.3, 0.3);
+        var layaMonkey = this.scene.addChild(new MeshSprite3D34(mesh));
+        layaMonkey.transform.localScale = new Vector365(0.3, 0.3, 0.3);
         layaMonkey.transform.rotation = new Quaternion12(0.7071068, 0, 0, -0.7071067);
         var customMaterial = new CustomMaterial();
         layaMonkey.getComponent(MeshRenderer8).sharedMaterial = customMaterial;
@@ -16933,13 +17140,13 @@ void main()\r
   };
   __name(Shader_Simple, "Shader_Simple");
   __decorateClass([
-    property195(Laya.Camera)
+    property199(Laya.Camera)
   ], Shader_Simple.prototype, "camera", 2);
   __decorateClass([
-    property195(Laya.Scene3D)
+    property199(Laya.Scene3D)
   ], Shader_Simple.prototype, "scene", 2);
   Shader_Simple = __decorateClass([
-    regClass195("6a5477d4-4ac4-4f25-bb34-c85456fbe961", "../src/3D/Shader/Shader_Simple.ts")
+    regClass199("6a5477d4-4ac4-4f25-bb34-c85456fbe961", "../src/3D/Shader/Shader_Simple.ts")
   ], Shader_Simple);
   var _CustomMaterial = class _CustomMaterial extends Material7 {
     constructor() {
@@ -16951,298 +17158,13 @@ void main()\r
   __name(_CustomMaterial, "CustomMaterial");
   var CustomMaterial = _CustomMaterial;
 
-  // src/3D/Scene3D/EnvironmentalReflection.ts
-  var MeshSprite3D33 = Laya.MeshSprite3D;
-  var Vector364 = Laya.Vector3;
-  var AmbientMode = Laya.AmbientMode;
-  var CameraClearFlags10 = Laya.CameraClearFlags;
-  var SkyBox4 = Laya.SkyBox;
-  var PBRStandardMaterial5 = Laya.PBRStandardMaterial;
-  var { regClass: regClass196, property: property196 } = Laya;
-  var EnvironmentalReflection = class extends BaseScript {
-    constructor() {
-      super();
-      this.teapot = null;
-    }
-    onAwake() {
-      super.base(this.camera);
-      this.scene.ambientMode = AmbientMode.SphericalHarmonics;
-      this.scene.reflectionIntensity = 1;
-      this.camera.transform.translate(new Vector364(0, 2, 3));
-      this.camera.transform.rotate(new Vector364(-15, 0, 0), true, false);
-      this.camera.clearFlag = CameraClearFlags10.Sky;
-      Laya.loader.load("resources/res/threeDimen/skyBox/DawnDusk/Skybox.lmat").then((res) => {
-        var skyRenderer = this.scene.skyRenderer;
-        skyRenderer.mesh = SkyBox4.instance;
-        skyRenderer.material = res;
-        res.exposure = 0.6 + 1;
-      });
-      Laya.loader.load("resources/res/threeDimen/staticModel/teapot/teapot-Teapot001.lm").then((res) => {
-        this.teapot = this.scene.addChild(new MeshSprite3D33(res));
-        this.teapot.transform.position = new Vector364(0, 1.75, 2);
-        this.teapot.transform.setWorldLossyScale(new Vector364(5, 5, 5));
-        this.teapot.transform.rotate(new Vector364(-90, 0, 0), false, false);
-        var pbrMat = new PBRStandardMaterial5();
-        pbrMat.metallic = 1;
-        this.teapot.meshRenderer.material = pbrMat;
-      });
-      this.loadEnvironmentalReflection();
-    }
-    removeEnvironmentalReflection() {
-      this.scene.sceneReflectionProb.iblTex = null;
-    }
-    loadEnvironmentalReflection() {
-      Laya.loader.load("resources/scene/3D/Scene3D/EnvironmentalReflection/EnvironmentalReflection.ktx").then((res) => {
-        this.scene.sceneReflectionProb.iblTex = res;
-      });
-    }
-  };
-  __name(EnvironmentalReflection, "EnvironmentalReflection");
-  __decorateClass([
-    property196(Laya.Camera)
-  ], EnvironmentalReflection.prototype, "camera", 2);
-  __decorateClass([
-    property196(Laya.Scene3D)
-  ], EnvironmentalReflection.prototype, "scene", 2);
-  EnvironmentalReflection = __decorateClass([
-    regClass196("d610a4a9-c75b-463a-a39a-848d8fa1ff89", "../src/3D/Scene3D/EnvironmentalReflection.ts")
-  ], EnvironmentalReflection);
-
-  // src/3D/Scene3D/GriendSkyAmbientDemo.ts
-  var Sprite3D14 = Laya.Sprite3D;
-  var MeshSprite3D34 = Laya.MeshSprite3D;
-  var Vector365 = Laya.Vector3;
-  var PrimitiveMesh29 = Laya.PrimitiveMesh;
-  var AmbientMode2 = Laya.AmbientMode;
-  var Color23 = Laya.Color;
-  var PBRStandardMaterial6 = Laya.PBRStandardMaterial;
-  var { regClass: regClass197, property: property197 } = Laya;
-  var GriendSkyAmbientDemo = class extends BaseScript {
-    constructor() {
-      super();
-    }
-    onAwake() {
-      super.base(this.camera);
-      this.camera.transform.position = new Vector365(0, 2, 3);
-      this.camera.transform.rotate(new Vector365(-15, 0, 0), true, false);
-      this.scene.ambientIntensity = 0.5;
-      this.sprite3D = this.scene.addChild(new Sprite3D14());
-      var mat = new PBRStandardMaterial6();
-      var box = this.sprite3D.addChild(new MeshSprite3D34(PrimitiveMesh29.createBox(0.5, 0.5, 0.5)));
-      box.transform.position = new Vector365(2, 0.25, 0.6);
-      box.transform.rotate(new Vector365(0, 45, 0), false, false);
-      box.meshRenderer.material = mat;
-      var sphere = this.sprite3D.addChild(new MeshSprite3D34(PrimitiveMesh29.createSphere(0.25, 20, 20)));
-      sphere.transform.position = new Vector365(1, 0.25, 0.6);
-      sphere.meshRenderer.material = mat;
-      var cylinder = this.sprite3D.addChild(new MeshSprite3D34(PrimitiveMesh29.createCylinder(0.25, 1, 20)));
-      cylinder.transform.position = new Vector365(0, 0.5, 0.6);
-      cylinder.meshRenderer.material = mat;
-      var capsule = this.sprite3D.addChild(new MeshSprite3D34(PrimitiveMesh29.createCapsule(0.25, 1, 10, 20)));
-      capsule.transform.position = new Vector365(-1, 0.5, 0.6);
-      capsule.meshRenderer.material = mat;
-      var cone = this.sprite3D.addChild(new MeshSprite3D34(PrimitiveMesh29.createCone(0.25, 0.75)));
-      cone.transform.position = new Vector365(-2, 0.375, 0.6);
-      cone.meshRenderer.material = mat;
-      super.addBottomButton(["\u56FA\u5B9A\u989C\u8272", "\u7403\u8C10\u5149\u7167"], this, [this.setSolidColor, this.setSphericalHarmonics]);
-    }
-    setSphericalHarmonics() {
-      this.scene.ambientMode = AmbientMode2.SphericalHarmonics;
-    }
-    setSolidColor() {
-      this.scene.ambientMode = AmbientMode2.SolidColor;
-      this.scene.ambientColor = new Color23(0.56, 0.89, 1);
-    }
-  };
-  __name(GriendSkyAmbientDemo, "GriendSkyAmbientDemo");
-  __decorateClass([
-    property197(Laya.Camera)
-  ], GriendSkyAmbientDemo.prototype, "camera", 2);
-  __decorateClass([
-    property197(Laya.Scene3D)
-  ], GriendSkyAmbientDemo.prototype, "scene", 2);
-  GriendSkyAmbientDemo = __decorateClass([
-    regClass197("a938acc9-7759-4f01-b580-ebd51eacad0b", "../src/3D/Scene3D/GriendSkyAmbientDemo.ts")
-  ], GriendSkyAmbientDemo);
-
-  // src/3D/Scene3D/LightmapScene.ts
-  var Lightmap = Laya.Lightmap;
-  var { regClass: regClass198, property: property198 } = Laya;
-  var LightmapScene = class extends BaseScript {
-    constructor() {
-      super();
-    }
-    //请进入场景查看光照贴图的设置 resources\res\threeDimen\LightmapScene\Scene.ls
-    //使用光照贴图，前提是在场景中先创建灯光设置，烘焙出光照贴图
-    onAwake() {
-      super.base(this.camera);
-      this.lightMaps = this.scene.lightmaps;
-      super.addBottomButton(["\u53D6\u6D88\u5149\u7167\u8D34\u56FE", "\u663E\u793A\u5149\u7167\u8D34\u56FE", "\u52A0\u8F7D\u5149\u7167\u8D34\u56FE"], this, [this.setLightmapOff, this.setLightmapOn, this.loadLightmap]);
-    }
-    setLightmapOff() {
-      this.scene.lightmaps = null;
-    }
-    setLightmapOn() {
-      this.scene.lightmaps = this.lightMaps;
-    }
-    loadLightmap() {
-      this.scene.lightmaps = null;
-      let newLightmap = new Lightmap();
-      Laya.loader.load("resources/res/threeDimen/LightmapScene/Scene/diffuse0.png").then((res) => {
-        newLightmap.lightmapColor = res;
-        newLightmap.lightmapDirection = null;
-      });
-      let newLightmaps = [];
-      newLightmaps.push(newLightmap);
-      this.scene.lightmaps = newLightmaps;
-    }
-  };
-  __name(LightmapScene, "LightmapScene");
-  __decorateClass([
-    property198(Laya.Camera)
-  ], LightmapScene.prototype, "camera", 2);
-  __decorateClass([
-    property198(Laya.Scene3D)
-  ], LightmapScene.prototype, "scene", 2);
-  LightmapScene = __decorateClass([
-    regClass198("405e2005-76bf-4c43-82c8-d1af69cf3061", "../src/3D/Scene3D/LightmapScene.ts")
-  ], LightmapScene);
-
-  // src/3D/Scene3D/SceneLoad1.ts
-  var { regClass: regClass199, property: property199 } = Laya;
-  var SceneLoad1 = class extends BaseScript {
-    constructor() {
-      super();
-    }
-    onAwake() {
-      super.base(this.camera);
-      Laya.loader.load("resources/res/threeDimen/scene/LayaScene_dudeScene/Conventional/dudeSceneNoCamera.ls", null, Laya.Handler.create(this, this.onLoading, null, false)).then((res) => {
-        this.loadingBar.visible = false;
-        let scene = res.create();
-        let scene3D = scene.scene3D;
-        this.scene.addChildAt(scene3D, 0);
-      });
-      Laya.loader.on(Laya.Event.ERROR, this, this.onError);
-    }
-    /**
-    * 当报错时打印错误
-    * @param err 报错信息
-    */
-    onError(err) {
-      console.log("\u52A0\u8F7D\u5931\u8D25: " + err);
-    }
-    /**
-     * 加载时侦听
-     */
-    onLoading(progress) {
-      if (progress > 0.92)
-        this.loadingBar.value = 0.95;
-      else {
-        this.loadingBar.value = progress;
-        console.log("\u52A0\u8F7D\u8FDB\u5EA6: " + progress, this.loadingBar.value);
-      }
-    }
-  };
-  __name(SceneLoad1, "SceneLoad1");
-  __decorateClass([
-    property199(Laya.Camera)
-  ], SceneLoad1.prototype, "camera", 2);
-  __decorateClass([
-    property199(Laya.Scene3D)
-  ], SceneLoad1.prototype, "scene", 2);
-  __decorateClass([
-    property199(Laya.ProgressBar)
-  ], SceneLoad1.prototype, "loadingBar", 2);
-  SceneLoad1 = __decorateClass([
-    regClass199("c6173b46-e841-4b3b-a762-0b55d1184ee8", "../src/3D/Scene3D/SceneLoad1.ts")
-  ], SceneLoad1);
-
-  // src/3D/Sky/Sky_Procedural.ts
-  var Vector366 = Laya.Vector3;
-  var { regClass: regClass200, property: property200 } = Laya;
-  var Sky_Procedural = class extends BaseScript {
-    constructor() {
-      super();
-    }
-    onAwake() {
-      super.base(this.camera);
-      this.camera.transform.position = new Vector366(0, 0.7, 5);
-      this.camera.transform.rotate(new Vector366(10, 0, 0), true, false);
-      var mat = this.directionLight.transform.worldMatrix;
-      mat.setForward(new Laya.Vector3(-1, -1, -1));
-      this.directionLight.transform.worldMatrix = mat;
-      this.rotation = new Laya.Vector3(-0.01, 0, 0);
-      var skyRenderer = this.scene.skyRenderer;
-      skyRenderer.mesh = Laya.SkyDome.instance;
-      skyRenderer.material = new Laya.SkyProceduralMaterial();
-      Laya.timer.frameLoop(1, this, this.onFrameLoop);
-    }
-    onFrameLoop() {
-      this.directionLight.transform.rotate(this.rotation);
-    }
-  };
-  __name(Sky_Procedural, "Sky_Procedural");
-  __decorateClass([
-    property200(Laya.Camera)
-  ], Sky_Procedural.prototype, "camera", 2);
-  __decorateClass([
-    property200(Laya.Scene3D)
-  ], Sky_Procedural.prototype, "scene", 2);
-  __decorateClass([
-    property200(Laya.Sprite3D)
-  ], Sky_Procedural.prototype, "directionLight", 2);
-  Sky_Procedural = __decorateClass([
-    regClass200("c4a1bcfb-da17-46d6-a7fa-70b3721d13b0", "../src/3D/Sky/Sky_Procedural.ts")
-  ], Sky_Procedural);
-
-  // src/3D/Sky/Sky_SkyBox.ts
-  var Vector367 = Laya.Vector3;
-  var CameraClearFlags11 = Laya.CameraClearFlags;
-  var { regClass: regClass201, property: property201 } = Laya;
-  var Sky_SkyBox = class extends BaseScript {
-    constructor() {
-      super();
-    }
-    onAwake() {
-      super.base(this.camera);
-      this.camera.transform.position = new Vector367(0, 0.7, 5);
-      this.camera.transform.rotate(new Vector367(10, 0, 0), true, false);
-      this.camera.clearFlag = CameraClearFlags11.Sky;
-      super.addBottomButton(["\u7ACB\u65B9\u4F53\u5929\u7A7A\u76D2", "\u7A0B\u5E8F\u5316\u5929\u7A7A\u76D2"], this, [this.changeSkybox, this.changeSkyProcedural]);
-    }
-    changeSkyProcedural() {
-      Laya.loader.load("resources/res/threeDimen/skyBox/SkyProcedural/Skybox.lmat").then((mat) => {
-        var skyRenderer = this.camera.skyRenderer;
-        skyRenderer.material = mat;
-      });
-    }
-    changeSkybox() {
-      Laya.loader.load("resources/res/threeDimen/skyBox/DawnDusk/Skybox.lmat").then((mat) => {
-        var skyRenderer = this.camera.skyRenderer;
-        skyRenderer.material = mat;
-      });
-    }
-    onDestroy() {
-    }
-  };
-  __name(Sky_SkyBox, "Sky_SkyBox");
-  __decorateClass([
-    property201(Laya.Camera)
-  ], Sky_SkyBox.prototype, "camera", 2);
-  __decorateClass([
-    property201(Laya.Scene3D)
-  ], Sky_SkyBox.prototype, "scene", 2);
-  Sky_SkyBox = __decorateClass([
-    regClass201("2d0df284-0ddc-495f-ae6e-bd620726ad9e", "../src/3D/Sky/Sky_SkyBox.ts")
-  ], Sky_SkyBox);
-
   // src/3D/Show/CerberusModelShow.ts
-  var Vector368 = Laya.Vector3;
+  var Vector366 = Laya.Vector3;
   var InputManager6 = Laya.InputManager;
   var Script3D = Laya.Script3D;
   var Text32 = Laya.Text;
   var Event50 = Laya.Event;
-  var { regClass: regClass202, property: property202 } = Laya;
+  var { regClass: regClass200, property: property200 } = Laya;
   var CerberusModelShow = class extends BaseScript {
     constructor() {
       super();
@@ -17272,20 +17194,20 @@ void main()\r
   };
   __name(CerberusModelShow, "CerberusModelShow");
   __decorateClass([
-    property202(Laya.Camera)
+    property200(Laya.Camera)
   ], CerberusModelShow.prototype, "camera", 2);
   __decorateClass([
-    property202(Laya.Scene3D)
+    property200(Laya.Scene3D)
   ], CerberusModelShow.prototype, "scene", 2);
   CerberusModelShow = __decorateClass([
-    regClass202("9e930e25-774c-4af3-aa86-5a0f36168fa7", "../src/3D/Show/CerberusModelShow.ts")
+    regClass200("9e930e25-774c-4af3-aa86-5a0f36168fa7", "../src/3D/Show/CerberusModelShow.ts")
   ], CerberusModelShow);
   var _RotationScript2 = class _RotationScript2 extends Script3D {
     constructor() {
       super();
       this._mouseDown = false;
-      this._rotate = new Vector368();
-      this._autoRotateSpeed = new Vector368(0, 0.25, 0);
+      this._rotate = new Vector366();
+      this._autoRotateSpeed = new Vector366(0, 0.25, 0);
       Laya.stage.on(Event50.MOUSE_DOWN, this, () => {
         this._mouseDown = true;
         this._lastMouseX = InputManager6.mouseX;
@@ -17309,12 +17231,12 @@ void main()\r
   var RotationScript2 = _RotationScript2;
 
   // src/3D/Show/DamagedHelmetModelShow.ts
-  var Vector369 = Laya.Vector3;
+  var Vector367 = Laya.Vector3;
   var InputManager7 = Laya.InputManager;
   var Script3D2 = Laya.Script3D;
   var Text33 = Laya.Text;
   var Event51 = Laya.Event;
-  var { regClass: regClass203, property: property203 } = Laya;
+  var { regClass: regClass201, property: property201 } = Laya;
   var DamagedHelmetModelShow = class extends BaseScript {
     constructor() {
       super();
@@ -17344,20 +17266,20 @@ void main()\r
   };
   __name(DamagedHelmetModelShow, "DamagedHelmetModelShow");
   __decorateClass([
-    property203(Laya.Camera)
+    property201(Laya.Camera)
   ], DamagedHelmetModelShow.prototype, "camera", 2);
   __decorateClass([
-    property203(Laya.Scene3D)
+    property201(Laya.Scene3D)
   ], DamagedHelmetModelShow.prototype, "scene", 2);
   DamagedHelmetModelShow = __decorateClass([
-    regClass203("56ac9a0b-bb60-47e3-aeac-5934275aea57", "../src/3D/Show/DamagedHelmetModelShow.ts")
+    regClass201("56ac9a0b-bb60-47e3-aeac-5934275aea57", "../src/3D/Show/DamagedHelmetModelShow.ts")
   ], DamagedHelmetModelShow);
   var _RotationScript3 = class _RotationScript3 extends Script3D2 {
     constructor() {
       super();
       this._mouseDown = false;
-      this._rotate = new Vector369();
-      this._autoRotateSpeed = new Vector369(0, 0.25, 0);
+      this._rotate = new Vector367();
+      this._autoRotateSpeed = new Vector367(0, 0.25, 0);
       Laya.stage.on(Event51.MOUSE_DOWN, this, () => {
         this._mouseDown = true;
         this._lastMouseX = InputManager7.mouseX;
@@ -17381,12 +17303,12 @@ void main()\r
   var RotationScript3 = _RotationScript3;
 
   // src/3D/Show/GunDemo.ts
-  var Vector370 = Laya.Vector3;
+  var Vector368 = Laya.Vector3;
   var InputManager8 = Laya.InputManager;
   var Script3D3 = Laya.Script3D;
   var Text34 = Laya.Text;
   var Event52 = Laya.Event;
-  var { regClass: regClass204, property: property204 } = Laya;
+  var { regClass: regClass202, property: property202 } = Laya;
   var GunDemo = class extends BaseScript {
     constructor() {
       super();
@@ -17414,20 +17336,20 @@ void main()\r
   };
   __name(GunDemo, "GunDemo");
   __decorateClass([
-    property204(Laya.Camera)
+    property202(Laya.Camera)
   ], GunDemo.prototype, "camera", 2);
   __decorateClass([
-    property204(Laya.Scene3D)
+    property202(Laya.Scene3D)
   ], GunDemo.prototype, "scene", 2);
   GunDemo = __decorateClass([
-    regClass204("f243b4bd-0fe2-416c-a7a9-301c361c4296", "../src/3D/Show/GunDemo.ts")
+    regClass202("f243b4bd-0fe2-416c-a7a9-301c361c4296", "../src/3D/Show/GunDemo.ts")
   ], GunDemo);
   var _RotationScript4 = class _RotationScript4 extends Script3D3 {
     constructor() {
       super();
       this._mouseDown = false;
-      this._rotate = new Vector370();
-      this._autoRotateSpeed = new Vector370(0, 0.25, 0);
+      this._rotate = new Vector368();
+      this._autoRotateSpeed = new Vector368(0, 0.25, 0);
       Laya.stage.on(Event52.MOUSE_DOWN, this, () => {
         this._mouseDown = true;
         this._lastMouseX = InputManager8.mouseX;
@@ -17449,6 +17371,85 @@ void main()\r
   };
   __name(_RotationScript4, "RotationScript");
   var RotationScript4 = _RotationScript4;
+
+  // src/3D/Sky/Sky_Procedural.ts
+  var Vector369 = Laya.Vector3;
+  var { regClass: regClass203, property: property203 } = Laya;
+  var Sky_Procedural = class extends BaseScript {
+    constructor() {
+      super();
+    }
+    onAwake() {
+      super.base(this.camera);
+      this.camera.transform.position = new Vector369(0, 0.7, 5);
+      this.camera.transform.rotate(new Vector369(10, 0, 0), true, false);
+      var mat = this.directionLight.transform.worldMatrix;
+      mat.setForward(new Laya.Vector3(-1, -1, -1));
+      this.directionLight.transform.worldMatrix = mat;
+      this.rotation = new Laya.Vector3(-0.01, 0, 0);
+      var skyRenderer = this.scene.skyRenderer;
+      skyRenderer.mesh = Laya.SkyDome.instance;
+      skyRenderer.material = new Laya.SkyProceduralMaterial();
+      Laya.timer.frameLoop(1, this, this.onFrameLoop);
+    }
+    onFrameLoop() {
+      this.directionLight.transform.rotate(this.rotation);
+    }
+  };
+  __name(Sky_Procedural, "Sky_Procedural");
+  __decorateClass([
+    property203(Laya.Camera)
+  ], Sky_Procedural.prototype, "camera", 2);
+  __decorateClass([
+    property203(Laya.Scene3D)
+  ], Sky_Procedural.prototype, "scene", 2);
+  __decorateClass([
+    property203(Laya.Sprite3D)
+  ], Sky_Procedural.prototype, "directionLight", 2);
+  Sky_Procedural = __decorateClass([
+    regClass203("c4a1bcfb-da17-46d6-a7fa-70b3721d13b0", "../src/3D/Sky/Sky_Procedural.ts")
+  ], Sky_Procedural);
+
+  // src/3D/Sky/Sky_SkyBox.ts
+  var Vector370 = Laya.Vector3;
+  var CameraClearFlags11 = Laya.CameraClearFlags;
+  var { regClass: regClass204, property: property204 } = Laya;
+  var Sky_SkyBox = class extends BaseScript {
+    constructor() {
+      super();
+    }
+    onAwake() {
+      super.base(this.camera);
+      this.camera.transform.position = new Vector370(0, 0.7, 5);
+      this.camera.transform.rotate(new Vector370(10, 0, 0), true, false);
+      this.camera.clearFlag = CameraClearFlags11.Sky;
+      super.addBottomButton(["\u7ACB\u65B9\u4F53\u5929\u7A7A\u76D2", "\u7A0B\u5E8F\u5316\u5929\u7A7A\u76D2"], this, [this.changeSkybox, this.changeSkyProcedural]);
+    }
+    changeSkyProcedural() {
+      Laya.loader.load("resources/res/threeDimen/skyBox/SkyProcedural/Skybox.lmat").then((mat) => {
+        var skyRenderer = this.camera.skyRenderer;
+        skyRenderer.material = mat;
+      });
+    }
+    changeSkybox() {
+      Laya.loader.load("resources/res/threeDimen/skyBox/DawnDusk/Skybox.lmat").then((mat) => {
+        var skyRenderer = this.camera.skyRenderer;
+        skyRenderer.material = mat;
+      });
+    }
+    onDestroy() {
+    }
+  };
+  __name(Sky_SkyBox, "Sky_SkyBox");
+  __decorateClass([
+    property204(Laya.Camera)
+  ], Sky_SkyBox.prototype, "camera", 2);
+  __decorateClass([
+    property204(Laya.Scene3D)
+  ], Sky_SkyBox.prototype, "scene", 2);
+  Sky_SkyBox = __decorateClass([
+    regClass204("2d0df284-0ddc-495f-ae6e-bd620726ad9e", "../src/3D/Sky/Sky_SkyBox.ts")
+  ], Sky_SkyBox);
 
   // src/3D/Sprite3D/PixelLineSprite3DDemo.ts
   var Sprite3D15 = Laya.Sprite3D;

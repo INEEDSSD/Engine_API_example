@@ -153,8 +153,10 @@ export class PhysicsWorld_BuildingBlocks extends BaseScript {
 	}
 
 	onMouseDown(e:Event): void {
-		this.posX = this.point.x = e.target.mouseX * Index.screenWidth / Index.pageWidth;
-		this.posY = this.point.y = e.target.mouseY * Index.screenHeight / Index.pageHeight;
+		this.posX = this.point.x = e.target.mouseX;
+		//  * Index.screenWidth / Index.pageWidth;
+		this.posY = this.point.y = e.target.mouseY;
+		//  * Index.screenHeight / Index.pageHeight;
 
 		this.camera.viewportPointToRay(this.point, this.ray);
 		this.scene.physicsSimulation.rayCast(this.ray, this._outHitResult);
@@ -172,13 +174,17 @@ export class PhysicsWorld_BuildingBlocks extends BaseScript {
 
 	onMouseMove(e:Event): void {
 
-		this.delX = e.target.mouseX * Index.screenWidth / Index.pageWidth - this.posX;
-		this.delY = e.target.mouseY * Index.screenHeight / Index.pageHeight - this.posY;
+		this.delX = e.target.mouseX - this.posX;
+		//  * Index.screenWidth / Index.pageWidth - this.posX;
+		this.delY = e.target.mouseY - this.posY;
+		//  * Index.screenHeight / Index.pageHeight - this.posY;
 		if (this.hasSelectedSprite) {
-			this.hasSelectedRigidBody.linearVelocity = new Vector3(this.delX / 4, 0, this.delY / 4);
+			this.hasSelectedRigidBody.linearVelocity = new Vector3(this.delX / 2, 0, this.delY / 2);
 		}
-		this.posX = e.target.mouseX * Index.screenWidth / Index.pageWidth;
-		this.posY = e.target.mouseY * Index.screenHeight / Index.pageHeight;
+		this.posX = e.target.mouseX
+		//  * Index.screenWidth / Index.pageWidth;
+		this.posY = e.target.mouseY
+		//  * Index.screenHeight / Index.pageHeight;
 	}
 
 	onMouseUp(e:Event): void {

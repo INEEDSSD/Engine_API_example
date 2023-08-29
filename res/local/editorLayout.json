@@ -1,18 +1,18 @@
 {
   "default": {
-    "width": 1180,
+    "width": 1132,
     "height": 685,
-    "id": "EV8K0xj4",
+    "id": "XJ73dhAM",
     "layout": 1,
     "children": [
       {
-        "width": 289,
+        "width": 411,
         "height": 685,
         "id": "7qp8mq2g",
         "layout": 2,
         "children": [
           {
-            "width": 289,
+            "width": 411,
             "height": 284,
             "id": "7yjnpdum",
             "selected": 0,
@@ -21,7 +21,7 @@
             ]
           },
           {
-            "width": 289,
+            "width": 411,
             "height": 397,
             "id": "7q7fz5d1",
             "selected": 0,
@@ -33,19 +33,19 @@
         ]
       },
       {
-        "width": 799,
+        "width": 420,
         "height": 685,
         "id": "bXVBGBox",
         "layout": 2,
         "children": [
           {
-            "width": 799,
+            "width": 420,
             "height": 435,
             "id": "Ug2tk3sB",
             "layout": 1,
             "children": [
               {
-                "width": 799,
+                "width": 420,
                 "height": 435,
                 "id": "7eatv6px",
                 "selected": 0,
@@ -59,7 +59,7 @@
             ]
           },
           {
-            "width": 799,
+            "width": 420,
             "height": 246,
             "id": "cTIBtkMA",
             "selected": 0,
@@ -71,13 +71,13 @@
         ]
       },
       {
-        "width": 303,
+        "width": 293,
         "height": 685,
         "id": "0lqhnpck",
         "layout": 2,
         "children": [
           {
-            "width": 303,
+            "width": 293,
             "height": 685,
             "id": "7i01d2q9",
             "selected": 0,
@@ -86,6 +86,20 @@
             ]
           }
         ]
+      }
+    ],
+    "popups": [
+      {
+        "width": 520,
+        "height": 650,
+        "id": "V_mKivlY",
+        "selected": 0,
+        "children": [
+          "BuildSettingsPanel"
+        ],
+        "x": 933,
+        "y": 211,
+        "show": false
       }
     ]
   }

@@ -63,6 +63,7 @@
         //reset Texture 
         vec2 uv = (positionWS.xz-u_BoundSize.xy)/u_BoundSize.zw;
         baseColor = texture2D(u_albedoTexture, uv).rgb;
+        baseColor = gammaToLinear(baseColor);
         
         vec3 albedo = mix(u_GroundColor.xyz, baseColor, a_Position.y);
         v_Color = vec4(albedo, 1.0);
