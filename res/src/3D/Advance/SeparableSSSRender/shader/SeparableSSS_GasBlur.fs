@@ -7,15 +7,6 @@ uniform vec4 u_kernel[SamplerNum];
 //uv
 varying vec2 v_Texcoord0;
 
-vec4 sampleMainTex(sampler2D tex, vec2 uv)
-{
-    vec4 mainSampler = texture2D(tex, uv);
-#ifdef Gamma_u_texture
-    mainSampler = gammaToLinear(mainSampler);
-#endif // Gamma_u_MainTex
-    return mainSampler;
-}
-
 vec4 Sample17Nums(vec2 finalStep,vec4 colorBlurred,float depthM,vec4 colorM){
       for (int i = 1; i < SamplerNum; i++) {
         // Fetch color and depth for current sample:
@@ -23,7 +14,10 @@ vec4 Sample17Nums(vec2 finalStep,vec4 colorBlurred,float depthM,vec4 colorM){
         vec4 color = sampleMainTex(u_MainTex, offset);
 
             // // If the difference in depth is huge, we lerp color back to "colorM"://深度差异过大 我们把颜色还原为原色
-             float depth = texture2D(u_depthTex, offset).r;
+        float depth = texture2D(u_depthTex, offset).r;
+    #ifdef Gamma_u_depthTex
+        depth = gammaToLinear(depth);
+    #endif // Gamma_u_depthTex
              float s = clamp(300.0 * abs(depthM - depth),0.0,1.0);
             color.rgb = mix(color.rgb, colorM.rgb, s);
 
@@ -38,11 +32,16 @@ vec4 Sample17Nums(vec2 finalStep,vec4 colorBlurred,float depthM,vec4 colorM){
 void main()
 {
     vec4 colorM = texture2D(u_MainTex,v_Texcoord0);
-
+#ifdef Gamma_u_depthTex
+    colorM = gammaToLinear(colorM);
+#endif // Gamma_u_MainTex
     //   if (initStencil) // (Checked in compile time, it's optimized away)如果模具缓冲区不可用，请初始化该缓冲区：
     //     if (SSSS_STREGTH_SOURCE == 0.0) discard;
 
     float depthM = texture2D(u_depthTex,v_Texcoord0).r;
+    #ifdef Gamma_u_depthTex
+        depthM = gammaToLinear(depthM);
+    #endif // Gamma_u_depthTex
     //计算随着depth的变化ssswidth的比例
     float scale = u_distanceToProjectionWindow/depthM;
     //计算像素采样步长
