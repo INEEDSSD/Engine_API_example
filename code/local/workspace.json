@@ -24,7 +24,7 @@
     "selected": ":f6"
   },
   "BuildSettingsPanel": {
-    "platform": "web"
+    "platform": "wxgame"
   },
   "playButtonBehavior": "current"
 }

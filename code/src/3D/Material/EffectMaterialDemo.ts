@@ -39,7 +39,7 @@ export class EffectMaterialDemo extends BaseScript {
 		earth.transform.position = new Vector3(0, 0, 0);
 		//创建EffectMaterial材质
 		var material: EffectMaterial = new EffectMaterial();
-		Laya.loader.load("resources/res/threeDimen/texture/earth.png").then((texture: Texture2D)=>{
+		Laya.loader.load("resources/res/threeDimen/texture/earth.png", Laya.Loader.TEXTURE2D).then((texture: Texture2D)=>{
 			//设置纹理
 			material.texture = texture;
 			//设置材质颜色

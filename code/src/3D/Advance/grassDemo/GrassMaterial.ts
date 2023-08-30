@@ -114,8 +114,9 @@ export class GrassMaterial extends Laya.Material {
         this.grassWidth = 1.0;
         this.grassGroundColor = new Laya.Vector3(0.25, 0.49, 0.23);
         this.grassBoundSize = new Laya.Vector4(-105, -105, 210, 210);
-        Laya.loader.load("resources/res/InstancedIndirectGrassVertexColor.jpg").then((res : Laya.Texture2D)=>{
+        Laya.loader.load("resources/res/InstancedIndirectGrassVertexColor.jpg", {srgb: true, type: Laya.Loader.TEXTURE2D}).then((res : Laya.Texture2D)=>{
             this.albedoTexture = res;
+            console.log(res);
         } )
     }
 

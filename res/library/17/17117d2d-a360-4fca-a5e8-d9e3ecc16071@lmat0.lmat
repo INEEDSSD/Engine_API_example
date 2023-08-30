@@ -21,7 +21,7 @@
         "name": "u_NormalTexture"
       },
       {
-        "path": "res://aa83a590-46fc-4cd1-bac3-257d7314c17f",
+        "path": "res://bfb21499-60fd-4a50-ab15-864708391e36",
         "constructParams": [
           0,
           0,
@@ -57,7 +57,7 @@
         "name": "u_BaseColorTexture"
       },
       {
-        "path": "res://aa83a590-46fc-4cd1-bac3-257d7314c17f",
+        "path": "res://bfb21499-60fd-4a50-ab15-864708391e36",
         "constructParams": [
           0,
           0,

@@ -82,10 +82,12 @@ export class Shader_Simple extends BaseScript {
 		'#else\r\n '+
 			'precision mediump float;\r\n'+
 		'#endif \r\n'+		
+		'#include "Color.glsl";\r\n'+
 		'varying vec3 v_Normal;\r\n'+		
 		'void main()\r\n'+
 		'{\r\n'+
 			'gl_FragColor=vec4(v_Normal, 1.0);\r\n'+
+			'gl_FragColor = outputTransform(gl_FragColor);\r\n'+
 		'}\r\n';
 
 		subShader.addShaderPass(SimpleShaderVS, SimpleShaderFS);

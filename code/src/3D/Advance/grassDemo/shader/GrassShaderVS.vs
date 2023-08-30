@@ -9,7 +9,14 @@
 
     // varying
     varying vec4 v_Color;
-
+    vec4 sampleMainTex(sampler2D tex, vec2 uv)
+    {
+        vec4 mainSampler = texture2D(tex, uv);
+    #ifdef Gamma_u_albedoTexture
+        mainSampler = gammaToLinear(mainSampler);
+    #endif // Gamma_u_MainTex
+        return mainSampler;
+    }
     // main
     void main() {
         // Vertex vertex;
@@ -62,9 +69,7 @@
 
         //reset Texture 
         vec2 uv = (positionWS.xz-u_BoundSize.xy)/u_BoundSize.zw;
-        baseColor = texture2D(u_albedoTexture, uv).rgb;
-        baseColor = gammaToLinear(baseColor);
-        
+        baseColor = sampleMainTex(u_albedoTexture, uv).rgb;
         vec3 albedo = mix(u_GroundColor.xyz, baseColor, a_Position.y);
         v_Color = vec4(albedo, 1.0);
 
