@@ -6,7 +6,6 @@
   "name": "Scene2D",
   "width": 1440,
   "height": 680,
-  "visible": false,
   "_$child": [
     {
       "_$id": "0bglhl3s",
@@ -116,10 +115,28 @@
             {
               "_$type": "Animator",
               "controller": {
-                "_$uuid": "eefc9f11-72f1-4fde-8c54-14949519182f",
+                "_$uuid": "c525d5a2-8249-4d38-93f4-f9046051cba6",
                 "_$type": "AnimationController"
               },
-              "controllerLayers": []
+              "controllerLayers": [
+                {
+                  "_$type": "AnimatorControllerLayer",
+                  "name": "Base Layer",
+                  "states": [
+                    {
+                      "_$type": "AnimatorState",
+                      "name": "a1",
+                      "clipStart": 0,
+                      "clip": {
+                        "_$uuid": "12540ea4-7a66-44ea-83f7-1e48a4bef4d2",
+                        "_$type": "AnimationClip"
+                      },
+                      "soloTransitions": []
+                    }
+                  ],
+                  "defaultStateName": "a1"
+                }
+              ]
             }
           ]
         }
@@ -132,7 +149,6 @@
       "x": -1,
       "width": 1441,
       "height": 681,
-      "visible": false,
       "left": -1,
       "right": 0,
       "top": 0,
