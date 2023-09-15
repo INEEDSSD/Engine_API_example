@@ -1,0 +1,51 @@
+{
+  "_$type": "Animator",
+  "enabled": true,
+  "path": "",
+  "cullingMode": 2,
+  "controllerLayers": [
+    {
+      "name": "Base Layer",
+      "states": [
+        {
+          "x": 10.79998779296875,
+          "y": 98.39999389648438,
+          "id": "-1",
+          "name": "进入",
+          "nexts": [],
+          "soloTransitions": [
+            {
+              "id": "2"
+            }
+          ]
+        },
+        {
+          "y": 100,
+          "id": "-2",
+          "name": "任何状态",
+          "x": 716
+        },
+        {
+          "x": 263.6443688737319,
+          "y": 230.66666454407385,
+          "_isLooping": 0,
+          "id": "2",
+          "name": "TheWave",
+          "speed": 1,
+          "clipEnd": 1,
+          "clip": {
+            "_$uuid": "3090c181-062a-4026-bf17-6b41a6a21ef2@lani1"
+          },
+          "clipStart": 0.007
+        }
+      ],
+      "playOnWake": true,
+      "blendingMode": 0,
+      "defaultWeight": 1,
+      "stageX": 95.86001586914068,
+      "stageY": 68.29997711181637,
+      "stageScale": 0.9
+    }
+  ],
+  "layerW": 150
+}
