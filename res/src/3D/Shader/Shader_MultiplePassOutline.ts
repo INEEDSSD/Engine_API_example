@@ -1,5 +1,9 @@
 import { BaseScript } from "../../BaseScript";
-// import { MultiplePassOutlineMaterial } from "./customMaterials/MultiplePassOutlineMaterial";
+import OutlineFS from "./customShader/outline.fs";
+import OutlineVS from "./customShader/outline.vs";
+import Outline02FS from "./customShader/outline02.fs";
+import Outline02VS from "./customShader/outline02.vs";
+
 
 import Scene3D = Laya.Scene3D;
 import Camera = Laya.Camera;
@@ -54,7 +58,7 @@ export class Shader_MultiplePassOutline extends BaseScript {
 			var customMaterial: MultiplePassOutlineMaterial = new MultiplePassOutlineMaterial();
 			layaMonkey.meshRenderer.sharedMaterial = customMaterial;
 			//漫反射贴图
-			Laya.loader.load("resources/res/threeDimen/skinModel/LayaMonkey/Assets/LayaMonkey/diffuse.png").then((res: any)=> {
+			Laya.loader.load("resources/res/threeDimen/skinModel/LayaMonkey/Assets/LayaMonkey/diffuse.png", Laya.Loader.TEXTURE2D).then((res: any)=> {
 				customMaterial.albedoTexture = res;
 			});			
 
@@ -141,82 +145,82 @@ export class MultiplePassOutlineMaterial extends Material {
 		var subShader: SubShader = new SubShader(SubShader.DefaultAttributeMap, uniformMap);
 		customShader.addSubShader(subShader);
 
-		let OutlineVS = 
-		'#include "Sprite3DVertex.glsl";\r\n'+
-		'#include "VertexCommon.glsl";\r\n'+
-		'#include "Camera.glsl";\r\n'+
-		'void main()\r\n'+
-		'{\r\n'+
-			'Vertex vertex;\r\n'+
-			'getVertexParams(vertex);\r\n'+
-			'vec4 position = vec4((vertex.positionOS) + (vertex.normalOS) * u_OutlineWidth, 1.0);\r\n'+
+		// let OutlineVS = 
+		// '#include "Sprite3DVertex.glsl";\r\n'+
+		// '#include "VertexCommon.glsl";\r\n'+
+		// '#include "Camera.glsl";\r\n'+
+		// 'void main()\r\n'+
+		// '{\r\n'+
+		// 	'Vertex vertex;\r\n'+
+		// 	'getVertexParams(vertex);\r\n'+
+		// 	'vec4 position = vec4((vertex.positionOS) + (vertex.normalOS) * u_OutlineWidth, 1.0);\r\n'+
 		
-			'mat4 worldMat = getWorldMatrix();\r\n'+
-			'vec3 positionWS = (worldMat * vec4(position)).xyz;\r\n'+
-			'gl_Position = getPositionCS(positionWS);\r\n'+
-			'gl_Position = remapPositionZ(gl_Position);\r\n'+
-		'} \r\n';		
+		// 	'mat4 worldMat = getWorldMatrix();\r\n'+
+		// 	'vec3 positionWS = (worldMat * vec4(position)).xyz;\r\n'+
+		// 	'gl_Position = getPositionCS(positionWS);\r\n'+
+		// 	'gl_Position = remapPositionZ(gl_Position);\r\n'+
+		// '} \r\n';		
 
 
 		// 原来的写法会被我们自己的解析流程处理，而我们的解析是不认内置宏的，导致被删掉，所以改成 if defined 了
-		let OutlineFS = 
-		'#if defined(GL_FRAGMENT_PRECISION_HIGH)\r\n'+ 
-			'precision highp float;\r\n'+ 
-		'#else \r\n'+ 
-			'precision mediump float;\r\n'+ 
-		'#endif \r\n'+ 
+		// let OutlineFS = 
+		// '#if defined(GL_FRAGMENT_PRECISION_HIGH)\r\n'+ 
+		// 	'precision highp float;\r\n'+ 
+		// '#else \r\n'+ 
+		// 	'precision mediump float;\r\n'+ 
+		// '#endif \r\n'+ 
 
-		'void main() \r\n'+ 
-		'{ \r\n'+ 
-			'vec3 finalColor = u_OutlineColor.rgb * u_OutlineLightness;\r\n'+ 
-			'gl_FragColor = vec4(finalColor,0.0);\r\n'+ 
-		'}\r\n';
+		// 'void main() \r\n'+ 
+		// '{ \r\n'+ 
+		// 	'vec3 finalColor = u_OutlineColor.rgb * u_OutlineLightness;\r\n'+ 
+		// 	'gl_FragColor = vec4(finalColor,0.0);\r\n'+ 
+		// '}\r\n';
 
 		var pass1: ShaderPass = subShader.addShaderPass(OutlineVS, OutlineFS);
 		pass1.statefirst = true;
 		pass1.renderState.cull = RenderState.CULL_FRONT;
 
-		let Outline02VS = 
-		'#include "Camera.glsl";\r\n'+
-		'#include "Sprite3DVertex.glsl";\r\n'+
-		'#include "VertexCommon.glsl";\r\n'+
+		// let Outline02VS = 
+		// '#include "Camera.glsl";\r\n'+
+		// '#include "Sprite3DVertex.glsl";\r\n'+
+		// '#include "VertexCommon.glsl";\r\n'+
 		
-		'varying vec3 v_Normal;\r\n'+ 
-		'varying vec2 v_Texcoord0;\r\n'+ 
+		// 'varying vec3 v_Normal;\r\n'+ 
+		// 'varying vec2 v_Texcoord0;\r\n'+ 
 		
-		'void main() \r\n'+
-		'{ \r\n'+
+		// 'void main() \r\n'+
+		// '{ \r\n'+
 		
-			'Vertex vertex;\r\n'+
-			'getVertexParams(vertex);\r\n'+
-			'mat4 worldMat = getWorldMatrix();\r\n'+
-			'vec3 positionWS = (worldMat * vec4(vertex.positionOS, 1.0)).xyz;\r\n'+
+		// 	'Vertex vertex;\r\n'+
+		// 	'getVertexParams(vertex);\r\n'+
+		// 	'mat4 worldMat = getWorldMatrix();\r\n'+
+		// 	'vec3 positionWS = (worldMat * vec4(vertex.positionOS, 1.0)).xyz;\r\n'+
 		
-			'gl_Position = getPositionCS(positionWS);\r\n'+
+		// 	'gl_Position = getPositionCS(positionWS);\r\n'+
 		
-			'v_Normal = normalize((worldMat * vec4(vertex.normalOS, 0.0)).xyz);\r\n'+
-			'v_Texcoord0 = vertex.texCoord0;\r\n'+ 
-			'gl_Position=remapPositionZ(gl_Position);\r\n'+ 
-		'}\r\n';	
+		// 	'v_Normal = normalize((worldMat * vec4(vertex.normalOS, 0.0)).xyz);\r\n'+
+		// 	'v_Texcoord0 = vertex.texCoord0;\r\n'+ 
+		// 	'gl_Position=remapPositionZ(gl_Position);\r\n'+ 
+		// '}\r\n';	
 
 
 		// 原来的写法会被我们自己的解析流程处理，而我们的解析是不认内置宏的，导致被删掉，所以改成 if defined 了
-		let Outline02FS = 
-		'#if defined(GL_FRAGMENT_PRECISION_HIGH)\r\n'+
-			'precision highp float;\r\n'+
-		'#else\r\n'+
-			'precision mediump float;\r\n'+
-		'#endif\r\n'+
-		'varying vec2 v_Texcoord0;\r\n'+
-		'varying vec3 v_Normal;\r\n'+
+		// let Outline02FS = 
+		// '#if defined(GL_FRAGMENT_PRECISION_HIGH)\r\n'+
+		// 	'precision highp float;\r\n'+
+		// '#else\r\n'+
+		// 	'precision mediump float;\r\n'+
+		// '#endif\r\n'+
+		// 'varying vec2 v_Texcoord0;\r\n'+
+		// 'varying vec3 v_Normal;\r\n'+
 		
-		'void main()\r\n'+
-		'{\r\n'+
-			'vec4 albedoTextureColor = vec4(1.0);\r\n'+
+		// 'void main()\r\n'+
+		// '{\r\n'+
+		// 	'vec4 albedoTextureColor = vec4(1.0);\r\n'+
 			
-			'albedoTextureColor = texture2D(u_AlbedoTexture, v_Texcoord0);\r\n'+
-			'gl_FragColor = albedoTextureColor;\r\n'+
-		'}\r\n';	
+		// 	'albedoTextureColor = texture2D(u_AlbedoTexture, v_Texcoord0);\r\n'+
+		// 	'gl_FragColor = albedoTextureColor;\r\n'+
+		// '}\r\n';	
 		var pass2: ShaderPass = subShader.addShaderPass(Outline02VS, Outline02FS);
 	}
 	

@@ -37,7 +37,7 @@ export class MeshLoad extends BaseScript {
 
         super.base(this.camera);
 
-		this.camera.transform.position = new Vector3(0, 0.8, 1.5);
+		this.camera.transform.position = new Vector3(0, 0.8, 3.5);
 		this.camera.transform.rotate(new Vector3(-15, 0, 0), true, false);
 
 		this.directionLight.getComponent(Laya.DirectionLightCom).color.setValue(0.6, 0.6, 0.6, 1);
@@ -46,7 +46,7 @@ export class MeshLoad extends BaseScript {
 		this.sprite3D = (<Sprite3D>this.scene.addChild(new Sprite3D()));
 		this.lineSprite3D = (<Sprite3D>this.scene.addChild(new Sprite3D()));
 
-		Laya.loader.load("resources/gltf/monster.glb", Laya.Loader.HIERARCHY).then(res => {
+		Laya.loader.load("resources/gltf/morphstress/MorphStressTest.gltf", Laya.Loader.HIERARCHY).then(res => {
 			this.sprite3D = res.create();
 			var ani = this.sprite3D.getComponent(Laya.Animator);
 			ani.speed = 0.0;
@@ -103,15 +103,15 @@ export class MeshLoad extends BaseScript {
 	}
 
 	private onChange(value: number): void {
-		var skin = this.sprite3D.getChildAt(0).getChildAt(0).getChildAt(0).getChildAt(0).getChildAt(0).getChildAt(0);
-		var skinRender : Laya.SkinnedMeshRenderer = skin.getComponent(Laya.SkinnedMeshRenderer);
-		skinRender.setMorphChannelWeight("target_20", value)
+		var skin = this.sprite3D.getChildAt(0);
+		var skinRender : Laya.MeshRenderer = skin.getComponent(Laya.MeshRenderer);
+		skinRender.setMorphChannelWeight("Key 1", value)
 	}
 
 	private onChange1(value: number): void {
-		var skin = this.sprite3D.getChildAt(0).getChildAt(0).getChildAt(0).getChildAt(0).getChildAt(0).getChildAt(0);
-		var skinRender : Laya.SkinnedMeshRenderer = skin.getComponent(Laya.SkinnedMeshRenderer);
-		skinRender.setMorphChannelWeight("target_26", value)
+		var skin = this.sprite3D.getChildAt(0);
+		var skinRender : Laya.MeshRenderer = skin.getComponent(Laya.MeshRenderer);
+		skinRender.setMorphChannelWeight("Key 4", value)
 	}
  
 }

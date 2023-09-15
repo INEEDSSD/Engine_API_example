@@ -4,6 +4,15 @@ const int SamplerNum = 17;
 uniform vec4 u_kernel[SamplerNum];
 #include "Color.glsl";
 
+vec4 sampleMainTex(sampler2D tex, vec2 uv)
+{
+    vec4 mainSampler = texture2D(tex, uv);
+#ifdef Gamma_u_MainTex
+    mainSampler = gammaToLinear(mainSampler);
+#endif // Gamma_u_MainTex
+    return mainSampler;
+}
+
 //uv
 varying vec2 v_Texcoord0;
 
