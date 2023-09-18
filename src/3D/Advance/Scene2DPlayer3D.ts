@@ -127,7 +127,7 @@ export class Scene2DPlayer3D extends BaseScript {
 			(<Sprite3D>sp3.getChildAt(0).getChildAt(0)).layer = layer;
 
 			//把3D画到512宽高的纹理上，再添加到摄像机的目标纹理，形成动态绑定(一个摄像机只能绑一个，要绑多个就要创建多个摄像机)
-			_camera.renderTarget = new RenderTexture(512, 512, RenderTargetFormat.R16G16B16A16, RenderTargetFormat.DEPTHSTENCIL_24_8, false, 4);
+			_camera.renderTarget = new RenderTexture(512, 512, RenderTargetFormat.R8G8B8A8, RenderTargetFormat.DEPTH_16, false, 4);
 			//再将离屏3D画到2D节点上，至此，就完成把3D画到2D的基础渲染流程
 			sp.texture = new Texture(_camera.renderTarget);
 
