@@ -1,9 +1,0 @@
-{
-    "files.exclude": {
-        "**/.DS_Store": true,
-        "**/*.meta": true,
-        "library/": true,
-        "temp/": true,
-        "local/": true
-    }
-}
