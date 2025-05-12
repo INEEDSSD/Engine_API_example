@@ -1,0 +1,53 @@
+{
+  "_$type": "Animator",
+  "enabled": true,
+  "path": "",
+  "cullingMode": 2,
+  "controllerLayers": [
+    {
+      "name": "Base Layer",
+      "states": [
+        {
+          "x": 9,
+          "y": 100,
+          "id": "-1",
+          "name": "进入",
+          "nexts": [],
+          "soloTransitions": [
+            {
+              "id": "0",
+              "exitByTime": true,
+              "transduration": 0.15,
+              "exitTime": 0.85
+            }
+          ]
+        },
+        {
+          "y": 100,
+          "id": "-2",
+          "name": "任何状态",
+          "x": 655
+        },
+        {
+          "x": 203,
+          "y": 212,
+          "_isLooping": 0,
+          "id": "0",
+          "name": "mixamo.com",
+          "speed": 1,
+          "clipEnd": 1,
+          "clip": {
+            "_$uuid": "df984515-6bf3-4014-afae-5a33490838bf@lani0"
+          }
+        }
+      ],
+      "playOnWake": true,
+      "blendingMode": 0,
+      "defaultWeight": 1,
+      "avatarMask": {
+        "_$uuid": "4ebe06b3-6683-4353-80b7-5bb410b6de64"
+      }
+    }
+  ],
+  "layerW": 150
+}

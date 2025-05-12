@@ -1,0 +1,10 @@
+{
+  "uuid": "95516885-6360-4cdc-a27c-0848d8b55096",
+  "importer": {
+    "sRGB": true,
+    "generateMipmap": true,
+    "textureShape": 1,
+    "cubemapSize": 256,
+    "cubemapFileMode": "R8G8B8A8"
+  }
+}

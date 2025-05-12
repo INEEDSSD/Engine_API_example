@@ -1,0 +1,320 @@
+{
+  "_$ver": 1,
+  "_$id": "pambnbgm",
+  "_$type": "Sprite3D",
+  "name": "Sprite3D",
+  "_$child": [
+    {
+      "_$id": "c09lyr86",
+      "_$type": "Sprite3D",
+      "name": "Plane",
+      "transform": {
+        "localScale": {
+          "_$type": "Vector3",
+          "x": 10,
+          "y": 1,
+          "z": 10
+        }
+      },
+      "_$comp": [
+        {
+          "_$type": "MeshFilter",
+          "sharedMesh": {
+            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+            "_$type": "Mesh"
+          }
+        },
+        {
+          "_$type": "MeshRenderer",
+          "lightmapScaleOffset": {
+            "_$type": "Vector4"
+          },
+          "sharedMaterials": [
+            {
+              "_$uuid": "2460c262-4754-4086-83ce-a66b76ab5f41",
+              "_$type": "Material"
+            }
+          ]
+        },
+        {
+          "_$type": "PhysicsCollider",
+          "colliderShape": {
+            "_$type": "BoxColliderShape",
+            "localOffset": {
+              "_$type": "Vector3",
+              "y": -0.025
+            },
+            "size": {
+              "_$type": "Vector3",
+              "x": 1,
+              "y": 0.05,
+              "z": 1
+            }
+          },
+          "collisionGroup": 1
+        }
+      ]
+    },
+    {
+      "_$id": "y0i7ao11",
+      "_$type": "Sprite3D",
+      "name": "Plane(1)",
+      "transform": {
+        "localPosition": {
+          "_$type": "Vector3",
+          "y": 1.2228020121730498,
+          "z": -6.308573028004756
+        },
+        "localRotation": {
+          "_$type": "Quaternion",
+          "x": 0.17925402048292557,
+          "w": 0.9838028238121229
+        },
+        "localScale": {
+          "_$type": "Vector3",
+          "x": 10,
+          "y": 1,
+          "z": 7
+        }
+      },
+      "_$comp": [
+        {
+          "_$type": "MeshFilter",
+          "sharedMesh": {
+            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+            "_$type": "Mesh"
+          }
+        },
+        {
+          "_$type": "MeshRenderer",
+          "lightmapScaleOffset": {
+            "_$type": "Vector4"
+          },
+          "sharedMaterials": [
+            {
+              "_$uuid": "7e3428d4-1097-40ae-b122-d1149710a7b0",
+              "_$type": "Material"
+            }
+          ]
+        },
+        {
+          "_$type": "PhysicsCollider",
+          "colliderShape": {
+            "_$type": "BoxColliderShape",
+            "localOffset": {
+              "_$type": "Vector3",
+              "y": -0.025
+            },
+            "size": {
+              "_$type": "Vector3",
+              "x": 1,
+              "y": 0.05,
+              "z": 1
+            }
+          },
+          "collisionGroup": 1,
+          "friction": 0.1,
+          "rollingFriction": 0.1
+        }
+      ]
+    },
+    {
+      "_$id": "3cro3lon",
+      "_$type": "Sprite3D",
+      "name": "Sprite3D",
+      "_$child": [
+        {
+          "_$id": "m88zsala",
+          "_$type": "Sprite3D",
+          "name": "Cube",
+          "transform": {
+            "localPosition": {
+              "_$type": "Vector3",
+              "x": -3.3730454444885254,
+              "y": 2.482868149342184,
+              "z": -7.818815199377327
+            },
+            "localRotation": {
+              "_$type": "Quaternion",
+              "x": 0.16679174223285248,
+              "w": 0.9859921473941514
+            }
+          },
+          "_$comp": [
+            {
+              "_$type": "MeshFilter",
+              "sharedMesh": {
+                "_$uuid": "6e013e32-fec7-4397-80d1-f918a07607be",
+                "_$type": "Mesh"
+              }
+            },
+            {
+              "_$type": "MeshRenderer",
+              "lightmapScaleOffset": {
+                "_$type": "Vector4"
+              },
+              "sharedMaterials": [
+                {
+                  "_$uuid": "eeca3630-9be7-488e-8b83-30f0e4a8b542",
+                  "_$type": "Material"
+                }
+              ]
+            },
+            {
+              "_$type": "Rigidbody3D",
+              "colliderShape": {
+                "_$type": "BoxColliderShape"
+              },
+              "collisionGroup": 1,
+              "friction": 0.1
+            }
+          ]
+        },
+        {
+          "_$id": "yt273v3l",
+          "_$type": "Sprite3D",
+          "name": "Cube(1)",
+          "transform": {
+            "localPosition": {
+              "_$type": "Vector3",
+              "x": -1.221907138824463,
+              "y": 2.482868149342184,
+              "z": -7.818815199377327
+            },
+            "localRotation": {
+              "_$type": "Quaternion",
+              "x": 0.16679174223285248,
+              "w": 0.9859921473941514
+            }
+          },
+          "_$comp": [
+            {
+              "_$type": "MeshFilter",
+              "sharedMesh": {
+                "_$uuid": "6e013e32-fec7-4397-80d1-f918a07607be",
+                "_$type": "Mesh"
+              }
+            },
+            {
+              "_$type": "MeshRenderer",
+              "lightmapScaleOffset": {
+                "_$type": "Vector4"
+              },
+              "sharedMaterials": [
+                {
+                  "_$uuid": "6b8af728-869b-40d9-991c-fd607a675d66",
+                  "_$type": "Material"
+                }
+              ]
+            },
+            {
+              "_$type": "Rigidbody3D",
+              "colliderShape": {
+                "_$type": "BoxColliderShape"
+              },
+              "collisionGroup": 1,
+              "friction": 0.2,
+              "rollingFriction": 0.1
+            }
+          ]
+        },
+        {
+          "_$id": "e54lq29a",
+          "_$type": "Sprite3D",
+          "name": "Cube(2)",
+          "transform": {
+            "localPosition": {
+              "_$type": "Vector3",
+              "x": 0.968395471572876,
+              "y": 2.482868149342184,
+              "z": -7.818815199377327
+            },
+            "localRotation": {
+              "_$type": "Quaternion",
+              "x": 0.16679174223285248,
+              "w": 0.9859921473941514
+            }
+          },
+          "_$comp": [
+            {
+              "_$type": "MeshFilter",
+              "sharedMesh": {
+                "_$uuid": "6e013e32-fec7-4397-80d1-f918a07607be",
+                "_$type": "Mesh"
+              }
+            },
+            {
+              "_$type": "MeshRenderer",
+              "lightmapScaleOffset": {
+                "_$type": "Vector4"
+              },
+              "sharedMaterials": [
+                {
+                  "_$uuid": "e3c3beb9-9ad0-435f-a42d-442dd34df43f",
+                  "_$type": "Material"
+                }
+              ]
+            },
+            {
+              "_$type": "Rigidbody3D",
+              "colliderShape": {
+                "_$type": "BoxColliderShape"
+              },
+              "collisionGroup": 1,
+              "friction": 0.3,
+              "rollingFriction": 0.4
+            }
+          ]
+        },
+        {
+          "_$id": "2x40hs1b",
+          "_$type": "Sprite3D",
+          "name": "Cube(3)",
+          "transform": {
+            "localPosition": {
+              "_$type": "Vector3",
+              "x": 3.136916160583496,
+              "y": 2.482868149342184,
+              "z": -7.818815199377327
+            },
+            "localRotation": {
+              "_$type": "Quaternion",
+              "x": 0.16679174223285248,
+              "w": 0.9859921473941514
+            }
+          },
+          "_$comp": [
+            {
+              "_$type": "MeshFilter",
+              "sharedMesh": {
+                "_$uuid": "6e013e32-fec7-4397-80d1-f918a07607be",
+                "_$type": "Mesh"
+              }
+            },
+            {
+              "_$type": "MeshRenderer",
+              "lightmapScaleOffset": {
+                "_$type": "Vector4"
+              },
+              "sharedMaterials": [
+                {
+                  "_$uuid": "c0837c37-2726-4fed-9c3d-d7b79d7b53c4",
+                  "_$type": "Material"
+                }
+              ]
+            },
+            {
+              "_$type": "Rigidbody3D",
+              "colliderShape": {
+                "_$type": "BoxColliderShape"
+              },
+              "collisionGroup": 1,
+              "friction": 1,
+              "rollingFriction": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

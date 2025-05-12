@@ -1,0 +1,38 @@
+{
+  "name": "LayaAir-API-Demo",
+  "outputPath": "",
+  "useCompressedEngine": false,
+  "startupScene": "res://9b931ecf-fde9-44dd-acf3-15f8dc807965",
+  "alwaysIncluded": [],
+  "copyBinFiles": false,
+  "excludeFilesRule": [],
+  "subpackages": [],
+  "android": {
+    "url": "http://layabox.com/layanative3.0/layaplayer3.0.1/index.js",
+    "targetArchitectures": {
+      "_$type": true,
+      "ARMv7": true,
+      "ARM64": false,
+      "x86": false,
+      "x86-64": false
+    },
+    "exportFormat": "APK"
+  },
+  "ios": {
+    "url": "http://layabox.com/layanative3.0/layaplayer3.0.1/index.js"
+  },
+  "oppogame": {
+    "package": "com.ok.module",
+    "versionCode": "2"
+  },
+  "vivogame": {
+    "package": "cba.vivominigame",
+    "minPlatformVersion": "1090"
+  },
+  "wxgame": {
+    "appid": ""
+  },
+  "xmgame": {
+    "package": "com.wenhu.mmxxl"
+  }
+}

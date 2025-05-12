@@ -1,0 +1,51 @@
+{
+  "_$type": "Animator",
+  "controller": {
+    "_$uuid": "3eea6aa3-941f-4098-8b3b-26c8b161a6ca",
+    "_$type": "AnimationController"
+  },
+  "cullingMode": 0,
+  "controllerLayers": [
+    {
+      "_$type": "AnimatorControllerLayer",
+      "name": "Base Layer",
+      "states": [
+        {
+          "x": 10,
+          "y": 100,
+          "id": "-1",
+          "name": "进入",
+          "nexts": [],
+          "soloTransitions": [
+            {
+              "id": "0"
+            }
+          ]
+        },
+        {
+          "y": 100,
+          "id": "-2",
+          "name": "任何状态",
+          "x": 838
+        },
+        {
+          "x": 285.6666259765625,
+          "y": 114,
+          "_isLooping": 0,
+          "id": "0",
+          "name": "Carn_Walk",
+          "speed": 1,
+          "clipEnd": 1,
+          "clip": {
+            "_$uuid": "8b629bfb-6700-4a22-a7b0-bbf1352c42bf"
+          }
+        }
+      ],
+      "defaultStateName": "Carn_Walk",
+      "playOnWake": true,
+      "blendingMode": 0,
+      "defaultWeight": 1
+    }
+  ],
+  "layerW": 150
+}

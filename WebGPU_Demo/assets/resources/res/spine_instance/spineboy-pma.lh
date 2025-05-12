@@ -1,0 +1,17 @@
+{
+  "_$ver": 1,
+  "_$id": "madvu46h",
+  "_$type": "Sprite",
+  "width": 0,
+  "height": 0,
+  "_$comp": [{
+      "_$type": "SpineBakeScript",
+      "bakeData": "{\"bonesNums\":34,\"aniOffsetMap\":{\"aim\":0,\"death\":204,\"hoverboard\":20400,\"idle\":24548,\"idle-turn\":31416,\"jump\":32572,\"run\":38080,\"run-to-idle\":41412,\"shoot\":42568,\"walk\":45220,\"textureWidth\":256},\"simpPath\":\"resources/res/spine_instance/spineboy-pma.ktx\"}"
+    },
+    {
+      "_$type": "Spine2DRenderNode",
+      "source": "res://e4b67746-04cf-44a7-ab32-eeb2ffa8a45f",
+      "animationName": "walk"
+    }
+  ]
+}

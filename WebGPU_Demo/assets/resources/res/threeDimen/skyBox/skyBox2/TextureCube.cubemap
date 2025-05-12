@@ -1,0 +1,7 @@
+{
+  "cubemapSize": 256,
+  "cubemapFileMode": "R8G8B8A8",
+  "filterMode": 1,
+  "front": "res://5317af1a-6c74-44ac-8ea4-931a358e51a9",
+  "back": "res://095a9a2b-456b-4fe1-947d-242d8670ae47"
+}

@@ -1,0 +1,42 @@
+{
+  "_$ver": 1,
+  "_$id": "hulhrhyt",
+  "_$type": "Sprite3D",
+  "name": "Sprite3D",
+  "_$child": [
+    {
+      "_$id": "3xrymkkj",
+      "_$type": "Sprite3D",
+      "name": "Cube",
+      "_$comp": [
+        {
+          "_$type": "MeshFilter",
+          "sharedMesh": {
+            "_$uuid": "6e013e32-fec7-4397-80d1-f918a07607be",
+            "_$type": "Mesh"
+          }
+        },
+        {
+          "_$type": "MeshRenderer",
+          "lightmapScaleOffset": {
+            "_$type": "Vector4"
+          },
+          "sharedMaterials": [
+            {
+              "_$uuid": "811d54bd-7986-4bd3-a3ed-f119b4dc40c9",
+              "_$type": "Material"
+            }
+          ]
+        },
+        {
+          "_$type": "Rigidbody3D",
+          "colliderShape": {
+            "_$type": "BoxColliderShape"
+          },
+          "collisionGroup": 1,
+          "restitution": 0.5
+        }
+      ]
+    }
+  ]
+}

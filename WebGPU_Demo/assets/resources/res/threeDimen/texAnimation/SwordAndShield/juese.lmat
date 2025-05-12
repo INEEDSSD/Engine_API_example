@@ -1,0 +1,65 @@
+{
+  "version": "LAYAMATERIAL:04",
+  "props": {
+    "textures": [
+      {
+        "path": "res://328cc906-c93b-4c57-a967-3f75aaf61e76",
+        "constructParams": [
+          512,
+          512,
+          1,
+          false,
+          false,
+          true
+        ],
+        "propertyParams": {
+          "filterMode": 1,
+          "wrapModeU": 1,
+          "wrapModeV": 1,
+          "anisoLevel": 4
+        },
+        "name": "u_DiffuseTexture"
+      }
+    ],
+    "type": "BLINNPHONG",
+    "renderQueue": 2000,
+    "materialRenderMode": 0,
+    "u_AlphaTestValue": 0.868,
+    "s_Cull": 2,
+    "s_Blend": 0,
+    "s_BlendSrc": 1,
+    "s_BlendDst": 0,
+    "s_BlendSrcRGB": 1,
+    "s_BlendDstRGB": 0,
+    "s_BlendSrcAlpha": 1,
+    "s_BlendDstAlpha": 0,
+    "s_DepthTest": 1,
+    "s_DepthWrite": true,
+    "u_TilingOffset": [
+      1,
+      1,
+      0,
+      0
+    ],
+    "u_DiffuseColor": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "u_AlbedoIntensity": 1.977,
+    "u_MaterialSpecular": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "u_Shininess": 0.078125,
+    "u_TransmissionRate": 0,
+    "u_BackDiffuse": 0,
+    "u_BackScale": 0,
+    "defines": [
+      "DIFFUSEMAP"
+    ]
+  }
+}

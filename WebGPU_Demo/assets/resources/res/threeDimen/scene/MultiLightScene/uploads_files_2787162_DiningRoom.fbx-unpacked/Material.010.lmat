@@ -1,0 +1,20 @@
+{
+  "props": {
+    "defines": [],
+    "name": "Material.010",
+    "textures": [],
+    "type": "Laya.PBRStandardMaterial",
+    "vectors": [
+      {
+        "name": "albedoColor",
+        "value": [
+          0.4875676929950714,
+          0.3562908172607422,
+          0.26265260577201843,
+          1
+        ]
+      }
+    ]
+  },
+  "version": "LAYAMATERIAL:02"
+}

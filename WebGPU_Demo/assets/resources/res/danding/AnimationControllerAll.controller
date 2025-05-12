@@ -1,0 +1,115 @@
+{
+  "_$type": "Animator",
+  "enabled": true,
+  "path": "",
+  "cullingMode": 2,
+  "controllerLayers": [
+    {
+      "name": "Base Layer",
+      "states": [
+        {
+          "x": 10,
+          "y": 100,
+          "id": "-1",
+          "name": "进入",
+          "nexts": [
+            {
+              "id": "0"
+            }
+          ],
+          "soloTransitions": [
+            {
+              "id": "7"
+            }
+          ]
+        },
+        {
+          "y": 100,
+          "id": "-2",
+          "name": "任何状态",
+          "x": 736
+        },
+        {
+          "x": 358,
+          "y": 143.66668701171875,
+          "id": "0",
+          "name": "Stand",
+          "clip": {
+            "_$uuid": "14adf6d2-12ee-42b0-ac59-ec48954470f6@lani0"
+          },
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "x": 594,
+          "y": 172,
+          "id": "1",
+          "name": "Attack",
+          "clip": {
+            "_$uuid": "08d7d33c-1cbc-4f38-b4b9-e024662c92ca@lani0"
+          }
+        },
+        {
+          "x": 479.6666259765625,
+          "y": 199.33334350585938,
+          "id": "3",
+          "name": "Run",
+          "clip": {
+            "_$uuid": "77928685-47a2-49ac-afaa-77f1889d7e97@lani0"
+          },
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "x": 598,
+          "y": 234,
+          "id": "4",
+          "name": "Skill1",
+          "clip": {
+            "_$uuid": "d61710d9-3c36-4199-ab2a-702709d3a4e9@lani0"
+          },
+          "clipEnd": 1,
+          "speed": 1
+        },
+        {
+          "x": 601,
+          "y": 297,
+          "id": "5",
+          "name": "Skill2",
+          "clip": {
+            "_$uuid": "04197706-baba-40b5-9a2e-25ea1500b528@lani0"
+          }
+        },
+        {
+          "x": 600,
+          "y": 361,
+          "id": "6",
+          "name": "Super",
+          "clip": {
+            "_$uuid": "b0ca4387-a3cb-4360-a999-37535956335b@lani0"
+          }
+        },
+        {
+          "x": 139,
+          "y": 310.3333435058594,
+          "id": "7",
+          "name": "Stun",
+          "clip": {
+            "_$uuid": "cc74e37c-c716-4dd3-9a9e-ec416a195ab1@lani0"
+          },
+          "nexts": [],
+          "soloTransitions": [],
+          "clipEnd": 1,
+          "speed": 1
+        }
+      ],
+      "stageX": 0.3611111111109082,
+      "stageY": -0.650793650793613,
+      "stageScale": 1,
+      "playOnWake": true,
+      "blendingMode": 0,
+      "defaultWeight": 1
+    }
+  ],
+  "layerW": 150
+}

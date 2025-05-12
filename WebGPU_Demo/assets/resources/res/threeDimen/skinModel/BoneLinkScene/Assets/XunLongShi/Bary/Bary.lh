@@ -1,0 +1,156 @@
+{
+  "_$ver": 1,
+  "_$id": "lpqjtwsy",
+  "_$type": "Sprite3D",
+  "name": "Bary",
+  "_$comp": [
+    {
+      "_$type": "Animator",
+      "controller": {
+        "_$uuid": "e1cf4a2d-c468-45ab-b177-b576deda561e",
+        "_$type": "AnimationController"
+      },
+      "cullingMode": 0,
+      "controllerLayers": [
+        {
+          "_$type": "AnimatorControllerLayer",
+          "name": "Base Layer",
+          "states": [
+            {
+              "_$type": "AnimatorState",
+              "name": "Walk",
+              "clipStart": 0,
+              "clip": {
+                "_$uuid": "aab16cc3-51f9-4ee9-9328-6c3a28200623",
+                "_$type": "AnimationClip"
+              },
+              "soloTransitions": []
+            }
+          ],
+          "defaultStateName": "Walk"
+        }
+      ]
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "b28e2xyy",
+      "_$type": "Sprite3D",
+      "name": "Untitled",
+      "_$child": [
+        {
+          "_$id": "5jqb1er5",
+          "_$type": "Sprite3D",
+          "name": "bary_LOD_2",
+          "_$comp": [
+            {
+              "_$type": "MeshFilter",
+              "sharedMesh": {
+                "_$uuid": "ca535045-6ccb-4388-ab6f-a1a9f7ae3ab2",
+                "_$type": "Mesh"
+              }
+            },
+            {
+              "_$type": "SimpleSkinnedMeshRenderer",
+              "receiveShadow": true,
+              "castShadow": true,
+              "lightmapScaleOffset": {
+                "_$type": "Vector4"
+              },
+              "sharedMaterials": [
+                {
+                  "_$uuid": "c24821f0-20b1-4c98-8b5f-5ed96a8b28af",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "b585c9a5-9262-45fb-8dab-d2db4a19ba13",
+                  "_$type": "Material"
+                }
+              ],
+              "_bones": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "rootBone": {
+                "_$ref": "lpqjtwsy"
+              },
+              "localBounds": {
+                "_$type": "Bounds",
+                "min": {
+                  "_$type": "Vector3",
+                  "x": -19.736469353982265,
+                  "y": -1.1015923787541162,
+                  "z": -5.309524752677442
+                },
+                "max": {
+                  "_$type": "Vector3",
+                  "x": 13.249771057283063,
+                  "y": 12.038600321228655,
+                  "z": 6.015951698156451
+                }
+              },
+              "simpleAnimatorTexture": {
+                "_$uuid": "9bf3eaa9-1e27-4dd2-8a62-ee460772e535",
+                "_$type": "Texture2D"
+              },
+              "_bonesNums": 55
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

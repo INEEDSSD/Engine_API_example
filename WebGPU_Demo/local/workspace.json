@@ -1,0 +1,64 @@
+{
+  "GamePanel": {
+    "muted": false,
+    "scale": 1,
+    "scale2": 1,
+    "dimension": {
+      "name": "Free Aspect",
+      "x": 0,
+      "y": 0
+    },
+    "orientation": false
+  },
+  "InspectorPanel": {
+    "previewPanelHeight": 266
+  },
+  "ProjectPanel": {
+    "expandedNodes": [
+      ""
+    ],
+    "twoColumn": false,
+    "firstColumnWidth": 347,
+    "iconScale": 0,
+    "selected": "70df5377-2690-4c60-ba5d-846bbb6990f6"
+  },
+  "BuildSettingsPanel": {
+    "platform": "common"
+  },
+  "playButtonBehavior": "startup",
+  "SelectResourceDialog": {
+    "iconScale": 0,
+    "previewPanelHeight": 202,
+    "x": 2790,
+    "y": 38,
+    "width": 822,
+    "height": 570
+  },
+  "g": {
+    "iconScale": 0,
+    "previewPanelHeight": 202,
+    "x": null,
+    "y": null,
+    "width": 631,
+    "height": 631
+  },
+  "d": {
+    "x": null,
+    "y": null,
+    "width": 469,
+    "height": 460
+  },
+  "ConsolePanel": {
+    "collapse": true
+  },
+  "playUsingHttps": false,
+  "SelectFolderDialog": {
+    "x": 3120,
+    "y": 286,
+    "width": 470,
+    "height": 470
+  },
+  "ProjectSettingsPanel": {
+    "catalog": "PlayerSettings"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "default": {
+    "width": 1916,
+    "height": 927,
+    "id": "acS88Ud3",
+    "layout": 1,
+    "children": [
+      {
+        "width": 359,
+        "height": 927,
+        "id": "CCpIVpGJ",
+        "layout": 2,
+        "children": [
+          {
+            "width": 359,
+            "height": 334,
+            "id": "Z4BhSd47",
+            "selected": 0,
+            "children": [
+              "BlueprintInspectorPanel"
+            ]
+          },
+          {
+            "width": 359,
+            "height": 305,
+            "id": "im-HQx6L",
+            "selected": 0,
+            "children": [
+              "BlueprintUniformPanel"
+            ]
+          },
+          {
+            "width": 359,
+            "height": 280,
+            "id": "nKe35kSQ",
+            "selected": 0,
+            "children": [
+              "BlueprintPreviewPanel"
+            ]
+          }
+        ]
+      },
+      {
+        "width": 1553,
+        "height": 927,
+        "id": "UyLt2-yH",
+        "selected": 0,
+        "children": [
+          "ScenePanel"
+        ]
+      }
+    ]
+  }
+}

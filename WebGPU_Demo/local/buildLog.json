@@ -1,0 +1,38 @@
+{
+  "logs": [
+    {
+      "name": "Web",
+      "platform": "web",
+      "path": "D:\\layaDev\\LayaProject/release/web",
+      "runHandler": {
+        "serve": "",
+        "open": "",
+        "QRCode": ""
+      },
+      "time": 1719125811095,
+      "logFile": "web-82e46e9fb92efdebc381932f778abde6.log",
+      "success": true
+    },
+    {
+      "name": "淘宝小游戏",
+      "platform": "tbgame",
+      "path": "D:\\layaDev\\1\\Master3.0/release/tbgame",
+      "time": 1715657637710,
+      "logFile": "tbgame-c9cbbe63cec87f02c6e1a32e1f22c120.log",
+      "success": true
+    },
+    {
+      "name": "Web",
+      "platform": "web",
+      "path": "D:\\layaDev\\1\\Master3.0/release/web",
+      "runHandler": {
+        "serve": "",
+        "open": "",
+        "QRCode": ""
+      },
+      "time": 1715657617755,
+      "logFile": "web-863103bfe2a5d54763422ae1887a12b7.log",
+      "success": true
+    }
+  ]
+}

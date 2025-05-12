@@ -1,0 +1,61 @@
+{
+    "demoList": [{
+        "title": "WebGPU_Test",
+        "content": [{
+                "name": "PBR示例",
+                "scene": "Material/PBRMaterialDemo",
+                "desc": ""
+            },
+            {
+                "name": "粒子示例_永恒之光",
+                "scene": "Particle/Particle_EternalLight",
+                "desc": ""
+            },
+            {
+                "name": "粒子示例_燃烧大地",
+                "scene": "Particle/Particle_BurningGround",
+                "desc": ""
+            },
+            {
+                "name": "场景加载_骨骼动画",
+                "scene": "Scene3D/SceneLoad1",
+                "desc": ""
+            },
+            {
+                "name": "环境光遮蔽",
+                "scene": "PostProcess/PostProcessAO",
+                "desc": ""
+            },
+            {
+                "name": "实时阴影示例",
+                "scene": "Light/RealTimeShadow",
+                "desc": ""
+            },
+            {
+                "name": "多光源示例",
+                "scene": "Light/MultiLight",
+                "desc": ""
+            },
+            {
+                "name": "渲染cmd_轮廓示例",
+                "scene": "Advance/CommandBuffer_Outline",
+                "desc": ""
+            },
+            {
+                "name": "instance示例",
+                "scene": "PerformanceTest/DynamicBatchTest",
+                "desc": ""
+            },
+            {
+                "name": "多采样_MSAA示例",
+                "scene": "Camera/CameraMSAADemo",
+                "desc": ""
+            },
+            {
+                "name": "环境光反射_TextureCube示例",
+                "scene": "Scene3D/EnvironmentalReflection",
+                "desc": ""
+            }
+        ]
+    }]
+}

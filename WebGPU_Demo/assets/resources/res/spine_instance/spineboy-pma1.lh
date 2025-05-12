@@ -1,0 +1,22 @@
+{
+  "_$ver": 1,
+  "_$id": "655f9cej",
+  "_$type": "Sprite",
+  "name": "spineboy-pma",
+  "x": 304,
+  "y": 324,
+  "width": 0,
+  "height": 0,
+  "_$comp": [
+    {
+      "_$type": "Spine2DRenderNode",
+      "source": "res://e4b67746-04cf-44a7-ab32-eeb2ffa8a45f",
+      "animationName": "walk",
+      "preview": true
+    },
+    {
+      "_$type": "SpineBakeScript",
+      "bakeData": "{\"bonesNums\":34,\"aniOffsetMap\":{\"aim\":0,\"death\":204,\"hoverboard\":20400,\"idle\":24548,\"idle-turn\":31416,\"jump\":32572,\"run\":38080,\"run-to-idle\":41412,\"shoot\":42568,\"walk\":45220,\"textureWidth\":256},\"simpPath\":\"resources/yyy/spineboy-pma.ktx\"}"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+    "name": "引擎API使用示例",
+    "type": 1,
+    "ord": 7,
+    "desc": "创建一个基于LayaAir3.0引擎API的示例项目，该模板包含直接通过代码调用2D与3D引擎API的日常使用方式与进阶使用方式。",
+    "en": {
+        "name": "Engine API sample project",
+        "desc": "Create a sample project based on the Layair 3.0 engine API. This template contains both daily and advanced usage of 2D and 3D engine apis that are called directly from code."
+    },
+    "ver": 30,
+    "id": 6
+}

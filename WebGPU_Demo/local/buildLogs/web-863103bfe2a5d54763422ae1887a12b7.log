@@ -1,0 +1,7 @@
+[2024-05-14 11:33:16][info] Run WebPub.onSetup
+[2024-05-14 11:33:16][info] ExportAssetTool: 2588 assets to parse
+[2024-05-14 11:33:19][info] ExportAssetTool: 329 assets to parse
+[2024-05-14 11:33:20][info] ExportAssetTool: 3 assets to parse
+[2024-05-14 11:33:20][info] ExportAssetTool: 2920 items to write
+[2024-05-14 11:33:37][info] Run WebPub.onCreateManifest
+[2024-05-14 11:33:37][info] Build end, result=Success

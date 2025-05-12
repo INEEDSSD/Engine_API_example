@@ -1,0 +1,179 @@
+{
+  "elements": [
+    {
+      "active": true,
+      "tint": {
+        "r": 0.992248062015504,
+        "g": 0.6345772489634037,
+        "b": 0.6345772489634037,
+        "a": 1
+      },
+      "intensity": 0.9799999999999999,
+      "texture": {
+        "_$uuid": "deaff331-6338-4a72-8730-0b3ee812252e"
+      },
+      "positionOffset": {
+        "x": 0,
+        "y": 0
+      },
+      "scale": {
+        "x": 14.879999999999999,
+        "y": 14.879999999999999
+      },
+      "autoRotate": false,
+      "rotation": 0,
+      "startPosition": 0,
+      "angularOffset": 0
+    },
+    {
+      "active": true,
+      "tint": {
+        "r": 0.992248062015504,
+        "g": 0.6345772489634037,
+        "b": 0.6345772489634037,
+        "a": 1
+      },
+      "intensity": 1.673,
+      "texture": {
+        "_$uuid": "92ebf7ff-db47-4505-8d46-19235322398a"
+      },
+      "positionOffset": {
+        "x": 0,
+        "y": 0
+      },
+      "scale": {
+        "x": 13.38,
+        "y": 13.38
+      },
+      "autoRotate": true,
+      "rotation": 27.3,
+      "startPosition": 0.5,
+      "angularOffset": 0
+    },
+    {
+      "active": true,
+      "tint": {
+        "r": 0.992248062015504,
+        "g": 0.6345772489634037,
+        "b": 0.6345772489634037,
+        "a": 1
+      },
+      "intensity": 0.5319999999999999,
+      "texture": {
+        "_$uuid": "a8c1725d-d191-4325-ba44-2523f42b1b78"
+      },
+      "positionOffset": {
+        "x": 0,
+        "y": 0
+      },
+      "scale": {
+        "x": 1.638,
+        "y": 1.638
+      },
+      "autoRotate": false,
+      "rotation": 0,
+      "startPosition": 0.69,
+      "angularOffset": 0
+    },
+    {
+      "active": true,
+      "tint": {
+        "r": 0.992248062015504,
+        "g": 0.6345772489634037,
+        "b": 0.6345772489634037,
+        "a": 1
+      },
+      "intensity": 0.413,
+      "texture": {
+        "_$uuid": "a8c1725d-d191-4325-ba44-2523f42b1b78"
+      },
+      "positionOffset": {
+        "x": 0,
+        "y": 0
+      },
+      "scale": {
+        "x": 1.14,
+        "y": 1.14
+      },
+      "autoRotate": false,
+      "rotation": 0,
+      "startPosition": 0.85,
+      "angularOffset": 0
+    },
+    {
+      "active": true,
+      "tint": {
+        "r": 0.992248062015504,
+        "g": 0.6345772489634037,
+        "b": 0.6345772489634037,
+        "a": 1
+      },
+      "intensity": 0.595,
+      "texture": {
+        "_$uuid": "0ab18e57-b41c-4e9f-b3f8-c34ab1d7b8ae"
+      },
+      "positionOffset": {
+        "x": 0,
+        "y": 0
+      },
+      "scale": {
+        "x": 4.5,
+        "y": 4.5
+      },
+      "autoRotate": true,
+      "rotation": 107.4,
+      "startPosition": 1.04,
+      "angularOffset": 0
+    },
+    {
+      "active": true,
+      "tint": {
+        "r": 0.992248062015504,
+        "g": 0.6345772489634037,
+        "b": 0.6345772489634037,
+        "a": 1
+      },
+      "intensity": 0.24499999999999997,
+      "texture": {
+        "_$uuid": "b4a2f55d-1f27-47a1-a0b5-5adedb853b8f"
+      },
+      "positionOffset": {
+        "x": 0,
+        "y": 0
+      },
+      "scale": {
+        "x": 1.626,
+        "y": 1.626
+      },
+      "autoRotate": false,
+      "rotation": 0,
+      "startPosition": 0.76,
+      "angularOffset": 0
+    },
+    {
+      "active": true,
+      "tint": {
+        "r": 0.992248062015504,
+        "g": 0.6345772489634037,
+        "b": 0.6345772489634037,
+        "a": 1
+      },
+      "intensity": 0.308,
+      "texture": {
+        "_$uuid": "20e9a1ff-2750-4ab6-87fe-05de58f25abd"
+      },
+      "positionOffset": {
+        "x": 0,
+        "y": 0
+      },
+      "scale": {
+        "x": 1.41,
+        "y": 1.41
+      },
+      "autoRotate": false,
+      "rotation": 0,
+      "startPosition": 0.31,
+      "angularOffset": 0
+    }
+  ]
+}

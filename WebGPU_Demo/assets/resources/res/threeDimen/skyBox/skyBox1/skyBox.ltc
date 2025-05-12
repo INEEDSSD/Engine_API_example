@@ -1,0 +1,21 @@
+{
+  "front": "res://447800cb-8e54-425d-8070-5bb61f436aaf",
+  "params": {
+    "mipmap": true,
+    "filterMode": 1,
+    "wrapModeU": 0,
+    "wrapModeV": 0,
+    "anisoLevel": 1,
+    "format": 0
+  },
+  "back": "res://da6ea40a-3f32-4ac5-bff8-00e02838fa07",
+  "left": "res://4e299003-7e65-4615-b61b-5ddb5a1147b3",
+  "right": "res://d5e82bfd-a794-4666-81e1-234d82fdb42e",
+  "up": "YUP.jpg",
+  "down": "YDown.jpg",
+  "cubemapSize": 256,
+  "cubemapFileMode": "R8G8B8A8",
+  "filterMode": 1,
+  "top": "res://551d8c89-31cc-4621-80a7-b4a04a510b04",
+  "bottom": "res://c7263463-1317-4a8b-bc2f-4a22892325c8"
+}

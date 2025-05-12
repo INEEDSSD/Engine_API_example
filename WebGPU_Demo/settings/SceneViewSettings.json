@@ -1,0 +1,8 @@
+{
+  "camera": {
+    "nearPlane": 0.01
+  },
+  "gizmos": {
+    "showGrid": false
+  }
+}

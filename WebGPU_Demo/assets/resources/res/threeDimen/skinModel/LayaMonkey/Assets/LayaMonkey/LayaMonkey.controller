@@ -1,0 +1,47 @@
+{
+  "_$type": "Animator",
+  "enabled": true,
+  "path": "",
+  "cullingMode": 2,
+  "controllerLayers": [
+    {
+      "name": "Base Layer",
+      "states": [
+        {
+          "x": 10,
+          "y": 100,
+          "id": "-1",
+          "name": "进入",
+          "nexts": [],
+          "soloTransitions": [
+            {
+              "id": "0"
+            }
+          ]
+        },
+        {
+          "y": 100,
+          "id": "-2",
+          "name": "任何状态",
+          "x": 550
+        },
+        {
+          "x": 123,
+          "y": 231,
+          "_isLooping": 0,
+          "id": "0",
+          "name": "LayaMonkey-Take 001",
+          "speed": 1,
+          "clipEnd": 1,
+          "clip": {
+            "_$uuid": "dd34f9c8-6314-4333-b1e0-d3bc53ccef30"
+          }
+        }
+      ],
+      "playOnWake": true,
+      "blendingMode": 0,
+      "defaultWeight": 1
+    }
+  ],
+  "layerW": 150
+}

@@ -1,0 +1,11 @@
+{
+  "cubemapSize": 256,
+  "cubemapFileMode": "R8G8B8A8",
+  "filterMode": 1,
+  "front": "res://a42122d7-f9cb-4283-a1dc-dc7b717de753",
+  "back": "res://a42122d7-f9cb-4283-a1dc-dc7b717de753",
+  "left": "res://a42122d7-f9cb-4283-a1dc-dc7b717de753",
+  "right": "res://a42122d7-f9cb-4283-a1dc-dc7b717de753",
+  "top": "res://a42122d7-f9cb-4283-a1dc-dc7b717de753",
+  "bottom": "res://a42122d7-f9cb-4283-a1dc-dc7b717de753"
+}

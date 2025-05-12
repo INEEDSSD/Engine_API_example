@@ -1,0 +1,62 @@
+{
+  "version": "LAYAMATERIAL:04",
+  "props": {
+    "textures": [
+      {
+        "path": "res://6e8b8f4a-47db-483a-ba90-8532d3019bc4",
+        "constructParams": [
+          1024,
+          1024,
+          1,
+          false,
+          false,
+          true
+        ],
+        "propertyParams": {
+          "filterMode": 1,
+          "wrapModeU": 0,
+          "wrapModeV": 0,
+          "anisoLevel": 4
+        },
+        "name": "u_AlbedoTexture"
+      }
+    ],
+    "type": "PBR",
+    "renderQueue": 2000,
+    "materialRenderMode": 0,
+    "u_AlphaTestValue": 0.5,
+    "u_AlbedoColor": [
+      0.4263565891472868,
+      0.3681302017607207,
+      0.24457664803797846,
+      1
+    ],
+    "u_TilingOffset": [
+      1,
+      1,
+      0,
+      0
+    ],
+    "u_NormalScale": 1,
+    "u_Metallic": 0,
+    "u_Smoothness": 0.5,
+    "u_OcclusionStrength": 1,
+    "u_EmissionColor": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "u_EmissionIntensity": 1,
+    "u_DetailNormalScale": 1,
+    "u_DetailTillingOffset": [
+      1,
+      1,
+      0,
+      0
+    ],
+    "defines": [
+      "ALBEDOTEXTURE"
+    ]
+  }
+}

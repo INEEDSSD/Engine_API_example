@@ -1,0 +1,158 @@
+{
+  "_$ver": 1,
+  "_$id": "lwppljzw",
+  "_$type": "Sprite3D",
+  "name": "Carn",
+  "_$comp": [
+    {
+      "_$type": "Animator",
+      "controller": {
+        "_$uuid": "635ddd31-7674-4f40-a7fb-65755e48e883",
+        "_$type": "AnimationController"
+      },
+      "cullingMode": 0,
+      "controllerLayers": [
+        {
+          "_$type": "AnimatorControllerLayer",
+          "name": "Base Layer",
+          "states": [
+            {
+              "_$type": "AnimatorState",
+              "name": "Carn_Walk",
+              "clipStart": 0,
+              "clip": {
+                "_$uuid": "8b629bfb-6700-4a22-a7b0-bbf1352c42bf",
+                "_$type": "AnimationClip"
+              },
+              "soloTransitions": []
+            }
+          ],
+          "defaultStateName": "Carn_Walk"
+        }
+      ]
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "w0x1c48z",
+      "_$type": "Sprite3D",
+      "name": "Untitled",
+      "_$child": [
+        {
+          "_$id": "x0fx4381",
+          "_$type": "Sprite3D",
+          "name": "carn",
+          "_$comp": [
+            {
+              "_$type": "MeshFilter",
+              "sharedMesh": {
+                "_$uuid": "01fee58c-8309-4ddc-844c-0a042809333e",
+                "_$type": "Mesh"
+              }
+            },
+            {
+              "_$type": "SimpleSkinnedMeshRenderer",
+              "receiveShadow": true,
+              "castShadow": true,
+              "lightmapScaleOffset": {
+                "_$type": "Vector4"
+              },
+              "sharedMaterials": [
+                {
+                  "_$uuid": "f115a8ea-d9c6-4e73-95d5-200f83d8ccd8",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "b585c9a5-9262-45fb-8dab-d2db4a19ba13",
+                  "_$type": "Material"
+                }
+              ],
+              "_bones": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "rootBone": {
+                "_$ref": "lwppljzw"
+              },
+              "localBounds": {
+                "_$type": "Bounds",
+                "min": {
+                  "_$type": "Vector3",
+                  "x": -25.825858742976216,
+                  "y": 0.004622753226748877,
+                  "z": -5.78320131962149
+                },
+                "max": {
+                  "_$type": "Vector3",
+                  "x": 14.56304747791549,
+                  "y": 15.550043737697209,
+                  "z": 6.960038022059194
+                }
+              },
+              "simpleAnimatorTexture": {
+                "_$uuid": "8b290d9b-0035-4d7c-9864-f06469c09ffb",
+                "_$type": "Texture2D"
+              },
+              "_bonesNums": 57
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

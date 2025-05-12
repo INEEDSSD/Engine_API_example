@@ -1,0 +1,57 @@
+{
+  "_$type": "Animator",
+  "enabled": true,
+  "cullingMode": 2,
+  "controllerLayers": [
+    {
+      "name": "Base Layer",
+      "defaultStateName": "dynamic",
+      "playOnWake": true,
+      "blendingMode": 0,
+      "states": [
+        {
+          "name": "dynamic",
+          "clip": {
+            "_$uuid": "be1a771c-19b8-47c6-bc07-e12537f03e74"
+          },
+          "loop": -1,
+          "speed": 0.5,
+          "clipEnd": 1,
+          "x": 237.8127259142205,
+          "y": 185.21090108485475,
+          "id": "0",
+          "_isLooping": 1
+        },
+        {
+          "x": 10,
+          "y": 100,
+          "_isLooping": 0,
+          "id": "-1",
+          "name": "进入",
+          "speed": 1,
+          "clipEnd": 1,
+          "soloTransitions": [
+            {
+              "id": "0"
+            }
+          ]
+        },
+        {
+          "x": 550,
+          "y": 100,
+          "_isLooping": 0,
+          "id": "-2",
+          "name": "任何状态",
+          "speed": 1,
+          "clipEnd": 1
+        }
+      ],
+      "defaultWeight": 1,
+      "stageX": 26.59999999999999,
+      "stageY": 58.69999999999995,
+      "stageScale": 0.9
+    }
+  ],
+  "sleep": false,
+  "layerW": 150
+}

@@ -1,0 +1,54 @@
+{
+  "_$type": "Animator",
+  "controller": {
+    "_$uuid": "d8c67eab-9381-4ff7-8268-cf25b577e26a",
+    "_$type": "AnimationController"
+  },
+  "cullingMode": 0,
+  "controllerLayers": [
+    {
+      "_$type": "AnimatorControllerLayer",
+      "name": "Base Layer",
+      "states": [
+        {
+          "x": 10,
+          "y": 100,
+          "id": "-1",
+          "name": "进入",
+          "nexts": [],
+          "soloTransitions": [
+            {
+              "id": "0"
+            }
+          ]
+        },
+        {
+          "y": 100,
+          "id": "-2",
+          "name": "任何状态",
+          "x": 838
+        },
+        {
+          "x": 231,
+          "y": 71.00000707881911,
+          "_isLooping": 0,
+          "id": "0",
+          "name": "Comp_Run",
+          "speed": 1,
+          "clipEnd": 1,
+          "clip": {
+            "_$uuid": "82fc5dc9-beb0-4d1a-a7b5-2b7a96ea7881"
+          }
+        }
+      ],
+      "defaultStateName": "Comp_Run",
+      "playOnWake": true,
+      "blendingMode": 0,
+      "defaultWeight": 1,
+      "stageX": 85.79999999999998,
+      "stageY": 103.6,
+      "stageScale": 0.8
+    }
+  ],
+  "layerW": 150
+}

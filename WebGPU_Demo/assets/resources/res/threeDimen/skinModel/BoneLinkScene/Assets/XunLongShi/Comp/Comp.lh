@@ -1,0 +1,161 @@
+{
+  "_$ver": 1,
+  "_$id": "0rcsp02o",
+  "_$type": "Sprite3D",
+  "name": "Comp",
+  "_$comp": [
+    {
+      "_$type": "Animator",
+      "controller": {
+        "_$uuid": "b51a713f-ce78-4597-937a-e971c5127900",
+        "_$type": "AnimationController"
+      },
+      "cullingMode": 0,
+      "controllerLayers": [
+        {
+          "_$type": "AnimatorControllerLayer",
+          "name": "Base Layer",
+          "states": [
+            {
+              "_$type": "AnimatorState",
+              "name": "Comp_Run",
+              "clipStart": 0,
+              "clip": {
+                "_$uuid": "82fc5dc9-beb0-4d1a-a7b5-2b7a96ea7881",
+                "_$type": "AnimationClip"
+              },
+              "soloTransitions": []
+            }
+          ],
+          "defaultStateName": "Comp_Run"
+        }
+      ]
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "smk97rhj",
+      "_$type": "Sprite3D",
+      "name": "Untitled",
+      "_$child": [
+        {
+          "_$id": "8li18hrl",
+          "_$type": "Sprite3D",
+          "name": "comp_LOD_0",
+          "_$comp": [
+            {
+              "_$type": "MeshFilter",
+              "sharedMesh": {
+                "_$uuid": "55d3951c-2020-43e7-ae9d-02cbb84aa935",
+                "_$type": "Mesh"
+              }
+            },
+            {
+              "_$type": "SimpleSkinnedMeshRenderer",
+              "receiveShadow": true,
+              "castShadow": true,
+              "lightmapScaleOffset": {
+                "_$type": "Vector4"
+              },
+              "sharedMaterials": [
+                {
+                  "_$uuid": "4a1b2344-a9e3-429d-ad49-d6842acd9593",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "b585c9a5-9262-45fb-8dab-d2db4a19ba13",
+                  "_$type": "Material"
+                }
+              ],
+              "_bones": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "rootBone": {
+                "_$ref": "0rcsp02o"
+              },
+              "localBounds": {
+                "_$type": "Bounds",
+                "min": {
+                  "_$type": "Vector3",
+                  "x": -2.536475171554941,
+                  "y": -0.10683911975308891,
+                  "z": -1.1514982337752357
+                },
+                "max": {
+                  "_$type": "Vector3",
+                  "x": 1.608499045028755,
+                  "y": 2.200168496281891,
+                  "z": 1.2520154599138653
+                }
+              },
+              "simpleAnimatorTexture": {
+                "_$uuid": "5de62d0b-f1ec-4b6a-8258-84bbe9665d0f",
+                "_$type": "Texture2D"
+              },
+              "_bonesNums": 60
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "windows": [
+    {
+      "width": 1201,
+      "height": 766,
+      "isMaximized": true,
+      "isFullScreen": false,
+      "displayBounds": {
+        "x": 1920,
+        "y": 0,
+        "width": 1920,
+        "height": 1080
+      },
+      "files": [
+        "9b931ecf-fde9-44dd-acf3-15f8dc807965"
+      ],
+      "active": 0,
+      "name": "sceneEditor",
+      "x": 2156,
+      "y": 248
+    },
+    {
+      "width": 1200,
+      "height": 800,
+      "isMaximized": true,
+      "isFullScreen": false,
+      "displayBounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 1080
+      },
+      "x": 278,
+      "y": 120,
+      "files": [],
+      "active": 0,
+      "name": "shaderEditor"
+    }
+  ]
+}
