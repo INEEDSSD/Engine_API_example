@@ -2,11 +2,19 @@
   "name": "LayaAir-API-Demo",
   "outputPath": "",
   "useCompressedEngine": false,
-  "startupScene": "res://9b931ecf-fde9-44dd-acf3-15f8dc807965",
+  "startupScene": "res://47928c43-805c-4423-8e63-7076dc449864",
   "alwaysIncluded": [],
   "copyBinFiles": false,
   "excludeFilesRule": [],
-  "subpackages": [],
+  "enableSubpackages": true,
+  "subpackages": [
+    {
+      "path": "resources",
+      "remote": true,
+      "remoteUrl": "http://10.1.118.104:9444/",
+      "autoLoad": true
+    }
+  ],
   "android": {
     "url": "http://layabox.com/layanative3.0/layaplayer3.0.1/index.js",
     "targetArchitectures": {

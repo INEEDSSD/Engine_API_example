@@ -1,20 +1,20 @@
-[2024-06-23 14:56:44][info] Start build web, destPath=D:\layaDev\LayaProject/release/web
-[2024-06-23 14:56:44][info] 正在初始化
-[2024-06-23 14:56:44][info] Run WebPub.onSetup
-[2024-06-23 14:56:44][info] 正在清理旧数据
-[2024-06-23 14:56:44][info] 开始构建
-[2024-06-23 14:56:44][info] 正在准备资源
-[2024-06-23 14:56:44][info] ExportAssetTool: 2574 assets to parse
-[2024-06-23 14:56:46][info] ExportAssetTool: 397 assets to parse
-[2024-06-23 14:56:46][info] ExportAssetTool: 6 assets to parse
-[2024-06-23 14:56:46][info] 正在导出资源
-[2024-06-23 14:56:46][info] ExportAssetTool: 2973 items to write
-[2024-06-23 14:56:50][info] ExportAssetTool: Create atlas/comp.atlas, 39 images.
-[2024-06-23 14:56:50][info] ExportAssetTool: Created atlas/comp.atlas
-[2024-06-23 14:56:50][info] 正在编译和打包脚本
-[2024-06-23 14:56:51][info] 正在拷贝文件
-[2024-06-23 14:56:51][info] 正在创建清单文件
-[2024-06-23 14:56:51][info] Run WebPub.onCreateManifest
-[2024-06-23 14:56:51][info] 正在创建包
-[2024-06-23 14:56:51][info] 正在结束构建
-[2024-06-23 14:56:51][info] Build end, result=Success
+[2025-05-13 12:57:21][info] Start build web, destPath=D:\layaDev\LayaProject/release/web
+[2025-05-13 12:57:21][info] 正在初始化
+[2025-05-13 12:57:21][info] Run WebPub.onSetup
+[2025-05-13 12:57:21][info] 正在清理旧数据
+[2025-05-13 12:57:23][info] 开始构建
+[2025-05-13 12:57:23][info] 正在准备资源
+[2025-05-13 12:57:23][info] ExportAssetTool: 2539 assets to parse
+[2025-05-13 12:57:24][info] ExportAssetTool: 424 assets to parse
+[2025-05-13 12:57:24][info] ExportAssetTool: 6 assets to parse
+[2025-05-13 12:57:24][info] 正在导出资源
+[2025-05-13 12:57:24][info] ExportAssetTool: 2965 items to write
+[2025-05-13 12:57:42][info] ExportAssetTool: Create atlas/comp.atlas, 39 images.
+[2025-05-13 12:57:43][info] ExportAssetTool: Created atlas/comp.atlas
+[2025-05-13 12:57:43][info] 正在编译和打包脚本
+[2025-05-13 12:57:44][info] 正在拷贝文件
+[2025-05-13 12:57:44][info] 正在创建清单文件
+[2025-05-13 12:57:51][info] Run WebPub.onCreateManifest
+[2025-05-13 12:57:51][info] 正在创建包
+[2025-05-13 12:57:51][info] 正在结束构建
+[2025-05-13 12:57:51][info] Build end, result=Success

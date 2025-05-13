@@ -1,59 +1,75 @@
 {
     "demoList": [{
         "title": "WebGPU_Test",
-        "content": [{
+        "content": [
+            {
+                "name": "空场景运行",
+                "scene": "3D/emptyScene",
+                "desc": ""
+            },
+            {
                 "name": "PBR示例",
-                "scene": "Material/PBRMaterialDemo",
+                "scene": "3D/Material/PBRMaterialDemo",
                 "desc": ""
             },
             {
                 "name": "粒子示例_永恒之光",
-                "scene": "Particle/Particle_EternalLight",
+                "scene": "3D/Particle/Particle_EternalLight",
                 "desc": ""
             },
             {
                 "name": "粒子示例_燃烧大地",
-                "scene": "Particle/Particle_BurningGround",
+                "scene": "3D/Particle/Particle_BurningGround",
                 "desc": ""
             },
             {
                 "name": "场景加载_骨骼动画",
-                "scene": "Scene3D/SceneLoad1",
+                "scene": "3D/Scene3D/SceneLoad1",
                 "desc": ""
             },
             {
                 "name": "环境光遮蔽",
-                "scene": "PostProcess/PostProcessAO",
+                "scene": "3D/PostProcess/PostProcessAO",
                 "desc": ""
             },
             {
                 "name": "实时阴影示例",
-                "scene": "Light/RealTimeShadow",
+                "scene": "3D/Light/RealTimeShadow",
                 "desc": ""
             },
             {
                 "name": "多光源示例",
-                "scene": "Light/MultiLight",
+                "scene": "3D/Light/MultiLight",
                 "desc": ""
             },
             {
                 "name": "渲染cmd_轮廓示例",
-                "scene": "Advance/CommandBuffer_Outline",
+                "scene": "3D/Advance/CommandBuffer_Outline",
                 "desc": ""
             },
             {
                 "name": "instance示例",
-                "scene": "PerformanceTest/DynamicBatchTest",
+                "scene": "3D/PerformanceTest/DynamicBatchTest",
                 "desc": ""
             },
             {
                 "name": "多采样_MSAA示例",
-                "scene": "Camera/CameraMSAADemo",
+                "scene": "3D/Camera/CameraMSAADemo",
                 "desc": ""
             },
             {
                 "name": "环境光反射_TextureCube示例",
-                "scene": "Scene3D/EnvironmentalReflection",
+                "scene": "3D/Scene3D/EnvironmentalReflection",
+                "desc": ""
+            },
+            {
+                "name": "2Dspine测试_SpineIDMesh",
+                "scene": "2D/Skeleton/Skeleton_SpineIKMesh",
+                "desc": ""
+            },
+            {
+                "name": "2D基础测试_显示图片",
+                "scene": "2D/Sprite/Sprite_DisplayImage",
                 "desc": ""
             }
         ]

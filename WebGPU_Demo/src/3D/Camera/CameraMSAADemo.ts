@@ -43,6 +43,13 @@ export class CameraMSAADemo extends BaseScript {
         this.directionLight.transform.worldMatrix = mat;
         this.addObjectInScene(this.scene);
         this.setMsaaOn();
+        Laya.stage.on(Laya.Event.CLICK, this, () => {
+            if (this.camera.msaa) {
+                this.setMsaaOff();
+            } else {
+                this.setMsaaOn();
+            }
+        });
         super.addBottomButton(["关闭MSAA", "开启MSAA"], this, [this.setMsaaOff, this.setMsaaOn]);
 
     }

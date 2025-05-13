@@ -362,11 +362,6 @@ declare module laya.ali.mini {
      * @param isSon 是否是子域，默认为false
      */
     static init(isPosMsg?: boolean, isSon?: boolean): void;
-    /**
-     * 支付宝wasm适配加载
-     * @param wasmFile 要加载的wasm文件
-     * @returns
-     */
     static aliPayCreateRender(): any;
     private static _onMessage;
     /**

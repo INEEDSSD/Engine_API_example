@@ -1,0 +1,26 @@
+const { regClass, property } = Laya;
+
+
+Laya.addAfterInitCallback(()=>{
+    if (Laya.LayaGL.renderEngine.getCapable(Laya.RenderCapable.ComputeShader)) {
+        Laya.Browser.loadLib("js/otherJS/WebGPU.js");
+
+        console.log("  IndirectDraw log,  use gl is ", Laya.LayaGL.renderEngine);
+    } else {
+        Laya.Browser.loadLib("js/otherJS/WebGL.js");
+
+        console.log("  IndirectDraw log,  use gl is ", Laya.LayaGL.renderEngine);
+    }
+});
+
+@regClass()
+export class IndirectDraw extends Laya.Script {
+    //declare owner : Laya.Sprite3D;
+    //declare owner : Laya.Sprite;
+
+    //组件被启用后执行，例如节点被添加到舞台后
+    onEnable(): void {
+        
+
+    }
+}

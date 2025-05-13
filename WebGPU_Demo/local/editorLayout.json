@@ -2,7 +2,7 @@
   "default": {
     "width": 1916,
     "height": 927,
-    "id": "VuOdLDKk",
+    "id": "BsKTLXKw",
     "layout": 1,
     "children": [
       {
@@ -13,7 +13,7 @@
         "children": [
           {
             "width": 347,
-            "height": 398,
+            "height": 197,
             "id": "7yjnpdum",
             "selected": 0,
             "children": [
@@ -22,7 +22,7 @@
           },
           {
             "width": 347,
-            "height": 525,
+            "height": 726,
             "id": "7q7fz5d1",
             "selected": 0,
             "children": [
@@ -48,13 +48,14 @@
                 "width": 1058,
                 "height": 693,
                 "id": "7eatv6px",
-                "selected": 0,
+                "selected": 5,
                 "children": [
                   "ScenePanel",
                   "GamePanel",
                   "AnimatorControllerPanel",
                   "ProjectSettingsPanel",
-                  "BuildSettingsPanel"
+                  "BuildSettingsPanel",
+                  "BuildTasksPanel"
                 ]
               }
             ]
@@ -93,7 +94,7 @@
       {
         "width": 346,
         "height": 438,
-        "id": "M1Zv2KRz",
+        "id": "3IWp8D0F",
         "selected": 0,
         "children": [
           "PreferencesPanel"

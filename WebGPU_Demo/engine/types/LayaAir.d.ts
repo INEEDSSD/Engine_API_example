@@ -167,6 +167,11 @@ declare namespace Laya {
          */
         static useWebGL2: boolean;
         /**
+         * @en 是否提供Spri-v的shader
+         * @zh
+         */
+        static useSPRIV: boolean;
+        /**
         * @en Whether to enable UniformBuffer
         * @zh 材质是否启用UniformBuffer
         */
@@ -13039,6 +13044,16 @@ declare namespace Laya {
          */
         static PlaneIntersectionType_Intersecting: number;
         /**
+         * @en The normal vector of the plane.
+         * @zh 平面的法线向量。
+         */
+        normal: Vector3;
+        /**
+         * @en The distance from the plane to the origin of the coordinate system.
+         * @zh 平面到坐标系原点的距离。
+         */
+        distance: number;
+        /**
          * @en Constructor method of the plane.
          * @param normal The normal vector of the plane.
          * @param d The distance from the plane to the origin of the coordinate system.
@@ -22705,7 +22720,6 @@ declare namespace Laya {
          * @zh 表示对象是否可见,默认为 true。如果设置为 false,节点将不会被渲染。
          */
         get visible(): boolean;
-        private _clearChildCache;
         set visible(value: boolean);
         /**
          * @en Specifies the blending mode to be used. Only "lighter" is currently supported.
@@ -49940,7 +49954,7 @@ declare namespace Laya {
         depthNormalPipelineMode: PipelineMode;
         depthTarget: InternalRenderTarget;
         destTarget: InternalRenderTarget;
-        camera: ICameraNodeData;
+        camera: Camera;
         cameraCullInfo: CameraCullInfo;
         depthTextureMode: DepthTextureMode;
         depthNormalTarget: InternalRenderTarget;
@@ -50257,13 +50271,13 @@ declare namespace Laya {
         geometry: IRenderGeometryElement;
         materialShaderData: ShaderData;
         materialRenderQueue: number;
+        materialId: number;
         renderShaderData: ShaderData;
         transform: Transform3D;
         canDynamicBatch: boolean;
         isRender: boolean;
         owner: IBaseRenderNode;
         subShader: SubShader;
-        materialId: number;
         destroy(): void;
     }
     interface IInstanceRenderBatch {
@@ -50485,10 +50499,225 @@ declare namespace Laya {
          */
         addShaderUniformArray(propertyID: number, propertyName: string, uniformtype: ShaderDataType, arrayLength: number): void;
     }
+    class ComputeCommandBuffer {
+        private _context;
+        constructor();
+        /**
+            * 清理所有指令
+            */
+        clearCMDs(): void;
+        /**
+         * 添加运行ComputeShader的命令
+         * @param cmd 计算着色器调度命令
+         */
+        addDispatchCommand(computeshader: ComputeShader, kernel: string, shaderDefine: IDefineDatas, datas: ShaderData[], dispatchParams: Vector3): void;
+        /**
+         * 添加修改ShaderData值的命令
+         * @param shaderData 要修改的ShaderData
+         * @param propertyName 属性名称
+         * @param value 要设置的值
+         */
+        addSetShaderDataCommand(shaderData: ShaderData, propertyID: number, shaderDataType: ShaderDataType, value: ShaderDataItem): void;
+        /**
+         * 添加Buffer拷贝到Buffer的命令
+         * @param src 源缓冲区
+         * @param dest 目标缓冲区
+         * @param sourceOffset 源偏移量（字节）
+         * @param destinationOffset 目标偏移量（字节）
+         * @param size 拷贝大小（字节）
+         */
+        addBufferToBufferCommand(src: IDeviceBuffer | IVertexBuffer | IIndexBuffer, dest: IDeviceBuffer | IVertexBuffer | IIndexBuffer, sourceOffset?: number, destinationOffset?: number, size?: number): void;
+        /**
+            * 清理buffer数据
+            * @param dest 清理数据的buffer
+            * @param destoffset 位置
+            * @param destCount 长度
+            */
+        addClearBufferCommand(dest: IDeviceBuffer, destoffset: number, destCount: number): void;
+        /**
+         * 添加Buffer拷贝到Texture的命令
+         * @param src 源缓冲区
+         * @param srcTextureInfo 源纹理信息
+         * @param destTextureInfo 目标纹理信息
+         * @param copySize 拷贝大小
+         */
+        addBufferToTextureCommand(src: IDeviceBuffer | IVertexBuffer, srcTextureInfo: any, destTextureInfo: any, copySize: any): void;
+        /**
+         * 添加Texture拷贝到Buffer的命令
+         * @param srcTextureInfo 源纹理信息
+         * @param dest 目标缓冲区
+         * @param destTextureInfo 目标纹理信息
+         * @param copySize 拷贝大小
+         */
+        addTextureToBufferCommand(srcTextureInfo: any, rc: IDeviceBuffer | IVertexBuffer, destTextureInfo: any, copySize: any): void;
+        /**
+         * 添加Texture拷贝到Texture的命令
+         * @param srcTextureInfo 源纹理信息
+         * @param destTextureInfo 目标纹理信息
+         * @param copySize 拷贝大小
+         */
+        addTextureToTextureCommand(srcTextureInfo: any, destTextureInfo: any, copySize: any): void;
+        /**
+         * 执行所有命令
+         */
+        executeCMDs(): void;
+        /**
+         * 销毁计算上下文，清空所有命令
+         */
+        destroy(): void;
+    }
+    class ComputeShader {
+        static createComputeShader(name: string, code: string, other: any): ComputeShader;
+        code: string;
+        name: string;
+        other: any;
+        constructor(name: string, code: string, other: any);
+        private setCacheShader;
+        getCacheShader(compileDefine: IDefineDatas): IComputeShader;
+    }
+    interface IGPUBuffer {
+        getNativeBuffer(): any;
+    }
+    /**
+     * 计算命令枚举
+     */
+    enum ComputeCommandType {
+        DispatchCompute = 0,
+        SetRenderData = 1,
+        ClearBuffer = 2,
+        CopyBufferToBuffer = 3,
+        copyBufferToTexture = 4,
+        copyTextureToBuffer = 5,
+        copyTextureToTexture = 6
+    }
+    /**
+     * 内存操作枚举
+     */
+    enum EComputeCMDMemoryOperate {
+        ClearBuffer = 0,
+        BufferToBuffer = 1,
+        BufferToTexture = 2,
+        TextureToBuffer = 3,
+        TextureToTexture = 4
+    }
+    interface IComputeCMD_Dispatch {
+        shader: IComputeShader;
+        Kernel: string;
+        shaderData: ShaderData[];
+        dispatchParams: Vector3;
+    }
+    interface IComputeCMD_MemoryOperate {
+        type: EComputeCMDMemoryOperate;
+        src: IDeviceBuffer;
+        dest?: IDeviceBuffer;
+        sourceOffset?: number;
+        destinationOffset?: number;
+        size?: number;
+        srcTextureInfo?: any;
+        destTextureInfo?: any;
+    }
+    interface IComputeContext {
+        /**
+         * 清理所有指令
+         */
+        clearCMDs(): void;
+        /**
+         * 添加运行ComputeShader的命令
+         * @param cmd 计算着色器调度命令
+         */
+        addDispatchCommand(cmd: IComputeCMD_Dispatch): void;
+        /**
+         * 添加修改ShaderData值的命令
+         * @param shaderData 要修改的ShaderData
+         * @param propertyName 属性名称
+         * @param value 要设置的值
+         */
+        addSetShaderDataCommand(shaderData: ShaderData, propertyID: number, shaderDataType: ShaderDataType, value: ShaderDataItem): void;
+        /**
+         * 添加Buffer拷贝到Buffer的命令
+         * @param src 源缓冲区
+         * @param dest 目标缓冲区
+         * @param sourceOffset 源偏移量（字节）
+         * @param destinationOffset 目标偏移量（字节）
+         * @param size 拷贝大小（字节）
+         */
+        addBufferToBufferCommand(src: IGPUBuffer, dest: IGPUBuffer, sourceOffset?: number, destinationOffset?: number, size?: number): void;
+        /**
+         * 添加Buffer拷贝到Texture的命令
+         * @param src 源缓冲区
+         * @param srcTextureInfo 源纹理信息
+         * @param destTextureInfo 目标纹理信息
+         * @param copySize 拷贝大小
+         */
+        addBufferToTextureCommand(src: IGPUBuffer, srcTextureInfo: any, destTextureInfo: any, copySize: any): void;
+        /**
+         * 添加Texture拷贝到Buffer的命令
+         * @param srcTextureInfo 源纹理信息
+         * @param dest 目标缓冲区
+         * @param destTextureInfo 目标纹理信息
+         * @param copySize 拷贝大小
+         */
+        addTextureToBufferCommand(srcTextureInfo: any, dest: IGPUBuffer, destTextureInfo: any, copySize: any): void;
+        /**
+         * 添加Texture拷贝到Texture的命令
+         * @param srcTextureInfo 源纹理信息
+         * @param destTextureInfo 目标纹理信息
+         * @param copySize 拷贝大小
+         */
+        addTextureToTextureCommand(srcTextureInfo: any, destTextureInfo: any, copySize: any): void;
+        /**
+         * 清理buffer数据
+         * @param dest 清理数据的buffer
+         * @param destoffset 位置
+         * @param destCount 长度
+         */
+        addClearBufferCommand(dest: IDeviceBuffer, destoffset: number, destCount: number): void;
+        /**
+         * 执行所有命令
+         */
+        executeCMDs(): void;
+        /**
+         * 销毁计算上下文，清空所有命令
+         */
+        destroy(): void;
+    }
+    interface ComputeShaderProcessInfo {
+        name: string;
+        code: string;
+        other: any;
+        defineData: IDefineDatas;
+    }
+    interface IComputeShader {
+        name: string;
+        HasKernel(kernel: string): boolean;
+        compilete: boolean;
+    }
     interface IBufferState {
         _bindedIndexBuffer: IIndexBuffer;
         _vertexBuffers: IVertexBuffer[];
         applyState(vertexBuffers: IVertexBuffer[], indexBuffer: IIndexBuffer | null): void;
+        destroy(): void;
+    }
+    enum EDeviceBufferUsage {
+        MAP_READ = 1,
+        MAP_WRITE = 2,
+        COPY_SRC = 4,
+        COPY_DST = 8,
+        STORAGE = 16,
+        INDIRECT = 32
+    }
+    /**
+     * 存储缓冲区接口,在GPU中创建各种各样的Buffer
+     * 用于在GPU上存储和访问大量数据，主要用于计算着色器,间接渲染数据
+     * 间接渲染数据中如果是drawIndirect  参数分别为vertexCount,instanceCount,firstVertex,firstInstance
+     *  间接渲染数据中如果是drawIndexIndirect indexCount，instanceCount，firstIndex
+     */
+    interface IDeviceBuffer {
+        setData(buffer: ArrayBuffer, bufferOffset: number, dataStartIndex: number, dataCount: number): void;
+        setDataLength(byteLength: number): void;
+        copyToBuffer(buffer: IVertexBuffer | IDeviceBuffer, sourceOffset: number, destoffset: number, bytelength: number): void;
+        copyToTexture(): void;
+        readData(dest: ArrayBuffer, destOffset: number, srcOffset: number, byteLength: number): Promise<void>;
         destroy(): void;
     }
     interface IIndexBuffer {
@@ -50604,6 +50833,9 @@ declare namespace Laya {
         createEngine(config: Config, canvas: any): Promise<void>;
         createGlobalUniformMap(blockName: string): CommandUniformMap;
         createShaderData(ownerResource?: Resource): ShaderData;
+        createComputeShader?(info: ComputeShaderProcessInfo): IComputeShader;
+        createComputeContext?(): IComputeContext;
+        createDeviceBuffer?(type: number): IDeviceBuffer;
     }
     interface IRenderEngine {
         _context: any;
@@ -50623,12 +50855,35 @@ declare namespace Laya {
         getParams(params: RenderParams): number;
         getCapable(capatableType: RenderCapable): boolean;
         getTextureContext(): ITextureContext;
-        getUBOPointer?(name: string): number;
-        createBuffer?(targetType: BufferTargetType, bufferUsageType: BufferUsage): GLBuffer;
         startFrame(): void;
         endFrame(): void;
     }
     interface IRenderGeometryElement {
+        bufferState: IBufferState;
+        mode: MeshTopology;
+        drawType: DrawType;
+        instanceCount: number;
+        indexFormat: IndexFormat;
+        /**
+         * 设置顶点的渲染初始开始位置和长度，参数会累加。此参数只在DrawArray为DrawElement和 DrawArrayInstance中有用
+         * @param first
+         * @param count
+         */
+        setDrawArrayParams(first: number, count: number): void;
+        /**
+         * 设置索引渲染数量和偏移，参数会累加，此参数只在DrawType为DrawElement和DrawElementInstance中有用
+         * @param first
+         * @param count
+         */
+        setDrawElemenParams(count: number, offset: number): void;
+        /**
+         * 设置间接渲染的Buffer和偏移,此参数只在DrawType为DrawArrayIndirect和DrawElementIndirect中有用
+         * @param buffer
+         * @param offset
+         */
+        setIndirectDrawBuffer?(buffer: IDeviceBuffer, offset: number): void;
+        clearRenderParams(): void;
+        destroy(): void;
         /**
          * @en get render params Array
          * @zh 获取渲染参数队列
@@ -50715,14 +50970,16 @@ declare namespace Laya {
         Vector4 = 6,
         Color = 7,
         Matrix4x4 = 8,
-        Texture2D = 9,
-        Texture3D = 10,
-        TextureCube = 11,
-        Buffer = 12,
-        Matrix3x3 = 13,
-        Texture2DArray = 14
+        Buffer = 9,
+        Matrix3x3 = 10,
+        ReadOnlyDeviceBuffer = 11,
+        DeviceBuffer = 12,
+        Texture2D = 13,
+        Texture3D = 14,
+        TextureCube = 15,
+        Texture2DArray = 16
     }
-    type ShaderDataItem = number | boolean | Vector2 | Vector3 | Vector4 | Color | Matrix4x4 | BaseTexture | Float32Array | Matrix3x3;
+    type ShaderDataItem = number | boolean | Vector2 | Vector3 | Vector4 | Color | Matrix4x4 | BaseTexture | Float32Array | Matrix3x3 | IDeviceBuffer;
     function checkShaderDataValueLegal(value: any, shaderType: ShaderDataType): boolean;
     function ShaderDataDefaultValue(type: ShaderDataType): false | Readonly<Vector2> | 0 | Readonly<Matrix3x3> | Readonly<Vector3> | Readonly<Matrix4x4> | Readonly<Vector4> | Readonly<Color>;
     /**
@@ -50874,6 +51131,8 @@ declare namespace Laya {
          * @param value  buffer数据。
          */
         setBuffer(index: number, value: Float32Array): void;
+        setDeviceBuffer(index: number, value: IDeviceBuffer): void;
+        getStorageBuffer(index: number): IDeviceBuffer;
         /**
          * 设置纹理。
          * @param index shader索引。
@@ -50909,9 +51168,7 @@ declare namespace Laya {
         bufferBlock: UniformBufferBlock;
         bufferAlone: UniformBufferAlone;
         manager: UniformBufferManager;
-        data: ShaderData;
         offset: number;
-        clearGPUBufferBind(): void;
         notifyGPUBufferChange(info?: string): void;
         updateOver(): void;
     }
@@ -52524,8 +52781,12 @@ declare namespace Laya {
         private static _setVertexDec;
     }
     class GLESRenderGeometryElement implements IRenderGeometryElement {
+        private _bufferState;
         _nativeObj: any;
         getDrawDataParams(out: FastSinglelist<number>): void;
+        setDrawArrayParams(first: number, count: number): void;
+        setDrawElemenParams(count: number, offset: number): void;
+        destroy(): void;
         clearRenderParams(): void;
         set bufferState(value: IBufferState);
         get bufferState(): IBufferState;
@@ -52809,6 +53070,10 @@ declare namespace Laya {
         set_renderUpdatePreCall(call: any, fun: any): void;
         set_caculateBoundingBox(call: any, fun: any): void;
         /**
+         * @param value
+         */
+        setRenderelements(value: IRenderElement3D[]): void;
+        /**
          * 设置基于RenderNode的渲染数据
          * @param dataSlot
          * @param data
@@ -52931,6 +53196,7 @@ declare namespace Laya {
         renderState: RenderState;
         nodeCommonMap: string[];
         additionShaderData: string[];
+        name: string;
         setCacheShader(defines: IDefineDatas, shaderInstance: IShaderInstance): void;
         getCacheShader(defines: IDefineDatas): IShaderInstance;
         destroy(): void;
@@ -53776,6 +54042,7 @@ declare namespace Laya {
         is2D: boolean;
         private _pass;
         constructor(pass: ShaderPass);
+        name: string;
         private _additionShaderData;
         get additionShaderData(): string[];
         set additionShaderData(value: string[]);
@@ -53859,6 +54126,8 @@ declare namespace Laya {
         _worldParams: Vector4;
         _commonUniformMap: string[];
         _additionShaderDataKeys: string[];
+        _additionalUpdateMask: number;
+        _driverCacheData: any;
         private _bounds;
         private _caculateBoundingBoxCall;
         private _caculateBoundingBoxFun;
@@ -53894,6 +54163,10 @@ declare namespace Laya {
          * @returns
          */
         _needRender(boundFrustum: BoundFrustum): boolean;
+        /**
+         * @param value :RenderElementObj
+         */
+        setRenderelements(value: IRenderElement3D[]): void;
         /**
         * apply lightProb
         * @returns
@@ -54309,6 +54582,7 @@ declare namespace Laya {
         get validDefine(): WebDefineDatas;
         set validDefine(value: WebDefineDatas);
         constructor(pass: ShaderPass);
+        name: string;
         additionShaderData: string[];
         nodeCommonMap: string[];
         setCacheShader(compileDefine: WebDefineDatas, shader: IShaderInstance): void;
@@ -55371,6 +55645,13 @@ declare namespace Laya {
     }
     class WebGLRenderGeometryElement implements IRenderGeometryElement {
         private static _idCounter;
+        _id: number;
+        bufferState: WebGLBufferState;
+        private _mode;
+        drawType: DrawType;
+        drawParams: FastSinglelist<number>;
+        instanceCount: number;
+        private _indexFormat;
         /**
          * index format
          */
@@ -55381,7 +55662,12 @@ declare namespace Laya {
          */
         get mode(): MeshTopology;
         set mode(value: MeshTopology);
+        constructor(mode: MeshTopology, drawType: DrawType);
         getDrawDataParams(out: FastSinglelist<number>): void;
+        setDrawArrayParams(first: number, count: number): void;
+        setDrawElemenParams(count: number, offset: number): void;
+        destroy(): void;
+        clearRenderParams(): void;
         cloneTo(obj: WebGLRenderGeometryElement): void;
     }
     /**
@@ -55607,15 +55893,16 @@ declare namespace Laya {
      * WebGPU渲染上下文（2D）
      */
     class WebGPURenderContext2D implements IRenderContext2D {
+        static _instance: WebGPURenderContext2D;
+        static _globalConfigShaderData: WebDefineDatas;
         device: GPUDevice;
-        destRT: WebGPUInternalRT;
+        sceneData: WebGPUShaderData;
         invertY: boolean;
         pipelineMode: string;
-        sceneData: WebGPUShaderData;
-        cameraData: WebGPUShaderData;
-        _globalConfigShaderData: WebDefineDatas;
+        _sceneBindGroup: WebGPUBindGroup;
+        _cacheGlobalDefines: WebDefineDatas;
         renderCommand: WebGPURenderCommandEncoder;
-        pipelineCache: any[];
+        _destRT: WebGPUInternalRT;
         private _offscreenWidth;
         private _offscreenHeight;
         private _needClearColor;
@@ -55623,6 +55910,7 @@ declare namespace Laya {
         private _viewport;
         private _clearColor;
         constructor();
+        private _prepareContext;
         getRenderTarget(): InternalRenderTarget;
         drawRenderElementList(list: FastSinglelist<WebGPURenderElement2D>): number;
         setOffscreenView(width: number, height: number): void;
@@ -55644,78 +55932,29 @@ declare namespace Laya {
         private _start;
     }
     class WebGPURenderElement2D implements IRenderElement2D, IRenderPipelineInfo {
-        static _sceneShaderData: WebGPUShaderData;
-        static _value2DShaderData: WebGPUShaderData;
-        static _materialShaderData: WebGPUShaderData;
         static _compileDefine: WebDefineDatas;
-        static _defineStrings: Array<string>;
-        protected _sceneData: WebGPUShaderData;
-        protected _cameraData: WebGPUShaderData;
+        private _nodeCommonMap;
+        private _value2DgpuRS;
+        private _nodeCommonMapMask;
+        protected _shaderInstances: FastSinglelist<WebGPUShaderInstance>;
+        geometry: WebGPURenderGeometry;
         materialShaderData: WebGPUShaderData;
         value2DShaderData: WebGPUShaderData;
         subShader: SubShader;
-        geometry: WebGPURenderGeometry;
         blendState: WebGPUBlendStateCache;
         depthStencilState: WebGPUDepthStencilStateCache;
         cullMode: CullMode;
         frontFace: FrontFace;
-        protected _stateKey: string[];
-        protected _pipeline: GPURenderPipeline[];
-        protected _shaderInstances: WebGPUShaderInstance[];
-        protected _passNum: number;
-        protected _passName: string;
-        protected _passIndex: number[];
-        protected _shaderDataState: {
-            [key: string]: number[];
-        };
-        protected _shaderDataObject: {
-            [key: string]: number[];
-        };
-        bundleId: number;
-        needClearBundle: boolean;
-        static bundleIdCounter: number;
-        isStatic: boolean;
-        staticChange: boolean;
-        nodeCommonMap: string[];
         renderStateIsBySprite: boolean;
-        globalId: number;
-        objectName: string;
+        get nodeCommonMap(): string[];
+        set nodeCommonMap(value: string[]);
         constructor();
-        /**
-         * 获取渲染通道的uniform
-         * @param shaderpass
-         * @param defineData
-         */
-        private _getShaderPassUniform;
-        /**
-         * 收集uniform
-         * @param compileDefine
-         */
-        protected _collectUniform(compileDefine: WebDefineDatas): {
-            uniformMap: WebGPUUniformMapType;
-            arrayMap: NameNumberMap;
-        };
+        protected _getShaderInstanceDefines(context: WebGPURenderContext2D): WebDefineDatas;
         /**
          * 编译着色器
          * @param context
          */
         protected _compileShader(context: WebGPURenderContext2D): void;
-        /**
-         * 计算状态值
-         * @param shaderInstance
-         * @param dest
-         * @param context
-         */
-        protected _calcStateKey(shaderInstance: WebGPUShaderInstance, dest: WebGPUInternalRT, context: WebGPURenderContext2D): string;
-        /**
-         * 获取渲染管线
-         * @param shaderInstance
-         * @param dest
-         * @param context
-         * @param entries
-         * @param stateKey
-         */
-        protected _getWebGPURenderPipeline(shaderInstance: WebGPUShaderInstance, dest: WebGPUInternalRT, context: WebGPURenderContext2D, entries: any, stateKey?: string): GPURenderPipeline;
         /**
          * 获取混合状态
          * @param shaderInstance
@@ -55732,31 +55971,18 @@ declare namespace Laya {
         private _getRenderStateDepthByShader;
         private _getRenderStateDepthByMaterial;
         private _getCullFrontMode;
-        /**
-         * 着色器数据是否改变
-         * @param context
-         */
-        protected _isShaderDataChange(context: WebGPURenderContext2D): boolean;
-        /**
-         * 创建绑定组布局
-         * @param shaderInstance
-         */
-        protected _createBindGroupLayout(shaderInstance: WebGPUShaderInstance): any[];
+        protected _getValue2DBindGroup(): void;
         /**
          * 绑定资源组
          * @param shaderInstance
          * @param command
          */
-        protected _bindGroup(shaderInstance: WebGPUShaderInstance, command: WebGPURenderCommandEncoder): void;
-        /**
-         * 上传uniform数据
-         */
-        protected _uploadUniform(): void;
+        protected _bindGroup(context: WebGPURenderContext2D, command: WebGPURenderCommandEncoder | WebGPURenderBundle): void;
         /**
          * 上传几何数据
          * @param command
          */
-        protected _uploadGeometry(command: WebGPURenderCommandEncoder): number;
+        protected _uploadGeometry(command: WebGPURenderCommandEncoder | WebGPURenderBundle): number;
         /**
          * 用于创建渲染管线的函数
          * @param index
@@ -55765,23 +55991,19 @@ declare namespace Laya {
          * @param command
          * @param stateKey
          */
-        protected _createPipeline(index: number, context: WebGPURenderContext2D, shaderInstance: WebGPUShaderInstance, command: WebGPURenderCommandEncoder, stateKey?: string): GPURenderPipeline;
-        /**
-         * 提取当前渲染通道
-         * @param pipelineMode
-         */
-        private _takeCurPass;
+        protected _getWebGPURenderPipeline(shaderInstance: WebGPUShaderInstance, dest: WebGPUInternalRT, context: WebGPURenderContext2D): GPURenderPipeline;
         /**
          * 准备渲染
          * @param context
          */
-        prepare(context: WebGPURenderContext2D): boolean;
+        _prepare(context: WebGPURenderContext2D): void;
         /**
          * 渲染
          * @param context
          * @param command
          */
-        render(context: WebGPURenderContext2D, command: WebGPURenderCommandEncoder): number;
+        _render(context: WebGPURenderContext2D, command: WebGPURenderCommandEncoder | WebGPURenderBundle): number;
+        private _renderByShaderInstance;
         /**
          * 销毁
          */
@@ -55789,8 +56011,8 @@ declare namespace Laya {
     }
     class WebGPU3DRenderPass implements IRender3DProcess {
         private _renderPass;
-        globalId: number;
-        objectName: string;
+        private _defaultShadowMap;
+        private _defaultDepthTex;
         constructor();
         render3DManager: WebSceneRenderManager;
         /**
@@ -55835,17 +56057,22 @@ declare namespace Laya {
          */
         destroy(): void;
     }
+    class WebGPUDriverRenderNodeCacheData {
+        bindGroup: Map<number, WebGPUBindGroup>;
+        commandUniformMapArray: string[];
+    }
     /**
      * WebGPU渲染工厂类
      */
     class WebGPU3DRenderPassFactory implements I3DRenderPassFactory {
+        getBaseRender3DNodeBindGroup(node: WebBaseRenderNode, context: WebGPURenderContext3D, shaderInstance: WebGPUShaderInstance): WebGPUBindGroup;
         createInstanceBatch(): IInstanceRenderBatch;
         createRender3DProcess(): IRender3DProcess;
         createRenderContext3D(): IRenderContext3D;
         createRenderElement3D(): IRenderElement3D;
         createInstanceRenderElement3D(): WebGPUInstanceRenderElement3D;
         createSkinRenderElement(): ISkinRenderElement3D;
-        createSceneRenderManager(): WebSceneRenderManager;
+        createSceneRenderManager(): ISceneRenderManager;
         createDrawNodeCMDData(): DrawNodeCMDData;
         createBlitQuadCMDData(): BlitQuadCMDData;
         createDrawElementCMDData(): DrawElementCMDData;
@@ -55853,67 +56080,6 @@ declare namespace Laya {
         createSetRenderTargetCMD(): SetRenderTargetCMD;
         createSetRenderDataCMD(): SetRenderDataCMD;
         createSetShaderDefineCMD(): SetShaderDefineCMD;
-    }
-    /**
-     * WebGPU全局上下文
-     */
-    class WebGPUContext {
-        static lastBundle: WebGPURenderBundle;
-        static lastCommand: WebGPURenderCommandEncoder;
-        static lastBundlePipeline: GPURenderPipeline;
-        static lastCommandPipeline: GPURenderPipeline;
-        static lastBundleGeometry: WebGPURenderGeometry;
-        static lastCommandGeometry: WebGPURenderGeometry;
-        /**
-         * 开始渲染（清空历史数据）
-         */
-        static startRender(): void;
-        /**
-         * 清空上次打包数据
-         */
-        static clearLastBundle(): void;
-        /**
-         * 清空上次命令数据
-         */
-        static clearLastCommand(): void;
-        /**
-         * 设置打包管线
-         * @param bundle
-         * @param pipeline
-         */
-        static setBundlePipeline(bundle: WebGPURenderBundle, pipeline: GPURenderPipeline): void;
-        /**
-         * 设置命令管线
-         * @param command
-         * @param pipeline
-         */
-        static setCommandPipeline(command: WebGPURenderCommandEncoder, pipeline: GPURenderPipeline): void;
-        /**
-         * 设置打包几何数据
-         * @param bundle
-         * @param geometry
-         */
-        static applyBundleGeometry(bundle: WebGPURenderBundle, geometry: WebGPURenderGeometry): number;
-        /**
-         * 设置打包几何数据（部分）
-         * @param bundle
-         * @param geometry
-         * @param part
-         */
-        static applyBundleGeometryPart(bundle: WebGPURenderBundle, geometry: WebGPURenderGeometry, part: number): number;
-        /**
-         * 设置命令几何数据
-         * @param command
-         * @param geometry
-         */
-        static applyCommandGeometry(command: WebGPURenderCommandEncoder, geometry: WebGPURenderGeometry): number;
-        /**
-         * 设置命令几何数据（部分）
-         * @param command
-         * @param geometry
-         * @param part
-         */
-        static applyCommandGeometryPart(command: WebGPURenderCommandEncoder, geometry: WebGPURenderGeometry, part: number): number;
     }
     /**
      * 线性光源阴影渲染流程
@@ -55970,6 +56136,7 @@ declare namespace Laya {
      * WebGPU前向渲染流程
      */
     class WebGPUForwardAddClusterRP extends ForwardAddClusterRP {
+        constructor();
         /**
          * 主渲染流程
          * @param context
@@ -55984,10 +56151,12 @@ declare namespace Laya {
         renderPass: WebGPUForwardAddClusterRP;
         /**directlight shadow */
         directLightShadowPass: WebGPUDirectLightShadowRP;
+        shadowMap: RenderTexture;
         /**enable directlight */
         enableDirectLightShadow: boolean;
         /**spot shadow */
         spotLightShadowPass: WebGPUSpotLightShadowRP;
+        spotShadowMap: RenderTexture;
         /**enable spot */
         enableSpotLightShadowPass: boolean;
         shadowParams: Vector4;
@@ -56045,34 +56214,11 @@ declare namespace Laya {
         addUpdateBuffer(vb: WebGPUVertexBuffer, length: number): void;
         getUpdateData(index: number, length: number): Float32Array;
         /**
-         * 计算状态值
-         * @param shaderInstance
-         * @param dest
-         * @param context
-         */
-        protected _calcStateKey(shaderInstance: WebGPUShaderInstance, dest: WebGPUInternalRT, context: WebGPURenderContext3D): string;
-        /**
          * 着色器数据是否改变
          * @param context
          */
         protected _isShaderDataChange(context: WebGPURenderContext3D): boolean;
         protected _compileShader(context: WebGPURenderContext3D): void;
-        /**
-         * 创建绑定组布局
-         * @param shaderInstance
-         */
-        protected _createBindGroupLayout(shaderInstance: WebGPUShaderInstance): any[];
-        /**
-         * 绑定资源组
-         * @param shaderInstance
-         * @param command
-         * @param bundle
-         */
-        protected _bindGroup(shaderInstance: WebGPUShaderInstance, command: WebGPURenderCommandEncoder, bundle: WebGPURenderBundle): void;
-        /**
-         * 上传uniform数据
-         */
-        protected _uploadUniform(): void;
         private _updateInstanceData;
         /**
          * 设置几何对象
@@ -56084,7 +56230,7 @@ declare namespace Laya {
          * @param command
          * @param bundle
          */
-        protected _uploadGeometry(command: WebGPURenderCommandEncoder, bundle: WebGPURenderBundle): number;
+        protected _uploadGeometry(command: WebGPURenderCommandEncoder | WebGPURenderBundle): number;
         /**
          * 清理单次渲染生成的数据
          */
@@ -56177,22 +56323,33 @@ declare namespace Laya {
      * WebGPU渲染上下文
      */
     class WebGPURenderContext3D implements IRenderContext3D {
-        globalConfigShaderData: WebDefineDatas;
-        device: GPUDevice;
-        bundleHit: number;
-        needRemoveBundle: number[];
-        bundleManagerSets: Map<string, WebGPURenderBundleManagerSet>;
-        destRT: WebGPUInternalRT;
-        blitFrameCount: number;
-        blitScreen: boolean;
-        renderCommand: WebGPURenderCommandEncoder;
-        pipelineCache: any[];
+        static _instance: WebGPURenderContext3D;
+        private _globalShaderData;
+        private _sceneData;
+        private _sceneModuleData;
+        _sceneBindGroup: WebGPUBindGroup;
+        private _cameraModuleData;
+        _cameraBindGroup: WebGPUBindGroup;
+        private _cameraData;
+        private _viewPort;
+        private _scissor;
+        private _sceneUpdataMask;
+        private _cameraUpdateMask;
+        private _pipelineMode;
+        private _invertY;
+        private _clearFlag;
+        private _clearColor;
+        private _clearDepth;
+        private _clearStencil;
+        private _needStart;
+        private _blitFrameCount;
+        private _blitScreen;
         private _viewScissorSaved;
         private _viewPortSave;
         private _scissorSave;
-        notifyGPUBufferChangeCounter: number;
-        globalId: number;
-        objectName: string;
+        device: GPUDevice;
+        destRT: WebGPUInternalRT;
+        renderCommand: WebGPURenderCommandEncoder;
         constructor();
         get sceneData(): WebGPUShaderData;
         set sceneData(value: WebGPUShaderData);
@@ -56212,6 +56369,7 @@ declare namespace Laya {
         set pipelineMode(value: PipelineMode);
         get invertY(): boolean;
         set invertY(value: boolean);
+        private _prepareContext;
         /**
          * 设置渲染目标
          * @param rt
@@ -56229,10 +56387,12 @@ declare namespace Laya {
          */
         setScissor(value: Vector4): void;
         /**
+         * TODO 挪到外面
          * 保存视口
          */
         saveViewPortAndScissor(): void;
         /**
+         * TODO 挪到外面
          * 恢复视口
          */
         restoreViewPortAndScissor(): void;
@@ -56244,14 +56404,6 @@ declare namespace Laya {
          * @param stencil
          */
         setClearData(flag: number, color: Color, depth: number, stencil: number): number;
-        /**
-         * 得到GPUBuffer改变的通知
-         */
-        notifyGPUBufferChange(): void;
-        /**
-         * 获取指令缓存组的key
-         */
-        getBundleManagerKey(): string;
         /**
          * 渲染一组节点
          * @param list
@@ -56298,22 +56450,17 @@ declare namespace Laya {
      * 基本渲染单元
      */
     class WebGPURenderElement3D implements IRenderElement3D, IRenderPipelineInfo {
-        static _sceneShaderData: WebGPUShaderData;
-        static _renderShaderData: WebGPUShaderData;
         static _compileDefine: WebDefineDatas;
-        static _defineStrings: Array<string>;
-        protected _sceneData: WebGPUShaderData;
-        protected _cameraData: WebGPUShaderData;
-        renderShaderData: WebGPUShaderData;
+        geometry: WebGPURenderGeometry;
         materialShaderData: WebGPUShaderData;
         materialRenderQueue: number;
         materialId: number;
+        renderShaderData: WebGPUShaderData;
         transform: Transform3D;
         canDynamicBatch: boolean;
         isRender: boolean;
         owner: WebBaseRenderNode;
         subShader: SubShader;
-        geometry: WebGPURenderGeometry;
         blendState: WebGPUBlendStateCache;
         depthStencilState: WebGPUDepthStencilStateCache;
         cullMode: CullMode;
@@ -56322,63 +56469,31 @@ declare namespace Laya {
         protected _stencilParam: {
             [key: string]: any;
         };
-        protected _stateKey: string[];
-        protected _pipeline: GPURenderPipeline[];
-        protected _shaderInstances: WebGPUShaderInstance[];
-        protected _passNum: number;
-        protected _passName: string;
-        protected _passIndex: number[];
-        protected _shaderDataState: {
-            [key: string]: number[];
-        };
-        bundleId: number;
-        needClearBundle: boolean;
-        static bundleIdCounter: number;
-        isStatic: boolean;
-        staticChange: boolean;
-        globalId: number;
-        objectName: string;
+        /**渲染Shader */
+        protected _shaderInstances: FastSinglelist<WebGPUShaderInstance>;
         constructor();
         /**
          * 是否反转面片
          */
         protected _getInvertFront(): boolean;
-        /**
-         * 获取渲染通道的uniform
-         * @param shaderpass
-         * @param defineData
-         */
-        private _getShaderPassUniform;
-        /**
-         * 收集uniform
-         * @param compileDefine
-         */
-        protected _collectUniform(compileDefine: WebDefineDatas): {
-            uniformMap: WebGPUUniformMapType;
-            arrayMap: NameNumberMap;
-        };
-        /**
-         * 提取当前渲染通道
-         * @param pipelineMode
-         */
-        private _takeCurrentPass;
-        /**
-         * 渲染前更新
-         * @param context
-         */
-        _preUpdatePre(context: WebGPURenderContext3D): boolean;
+        protected _getShaderInstanceDefines(context: WebGPURenderContext3D): WebDefineDatas;
         /**
          * 编译着色器
          * @param context
          */
         protected _compileShader(context: WebGPURenderContext3D): void;
         /**
-         * 计算状态值
-         * @param shaderInstance
-         * @param dest
+         * 渲染前更新,更新所有Buffer
          * @param context
          */
-        protected _calcStateKey(shaderInstance: WebGPUShaderInstance, dest: WebGPUInternalRT, context: WebGPURenderContext3D): string;
+        _preUpdatePre(context: WebGPURenderContext3D): void;
+        /**
+         * 提交渲染指令
+         * @param context
+         * @param command
+         * @param bundle
+         */
+        _render(context: WebGPURenderContext3D, command: WebGPURenderCommandEncoder | WebGPURenderBundle): number;
         /**
          * 获取渲染管线
          * @param shaderInstance
@@ -56387,7 +56502,7 @@ declare namespace Laya {
          * @param entries
          * @param stateKey
          */
-        protected _getWebGPURenderPipeline(shaderInstance: WebGPUShaderInstance, dest: WebGPUInternalRT, context: WebGPURenderContext3D, entries: any, stateKey?: string): GPURenderPipeline;
+        protected _getWebGPURenderPipeline(shaderInstance: WebGPUShaderInstance, dest: WebGPUInternalRT, context: WebGPURenderContext3D): GPURenderPipeline;
         /**
          * 获取混合状态
          * @param shaderInstance
@@ -56405,58 +56520,19 @@ declare namespace Laya {
         private _getRenderStateDepthByMaterial;
         private _getCullFrontMode;
         /**
-         * 着色器数据是否改变
-         * @param context
-         */
-        protected _isShaderDataChange(context: WebGPURenderContext3D): boolean;
-        /**
-         * 创建绑定组布局
-         * @param shaderInstance
-         */
-        protected _createBindGroupLayout(shaderInstance: WebGPUShaderInstance): any[];
-        /**
          * 绑定资源组
          * @param shaderInstance
          * @param command
          * @param bundle
          */
-        protected _bindGroup(shaderInstance: WebGPUShaderInstance, command: WebGPURenderCommandEncoder, bundle: WebGPURenderBundle): void;
-        /**
-         * 上传uniform数据
-         */
-        protected _uploadUniform(): void;
-        /**
-         * 上传模板参考值
-         * @param command
-         */
-        protected _uploadStencilReference(command: WebGPURenderCommandEncoder): void;
+        protected _bindGroup(context: WebGPURenderContext3D, shaderInstance: WebGPUShaderInstance, command: WebGPURenderCommandEncoder | WebGPURenderBundle): void;
         /**
          * 上传几何数据
          * @param command
          * @param bundle
          */
-        protected _uploadGeometry(command: WebGPURenderCommandEncoder, bundle: WebGPURenderBundle): number;
-        /**
-         * 用于创建渲染管线的函数
-         * @param index
-         * @param context
-         * @param shaderInstance
-         * @param command
-         * @param bundle
-         * @param stateKey
-         */
-        protected _createPipeline(index: number, context: WebGPURenderContext3D, shaderInstance: WebGPUShaderInstance, command: WebGPURenderCommandEncoder, bundle: WebGPURenderBundle, stateKey?: string): GPURenderPipeline;
-        /**
-         * 转换数据格式
-         */
-        protected _changeDataFormat(): void;
-        /**
-         * 渲染
-         * @param context
-         * @param command
-         * @param bundle
-         */
-        _render(context: WebGPURenderContext3D, command: WebGPURenderCommandEncoder, bundle: WebGPURenderBundle): number;
+        protected _uploadGeometry(command: WebGPURenderCommandEncoder | WebGPURenderBundle): number;
+        protected _uploadGeometryIndex(command: WebGPURenderCommandEncoder | WebGPURenderBundle, index: number): number;
         /**
          * 销毁
          */
@@ -56467,50 +56543,26 @@ declare namespace Laya {
      */
     class WebGPUSkinRenderElement3D extends WebGPURenderElement3D implements ISkinRenderElement3D {
         skinnedData: Float32Array[];
-        renderShaderDatas: WebGPUShaderData[];
         globalId: number;
         objectName: string;
+        skinnedBuffer: WebGPUSubUniformBuffer;
+        skinnedUniformMap: Map<number, UniformProperty>;
+        _skinnedDataSize: number;
+        _skinnedBufferOffsetAlignment: number;
+        _skinBindGroupMap: Map<number, WebGPUBindGroup>;
+        private _skinBufferMask;
         constructor();
-        /**
-         * 编译着色器
-         * @param context
-         */
-        protected _compileShader(context: WebGPURenderContext3D): void;
-        /**
-         * 销毁renderShaderDatas数据
-         */
-        private _destroyRenderShaderDatas;
-        /**
-         * 回收renderShaderDatas数据
-         */
-        private _recoverRenderShaderDatas;
-        /**
-         * 绑定资源组
-         * @param shaderInstance
-         * @param command
-         * @param bundle
-         * @param index
-         */
-        protected _bindGroupEx(shaderInstance: WebGPUShaderInstance, command: WebGPURenderCommandEncoder, bundle: WebGPURenderBundle, index: number): void;
-        /**
-         * 上传uniform数据
-         * @param index
-         */
-        protected _uploadUniformEx(index: number): void;
-        /**
-         * 上传几何数据
-         * @param command
-         * @param bundle
-         * @param index
-         */
-        protected _uploadGeometryEx(command: WebGPURenderCommandEncoder, bundle: WebGPURenderBundle, index: number): number;
+        _preUpdatePre(context: WebGPURenderContext3D): void;
+        private _ownerGetBaseRender3DNodeBindGroup;
+        protected _bindGroup(context: WebGPURenderContext3D, shaderInstance: WebGPUShaderInstance, command: WebGPURenderCommandEncoder | WebGPURenderBundle): void;
         /**
          * 渲染
          * @param context
          * @param command
          * @param bundle
          */
-        _render(context: WebGPURenderContext3D, command: WebGPURenderCommandEncoder, bundle: WebGPURenderBundle): number;
+        _render(context: WebGPURenderContext3D, command: WebGPURenderCommandEncoder | WebGPURenderBundle): number;
+        destroy(): void;
     }
     /**
      * 聚光灯阴影渲染流程
@@ -56558,6 +56610,150 @@ declare namespace Laya {
          * @param cameraData 相机数据
          */
         private _applyRenderData;
+    }
+    /**
+     * WebGPU计算上下文，用于缓存和管理一系列计算命令
+     */
+    class WebGPUComputeContext implements IComputeContext {
+        private device;
+        private commands;
+        private _computeEncoder;
+        private _commandEncoder;
+        private _cacheShader;
+        constructor();
+        /**
+         * 清空所有命令
+         */
+        clearCMDs(): void;
+        /**
+         * 添加计算调度命令
+         * @param cmd 计算调度命令信息
+         */
+        addDispatchCommand(cmd: IComputeCMD_Dispatch): void;
+        /**
+         * 添加设置着色器数据命令
+         * @param shaderData 着色器数据
+         * @param propertyID 属性ID
+         * @param shaderDataType 着色器数据类型
+         * @param value 数据值
+         */
+        addSetShaderDataCommand(shaderData: ShaderData, propertyID: number, shaderDataType: ShaderDataType, value: ShaderDataItem): void;
+        /**
+         * 添加缓冲区到缓冲区的复制命令
+         * @param src 源缓冲区
+         * @param dest 目标缓冲区
+         * @param sourceOffset 源缓冲区偏移量
+         * @param destinationOffset 目标缓冲区偏移量
+         * @param size 复制大小
+         */
+        addBufferToBufferCommand(src: IGPUBuffer, dest: IGPUBuffer, sourceOffset?: number, destinationOffset?: number, size?: number): void;
+        /**
+         * 添加缓冲区到纹理的复制命令
+         * @param src 源缓冲区
+         * @param srcTextureInfo 源纹理信息
+         * @param destTextureInfo 目标纹理信息
+         * @param copySize 复制大小
+         */
+        addBufferToTextureCommand(src: IGPUBuffer, srcTextureInfo: any, destTextureInfo: any, copySize: GPUExtent3D): void;
+        /**
+         * 添加纹理到缓冲区的复制命令
+         * @param srcTextureInfo 源纹理信息
+         * @param dest 目标缓冲区
+         * @param destTextureInfo 目标纹理信息
+         * @param copySize 复制大小
+         */
+        addTextureToBufferCommand(srcTextureInfo: any, dest: IGPUBuffer, destTextureInfo: any, copySize: GPUExtent3D): void;
+        /**
+         * 添加纹理到纹理的复制命令
+         * @param srcTextureInfo 源纹理信息
+         * @param destTextureInfo 目标纹理信息
+         * @param copySize 复制大小
+         */
+        addTextureToTextureCommand(srcTextureInfo: any, destTextureInfo: any, copySize: GPUExtent3D): void;
+        /**
+        * 清理buffer数据
+        * @param dest 清理数据的buffer
+        * @param destoffset 位置
+        * @param destCount 长度
+        */
+        addClearBufferCommand(dest: WebGPUDeviceBuffer, destoffset: number, destCount: number): void;
+        private _bindGroup;
+        private _startComputePass;
+        private _endComputePass;
+        /**
+         * 执行所有缓存的命令
+         */
+        executeCMDs(): void;
+        /**
+         * 销毁计算上下文，清空所有命令
+         */
+        destroy(): void;
+    }
+    class WebGPUComputeShaderInstance implements IComputeShader {
+        static idCounter: number;
+        private _device;
+        private _shaderModule;
+        private _pipelineCache;
+        private _gpuPipelineLayout;
+        private _entryPoints;
+        _id: number;
+        name: string;
+        uniformSetMap: Map<number, WebGPUUniformPropertyBindingInfo[]>;
+        uniformCommandMap: WebGPUCommandUniformMap[];
+        compilete: boolean;
+        constructor(name: string);
+        HasKernel(kernel: string): boolean;
+        /**
+         * 序列化着色器
+         * @returns 序列化后的着色器
+         */
+        _serializeShader(): ArrayBuffer;
+        /**
+         * 反序列化着色器
+         * @param buffer 序列化后的着色器
+         * @returns 是否反序列化成功
+         */
+        _deserialize(buffer: ArrayBuffer): boolean;
+        /**
+         * 编译计算着色器
+         * @param info 着色器编译信息
+         */
+        compile(info: ComputeShaderProcessInfo): void;
+        /**
+         * 获取或创建计算管线
+         * @param entryPoint 入口函数名
+         * @returns 计算管线
+         */
+        getOrcreatePipeline(entryPoint: string): GPUComputePipeline;
+        /**
+         * 基于WebGPUUniformPropertyBindingInfo创建PipelineLayout
+         * @param device
+         * @param name
+         * @param entries
+         */
+        createPipelineLayout(): GPUPipelineLayout;
+    }
+    interface IDeviceBufferCacheData {
+        gpudata: WebGPUShaderData;
+        propertyID: number;
+    }
+    class WebGPUDeviceBuffer implements IDeviceBuffer, IGPUBuffer {
+        private _buffer;
+        private _GPUBindGroupEntry;
+        private _cacheShaderData;
+        _destroyed: boolean;
+        constructor(type: number);
+        private _reSetBindGroupEntry;
+        _addCacheShaderData(shaderData: WebGPUShaderData, propertyID: number): void;
+        _removeCacheShaderData(shaderData: WebGPUShaderData): void;
+        getNativeBuffer(): WebGPUBuffer;
+        getBindGroupEntry(binding: number): GPUBindGroupEntry;
+        setData(buffer: ArrayBuffer, bufferOffset: number, dataStartIndex: number, dataCount: number): void;
+        setDataLength(byteLength: number): void;
+        copyToBuffer(buffer: WebGPUVertexBuffer | WebGPUDeviceBuffer, sourceOffset: number, destoffset: number, bytelength: number): void;
+        copyToTexture(): void;
+        readData(dest: ArrayBuffer, destOffset: number, srcOffset: number, byteLength: number): Promise<void>;
+        destroy(): void;
     }
     class WebGPU_GLSLCommon {
         /**
@@ -56825,6 +57021,32 @@ declare namespace Laya {
          */
         compileGLSL2WGSL(code: string, type: string): any;
     }
+    interface GlslangCompiler {
+        glsl450_to_spirv(glslSource: string, stage: "vertex" | "fragment" | "compute"): {
+            spirv: Uint32Array;
+            info_log: string;
+            success: boolean;
+        };
+        glsl300es_preprocess(glslSource: string, stage: "vertex" | "fragment" | "compute"): {
+            preprocessed_code: string;
+            info_log: string;
+            success: boolean;
+        };
+    }
+    interface NagaCompiler {
+        spirv_to_wgsl(spv: Uint8Array, validation: boolean): string;
+        glsl_to_wgsl(source: string, stage: "vertex" | "fragment" | "compute", validation: boolean): string;
+    }
+    class WebGPUShaderCompiler {
+        glslang: GlslangCompiler;
+        naga: NagaCompiler;
+        constructor();
+        init(): Promise<[
+            void,
+            void
+        ]>;
+        destroy(): void;
+    }
     /**
      * Converts a `GPUExtent3D` into an array of numbers
      *
@@ -56868,6 +57090,61 @@ declare namespace Laya {
      * @param height
      */
     function doPremultiplyAlpha(device: GPUDevice, tex: WebGPUInternalTex, xOffset: number, yOffset: number, width: number, height: number): void;
+    /**
+     * 绑定类型（uniformBlock，texture或sampler）
+     */
+    enum WebGPUBindingInfoType {
+        buffer = 0,
+        texture = 1,
+        sampler = 2,
+        storageBuffer = 3
+    }
+    /**
+     * uniform详细内容（可能是uniformBlock，texture或sampler）
+     */
+    interface WebGPUUniformPropertyBindingInfo {
+        id: number;
+        set: number;
+        binding: number;
+        name: string;
+        propertyId: number;
+        visibility: GPUShaderStageFlags;
+        type: WebGPUBindingInfoType;
+        uniform?: any;
+        buffer?: GPUBufferBindingLayout;
+        texture?: GPUTextureBindingLayout;
+        sampler?: GPUSamplerBindingLayout;
+    }
+    class WebGPUBindGroup {
+        gpuRS: GPUBindGroup;
+        createMask: number;
+        constructor();
+        isNeedCreate(resourceUpdateMask: number): boolean;
+    }
+    class WebGPUBindGroupHelper {
+        static BindGroupPropertyInfoMap: Map<string, WebGPUUniformPropertyBindingInfo[]>;
+        static emptyBindgoup: WebGPUBindGroup;
+        static createEmptyBindGroup(): WebGPUBindGroup;
+        static _getBindGroupID(array: string[]): string;
+        static _getBindGroupPropertyID(bindGroupID: number, array: string[]): string;
+        /**
+         * 获取纹理类型
+         * @param uniformType
+         * @returns
+         */
+        private static _getTextureType;
+        static _createBindGroupLayout(name: string, data: WebGPUUniformPropertyBindingInfo[]): GPUBindGroupLayout;
+        /**
+         * 根据unfiformCommandMapArray获得绑定信息
+         * @param groupID
+         * @param unifromCommandMapArray
+         * @returns
+         */
+        static createBindPropertyInfoArrayByCommandMap(groupID: number, unifromCommandMapArray: string[], isComputeShader?: boolean): WebGPUUniformPropertyBindingInfo[];
+        static createBindGroupEntryLayout(infoArray: WebGPUUniformPropertyBindingInfo[]): GPUBindGroupLayout;
+        static createBindGroupByCommandMapArray(groupID: number, unifromCommandMapArray: string[], shaderData: WebGPUShaderData): WebGPUBindGroup;
+        static createBindGroupInfosByUniformMap(groupID: number, name: string, cacheName: string, uniformMap: Map<number, UniformProperty>): WebGPUUniformPropertyBindingInfo[];
+    }
     class WebGPUBuffer {
         _source: GPUBuffer;
         _usage: GPUBufferUsageFlags;
@@ -56875,8 +57152,8 @@ declare namespace Laya {
         private _isCreate;
         private _mappedAtCreation;
         globalId: number;
-        objectName: string;
         constructor(usage: GPUBufferUsageFlags, byteSize?: number, mappedAtCreation?: boolean);
+        private _memorychange;
         /**
          * @param length
          */
@@ -56884,8 +57161,10 @@ declare namespace Laya {
         private _create;
         setData(srcData: ArrayBuffer | ArrayBufferView, srcOffset: number): void;
         setDataEx(srcData: ArrayBuffer | ArrayBufferView, srcOffset: number, byteLength: number, dstOffset?: number): void;
-        readDataFromBuffer(): Promise<Uint8Array>;
-        readFromBuffer(buffer: GPUBuffer, size: number): Promise<Float32Array>;
+        private copyArrayBuffer;
+        readDataFromBuffer(dest: ArrayBuffer, destOffset: number, srcOffset: number, byteLength: number): Promise<void>;
+        readFromBuffer(buffer: GPUBuffer, offset: number, byteLength: number): Promise<Float32Array>;
+        writeFromBuffer(srcBuffer: ArrayBuffer, srcOffset: number, byteLength: number, dstOffset: number): Promise<void>;
         release(): void;
     }
     enum WebGPUVertexStepMode {
@@ -56893,24 +57172,17 @@ declare namespace Laya {
         instance = "instance"
     }
     class WebGPUBufferState implements IBufferState {
-        static idCounter: number;
-        id: number;
-        stateId: string;
-        updateBufferLayoutFlag: number;
+        private static _bufferStatetConterMap;
+        private static _bufferStateIDConter;
+        stateCacheKey: string;
+        stateCacheID: number;
         vertexState: GPUVertexBufferLayout[];
         _bindedIndexBuffer: WebGPUIndexBuffer;
         _vertexBuffers: WebGPUVertexBuffer[];
-        globalId: number;
-        objectName: string;
-        /**
-         * 是否需要转换顶点数据格式
-         */
-        isNeedChangeFormat(): boolean;
+        _attriLocArray: Set<number>;
         applyState(vertexBuffers: WebGPUVertexBuffer[], indexBuffer: WebGPUIndexBuffer): void;
         constructor();
-        private _getVertexBufferLayoutArray;
-        private _getvertexAttributeFormat;
-        private _getvertexAttributeSymbol;
+        private _getCacheInfo;
         destroy(): void;
     }
     /**
@@ -56918,95 +57190,26 @@ declare namespace Laya {
      * 用于缓存渲染指令，提高渲染效率
      * 一个渲染指令缓存对象缓存了若干个渲染节点的渲染指令
      * 如果下一帧渲染流程中，缓存的渲染节点命中率高于一定的程度，则可以直接使用缓存的渲染指令
-     * 对于动态节点，要求命中率为100%，对于静态节点，要求命中率可低于100%（比如70%）
      */
-    class WebGPURenderBundle {
+    class WebGPURenderBundle extends WebGPURenderEncoder {
+        static bundleDescriptorMap: Map<number, GPURenderBundleEncoderDescriptor>;
+        static getBundleDescriptor(rt: WebGPUInternalRT): GPURenderBundleEncoderDescriptor;
         private _engine;
-        private _encoder;
-        private _elements;
-        private _shotNum;
-        private _shotCount;
-        private _shotRateSet;
-        private _shotEstimate;
-        renderBundle: GPURenderBundle;
-        renderTimeStamp: number;
-        renderTriangles: number;
-        id: number;
-        static idCounter: number;
-        constructor(device: GPUDevice, dest: WebGPUInternalRT, shotRateSet: number);
-        /**
-         * 添加渲染节点，将节点的渲染指令添加到命令缓存中
-         * @param context
-         * @param element
-         */
-        render(context: WebGPURenderContext3D, element: WebGPURenderElement3D): void;
-        /**
-         * 结束渲染指令的编码，生成渲染命令缓存对象
-         */
-        finish(): void;
-        /**
-         * 判断是否包含某个渲染节点
-         * @param elementId
-         */
-        hasElement(elementId: number): boolean;
-        /**
-         * 增加命中的渲染节点数量
-         */
-        addShot(): void;
-        /**
-         * 把本缓存对象的所有渲染节点从总体渲染节点集合中移除
-         * @param elements 总体渲染节点集合
-         */
-        removeMyIds(elements: Map<number, WebGPURenderBundle>): void;
-        /**
-         * 清除命中的渲染节点数量
-         */
-        clearShotNum(): void;
-        /**
-         * 判断是否是低命中率
-         */
-        isLowShotRate(): boolean;
-        /**
-         * 设置渲染管线
-         * @param pipeline
-         */
-        setPipeline(pipeline: GPURenderPipeline): void;
-        /**
-         * 设置索引缓冲区
-         * @param buffer
-         * @param indexFormat
-         * @param byteSize
-         * @param offset
-         */
-        setIndexBuffer(buffer: GPUBuffer, indexFormat: GPUIndexFormat, byteSize: number, offset?: number): void;
-        /**
-         * 设置顶点缓冲区
-         * @param slot
-         * @param buffer
-         * @param offset
-         * @param size
-         */
-        setVertexBuffer(slot: number, buffer: GPUBuffer, offset?: number, size?: number): void;
+        private _device;
+        _gpuBundle: GPURenderBundle;
+        encoder: GPURenderBundleEncoder;
+        createMask: number;
+        constructor();
+        isNeedReCreate(resourceUpdateMask: number): boolean;
+        startRender(destRT: WebGPUInternalRT, lable: string, depthReadOnly?: boolean, stencilReadOnly?: boolean): void;
         /**
          * 设置绑定组
          * @param index
          * @param bindGroup
          * @param dynamicOffsets
          */
-        setBindGroup(index: GPUIndex32, bindGroup: GPUBindGroup, dynamicOffsets?: Iterable<GPUBufferDynamicOffset>): void;
-        /**
-         * 上传几何数据
-         * @param geometry
-         * @param setBuffer
-         */
-        applyGeometry(geometry: WebGPURenderGeometry, setBuffer?: boolean): number;
-        /**
-         * 上传几何数据
-         * @param geometry
-         * @param part
-         * @param setBuffer
-         */
-        applyGeometryPart(geometry: WebGPURenderGeometry, part: number, setBuffer?: boolean): number;
+        setBindGroup(index: GPUIndex32, bindGroup: WebGPUBindGroup, dynamicOffsets?: Iterable<GPUBufferDynamicOffset>): void;
+        finish(lable: string): void;
         /**
          * 销毁
          */
@@ -57033,12 +57236,12 @@ declare namespace Laya {
          * 渲染元素是否在缓存中
          * @param elementId
          */
-        has(elementId: number): boolean;
+        has(elementId: number): void;
         /**
          * 根据渲染元素id查找渲染缓存对象
          * @param elementId
          */
-        getBundle(elementId: number): WebGPURenderBundle;
+        getBundle(elementId: number): void;
         /**
          * 通过渲染元素组创建渲染缓存对象
          * @param context
@@ -57067,7 +57270,7 @@ declare namespace Laya {
         /**
          * 移除命中率低的渲染缓存对象
          */
-        removeLowShotBundle(): boolean;
+        removeLowShotBundle(): void;
         /**
          * 销毁
          */
@@ -57107,30 +57310,6 @@ declare namespace Laya {
             shadow?: boolean;
         };
     };
-    /**
-     * 绑定类型（uniformBlock，texture或sampler）
-     */
-    enum WebGPUBindingInfoType {
-        buffer = 0,
-        texture = 1,
-        sampler = 2
-    }
-    /**
-     * uniform详细内容（可能是uniformBlock，texture或sampler）
-     */
-    interface WebGPUUniformPropertyBindingInfo {
-        id: number;
-        set: number;
-        binding: number;
-        name: string;
-        propertyId: number;
-        visibility: GPUShaderStageFlags;
-        type: WebGPUBindingInfoType;
-        uniform?: WebGPUUniformBlockInfo;
-        buffer?: GPUBufferBindingLayout;
-        texture?: GPUTextureBindingLayout;
-        sampler?: GPUSamplerBindingLayout;
-    }
     /**
      * WGSL代码转译
      */
@@ -57242,6 +57421,7 @@ declare namespace Laya {
         };
     }
     class WebGPUCommandUniformMap extends CommandUniformMap {
+        _ishasBuffer: boolean;
         _stateName: string;
         _stateID: number;
         constructor(stateName: string);
@@ -57260,18 +57440,33 @@ declare namespace Laya {
     type NameStringMap = Record<string, string>;
     type NameNumberMap = Record<string, number>;
     type NameBooleanMap = Record<string, boolean>;
-    class WebGPUIndexBuffer implements IIndexBuffer {
+    /**
+     * attribute列表
+     */
+    type WebGPUAttributeMapType = {
+        [key: string]: [
+            number,
+            ShaderDataType
+        ];
+    };
+    class WebGPUGLSLGenerator {
+        static process(defines: string[], attributeMap: WebGPUAttributeMapType, uniformMap: Map<number, WebGPUUniformPropertyBindingInfo[]>, materialMap: Map<number, UniformProperty>, VS: ShaderNode, FS: ShaderNode, useTexArray: Set<string>, checkSetNumber: number): void;
+    }
+    class WebGPUIndexBuffer implements IIndexBuffer, IGPUBuffer {
         source: WebGPUBuffer;
         indexType: IndexFormat;
         indexCount: number;
         globalId: number;
         objectName: string;
         constructor(targetType: BufferTargetType, bufferUsageType: BufferUsage);
+        getNativeBuffer(): WebGPUBuffer;
         _setIndexDataLength(length: number): void;
         _setIndexData(data: Uint8Array | Uint16Array | Uint32Array, bufferOffset: number): void;
         destroy(): void;
     }
     class WebGPUInternalRT implements InternalRenderTarget {
+        private static _formatCounter;
+        private static _pipelineAttachIDCounter;
         _isCube: boolean;
         _samples: number;
         _generateMipmap: boolean;
@@ -57282,18 +57477,23 @@ declare namespace Laya {
         depthStencilFormat: RenderTargetFormat;
         isSRGB: boolean;
         gpuMemory: number;
-        formatId: string;
+        stateCacheKey: string;
+        stateCacheID: number;
         _colorStates: GPUColorTargetState[];
         _depthState: GPUColorTargetState;
         _renderPassDescriptor: GPURenderPassDescriptor;
-        _renderBundleDescriptor: GPURenderBundleEncoderDescriptor;
-        globalId: number;
-        objectName: string;
         constructor(colorFormat: RenderTargetFormat, depthStencilFormat: RenderTargetFormat, isCube: boolean, generateMipmap: boolean, samples: number, sRGB: boolean);
+        /**
+         * 获取附件格式ID
+         * @returns 基于颜色和深度格式的唯一标识符
+         */
+        private _getCacheInfo;
         dispose(): void;
     }
     class WebGPUInternalTex implements InternalTexture {
-        resource: GPUTexture;
+        private _resource;
+        get resource(): GPUTexture;
+        set resource(value: GPUTexture);
         dimension: TextureDimension;
         width: number;
         height: number;
@@ -57341,30 +57541,47 @@ declare namespace Laya {
         get gpuMemory(): number;
         set gpuMemory(value: number);
         constructor(width: number, height: number, depth: number, dimension: TextureDimension, mipmap: boolean, multiSamples: number, useSRGBLoader: boolean, gammaCorrection: number);
+        _getGPUTextureBindingLayout(layout: GPUTextureBindingLayout): void;
+        _getSampleBindingLayout(layout: GPUSamplerBindingLayout): void;
         statisAsRenderTexture(): void;
+        _gpuView: GPUTextureView;
         getTextureView(): GPUTextureView;
         private _changeTexMemory;
         dispose(): void;
     }
+    interface IGPURenderEncoder extends GPUObjectBase, GPUCommandsMixin, GPUDebugCommandsMixin, GPUBindingCommandsMixin, GPURenderCommandsMixin {
+    }
+    abstract class WebGPURenderEncoder {
+        readonly isBundle: boolean;
+        encoder: IGPURenderEncoder;
+        constructor(isBundle?: boolean);
+        /**
+        * 设置渲染管线
+        * @param pipeline
+        */
+        setPipeline(pipeline: GPURenderPipeline): void;
+        /**
+        * 设置绑定组
+        * @param index
+        * @param bindGroup
+        * @param dynamicOffsets
+        */
+        setBindGroup(index: GPUIndex32, bindGroup: WebGPUBindGroup, dynamicOffsets?: Iterable<GPUBufferDynamicOffset>): void;
+        setBindGroupByDataOffaset(index: GPUIndex32, bindGroup: GPUBindGroup, dynamicOffsetsData: Uint32Array, dynamicOffsetsDataStart: GPUSize64, dynamicOffsetsDataLength: GPUSize32): void;
+        applyGeometry(geometry: WebGPURenderGeometry): number;
+        applyGeometryIndex(geometry: WebGPURenderGeometry, index: number): number;
+        abstract finish(lable: string): any;
+    }
     /**
      * GPU渲染指令编码器
      */
-    class WebGPURenderCommandEncoder {
-        private _commandEncoder;
+    class WebGPURenderCommandEncoder extends WebGPURenderEncoder {
         private _engine;
         private _device;
         encoder: GPURenderPassEncoder;
-        globalId: number;
-        objectName: string;
+        private _commandEncoder;
         constructor();
         startRender(renderPassDesc: GPURenderPassDescriptor): void;
-        setPipeline(pipeline: GPURenderPipeline): void;
-        setIndexBuffer(buffer: GPUBuffer, indexFormat: GPUIndexFormat, byteSize: number, offset?: number): void;
-        setVertexBuffer(slot: number, buffer: GPUBuffer, offset?: number, size?: number): void;
-        drawIndirect(indirectBuffer: GPUBuffer, indirectOffset: GPUSize64): void;
-        drawIndexedIndirect(indirectBuffer: GPUBuffer, indirectOffset: GPUSize64): void;
-        setBindGroup(index: GPUIndex32, bindGroup: GPUBindGroup, dynamicOffsets?: Iterable<GPUBufferDynamicOffset>): void;
-        setBindGroupByDataOffaset(index: GPUIndex32, bindGroup: GPUBindGroup, dynamicOffsetsData: Uint32Array, dynamicOffsetsDataStart: GPUSize64, dynamicOffsetsDataLength: GPUSize32): void;
         setViewport(x: number, y: number, width: number, height: number, minDepth: number, maxDepth: number): void;
         setScissorRect(x: GPUIntegerCoordinate, y: GPUIntegerCoordinate, width: GPUIntegerCoordinate, height: GPUIntegerCoordinate): void;
         setStencilReference(ref: number): void;
@@ -57374,20 +57591,7 @@ declare namespace Laya {
          * 执行缓存绘图指令
          * @param bundles
          */
-        playBundle(bundles: GPURenderBundle[]): void;
-        /**
-         * 上传几何数据
-         * @param geometry
-         * @param setBuffer
-         */
-        applyGeometry(geometry: WebGPURenderGeometry, setBuffer?: boolean): number;
-        /**
-         * 上传几何数据
-         * @param geometry
-         * @param part
-         * @param setBuffer
-         */
-        applyGeometryPart(geometry: WebGPURenderGeometry, part: number, setBuffer?: boolean): number;
+        excuteBundle(bundles: GPURenderBundle[]): void;
         /**
          * 销毁
          */
@@ -57397,6 +57601,7 @@ declare namespace Laya {
         createShaderInstance(shaderProcessInfo: ShaderProcessInfo, shaderPass: ShaderCompileDefineBase): IShaderInstance;
         createIndexBuffer(bufferUsage: BufferUsage): IIndexBuffer;
         createVertexBuffer(bufferUsageType: BufferUsage): IVertexBuffer;
+        createDeviceBuffer(type: number): IDeviceBuffer;
         createBufferState(): IBufferState;
         createRenderGeometryElement(mode: MeshTopology, drawType: DrawType): IRenderGeometryElement;
         createEngine(config: Config, canvas: any): Promise<void>;
@@ -57405,6 +57610,8 @@ declare namespace Laya {
         };
         createGlobalUniformMap(blockName: string): WebGPUCommandUniformMap;
         createShaderData(ownerResource?: Resource): ShaderData;
+        createComputeContext(): WebGPUComputeContext;
+        createComputeShader(info: ComputeShaderProcessInfo): WebGPUComputeShaderInstance;
     }
     class WebGPUConfig {
         /**
@@ -57449,6 +57656,7 @@ declare namespace Laya {
         private _canvas;
         _config: WebGPUConfig;
         _context: GPUCanvasContext;
+        _preferredFormat: GPUTextureFormat;
         _screenResized: boolean;
         _screenRT: WebGPUInternalRT;
         _remapZ: boolean;
@@ -57469,8 +57677,10 @@ declare namespace Laya {
         private _GPUStatisticsInfo;
         gpuBufferMgr: WebGPUBufferManager;
         timingManager: WebGPUTimingManager;
+        useSPRIV: boolean;
         globalId: number;
         objectName: string;
+        shaderCompiler: WebGPUShaderCompiler;
         /**
          * 实例化一个webgpuEngine
          */
@@ -57507,7 +57717,7 @@ declare namespace Laya {
         /**
          * 初始化WebGPU
          */
-        _initAsync(): Promise<void>;
+        _initAsync(): Promise<any>;
         /**
          * 画布尺寸改变
          * @param width
@@ -57545,7 +57755,7 @@ declare namespace Laya {
         /**
          * 创建屏幕渲染目标
          */
-        createScreenRT(): void;
+        private _createScreenRT;
         /**
          * 开始一帧
          */
@@ -57563,30 +57773,39 @@ declare namespace Laya {
         triangle_strip = "triangle-strip"
     }
     class WebGPURenderGeometry implements IRenderGeometryElement {
-        checkDataFormat: boolean;
+        private static _geometryConterMap;
+        private static _geometryIDConter;
+        private static _idCounter;
+        _id: number;
+        private _indexFormat;
+        private _mode;
+        private _instanceCount;
+        private _bufferState;
+        drawType: DrawType;
         gpuIndexFormat: GPUIndexFormat;
         gpuIndexByte: number;
-        _id: number;
-        static _idCounter: number;
+        stateCacheKey: string;
+        stateCacheID: number;
         get instanceCount(): number;
         set instanceCount(value: number);
         get mode(): MeshTopology;
         set mode(value: MeshTopology);
+        get bufferState(): WebGPUBufferState;
+        set bufferState(value: WebGPUBufferState);
         get indexFormat(): IndexFormat;
         set indexFormat(value: IndexFormat);
-        globalId: number;
-        objectName: string;
+        private _getCacheInfo;
         getDrawDataParams(out: FastSinglelist<number>): void;
         setDrawArrayParams(first: number, count: number): void;
         setDrawElemenParams(count: number, offset: number): void;
         setInstanceRenderOffset(offset: number, instanceCount: number): void;
+        setIndirectDrawBuffer(buffer: WebGPUDeviceBuffer, offset: number): void;
         clearRenderParams(): void;
         cloneTo(obj: WebGPURenderGeometry): void;
         destroy(): void;
     }
     class WebGPURenderPassHelper {
         static getDescriptor(rt: WebGPUInternalRT, clearflag: RenderClearFlag, clearColor?: Color, clearDepthValue?: number, clearStencilValue?: number): GPURenderPassDescriptor;
-        static getBundleDescriptor(rt: WebGPUInternalRT): GPURenderBundleEncoderDescriptor;
         static setColorAttachments(desc: GPURenderPassDescriptor, rt: WebGPUInternalRT, clear: boolean, clearColor?: Color): void;
         static setDepthAttachments(desc: GPURenderPassDescriptor, rt: WebGPUInternalRT, clear: boolean, clearDepthValue?: number, clearStencilValue?: number): void;
     }
@@ -57645,7 +57864,7 @@ declare namespace Laya {
         private static _getGPUPrimitiveStateID;
         private static _createPrimitiveState;
     }
-    interface IRenderPipelineInfo {
+    class IRenderPipelineInfo {
         geometry: WebGPURenderGeometry;
         blendState: WebGPUBlendStateCache;
         depthStencilState: WebGPUDepthStencilStateCache;
@@ -57654,15 +57873,27 @@ declare namespace Laya {
     }
     class WebGPURenderPipeline {
         static idCounter: number;
+        private static _pipelineCache;
+        private static _keyCounter;
+        private static _keyMap;
         /**
          * 获取渲染管线，如果缓存中存在，直接取出，否则创建一个，放入缓存
          * @param info
          * @param shaderInstance
          * @param renderTarget
-         * @param entries
-         * @param stateKey
          */
-        static getRenderPipeline(info: IRenderPipelineInfo, shaderInstance: WebGPUShaderInstance, renderTarget: WebGPUInternalRT, entries: any, stateKey: string): GPURenderPipeline;
+        static getRenderPipeline(info: IRenderPipelineInfo, shaderInstance: WebGPUShaderInstance, renderTarget: WebGPUInternalRT): GPURenderPipeline;
+        /**
+         * 获取缓存键 - 使用数字ID作为键
+         * @param info
+         * @param shaderInstance
+         * @param renderTarget
+         */
+        private static _getCacheKey;
+        /**
+         * 清除缓存
+         */
+        static clearCache(): void;
         /**
          * 创建渲染管线
          * @param blendState
@@ -57756,145 +57987,66 @@ declare namespace Laya {
         constructor();
         apply(context: any): void;
     }
-    class WebGPUBindGroupCacheItem {
-        uniformBuffer: WebGPUUniformBuffer;
-        bindGroup: GPUBindGroup;
-        bgLayouts: GPUBindGroupLayoutEntry[];
-        user: Set<WebGPUShaderData>;
-        refNum: number;
-        timer: number;
-        constructor(buffer: WebGPUUniformBuffer, bindGroup: GPUBindGroup, bgLayouts: GPUBindGroupLayoutEntry[], user: WebGPUShaderData);
-    }
-    /**
-     * 着色器数据元素类型
-     */
-    enum WebGPUShaderDataElementType {
-        Element3D = 0,
-        Element3DSkin = 1,
-        Element3DInstance = 2,
-        Element2D = 3,
-        UNKNOWN = 4
-    }
     /**
      * 着色器数据
      */
     class WebGPUShaderData extends ShaderData {
         private static _dummyTexture2D;
         private static _dummyTextureCube;
-        private _gammaColorMap;
-        stateKey: string;
         private static _stateKeyMap;
-        private _recovered;
-        private _destroyed;
-        private _infoId;
-        private _uniformBuffer;
-        private _bindGroupItem;
-        private _bindGroupMap;
-        private _bindGroupChange;
-        private _bindInfoId;
-        private _elementType;
-        private _texIdSet;
-        skinShaderData: WebGPUShaderData[];
-        instShaderData: WebGPUShaderData;
-        private _isShare;
-        get isShare(): boolean;
-        set isShare(value: boolean);
-        private _isStatic;
-        get isStatic(): boolean;
-        set isStatic(value: boolean);
-        changeMark: number;
-        globalId: number;
-        objectName: string;
-        private static _objectCount;
-        /**
-         * 全局缓存的BindGroup
-         */
-        private static _MAX_BIND_GROUP_NUM;
-        private static _BIND_GROUP_CLEAR_INTERVAL;
-        private static _clearBindGroupTimeStamp;
-        private static _bindGroupMap;
-        static getBindGroup(key: string): WebGPUBindGroupCacheItem;
-        static setBindGroup(key: string, value: WebGPUBindGroupCacheItem): void;
-        static removeBindGroup(key: string): void;
-        /**
-         * 局部缓存的UniformBuffer，由于UniformBuffer在数据结构相同的情况下具体数据可能不同，
-         * 渲染节点可能使用相同数据结构，不同数据内容的UniformBuffer，
-         * 将UniformBuffer缓存到局部，相当于不同的ShaderData拥有不同的UniformBuffer，不会混淆
-         */
-        private _uniformBufferMap;
-        _getUniformBuffer(key: number): WebGPUUniformBuffer;
-        _setUniformBuffer(key: number, value: WebGPUUniformBuffer): void;
         /**
          * 全局初始化
          */
         static __init__(): void;
         /**
-         * 对象池
-         */
-        private static _pool;
-        static create(ownerResource?: Resource, elementType?: number, name?: string): WebGPUShaderData;
-        recover(clearData?: boolean): void;
-        /**
-         * 帧结束时做一些处理
-         */
+        * 帧结束时做一些处理
+        */
         static endFrame(): void;
+        private _gammaColorMap;
+        _stateKey: string;
+        private _uniformBuffers;
+        private _subUniformBuffers;
+        private _uniformBuffersPropertyMap;
+        private _updateCacheArray;
+        private _subUboBufferNumber;
+        private _textureCacheUpdateMap;
+        private _bindGroupLastUpdateMask;
+        _cacheBindGroup: Map<string, WebGPUBindGroup>;
+        _cacheNameBindGroupInfos: Map<string, WebGPUUniformPropertyBindingInfo[]>;
+        _textureData: {
+            [key: number]: BaseTexture;
+        };
         /**
          * 不允许直接创建，只能通过对象池
          * @param ownerResource
          */
-        private constructor();
-        updateUBOBuffer(name: string): void;
-        createUniformBuffer(name: string, uniformMap: WebGPUCommandUniformMap): void;
+        constructor(ownerResource?: Resource);
+        updateUBOBuffer(key: string): void;
+        createUniformBuffer(name: string, uniformMap: WebGPUCommandUniformMap): WebGPUUniformBuffer;
+        createSubUniformBuffer(name: string, cacheName: string, uniformMap: Map<number, UniformProperty>): WebGPUSubUniformBuffer;
         /**
-         * 通知GPUBuffer改变
-         */
-        notifyGPUBufferChange(buffer: WebGPUUniformBuffer, info?: string): void;
+       * 传入布局，绑定好资源数据
+       * @param groupId
+       * @param name
+       * @param info
+       * @param command
+       * @param bundle
+       */
+        fillBindGroupEntry(commandMap: string, cacheName: string, entryArray: GPUBindGroupEntry[], infos: WebGPUUniformPropertyBindingInfo[]): void;
         /**
-         * 创建UniformBuffer
-         * @param info
-         * @param single
+         * 设置某个key 对应的需要统计资源更新列表，组织TextureCacheUpdateMap和_bindGroupLastUpdateMask
+         * @param key
+         * @param infos
          */
-        _createUniformBuffer(info: WebGPUUniformPropertyBindingInfo, single?: boolean): void;
+        _setBindGroupCacheInfo(key: string, infos: WebGPUUniformPropertyBindingInfo[]): void;
         /**
-         * 将数据更新到UniformBuffer中
+         * 活得资源更新的mask数据
+         * @param key
+         * @returns
          */
-        private _updateUniformData;
-        /**
-         * 创建绑定组项
-         * @param info
-         */
-        createBindGroupLayoutEntry(info: WebGPUUniformPropertyBindingInfo[]): ({
-            binding: number;
-            visibility: number;
-            buffer: GPUBufferBindingLayout;
-            texture?: undefined;
-            sampler?: undefined;
-        } | {
-            binding: number;
-            visibility: number;
-            texture: GPUTextureBindingLayout;
-            buffer?: undefined;
-            sampler?: undefined;
-        } | {
-            binding: number;
-            visibility: number;
-            sampler: GPUSamplerBindingLayout;
-            buffer?: undefined;
-            texture?: undefined;
-        })[];
-        /**
-         * 绑定资源组
-         * @param groupId
-         * @param name
-         * @param info
-         * @param command
-         * @param bundle
-         */
-        bindGroup(groupId: number, name: string, info: WebGPUUniformPropertyBindingInfo[], command: WebGPURenderCommandEncoder, bundle?: WebGPURenderBundle): GPUBindGroupLayoutEntry[];
-        /**
-         * 上传数据
-         */
-        uploadUniform(): void;
+        _getBindGroupLastUpdateMask(key: string): number;
+        _createOrGetBindGroupbyUniformMap(name: string, cacheName: string, bindGroup: number, uniformMap: Map<number, UniformProperty>): WebGPUBindGroup;
+        _createOrGetBindGroupByBindInfoArray(name: string, cacheName: string, shaderinstance: WebGPUShaderInstance, bindGroup: number, bindInfoArray: WebGPUUniformPropertyBindingInfo[]): WebGPUBindGroup;
         /**
          * 获取数据对象
          */
@@ -57910,11 +58062,12 @@ declare namespace Laya {
         /**
          * @ignore
          */
-        addDefines(defines: WebDefineDatas): void;
+        addDefines(define: WebDefineDatas): void;
         /**
          * @ignore
          */
         removeDefine(define: ShaderDefine): void;
+        removeDefines(defines: WebDefineDatas): void;
         /**
          * @ignore
          */
@@ -58055,13 +58208,14 @@ declare namespace Laya {
          * @param value 纹理
          */
         _setInternalTexture(index: number, value: InternalTexture): void;
+        setDeviceBuffer(index: number, value: WebGPUDeviceBuffer): void;
+        _notifyBindGroupMask(index: number): void;
         /**
          * 获取纹理
          * @param index shader索引
          * @return 纹理
          */
         getTexture(index: number): BaseTexture;
-        getSourceIndex(value: any): number;
         /**
          * 克隆（仅克隆数据）
          * @param dest
@@ -58079,10 +58233,6 @@ declare namespace Laya {
          * 销毁转回收
          */
         destroy(): void;
-        /**
-         * 销毁
-         */
-        private _realDestroy;
     }
     /**
      * WebGPU着色器实例
@@ -58092,15 +58242,11 @@ declare namespace Laya {
         private _vsShader;
         private _fsShader;
         private _destroyed;
+        private _gpuPipelineLayout;
+        private _commanMap;
         name: string;
         complete: boolean;
-        renderPipelineMap: Map<string, any>;
-        uniformInfo: WebGPUUniformPropertyBindingInfo[];
-        uniformSetMap: {
-            [set: number]: WebGPUUniformPropertyBindingInfo[];
-        };
-        globalId: number;
-        objectName: string;
+        uniformSetMap: Map<number, WebGPUUniformPropertyBindingInfo[]>;
         constructor(name: string);
         _serializeShader(): ArrayBuffer;
         _deserialize(buffer: ArrayBuffer): boolean;
@@ -58114,13 +58260,16 @@ declare namespace Laya {
          * @param shaderPass
          */
         _create(shaderProcessInfo: ShaderProcessInfo, shaderPass: ShaderPass): void;
+        private _generateMaterialCommandMap;
+        private _create2D;
+        private _create3D;
         /**
          * 基于WebGPUUniformPropertyBindingInfo创建PipelineLayout
          * @param device
          * @param name
          * @param entries
          */
-        createPipelineLayout(device: GPUDevice, name: string, entries?: any): GPUPipelineLayout;
+        createPipelineLayout(device: GPUDevice): GPUPipelineLayout;
         /**
          * 销毁
          */
@@ -58129,10 +58278,8 @@ declare namespace Laya {
     class WebGPUGlobal {
         static debug: boolean;
         static useCache: boolean;
-        static useBundle: boolean;
         static useBigBuffer: boolean;
         static useTimeQuery: boolean;
-        static useGlobalContext: boolean;
         private static _idCounter;
         private static _uniformInfoIdCounter;
         private static _uniformBufferIdCounter;
@@ -58265,8 +58412,8 @@ declare namespace Laya {
     }
     class WebGPUTextureContext implements ITextureContext {
         private _engine;
-        constructor(engine: WebGPURenderEngine);
         needBitmap: boolean;
+        constructor(engine: WebGPURenderEngine);
         createTexture3DInternal(dimension: TextureDimension, width: number, height: number, depth: number, format: TextureFormat, generateMipmap: boolean, sRGB: boolean, premultipliedAlpha: boolean): InternalTexture;
         setTexture3DImageData(texture: InternalTexture, source: HTMLImageElement[] | HTMLCanvasElement[] | ImageBitmap[], depth: number, premultiplyAlpha: boolean, invertY: boolean): Promise<void>;
         setTexture3DPixelsData(texture: WebGPUInternalTex, source: ArrayBufferView, depth: number, premultiplyAlpha: boolean, invertY: boolean): void;
@@ -58290,7 +58437,7 @@ declare namespace Laya {
          */
         private _isTextureNeedGenMipmap;
         createTextureInternal(dimension: TextureDimension, width: number, height: number, format: TextureFormat, generateMipmap: boolean, sRGB: boolean, premultipliedAlpha: boolean): InternalTexture;
-        setTextureImageData(texture: InternalTexture, source: HTMLCanvasElement | HTMLImageElement | ImageBitmap, premultiplyAlpha: boolean, invertY: boolean): Promise<void>;
+        setTextureImageData(texture: WebGPUInternalTex, source: HTMLCanvasElement | HTMLImageElement | ImageBitmap, premultiplyAlpha: boolean, invertY: boolean): Promise<void>;
         setTextureSubImageData(texture: InternalTexture, source: HTMLCanvasElement | HTMLImageElement | ImageBitmap, x: number, y: number, premultiplyAlpha: boolean, invertY: boolean): void;
         setTexturePixelsData(texture: WebGPUInternalTex, source: ArrayBufferView, premultiplyAlpha: boolean, invertY: boolean): void;
         setTextureSubPixelsData(texture: WebGPUInternalTex, source: ArrayBufferView, mipmapLevel: number, generateMipmap: boolean, xOffset: number, yOffset: number, width: number, height: number, premultiplyAlpha: boolean, invertY: boolean): void;
@@ -58399,84 +58546,49 @@ declare namespace Laya {
          */
         getGPUFrameTime(): Promise<number>;
     }
-    /**
-     * 单独的UniformBuffer
-     */
-    class WebGPUBufferAlone extends UniformBufferAlone {
-        globalId: number;
-        objectName: string;
-        constructor(size: number, manager: WebGPUBufferManager, user: IUniformBufferUser);
-        /**
-         * 销毁
-         */
-        destroy(): boolean;
-    }
-    /**
-     * Uniform内存块（小内存块）
-     */
-    class WebGPUBufferBlock extends UniformBufferBlock {
-        globalId: number;
-        objectName: string;
-        constructor(buffer: WebGPUBufferCluster, index: number, size: number, alignedSize: number, user: WebGPUUniformBuffer);
-        /**
-         * 销毁
-         */
-        destroy(): boolean;
-    }
-    /**
-     * Uniform内存块（大内存块）
-     */
-    class WebGPUBufferCluster extends UniformBufferCluster {
-        globalId: number;
-        objectName: string;
-        manager: WebGPUBufferManager;
-        constructor(blockSize: number, blockNum: number, manager: WebGPUBufferManager);
-        /**
-         * 创建小内存块对象
-         * @param index
-         * @param size
-         * @param alignedSize
-         * @param user
-         */
-        protected _createBufferBlock(index: number, size: number, alignedSize: number, user: WebGPUUniformBuffer): WebGPUBufferBlock;
-        /**
-         * 扩展GPU缓冲区
-         */
-        protected _expandBuffer(): boolean;
-        /**
-         * 移动小内存块，后面的块向前移动，填补指定的内存空洞
-         * @param index
-         */
-        protected _moveBlock(index: number): boolean;
-        /**
-         * 优化小内存块顺序，上传频繁的块放前面
-         */
-        optimize(): boolean;
-        /**
-         * 移除空洞，使小内存块连续
-         */
-        removeHole(): boolean;
-        /**
-         * 销毁
-         */
-        destroy(): boolean;
-    }
+    /** use Doc
+     * const { view, buffer, struct } = new wgsl.StructBuffer({
+      ambient: 'vec3f', // vec{2,3,4}{f,h,u,i}
+      lightCount: 'u32', // f32, f16, u32, i32
+      lights: [
+        {
+          position: 'vec3f',
+          range: 'f32',
+          color: 'vec3f',
+          intensity: 'f32',
+        },
+        4,
+      ],
+    });
+    view.ambient.set([0, 0, 0]);
+    view.lightCount = 4;
+    view.lights.forEach(light => {
+      light.position.set([1, 2, 3]);
+      light.color.set([1, 1, 1]);
+      light.range = 10;
+      light.intensity = 0.8;
+    });
+    console.log(buffer);
+    console.log(wgsl.stringifyStruct('LightInfo', struct));
+    /** output
+    struct LightInfo_lights {
+      position: vec3f,
+      range: f32,
+      color: vec3f,
+      intensity: f32,
+    };
+    struct LightInfo {
+      ambient: vec3f,
+      lightCount: u32,
+      lights: array<LightInfo_lights, 4>,
+    };
+    */
+    type NoEmptyRecord<T> = T & (keyof T extends never ? 'No empty object' : {});
     /**
      * Uniform内存块管理
      */
     class WebGPUBufferManager extends UniformBufferManager {
-        globalId: number;
-        objectName: string;
-        private _renderContext;
-        get renderContext(): WebGPURenderContext3D;
-        set renderContext(rc: WebGPURenderContext3D);
         constructor(engine: WebGPURenderEngine, useBigBuffer: boolean);
-        /**
-         * 创建大内存块对象
-         * @param size 小内存块尺寸
-         * @param blockNum 小内存块初始容量
-         */
-        protected _createBufferCluster(size: number, blockNum: number): WebGPUBufferCluster;
         /**
          * 销毁
          */
@@ -58507,99 +58619,101 @@ declare namespace Laya {
          */
         statisUpload(count: number, bytes: number): void;
     }
-    /**
-     * 每一个Uniform变量的具体信息
-     */
-    type ItemType = {
-        propertyId: number;
-        name: string;
-        type: string;
-        size: number;
-        align: number;
+    class WebGPUSubUniformBuffer extends WebGPUUniformBufferBase implements IUniformBufferUser {
+        bufferBlock: UniformBufferBlock;
+        bufferAlone: UniformBufferAlone;
+        manager: WebGPUBufferManager;
         offset: number;
-        element: number;
-        count: number;
-    };
-    /**
-     * UniformBlock信息
-     */
-    class WebGPUUniformBlockInfo {
-        name: string;
-        size: number;
-        items: ItemType[];
-        globalId: number;
-        objectName: string;
-        constructor(name: string, size: number);
-        /**
-         * 添加uniform字段
-         * @param name
-         * @param type
-         * @param offset
-         * @param align
-         * @param size
-         * @param element
-         * @param count
-         */
-        addUniform(name: string, type: string, offset: number, align: number, size: number, element: number, count: number): void;
-        /**
-         * 是否具有指定的uniform
-         * @param propertyId
-         */
-        hasUniform(propertyId: number): boolean;
-        /**
-         * 输出调试信息
-         */
-        debugInfo(): void;
-        /**
-         * 销毁
-         */
+        private _owner;
+        private _uniformName;
+        constructor(lable: string, uniformMap: Map<number, UniformProperty>, owner: WebGPUShaderData);
+        private _reSetBindGroupEntry;
+        getBindGroupEntry(binding: number): GPUBindGroupEntry;
+        upload(): void;
+        notifyGPUBufferChange(info?: string): void;
+        updateOver(): void;
         destroy(): void;
     }
-    class WebGPUUniformBuffer extends UniformBufferUser {
-        set: number;
-        binding: number;
-        id: number;
-        globalId: number;
-        objectName: string;
-        data: WebGPUShaderData;
-        private _gpuBuffer;
-        private _gpuBindGroupEntry;
-        constructor(name: string, set: number, binding: number, size: number, manager: WebGPUBufferManager, data: WebGPUShaderData);
-        /**
-         * 创建独立内存对象
-         * @param size
-         * @param manager
-         */
-        protected _createBufferAlone(size: number, manager: WebGPUBufferManager): WebGPUBufferAlone;
-        /**
-         * 通知GPUBuffer改变
-         */
-        notifyGPUBufferChange(info?: string): void;
-        /**
-         * 获取WebGPU绑定资源入口
-         */
-        getGPUBindEntry(): GPUBindGroupEntry;
-        /**
-         * 获取uniform名称列表
-         */
-        getUniformNameStr(): string;
-        /**
-         * 输出调试信息
-         */
-        debugInfo(): void;
-        /**
-         * 销毁
-         */
-        destroy(): boolean;
+    class WebGPUUniformBuffer extends WebGPUUniformBufferBase {
+        lable: string;
+        private _data;
+        constructor(lable: string, uniformMap: Map<number, UniformProperty>);
+        getBindGroupEntry(binding: number): GPUBindGroupEntry;
+        upload(): void;
+        destroy(): void;
     }
-    class WebGPUVertexBuffer implements IVertexBuffer {
+    type DataViewType = Float32ArrayConstructor | Int32ArrayConstructor | Uint32ArrayConstructor | Int16ArrayConstructor | Uint16ArrayConstructor | Int8ArrayConstructor | Uint8ArrayConstructor;
+    type DataView = Float32Array | Int32Array | Uint32Array | Int16Array | Uint16Array | Int8Array | Uint8Array;
+    type WebGPUUnifrom = {
+        index: number;
+        /**
+         * byte offset
+         */
+        offset: number;
+        dataView: DataViewType;
+        view: DataView;
+        /**
+         * element size (eg: vec2: 2, vec4: 4, mat4: 16)
+         */
+        size: number;
+        alignStride: number;
+        viewByteLength: number;
+        /**
+         * 0: not array
+         */
+        arrayLength: number;
+    };
+    class WebGPUUniformBufferDescriptor {
+        lable: string;
+        uniforms: Map<number, WebGPUUnifrom>;
+        private _byteLength;
+        constructor(lable: string);
+        get byteLength(): number;
+        private _getPrimitive;
+        private _getsize;
+        setUniforms(uniforms: Map<number, UniformProperty>): void;
+        destroy(): void;
+    }
+    abstract class WebGPUUniformBufferBase {
+        static device: GPUDevice;
+        descriptor: WebGPUUniformBufferDescriptor;
+        bytelength: number;
+        needUpload: boolean;
+        protected _GPUBindGroupEntry: GPUBindGroupEntry;
+        protected _gpuBuffer: GPUBuffer;
+        abstract getBindGroupEntry(binding: number): GPUBindGroupEntry;
+        abstract upload(): void;
+        abstract destroy(): void;
+        setInt(index: number, value: number): void;
+        setFloat(index: number, value: number): void;
+        setVector2(index: number, value: Vector2): void;
+        setVector3(index: number, value: Vector3): void;
+        setVector4(index: number, value: Vector4): void;
+        setMatrix3x3(index: number, value: Matrix3x3): void;
+        setMatrix4x4(index: number, value: Matrix4x4): void;
+        setBuffer(index: number, value: Float32Array): void;
+        setArrayBuffer(index: number, value: Float32Array): void;
+        private setMatrix3x3Array;
+        setUniformData(index: number, type: ShaderDataType, data: any): void;
+    }
+    class WebGPUVertexBuffer implements IVertexBuffer, IGPUBuffer {
+        private static _bufferLayoutConterMap;
+        private static _bufferLayoutIDConter;
+        private _vertexDeclaration;
         source: WebGPUBuffer;
-        vertexDeclaration: VertexDeclaration;
-        instanceBuffer: boolean;
+        private _instanceBuffer;
+        get instanceBuffer(): boolean;
+        set instanceBuffer(value: boolean);
         buffer: ArrayBuffer;
-        globalId: number;
-        objectName: string;
+        verteBufferLayout: GPUVertexBufferLayout;
+        stateCacheKey: string;
+        stateCacheID: number;
         constructor(targetType: BufferTargetType, bufferUsageType: BufferUsage);
+        getNativeBuffer(): WebGPUBuffer;
+        get vertexDeclaration(): VertexDeclaration;
+        set vertexDeclaration(value: VertexDeclaration);
+        private _getCacheInfo;
+        private _getvertexAttributeFormat;
         setData(buffer: ArrayBuffer, bufferOffset?: number, dataStartIndex?: number, dataCount?: number): void;
         setDataLength(byteLength: number): void;
         destroy(): void;
@@ -58872,8 +58986,6 @@ declare namespace Laya {
         constructor(width: number, height: number, mipmapCount: number, isCube: boolean, bpp: number, blockBytes: number, dataOffset: number, format: TextureFormat, compressed: boolean, sourceData: ArrayBuffer);
         static getDDSTextureInfo(source: ArrayBuffer): DDSTextureInfo;
     }
-    class DepthState {
-    }
     /**
      * https://floyd.lbl.gov/radiance/framer.html
      */
@@ -59028,8 +59140,10 @@ declare namespace Laya {
     enum DrawType {
         DrawArray = 0,
         DrawArrayInstance = 1,
-        DrawElement = 2,
-        DrawElementInstance = 3
+        DrawArrayIndirect = 2,
+        DrawElement = 3,
+        DrawElementInstance = 4,
+        DrawElementIndirect = 5
     }
     /**
      * 纹理的过滤模式。
@@ -59079,7 +59193,10 @@ declare namespace Laya {
         UnifromBufferObject = 20,
         Texture3D = 21,
         Texture_FloatLinearFiltering = 22,
-        Texture_HalfFloatLinearFiltering = 23
+        Texture_HalfFloatLinearFiltering = 23,
+        StorageBuffer = 24,
+        ComputeShader = 25,
+        IndirectDraw = 26
     }
     enum RenderClearFlag {
         Nothing = 0,
@@ -59629,6 +59746,7 @@ declare namespace Laya {
             ];
         };
         moduleData: ISubshaderData;
+        get owner(): Shader3D;
         /**
          * 创建一个 <code>SubShader</code> 实例。
          * @param attributeMap  顶点属性表。
@@ -59840,8 +59958,7 @@ declare namespace Laya {
         sprite: Sprite | null;
         private _fillColor;
         private _flushCnt;
-        private static defTexture;
-        private static defTextureRef;
+        private defTexture;
         drawTexAlign: boolean;
         private _isMain;
         private _render2D;

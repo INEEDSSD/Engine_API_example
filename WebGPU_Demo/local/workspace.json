@@ -15,24 +15,29 @@
   },
   "ProjectPanel": {
     "expandedNodes": [
-      ""
+      "",
+      "js",
+      "resources",
+      "../src",
+      "../src/3D",
+      "../src/3D/WebGPU"
     ],
     "twoColumn": false,
     "firstColumnWidth": 347,
     "iconScale": 0,
-    "selected": "70df5377-2690-4c60-ba5d-846bbb6990f6"
+    "selected": "ef403867-0f24-44d5-833e-f55c08d373f4"
   },
   "BuildSettingsPanel": {
-    "platform": "common"
+    "platform": "hwgame"
   },
-  "playButtonBehavior": "startup",
+  "playButtonBehavior": "current",
   "SelectResourceDialog": {
     "iconScale": 0,
     "previewPanelHeight": 202,
-    "x": 2790,
-    "y": 38,
+    "x": 3002,
+    "y": 121,
     "width": 822,
-    "height": 570
+    "height": 569
   },
   "g": {
     "iconScale": 0,
@@ -53,12 +58,12 @@
   },
   "playUsingHttps": false,
   "SelectFolderDialog": {
-    "x": 3120,
-    "y": 286,
+    "x": 3335,
+    "y": 348,
     "width": 470,
-    "height": 470
+    "height": 469
   },
   "ProjectSettingsPanel": {
-    "catalog": "PlayerSettings"
+    "catalog": "PlayerSettings.WebGPUSettings"
   }
 }

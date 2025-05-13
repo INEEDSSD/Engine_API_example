@@ -12,12 +12,13 @@
         "height": 1080
       },
       "files": [
-        "9b931ecf-fde9-44dd-acf3-15f8dc807965"
+        "6c4ddcc1-c60d-4240-b19d-bf0799b91394",
+        "c38890d2-dfaf-4eba-96c4-1e97a49cebdc"
       ],
       "active": 0,
       "name": "sceneEditor",
-      "x": 2156,
-      "y": 248
+      "x": 2212,
+      "y": 202
     },
     {
       "width": 1200,

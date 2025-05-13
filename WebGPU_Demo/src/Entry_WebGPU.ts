@@ -1,7 +1,7 @@
 const { regClass, property } = Laya;
 
 @regClass()
-export class entry extends Laya.Script {
+export class entry_WebGPU extends Laya.Script {
     Big_cb: Laya.ComboBox;
     big_labs: string;
     Small_cb: Laya.ComboBox;
@@ -55,7 +55,7 @@ export class entry extends Laya.Script {
         this.bt.top = 580;
         this.bt.size(170, 40);
         this.bt.label = bt_label;
-        // this.logAllExtMap();
+        this.logAllExtMap();
         Laya.loader.load([DDPath, DDDPath], Laya.Loader.JSON).then(() => {
             let DD = Laya.loader.getRes(DDPath).data;
             let DDD = Laya.loader.getRes(DDDPath).data;
@@ -63,13 +63,7 @@ export class entry extends Laya.Script {
             this.Big_cb.selectHandler = new Laya.Handler(this, this.Bigonselect);
             this.Small_cb.selectHandler = new Laya.Handler(this, this.Smallonselect);
             this.bt.clickHandler = new Laya.Handler(this, this.Btonselect);
-            if (this.is2D) {
-                //2D
-                this.showDemo(DD, "resources/scene/2D/");
-            } else if (this.is3D) {
-                //3D
-                this.showDemo(DDD, "resources/scene/3D/");
-            }
+            this.showDemo(DDD, "resources/scene/");
         });
     }
 
@@ -134,24 +128,24 @@ export class entry extends Laya.Script {
     logAllExtMap() {
         if (!Laya.LayaEnv.isConch) {
             //@ts-ignore
-            console.log("[TestLog] 获取GL为 ", Laya.LayaGL.renderEngine.gl);
-            //@ts-ignore
-            console.log("[TestLog] 是否为WebGL2 ", Laya.LayaGL.renderEngine._isWebGL2);
-            //@ts-ignore
-            let exmap: Map<any, any> = Laya.LayaGL.renderEngine._supportCapatable._extensionMap;
-            //@ts-ignore
-            let capmap: Map<any, any> = Laya.LayaGL.renderEngine._supportCapatable._capabilityMap;
-            exmap.forEach((item, key) => {
-                if (item) {
-                    console.log("[TestLog] extenstionMap扩展能力: " + this.getExtAndCapable(key, true) + " " + ' 存在');
-                }
-            })
+            console.log("[TestLog] 获取RenderEngine为 ", Laya.LayaGL.renderEngine);
+            // //@ts-ignore
+            // console.log("[TestLog] 是否为WebGL2 ", Laya.LayaGL.renderEngine._isWebGL2);
+            // //@ts-ignore
+            // let exmap: Map<any, any> = Laya.LayaGL.renderEngine._supportCapatable._extensionMap;
+            // //@ts-ignore
+            // let capmap: Map<any, any> = Laya.LayaGL.renderEngine._supportCapatable._capabilityMap;
+            // exmap.forEach((item, key) => {
+            //     if (item) {
+            //         console.log("[TestLog] extenstionMap扩展能力: " + this.getExtAndCapable(key, true) + " " + ' 存在');
+            //     }
+            // })
 
-            capmap.forEach((item, key) => {
-                if (item) {
-                    console.log("[TestLog] capableMap扩展能力: " + this.getExtAndCapable(key, false) + " " + ' 存在');
-                }
-            })
+            // capmap.forEach((item, key) => {
+            //     if (item) {
+            //         console.log("[TestLog] capableMap扩展能力: " + this.getExtAndCapable(key, false) + " " + ' 存在');
+            //     }
+            // })
         }
     }
 
@@ -214,9 +208,9 @@ export class entry extends Laya.Script {
         console.log("打开场景 " + Scenename);
     }
     destoryLastScene() {
-        Laya.Scene.unDestroyedScenes.forEach((item) => {
-            item.destroy();
-        });
+        // Laya.Scene.unDestroyedScenes.forEach((item) => {
+        //     item.destroy();
+        // });
         // Laya.Resource.destroyUnusedResources();
     }
     Bigonselect(index: number) {

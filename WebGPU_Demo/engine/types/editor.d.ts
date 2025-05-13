@@ -1048,10 +1048,6 @@ declare global {
              */
             sortProps(props: Array<FPropertyDescriptor>, considerCatalog?: boolean): void;
         }
-        export interface ITypeParser {
-            getClassMeta(constructor: Function, forceCreate?: boolean): any;
-            parsePropType(ptype: any): Partial<FPropertyDescriptor>;
-        }
         export type RenderTemplateOptions = {
             /**
              * Whether to escape html characters. Default is false.
@@ -1496,14 +1492,6 @@ declare global {
              * Whether any scene is playing.
              */
             readonly playing: boolean;
-
-            /**
-             * Execute a script in the Scene process. It can execute static functions of classes decorated with ＠Laya.regClass or ＠EditorEnv.regClass.
-             * @param command Class name and function name separated by a dot. e.g. "MyClass.myFunction".
-             * @param params Parameters of the function. 
-             * @return The return value of the function.
-             */
-            runSceneScript(command: string, ...params: any[]): Promise<any>;
         }
         export interface IResourceManager {
             /**
@@ -1683,35 +1671,6 @@ declare global {
              */
             refresh(): void;
         }
-        export namespace IReflectUtils {
-            /**
-             * Define metadata for a target.
-             * @param key Metadata key.
-             * @param value Metadata value.
-             * @param target Target object.
-             * @param propertyName Optional property name.
-             */
-            function defineMetadata(key: string, value: any, target: any, propertyName?: string): void;
-
-            /**
-             * Get metadata for a target.
-             * @param key Metadata key.
-             * @param target Target object.
-             * @param propertyName Optional property name.
-             * @returns Metadata value or undefined if not found.
-             */
-            function getMetadata(key: string, target: any, propertyName?: string): any;
-
-            /**
-             * Get own metadata for a target.
-             * @param key Metadata key.
-             * @param target Target object.
-             * @param propertyName Optional property name.
-             * @returns Metadata value or undefined if not found.
-             */
-            function getOwnMetadata(key: string, target: any, propertyName?: string): any;
-        }
-
         export interface IQRCodeDialog extends IDialog {
             /**
              * Show the dialog.
@@ -4661,14 +4620,6 @@ declare global {
              * @param options The options for the menu.
              */
             addMenuItem(name: string, callback?: IMenuItem['click'], options?: ICustomMenuItemOptions): void;
-
-            /**
-             * Find a function by name. The name is in the form of "className.staticMethodName".
-             * A className must be registered with ＠IEditorEnv.regClass.
-             * @param name objectName.methodName
-             * @returns The function found. Null if not found.
-             */
-            findFunction(name: string): Function;
         }
         /**
          * Interface for event tracking
@@ -7331,10 +7282,6 @@ declare global {
              * @returns The file actions of the asset.
              */
             getFileActionsByType(assetTypeOrFileExt: AssetType | string): IFileActions;
-            /**
-             * If there are any changes in the asset database, this function can be called to apply the changes.
-             */
-            flushChanges(): Promise<void>;
         }
         /**
          * Interface for the Add Modules dialog.
@@ -9033,9 +8980,8 @@ declare global {
              * @param func Handler function.
              * @param thisArg This object of the handler function.
              * @param passClientParam Whether to pass the client object as the first parameter to the handler function.
-             * @param noAwait If true, the handler function will not be awaited. Defaults to false.
              */
-            handle(channel: string, func: Function, thisArg?: any, passClientParam?: boolean, noAwait?: boolean): void;
+            handle(channel: string, func: Function, thisArg?: any, passClientParam?: boolean): void;
             /**
              * Broadcast a message to all clients those have `subscribe` flag setted to true.
              * @param channel Channel name.
@@ -9285,7 +9231,7 @@ declare global {
         /**
          * The `utils` object provides various utility functions.
         */
-        const utils: ICryptoUtils & INativeTools & IUUIDUtils & IObjectUtils & IUtils & INetUtils & IDataUtils & ITemplateUtils & IPlist & ITypeParser;
+        const utils: ICryptoUtils & INativeTools & IUUIDUtils & IObjectUtils & IUtils & INetUtils & IDataUtils & ITemplateUtils & IPlist;
 
         /**
          * The `GUIUtils` object provides various GUI utility functions.
@@ -9296,11 +9242,6 @@ declare global {
          * The `SerializeUtil` class is used to serialize and deserialize objects.
          */
         const SerializeUtil: typeof ISerializeUtil;
-
-        /**
-         * The `RelectUtils` class is used to manage metadata.
-         */
-        const ReflectUtils: typeof IReflectUtils;
 
         /**
          * References a commonjs module. You can import built-in Node.js modules such as: path, fs, child_process, etc. 

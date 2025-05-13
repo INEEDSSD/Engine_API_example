@@ -480,28 +480,6 @@ declare global {
              * All scenes.
              */
             readonly scenes: ReadonlyArray<IMyScene>;
-
-            /**
-             * Execute a function by name. The name is in the form of "className.staticMethodName".
-             * A className must be registered with ＠IEditorEnv.regClass.
-             * @param scene The this object.
-             * @param name objectName.methodName
-             * @param args The arguments.
-             * @returns The function found. Null if not found.
-             * @example
-             * ```
-             * ＠IEditorEnv.regClass
-             * class MyTest {
-             *    static sayHello() {
-             *       console.log("Hello");
-             *   }
-             * }
-             * 
-             * const func = EditorEnv.scene.runScript("MyTest.sayHello");
-             * func(); // Output: Hello
-             * ```
-             */
-            runSceneScript(scene: IMyScene, name: string, ...args: any[]): Promise<any>;
         }
         export interface ISceneHook {
             /**
@@ -871,19 +849,7 @@ declare global {
              */
             destroy(): void;
         }
-        export interface INavigationManager {
-            readonly allGizmos: Array<IGizmosManager>;
-            readonly isMouseDown: boolean;
-            readonly scroller: gui.IScroller;
-            hideGizmos: boolean;
-            viewScale: number;
-            mode2d: boolean;
 
-            changeToolType(toolType: SceneNavToolType, notifyHost?: boolean, isTemp?: boolean): void;
-            focusNode(node: IMyNode): void;
-
-            drawGizmos(): void;
-        }
         export type SceneNavToolType = "move" | "orbit" | "orbit_focus" | "zoom" | "obj_move" | "obj_rotate" | "obj_scale" | "obj_transform";
 
         export interface ICreateNodeOptions {
@@ -1109,7 +1075,7 @@ declare global {
              * @param options Options for creating the node. 
              * @returns The new created node.
              */
-            instantiatePrefab(assetId: string, nodeProps: Record<string, any>, parentNode: IMyNode, options?: ICreateNodeOptions): Promise<IMyNode>;
+            instantiatePrefab(assetId: string, nodeProps: Record<string, any>, parentNode: IMyNode, options: ICreateNodeOptions): Promise<IMyNode>;
 
             /**
              * Unpack a prefab. That means all nodes in the prefab will be converted to normal nodes.
@@ -1350,16 +1316,6 @@ declare global {
             readonly url: string;
 
             /**
-             * The instance of the express application.
-             */
-            readonly expressApp: express.Express;
-
-            /**
-             * The instance of the express application with web socket support.
-             */
-            readonly expressWsApp: expressWs.Application;
-
-            /**
              * Start a web server to serve the specified directory.
              * @param webRootPath The root path of the web server. It is a absolute path.
              * @param secure Whether to use secure connection. Default is false.
@@ -1451,6 +1407,14 @@ declare global {
              * @returns The serialized object.
              */
             function writeScene(scene2D: Laya.Scene, scene3D: Laya.Scene3D, options?: IHierarchyWriterOptions): any;
+
+            /**
+             * Serialize the node to a prefab-like object.
+             * @param node The node to serialize. 
+             * @param options The options.
+             * @returns The serialized object. 
+             */
+            function writePrefab(node: Laya.Node, options?: IHierarchyWriterOptions): any;
 
             /**
              * Collect all resources referenced by the node.
@@ -2372,15 +2336,6 @@ declare global {
             readonly loading: boolean;
 
             /**
-             * Whether a reload of packages is in progress.
-             * 
-             * When a hot reload occurs, there are two modes:
-             * 1. Reload all packages (`loadingPackages=true`) and reload user scripts (`loadingPackages=false`).
-             * 2. Only reload user scripts (`loadingPackages=false`).
-             */
-            readonly loadingPackages: boolean;
-
-            /**
              * Find a function by name. The name is in the form of "className.staticMethodName".
              * A className must be registered with ＠IEditorEnv.regClass.
              * @param name objectName.methodName
@@ -3034,12 +2989,6 @@ declare global {
              * The resource manager.
              */
             readonly resourceManager: IResourceManager;
-
-            /**
-             * The navigation manager.
-             */
-            readonly navigationManager: INavigationManager;
-
             /**
              * The 3D manager.
              */
@@ -3880,17 +3829,12 @@ declare global {
             indexJS: string;
 
             /**
-             * All engine js files.
+             * All engine js and wasm files.
              */
             libs: Array<string>;
 
             /**
-             * If disableWebAssembly is `alternative`, this is the alternative engine js files if WebAssembly is supported.
-             */
-            alternativeLibs: Array<string>;
-
-            /**
-             * All user js files.
+             * All user js and wasm files.
              */
             bundles: Array<string>;
 
@@ -4172,10 +4116,8 @@ declare global {
              * For some platforms whose do not support WebAssembly, you can disable WebAssembly here.
              * 
              * After disabling, all WebAssembly libraries will be replaced with pure JavaScript libraries.
-             * 
-             * If you set it to "alternative", the engine will still export WebAssembly libraries, but will set task.exports.libs to pure JavaScript libraries and set task.exports.alternativeLibs to WebAssembly libraries.
              */
-            disableWebAssembly: boolean | "alternative";
+            disableWebAssembly: boolean;
 
             /**
              * Chose the rendering device.
@@ -8236,39 +8178,6 @@ declare global {
              */
             notifyAll(channel: string, ...args: any[]): void;
         }
-        export interface ITypeParser {
-            getClassMeta(constructor: Function, forceCreate?: boolean): any;
-            parsePropType(ptype: any): Partial<FPropertyDescriptor>;
-        }
-        export namespace IReflectUtils {
-            /**
-             * Define metadata for a target.
-             * @param key Metadata key.
-             * @param value Metadata value.
-             * @param target Target object.
-             * @param propertyName Optional property name.
-             */
-            function defineMetadata(key: string, value: any, target: any, propertyName?: string): void;
-
-            /**
-             * Get metadata for a target.
-             * @param key Metadata key.
-             * @param target Target object.
-             * @param propertyName Optional property name.
-             * @returns Metadata value or undefined if not found.
-             */
-            function getMetadata(key: string, target: any, propertyName?: string): any;
-
-            /**
-             * Get own metadata for a target.
-             * @param key Metadata key.
-             * @param target Target object.
-             * @param propertyName Optional property name.
-             * @returns Metadata value or undefined if not found.
-             */
-            function getOwnMetadata(key: string, target: any, propertyName?: string): any;
-        }
-
         export class CustomEditor {
             /**
              * Owner node.
@@ -8639,9 +8548,8 @@ declare global {
              * @param func Handler function.
              * @param thisArg This object of the handler function.
              * @param passClientParam Whether to pass the client object as the first parameter to the handler function.
-             * @param noAwait If true, the handler function will not be awaited. Defaults to false.
              */
-            handle(channel: string, func: Function, thisArg?: any, passClientParam?: boolean, noAwait?: boolean): void;
+            handle(channel: string, func: Function, thisArg?: any, passClientParam?: boolean): void;
             /**
              * Broadcast a message to all clients those have `subscribe` flag setted to true.
              * @param channel Channel name.
@@ -8718,7 +8626,7 @@ declare global {
         /**
          * The `utils` object provides various utility functions.
         */
-        const utils: ICryptoUtils & INativeTools & IUUIDUtils & IObjectUtils & IUtils & INetUtils & ITemplateUtils & IPlist & IScriptTool & ITypeParser;
+        const utils: ICryptoUtils & INativeTools & IUUIDUtils & IObjectUtils & IUtils & INetUtils & ITemplateUtils & IPlist & IScriptTool;
 
         /**
          * Some helper functions for line manipulation.
@@ -8820,11 +8728,6 @@ declare global {
          * The `GUIPrefabWriter` class is used to write the GUI prefab to a file.
          */
         const GUIPrefabWriter: typeof IGUIPrefabWriter;
-
-        /**
-         * The `RelectUtils` class is used to manage metadata.
-         */
-        const ReflectUtils: typeof IReflectUtils;
         /**
          * References a commonjs module. You can import built-in Node.js modules such as: path, fs, child_process, etc. 
          * The IDE also includes some third-party modules, including: electron, @svgdotjs, sharp, glob, qrcode, typescript, etc.
@@ -8860,20 +8763,6 @@ declare global {
          * ```
          */
         function onUnload(target: Object, propertyName: string): void;
-
-        /**
-         * Decorator function for registering a callback to be invoked when the user script loads.
-         * 
-         * The difference between `onUserScriptsLoad` and `onLoad` is that if the script is inside a package, `onUserScriptsLoad` will execute during every reload, but `onLoad` will not. This is because hot module replacement (HMR) triggered by user script modifications does not include the scripts from the package.
-         */
-        function onUserScriptsLoad(target: Object, propertyName: string): void;
-
-        /**
-         * Decorator function for registering a callback to be invoked when the Hot Module Replacement (HMR) ends.
-         * 
-         * The difference between `onUserScriptsUnload` and `onUnload` is that if the script is inside a package, `onUserScriptsUnload` will execute during every reload, but `onUnload` will not. This is because hot module replacement (HMR) triggered by user script modifications does not include the scripts from the package.
-         */
-        function onUserScriptsUnload(target: Object, propertyName: string): void;
 
         /**
          * Decorator function for registering a function that is called when the scene environment is about to be reloded.

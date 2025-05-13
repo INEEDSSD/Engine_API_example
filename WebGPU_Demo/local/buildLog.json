@@ -1,15 +1,24 @@
 {
   "logs": [
     {
+      "name": "华为快游戏",
+      "platform": "hwgame",
+      "path": "D:\\LayaAirCode\\Engine_API_example\\WebGPU_Demo/release/hwgame",
+      "time": 1747122336592,
+      "logFile": "hwgame-166cad3114105b99551baf17dd35855f.log",
+      "success": true
+    },
+    {
       "name": "Web",
       "platform": "web",
       "path": "D:\\layaDev\\LayaProject/release/web",
       "runHandler": {
         "serve": "",
         "open": "",
-        "QRCode": ""
+        "QRCode": "",
+        "secure": true
       },
-      "time": 1719125811095,
+      "time": 1747112271836,
       "logFile": "web-82e46e9fb92efdebc381932f778abde6.log",
       "success": true
     },

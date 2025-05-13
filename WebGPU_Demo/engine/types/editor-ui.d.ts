@@ -1253,6 +1253,11 @@ declare namespace gui {
         FlowX = 3,
         FlowY = 4
     }
+    enum PageMode {
+        None = 0,
+        Horizontal = 1,
+        Vertical = 2
+    }
     enum StretchMode {
         None = 0,
         Stretch = 1,
@@ -2605,8 +2610,8 @@ declare namespace gui {
         set foldInvisibles(value: boolean);
         get minChildSize(): number;
         set minChildSize(value: number);
-        get pageMode(): boolean;
-        set pageMode(value: boolean);
+        get pageMode(): PageMode;
+        set pageMode(value: PageMode);
         get viewWidth(): number;
         set viewWidth(value: number);
         get viewHeight(): number;
@@ -2642,7 +2647,7 @@ declare namespace gui {
         protected _columnGap: number;
         protected _stretchX: StretchMode;
         protected _stretchY: StretchMode;
-        protected _pageMode: boolean;
+        protected _pageMode: PageMode;
         protected _layoutChanged: boolean;
         protected _padding: Array<number>;
         protected _align: AlignType;
@@ -2683,8 +2688,8 @@ declare namespace gui {
         set foldInvisibles(value: boolean);
         get minChildSize(): number;
         set minChildSize(value: number);
-        get pageMode(): boolean;
-        set pageMode(value: boolean);
+        get pageMode(): PageMode;
+        set pageMode(value: PageMode);
         /**
          * dir正数表示右移或者下移，负数表示左移或者上移
          */
@@ -2748,19 +2753,15 @@ declare namespace gui {
         setChangedFlag(reason?: LayoutChangedReason): void;
         refresh(force?: boolean): void;
         refreshVirtualList(): void;
-        private getColumns;
-        private getRows;
         private _refreshVirtualList;
         private _scrolled;
         private getIndexOnPos1;
         private getIndexOnPos2;
         private getIndexOnPos3;
-        private getIndexOnPos4;
         private handleScroll;
         private handleScroll1;
         private handleScroll2;
         private handleScroll3;
-        private handleScroll4;
     }
     interface ItemInfo {
         width: number;

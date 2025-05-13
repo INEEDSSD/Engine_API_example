@@ -5558,23 +5558,25 @@
     regClass68("e21e30a8-95ad-4f26-b4a3-546f809e763b", "../src/2D/Skeleton/Skeleton_SpineEvent.ts")
   ], Skeleton_SpineEvent);
 
-  // src/2D/Skeleton/Skeleton_SpineStretchyman.ts
+  // src/2D/Skeleton/Skeleton_SpineIKMesh.ts
   var Event31 = Laya.Event;
   var { regClass: regClass69, property: property69 } = Laya;
-  var Skeleton_SpineStretchyman = class extends BaseScript {
+  var Skeleton_SpineIkMesh = class extends BaseScript {
     constructor() {
       super();
-      this.mStartX = 200;
-      this.mStartY = 400;
+      this.mStartX = 180;
+      this.mStartY = 340;
+      this.mActionIndex = 0;
       this.mCurrIndex = 0;
+      this.mCurrSkinIndex = 0;
     }
     onAwake() {
       super.base();
-      Laya.loader.load("resources/res/spine/spineRes4/stretchyman.sk").then((templet) => {
+      Laya.loader.load("resources/res/spine/spineRes3/raptor.sk").then((templet) => {
         this.mArmature = templet.buildArmature(1);
         this.mArmature.x = this.mStartX;
         this.mArmature.y = this.mStartY;
-        this.mArmature.scale(0.5, 0.5);
+        this.mArmature.scale(0.3, 0.3);
         this.owner.addChild(this.mArmature);
         this.mArmature.on(Event31.STOPPED, this, this.completeHandler);
         this.play();
@@ -5590,31 +5592,31 @@
       }
       this.mArmature.play(this.mCurrIndex, false);
     }
-    onDestroy() {
+    dispose() {
       if (this.mArmature == null)
         return;
       this.mArmature.stop();
       this.mArmature.off(Event31.STOPPED, this, this.completeHandler);
     }
   };
-  __name(Skeleton_SpineStretchyman, "Skeleton_SpineStretchyman");
-  Skeleton_SpineStretchyman = __decorateClass([
-    regClass69("9428bf05-d5f5-4e58-a562-90e01db5af80", "../src/2D/Skeleton/Skeleton_SpineStretchyman.ts")
-  ], Skeleton_SpineStretchyman);
+  __name(Skeleton_SpineIkMesh, "Skeleton_SpineIkMesh");
+  Skeleton_SpineIkMesh = __decorateClass([
+    regClass69("e7ce60b4-7fa0-4408-bb59-7cae61820f1c", "../src/2D/Skeleton/Skeleton_SpineIKMesh.ts")
+  ], Skeleton_SpineIkMesh);
 
-  // src/2D/Skeleton/Skeleton_SpineVine.ts
-  var { regClass: regClass70, property: property70 } = Laya;
+  // src/2D/Skeleton/Skeleton_SpineStretchyman.ts
   var Event32 = Laya.Event;
-  var Skeleton_SpineVine = class extends BaseScript {
+  var { regClass: regClass70, property: property70 } = Laya;
+  var Skeleton_SpineStretchyman = class extends BaseScript {
     constructor() {
       super();
-      this.mStartX = 400;
-      this.mStartY = 500;
+      this.mStartX = 200;
+      this.mStartY = 400;
       this.mCurrIndex = 0;
     }
     onAwake() {
       super.base();
-      Laya.loader.load("resources/res/spine/spineRes5/vine.sk").then((templet) => {
+      Laya.loader.load("resources/res/spine/spineRes4/stretchyman.sk").then((templet) => {
         this.mArmature = templet.buildArmature(1);
         this.mArmature.x = this.mStartX;
         this.mArmature.y = this.mStartY;
@@ -5641,17 +5643,61 @@
       this.mArmature.off(Event32.STOPPED, this, this.completeHandler);
     }
   };
+  __name(Skeleton_SpineStretchyman, "Skeleton_SpineStretchyman");
+  Skeleton_SpineStretchyman = __decorateClass([
+    regClass70("9428bf05-d5f5-4e58-a562-90e01db5af80", "../src/2D/Skeleton/Skeleton_SpineStretchyman.ts")
+  ], Skeleton_SpineStretchyman);
+
+  // src/2D/Skeleton/Skeleton_SpineVine.ts
+  var { regClass: regClass71, property: property71 } = Laya;
+  var Event33 = Laya.Event;
+  var Skeleton_SpineVine = class extends BaseScript {
+    constructor() {
+      super();
+      this.mStartX = 400;
+      this.mStartY = 500;
+      this.mCurrIndex = 0;
+    }
+    onAwake() {
+      super.base();
+      Laya.loader.load("resources/res/spine/spineRes5/vine.sk").then((templet) => {
+        this.mArmature = templet.buildArmature(1);
+        this.mArmature.x = this.mStartX;
+        this.mArmature.y = this.mStartY;
+        this.mArmature.scale(0.5, 0.5);
+        this.owner.addChild(this.mArmature);
+        this.mArmature.on(Event33.STOPPED, this, this.completeHandler);
+        this.play();
+      });
+    }
+    completeHandler() {
+      this.play();
+    }
+    play() {
+      this.mCurrIndex++;
+      if (this.mCurrIndex >= this.mArmature.getAnimNum()) {
+        this.mCurrIndex = 0;
+      }
+      this.mArmature.play(this.mCurrIndex, false);
+    }
+    onDestroy() {
+      if (this.mArmature == null)
+        return;
+      this.mArmature.stop();
+      this.mArmature.off(Event33.STOPPED, this, this.completeHandler);
+    }
+  };
   __name(Skeleton_SpineVine, "Skeleton_SpineVine");
   Skeleton_SpineVine = __decorateClass([
-    regClass70("58d15757-1949-49e4-8863-0e26e5244c44", "../src/2D/Skeleton/Skeleton_SpineVine.ts")
+    regClass71("58d15757-1949-49e4-8863-0e26e5244c44", "../src/2D/Skeleton/Skeleton_SpineVine.ts")
   ], Skeleton_SpineVine);
 
   // src/2D/Sound/Sound_SimpleDemo.ts
   var Sprite31 = Laya.Sprite;
-  var Event33 = Laya.Event;
+  var Event34 = Laya.Event;
   var Handler5 = Laya.Handler;
   var SoundManager = Laya.SoundManager;
-  var { regClass: regClass71, property: property71 } = Laya;
+  var { regClass: regClass72, property: property72 } = Laya;
   var Sound_SimpleDemo = class extends BaseScript {
     constructor() {
       super();
@@ -5672,8 +5718,8 @@
       musicButton.x = soundButton.x + gap + soundButton.width;
       musicButton.y = soundButton.y;
       this.box2D.addChild(musicButton);
-      soundButton.on(Event33.CLICK, this, this.onPlaySound);
-      musicButton.on(Event33.CLICK, this, this.onPlayMusic);
+      soundButton.on(Event34.CLICK, this, this.onPlaySound);
+      musicButton.on(Event34.CLICK, this, this.onPlayMusic);
     }
     createButton(label) {
       var w = 110;
@@ -5715,7 +5761,7 @@
   };
   __name(Sound_SimpleDemo, "Sound_SimpleDemo");
   Sound_SimpleDemo = __decorateClass([
-    regClass71("4284d2ac-4597-45fa-9ede-342369ccae35", "../src/2D/Sound/Sound_SimpleDemo.ts")
+    regClass72("4284d2ac-4597-45fa-9ede-342369ccae35", "../src/2D/Sound/Sound_SimpleDemo.ts")
   ], Sound_SimpleDemo);
 
   // src/2D/Sprite/Sprite_BinaryImage.ts
@@ -5724,7 +5770,7 @@
   var Texture = Laya.Texture;
   var Texture2D = Laya.Texture2D;
   var TextureFormat = Laya.TextureFormat;
-  var { regClass: regClass72 } = Laya;
+  var { regClass: regClass73 } = Laya;
   var Sprite_BinaryImage = class extends BaseScript {
     constructor() {
       super(...arguments);
@@ -5771,13 +5817,13 @@
   };
   __name(Sprite_BinaryImage, "Sprite_BinaryImage");
   Sprite_BinaryImage = __decorateClass([
-    regClass72("6830521c-bf37-473b-bb75-9e8399bbcaab", "../src/2D/Sprite/Sprite_BinaryImage.ts")
+    regClass73("6830521c-bf37-473b-bb75-9e8399bbcaab", "../src/2D/Sprite/Sprite_BinaryImage.ts")
   ], Sprite_BinaryImage);
 
   // src/2D/Sprite/Sprite_Cache.ts
   var Sprite33 = Laya.Sprite;
   var Text13 = Laya.Text;
-  var { regClass: regClass73, property: property72 } = Laya;
+  var { regClass: regClass74, property: property73 } = Laya;
   var Sprite_Cache = class extends BaseScript {
     constructor() {
       super();
@@ -5805,12 +5851,12 @@
   };
   __name(Sprite_Cache, "Sprite_Cache");
   Sprite_Cache = __decorateClass([
-    regClass73("b1c27db6-bef3-4e4b-9222-4283acd98d50", "../src/2D/Sprite/Sprite_Cache.ts")
+    regClass74("b1c27db6-bef3-4e4b-9222-4283acd98d50", "../src/2D/Sprite/Sprite_Cache.ts")
   ], Sprite_Cache);
 
   // src/2D/Sprite/Sprite_Container.ts
   var Sprite34 = Laya.Sprite;
-  var { regClass: regClass74, property: property73 } = Laya;
+  var { regClass: regClass75, property: property74 } = Laya;
   var Sprite_Container = class extends BaseScript {
     constructor() {
       super();
@@ -5846,11 +5892,11 @@
   };
   __name(Sprite_Container, "Sprite_Container");
   Sprite_Container = __decorateClass([
-    regClass74("2812157c-5a61-4d9e-899c-96c7c41460fb", "../src/2D/Sprite/Sprite_Container.ts")
+    regClass75("2812157c-5a61-4d9e-899c-96c7c41460fb", "../src/2D/Sprite/Sprite_Container.ts")
   ], Sprite_Container);
 
   // src/2D/Sprite/Sprite_DisplayImage.ts
-  var { regClass: regClass75, property: property74 } = Laya;
+  var { regClass: regClass76, property: property75 } = Laya;
   var Sprite_DisplayImage = class extends BaseScript {
     constructor() {
       super();
@@ -5874,12 +5920,12 @@
   };
   __name(Sprite_DisplayImage, "Sprite_DisplayImage");
   Sprite_DisplayImage = __decorateClass([
-    regClass75("622a88a7-667e-46e7-843d-166c7d06018b", "../src/2D/Sprite/Sprite_DisplayImage.ts")
+    regClass76("622a88a7-667e-46e7-843d-166c7d06018b", "../src/2D/Sprite/Sprite_DisplayImage.ts")
   ], Sprite_DisplayImage);
 
   // src/2D/Sprite/Sprite_DrawPath.ts
   var Sprite35 = Laya.Sprite;
-  var { regClass: regClass76, property: property75 } = Laya;
+  var { regClass: regClass77, property: property76 } = Laya;
   var Sprite_DrawPath = class extends BaseScript {
     constructor() {
       super();
@@ -5907,12 +5953,12 @@
   };
   __name(Sprite_DrawPath, "Sprite_DrawPath");
   Sprite_DrawPath = __decorateClass([
-    regClass76("91e0f116-48ba-450a-8860-c66bf714221c", "../src/2D/Sprite/Sprite_DrawPath.ts")
+    regClass77("91e0f116-48ba-450a-8860-c66bf714221c", "../src/2D/Sprite/Sprite_DrawPath.ts")
   ], Sprite_DrawPath);
 
   // src/2D/Sprite/Sprite_DrawShapes.ts
   var Sprite36 = Laya.Sprite;
-  var { regClass: regClass77, property: property76 } = Laya;
+  var { regClass: regClass78, property: property77 } = Laya;
   var Sprite_DrawShapes = class extends BaseScript {
     constructor() {
       super();
@@ -5937,12 +5983,12 @@
   };
   __name(Sprite_DrawShapes, "Sprite_DrawShapes");
   Sprite_DrawShapes = __decorateClass([
-    regClass77("8b346388-272f-454f-bf68-0a1087a7f2cf", "../src/2D/Sprite/Sprite_DrawShapes.ts")
+    regClass78("8b346388-272f-454f-bf68-0a1087a7f2cf", "../src/2D/Sprite/Sprite_DrawShapes.ts")
   ], Sprite_DrawShapes);
 
   // src/2D/Sprite/Sprite_Guide.ts
   var Sprite37 = Laya.Sprite;
-  var { regClass: regClass78, property: property77 } = Laya;
+  var { regClass: regClass79, property: property78 } = Laya;
   var Sprite_Guide = class extends BaseScript {
     constructor() {
       super();
@@ -6004,12 +6050,12 @@
   };
   __name(Sprite_Guide, "Sprite_Guide");
   Sprite_Guide = __decorateClass([
-    regClass78("4c31a0b2-da12-464c-821b-fa3e2521c9ec", "../src/2D/Sprite/Sprite_Guide.ts")
+    regClass79("4c31a0b2-da12-464c-821b-fa3e2521c9ec", "../src/2D/Sprite/Sprite_Guide.ts")
   ], Sprite_Guide);
 
   // src/2D/Sprite/Sprite_MagnifyingGlass.ts
   var Sprite38 = Laya.Sprite;
-  var { regClass: regClass79, property: property78 } = Laya;
+  var { regClass: regClass80, property: property79 } = Laya;
   var Sprite_MagnifyingGlass = class extends BaseScript {
     constructor() {
       super();
@@ -6046,11 +6092,11 @@
   };
   __name(Sprite_MagnifyingGlass, "Sprite_MagnifyingGlass");
   Sprite_MagnifyingGlass = __decorateClass([
-    regClass79("781d3498-3b70-42c0-9931-19cca7dd3c2e", "../src/2D/Sprite/Sprite_MagnifyingGlass.ts")
+    regClass80("781d3498-3b70-42c0-9931-19cca7dd3c2e", "../src/2D/Sprite/Sprite_MagnifyingGlass.ts")
   ], Sprite_MagnifyingGlass);
 
   // src/2D/Sprite/Sprite_NodeControl.ts
-  var { regClass: regClass80, property: property79 } = Laya;
+  var { regClass: regClass81, property: property80 } = Laya;
   var Sprite_NodeControl = class extends BaseScript {
     constructor() {
       super();
@@ -6084,11 +6130,11 @@
   };
   __name(Sprite_NodeControl, "Sprite_NodeControl");
   Sprite_NodeControl = __decorateClass([
-    regClass80("9b0b2bc8-0e72-4d28-a70e-dea5d386679e", "../src/2D/Sprite/Sprite_NodeControl.ts")
+    regClass81("9b0b2bc8-0e72-4d28-a70e-dea5d386679e", "../src/2D/Sprite/Sprite_NodeControl.ts")
   ], Sprite_NodeControl);
 
   // src/2D/Sprite/Sprite_Pivot.ts
-  var { regClass: regClass81, property: property80 } = Laya;
+  var { regClass: regClass82, property: property81 } = Laya;
   var Sprite_Pivot = class extends BaseScript {
     constructor() {
       super();
@@ -6122,12 +6168,12 @@
   };
   __name(Sprite_Pivot, "Sprite_Pivot");
   Sprite_Pivot = __decorateClass([
-    regClass81("43d05e39-950f-4ef6-bc8d-f4b64c3a95c5", "../src/2D/Sprite/Sprite_Pivot.ts")
+    regClass82("43d05e39-950f-4ef6-bc8d-f4b64c3a95c5", "../src/2D/Sprite/Sprite_Pivot.ts")
   ], Sprite_Pivot);
 
   // src/2D/Sprite/Sprite_RoateAndScale.ts
   var Sprite39 = Laya.Sprite;
-  var { regClass: regClass82, property: property81 } = Laya;
+  var { regClass: regClass83, property: property82 } = Laya;
   var Sprite_RoateAndScale = class extends BaseScript {
     constructor() {
       super();
@@ -6158,7 +6204,7 @@
   };
   __name(Sprite_RoateAndScale, "Sprite_RoateAndScale");
   Sprite_RoateAndScale = __decorateClass([
-    regClass82("c995c03a-29f2-42d9-9147-5b6d3c0f5039", "../src/2D/Sprite/Sprite_RoateAndScale.ts")
+    regClass83("c995c03a-29f2-42d9-9147-5b6d3c0f5039", "../src/2D/Sprite/Sprite_RoateAndScale.ts")
   ], Sprite_RoateAndScale);
 
   // src/2D/Sprite/Sprite_ScreenShot.ts
@@ -6168,9 +6214,9 @@
   var Image2 = Laya.Image;
   var Texture2 = Laya.Texture;
   var Button2 = Laya.Button;
-  var Event34 = Laya.Event;
+  var Event35 = Laya.Event;
   var Browser5 = Laya.Browser;
-  var { regClass: regClass83, property: property82 } = Laya;
+  var { regClass: regClass84, property: property83 } = Laya;
   var Sprite_ScreenShot = class extends BaseScript {
     constructor() {
       super();
@@ -6186,7 +6232,7 @@
     createButton(skin, name, cb, index) {
       var btn = new Button2(skin, name);
       this.owner.addChild(btn);
-      btn.on(Event34.CLICK, this, cb);
+      btn.on(Event35.CLICK, this, cb);
       btn.size(200, 30);
       btn.labelSize = 16;
       btn.sizeGrid = "21,83,22,76";
@@ -6249,11 +6295,11 @@
   };
   __name(Sprite_ScreenShot, "Sprite_ScreenShot");
   Sprite_ScreenShot = __decorateClass([
-    regClass83("7215a525-ba4a-49c5-bb91-410cd7b5a48d", "../src/2D/Sprite/Sprite_ScreenShot.ts")
+    regClass84("7215a525-ba4a-49c5-bb91-410cd7b5a48d", "../src/2D/Sprite/Sprite_ScreenShot.ts")
   ], Sprite_ScreenShot);
 
   // src/2D/Sprite/Sprite_SwitchTexture.ts
-  var { regClass: regClass84, property: property83 } = Laya;
+  var { regClass: regClass85, property: property84 } = Laya;
   var Sprite_SwitchTexture = class extends BaseScript {
     constructor() {
       super();
@@ -6285,12 +6331,12 @@
   };
   __name(Sprite_SwitchTexture, "Sprite_SwitchTexture");
   Sprite_SwitchTexture = __decorateClass([
-    regClass84("dac515e7-e7e9-4cd1-9da2-be3ff5edb050", "../src/2D/Sprite/Sprite_SwitchTexture.ts")
+    regClass85("dac515e7-e7e9-4cd1-9da2-be3ff5edb050", "../src/2D/Sprite/Sprite_SwitchTexture.ts")
   ], Sprite_SwitchTexture);
 
   // src/2D/Text/Text_AutoSize.ts
   var Text14 = Laya.Text;
-  var { regClass: regClass85, property: property84 } = Laya;
+  var { regClass: regClass86, property: property85 } = Laya;
   var Text_AutoSize = class extends BaseScript {
     constructor() {
       super();
@@ -6327,12 +6373,12 @@
   };
   __name(Text_AutoSize, "Text_AutoSize");
   Text_AutoSize = __decorateClass([
-    regClass85("7637aa31-dad9-415a-bd87-059be135c04f", "../src/2D/Text/Text_AutoSize.ts")
+    regClass86("7637aa31-dad9-415a-bd87-059be135c04f", "../src/2D/Text/Text_AutoSize.ts")
   ], Text_AutoSize);
 
   // src/2D/Text/Text_BitmapFont.ts
   var Text15 = Laya.Text;
-  var { regClass: regClass86, property: property85 } = Laya;
+  var { regClass: regClass87, property: property86 } = Laya;
   var Text_BitmapFont = class extends BaseScript {
     constructor() {
       super();
@@ -6365,12 +6411,12 @@
   };
   __name(Text_BitmapFont, "Text_BitmapFont");
   Text_BitmapFont = __decorateClass([
-    regClass86("f4e2bacf-0e7b-4cac-9278-13ce67fd9752", "../src/2D/Text/Text_BitmapFont.ts")
+    regClass87("f4e2bacf-0e7b-4cac-9278-13ce67fd9752", "../src/2D/Text/Text_BitmapFont.ts")
   ], Text_BitmapFont);
 
   // src/2D/Text/Text_ComplexStyle.ts
   var Text16 = Laya.Text;
-  var { regClass: regClass87, property: property86 } = Laya;
+  var { regClass: regClass88, property: property87 } = Laya;
   var Text_ComplexStyle = class extends BaseScript {
     constructor() {
       super();
@@ -6400,12 +6446,12 @@
   };
   __name(Text_ComplexStyle, "Text_ComplexStyle");
   Text_ComplexStyle = __decorateClass([
-    regClass87("07534d14-3399-4525-9452-5ea65e8ab848", "../src/2D/Text/Text_ComplexStyle.ts")
+    regClass88("07534d14-3399-4525-9452-5ea65e8ab848", "../src/2D/Text/Text_ComplexStyle.ts")
   ], Text_ComplexStyle);
 
   // src/2D/Text/Text_Editable.ts
   var Input = Laya.Input;
-  var { regClass: regClass88, property: property87 } = Laya;
+  var { regClass: regClass89, property: property88 } = Laya;
   var Text_Editable = class extends BaseScript {
     constructor() {
       super();
@@ -6430,11 +6476,11 @@
   };
   __name(Text_Editable, "Text_Editable");
   Text_Editable = __decorateClass([
-    regClass88("377ed9c2-39f1-4be3-af65-29f085445173", "../src/2D/Text/Text_Editable.ts")
+    regClass89("377ed9c2-39f1-4be3-af65-29f085445173", "../src/2D/Text/Text_Editable.ts")
   ], Text_Editable);
 
   // src/2D/Text/Text_HTML.ts
-  var { regClass: regClass89, property: property88 } = Laya;
+  var { regClass: regClass90, property: property89 } = Laya;
   var Text_HTML = class extends BaseScript {
     constructor() {
       super();
@@ -6457,12 +6503,12 @@
   };
   __name(Text_HTML, "Text_HTML");
   Text_HTML = __decorateClass([
-    regClass89("69205946-36a4-446a-a53a-337a95d28135", "../src/2D/Text/Text_HTML.ts")
+    regClass90("69205946-36a4-446a-a53a-337a95d28135", "../src/2D/Text/Text_HTML.ts")
   ], Text_HTML);
 
   // src/2D/Text/Text_InputMultiline.ts
   var Input2 = Laya.Input;
-  var { regClass: regClass90, property: property89 } = Laya;
+  var { regClass: regClass91, property: property90 } = Laya;
   var Text_InputMultiline = class extends BaseScript {
     constructor() {
       super();
@@ -6488,12 +6534,12 @@
   };
   __name(Text_InputMultiline, "Text_InputMultiline");
   Text_InputMultiline = __decorateClass([
-    regClass90("41608eb0-8f61-40e4-bbb9-da03a8b26e24", "../src/2D/Text/Text_InputMultiline.ts")
+    regClass91("41608eb0-8f61-40e4-bbb9-da03a8b26e24", "../src/2D/Text/Text_InputMultiline.ts")
   ], Text_InputMultiline);
 
   // src/2D/Text/Text_InputSingleline.ts
   var Input3 = Laya.Input;
-  var { regClass: regClass91, property: property90 } = Laya;
+  var { regClass: regClass92, property: property91 } = Laya;
   var Text_InputSingleline = class extends BaseScript {
     constructor() {
       super();
@@ -6517,12 +6563,12 @@
   };
   __name(Text_InputSingleline, "Text_InputSingleline");
   Text_InputSingleline = __decorateClass([
-    regClass91("180d8844-d5a7-46e6-8d9b-0f882835324a", "../src/2D/Text/Text_InputSingleline.ts")
+    regClass92("180d8844-d5a7-46e6-8d9b-0f882835324a", "../src/2D/Text/Text_InputSingleline.ts")
   ], Text_InputSingleline);
 
   // src/2D/Text/Text_MaxChars.ts
   var Input4 = Laya.Input;
-  var { regClass: regClass92, property: property91 } = Laya;
+  var { regClass: regClass93, property: property92 } = Laya;
   var Text_MaxChars = class extends BaseScript {
     constructor() {
       super();
@@ -6546,12 +6592,12 @@
   };
   __name(Text_MaxChars, "Text_MaxChars");
   Text_MaxChars = __decorateClass([
-    regClass92("5fc3f7f8-2fca-4d92-ad6b-d3721b169668", "../src/2D/Text/Text_MaxChars.ts")
+    regClass93("5fc3f7f8-2fca-4d92-ad6b-d3721b169668", "../src/2D/Text/Text_MaxChars.ts")
   ], Text_MaxChars);
 
   // src/2D/Text/Text_Overflow.ts
   var Text17 = Laya.Text;
-  var { regClass: regClass93, property: property92 } = Laya;
+  var { regClass: regClass94, property: property93 } = Laya;
   var Text_Overflow = class extends BaseScript {
     constructor() {
       super();
@@ -6584,13 +6630,13 @@
   };
   __name(Text_Overflow, "Text_Overflow");
   Text_Overflow = __decorateClass([
-    regClass93("20ea3e4f-cf7b-49f1-b427-189400071843", "../src/2D/Text/Text_Overflow.ts")
+    regClass94("20ea3e4f-cf7b-49f1-b427-189400071843", "../src/2D/Text/Text_Overflow.ts")
   ], Text_Overflow);
 
   // src/2D/Text/Text_Restrict.ts
   var Text18 = Laya.Text;
   var Input5 = Laya.Input;
-  var { regClass: regClass94, property: property93 } = Laya;
+  var { regClass: regClass95, property: property94 } = Laya;
   var Text_Restrict = class extends BaseScript {
     constructor() {
       super();
@@ -6635,13 +6681,13 @@
   };
   __name(Text_Restrict, "Text_Restrict");
   Text_Restrict = __decorateClass([
-    regClass94("39106029-9ea6-4607-942f-68d6e10e4e5c", "../src/2D/Text/Text_Restrict.ts")
+    regClass95("39106029-9ea6-4607-942f-68d6e10e4e5c", "../src/2D/Text/Text_Restrict.ts")
   ], Text_Restrict);
 
   // src/2D/Text/Text_Scroll.ts
-  var Event35 = Laya.Event;
+  var Event36 = Laya.Event;
   var Text19 = Laya.Text;
-  var { regClass: regClass95, property: property94 } = Laya;
+  var { regClass: regClass96, property: property95 } = Laya;
   var Text_Scroll = class extends BaseScript {
     constructor() {
       super();
@@ -6663,19 +6709,19 @@
       this.txt.fontSize = 20;
       this.txt.color = "#ffffff";
       this.box2D.addChild(this.txt);
-      this.txt.on(Event35.MOUSE_DOWN, this, this.startScrollText);
+      this.txt.on(Event36.MOUSE_DOWN, this, this.startScrollText);
     }
     /* 开始滚动文本 */
     startScrollText(e) {
       this.prevX = this.txt.mouseX;
       this.prevY = this.txt.mouseY;
-      this.box2D.on(Event35.MOUSE_MOVE, this, this.scrollText);
-      this.box2D.on(Event35.MOUSE_UP, this, this.finishScrollText);
+      this.box2D.on(Event36.MOUSE_MOVE, this, this.scrollText);
+      this.box2D.on(Event36.MOUSE_UP, this, this.finishScrollText);
     }
     /* 停止滚动文本 */
     finishScrollText(e) {
-      this.box2D.off(Event35.MOUSE_MOVE, this, this.scrollText);
-      this.box2D.off(Event35.MOUSE_UP, this, this.finishScrollText);
+      this.box2D.off(Event36.MOUSE_MOVE, this, this.scrollText);
+      this.box2D.off(Event36.MOUSE_UP, this, this.finishScrollText);
     }
     /* 鼠标滚动文本 */
     scrollText(e) {
@@ -6689,11 +6735,11 @@
   };
   __name(Text_Scroll, "Text_Scroll");
   Text_Scroll = __decorateClass([
-    regClass95("64bf6e22-81b3-42c1-a25c-646966e07a92", "../src/2D/Text/Text_Scroll.ts")
+    regClass96("64bf6e22-81b3-42c1-a25c-646966e07a92", "../src/2D/Text/Text_Scroll.ts")
   ], Text_Scroll);
 
   // src/2D/Text/Text_UBB.ts
-  var { regClass: regClass96, property: property95 } = Laya;
+  var { regClass: regClass97, property: property96 } = Laya;
   var Text_UBB = class extends BaseScript {
     constructor() {
       super();
@@ -6716,12 +6762,12 @@
   };
   __name(Text_UBB, "Text_UBB");
   Text_UBB = __decorateClass([
-    regClass96("cde6d5b6-0518-414c-a63f-93d65985ead2", "../src/2D/Text/Text_UBB.ts")
+    regClass97("cde6d5b6-0518-414c-a63f-93d65985ead2", "../src/2D/Text/Text_UBB.ts")
   ], Text_UBB);
 
   // src/2D/Text/Text_Underline.ts
   var Text20 = Laya.Text;
-  var { regClass: regClass97, property: property96 } = Laya;
+  var { regClass: regClass98, property: property97 } = Laya;
   var Text_Underline = class extends BaseScript {
     constructor() {
       super();
@@ -6751,12 +6797,12 @@
   };
   __name(Text_Underline, "Text_Underline");
   Text_Underline = __decorateClass([
-    regClass97("63c38139-0fef-4bc6-b483-32a2c735aa0d", "../src/2D/Text/Text_Underline.ts")
+    regClass98("63c38139-0fef-4bc6-b483-32a2c735aa0d", "../src/2D/Text/Text_Underline.ts")
   ], Text_Underline);
 
   // src/2D/Text/Text_WordWrap.ts
   var Text21 = Laya.Text;
-  var { regClass: regClass98, property: property97 } = Laya;
+  var { regClass: regClass99, property: property98 } = Laya;
   var Text_WordWrap = class extends BaseScript {
     constructor() {
       super();
@@ -6779,14 +6825,14 @@
   };
   __name(Text_WordWrap, "Text_WordWrap");
   Text_WordWrap = __decorateClass([
-    regClass98("eb21fcf9-4f9b-44b9-8693-a1c6d99d55c6", "../src/2D/Text/Text_WordWrap.ts")
+    regClass99("eb21fcf9-4f9b-44b9-8693-a1c6d99d55c6", "../src/2D/Text/Text_WordWrap.ts")
   ], Text_WordWrap);
 
   // src/2D/TiledMap/TiledMap_AnimationTile.ts
   var Handler6 = Laya.Handler;
   var Rectangle3 = Laya.Rectangle;
   var TiledMap = Laya.TiledMap;
-  var { regClass: regClass99, property: property98 } = Laya;
+  var { regClass: regClass100, property: property99 } = Laya;
   var TiledMap_AnimationTile = class extends BaseScript {
     constructor() {
       super();
@@ -6814,7 +6860,7 @@
   };
   __name(TiledMap_AnimationTile, "TiledMap_AnimationTile");
   TiledMap_AnimationTile = __decorateClass([
-    regClass99("64708305-a2d1-438a-afd9-2cfb5f20370c", "../src/2D/TiledMap/TiledMap_AnimationTile.ts")
+    regClass100("64708305-a2d1-438a-afd9-2cfb5f20370c", "../src/2D/TiledMap/TiledMap_AnimationTile.ts")
   ], TiledMap_AnimationTile);
 
   // src/2D/TiledMap/TiledMap_IsometricWorld.ts
@@ -6823,7 +6869,7 @@
   var Point3 = Laya.Point;
   var Handler7 = Laya.Handler;
   var TiledMap2 = Laya.TiledMap;
-  var { regClass: regClass100, property: property99 } = Laya;
+  var { regClass: regClass101, property: property100 } = Laya;
   var TiledMap_IsometricWorld = class extends BaseScript {
     constructor() {
       super();
@@ -6873,11 +6919,11 @@
   };
   __name(TiledMap_IsometricWorld, "TiledMap_IsometricWorld");
   TiledMap_IsometricWorld = __decorateClass([
-    regClass100("36da897b-d4b1-430b-9e46-0d4640e6071a", "../src/2D/TiledMap/TiledMap_IsometricWorld.ts")
+    regClass101("36da897b-d4b1-430b-9e46-0d4640e6071a", "../src/2D/TiledMap/TiledMap_IsometricWorld.ts")
   ], TiledMap_IsometricWorld);
 
   // src/2D/TiledMap/TiledMap_LayerDemo.ts
-  var { regClass: regClass101, property: property100 } = Laya;
+  var { regClass: regClass102, property: property101 } = Laya;
   var TiledMap_LayerDemo = class extends BaseScript {
     constructor() {
       super(...arguments);
@@ -7014,14 +7060,14 @@
   };
   __name(TiledMap_LayerDemo, "TiledMap_LayerDemo");
   TiledMap_LayerDemo = __decorateClass([
-    regClass101("da0da6e1-a272-442d-9a36-60e4ba8a5c7f", "../src/2D/TiledMap/TiledMap_LayerDemo.ts")
+    regClass102("da0da6e1-a272-442d-9a36-60e4ba8a5c7f", "../src/2D/TiledMap/TiledMap_LayerDemo.ts")
   ], TiledMap_LayerDemo);
 
   // src/2D/TiledMap/TiledMap_PerspectiveWall.ts
   var Rectangle5 = Laya.Rectangle;
   var Handler8 = Laya.Handler;
   var TiledMap3 = Laya.TiledMap;
-  var { regClass: regClass102, property: property101 } = Laya;
+  var { regClass: regClass103, property: property102 } = Laya;
   var TiledMap_PerspectiveWall = class extends BaseScript {
     constructor() {
       super();
@@ -7048,15 +7094,15 @@
   };
   __name(TiledMap_PerspectiveWall, "TiledMap_PerspectiveWall");
   TiledMap_PerspectiveWall = __decorateClass([
-    regClass102("a324d7b5-9adb-4b34-9170-139eb6f6f506", "../src/2D/TiledMap/TiledMap_PerspectiveWall.ts")
+    regClass103("a324d7b5-9adb-4b34-9170-139eb6f6f506", "../src/2D/TiledMap/TiledMap_PerspectiveWall.ts")
   ], TiledMap_PerspectiveWall);
 
   // src/2D/TiledMap/TiledMap_SimpleDemo.ts
-  var Event36 = Laya.Event;
+  var Event37 = Laya.Event;
   var Rectangle6 = Laya.Rectangle;
   var Handler9 = Laya.Handler;
   var TiledMap4 = Laya.TiledMap;
-  var { regClass: regClass103, property: property102 } = Laya;
+  var { regClass: regClass104, property: property103 } = Laya;
   var TiledMap_SimpleDemo = class extends BaseScript {
     constructor() {
       super();
@@ -7068,8 +7114,8 @@
     onAwake() {
       super.base();
       this.createMap();
-      this.box2D.on(Event36.MOUSE_DOWN, this, this.mouseDown);
-      this.box2D.on(Event36.MOUSE_UP, this, this.mouseUp);
+      this.box2D.on(Event37.MOUSE_DOWN, this, this.mouseDown);
+      this.box2D.on(Event37.MOUSE_UP, this, this.mouseUp);
     }
     //创建地图
     createMap() {
@@ -7086,7 +7132,7 @@
      * 地图加载完成的回调
      */
     completeHandler(e = null) {
-      this.box2D.on(Event36.RESIZE, this, this.resize);
+      this.box2D.on(Event37.RESIZE, this, this.resize);
       this.resize();
       this.onLoaded();
     }
@@ -7094,7 +7140,7 @@
     mouseDown(e = null) {
       this.mLastMouseX = e.target.mouseX;
       this.mLastMouseY = e.target.mouseY;
-      this.box2D.on(Event36.MOUSE_MOVE, this, this.mouseMove);
+      this.box2D.on(Event37.MOUSE_MOVE, this, this.mouseMove);
     }
     mouseMove(e = null) {
       this.tiledMap.moveViewPort(this.mX - (e.target.mouseX - this.mLastMouseX), this.mY - (e.target.mouseY - this.mLastMouseY));
@@ -7102,17 +7148,17 @@
     mouseUp(e = null) {
       this.mX = this.mX - (e.target.mouseX - this.mLastMouseX);
       this.mY = this.mY - (e.target.mouseY - this.mLastMouseY);
-      this.box2D.off(Event36.MOUSE_MOVE, this, this.mouseMove);
+      this.box2D.off(Event37.MOUSE_MOVE, this, this.mouseMove);
     }
     // 窗口大小改变，把地图的视口区域重设下
     resize(e = null) {
       this.tiledMap.changeViewPort(this.mX, this.mY, this.pageWidth, this.pageHeight);
     }
     dispose() {
-      this.box2D.off(Event36.MOUSE_DOWN, this, this.mouseDown);
-      this.box2D.off(Event36.MOUSE_UP, this, this.mouseUp);
-      this.box2D.off(Event36.RESIZE, this, this.resize);
-      this.box2D.off(Event36.MOUSE_MOVE, this, this.mouseMove);
+      this.box2D.off(Event37.MOUSE_DOWN, this, this.mouseDown);
+      this.box2D.off(Event37.MOUSE_UP, this, this.mouseUp);
+      this.box2D.off(Event37.RESIZE, this, this.resize);
+      this.box2D.off(Event37.MOUSE_MOVE, this, this.mouseMove);
       if (this.tiledMap) {
         this.tiledMap.destroy();
       }
@@ -7120,12 +7166,12 @@
   };
   __name(TiledMap_SimpleDemo, "TiledMap_SimpleDemo");
   TiledMap_SimpleDemo = __decorateClass([
-    regClass103("05e90bf2-8094-404e-92ef-4f13b11f62b8", "../src/2D/TiledMap/TiledMap_SimpleDemo.ts")
+    regClass104("05e90bf2-8094-404e-92ef-4f13b11f62b8", "../src/2D/TiledMap/TiledMap_SimpleDemo.ts")
   ], TiledMap_SimpleDemo);
 
   // src/2D/Timer/Timer_CallLater.ts
   var Text22 = Laya.Text;
-  var { regClass: regClass104, property: property103 } = Laya;
+  var { regClass: regClass105, property: property104 } = Laya;
   var Timer_CallLater = class extends BaseScript {
     constructor() {
       super();
@@ -7155,13 +7201,13 @@
   };
   __name(Timer_CallLater, "Timer_CallLater");
   Timer_CallLater = __decorateClass([
-    regClass104("8015ee44-a6c5-40c2-9aa1-5c1c2ac1bf28", "../src/2D/Timer/Timer_CallLater.ts")
+    regClass105("8015ee44-a6c5-40c2-9aa1-5c1c2ac1bf28", "../src/2D/Timer/Timer_CallLater.ts")
   ], Timer_CallLater);
 
   // src/2D/Timer/Timer_DelayExcute.ts
   var Sprite42 = Laya.Sprite;
-  var Event37 = Laya.Event;
-  var { regClass: regClass105, property: property104 } = Laya;
+  var Event38 = Laya.Event;
+  var { regClass: regClass106, property: property105 } = Laya;
   var Timer_DelayExcute = class extends BaseScript {
     constructor() {
       super();
@@ -7176,11 +7222,11 @@
       this.button1.x = (this.pageWidth - this.button1.width) / 2;
       this.button1.y = (this.pageHeight - this.button1.height - vGap) / 2;
       this.box2D.addChild(this.button1);
-      this.button1.on(Event37.CLICK, this, this.onDecreaseAlpha1);
+      this.button1.on(Event38.CLICK, this, this.onDecreaseAlpha1);
       this.button2 = this.createButton("点我60帧之后 alpha - 0.5");
       this.button2.pos(this.button1.x, this.button1.y + vGap);
       this.box2D.addChild(this.button2);
-      this.button2.on(Event37.CLICK, this, this.onDecreaseAlpha2);
+      this.button2.on(Event38.CLICK, this, this.onDecreaseAlpha2);
     }
     createButton(label) {
       var w = 300, h = 60;
@@ -7191,11 +7237,11 @@
       return button;
     }
     onDecreaseAlpha1(e = null) {
-      this.button1.off(Event37.CLICK, this, this.onDecreaseAlpha1);
+      this.button1.off(Event38.CLICK, this, this.onDecreaseAlpha1);
       Laya.timer.once(3e3, this, this.onComplete1);
     }
     onDecreaseAlpha2(e = null) {
-      this.button2.off(Event37.CLICK, this, this.onDecreaseAlpha2);
+      this.button2.off(Event38.CLICK, this, this.onDecreaseAlpha2);
       Laya.timer.frameOnce(60, this, this.onComplete2);
     }
     onComplete1() {
@@ -7210,12 +7256,12 @@
   };
   __name(Timer_DelayExcute, "Timer_DelayExcute");
   Timer_DelayExcute = __decorateClass([
-    regClass105("d938c758-9e83-434b-b44d-d738431ec10e", "../src/2D/Timer/Timer_DelayExcute.ts")
+    regClass106("d938c758-9e83-434b-b44d-d738431ec10e", "../src/2D/Timer/Timer_DelayExcute.ts")
   ], Timer_DelayExcute);
 
   // src/2D/Timer/Timer_Interval.ts
   var Text23 = Laya.Text;
-  var { regClass: regClass106, property: property105 } = Laya;
+  var { regClass: regClass107, property: property106 } = Laya;
   var Timer_Interval = class extends BaseScript {
     constructor() {
       super();
@@ -7255,20 +7301,20 @@
   };
   __name(Timer_Interval, "Timer_Interval");
   Timer_Interval = __decorateClass([
-    regClass106("4f4156a7-8544-449e-b9ed-0970bded88d8", "../src/2D/Timer/Timer_Interval.ts")
+    regClass107("4f4156a7-8544-449e-b9ed-0970bded88d8", "../src/2D/Timer/Timer_Interval.ts")
   ], Timer_Interval);
 
   // src/2D/Tween/Tween_EaseFunctionsDemo.ts
   var Label4 = Laya.Label;
   var Sprite43 = Laya.Sprite;
-  var Event38 = Laya.Event;
+  var Event39 = Laya.Event;
   var Input6 = Laya.Input;
   var List = Laya.List;
   var Handler10 = Laya.Handler;
   var Tween6 = Laya.Tween;
   var Box = Laya.Box;
   var Text24 = Laya.Text;
-  var { regClass: regClass107, property: property106 } = Laya;
+  var { regClass: regClass108, property: property107 } = Laya;
   var Tween_EaseFunctionsDemo = class extends BaseScript {
     constructor() {
       super();
@@ -7326,7 +7372,7 @@
     }
     createDurationCrontroller() {
       var durationInput = this.createInputWidthLabel("Duration:", "2000", 400, 10);
-      durationInput.on(Event38.INPUT, this, () => {
+      durationInput.on(Event39.INPUT, this, () => {
         this.duration = parseInt(durationInput.text);
       });
     }
@@ -7354,7 +7400,7 @@
   };
   __name(Tween_EaseFunctionsDemo, "Tween_EaseFunctionsDemo");
   Tween_EaseFunctionsDemo = __decorateClass([
-    regClass107("0ded21b8-caed-459a-852f-6f3777890a79", "../src/2D/Tween/Tween_EaseFunctionsDemo.ts")
+    regClass108("0ded21b8-caed-459a-852f-6f3777890a79", "../src/2D/Tween/Tween_EaseFunctionsDemo.ts")
   ], Tween_EaseFunctionsDemo);
   var _ListItemRender = class _ListItemRender extends Box {
     constructor() {
@@ -7376,7 +7422,7 @@
   var Ease3 = Laya.Ease;
   var Tween7 = Laya.Tween;
   var Text25 = Laya.Text;
-  var { regClass: regClass108, property: property107 } = Laya;
+  var { regClass: regClass109, property: property108 } = Laya;
   var Tween_Letters = class extends BaseScript {
     constructor() {
       super();
@@ -7408,13 +7454,13 @@
   };
   __name(Tween_Letters, "Tween_Letters");
   Tween_Letters = __decorateClass([
-    regClass108("a52ef21b-df96-438e-9f53-765de9ce76e6", "../src/2D/Tween/Tween_Letters.ts")
+    regClass109("a52ef21b-df96-438e-9f53-765de9ce76e6", "../src/2D/Tween/Tween_Letters.ts")
   ], Tween_Letters);
 
   // src/2D/Tween/Tween_SimpleSample.ts
   var Sprite44 = Laya.Sprite;
   var Tween8 = Laya.Tween;
-  var { regClass: regClass109, property: property108 } = Laya;
+  var { regClass: regClass110, property: property109 } = Laya;
   var Tween_SimpleSample = class extends BaseScript {
     constructor() {
       super();
@@ -7448,15 +7494,15 @@
   };
   __name(Tween_SimpleSample, "Tween_SimpleSample");
   Tween_SimpleSample = __decorateClass([
-    regClass109("c38a5109-eee8-4781-b452-5c954d25542e", "../src/2D/Tween/Tween_SimpleSample.ts")
+    regClass110("c38a5109-eee8-4781-b452-5c954d25542e", "../src/2D/Tween/Tween_SimpleSample.ts")
   ], Tween_SimpleSample);
 
   // src/2D/Tween/Tween_TimeLine.ts
   var Sprite45 = Laya.Sprite;
-  var Event39 = Laya.Event;
+  var Event40 = Laya.Event;
   var TimeLine = Laya.TimeLine;
   var Keyboard = Laya.Keyboard;
-  var { regClass: regClass110, property: property109 } = Laya;
+  var { regClass: regClass111, property: property110 } = Laya;
   var Tween_TimeLine = class extends BaseScript {
     constructor() {
       super();
@@ -7469,7 +7515,7 @@
     setup() {
       this.createApe();
       this.createTimerLine();
-      this.box2D.on(Event39.KEY_DOWN, this, this.keyDown);
+      this.box2D.on(Event40.KEY_DOWN, this, this.keyDown);
     }
     createApe() {
       this.target = new Sprite45();
@@ -7481,8 +7527,8 @@
     createTimerLine() {
       this.timeLine.addLabel("turnRight", 0).to(this.target, { "x": 450, "y": 100, "scaleX": 0.5, "scaleY": 0.5 }, 2e3, null, 0).addLabel("turnDown", 0).to(this.target, { "x": 450, "y": 300, "scaleX": 0.2, "scaleY": 1, "alpha": 1 }, 2e3, null, 0).addLabel("turnLeft", 0).to(this.target, { "x": 100, "y": 300, "scaleX": 1, "scaleY": 0.2, "alpha": 0.1 }, 2e3, null, 0).addLabel("turnUp", 0).to(this.target, { "x": 100, "y": 100, "scaleX": 1, "scaleY": 1, "alpha": 1 }, 2e3, null, 0);
       this.timeLine.play(0, true);
-      this.timeLine.on(Event39.COMPLETE, this, this.onComplete);
-      this.timeLine.on(Event39.LABEL, this, this.onLabel);
+      this.timeLine.on(Event40.COMPLETE, this, this.onComplete);
+      this.timeLine.on(Event40.LABEL, this, this.onLabel);
     }
     onComplete() {
       console.log("timeLine complete!!!!");
@@ -7513,10 +7559,10 @@
       }
     }
     onDestroy() {
-      this.box2D.off(Event39.KEY_DOWN, this, this.keyDown);
+      this.box2D.off(Event40.KEY_DOWN, this, this.keyDown);
       if (this.timeLine) {
-        this.timeLine.on(Event39.COMPLETE, this, this.onComplete);
-        this.timeLine.on(Event39.LABEL, this, this.onLabel);
+        this.timeLine.on(Event40.COMPLETE, this, this.onComplete);
+        this.timeLine.on(Event40.LABEL, this, this.onLabel);
         this.timeLine.destroy();
         this.timeLine = null;
       }
@@ -7524,12 +7570,12 @@
   };
   __name(Tween_TimeLine, "Tween_TimeLine");
   Tween_TimeLine = __decorateClass([
-    regClass110("d1768db0-3ab6-470a-9675-f0f2b83dc6fb", "../src/2D/Tween/Tween_TimeLine.ts")
+    regClass111("d1768db0-3ab6-470a-9675-f0f2b83dc6fb", "../src/2D/Tween/Tween_TimeLine.ts")
   ], Tween_TimeLine);
 
   // src/2D/UI/UI_Button.ts
   var Button3 = Laya.Button;
-  var { regClass: regClass111, property: property110 } = Laya;
+  var { regClass: regClass112, property: property111 } = Laya;
   var UI_Button = class extends BaseScript {
     constructor() {
       super();
@@ -7572,12 +7618,12 @@
   };
   __name(UI_Button, "UI_Button");
   UI_Button = __decorateClass([
-    regClass111("0b46ea86-786c-4c5a-9fd6-062333649321", "../src/2D/UI/UI_Button.ts")
+    regClass112("0b46ea86-786c-4c5a-9fd6-062333649321", "../src/2D/UI/UI_Button.ts")
   ], UI_Button);
 
   // src/2D/UI/UI_CheckBox.ts
   var CheckBox = Laya.CheckBox;
-  var { regClass: regClass112, property: property111 } = Laya;
+  var { regClass: regClass113, property: property112 } = Laya;
   var UI_CheckBox = class extends BaseScript {
     constructor() {
       super();
@@ -7626,14 +7672,14 @@
   };
   __name(UI_CheckBox, "UI_CheckBox");
   UI_CheckBox = __decorateClass([
-    regClass112("e4f64c8b-f814-4958-a2ff-ba1a0363c2fc", "../src/2D/UI/UI_CheckBox.ts")
+    regClass113("e4f64c8b-f814-4958-a2ff-ba1a0363c2fc", "../src/2D/UI/UI_CheckBox.ts")
   ], UI_CheckBox);
 
   // src/2D/UI/UI_Clip.ts
   var Image3 = Laya.Image;
   var Button4 = Laya.Button;
   var Clip = Laya.Clip;
-  var { regClass: regClass113, property: property112 } = Laya;
+  var { regClass: regClass114, property: property113 } = Laya;
   var UI_Clip = class extends BaseScript {
     constructor() {
       super();
@@ -7697,13 +7743,13 @@
   };
   __name(UI_Clip, "UI_Clip");
   UI_Clip = __decorateClass([
-    regClass113("5039f284-c862-4adf-bc29-0dabf734cba8", "../src/2D/UI/UI_Clip.ts")
+    regClass114("5039f284-c862-4adf-bc29-0dabf734cba8", "../src/2D/UI/UI_Clip.ts")
   ], UI_Clip);
 
   // src/2D/UI/UI_ColorPicker.ts
   var ColorPicker = Laya.ColorPicker;
   var Handler11 = Laya.Handler;
-  var { regClass: regClass114, property: property113 } = Laya;
+  var { regClass: regClass115, property: property114 } = Laya;
   var UI_ColorPicker = class extends BaseScript {
     constructor() {
       super();
@@ -7730,13 +7776,13 @@
   };
   __name(UI_ColorPicker, "UI_ColorPicker");
   UI_ColorPicker = __decorateClass([
-    regClass114("26af1428-e015-4af4-9277-bb198c86e4d4", "../src/2D/UI/UI_ColorPicker.ts")
+    regClass115("26af1428-e015-4af4-9277-bb198c86e4d4", "../src/2D/UI/UI_ColorPicker.ts")
   ], UI_ColorPicker);
 
   // src/2D/UI/UI_ComboBox.ts
   var ComboBox = Laya.ComboBox;
   var Handler12 = Laya.Handler;
-  var { regClass: regClass115, property: property114 } = Laya;
+  var { regClass: regClass116, property: property115 } = Laya;
   var UI_ComboBox = class extends BaseScript {
     constructor() {
       super();
@@ -7768,14 +7814,14 @@
   };
   __name(UI_ComboBox, "UI_ComboBox");
   UI_ComboBox = __decorateClass([
-    regClass115("6e79e33f-0a03-4cde-9adf-0e06ecb659c9", "../src/2D/UI/UI_ComboBox.ts")
+    regClass116("6e79e33f-0a03-4cde-9adf-0e06ecb659c9", "../src/2D/UI/UI_ComboBox.ts")
   ], UI_ComboBox);
 
   // src/2D/UI/UI_Dialog.ts
   var Dialog = Laya.Dialog;
   var Image4 = Laya.Image;
   var Button5 = Laya.Button;
-  var { regClass: regClass116, property: property115 } = Laya;
+  var { regClass: regClass117, property: property116 } = Laya;
   var UI_Dialog = class extends BaseScript {
     constructor() {
       super();
@@ -7810,12 +7856,12 @@
   };
   __name(UI_Dialog, "UI_Dialog");
   UI_Dialog = __decorateClass([
-    regClass116("6eb2789d-4f8f-449b-a054-057e0ab651ca", "../src/2D/UI/UI_Dialog.ts")
+    regClass117("6eb2789d-4f8f-449b-a054-057e0ab651ca", "../src/2D/UI/UI_Dialog.ts")
   ], UI_Dialog);
 
   // src/2D/UI/UI_FontClip.ts
   var FontClip = Laya.FontClip;
-  var { regClass: regClass117, property: property116 } = Laya;
+  var { regClass: regClass118, property: property117 } = Laya;
   var UI_FontClip = class extends BaseScript {
     constructor() {
       super();
@@ -7866,12 +7912,12 @@
   };
   __name(UI_FontClip, "UI_FontClip");
   UI_FontClip = __decorateClass([
-    regClass117("147094c0-1c15-46c1-98a4-b09d1fefac2c", "../src/2D/UI/UI_FontClip.ts")
+    regClass118("147094c0-1c15-46c1-98a4-b09d1fefac2c", "../src/2D/UI/UI_FontClip.ts")
   ], UI_FontClip);
 
   // src/2D/UI/UI_Image.ts
   var Image5 = Laya.Image;
-  var { regClass: regClass118, property: property117 } = Laya;
+  var { regClass: regClass119, property: property118 } = Laya;
   var UI_Image = class extends BaseScript {
     constructor() {
       super();
@@ -7888,12 +7934,12 @@
   };
   __name(UI_Image, "UI_Image");
   UI_Image = __decorateClass([
-    regClass118("fbbe4b6b-30df-4768-8206-a4dfe5b4bac5", "../src/2D/UI/UI_Image.ts")
+    regClass119("fbbe4b6b-30df-4768-8206-a4dfe5b4bac5", "../src/2D/UI/UI_Image.ts")
   ], UI_Image);
 
   // src/2D/UI/UI_Input.ts
   var TextInput = Laya.TextInput;
-  var { regClass: regClass119, property: property118 } = Laya;
+  var { regClass: regClass120, property: property119 } = Laya;
   var UI_Input = class extends BaseScript {
     constructor() {
       super();
@@ -7930,12 +7976,12 @@
   };
   __name(UI_Input, "UI_Input");
   UI_Input = __decorateClass([
-    regClass119("3a772291-31a0-4a47-b2ec-cc5ca8ca1146", "../src/2D/UI/UI_Input.ts")
+    regClass120("3a772291-31a0-4a47-b2ec-cc5ca8ca1146", "../src/2D/UI/UI_Input.ts")
   ], UI_Input);
 
   // src/2D/UI/UI_Label.ts
   var Label5 = Laya.Label;
-  var { regClass: regClass120, property: property119 } = Laya;
+  var { regClass: regClass121, property: property120 } = Laya;
   var UI_Label = class extends BaseScript {
     constructor() {
       super();
@@ -7969,12 +8015,12 @@
   };
   __name(UI_Label, "UI_Label");
   UI_Label = __decorateClass([
-    regClass120("ff6e48bf-3722-4d14-a48b-c2f2295424f6", "../src/2D/UI/UI_Label.ts")
+    regClass121("ff6e48bf-3722-4d14-a48b-c2f2295424f6", "../src/2D/UI/UI_Label.ts")
   ], UI_Label);
 
   // src/2D/UI/UI_List.ts
   var List2 = Laya.List;
-  var { regClass: regClass121, property: property120 } = Laya;
+  var { regClass: regClass122, property: property121 } = Laya;
   var UI_List = class extends BaseScript {
     constructor() {
       super();
@@ -8035,7 +8081,7 @@
   };
   __name(UI_List, "UI_List");
   UI_List = __decorateClass([
-    regClass121("6dd768a8-4397-4d82-8148-22d00bf4baec", "../src/2D/UI/UI_List.ts")
+    regClass122("6dd768a8-4397-4d82-8148-22d00bf4baec", "../src/2D/UI/UI_List.ts")
   ], UI_List);
   var _Item = class _Item extends Laya.Box {
     constructor() {
@@ -8056,7 +8102,7 @@
   // src/2D/UI/UI_Panel.ts
   var Panel = Laya.Panel;
   var Image6 = Laya.Image;
-  var { regClass: regClass122, property: property121 } = Laya;
+  var { regClass: regClass123, property: property122 } = Laya;
   var UI_Panel = class extends BaseScript {
     constructor() {
       super();
@@ -8083,13 +8129,13 @@
   };
   __name(UI_Panel, "UI_Panel");
   UI_Panel = __decorateClass([
-    regClass122("d2b13fdb-ca9d-4c88-9728-1ca865c9f9b6", "../src/2D/UI/UI_Panel.ts")
+    regClass123("d2b13fdb-ca9d-4c88-9728-1ca865c9f9b6", "../src/2D/UI/UI_Panel.ts")
   ], UI_Panel);
 
   // src/2D/UI/UI_ProgressBar.ts
   var ProgressBar = Laya.ProgressBar;
   var Handler13 = Laya.Handler;
-  var { regClass: regClass123, property: property122 } = Laya;
+  var { regClass: regClass124, property: property123 } = Laya;
   var UI_ProgressBar = class extends BaseScript {
     constructor() {
       super();
@@ -8121,12 +8167,12 @@
   };
   __name(UI_ProgressBar, "UI_ProgressBar");
   UI_ProgressBar = __decorateClass([
-    regClass123("c21a89ee-ebd6-49e1-a11a-6307700020ee", "../src/2D/UI/UI_ProgressBar.ts")
+    regClass124("c21a89ee-ebd6-49e1-a11a-6307700020ee", "../src/2D/UI/UI_ProgressBar.ts")
   ], UI_ProgressBar);
 
   // src/2D/UI/UI_RadioGroup.ts
   var RadioGroup = Laya.RadioGroup;
-  var { regClass: regClass124, property: property123 } = Laya;
+  var { regClass: regClass125, property: property124 } = Laya;
   var UI_RadioGroup = class extends BaseScript {
     constructor() {
       super();
@@ -8169,14 +8215,14 @@
   };
   __name(UI_RadioGroup, "UI_RadioGroup");
   UI_RadioGroup = __decorateClass([
-    regClass124("a662a2ec-427c-49ca-86d1-73be27b23d88", "../src/2D/UI/UI_RadioGroup.ts")
+    regClass125("a662a2ec-427c-49ca-86d1-73be27b23d88", "../src/2D/UI/UI_RadioGroup.ts")
   ], UI_RadioGroup);
 
   // src/2D/UI/UI_ScrollBar.ts
   var HScrollBar = Laya.HScrollBar;
   var VScrollBar = Laya.VScrollBar;
   var Handler14 = Laya.Handler;
-  var { regClass: regClass125, property: property124 } = Laya;
+  var { regClass: regClass126, property: property125 } = Laya;
   var UI_ScrollBar = class extends BaseScript {
     constructor() {
       super();
@@ -8220,14 +8266,14 @@
   };
   __name(UI_ScrollBar, "UI_ScrollBar");
   UI_ScrollBar = __decorateClass([
-    regClass125("1d1ff0e3-a8b2-4595-b8fc-d4fa6b2d3b4a", "../src/2D/UI/UI_ScrollBar.ts")
+    regClass126("1d1ff0e3-a8b2-4595-b8fc-d4fa6b2d3b4a", "../src/2D/UI/UI_ScrollBar.ts")
   ], UI_ScrollBar);
 
   // src/2D/UI/UI_Slider.ts
   var HSlider = Laya.HSlider;
   var VSlider = Laya.VSlider;
   var Handler15 = Laya.Handler;
-  var { regClass: regClass126, property: property125 } = Laya;
+  var { regClass: regClass127, property: property126 } = Laya;
   var UI_Slider = class extends BaseScript {
     constructor() {
       super();
@@ -8273,13 +8319,13 @@
   };
   __name(UI_Slider, "UI_Slider");
   UI_Slider = __decorateClass([
-    regClass126("65a9e444-8f55-40b8-a41f-0ad4418eab7d", "../src/2D/UI/UI_Slider.ts")
+    regClass127("65a9e444-8f55-40b8-a41f-0ad4418eab7d", "../src/2D/UI/UI_Slider.ts")
   ], UI_Slider);
 
   // src/2D/UI/UI_Tab.ts
   var Tab = Laya.Tab;
   var Handler16 = Laya.Handler;
-  var { regClass: regClass127, property: property126 } = Laya;
+  var { regClass: regClass128, property: property127 } = Laya;
   var UI_Tab = class extends BaseScript {
     constructor() {
       super();
@@ -8319,12 +8365,12 @@
   };
   __name(UI_Tab, "UI_Tab");
   UI_Tab = __decorateClass([
-    regClass127("d0973bda-cd73-46f1-9970-92451a8979a6", "../src/2D/UI/UI_Tab.ts")
+    regClass128("d0973bda-cd73-46f1-9970-92451a8979a6", "../src/2D/UI/UI_Tab.ts")
   ], UI_Tab);
 
   // src/2D/UI/UI_TextArea.ts
   var TextArea = Laya.TextArea;
-  var { regClass: regClass128, property: property127 } = Laya;
+  var { regClass: regClass129, property: property128 } = Laya;
   var UI_TextArea = class extends BaseScript {
     constructor() {
       super();
@@ -8351,7 +8397,7 @@
   };
   __name(UI_TextArea, "UI_TextArea");
   UI_TextArea = __decorateClass([
-    regClass128("072844be-64d9-497c-913e-dd853e6d633a", "../src/2D/UI/UI_TextArea.ts")
+    regClass129("072844be-64d9-497c-913e-dd853e6d633a", "../src/2D/UI/UI_TextArea.ts")
   ], UI_TextArea);
 
   // src/2D/UI/UI_Tree.ts
@@ -8359,7 +8405,7 @@
   var Tree = Laya.Tree;
   var Box2 = Laya.Box;
   var Clip2 = Laya.Clip;
-  var { regClass: regClass129, property: property128 } = Laya;
+  var { regClass: regClass130, property: property129 } = Laya;
   var UI_Tree = class extends BaseScript {
     constructor() {
       super();
@@ -8402,7 +8448,7 @@
   };
   __name(UI_Tree, "UI_Tree");
   UI_Tree = __decorateClass([
-    regClass129("d3bf77a4-0a1e-46cc-9048-1f898ae0c747", "../src/2D/UI/UI_Tree.ts")
+    regClass130("d3bf77a4-0a1e-46cc-9048-1f898ae0c747", "../src/2D/UI/UI_Tree.ts")
   ], UI_Tree);
   var _Item2 = class _Item2 extends Box2 {
     constructor() {
@@ -8703,7 +8749,7 @@
 
   // src/3D/Advance/BlurryGlass.ts
   var Vector4 = Laya.Vector4;
-  var { regClass: regClass130, property: property129 } = Laya;
+  var { regClass: regClass131, property: property130 } = Laya;
   var BlurGlass = class extends BaseScript {
     constructor() {
       super();
@@ -8758,13 +8804,13 @@
   };
   __name(BlurGlass, "BlurGlass");
   __decorateClass([
-    property129(Laya.Camera)
+    property130(Laya.Camera)
   ], BlurGlass.prototype, "camera", 2);
   __decorateClass([
-    property129(Laya.Scene3D)
+    property130(Laya.Scene3D)
   ], BlurGlass.prototype, "scene", 2);
   BlurGlass = __decorateClass([
-    regClass130("6a7bc5b7-ac78-40d1-975a-19b7d20e0e7b", "../src/3D/Advance/BlurryGlass.ts")
+    regClass131("6a7bc5b7-ac78-40d1-975a-19b7d20e0e7b", "../src/3D/Advance/BlurryGlass.ts")
   ], BlurGlass);
 
   // src/3D/Advance/DepthNormalShader/DepthTextureTest.vs
@@ -8841,7 +8887,7 @@
 
   // src/3D/Advance/CameraDepthModeTextureDemo.ts
   var Vector33 = Laya.Vector3;
-  var { regClass: regClass131, property: property130 } = Laya;
+  var { regClass: regClass132, property: property131 } = Laya;
   var CameraDepthModeTextureDemo = class extends BaseScript {
     constructor() {
       super();
@@ -8865,18 +8911,18 @@
   };
   __name(CameraDepthModeTextureDemo, "CameraDepthModeTextureDemo");
   __decorateClass([
-    property130(Laya.Camera)
+    property131(Laya.Camera)
   ], CameraDepthModeTextureDemo.prototype, "camera", 2);
   __decorateClass([
-    property130(Laya.Scene3D)
+    property131(Laya.Scene3D)
   ], CameraDepthModeTextureDemo.prototype, "scene", 2);
   CameraDepthModeTextureDemo = __decorateClass([
-    regClass131("d6fc9519-a7a7-48d7-8431-50af8012c384", "../src/3D/Advance/CameraDepthModeTextureDemo.ts")
+    regClass132("d6fc9519-a7a7-48d7-8431-50af8012c384", "../src/3D/Advance/CameraDepthModeTextureDemo.ts")
   ], CameraDepthModeTextureDemo);
 
   // src/3D/Advance/CameraInteraction.ts
-  var Event40 = Laya.Event;
-  var { regClass: regClass132, property: property131 } = Laya;
+  var Event41 = Laya.Event;
+  var { regClass: regClass133, property: property132 } = Laya;
   var CameraInteraction = class extends BaseScript {
     constructor() {
       super();
@@ -9050,16 +9096,16 @@
   };
   __name(CameraInteraction, "CameraInteraction");
   __decorateClass([
-    property131(Laya.Camera)
+    property132(Laya.Camera)
   ], CameraInteraction.prototype, "camera", 2);
   __decorateClass([
-    property131(Laya.Scene3D)
+    property132(Laya.Scene3D)
   ], CameraInteraction.prototype, "scene", 2);
   __decorateClass([
-    property131(Laya.Sprite3D)
+    property132(Laya.Sprite3D)
   ], CameraInteraction.prototype, "directionLight", 2);
   CameraInteraction = __decorateClass([
-    regClass132("7a2191ac-590d-4a34-aa9f-7714eead7c62", "../src/3D/Advance/CameraInteraction.ts")
+    regClass133("7a2191ac-590d-4a34-aa9f-7714eead7c62", "../src/3D/Advance/CameraInteraction.ts")
   ], CameraInteraction);
   var _KeyBoard = class _KeyBoard extends Laya.Script {
     // 键盘按键e
@@ -9073,8 +9119,8 @@
       this.d = this.owner.getChildByName("d");
       this.q = this.owner.getChildByName("q");
       this.e = this.owner.getChildByName("e");
-      Laya.stage.on(Event40.KEY_DOWN, this, this.onKeyDown);
-      Laya.stage.on(Event40.KEY_UP, this, this.onKeyUp);
+      Laya.stage.on(Event41.KEY_DOWN, this, this.onKeyDown);
+      Laya.stage.on(Event41.KEY_UP, this, this.onKeyUp);
     }
     onKeyDown(e) {
       switch (e.keyCode) {
@@ -9597,7 +9643,7 @@
   var Vector34 = Laya.Vector3;
   var Quaternion2 = Laya.Quaternion;
   var Vector42 = Laya.Vector4;
-  var { regClass: regClass133, property: property132 } = Laya;
+  var { regClass: regClass134, property: property133 } = Laya;
   var CommandBuffer_DrawCustomInstance = class extends BaseScript {
     constructor() {
       super();
@@ -9682,21 +9728,21 @@
   };
   __name(CommandBuffer_DrawCustomInstance, "CommandBuffer_DrawCustomInstance");
   __decorateClass([
-    property132(Laya.Camera)
+    property133(Laya.Camera)
   ], CommandBuffer_DrawCustomInstance.prototype, "camera", 2);
   __decorateClass([
-    property132(Laya.Scene3D)
+    property133(Laya.Scene3D)
   ], CommandBuffer_DrawCustomInstance.prototype, "scene", 2);
   __decorateClass([
-    property132(Laya.Sprite3D)
+    property133(Laya.Sprite3D)
   ], CommandBuffer_DrawCustomInstance.prototype, "directionLight", 2);
   CommandBuffer_DrawCustomInstance = __decorateClass([
-    regClass133("309fd40c-2253-4850-b066-7c34fad9be09", "../src/3D/Advance/CommandBuffer_DrawCustomInstance.ts")
+    regClass134("309fd40c-2253-4850-b066-7c34fad9be09", "../src/3D/Advance/CommandBuffer_DrawCustomInstance.ts")
   ], CommandBuffer_DrawCustomInstance);
 
   // src/3D/Advance/CommandBuffer_Outline.ts
   var Vector43 = Laya.Vector4;
-  var { regClass: regClass134, property: property133 } = Laya;
+  var { regClass: regClass135, property: property134 } = Laya;
   var CommandBuffer_Outline = class extends BaseScript {
     constructor() {
       super();
@@ -9770,16 +9816,16 @@
   };
   __name(CommandBuffer_Outline, "CommandBuffer_Outline");
   __decorateClass([
-    property133(Laya.Camera)
+    property134(Laya.Camera)
   ], CommandBuffer_Outline.prototype, "camera", 2);
   __decorateClass([
-    property133(Laya.Scene3D)
+    property134(Laya.Scene3D)
   ], CommandBuffer_Outline.prototype, "scene", 2);
   __decorateClass([
-    property133(Laya.Button)
+    property134(Laya.Button)
   ], CommandBuffer_Outline.prototype, "effectBtn", 2);
   CommandBuffer_Outline = __decorateClass([
-    regClass134("c7b9e97b-dab7-4d49-9974-6722b5ba39ee", "../src/3D/Advance/CommandBuffer_Outline.ts")
+    regClass135("c7b9e97b-dab7-4d49-9974-6722b5ba39ee", "../src/3D/Advance/CommandBuffer_Outline.ts")
   ], CommandBuffer_Outline);
 
   // src/3D/Advance/grassDemo/GrassCellInfo.ts
@@ -10189,7 +10235,7 @@
 
   // src/3D/Advance/GrassDemo.ts
   var Vector35 = Laya.Vector3;
-  var { regClass: regClass135, property: property134 } = Laya;
+  var { regClass: regClass136, property: property135 } = Laya;
   var GrassDemo = class extends BaseScript {
     constructor() {
       super();
@@ -10220,22 +10266,22 @@
   };
   __name(GrassDemo, "GrassDemo");
   __decorateClass([
-    property134(Laya.Camera)
+    property135(Laya.Camera)
   ], GrassDemo.prototype, "camera", 2);
   __decorateClass([
-    property134(Laya.Scene3D)
+    property135(Laya.Scene3D)
   ], GrassDemo.prototype, "scene", 2);
   __decorateClass([
-    property134(Laya.Sprite3D)
+    property135(Laya.Sprite3D)
   ], GrassDemo.prototype, "directionLight", 2);
   GrassDemo = __decorateClass([
-    regClass135("d5231def-e006-48c3-9255-c53a9d98e2db", "../src/3D/Advance/GrassDemo.ts")
+    regClass136("d5231def-e006-48c3-9255-c53a9d98e2db", "../src/3D/Advance/GrassDemo.ts")
   ], GrassDemo);
 
   // src/3D/Advance/Laya3DCombineHtml.ts
   var Vector36 = Laya.Vector3;
   var SpriteUtils4 = Laya.SpriteUtils;
-  var { regClass: regClass136, property: property135 } = Laya;
+  var { regClass: regClass137, property: property136 } = Laya;
   var Laya3DCombineHtml = class extends BaseScript {
     constructor() {
       super();
@@ -10261,20 +10307,20 @@
   };
   __name(Laya3DCombineHtml, "Laya3DCombineHtml");
   __decorateClass([
-    property135(Laya.Camera)
+    property136(Laya.Camera)
   ], Laya3DCombineHtml.prototype, "camera", 2);
   __decorateClass([
-    property135(Laya.Scene3D)
+    property136(Laya.Scene3D)
   ], Laya3DCombineHtml.prototype, "scene", 2);
   __decorateClass([
-    property135(Laya.DirectionLightCom)
+    property136(Laya.DirectionLightCom)
   ], Laya3DCombineHtml.prototype, "directionLight", 2);
   Laya3DCombineHtml = __decorateClass([
-    regClass136("f0a5c24b-f6a4-4272-a7a2-ad8ea4dd8cdf", "../src/3D/Advance/Laya3DCombineHtml.ts")
+    regClass137("f0a5c24b-f6a4-4272-a7a2-ad8ea4dd8cdf", "../src/3D/Advance/Laya3DCombineHtml.ts")
   ], Laya3DCombineHtml);
 
   // src/3D/Advance/ReflectionProbe.ts
-  var { regClass: regClass137, property: property136 } = Laya;
+  var { regClass: regClass138, property: property137 } = Laya;
   var ReflectionProbe = class extends BaseScript {
     constructor() {
       super();
@@ -10285,13 +10331,13 @@
   };
   __name(ReflectionProbe, "ReflectionProbe");
   __decorateClass([
-    property136(Laya.Camera)
+    property137(Laya.Camera)
   ], ReflectionProbe.prototype, "camera", 2);
   __decorateClass([
-    property136(Laya.Scene3D)
+    property137(Laya.Scene3D)
   ], ReflectionProbe.prototype, "scene", 2);
   ReflectionProbe = __decorateClass([
-    regClass137("9e38f354-1eda-4e06-8ff9-e6cc6f2e7b02", "../src/3D/Advance/ReflectionProbe.ts")
+    regClass138("9e38f354-1eda-4e06-8ff9-e6cc6f2e7b02", "../src/3D/Advance/ReflectionProbe.ts")
   ], ReflectionProbe);
 
   // src/3D/Advance/Scene2DPlayer3D.ts
@@ -10308,7 +10354,7 @@
   var Texture3 = Laya.Texture;
   var Keyboard2 = Laya.Keyboard;
   var Label7 = Laya.Label;
-  var { regClass: regClass138, property: property137 } = Laya;
+  var { regClass: regClass139, property: property138 } = Laya;
   var Scene2DPlayer3D = class extends BaseScript {
     constructor() {
       super();
@@ -10417,17 +10463,17 @@
   };
   __name(Scene2DPlayer3D, "Scene2DPlayer3D");
   __decorateClass([
-    property137(Laya.Camera)
+    property138(Laya.Camera)
   ], Scene2DPlayer3D.prototype, "camera", 2);
   __decorateClass([
-    property137(Laya.Scene3D)
+    property138(Laya.Scene3D)
   ], Scene2DPlayer3D.prototype, "scene", 2);
   Scene2DPlayer3D = __decorateClass([
-    regClass138("b1a8ad5f-4f94-4a9e-a459-06d520ac09f3", "../src/3D/Advance/Scene2DPlayer3D.ts")
+    regClass139("b1a8ad5f-4f94-4a9e-a459-06d520ac09f3", "../src/3D/Advance/Scene2DPlayer3D.ts")
   ], Scene2DPlayer3D);
 
   // src/3D/Advance/Secne3DPlayer2D.ts
-  var { regClass: regClass139, property: property138 } = Laya;
+  var { regClass: regClass140, property: property139 } = Laya;
   var Secne3DPlayer2D = class extends BaseScript {
     constructor() {
       super();
@@ -10471,13 +10517,13 @@
   };
   __name(Secne3DPlayer2D, "Secne3DPlayer2D");
   __decorateClass([
-    property138(Laya.Camera)
+    property139(Laya.Camera)
   ], Secne3DPlayer2D.prototype, "camera", 2);
   __decorateClass([
-    property138(Laya.Scene3D)
+    property139(Laya.Scene3D)
   ], Secne3DPlayer2D.prototype, "scene", 2);
   Secne3DPlayer2D = __decorateClass([
-    regClass139("4980a528-7cac-4b04-8b52-e276f98d4dc2", "../src/3D/Advance/Secne3DPlayer2D.ts")
+    regClass140("4980a528-7cac-4b04-8b52-e276f98d4dc2", "../src/3D/Advance/Secne3DPlayer2D.ts")
   ], Secne3DPlayer2D);
 
   // src/3D/Advance/SeparableSSSRender/shader/SeparableSSS_GasBlur.fs
@@ -10840,7 +10886,7 @@ void main()\r
   var FilterMode = Laya.FilterMode;
   var Color2 = Laya.Color;
   var DepthTextureMode = Laya.DepthTextureMode;
-  var { regClass: regClass140, property: property139 } = Laya;
+  var { regClass: regClass141, property: property140 } = Laya;
   var SeparableSSS_RenderDemo = class extends BaseScript {
     //reference:https://github.com/iryoku/separable-sss 
     //流程：分别渲染皮肤Mesh的漫反射部分以及渲染皮肤Mesh的高光部分,分别存储在不同的FrameBuffer中
@@ -10908,17 +10954,17 @@ void main()\r
   };
   __name(SeparableSSS_RenderDemo, "SeparableSSS_RenderDemo");
   __decorateClass([
-    property139(Laya.Camera)
+    property140(Laya.Camera)
   ], SeparableSSS_RenderDemo.prototype, "camera", 2);
   __decorateClass([
-    property139(Laya.Scene3D)
+    property140(Laya.Scene3D)
   ], SeparableSSS_RenderDemo.prototype, "scene", 2);
   SeparableSSS_RenderDemo = __decorateClass([
-    regClass140("3c9bc866-29a5-4bec-a511-58ef2b18c156", "../src/3D/Advance/SeparableSSS_RenderDemo.ts")
+    regClass141("3c9bc866-29a5-4bec-a511-58ef2b18c156", "../src/3D/Advance/SeparableSSS_RenderDemo.ts")
   ], SeparableSSS_RenderDemo);
 
   // src/3D/Advance/UBO_instance_matBatchDemo.ts
-  var { regClass: regClass141, property: property140 } = Laya;
+  var { regClass: regClass142, property: property141 } = Laya;
   var UBO_instance_matBatchDemo = class extends BaseScript {
     constructor() {
       super(...arguments);
@@ -10969,25 +11015,25 @@ void main()\r
   };
   __name(UBO_instance_matBatchDemo, "UBO_instance_matBatchDemo");
   __decorateClass([
-    property140(Laya.Scene3D)
+    property141(Laya.Scene3D)
   ], UBO_instance_matBatchDemo.prototype, "scene3D", 2);
   __decorateClass([
-    property140(Laya.Camera)
+    property141(Laya.Camera)
   ], UBO_instance_matBatchDemo.prototype, "cam", 2);
   __decorateClass([
-    property140(Laya.Material)
+    property141(Laya.Material)
   ], UBO_instance_matBatchDemo.prototype, "batchMat", 2);
   __decorateClass([
-    property140(Laya.Sprite3D)
+    property141(Laya.Sprite3D)
   ], UBO_instance_matBatchDemo.prototype, "ownerSp3", 2);
   UBO_instance_matBatchDemo = __decorateClass([
-    regClass141("cabcf20f-9f5a-47a0-988b-edc6a0d1e45c", "../src/3D/Advance/UBO_instance_matBatchDemo.ts")
+    regClass142("cabcf20f-9f5a-47a0-988b-edc6a0d1e45c", "../src/3D/Advance/UBO_instance_matBatchDemo.ts")
   ], UBO_instance_matBatchDemo);
 
   // src/3D/Advance/UI3D.ts
   var Sprite3D2 = Laya.Sprite3D;
   var Loader7 = Laya.Loader;
-  var { regClass: regClass142, property: property141 } = Laya;
+  var { regClass: regClass143, property: property142 } = Laya;
   var UI3D = class extends BaseScript {
     constructor() {
       super();
@@ -11027,13 +11073,13 @@ void main()\r
   };
   __name(UI3D, "UI3D");
   __decorateClass([
-    property141(Laya.Camera)
+    property142(Laya.Camera)
   ], UI3D.prototype, "camera", 2);
   __decorateClass([
-    property141(Laya.Scene3D)
+    property142(Laya.Scene3D)
   ], UI3D.prototype, "scene", 2);
   UI3D = __decorateClass([
-    regClass142("cb83f637-7a02-4212-b171-61f071ef5675", "../src/3D/Advance/UI3D.ts")
+    regClass143("cb83f637-7a02-4212-b171-61f071ef5675", "../src/3D/Advance/UI3D.ts")
   ], UI3D);
   var _UIScript = class _UIScript extends Laya.Script {
     constructor() {
@@ -11060,7 +11106,7 @@ void main()\r
   var Vector39 = Laya.Vector3;
   var Color3 = Laya.Color;
   var Vector47 = Laya.Vector4;
-  var { regClass: regClass143, property: property142 } = Laya;
+  var { regClass: regClass144, property: property143 } = Laya;
   var VideoPlayIn3DWorld = class extends BaseScript {
     constructor() {
       super();
@@ -11107,13 +11153,13 @@ void main()\r
   };
   __name(VideoPlayIn3DWorld, "VideoPlayIn3DWorld");
   __decorateClass([
-    property142(Laya.Camera)
+    property143(Laya.Camera)
   ], VideoPlayIn3DWorld.prototype, "camera", 2);
   __decorateClass([
-    property142(Laya.Scene3D)
+    property143(Laya.Scene3D)
   ], VideoPlayIn3DWorld.prototype, "scene", 2);
   VideoPlayIn3DWorld = __decorateClass([
-    regClass143("6af74c14-698e-40a9-906d-f667109ae8f0", "../src/3D/Advance/VideoPlayIn3DWorld.ts")
+    regClass144("6af74c14-698e-40a9-906d-f667109ae8f0", "../src/3D/Advance/VideoPlayIn3DWorld.ts")
   ], VideoPlayIn3DWorld);
   var _ChinarMirrorPlane = class _ChinarMirrorPlane extends Script {
     constructor() {
@@ -11259,7 +11305,7 @@ void main()\r
   var ChinarMirrorPlane = _ChinarMirrorPlane;
 
   // src/3D/Advance/VolumeGIDemo.ts
-  var { regClass: regClass144, property: property143 } = Laya;
+  var { regClass: regClass145, property: property144 } = Laya;
   var VolumeGIDemo = class extends BaseScript {
     constructor() {
       super(...arguments);
@@ -11294,28 +11340,28 @@ void main()\r
   };
   __name(VolumeGIDemo, "VolumeGIDemo");
   __decorateClass([
-    property143({ type: Laya.Camera })
+    property144({ type: Laya.Camera })
   ], VolumeGIDemo.prototype, "camera", 2);
   __decorateClass([
-    property143({ type: Laya.Scene3D })
+    property144({ type: Laya.Scene3D })
   ], VolumeGIDemo.prototype, "scene", 2);
   __decorateClass([
-    property143({ type: Laya.Sprite3D })
+    property144({ type: Laya.Sprite3D })
   ], VolumeGIDemo.prototype, "volumeGISp", 2);
   __decorateClass([
-    property143({ type: Laya.Sprite3D })
+    property144({ type: Laya.Sprite3D })
   ], VolumeGIDemo.prototype, "normalSp", 2);
   VolumeGIDemo = __decorateClass([
-    regClass144("4327dc36-dd7b-424d-873c-cd95baa284cf", "../src/3D/Advance/VolumeGIDemo.ts")
+    regClass145("4327dc36-dd7b-424d-873c-cd95baa284cf", "../src/3D/Advance/VolumeGIDemo.ts")
   ], VolumeGIDemo);
 
   // src/3D/Advance/navMesh/CameraClick.ts
-  var { regClass: regClass145, property: property144 } = Laya;
+  var { regClass: regClass146, property: property145 } = Laya;
   var Ray = Laya.Ray;
   var HitResult = Laya.HitResult;
   var Vector22 = Laya.Vector2;
   var Vector310 = Laya.Vector3;
-  var Event41 = Laya.Event;
+  var Event42 = Laya.Event;
   var CameraClick = class extends Laya.Script {
     constructor() {
       super();
@@ -11326,7 +11372,7 @@ void main()\r
     onAwake() {
       this._camera = this.owner;
       this._scene = this._camera.scene;
-      Laya.stage.on(Event41.MOUSE_DOWN, this, this.onMouseDown);
+      Laya.stage.on(Event42.MOUSE_DOWN, this, this.onMouseDown);
     }
     onMouseDown(event) {
       if (Index.curPage) {
@@ -11348,11 +11394,11 @@ void main()\r
   };
   __name(CameraClick, "CameraClick");
   CameraClick = __decorateClass([
-    regClass145("d0c0cd9c-f7be-4351-a532-e729cfec3a25", "../src/3D/Advance/navMesh/CameraClick.ts")
+    regClass146("d0c0cd9c-f7be-4351-a532-e729cfec3a25", "../src/3D/Advance/navMesh/CameraClick.ts")
   ], CameraClick);
 
   // src/3D/Advance/navMesh/CameraMove.ts
-  var { regClass: regClass146, property: property145 } = Laya;
+  var { regClass: regClass147, property: property146 } = Laya;
   var CameraMove = class extends Laya.Script3D {
     constructor() {
       super();
@@ -11463,14 +11509,14 @@ void main()\r
   };
   __name(CameraMove, "CameraMove");
   __decorateClass([
-    property145("number")
+    property146("number")
   ], CameraMove.prototype, "speed", 2);
   CameraMove = __decorateClass([
-    regClass146("fdb27778-5176-441c-937f-c1f599ae0de9", "../src/3D/Advance/navMesh/CameraMove.ts")
+    regClass147("fdb27778-5176-441c-937f-c1f599ae0de9", "../src/3D/Advance/navMesh/CameraMove.ts")
   ], CameraMove);
 
   // src/3D/Advance/navMesh/NavMesh.ts
-  var { regClass: regClass147, property: property146 } = Laya;
+  var { regClass: regClass148, property: property147 } = Laya;
   var NavMeshSurface = Laya.NavMeshSurface;
   var UnlitMaterial2 = Laya.UnlitMaterial;
   var Color4 = Laya.Color;
@@ -11569,15 +11615,15 @@ void main()\r
   __name(NavMesh, "NavMesh");
   NavMesh.tempV = new Laya.Vector3();
   __decorateClass([
-    property146(Camera3)
+    property147(Camera3)
   ], NavMesh.prototype, "camera", 2);
   NavMesh = __decorateClass([
-    regClass147("c1db5e11-fac1-4274-a649-aa103cefebd2", "../src/3D/Advance/navMesh/NavMesh.ts")
+    regClass148("c1db5e11-fac1-4274-a649-aa103cefebd2", "../src/3D/Advance/navMesh/NavMesh.ts")
   ], NavMesh);
 
   // src/3D/Advance/showFont.ts
   var Vector311 = Laya.Vector3;
-  var { regClass: regClass148, property: property147 } = Laya;
+  var { regClass: regClass149, property: property148 } = Laya;
   var showFont = class extends BaseScript {
     constructor() {
       super();
@@ -11629,13 +11675,13 @@ void main()\r
   };
   __name(showFont, "showFont");
   __decorateClass([
-    property147(Laya.Camera)
+    property148(Laya.Camera)
   ], showFont.prototype, "camera", 2);
   __decorateClass([
-    property147(Laya.Scene3D)
+    property148(Laya.Scene3D)
   ], showFont.prototype, "scene", 2);
   showFont = __decorateClass([
-    regClass148("44e834ee-b3dc-4126-82dd-23c7705c857f", "../src/3D/Advance/showFont.ts")
+    regClass149("44e834ee-b3dc-4126-82dd-23c7705c857f", "../src/3D/Advance/showFont.ts")
   ], showFont);
 
   // src/3D/Animation/AnimatorDemo.ts
@@ -11645,8 +11691,8 @@ void main()\r
   var AnimatorState = Laya.AnimatorState;
   var Text26 = Laya.Text;
   var Button6 = Laya.Button;
-  var Event42 = Laya.Event;
-  var { regClass: regClass149, property: property148 } = Laya;
+  var Event43 = Laya.Event;
+  var { regClass: regClass150, property: property149 } = Laya;
   var AnimatorDemo = class extends BaseScript {
     constructor() {
       super();
@@ -11755,7 +11801,7 @@ void main()\r
       this._changeActionButton.stateNum = 1;
       this._changeActionButton.labelColors = "#ffffff";
       this._changeActionButton.pos(this.pageWidth / 2 - this._changeActionButton.width - 10, this.pageHeight - 50);
-      this._changeActionButton.on(Event42.CLICK, this, this.stypeFun0);
+      this._changeActionButton.on(Event43.CLICK, this, this.stypeFun0);
       this._changeActionButton2 = this.owner.addChild(new Button6("resources/image/img_btn_bg.png", "切换动作状态"));
       this._changeActionButton2.size(150, 40);
       this._changeActionButton2.labelSize = 16;
@@ -11763,7 +11809,7 @@ void main()\r
       this._changeActionButton2.stateNum = 1;
       this._changeActionButton2.labelColors = "#ffffff";
       this._changeActionButton2.pos(this.pageWidth / 2 + 10, this.pageHeight - 50);
-      this._changeActionButton2.on(Event42.CLICK, this, this.stypeFun1);
+      this._changeActionButton2.on(Event43.CLICK, this, this.stypeFun1);
     }
     stypeFun0(label = "播放动画") {
       if (this._changeActionButton.label == "暂停动画") {
@@ -11832,16 +11878,16 @@ void main()\r
   };
   __name(AnimatorDemo, "AnimatorDemo");
   __decorateClass([
-    property148(Laya.Camera)
+    property149(Laya.Camera)
   ], AnimatorDemo.prototype, "camera", 2);
   __decorateClass([
-    property148(Laya.Scene3D)
+    property149(Laya.Scene3D)
   ], AnimatorDemo.prototype, "scene", 2);
   __decorateClass([
-    property148(Laya.Sprite3D)
+    property149(Laya.Sprite3D)
   ], AnimatorDemo.prototype, "directionLight", 2);
   AnimatorDemo = __decorateClass([
-    regClass149("9ee20e05-3a9e-495b-871d-8a273d7eb552", "../src/3D/Animation/AnimatorDemo.ts")
+    regClass150("9ee20e05-3a9e-495b-871d-8a273d7eb552", "../src/3D/Animation/AnimatorDemo.ts")
   ], AnimatorDemo);
   var _CustomAnimatorStateScript = class _CustomAnimatorStateScript extends Laya.AnimatorStateScript {
     constructor() {
@@ -11877,7 +11923,7 @@ void main()\r
   var AnimatorState2 = Laya.AnimatorState;
   var Text27 = Laya.Text;
   var AnimatorStateScript = Laya.AnimatorStateScript;
-  var { regClass: regClass150, property: property149 } = Laya;
+  var { regClass: regClass151, property: property150 } = Laya;
   var AnimatorStateScriptDemo = class extends BaseScript {
     constructor() {
       super();
@@ -11973,16 +12019,16 @@ void main()\r
   };
   __name(AnimatorStateScriptDemo, "AnimatorStateScriptDemo");
   __decorateClass([
-    property149(Laya.Camera)
+    property150(Laya.Camera)
   ], AnimatorStateScriptDemo.prototype, "camera", 2);
   __decorateClass([
-    property149(Laya.Scene3D)
+    property150(Laya.Scene3D)
   ], AnimatorStateScriptDemo.prototype, "scene", 2);
   __decorateClass([
-    property149(Laya.Sprite3D)
+    property150(Laya.Sprite3D)
   ], AnimatorStateScriptDemo.prototype, "directionLight", 2);
   AnimatorStateScriptDemo = __decorateClass([
-    regClass150("0f5c142a-89d9-42b4-802b-9e4b33f5a077", "../src/3D/Animation/AnimatorStateScriptDemo.ts")
+    regClass151("0f5c142a-89d9-42b4-802b-9e4b33f5a077", "../src/3D/Animation/AnimatorStateScriptDemo.ts")
   ], AnimatorStateScriptDemo);
   var _AnimatorStateScriptTest = class _AnimatorStateScriptTest extends AnimatorStateScript {
     constructor() {
@@ -12022,7 +12068,7 @@ void main()\r
   var AnimatorStateScriptTest = _AnimatorStateScriptTest;
 
   // src/3D/Animation/AnimatorTransitionDemo.ts
-  var { regClass: regClass151, property: property150 } = Laya;
+  var { regClass: regClass152, property: property151 } = Laya;
   var AnimatorTransitionDemo = class extends BaseScript {
     constructor() {
       super(...arguments);
@@ -12076,33 +12122,33 @@ void main()\r
   };
   __name(AnimatorTransitionDemo, "AnimatorTransitionDemo");
   __decorateClass([
-    property150(Laya.Camera)
+    property151(Laya.Camera)
   ], AnimatorTransitionDemo.prototype, "camera", 2);
   __decorateClass([
-    property150(Laya.Scene3D)
+    property151(Laya.Scene3D)
   ], AnimatorTransitionDemo.prototype, "scene", 2);
   __decorateClass([
-    property150(Laya.Sprite3D)
+    property151(Laya.Sprite3D)
   ], AnimatorTransitionDemo.prototype, "directionLight", 2);
   __decorateClass([
-    property150(Laya.Button)
+    property151(Laya.Button)
   ], AnimatorTransitionDemo.prototype, "btnTransition", 2);
   __decorateClass([
-    property150(Laya.Button)
+    property151(Laya.Button)
   ], AnimatorTransitionDemo.prototype, "playRunBtn", 2);
   __decorateClass([
-    property150(Laya.Button)
+    property151(Laya.Button)
   ], AnimatorTransitionDemo.prototype, "playSkillBtn", 2);
   AnimatorTransitionDemo = __decorateClass([
-    regClass151("45337063-16d3-4ad6-9d52-93e779278f45", "../src/3D/Animation/AnimatorTransitionDemo.ts")
+    regClass152("45337063-16d3-4ad6-9d52-93e779278f45", "../src/3D/Animation/AnimatorTransitionDemo.ts")
   ], AnimatorTransitionDemo);
 
   // src/3D/Animation/AvatarMask.ts
   var Scene3D = Laya.Scene3D;
   var Text28 = Laya.Text;
   var Handler18 = Laya.Handler;
-  var Event43 = Laya.Event;
-  var { regClass: regClass152, property: property151 } = Laya;
+  var Event44 = Laya.Event;
+  var { regClass: regClass153, property: property152 } = Laya;
   var AvatarMask = class extends BaseScript {
     constructor() {
       super();
@@ -12137,7 +12183,7 @@ void main()\r
       txt.fontSize = 15;
       txt.zOrder = 999999999;
       txt.pos(this.box2D.width / 2, this.box2D.height / 2 - 300);
-      this.box2D.on(Event43.RESIZE, txt, () => {
+      this.box2D.on(Event44.RESIZE, txt, () => {
         txt.pos(this.box2D.width / 2, this.box2D.height / 2 - 300);
       });
       this.box2D.addChild(txt);
@@ -12153,7 +12199,7 @@ void main()\r
       txt.fontSize = 15;
       txt.zOrder = 999999999;
       txt.pos(this.box2D.width / 2 - 500, this.box2D.height / 2 - 300);
-      this.box2D.on(Event43.RESIZE, txt, () => {
+      this.box2D.on(Event44.RESIZE, txt, () => {
         txt.pos(this.box2D.width / 2 - 500, this.box2D.height / 2 - 300);
       });
       this.box2D.addChild(txt);
@@ -12169,7 +12215,7 @@ void main()\r
       txt.zOrder = 999999999;
       txt.fontSize = 15;
       txt.pos(this.box2D.width / 2 + 500, this.box2D.height / 2 - 300);
-      this.box2D.on(Event43.RESIZE, txt, () => {
+      this.box2D.on(Event44.RESIZE, txt, () => {
         txt.pos(this.box2D.width / 2 + 500, this.box2D.height / 2 - 300);
       });
       this.box2D.addChild(txt);
@@ -12177,13 +12223,13 @@ void main()\r
   };
   __name(AvatarMask, "AvatarMask");
   __decorateClass([
-    property151(Laya.Camera)
+    property152(Laya.Camera)
   ], AvatarMask.prototype, "camera", 2);
   __decorateClass([
-    property151(Laya.Scene3D)
+    property152(Laya.Scene3D)
   ], AvatarMask.prototype, "scene", 2);
   AvatarMask = __decorateClass([
-    regClass152("4c6000fc-52ee-4720-ace5-883640adc226", "../src/3D/Animation/AvatarMask.ts")
+    regClass153("4c6000fc-52ee-4720-ace5-883640adc226", "../src/3D/Animation/AvatarMask.ts")
   ], AvatarMask);
 
   // src/3D/Animation/BoneLinkSprite3D.ts
@@ -12194,8 +12240,8 @@ void main()\r
   var Handler19 = Laya.Handler;
   var Loader8 = Laya.Loader;
   var Button7 = Laya.Button;
-  var Event44 = Laya.Event;
-  var { regClass: regClass153, property: property152 } = Laya;
+  var Event45 = Laya.Event;
+  var { regClass: regClass154, property: property153 } = Laya;
   var BoneLinkSprite3D = class extends BaseScript {
     constructor() {
       super();
@@ -12256,7 +12302,7 @@ void main()\r
         this.changeActionButton.labelSize = 30;
         this.changeActionButton.sizeGrid = "4,4,4,4";
         this.changeActionButton.pos(this.pageWidth / 2 - this.changeActionButton.width / 2, this.pageHeight - 50);
-        this.changeActionButton.on(Event44.CLICK, this, this.stypeFun0);
+        this.changeActionButton.on(Event45.CLICK, this, this.stypeFun0);
       }));
     }
     getAvatarNodeByNames(target, name) {
@@ -12303,22 +12349,22 @@ void main()\r
   };
   __name(BoneLinkSprite3D, "BoneLinkSprite3D");
   __decorateClass([
-    property152(Laya.Camera)
+    property153(Laya.Camera)
   ], BoneLinkSprite3D.prototype, "camera", 2);
   __decorateClass([
-    property152(Laya.Scene3D)
+    property153(Laya.Scene3D)
   ], BoneLinkSprite3D.prototype, "scene", 2);
   __decorateClass([
-    property152(Laya.Sprite3D)
+    property153(Laya.Sprite3D)
   ], BoneLinkSprite3D.prototype, "directionLight", 2);
   BoneLinkSprite3D = __decorateClass([
-    regClass153("7eb1f365-4358-4f60-b931-30ca03f975b6", "../src/3D/Animation/BoneLinkSprite3D.ts")
+    regClass154("7eb1f365-4358-4f60-b931-30ca03f975b6", "../src/3D/Animation/BoneLinkSprite3D.ts")
   ], BoneLinkSprite3D);
 
   // src/3D/Animation/CameraAnimation.ts
   var Animator4 = Laya.Animator;
   var AnimatorState4 = Laya.AnimatorState;
-  var { regClass: regClass154, property: property153 } = Laya;
+  var { regClass: regClass155, property: property154 } = Laya;
   var CameraAnimation = class extends BaseScript {
     constructor() {
       super();
@@ -12348,15 +12394,15 @@ void main()\r
   };
   __name(CameraAnimation, "CameraAnimation");
   __decorateClass([
-    property153(Laya.Camera)
+    property154(Laya.Camera)
   ], CameraAnimation.prototype, "camera", 2);
   CameraAnimation = __decorateClass([
-    regClass154("50c4f116-02b5-4179-8360-c8c58b502952", "../src/3D/Animation/CameraAnimation.ts")
+    regClass155("50c4f116-02b5-4179-8360-c8c58b502952", "../src/3D/Animation/CameraAnimation.ts")
   ], CameraAnimation);
 
   // src/3D/Animation/MaterialAnimation.ts
   var Animator5 = Laya.Animator;
-  var { regClass: regClass155, property: property154 } = Laya;
+  var { regClass: regClass156, property: property155 } = Laya;
   var MaterialAnimation = class extends BaseScript {
     constructor() {
       super();
@@ -12375,19 +12421,19 @@ void main()\r
   };
   __name(MaterialAnimation, "MaterialAnimation");
   __decorateClass([
-    property154(Laya.Camera)
+    property155(Laya.Camera)
   ], MaterialAnimation.prototype, "camera", 2);
   __decorateClass([
-    property154(Laya.Scene3D)
+    property155(Laya.Scene3D)
   ], MaterialAnimation.prototype, "scene", 2);
   MaterialAnimation = __decorateClass([
-    regClass155("f2170105-c2c6-437f-8654-18d17eda81a1", "../src/3D/Animation/MaterialAnimation.ts")
+    regClass156("f2170105-c2c6-437f-8654-18d17eda81a1", "../src/3D/Animation/MaterialAnimation.ts")
   ], MaterialAnimation);
 
   // src/3D/Animation/RigidbodyAnimationDemo.ts
   var Animator6 = Laya.Animator;
   var AnimatorState5 = Laya.AnimatorState;
-  var { regClass: regClass156, property: property155 } = Laya;
+  var { regClass: regClass157, property: property156 } = Laya;
   var RigidbodyAnimationDemo = class extends BaseScript {
     constructor() {
       super();
@@ -12418,20 +12464,20 @@ void main()\r
   };
   __name(RigidbodyAnimationDemo, "RigidbodyAnimationDemo");
   __decorateClass([
-    property155(Laya.Camera)
+    property156(Laya.Camera)
   ], RigidbodyAnimationDemo.prototype, "camera", 2);
   __decorateClass([
-    property155(Laya.Scene3D)
+    property156(Laya.Scene3D)
   ], RigidbodyAnimationDemo.prototype, "scene", 2);
   RigidbodyAnimationDemo = __decorateClass([
-    regClass156("289c86d4-758d-4782-8d77-1bb4ef606829", "../src/3D/Animation/RigidbodyAnimationDemo.ts")
+    regClass157("289c86d4-758d-4782-8d77-1bb4ef606829", "../src/3D/Animation/RigidbodyAnimationDemo.ts")
   ], RigidbodyAnimationDemo);
 
   // src/3D/Animation/SimpleSkinAnimationInstance.ts
   var Vector315 = Laya.Vector3;
   var Animator7 = Laya.Animator;
   var Loader9 = Laya.Loader;
-  var { regClass: regClass157, property: property156 } = Laya;
+  var { regClass: regClass158, property: property157 } = Laya;
   var SimpleSkinAnimationInstance = class extends BaseScript {
     constructor() {
       super();
@@ -12481,16 +12527,16 @@ void main()\r
   };
   __name(SimpleSkinAnimationInstance, "SimpleSkinAnimationInstance");
   __decorateClass([
-    property156(Laya.Camera)
+    property157(Laya.Camera)
   ], SimpleSkinAnimationInstance.prototype, "camera", 2);
   __decorateClass([
-    property156(Laya.Scene3D)
+    property157(Laya.Scene3D)
   ], SimpleSkinAnimationInstance.prototype, "scene", 2);
   __decorateClass([
-    property156(Laya.Sprite3D)
+    property157(Laya.Sprite3D)
   ], SimpleSkinAnimationInstance.prototype, "directionLight", 2);
   SimpleSkinAnimationInstance = __decorateClass([
-    regClass157("0400feed-d633-46aa-a964-c2d558a53e84", "../src/3D/Animation/SimpleSkinAnimationInstance.ts")
+    regClass158("0400feed-d633-46aa-a964-c2d558a53e84", "../src/3D/Animation/SimpleSkinAnimationInstance.ts")
   ], SimpleSkinAnimationInstance);
 
   // src/3D/Camera/CameraDemo.ts
@@ -12500,7 +12546,7 @@ void main()\r
   var CameraClearFlags = Laya.CameraClearFlags;
   var SkyBox = Laya.SkyBox;
   var Loader10 = Laya.Loader;
-  var { regClass: regClass158, property: property157 } = Laya;
+  var { regClass: regClass159, property: property158 } = Laya;
   var CameraDemo = class extends BaseScript {
     constructor() {
       super();
@@ -12552,23 +12598,23 @@ void main()\r
   };
   __name(CameraDemo, "CameraDemo");
   __decorateClass([
-    property157(Laya.Camera)
+    property158(Laya.Camera)
   ], CameraDemo.prototype, "camera", 2);
   __decorateClass([
-    property157(Laya.Scene3D)
+    property158(Laya.Scene3D)
   ], CameraDemo.prototype, "scene", 2);
   __decorateClass([
-    property157(Laya.Sprite3D)
+    property158(Laya.Sprite3D)
   ], CameraDemo.prototype, "directionLight", 2);
   CameraDemo = __decorateClass([
-    regClass158("3ea79b10-8ea8-4553-9cab-cef8f959d4ec", "../src/3D/Camera/CameraDemo.ts")
+    regClass159("3ea79b10-8ea8-4553-9cab-cef8f959d4ec", "../src/3D/Camera/CameraDemo.ts")
   ], CameraDemo);
 
   // src/3D/Camera/CameraLayer.ts
   var Sprite3D6 = Laya.Sprite3D;
   var Vector317 = Laya.Vector3;
   var Quaternion3 = Laya.Quaternion;
-  var { regClass: regClass159, property: property158 } = Laya;
+  var { regClass: regClass160, property: property159 } = Laya;
   var CameraLayer = class extends BaseScript {
     constructor() {
       super();
@@ -12632,16 +12678,16 @@ void main()\r
   };
   __name(CameraLayer, "CameraLayer");
   __decorateClass([
-    property158(Laya.Camera)
+    property159(Laya.Camera)
   ], CameraLayer.prototype, "camera", 2);
   __decorateClass([
-    property158(Laya.Scene3D)
+    property159(Laya.Scene3D)
   ], CameraLayer.prototype, "scene", 2);
   __decorateClass([
-    property158(Laya.Sprite3D)
+    property159(Laya.Sprite3D)
   ], CameraLayer.prototype, "directionLight", 2);
   CameraLayer = __decorateClass([
-    regClass159("51179047-4ec6-47d8-a8a9-ea1a987f1bb1", "../src/3D/Camera/CameraLayer.ts")
+    regClass160("51179047-4ec6-47d8-a8a9-ea1a987f1bb1", "../src/3D/Camera/CameraLayer.ts")
   ], CameraLayer);
 
   // src/3D/Camera/CameraLookAt.ts
@@ -12651,7 +12697,7 @@ void main()\r
   var PrimitiveMesh2 = Laya.PrimitiveMesh;
   var CameraClearFlags2 = Laya.CameraClearFlags;
   var Loader11 = Laya.Loader;
-  var { regClass: regClass160, property: property159 } = Laya;
+  var { regClass: regClass161, property: property160 } = Laya;
   var CameraLookAt = class extends BaseScript {
     constructor() {
       super();
@@ -12724,16 +12770,16 @@ void main()\r
   };
   __name(CameraLookAt, "CameraLookAt");
   __decorateClass([
-    property159(Laya.Camera)
+    property160(Laya.Camera)
   ], CameraLookAt.prototype, "camera", 2);
   __decorateClass([
-    property159(Laya.Scene3D)
+    property160(Laya.Scene3D)
   ], CameraLookAt.prototype, "scene", 2);
   __decorateClass([
-    property159(Laya.Sprite3D)
+    property160(Laya.Sprite3D)
   ], CameraLookAt.prototype, "directionLight", 2);
   CameraLookAt = __decorateClass([
-    regClass160("50cce2c0-484a-4f78-9669-e9153e3d9dce", "../src/3D/Camera/CameraLookAt.ts")
+    regClass161("50cce2c0-484a-4f78-9669-e9153e3d9dce", "../src/3D/Camera/CameraLookAt.ts")
   ], CameraLookAt);
 
   // src/3D/Camera/CameraMSAADemo.ts
@@ -12741,7 +12787,7 @@ void main()\r
   var Vector319 = Laya.Vector3;
   var BlinnPhongMaterial4 = Laya.BlinnPhongMaterial;
   var PrimitiveMesh3 = Laya.PrimitiveMesh;
-  var { regClass: regClass161, property: property160 } = Laya;
+  var { regClass: regClass162, property: property161 } = Laya;
   var CameraMSAADemo = class extends BaseScript {
     constructor() {
       super();
@@ -12756,6 +12802,13 @@ void main()\r
       this.directionLight.transform.worldMatrix = mat;
       this.addObjectInScene(this.scene);
       this.setMsaaOn();
+      Laya.stage.on(Laya.Event.CLICK, this, () => {
+        if (this.camera.msaa) {
+          this.setMsaaOff();
+        } else {
+          this.setMsaaOn();
+        }
+      });
       super.addBottomButton(["关闭MSAA", "开启MSAA"], this, [this.setMsaaOff, this.setMsaaOn]);
     }
     setMsaaOn() {
@@ -12821,22 +12874,22 @@ void main()\r
   };
   __name(CameraMSAADemo, "CameraMSAADemo");
   __decorateClass([
-    property160(Laya.Camera)
+    property161(Laya.Camera)
   ], CameraMSAADemo.prototype, "camera", 2);
   __decorateClass([
-    property160(Laya.Scene3D)
+    property161(Laya.Scene3D)
   ], CameraMSAADemo.prototype, "scene", 2);
   __decorateClass([
-    property160(Laya.Sprite3D)
+    property161(Laya.Sprite3D)
   ], CameraMSAADemo.prototype, "directionLight", 2);
   CameraMSAADemo = __decorateClass([
-    regClass161("ff58303b-019f-43f7-91f6-0c9138cf7968", "../src/3D/Camera/CameraMSAADemo.ts")
+    regClass162("ff58303b-019f-43f7-91f6-0c9138cf7968", "../src/3D/Camera/CameraMSAADemo.ts")
   ], CameraMSAADemo);
 
   // src/3D/Camera/CameraRay.ts
   var Vector320 = Laya.Vector3;
   var BlinnPhongMaterial5 = Laya.BlinnPhongMaterial;
-  var Event45 = Laya.Event;
+  var Event46 = Laya.Event;
   var Rigidbody3D = Laya.Rigidbody3D;
   var PrimitiveMesh4 = Laya.PrimitiveMesh;
   var BoxColliderShape = Laya.BoxColliderShape;
@@ -12844,7 +12897,7 @@ void main()\r
   var Vector48 = Laya.Vector4;
   var Vector23 = Laya.Vector2;
   var Ray2 = Laya.Ray;
-  var { regClass: regClass162, property: property161 } = Laya;
+  var { regClass: regClass163, property: property162 } = Laya;
   var CameraRay = class extends BaseScript {
     constructor() {
       super();
@@ -12881,7 +12934,7 @@ void main()\r
       planeStaticCollider.friction = 2;
       planeStaticCollider.restitution = 0.3;
       this._ray = new Ray2(new Vector320(0, 0, 0), new Vector320(0, 0, 0));
-      this.owner.on(Event45.MOUSE_DOWN, this, this.onMouseDown);
+      this.owner.on(Event46.MOUSE_DOWN, this, this.onMouseDown);
     }
     addBoxXYZ(x, y, z) {
       var sX = Math.random() * 0.5;
@@ -12918,17 +12971,17 @@ void main()\r
   };
   __name(CameraRay, "CameraRay");
   __decorateClass([
-    property161(Laya.Camera)
+    property162(Laya.Camera)
   ], CameraRay.prototype, "camera", 2);
   __decorateClass([
-    property161(Laya.Scene3D)
+    property162(Laya.Scene3D)
   ], CameraRay.prototype, "scene", 2);
   CameraRay = __decorateClass([
-    regClass162("3cda26cf-5b90-48c6-91bd-41a7b4e78f79", "../src/3D/Camera/CameraRay.ts")
+    regClass163("3cda26cf-5b90-48c6-91bd-41a7b4e78f79", "../src/3D/Camera/CameraRay.ts")
   ], CameraRay);
 
   // src/3D/Camera/D3SpaceToD2Space.ts
-  var { regClass: regClass163, property: property162 } = Laya;
+  var { regClass: regClass164, property: property163 } = Laya;
   var D3SpaceToD2Space = class extends BaseScript {
     constructor() {
       super();
@@ -12977,13 +13030,13 @@ void main()\r
   };
   __name(D3SpaceToD2Space, "D3SpaceToD2Space");
   __decorateClass([
-    property162(Laya.Camera)
+    property163(Laya.Camera)
   ], D3SpaceToD2Space.prototype, "camera", 2);
   __decorateClass([
-    property162(Laya.Scene3D)
+    property163(Laya.Scene3D)
   ], D3SpaceToD2Space.prototype, "scene", 2);
   D3SpaceToD2Space = __decorateClass([
-    regClass163("c6d2764b-c444-41f0-8f03-8530525d9f01", "../src/3D/Camera/D3SpaceToD2Space.ts")
+    regClass164("c6d2764b-c444-41f0-8f03-8530525d9f01", "../src/3D/Camera/D3SpaceToD2Space.ts")
   ], D3SpaceToD2Space);
 
   // src/3D/Camera/MultiCamera.ts
@@ -12993,7 +13046,7 @@ void main()\r
   var SkyBox2 = Laya.SkyBox;
   var Color5 = Laya.Color;
   var Viewport = Laya.Viewport;
-  var { regClass: regClass164, property: property163 } = Laya;
+  var { regClass: regClass165, property: property164 } = Laya;
   var MultiCamera = class extends BaseScript {
     constructor() {
       super();
@@ -13022,19 +13075,19 @@ void main()\r
   };
   __name(MultiCamera, "MultiCamera");
   __decorateClass([
-    property163(Laya.Camera)
+    property164(Laya.Camera)
   ], MultiCamera.prototype, "camera", 2);
   __decorateClass([
-    property163(Laya.Scene3D)
+    property164(Laya.Scene3D)
   ], MultiCamera.prototype, "scene", 2);
   MultiCamera = __decorateClass([
-    regClass164("8a04c2c6-169d-435f-9e41-4829041370b4", "../src/3D/Camera/MultiCamera.ts")
+    regClass165("8a04c2c6-169d-435f-9e41-4829041370b4", "../src/3D/Camera/MultiCamera.ts")
   ], MultiCamera);
 
   // src/3D/Camera/OrthographicCamera.ts
   var Vector322 = Laya.Vector3;
   var CameraClearFlags4 = Laya.CameraClearFlags;
-  var { regClass: regClass165, property: property164 } = Laya;
+  var { regClass: regClass166, property: property165 } = Laya;
   var Orthographicthiscamera = class extends BaseScript {
     constructor() {
       super();
@@ -13062,13 +13115,13 @@ void main()\r
   };
   __name(Orthographicthiscamera, "Orthographicthiscamera");
   __decorateClass([
-    property164(Laya.Camera)
+    property165(Laya.Camera)
   ], Orthographicthiscamera.prototype, "camera", 2);
   __decorateClass([
-    property164(Laya.Scene3D)
+    property165(Laya.Scene3D)
   ], Orthographicthiscamera.prototype, "scene", 2);
   Orthographicthiscamera = __decorateClass([
-    regClass165("87d9c5a0-6c51-4c1b-8e9a-65f2426d4939", "../src/3D/Camera/OrthographicCamera.ts")
+    regClass166("87d9c5a0-6c51-4c1b-8e9a-65f2426d4939", "../src/3D/Camera/OrthographicCamera.ts")
   ], Orthographicthiscamera);
 
   // src/3D/Camera/PickPixel.ts
@@ -13077,7 +13130,7 @@ void main()\r
   var RenderTargetFormat4 = Laya.RenderTargetFormat;
   var RenderTexture4 = Laya.RenderTexture;
   var Ray3 = Laya.Ray;
-  var { regClass: regClass166, property: property165 } = Laya;
+  var { regClass: regClass167, property: property166 } = Laya;
   var PickPixel = class extends BaseScript {
     constructor() {
       super();
@@ -13141,22 +13194,22 @@ void main()\r
   };
   __name(PickPixel, "PickPixel");
   __decorateClass([
-    property165(Laya.Camera)
+    property166(Laya.Camera)
   ], PickPixel.prototype, "camera", 2);
   __decorateClass([
-    property165(Laya.Scene3D)
+    property166(Laya.Scene3D)
   ], PickPixel.prototype, "scene", 2);
   __decorateClass([
-    property165(Laya.Camera)
+    property166(Laya.Camera)
   ], PickPixel.prototype, "camera2", 2);
   PickPixel = __decorateClass([
-    regClass166("d3e98771-5917-4850-ac70-8ee068dca896", "../src/3D/Camera/PickPixel.ts")
+    regClass167("d3e98771-5917-4850-ac70-8ee068dca896", "../src/3D/Camera/PickPixel.ts")
   ], PickPixel);
 
   // src/3D/Interaction/MouseInteraction.ts
   var Sprite3D9 = Laya.Sprite3D;
   var Vector324 = Laya.Vector3;
-  var Event46 = Laya.Event;
+  var Event47 = Laya.Event;
   var Text30 = Laya.Text;
   var Quaternion4 = Laya.Quaternion;
   var HitResult2 = Laya.HitResult;
@@ -13166,7 +13219,7 @@ void main()\r
   var MeshColliderShape = Laya.MeshColliderShape;
   var PhysicsCollider2 = Laya.PhysicsCollider;
   var Loader12 = Laya.Loader;
-  var { regClass: regClass167, property: property166 } = Laya;
+  var { regClass: regClass168, property: property167 } = Laya;
   var MouseInteraction = class extends BaseScript {
     constructor() {
       super();
@@ -13261,7 +13314,7 @@ void main()\r
       this.owner.addChild(this.infoText);
     }
     addMouseEvent() {
-      this.owner.on(Event46.MOUSE_DOWN, this, this.onStageMouseDown);
+      this.owner.on(Event47.MOUSE_DOWN, this, this.onStageMouseDown);
     }
     onStageMouseDown(e) {
       this.point.x = e.target.mouseX;
@@ -13287,16 +13340,16 @@ void main()\r
   };
   __name(MouseInteraction, "MouseInteraction");
   __decorateClass([
-    property166(Laya.Camera)
+    property167(Laya.Camera)
   ], MouseInteraction.prototype, "camera", 2);
   __decorateClass([
-    property166(Laya.Scene3D)
+    property167(Laya.Scene3D)
   ], MouseInteraction.prototype, "scene", 2);
   __decorateClass([
-    property166(Laya.Sprite3D)
+    property167(Laya.Sprite3D)
   ], MouseInteraction.prototype, "directionLight", 2);
   MouseInteraction = __decorateClass([
-    regClass167("5ccea1d7-4091-4a5b-8b15-2abdaed39d1a", "../src/3D/Interaction/MouseInteraction.ts")
+    regClass168("5ccea1d7-4091-4a5b-8b15-2abdaed39d1a", "../src/3D/Interaction/MouseInteraction.ts")
   ], MouseInteraction);
   var _SceneScript = class _SceneScript extends Laya.Script {
     constructor() {
@@ -13330,7 +13383,7 @@ void main()\r
   var Text31 = Laya.Text;
   var Vector25 = Laya.Vector2;
   var Label8 = Laya.Label;
-  var { regClass: regClass168, property: property167 } = Laya;
+  var { regClass: regClass169, property: property168 } = Laya;
   var MultiTouch = class extends BaseScript {
     constructor() {
       super();
@@ -13382,16 +13435,16 @@ void main()\r
   };
   __name(MultiTouch, "MultiTouch");
   __decorateClass([
-    property167(Laya.Camera)
+    property168(Laya.Camera)
   ], MultiTouch.prototype, "camera", 2);
   __decorateClass([
-    property167(Laya.Scene3D)
+    property168(Laya.Scene3D)
   ], MultiTouch.prototype, "scene", 2);
   __decorateClass([
-    property167(Laya.Sprite3D)
+    property168(Laya.Sprite3D)
   ], MultiTouch.prototype, "directionLight", 2);
   MultiTouch = __decorateClass([
-    regClass168("dd06ebfc-04a2-4fd3-8c94-6ccfdb89ffd4", "../src/3D/Interaction/MultiTouch.ts")
+    regClass169("dd06ebfc-04a2-4fd3-8c94-6ccfdb89ffd4", "../src/3D/Interaction/MultiTouch.ts")
   ], MultiTouch);
   var _MonkeyScript = class _MonkeyScript extends Laya.Script {
     constructor() {
@@ -13460,7 +13513,7 @@ void main()\r
   var MonkeyScript = _MonkeyScript;
 
   // src/3D/LOD/LODDemo.ts
-  var { regClass: regClass169, property: property168 } = Laya;
+  var { regClass: regClass170, property: property169 } = Laya;
   var LODDemo = class extends BaseScript {
     constructor() {
       super(...arguments);
@@ -13511,28 +13564,28 @@ void main()\r
   };
   __name(LODDemo, "LODDemo");
   __decorateClass([
-    property168(Laya.Camera)
+    property169(Laya.Camera)
   ], LODDemo.prototype, "camera", 2);
   __decorateClass([
-    property168(Laya.Scene3D)
+    property169(Laya.Scene3D)
   ], LODDemo.prototype, "scene", 2);
   __decorateClass([
-    property168(Laya.Sprite3D)
+    property169(Laya.Sprite3D)
   ], LODDemo.prototype, "directionLight", 2);
   __decorateClass([
-    property168(Laya.VSlider)
+    property169(Laya.VSlider)
   ], LODDemo.prototype, "hSlider", 2);
   __decorateClass([
-    property168(Number)
+    property169(Number)
   ], LODDemo.prototype, "speed", 2);
   LODDemo = __decorateClass([
-    regClass169("8f4a5998-a1d2-4a48-9184-2337bffd7946", "../src/3D/LOD/LODDemo.ts")
+    regClass170("8f4a5998-a1d2-4a48-9184-2337bffd7946", "../src/3D/LOD/LODDemo.ts")
   ], LODDemo);
 
   // src/3D/Light/DirectionLightDemo.ts
   var Vector326 = Laya.Vector3;
   var Quaternion5 = Laya.Quaternion;
-  var { regClass: regClass170, property: property169 } = Laya;
+  var { regClass: regClass171, property: property170 } = Laya;
   var DirectionLightDemo = class extends BaseScript {
     constructor() {
       super();
@@ -13571,21 +13624,21 @@ void main()\r
   };
   __name(DirectionLightDemo, "DirectionLightDemo");
   __decorateClass([
-    property169(Laya.Camera)
+    property170(Laya.Camera)
   ], DirectionLightDemo.prototype, "camera", 2);
   __decorateClass([
-    property169(Laya.Scene3D)
+    property170(Laya.Scene3D)
   ], DirectionLightDemo.prototype, "scene", 2);
   __decorateClass([
-    property169(Laya.Sprite3D)
+    property170(Laya.Sprite3D)
   ], DirectionLightDemo.prototype, "directionLight", 2);
   DirectionLightDemo = __decorateClass([
-    regClass170("c62a7d01-a001-47e8-b09e-9735cf9150db", "../src/3D/Light/DirectionLightDemo.ts")
+    regClass171("c62a7d01-a001-47e8-b09e-9735cf9150db", "../src/3D/Light/DirectionLightDemo.ts")
   ], DirectionLightDemo);
 
   // src/3D/Light/LightmapScene.ts
   var Lightmap = Laya.Lightmap;
-  var { regClass: regClass171, property: property170 } = Laya;
+  var { regClass: regClass172, property: property171 } = Laya;
   var LightmapScene = class extends BaseScript {
     constructor() {
       super();
@@ -13616,17 +13669,17 @@ void main()\r
   };
   __name(LightmapScene, "LightmapScene");
   __decorateClass([
-    property170(Laya.Camera)
+    property171(Laya.Camera)
   ], LightmapScene.prototype, "camera", 2);
   __decorateClass([
-    property170(Laya.Scene3D)
+    property171(Laya.Scene3D)
   ], LightmapScene.prototype, "scene", 2);
   LightmapScene = __decorateClass([
-    regClass171("405e2005-76bf-4c43-82c8-d1af69cf3061", "../src/3D/Light/LightmapScene.ts")
+    regClass172("405e2005-76bf-4c43-82c8-d1af69cf3061", "../src/3D/Light/LightmapScene.ts")
   ], LightmapScene);
 
   // src/3D/Light/MultiLight.ts
-  var { regClass: regClass172, property: property171 } = Laya;
+  var { regClass: regClass173, property: property172 } = Laya;
   var MultiLight = class extends BaseScript {
     constructor() {
       super();
@@ -13669,23 +13722,23 @@ void main()\r
   };
   __name(MultiLight, "MultiLight");
   __decorateClass([
-    property171(Laya.Camera)
+    property172(Laya.Camera)
   ], MultiLight.prototype, "camera", 2);
   __decorateClass([
-    property171(Laya.Scene3D)
+    property172(Laya.Scene3D)
   ], MultiLight.prototype, "scene", 2);
   __decorateClass([
-    property171(Laya.Sprite3D)
+    property172(Laya.Sprite3D)
   ], MultiLight.prototype, "pointLight", 2);
   MultiLight = __decorateClass([
-    regClass172("e3509569-515c-4fcd-b7b0-cdf89dc01af5", "../src/3D/Light/MultiLight.ts")
+    regClass173("e3509569-515c-4fcd-b7b0-cdf89dc01af5", "../src/3D/Light/MultiLight.ts")
   ], MultiLight);
 
   // src/3D/Light/PointLightDemo.ts
   var Vector327 = Laya.Vector3;
   var Quaternion6 = Laya.Quaternion;
   var Color6 = Laya.Color;
-  var { regClass: regClass173, property: property172 } = Laya;
+  var { regClass: regClass174, property: property173 } = Laya;
   var PointLightDemo = class extends BaseScript {
     constructor() {
       super();
@@ -13720,16 +13773,16 @@ void main()\r
   };
   __name(PointLightDemo, "PointLightDemo");
   __decorateClass([
-    property172(Laya.Camera)
+    property173(Laya.Camera)
   ], PointLightDemo.prototype, "camera", 2);
   __decorateClass([
-    property172(Laya.Scene3D)
+    property173(Laya.Scene3D)
   ], PointLightDemo.prototype, "scene", 2);
   __decorateClass([
-    property172(Laya.Sprite3D)
+    property173(Laya.Sprite3D)
   ], PointLightDemo.prototype, "directionLight", 2);
   PointLightDemo = __decorateClass([
-    regClass173("0b10d4a8-5e80-476f-b4ad-26659ca00747", "../src/3D/Light/PointLightDemo.ts")
+    regClass174("0b10d4a8-5e80-476f-b4ad-26659ca00747", "../src/3D/Light/PointLightDemo.ts")
   ], PointLightDemo);
 
   // src/3D/Light/RealTimeShadow.ts
@@ -13739,7 +13792,7 @@ void main()\r
   var ShadowCascadesMode = Laya.ShadowCascadesMode;
   var ShadowMode = Laya.ShadowMode;
   var Loader13 = Laya.Loader;
-  var { regClass: regClass174, property: property173 } = Laya;
+  var { regClass: regClass175, property: property174 } = Laya;
   var RealTimeShadow = class extends BaseScript {
     constructor() {
       super();
@@ -13802,16 +13855,16 @@ void main()\r
   };
   __name(RealTimeShadow, "RealTimeShadow");
   __decorateClass([
-    property173(Laya.Camera)
+    property174(Laya.Camera)
   ], RealTimeShadow.prototype, "camera", 2);
   __decorateClass([
-    property173(Laya.Scene3D)
+    property174(Laya.Scene3D)
   ], RealTimeShadow.prototype, "scene", 2);
   __decorateClass([
-    property173(Laya.Sprite3D)
+    property174(Laya.Sprite3D)
   ], RealTimeShadow.prototype, "directionLight", 2);
   RealTimeShadow = __decorateClass([
-    regClass174("c0342e29-ea97-4912-b2a1-7b242ff73181", "../src/3D/Light/RealTimeShadow.ts")
+    regClass175("c0342e29-ea97-4912-b2a1-7b242ff73181", "../src/3D/Light/RealTimeShadow.ts")
   ], RealTimeShadow);
   var _RotationScript = class _RotationScript extends Laya.Script3D {
     constructor() {
@@ -13832,7 +13885,7 @@ void main()\r
   // src/3D/Light/SpotLightDemo.ts
   var Vector329 = Laya.Vector3;
   var Color7 = Laya.Color;
-  var { regClass: regClass175, property: property174 } = Laya;
+  var { regClass: regClass176, property: property175 } = Laya;
   var SpotLightDemo = class extends BaseScript {
     constructor() {
       super();
@@ -13874,22 +13927,22 @@ void main()\r
   };
   __name(SpotLightDemo, "SpotLightDemo");
   __decorateClass([
-    property174(Laya.Camera)
+    property175(Laya.Camera)
   ], SpotLightDemo.prototype, "camera", 2);
   __decorateClass([
-    property174(Laya.Scene3D)
+    property175(Laya.Scene3D)
   ], SpotLightDemo.prototype, "scene", 2);
   __decorateClass([
-    property174(Laya.Sprite3D)
+    property175(Laya.Sprite3D)
   ], SpotLightDemo.prototype, "directionLight", 2);
   SpotLightDemo = __decorateClass([
-    regClass175("8191f8b7-bd56-41d1-bf6e-724ee1cdbe6d", "../src/3D/Light/SpotLightDemo.ts")
+    regClass176("8191f8b7-bd56-41d1-bf6e-724ee1cdbe6d", "../src/3D/Light/SpotLightDemo.ts")
   ], SpotLightDemo);
 
   // src/3D/Light/SpotLightShadowMap.ts
   var MeshRenderer3 = Laya.MeshRenderer;
   var ShadowMode2 = Laya.ShadowMode;
-  var { regClass: regClass176, property: property175 } = Laya;
+  var { regClass: regClass177, property: property176 } = Laya;
   var SpotLightShadowMap = class extends BaseScript {
     constructor() {
       super();
@@ -13927,19 +13980,19 @@ void main()\r
   };
   __name(SpotLightShadowMap, "SpotLightShadowMap");
   __decorateClass([
-    property175(Laya.Camera)
+    property176(Laya.Camera)
   ], SpotLightShadowMap.prototype, "camera", 2);
   __decorateClass([
-    property175(Laya.Scene3D)
+    property176(Laya.Scene3D)
   ], SpotLightShadowMap.prototype, "scene", 2);
   SpotLightShadowMap = __decorateClass([
-    regClass176("d2730298-3464-4561-b69e-ac6f409e1038", "../src/3D/Light/SpotLightShadowMap.ts")
+    regClass177("d2730298-3464-4561-b69e-ac6f409e1038", "../src/3D/Light/SpotLightShadowMap.ts")
   ], SpotLightShadowMap);
 
   // src/3D/Material/BlinnPhongMaterialLoad.ts
   var Vector330 = Laya.Vector3;
   var Quaternion7 = Laya.Quaternion;
-  var { regClass: regClass177, property: property176 } = Laya;
+  var { regClass: regClass178, property: property177 } = Laya;
   var BlinnPhongMaterialLoad = class extends BaseScript {
     constructor() {
       super();
@@ -13966,20 +14019,20 @@ void main()\r
   };
   __name(BlinnPhongMaterialLoad, "BlinnPhongMaterialLoad");
   __decorateClass([
-    property176(Laya.Camera)
+    property177(Laya.Camera)
   ], BlinnPhongMaterialLoad.prototype, "camera", 2);
   __decorateClass([
-    property176(Laya.Scene3D)
+    property177(Laya.Scene3D)
   ], BlinnPhongMaterialLoad.prototype, "scene", 2);
   BlinnPhongMaterialLoad = __decorateClass([
-    regClass177("54227be2-84b8-4d3f-968a-33281d39294f", "../src/3D/Material/BlinnPhongMaterialLoad.ts")
+    regClass178("54227be2-84b8-4d3f-968a-33281d39294f", "../src/3D/Material/BlinnPhongMaterialLoad.ts")
   ], BlinnPhongMaterialLoad);
 
   // src/3D/Material/BlinnPhong_DiffuseMap.ts
   var Vector331 = Laya.Vector3;
   var BlinnPhongMaterial6 = Laya.BlinnPhongMaterial;
   var PrimitiveMesh6 = Laya.PrimitiveMesh;
-  var { regClass: regClass178, property: property177 } = Laya;
+  var { regClass: regClass179, property: property178 } = Laya;
   var BlinnPhong_DiffuseMap = class extends BaseScript {
     constructor() {
       super();
@@ -14039,20 +14092,20 @@ void main()\r
   };
   __name(BlinnPhong_DiffuseMap, "BlinnPhong_DiffuseMap");
   __decorateClass([
-    property177(Laya.Camera)
+    property178(Laya.Camera)
   ], BlinnPhong_DiffuseMap.prototype, "camera", 2);
   __decorateClass([
-    property177(Laya.Scene3D)
+    property178(Laya.Scene3D)
   ], BlinnPhong_DiffuseMap.prototype, "scene", 2);
   BlinnPhong_DiffuseMap = __decorateClass([
-    regClass178("61db83bc-6e33-4c07-b303-5a7de873bee3", "../src/3D/Material/BlinnPhong_DiffuseMap.ts")
+    regClass179("61db83bc-6e33-4c07-b303-5a7de873bee3", "../src/3D/Material/BlinnPhong_DiffuseMap.ts")
   ], BlinnPhong_DiffuseMap);
 
   // src/3D/Material/BlinnPhong_NormalMap.ts
   var MeshRenderer4 = Laya.MeshRenderer;
   var Sprite3D10 = Laya.Sprite3D;
   var Vector332 = Laya.Vector3;
-  var { regClass: regClass179, property: property178 } = Laya;
+  var { regClass: regClass180, property: property179 } = Laya;
   var BlinnPhong_NormalMap = class extends BaseScript {
     constructor() {
       super();
@@ -14097,22 +14150,22 @@ void main()\r
   };
   __name(BlinnPhong_NormalMap, "BlinnPhong_NormalMap");
   __decorateClass([
-    property178(Laya.Camera)
+    property179(Laya.Camera)
   ], BlinnPhong_NormalMap.prototype, "camera", 2);
   __decorateClass([
-    property178(Laya.Scene3D)
+    property179(Laya.Scene3D)
   ], BlinnPhong_NormalMap.prototype, "scene", 2);
   __decorateClass([
-    property178(Laya.Sprite3D)
+    property179(Laya.Sprite3D)
   ], BlinnPhong_NormalMap.prototype, "directionLight", 2);
   BlinnPhong_NormalMap = __decorateClass([
-    regClass179("8fb78f89-ddaf-487f-a02b-cbfbc870d08a", "../src/3D/Material/BlinnPhong_NormalMap.ts")
+    regClass180("8fb78f89-ddaf-487f-a02b-cbfbc870d08a", "../src/3D/Material/BlinnPhong_NormalMap.ts")
   ], BlinnPhong_NormalMap);
 
   // src/3D/Material/BlinnPhong_SpecularMap.ts
   var Vector333 = Laya.Vector3;
   var SkinnedMeshRenderer = Laya.SkinnedMeshRenderer;
-  var { regClass: regClass180, property: property179 } = Laya;
+  var { regClass: regClass181, property: property180 } = Laya;
   var BlinnPhong_SpecularMap = class extends BaseScript {
     constructor() {
       super();
@@ -14181,16 +14234,16 @@ void main()\r
   };
   __name(BlinnPhong_SpecularMap, "BlinnPhong_SpecularMap");
   __decorateClass([
-    property179(Laya.Camera)
+    property180(Laya.Camera)
   ], BlinnPhong_SpecularMap.prototype, "camera", 2);
   __decorateClass([
-    property179(Laya.Scene3D)
+    property180(Laya.Scene3D)
   ], BlinnPhong_SpecularMap.prototype, "scene", 2);
   __decorateClass([
-    property179(Laya.Sprite3D)
+    property180(Laya.Sprite3D)
   ], BlinnPhong_SpecularMap.prototype, "directionLight", 2);
   BlinnPhong_SpecularMap = __decorateClass([
-    regClass180("70b4a5ec-a309-479e-8321-159ab6f342a6", "../src/3D/Material/BlinnPhong_SpecularMap.ts")
+    regClass181("70b4a5ec-a309-479e-8321-159ab6f342a6", "../src/3D/Material/BlinnPhong_SpecularMap.ts")
   ], BlinnPhong_SpecularMap);
 
   // src/3D/Material/Blinnphong_Transmission.ts
@@ -14198,7 +14251,7 @@ void main()\r
   var Vector334 = Laya.Vector3;
   var Color8 = Laya.Color;
   var Loader14 = Laya.Loader;
-  var { regClass: regClass181, property: property180 } = Laya;
+  var { regClass: regClass182, property: property181 } = Laya;
   var Blinnphong_Transmission = class extends BaseScript {
     constructor() {
       super();
@@ -14240,13 +14293,13 @@ void main()\r
   };
   __name(Blinnphong_Transmission, "Blinnphong_Transmission");
   __decorateClass([
-    property180(Laya.Camera)
+    property181(Laya.Camera)
   ], Blinnphong_Transmission.prototype, "camera", 2);
   __decorateClass([
-    property180(Laya.Scene3D)
+    property181(Laya.Scene3D)
   ], Blinnphong_Transmission.prototype, "scene", 2);
   Blinnphong_Transmission = __decorateClass([
-    regClass181("de772b6a-4e10-4c52-9378-621b23e856fa", "../src/3D/Material/Blinnphong_Transmission.ts")
+    regClass182("de772b6a-4e10-4c52-9378-621b23e856fa", "../src/3D/Material/Blinnphong_Transmission.ts")
   ], Blinnphong_Transmission);
 
   // src/3D/Material/EffectMaterialDemo.ts
@@ -14255,7 +14308,7 @@ void main()\r
   var CameraClearFlags5 = Laya.CameraClearFlags;
   var EffectMaterial = Laya.EffectMaterial;
   var Color9 = Laya.Color;
-  var { regClass: regClass182, property: property181 } = Laya;
+  var { regClass: regClass183, property: property182 } = Laya;
   var EffectMaterialDemo = class extends BaseScript {
     constructor() {
       super();
@@ -14286,20 +14339,20 @@ void main()\r
   };
   __name(EffectMaterialDemo, "EffectMaterialDemo");
   __decorateClass([
-    property181(Laya.Camera)
+    property182(Laya.Camera)
   ], EffectMaterialDemo.prototype, "camera", 2);
   __decorateClass([
-    property181(Laya.Scene3D)
+    property182(Laya.Scene3D)
   ], EffectMaterialDemo.prototype, "scene", 2);
   EffectMaterialDemo = __decorateClass([
-    regClass182("87076eac-d1a3-472c-8c27-2bdba6ccaa32", "../src/3D/Material/EffectMaterialDemo.ts")
+    regClass183("87076eac-d1a3-472c-8c27-2bdba6ccaa32", "../src/3D/Material/EffectMaterialDemo.ts")
   ], EffectMaterialDemo);
 
   // src/3D/Material/MaterialDemo.ts
   var MeshRenderer6 = Laya.MeshRenderer;
   var PBRStandardMaterial2 = Laya.PBRStandardMaterial;
   var Loader15 = Laya.Loader;
-  var { regClass: regClass183, property: property182 } = Laya;
+  var { regClass: regClass184, property: property183 } = Laya;
   var MaterialDemo = class extends BaseScript {
     constructor() {
       super();
@@ -14330,13 +14383,13 @@ void main()\r
   };
   __name(MaterialDemo, "MaterialDemo");
   __decorateClass([
-    property182(Laya.Camera)
+    property183(Laya.Camera)
   ], MaterialDemo.prototype, "camera", 2);
   __decorateClass([
-    property182(Laya.Scene3D)
+    property183(Laya.Scene3D)
   ], MaterialDemo.prototype, "scene", 2);
   MaterialDemo = __decorateClass([
-    regClass183("c1827786-5bfe-44a2-9cb6-75d7084f93b2", "../src/3D/Material/MaterialDemo.ts")
+    regClass184("c1827786-5bfe-44a2-9cb6-75d7084f93b2", "../src/3D/Material/MaterialDemo.ts")
   ], MaterialDemo);
 
   // src/3D/Material/PBRCoatMaterialDemo.ts
@@ -14344,7 +14397,7 @@ void main()\r
   var PrimitiveMesh8 = Laya.PrimitiveMesh;
   var PBRStandardMaterial3 = Laya.PBRStandardMaterial;
   var Color10 = Laya.Color;
-  var { regClass: regClass184, property: property183 } = Laya;
+  var { regClass: regClass185, property: property184 } = Laya;
   var PBRCoatMaterialDemo = class extends BaseScript {
     constructor() {
       super();
@@ -14409,13 +14462,13 @@ void main()\r
   __name(PBRCoatMaterialDemo, "PBRCoatMaterialDemo");
   PBRCoatMaterialDemo._tempPos = new Vector336();
   __decorateClass([
-    property183(Laya.Camera)
+    property184(Laya.Camera)
   ], PBRCoatMaterialDemo.prototype, "camera", 2);
   __decorateClass([
-    property183(Laya.Scene3D)
+    property184(Laya.Scene3D)
   ], PBRCoatMaterialDemo.prototype, "scene", 2);
   PBRCoatMaterialDemo = __decorateClass([
-    regClass184("89f380ef-a603-42b1-bea4-0a77880435de", "../src/3D/Material/PBRCoatMaterialDemo.ts")
+    regClass185("89f380ef-a603-42b1-bea4-0a77880435de", "../src/3D/Material/PBRCoatMaterialDemo.ts")
   ], PBRCoatMaterialDemo);
 
   // src/3D/Material/PBRMaterialDemo.ts
@@ -14423,7 +14476,7 @@ void main()\r
   var PrimitiveMesh9 = Laya.PrimitiveMesh;
   var PBRStandardMaterial4 = Laya.PBRStandardMaterial;
   var Color11 = Laya.Color;
-  var { regClass: regClass185, property: property184 } = Laya;
+  var { regClass: regClass186, property: property185 } = Laya;
   var PBRMaterialDemo = class extends BaseScript {
     constructor() {
       super();
@@ -14488,13 +14541,13 @@ void main()\r
   __name(PBRMaterialDemo, "PBRMaterialDemo");
   PBRMaterialDemo._tempPos = new Vector337();
   __decorateClass([
-    property184(Laya.Camera)
+    property185(Laya.Camera)
   ], PBRMaterialDemo.prototype, "camera", 2);
   __decorateClass([
-    property184(Laya.Scene3D)
+    property185(Laya.Scene3D)
   ], PBRMaterialDemo.prototype, "scene", 2);
   PBRMaterialDemo = __decorateClass([
-    regClass185("05d3d54e-0e48-467e-ad79-dd0e9eb95d46", "../src/3D/Material/PBRMaterialDemo.ts")
+    regClass186("05d3d54e-0e48-467e-ad79-dd0e9eb95d46", "../src/3D/Material/PBRMaterialDemo.ts")
   ], PBRMaterialDemo);
 
   // src/3D/Material/StencilDemo.ts
@@ -14506,7 +14559,7 @@ void main()\r
   var Color12 = Laya.Color;
   var UnlitMaterial3 = Laya.UnlitMaterial;
   var RenderState3 = Laya.RenderState;
-  var { regClass: regClass186, property: property185 } = Laya;
+  var { regClass: regClass187, property: property186 } = Laya;
   var StencilDemo = class extends BaseScript {
     constructor() {
       super();
@@ -14553,13 +14606,13 @@ void main()\r
   };
   __name(StencilDemo, "StencilDemo");
   __decorateClass([
-    property185(Laya.Camera)
+    property186(Laya.Camera)
   ], StencilDemo.prototype, "camera", 2);
   __decorateClass([
-    property185(Laya.Scene3D)
+    property186(Laya.Scene3D)
   ], StencilDemo.prototype, "scene", 2);
   StencilDemo = __decorateClass([
-    regClass186("41105c5b-6fc2-4b4c-b2ce-3ef3b9a36ab2", "../src/3D/Material/StencilDemo.ts")
+    regClass187("41105c5b-6fc2-4b4c-b2ce-3ef3b9a36ab2", "../src/3D/Material/StencilDemo.ts")
   ], StencilDemo);
 
   // src/3D/Material/UnlitMaterialDemo.ts
@@ -14568,7 +14621,7 @@ void main()\r
   var PrimitiveMesh10 = Laya.PrimitiveMesh;
   var UnlitMaterial4 = Laya.UnlitMaterial;
   var CameraClearFlags6 = Laya.CameraClearFlags;
-  var { regClass: regClass187, property: property186 } = Laya;
+  var { regClass: regClass188, property: property187 } = Laya;
   var UnlitMaterialDemo = class extends BaseScript {
     constructor() {
       super();
@@ -14610,19 +14663,19 @@ void main()\r
   };
   __name(UnlitMaterialDemo, "UnlitMaterialDemo");
   __decorateClass([
-    property186(Laya.Camera)
+    property187(Laya.Camera)
   ], UnlitMaterialDemo.prototype, "camera", 2);
   __decorateClass([
-    property186(Laya.Scene3D)
+    property187(Laya.Scene3D)
   ], UnlitMaterialDemo.prototype, "scene", 2);
   UnlitMaterialDemo = __decorateClass([
-    regClass187("7c325942-90e6-468a-866c-dafa3682719e", "../src/3D/Material/UnlitMaterialDemo.ts")
+    regClass188("7c325942-90e6-468a-866c-dafa3682719e", "../src/3D/Material/UnlitMaterialDemo.ts")
   ], UnlitMaterialDemo);
 
   // src/3D/Mesh/BlendShape.ts
   var Sprite3D11 = Laya.Sprite3D;
   var Vector340 = Laya.Vector3;
-  var { regClass: regClass188, property: property187 } = Laya;
+  var { regClass: regClass189, property: property188 } = Laya;
   var MeshLoad = class extends BaseScript {
     constructor() {
       super();
@@ -14698,23 +14751,23 @@ void main()\r
   };
   __name(MeshLoad, "MeshLoad");
   __decorateClass([
-    property187(Laya.Camera)
+    property188(Laya.Camera)
   ], MeshLoad.prototype, "camera", 2);
   __decorateClass([
-    property187(Laya.Scene3D)
+    property188(Laya.Scene3D)
   ], MeshLoad.prototype, "scene", 2);
   __decorateClass([
-    property187(Laya.Sprite3D)
+    property188(Laya.Sprite3D)
   ], MeshLoad.prototype, "directionLight", 2);
   MeshLoad = __decorateClass([
-    regClass188("3b0cde81-33ee-4c51-9e5f-19f8ee9bac28", "../src/3D/Mesh/BlendShape.ts")
+    regClass189("3b0cde81-33ee-4c51-9e5f-19f8ee9bac28", "../src/3D/Mesh/BlendShape.ts")
   ], MeshLoad);
 
   // src/3D/Mesh/ChangeMesh.ts
   var Vector341 = Laya.Vector3;
   var PrimitiveMesh11 = Laya.PrimitiveMesh;
   var MeshFilter3 = Laya.MeshFilter;
-  var { regClass: regClass189, property: property188 } = Laya;
+  var { regClass: regClass190, property: property189 } = Laya;
   var ChangeMesh = class extends BaseScript {
     constructor() {
       super();
@@ -14744,16 +14797,16 @@ void main()\r
   };
   __name(ChangeMesh, "ChangeMesh");
   __decorateClass([
-    property188(Laya.Camera)
+    property189(Laya.Camera)
   ], ChangeMesh.prototype, "camera", 2);
   __decorateClass([
-    property188(Laya.Scene3D)
+    property189(Laya.Scene3D)
   ], ChangeMesh.prototype, "scene", 2);
   __decorateClass([
-    property188(Laya.Sprite3D)
+    property189(Laya.Sprite3D)
   ], ChangeMesh.prototype, "directionLight", 2);
   ChangeMesh = __decorateClass([
-    regClass189("7a9f3e82-8383-4e45-84ce-8900012ca076", "../src/3D/Mesh/ChangeMesh.ts")
+    regClass190("7a9f3e82-8383-4e45-84ce-8900012ca076", "../src/3D/Mesh/ChangeMesh.ts")
   ], ChangeMesh);
 
   // src/3D/Mesh/CustomMesh.ts
@@ -14762,7 +14815,7 @@ void main()\r
   var PrimitiveMesh12 = Laya.PrimitiveMesh;
   var Color13 = Laya.Color;
   var PixelLineSprite3D2 = Laya.PixelLineSprite3D;
-  var { regClass: regClass190, property: property189 } = Laya;
+  var { regClass: regClass191, property: property190 } = Laya;
   var CustomMesh = class extends BaseScript {
     constructor() {
       super();
@@ -14828,16 +14881,16 @@ void main()\r
   };
   __name(CustomMesh, "CustomMesh");
   __decorateClass([
-    property189(Laya.Camera)
+    property190(Laya.Camera)
   ], CustomMesh.prototype, "camera", 2);
   __decorateClass([
-    property189(Laya.Scene3D)
+    property190(Laya.Scene3D)
   ], CustomMesh.prototype, "scene", 2);
   __decorateClass([
-    property189(Laya.Sprite3D)
+    property190(Laya.Sprite3D)
   ], CustomMesh.prototype, "directionLight", 2);
   CustomMesh = __decorateClass([
-    regClass190("4c9dc53e-0e5b-43ef-8b01-430008da119e", "../src/3D/Mesh/CustomMesh.ts")
+    regClass191("4c9dc53e-0e5b-43ef-8b01-430008da119e", "../src/3D/Mesh/CustomMesh.ts")
   ], CustomMesh);
   var _Tool = class _Tool {
     static linearModel(sprite3D, lineSprite3D, color) {
@@ -14922,7 +14975,7 @@ void main()\r
   var PrimitiveMesh13 = Laya.PrimitiveMesh;
   var Color14 = Laya.Color;
   var PixelLineSprite3D3 = Laya.PixelLineSprite3D;
-  var { regClass: regClass191, property: property190 } = Laya;
+  var { regClass: regClass192, property: property191 } = Laya;
   var MeshLoad2 = class extends BaseScript {
     constructor() {
       super();
@@ -14975,16 +15028,16 @@ void main()\r
   };
   __name(MeshLoad2, "MeshLoad");
   __decorateClass([
-    property190(Laya.Camera)
+    property191(Laya.Camera)
   ], MeshLoad2.prototype, "camera", 2);
   __decorateClass([
-    property190(Laya.Scene3D)
+    property191(Laya.Scene3D)
   ], MeshLoad2.prototype, "scene", 2);
   __decorateClass([
-    property190(Laya.Sprite3D)
+    property191(Laya.Sprite3D)
   ], MeshLoad2.prototype, "directionLight", 2);
   MeshLoad2 = __decorateClass([
-    regClass191("24ca5702-da0a-4d0b-bb44-8e1bd939c940", "../src/3D/Mesh/MeshLoad.ts")
+    regClass192("24ca5702-da0a-4d0b-bb44-8e1bd939c940", "../src/3D/Mesh/MeshLoad.ts")
   ], MeshLoad2);
   var _Tool2 = class _Tool2 {
     static linearModel(sprite3D, lineSprite3D, color) {
@@ -15066,7 +15119,7 @@ void main()\r
   var CameraClearFlags7 = Laya.CameraClearFlags;
   var Color15 = Laya.Color;
   var ShurikenParticleRenderer = Laya.ShurikenParticleRenderer;
-  var { regClass: regClass192, property: property191 } = Laya;
+  var { regClass: regClass193, property: property192 } = Laya;
   var Particle_BurningGround = class extends BaseScript {
     constructor() {
       super();
@@ -15111,20 +15164,20 @@ void main()\r
   };
   __name(Particle_BurningGround, "Particle_BurningGround");
   __decorateClass([
-    property191(Laya.Camera)
+    property192(Laya.Camera)
   ], Particle_BurningGround.prototype, "camera", 2);
   __decorateClass([
-    property191(Laya.Scene3D)
+    property192(Laya.Scene3D)
   ], Particle_BurningGround.prototype, "scene", 2);
   Particle_BurningGround = __decorateClass([
-    regClass192("5eea8353-e9cb-4b19-b502-9476e37c9539", "../src/3D/Particle/Particle_BurningGround.ts")
+    regClass193("5eea8353-e9cb-4b19-b502-9476e37c9539", "../src/3D/Particle/Particle_BurningGround.ts")
   ], Particle_BurningGround);
 
   // src/3D/Particle/Particle_EternalLight.ts
   var CameraClearFlags8 = Laya.CameraClearFlags;
   var Color16 = Laya.Color;
   var ShurikenParticleRenderer2 = Laya.ShurikenParticleRenderer;
-  var { regClass: regClass193, property: property192 } = Laya;
+  var { regClass: regClass194, property: property193 } = Laya;
   var Particle_EternalLight = class extends BaseScript {
     constructor() {
       super();
@@ -15167,13 +15220,13 @@ void main()\r
   };
   __name(Particle_EternalLight, "Particle_EternalLight");
   __decorateClass([
-    property192(Laya.Camera)
+    property193(Laya.Camera)
   ], Particle_EternalLight.prototype, "camera", 2);
   __decorateClass([
-    property192(Laya.Scene3D)
+    property193(Laya.Scene3D)
   ], Particle_EternalLight.prototype, "scene", 2);
   Particle_EternalLight = __decorateClass([
-    regClass193("d541fe0e-8ad3-4fe5-ad82-88c95454d9b7", "../src/3D/Particle/Particle_EternalLight.ts")
+    regClass194("d541fe0e-8ad3-4fe5-ad82-88c95454d9b7", "../src/3D/Particle/Particle_EternalLight.ts")
   ], Particle_EternalLight);
 
   // src/3D/PerformanceTest/DynamicBatchTest.ts
@@ -15181,7 +15234,7 @@ void main()\r
   var PrimitiveMesh14 = Laya.PrimitiveMesh;
   var Vector344 = Laya.Vector3;
   var BlinnPhongMaterial8 = Laya.BlinnPhongMaterial;
-  var { regClass: regClass194, property: property193 } = Laya;
+  var { regClass: regClass195, property: property194 } = Laya;
   var DynamicBatchTest = class extends BaseScript {
     constructor() {
       super();
@@ -15220,17 +15273,17 @@ void main()\r
   };
   __name(DynamicBatchTest, "DynamicBatchTest");
   __decorateClass([
-    property193(Laya.Camera)
+    property194(Laya.Camera)
   ], DynamicBatchTest.prototype, "camera", 2);
   __decorateClass([
-    property193(Laya.Scene3D)
+    property194(Laya.Scene3D)
   ], DynamicBatchTest.prototype, "scene", 2);
   DynamicBatchTest = __decorateClass([
-    regClass194("05b00a16-ebe7-459a-81d3-ba04127e4f17", "../src/3D/PerformanceTest/DynamicBatchTest.ts")
+    regClass195("05b00a16-ebe7-459a-81d3-ba04127e4f17", "../src/3D/PerformanceTest/DynamicBatchTest.ts")
   ], DynamicBatchTest);
 
   // src/3D/PerformanceTest/StaticBatchingTest.ts
-  var { regClass: regClass195, property: property194 } = Laya;
+  var { regClass: regClass196, property: property195 } = Laya;
   var StaticBatchingTest = class extends BaseScript {
     constructor() {
       super();
@@ -15244,10 +15297,10 @@ void main()\r
   };
   __name(StaticBatchingTest, "StaticBatchingTest");
   __decorateClass([
-    property194(Laya.Camera)
+    property195(Laya.Camera)
   ], StaticBatchingTest.prototype, "camera", 2);
   StaticBatchingTest = __decorateClass([
-    regClass195("0b1e65a6-6e00-4885-b58a-54ae9acbda08", "../src/3D/PerformanceTest/StaticBatchingTest.ts")
+    regClass196("0b1e65a6-6e00-4885-b58a-54ae9acbda08", "../src/3D/PerformanceTest/StaticBatchingTest.ts")
   ], StaticBatchingTest);
 
   // src/3D/PhysicsWorld/PhysicsWorld_BaseCollider.ts
@@ -15262,7 +15315,7 @@ void main()\r
   var BoxColliderShape2 = Laya.BoxColliderShape;
   var PhysicsCollider3 = Laya.PhysicsCollider;
   var Vector49 = Laya.Vector4;
-  var { regClass: regClass196, property: property195 } = Laya;
+  var { regClass: regClass197, property: property196 } = Laya;
   var PhysicsWorld_BaseCollider = class extends BaseScript {
     constructor() {
       super();
@@ -15438,20 +15491,20 @@ void main()\r
   };
   __name(PhysicsWorld_BaseCollider, "PhysicsWorld_BaseCollider");
   __decorateClass([
-    property195(Laya.Camera)
+    property196(Laya.Camera)
   ], PhysicsWorld_BaseCollider.prototype, "camera", 2);
   __decorateClass([
-    property195(Laya.Scene3D)
+    property196(Laya.Scene3D)
   ], PhysicsWorld_BaseCollider.prototype, "scene", 2);
   __decorateClass([
-    property195(Laya.Sprite3D)
+    property196(Laya.Sprite3D)
   ], PhysicsWorld_BaseCollider.prototype, "directionLight", 2);
   PhysicsWorld_BaseCollider = __decorateClass([
-    regClass196("3f74ca02-f4fc-4548-8292-63f8adf9ccde", "../src/3D/PhysicsWorld/PhysicsWorld_BaseCollider.ts")
+    regClass197("3f74ca02-f4fc-4548-8292-63f8adf9ccde", "../src/3D/PhysicsWorld/PhysicsWorld_BaseCollider.ts")
   ], PhysicsWorld_BaseCollider);
 
   // src/3D/PhysicsWorld/PhysicsWorld_BuildingBlocks.ts
-  var Event47 = Laya.Event;
+  var Event48 = Laya.Event;
   var Vector346 = Laya.Vector3;
   var BlinnPhongMaterial10 = Laya.BlinnPhongMaterial;
   var HitResult3 = Laya.HitResult;
@@ -15462,7 +15515,7 @@ void main()\r
   var BoxColliderShape3 = Laya.BoxColliderShape;
   var PhysicsCollider4 = Laya.PhysicsCollider;
   var Vector410 = Laya.Vector4;
-  var { regClass: regClass197, property: property196 } = Laya;
+  var { regClass: regClass198, property: property197 } = Laya;
   var PhysicsWorld_BuildingBlocks = class extends BaseScript {
     constructor() {
       super();
@@ -15545,9 +15598,9 @@ void main()\r
       rigidBody.colliderShape = boxShape;
     }
     addMouseEvent() {
-      this.owner.on(Event47.MOUSE_DOWN, this, this.onMouseDown);
-      this.owner.on(Event47.MOUSE_UP, this, this.onMouseUp);
-      this.owner.on(Event47.MOUSE_OUT, this, this.onMouseOut);
+      this.owner.on(Event48.MOUSE_DOWN, this, this.onMouseDown);
+      this.owner.on(Event48.MOUSE_UP, this, this.onMouseUp);
+      this.owner.on(Event48.MOUSE_OUT, this, this.onMouseOut);
     }
     onMouseDown(e) {
       if (Index.curPage) {
@@ -15570,7 +15623,7 @@ void main()\r
           collider.linearVelocity = this.ZERO;
         }
       }
-      this.owner.on(Event47.MOUSE_MOVE, this, this.onMouseMove);
+      this.owner.on(Event48.MOUSE_MOVE, this, this.onMouseMove);
     }
     onMouseMove(e) {
       if (Index.curPage) {
@@ -15592,7 +15645,7 @@ void main()\r
       }
     }
     onMouseUp(e) {
-      this.owner.off(Event47.MOUSE_MOVE, this, this.onMouseMove);
+      this.owner.off(Event48.MOUSE_MOVE, this, this.onMouseMove);
       if (this.hasSelectedSprite) {
         this.hasSelectedRigidBody.angularFactor = this.ONE;
         this.hasSelectedRigidBody.linearFactor = this.ONE;
@@ -15600,7 +15653,7 @@ void main()\r
       }
     }
     onMouseOut(e) {
-      this.owner.off(Event47.MOUSE_MOVE, this, this.onMouseMove);
+      this.owner.off(Event48.MOUSE_MOVE, this, this.onMouseMove);
       if (this.hasSelectedSprite) {
         this.hasSelectedRigidBody.angularFactor = this.ONE;
         this.hasSelectedRigidBody.linearFactor = this.ONE;
@@ -15610,21 +15663,21 @@ void main()\r
   };
   __name(PhysicsWorld_BuildingBlocks, "PhysicsWorld_BuildingBlocks");
   __decorateClass([
-    property196(Laya.Camera)
+    property197(Laya.Camera)
   ], PhysicsWorld_BuildingBlocks.prototype, "camera", 2);
   __decorateClass([
-    property196(Laya.Scene3D)
+    property197(Laya.Scene3D)
   ], PhysicsWorld_BuildingBlocks.prototype, "scene", 2);
   __decorateClass([
-    property196(Laya.Sprite3D)
+    property197(Laya.Sprite3D)
   ], PhysicsWorld_BuildingBlocks.prototype, "directionLight", 2);
   PhysicsWorld_BuildingBlocks = __decorateClass([
-    regClass197("bff20f3d-f89d-431c-a225-c6962910008d", "../src/3D/PhysicsWorld/PhysicsWorld_BuildingBlocks.ts")
+    regClass198("bff20f3d-f89d-431c-a225-c6962910008d", "../src/3D/PhysicsWorld/PhysicsWorld_BuildingBlocks.ts")
   ], PhysicsWorld_BuildingBlocks);
 
   // src/3D/PhysicsWorld/PhysicsWorld_Character.ts
   var Vector347 = Laya.Vector3;
-  var { regClass: regClass198, property: property197 } = Laya;
+  var { regClass: regClass199, property: property198 } = Laya;
   var PhysicsWorld_Character = class extends BaseScript {
     constructor() {
       super();
@@ -15720,16 +15773,16 @@ void main()\r
   };
   __name(PhysicsWorld_Character, "PhysicsWorld_Character");
   __decorateClass([
-    property197(Laya.Camera)
+    property198(Laya.Camera)
   ], PhysicsWorld_Character.prototype, "camera", 2);
   __decorateClass([
-    property197(Laya.Scene3D)
+    property198(Laya.Scene3D)
   ], PhysicsWorld_Character.prototype, "scene", 2);
   __decorateClass([
-    property197(Laya.Sprite3D)
+    property198(Laya.Sprite3D)
   ], PhysicsWorld_Character.prototype, "directionLight", 2);
   PhysicsWorld_Character = __decorateClass([
-    regClass198("20248bc4-a0e2-43b8-aa4c-b90c988dfbdf", "../src/3D/PhysicsWorld/PhysicsWorld_Character.ts")
+    regClass199("20248bc4-a0e2-43b8-aa4c-b90c988dfbdf", "../src/3D/PhysicsWorld/PhysicsWorld_Character.ts")
   ], PhysicsWorld_Character);
 
   // src/3D/PhysicsWorld/PhysicsWorld_CollisionFiflter.ts
@@ -15747,7 +15800,7 @@ void main()\r
   var PhysicsCollider5 = Laya.PhysicsCollider;
   var Vector411 = Laya.Vector4;
   var Physics3DUtils = Laya.Physics3DUtils;
-  var { regClass: regClass199, property: property198 } = Laya;
+  var { regClass: regClass200, property: property199 } = Laya;
   var PhysicsWorld_CollisionFiflter = class extends BaseScript {
     constructor() {
       super();
@@ -15928,16 +15981,16 @@ void main()\r
   };
   __name(PhysicsWorld_CollisionFiflter, "PhysicsWorld_CollisionFiflter");
   __decorateClass([
-    property198(Laya.Camera)
+    property199(Laya.Camera)
   ], PhysicsWorld_CollisionFiflter.prototype, "camera", 2);
   __decorateClass([
-    property198(Laya.Scene3D)
+    property199(Laya.Scene3D)
   ], PhysicsWorld_CollisionFiflter.prototype, "scene", 2);
   __decorateClass([
-    property198(Laya.Sprite3D)
+    property199(Laya.Sprite3D)
   ], PhysicsWorld_CollisionFiflter.prototype, "directionLight", 2);
   PhysicsWorld_CollisionFiflter = __decorateClass([
-    regClass199("a45b1a31-9a36-4154-b987-246e1b1fb8b3", "../src/3D/PhysicsWorld/PhysicsWorld_CollisionFiflter.ts")
+    regClass200("a45b1a31-9a36-4154-b987-246e1b1fb8b3", "../src/3D/PhysicsWorld/PhysicsWorld_CollisionFiflter.ts")
   ], PhysicsWorld_CollisionFiflter);
 
   // src/3D/PhysicsWorld/PhysicsWorld_CompoundCollider.ts
@@ -15949,7 +16002,7 @@ void main()\r
   var BoxColliderShape5 = Laya.BoxColliderShape;
   var PhysicsCollider6 = Laya.PhysicsCollider;
   var Vector412 = Laya.Vector4;
-  var { regClass: regClass200, property: property199 } = Laya;
+  var { regClass: regClass201, property: property200 } = Laya;
   var PhysicsWorld_CompoundCollider = class extends BaseScript {
     constructor() {
       super();
@@ -16082,16 +16135,16 @@ void main()\r
   };
   __name(PhysicsWorld_CompoundCollider, "PhysicsWorld_CompoundCollider");
   __decorateClass([
-    property199(Laya.Camera)
+    property200(Laya.Camera)
   ], PhysicsWorld_CompoundCollider.prototype, "camera", 2);
   __decorateClass([
-    property199(Laya.Scene3D)
+    property200(Laya.Scene3D)
   ], PhysicsWorld_CompoundCollider.prototype, "scene", 2);
   __decorateClass([
-    property199(Laya.Sprite3D)
+    property200(Laya.Sprite3D)
   ], PhysicsWorld_CompoundCollider.prototype, "directionLight", 2);
   PhysicsWorld_CompoundCollider = __decorateClass([
-    regClass200("16ff281f-5149-414e-b707-2cfd0d770f48", "../src/3D/PhysicsWorld/PhysicsWorld_CompoundCollider.ts")
+    regClass201("16ff281f-5149-414e-b707-2cfd0d770f48", "../src/3D/PhysicsWorld/PhysicsWorld_CompoundCollider.ts")
   ], PhysicsWorld_CompoundCollider);
 
   // src/3D/PhysicsWorld/PhysicsWorld_ConfigurableJoint.ts
@@ -16103,7 +16156,7 @@ void main()\r
   var Rigidbody3D6 = Laya.Rigidbody3D;
   var PrimitiveMesh19 = Laya.PrimitiveMesh;
   var BoxColliderShape6 = Laya.BoxColliderShape;
-  var { regClass: regClass201, property: property200 } = Laya;
+  var { regClass: regClass202, property: property201 } = Laya;
   var PhysicsWorld_ConfigurableJoint = class extends BaseScript {
     constructor() {
       super();
@@ -16294,16 +16347,16 @@ void main()\r
   };
   __name(PhysicsWorld_ConfigurableJoint, "PhysicsWorld_ConfigurableJoint");
   __decorateClass([
-    property200(Laya.Camera)
+    property201(Laya.Camera)
   ], PhysicsWorld_ConfigurableJoint.prototype, "camera", 2);
   __decorateClass([
-    property200(Laya.Scene3D)
+    property201(Laya.Scene3D)
   ], PhysicsWorld_ConfigurableJoint.prototype, "scene", 2);
   __decorateClass([
-    property200(Laya.Sprite3D)
+    property201(Laya.Sprite3D)
   ], PhysicsWorld_ConfigurableJoint.prototype, "directionLight", 2);
   PhysicsWorld_ConfigurableJoint = __decorateClass([
-    regClass201("8a0ef41e-764f-4da2-976d-16a30f0f7618", "../src/3D/PhysicsWorld/PhysicsWorld_ConfigurableJoint.ts")
+    regClass202("8a0ef41e-764f-4da2-976d-16a30f0f7618", "../src/3D/PhysicsWorld/PhysicsWorld_ConfigurableJoint.ts")
   ], PhysicsWorld_ConfigurableJoint);
 
   // src/3D/PhysicsWorld/PhysicsWorld_ConstraintFixedJoint.ts
@@ -16313,7 +16366,7 @@ void main()\r
   var PrimitiveMesh20 = Laya.PrimitiveMesh;
   var BoxColliderShape7 = Laya.BoxColliderShape;
   var FixedConstraint = Laya.FixedConstraint;
-  var { regClass: regClass202, property: property201 } = Laya;
+  var { regClass: regClass203, property: property202 } = Laya;
   var PhysicsWorld_ConstraintFixedJoint = class extends BaseScript {
     constructor() {
       super();
@@ -16372,16 +16425,16 @@ void main()\r
   };
   __name(PhysicsWorld_ConstraintFixedJoint, "PhysicsWorld_ConstraintFixedJoint");
   __decorateClass([
-    property201(Laya.Camera)
+    property202(Laya.Camera)
   ], PhysicsWorld_ConstraintFixedJoint.prototype, "camera", 2);
   __decorateClass([
-    property201(Laya.Scene3D)
+    property202(Laya.Scene3D)
   ], PhysicsWorld_ConstraintFixedJoint.prototype, "scene", 2);
   __decorateClass([
-    property201(Laya.Sprite3D)
+    property202(Laya.Sprite3D)
   ], PhysicsWorld_ConstraintFixedJoint.prototype, "directionLight", 2);
   PhysicsWorld_ConstraintFixedJoint = __decorateClass([
-    regClass202("1e8563cf-8f4b-4799-a982-ac5f521833f1", "../src/3D/PhysicsWorld/PhysicsWorld_ConstraintFixedJoint.ts")
+    regClass203("1e8563cf-8f4b-4799-a982-ac5f521833f1", "../src/3D/PhysicsWorld/PhysicsWorld_ConstraintFixedJoint.ts")
   ], PhysicsWorld_ConstraintFixedJoint);
   var _FixedEventTest = class _FixedEventTest extends Laya.Script {
     constructor() {
@@ -16420,7 +16473,7 @@ void main()\r
   var BoxColliderShape8 = Laya.BoxColliderShape;
   var PhysicsCollider7 = Laya.PhysicsCollider;
   var Vector413 = Laya.Vector4;
-  var { regClass: regClass203, property: property202 } = Laya;
+  var { regClass: regClass204, property: property203 } = Laya;
   var PhysicsWorld_ContinueCollisionDetection = class extends BaseScript {
     constructor() {
       super();
@@ -16476,16 +16529,16 @@ void main()\r
   };
   __name(PhysicsWorld_ContinueCollisionDetection, "PhysicsWorld_ContinueCollisionDetection");
   __decorateClass([
-    property202(Laya.Camera)
+    property203(Laya.Camera)
   ], PhysicsWorld_ContinueCollisionDetection.prototype, "camera", 2);
   __decorateClass([
-    property202(Laya.Scene3D)
+    property203(Laya.Scene3D)
   ], PhysicsWorld_ContinueCollisionDetection.prototype, "scene", 2);
   __decorateClass([
-    property202(Laya.Sprite3D)
+    property203(Laya.Sprite3D)
   ], PhysicsWorld_ContinueCollisionDetection.prototype, "directionLight", 2);
   PhysicsWorld_ContinueCollisionDetection = __decorateClass([
-    regClass203("bb67b7fe-1ca5-4657-b7dc-fafd67ab7546", "../src/3D/PhysicsWorld/PhysicsWorld_ContinueCollisionDetection.ts")
+    regClass204("bb67b7fe-1ca5-4657-b7dc-fafd67ab7546", "../src/3D/PhysicsWorld/PhysicsWorld_ContinueCollisionDetection.ts")
   ], PhysicsWorld_ContinueCollisionDetection);
 
   // src/3D/PhysicsWorld/PhysicsWorld_Kinematic.ts
@@ -16499,7 +16552,7 @@ void main()\r
   var BoxColliderShape9 = Laya.BoxColliderShape;
   var PhysicsCollider8 = Laya.PhysicsCollider;
   var Vector414 = Laya.Vector4;
-  var { regClass: regClass204, property: property203 } = Laya;
+  var { regClass: regClass205, property: property204 } = Laya;
   var PhysicsWorld_Kinematic = class extends BaseScript {
     constructor() {
       super();
@@ -16614,16 +16667,16 @@ void main()\r
   };
   __name(PhysicsWorld_Kinematic, "PhysicsWorld_Kinematic");
   __decorateClass([
-    property203(Laya.Camera)
+    property204(Laya.Camera)
   ], PhysicsWorld_Kinematic.prototype, "camera", 2);
   __decorateClass([
-    property203(Laya.Scene3D)
+    property204(Laya.Scene3D)
   ], PhysicsWorld_Kinematic.prototype, "scene", 2);
   __decorateClass([
-    property203(Laya.Sprite3D)
+    property204(Laya.Sprite3D)
   ], PhysicsWorld_Kinematic.prototype, "directionLight", 2);
   PhysicsWorld_Kinematic = __decorateClass([
-    regClass204("92276d17-d5a1-4c38-8fe6-76e0770c3526", "../src/3D/PhysicsWorld/PhysicsWorld_Kinematic.ts")
+    regClass205("92276d17-d5a1-4c38-8fe6-76e0770c3526", "../src/3D/PhysicsWorld/PhysicsWorld_Kinematic.ts")
   ], PhysicsWorld_Kinematic);
 
   // src/3D/PhysicsWorld/PhysicsWorld_MeshCollider.ts
@@ -16638,7 +16691,7 @@ void main()\r
   var PrimitiveMesh23 = Laya.PrimitiveMesh;
   var BoxColliderShape10 = Laya.BoxColliderShape;
   var PhysicsCollider9 = Laya.PhysicsCollider;
-  var { regClass: regClass205, property: property204 } = Laya;
+  var { regClass: regClass206, property: property205 } = Laya;
   var PhysicsWorld_MeshCollider = class extends BaseScript {
     constructor() {
       super();
@@ -16777,16 +16830,16 @@ void main()\r
   };
   __name(PhysicsWorld_MeshCollider, "PhysicsWorld_MeshCollider");
   __decorateClass([
-    property204(Laya.Camera)
+    property205(Laya.Camera)
   ], PhysicsWorld_MeshCollider.prototype, "camera", 2);
   __decorateClass([
-    property204(Laya.Scene3D)
+    property205(Laya.Scene3D)
   ], PhysicsWorld_MeshCollider.prototype, "scene", 2);
   __decorateClass([
-    property204(Laya.Sprite3D)
+    property205(Laya.Sprite3D)
   ], PhysicsWorld_MeshCollider.prototype, "directionLight", 2);
   PhysicsWorld_MeshCollider = __decorateClass([
-    regClass205("69c44b4c-3843-4260-8186-6b30c2038b01", "../src/3D/PhysicsWorld/PhysicsWorld_MeshCollider.ts")
+    regClass206("69c44b4c-3843-4260-8186-6b30c2038b01", "../src/3D/PhysicsWorld/PhysicsWorld_MeshCollider.ts")
   ], PhysicsWorld_MeshCollider);
 
   // src/3D/PhysicsWorld/PhysicsWorld_RayShapeCast.ts
@@ -16801,9 +16854,9 @@ void main()\r
   var PrimitiveMesh24 = Laya.PrimitiveMesh;
   var BoxColliderShape11 = Laya.BoxColliderShape;
   var PhysicsCollider10 = Laya.PhysicsCollider;
-  var Event48 = Laya.Event;
+  var Event49 = Laya.Event;
   var PixelLineSprite3D4 = Laya.PixelLineSprite3D;
-  var { regClass: regClass206, property: property205 } = Laya;
+  var { regClass: regClass207, property: property206 } = Laya;
   var PhysicsWorld_RayShapeCast = class extends BaseScript {
     constructor() {
       super();
@@ -16857,7 +16910,7 @@ void main()\r
       this.changeActionButton0.stateNum = 1;
       this.changeActionButton0.labelColors = "#ffffff";
       this.changeActionButton0.pos(50, 280);
-      this.changeActionButton0.on(Event48.CLICK, this, this.stypeFun0);
+      this.changeActionButton0.on(Event49.CLICK, this, this.stypeFun0);
       this.changeActionButton1 = this.owner.addChild(new Button8("resources/image/img_btn_bg.png", "不穿透"));
       this.changeActionButton1.size(150, 40);
       this.changeActionButton1.labelSize = 16;
@@ -16865,7 +16918,7 @@ void main()\r
       this.changeActionButton1.stateNum = 1;
       this.changeActionButton1.labelColors = "#ffffff";
       this.changeActionButton1.pos(50, 340);
-      this.changeActionButton1.on(Event48.CLICK, this, this.stypeFun1);
+      this.changeActionButton1.on(Event49.CLICK, this, this.stypeFun1);
       this.changeActionButton2 = this.owner.addChild(new Button8("resources/image/img_btn_bg.png", "检测"));
       this.changeActionButton2.size(150, 40);
       this.changeActionButton2.labelSize = 16;
@@ -16873,7 +16926,7 @@ void main()\r
       this.changeActionButton2.stateNum = 1;
       this.changeActionButton2.labelColors = "#ffffff";
       this.changeActionButton2.pos(50, 400);
-      this.changeActionButton2.on(Event48.CLICK, this, this.stypeFun2);
+      this.changeActionButton2.on(Event49.CLICK, this, this.stypeFun2);
     }
     stypeFun0(label = "射线模式") {
       this.castType++;
@@ -17050,20 +17103,20 @@ void main()\r
   };
   __name(PhysicsWorld_RayShapeCast, "PhysicsWorld_RayShapeCast");
   __decorateClass([
-    property205(Laya.Camera)
+    property206(Laya.Camera)
   ], PhysicsWorld_RayShapeCast.prototype, "camera", 2);
   __decorateClass([
-    property205(Laya.Scene3D)
+    property206(Laya.Scene3D)
   ], PhysicsWorld_RayShapeCast.prototype, "scene", 2);
   __decorateClass([
-    property205(Laya.Sprite3D)
+    property206(Laya.Sprite3D)
   ], PhysicsWorld_RayShapeCast.prototype, "directionLight", 2);
   PhysicsWorld_RayShapeCast = __decorateClass([
-    regClass206("28020748-173b-4117-922d-04dc28e79f78", "../src/3D/PhysicsWorld/PhysicsWorld_RayShapeCast.ts")
+    regClass207("28020748-173b-4117-922d-04dc28e79f78", "../src/3D/PhysicsWorld/PhysicsWorld_RayShapeCast.ts")
   ], PhysicsWorld_RayShapeCast);
 
   // src/3D/PhysicsWorld/PhysicsWorld_Rigidbody3DBounce.ts
-  var { regClass: regClass207, property: property206 } = Laya;
+  var { regClass: regClass208, property: property207 } = Laya;
   var PhysicsWorld_Rigidbody3DBounce = class extends BaseScript {
     constructor() {
       super();
@@ -17075,20 +17128,20 @@ void main()\r
   };
   __name(PhysicsWorld_Rigidbody3DBounce, "PhysicsWorld_Rigidbody3DBounce");
   __decorateClass([
-    property206(Laya.Camera)
+    property207(Laya.Camera)
   ], PhysicsWorld_Rigidbody3DBounce.prototype, "camera", 2);
   __decorateClass([
-    property206(Laya.Scene3D)
+    property207(Laya.Scene3D)
   ], PhysicsWorld_Rigidbody3DBounce.prototype, "scene", 2);
   __decorateClass([
-    property206(Laya.Sprite3D)
+    property207(Laya.Sprite3D)
   ], PhysicsWorld_Rigidbody3DBounce.prototype, "directionLight", 2);
   PhysicsWorld_Rigidbody3DBounce = __decorateClass([
-    regClass207("71cf8471-039f-4cd0-8359-f6f0d02a487b", "../src/3D/PhysicsWorld/PhysicsWorld_Rigidbody3DBounce.ts")
+    regClass208("71cf8471-039f-4cd0-8359-f6f0d02a487b", "../src/3D/PhysicsWorld/PhysicsWorld_Rigidbody3DBounce.ts")
   ], PhysicsWorld_Rigidbody3DBounce);
 
   // src/3D/PhysicsWorld/PhysicsWorld_Rigidbody3DFriction.ts
-  var { regClass: regClass208, property: property207 } = Laya;
+  var { regClass: regClass209, property: property208 } = Laya;
   var PhysicsWorld_Rigidbody3DFriction = class extends BaseScript {
     constructor() {
       super();
@@ -17099,16 +17152,16 @@ void main()\r
   };
   __name(PhysicsWorld_Rigidbody3DFriction, "PhysicsWorld_Rigidbody3DFriction");
   __decorateClass([
-    property207(Laya.Camera)
+    property208(Laya.Camera)
   ], PhysicsWorld_Rigidbody3DFriction.prototype, "camera", 2);
   __decorateClass([
-    property207(Laya.Scene3D)
+    property208(Laya.Scene3D)
   ], PhysicsWorld_Rigidbody3DFriction.prototype, "scene", 2);
   __decorateClass([
-    property207(Laya.Sprite3D)
+    property208(Laya.Sprite3D)
   ], PhysicsWorld_Rigidbody3DFriction.prototype, "directionLight", 2);
   PhysicsWorld_Rigidbody3DFriction = __decorateClass([
-    regClass208("d5895c58-3e96-478d-a991-34cd217aedce", "../src/3D/PhysicsWorld/PhysicsWorld_Rigidbody3DFriction.ts")
+    regClass209("d5895c58-3e96-478d-a991-34cd217aedce", "../src/3D/PhysicsWorld/PhysicsWorld_Rigidbody3DFriction.ts")
   ], PhysicsWorld_Rigidbody3DFriction);
 
   // src/3D/PhysicsWorld/PhysicsWorld_TriggerAndCollisionEvent.ts
@@ -17123,7 +17176,7 @@ void main()\r
   var BoxColliderShape12 = Laya.BoxColliderShape;
   var PhysicsCollider11 = Laya.PhysicsCollider;
   var Vector415 = Laya.Vector4;
-  var { regClass: regClass209, property: property208 } = Laya;
+  var { regClass: regClass210, property: property209 } = Laya;
   var PhysicsWorld_TriggerAndCollisionEvent = class extends BaseScript {
     constructor() {
       super();
@@ -17259,16 +17312,16 @@ void main()\r
   };
   __name(PhysicsWorld_TriggerAndCollisionEvent, "PhysicsWorld_TriggerAndCollisionEvent");
   __decorateClass([
-    property208(Laya.Camera)
+    property209(Laya.Camera)
   ], PhysicsWorld_TriggerAndCollisionEvent.prototype, "camera", 2);
   __decorateClass([
-    property208(Laya.Scene3D)
+    property209(Laya.Scene3D)
   ], PhysicsWorld_TriggerAndCollisionEvent.prototype, "scene", 2);
   __decorateClass([
-    property208(Laya.Sprite3D)
+    property209(Laya.Sprite3D)
   ], PhysicsWorld_TriggerAndCollisionEvent.prototype, "directionLight", 2);
   PhysicsWorld_TriggerAndCollisionEvent = __decorateClass([
-    regClass209("4d873f7e-4cd7-4613-bca4-fd2851da4301", "../src/3D/PhysicsWorld/PhysicsWorld_TriggerAndCollisionEvent.ts")
+    regClass210("4d873f7e-4cd7-4613-bca4-fd2851da4301", "../src/3D/PhysicsWorld/PhysicsWorld_TriggerAndCollisionEvent.ts")
   ], PhysicsWorld_TriggerAndCollisionEvent);
   var _TriggerCollisionScript = class _TriggerCollisionScript extends Laya.Script {
     constructor() {
@@ -17301,7 +17354,7 @@ void main()\r
   var TriggerCollisionScript = _TriggerCollisionScript;
 
   // src/3D/PostProcess/PostProcessAO.ts
-  var { regClass: regClass210, property: property209 } = Laya;
+  var { regClass: regClass211, property: property210 } = Laya;
   var PostProcessAO = class extends BaseScript {
     constructor() {
       super();
@@ -17325,17 +17378,17 @@ void main()\r
   };
   __name(PostProcessAO, "PostProcessAO");
   __decorateClass([
-    property209(Laya.Camera)
+    property210(Laya.Camera)
   ], PostProcessAO.prototype, "camera", 2);
   __decorateClass([
-    property209(Laya.Scene3D)
+    property210(Laya.Scene3D)
   ], PostProcessAO.prototype, "scene", 2);
   PostProcessAO = __decorateClass([
-    regClass210("2cf6cd82-fb9a-4533-9cab-4f56553644d5", "../src/3D/PostProcess/PostProcessAO.ts")
+    regClass211("2cf6cd82-fb9a-4533-9cab-4f56553644d5", "../src/3D/PostProcess/PostProcessAO.ts")
   ], PostProcessAO);
 
   // src/3D/PostProcess/PostProcessBloom.ts
-  var { regClass: regClass211, property: property210 } = Laya;
+  var { regClass: regClass212, property: property211 } = Laya;
   var PostProcessBloom = class extends BaseScript {
     constructor() {
       super();
@@ -17346,17 +17399,17 @@ void main()\r
   };
   __name(PostProcessBloom, "PostProcessBloom");
   __decorateClass([
-    property210(Laya.Camera)
+    property211(Laya.Camera)
   ], PostProcessBloom.prototype, "camera", 2);
   __decorateClass([
-    property210(Laya.Scene3D)
+    property211(Laya.Scene3D)
   ], PostProcessBloom.prototype, "scene", 2);
   PostProcessBloom = __decorateClass([
-    regClass211("42295c88-4869-49a6-80ce-44c4e80ce451", "../src/3D/PostProcess/PostProcessBloom.ts")
+    regClass212("42295c88-4869-49a6-80ce-44c4e80ce451", "../src/3D/PostProcess/PostProcessBloom.ts")
   ], PostProcessBloom);
 
   // src/3D/PostProcess/PostProcessDoF.ts
-  var { regClass: regClass212, property: property211 } = Laya;
+  var { regClass: regClass213, property: property212 } = Laya;
   var PostProcessDoF = class extends BaseScript {
     constructor() {
       super();
@@ -17367,13 +17420,13 @@ void main()\r
   };
   __name(PostProcessDoF, "PostProcessDoF");
   __decorateClass([
-    property211(Laya.Camera)
+    property212(Laya.Camera)
   ], PostProcessDoF.prototype, "camera", 2);
   __decorateClass([
-    property211(Laya.Scene3D)
+    property212(Laya.Scene3D)
   ], PostProcessDoF.prototype, "scene", 2);
   PostProcessDoF = __decorateClass([
-    regClass212("ead5a66a-5863-4576-b5f0-2a010dd56bfa", "../src/3D/PostProcess/PostProcessDoF.ts")
+    regClass213("ead5a66a-5863-4576-b5f0-2a010dd56bfa", "../src/3D/PostProcess/PostProcessDoF.ts")
   ], PostProcessDoF);
 
   // src/3D/PostProcess/BlurShader/Blur.vs
@@ -17411,7 +17464,7 @@ void main()\r
   var RenderState4 = Laya.RenderState;
   var SubShader3 = Laya.SubShader;
   var VertexMesh3 = Laya.VertexMesh;
-  var { regClass: regClass213, property: property212 } = Laya;
+  var { regClass: regClass214, property: property213 } = Laya;
   var PostProcess_Blur = class extends BaseScript {
     constructor() {
       super();
@@ -17451,13 +17504,13 @@ void main()\r
   };
   __name(PostProcess_Blur, "PostProcess_Blur");
   __decorateClass([
-    property212(Laya.Camera)
+    property213(Laya.Camera)
   ], PostProcess_Blur.prototype, "camera", 2);
   __decorateClass([
-    property212(Laya.Scene3D)
+    property213(Laya.Scene3D)
   ], PostProcess_Blur.prototype, "scene", 2);
   PostProcess_Blur = __decorateClass([
-    regClass213("9eb21397-579f-4799-b104-b539e9971d86", "../src/3D/PostProcess/PostProcess_Blur.ts")
+    regClass214("9eb21397-579f-4799-b104-b539e9971d86", "../src/3D/PostProcess/PostProcess_Blur.ts")
   ], PostProcess_Blur);
   var _BlurEffect2 = class _BlurEffect2 extends PostProcessEffect {
     constructor() {
@@ -17662,13 +17715,13 @@ void main()\r
   var Vector357 = Laya.Vector3;
   var Color22 = Laya.Color;
   var Quaternion9 = Laya.Quaternion;
-  var Event49 = Laya.Event;
+  var Event50 = Laya.Event;
   var HSlider2 = Laya.HSlider;
   var PrimitiveMesh26 = Laya.PrimitiveMesh;
   var Button9 = Laya.Button;
   var PostProcess = Laya.PostProcess;
   var Handler20 = Laya.Handler;
-  var { regClass: regClass214, property: property213 } = Laya;
+  var { regClass: regClass215, property: property214 } = Laya;
   var PostProcess_Edge = class extends BaseScript {
     constructor() {
       super();
@@ -17763,7 +17816,7 @@ void main()\r
       button.stateNum = 1;
       button.labelColors = "#ffffff";
       button.pos(x, y);
-      button.on(Event49.CLICK, this, clickFunc);
+      button.on(Event50.CLICK, this, clickFunc);
       return button;
     }
     addSlider(x, y, width, min, max, value, tick, changeFunc) {
@@ -17781,13 +17834,13 @@ void main()\r
   };
   __name(PostProcess_Edge, "PostProcess_Edge");
   __decorateClass([
-    property213(Laya.Camera)
+    property214(Laya.Camera)
   ], PostProcess_Edge.prototype, "camera", 2);
   __decorateClass([
-    property213(Laya.Scene3D)
+    property214(Laya.Scene3D)
   ], PostProcess_Edge.prototype, "scene", 2);
   PostProcess_Edge = __decorateClass([
-    regClass214("f610bff8-ef8b-40b7-bf5d-5419c36a45cb", "../src/3D/PostProcess/PostProcess_Edge.ts")
+    regClass215("f610bff8-ef8b-40b7-bf5d-5419c36a45cb", "../src/3D/PostProcess/PostProcess_Edge.ts")
   ], PostProcess_Edge);
   var EdgeMode = /* @__PURE__ */ ((EdgeMode2) => {
     EdgeMode2[EdgeMode2["ColorEdge"] = 0] = "ColorEdge";
@@ -17940,7 +17993,7 @@ void main()\r
   var EdgeEffect = _EdgeEffect;
 
   // src/3D/PostProcess/PostProcess_LensFlare.ts
-  var { regClass: regClass215, property: property214 } = Laya;
+  var { regClass: regClass216, property: property215 } = Laya;
   var PostProcess_LensFlare = class extends BaseScript {
     //组件被激活后执行，此时所有节点和组件均已创建完毕，此方法只执行一次
     onAwake() {
@@ -17970,20 +18023,20 @@ void main()\r
   };
   __name(PostProcess_LensFlare, "PostProcess_LensFlare");
   __decorateClass([
-    property214(Laya.Camera)
+    property215(Laya.Camera)
   ], PostProcess_LensFlare.prototype, "camera", 2);
   __decorateClass([
-    property214(Laya.Scene3D)
+    property215(Laya.Scene3D)
   ], PostProcess_LensFlare.prototype, "scene", 2);
   PostProcess_LensFlare = __decorateClass([
-    regClass215("dba9edb7-80ba-4d0f-ab04-5eb70bff5438", "../src/3D/PostProcess/PostProcess_LensFlare.ts")
+    regClass216("dba9edb7-80ba-4d0f-ab04-5eb70bff5438", "../src/3D/PostProcess/PostProcess_LensFlare.ts")
   ], PostProcess_LensFlare);
 
   // src/3D/Resource/GarbageCollection.ts
   var Scene3D2 = Laya.Scene3D;
   var Handler21 = Laya.Handler;
   var Resource = Laya.Resource;
-  var { regClass: regClass216, property: property215 } = Laya;
+  var { regClass: regClass217, property: property216 } = Laya;
   var GarbageCollection = class extends BaseScript {
     constructor() {
       super();
@@ -18012,19 +18065,19 @@ void main()\r
   };
   __name(GarbageCollection, "GarbageCollection");
   __decorateClass([
-    property215(Laya.Camera)
+    property216(Laya.Camera)
   ], GarbageCollection.prototype, "camera", 2);
   __decorateClass([
-    property215(Laya.Scene3D)
+    property216(Laya.Scene3D)
   ], GarbageCollection.prototype, "scene", 2);
   GarbageCollection = __decorateClass([
-    regClass216("dfc7da98-20e0-474c-a6df-4fbab1af1a8f", "../src/3D/Resource/GarbageCollection.ts")
+    regClass217("dfc7da98-20e0-474c-a6df-4fbab1af1a8f", "../src/3D/Resource/GarbageCollection.ts")
   ], GarbageCollection);
 
   // src/3D/Resource/LoadFbxRosource.ts
   var Vector358 = Laya.Vector3;
   var Loader18 = Laya.Loader;
-  var { regClass: regClass217, property: property216 } = Laya;
+  var { regClass: regClass218, property: property217 } = Laya;
   var LoadFbxRosource = class extends BaseScript {
     constructor() {
       super();
@@ -18063,19 +18116,19 @@ void main()\r
   };
   __name(LoadFbxRosource, "LoadFbxRosource");
   __decorateClass([
-    property216(Laya.Camera)
+    property217(Laya.Camera)
   ], LoadFbxRosource.prototype, "camera", 2);
   __decorateClass([
-    property216(Laya.Scene3D)
+    property217(Laya.Scene3D)
   ], LoadFbxRosource.prototype, "scene", 2);
   LoadFbxRosource = __decorateClass([
-    regClass217("97f3fc07-f23a-40f7-9b00-346bbca95ac5", "../src/3D/Resource/LoadFbxRosource.ts")
+    regClass218("97f3fc07-f23a-40f7-9b00-346bbca95ac5", "../src/3D/Resource/LoadFbxRosource.ts")
   ], LoadFbxRosource);
 
   // src/3D/Resource/LoadGltfRosource.ts
   var Vector359 = Laya.Vector3;
   var Loader19 = Laya.Loader;
-  var { regClass: regClass218, property: property217 } = Laya;
+  var { regClass: regClass219, property: property218 } = Laya;
   var LoadGltfRosource = class extends BaseScript {
     constructor() {
       super();
@@ -18108,13 +18161,13 @@ void main()\r
   };
   __name(LoadGltfRosource, "LoadGltfRosource");
   __decorateClass([
-    property217(Laya.Camera)
+    property218(Laya.Camera)
   ], LoadGltfRosource.prototype, "camera", 2);
   __decorateClass([
-    property217(Laya.Scene3D)
+    property218(Laya.Scene3D)
   ], LoadGltfRosource.prototype, "scene", 2);
   LoadGltfRosource = __decorateClass([
-    regClass218("94f58eab-aae6-4322-94c4-dd6654f2317a", "../src/3D/Resource/LoadGltfRosource.ts")
+    regClass219("94f58eab-aae6-4322-94c4-dd6654f2317a", "../src/3D/Resource/LoadGltfRosource.ts")
   ], LoadGltfRosource);
 
   // src/3D/Resource/LoadResourceDemo.ts
@@ -18123,7 +18176,7 @@ void main()\r
   var Quaternion10 = Laya.Quaternion;
   var PrimitiveMesh27 = Laya.PrimitiveMesh;
   var SkyBox3 = Laya.SkyBox;
-  var { regClass: regClass219, property: property218 } = Laya;
+  var { regClass: regClass220, property: property219 } = Laya;
   var LoadResourceDemo = class extends BaseScript {
     constructor() {
       super();
@@ -18190,16 +18243,16 @@ void main()\r
   };
   __name(LoadResourceDemo, "LoadResourceDemo");
   __decorateClass([
-    property218(Laya.Camera)
+    property219(Laya.Camera)
   ], LoadResourceDemo.prototype, "camera", 2);
   __decorateClass([
-    property218(Laya.Scene3D)
+    property219(Laya.Scene3D)
   ], LoadResourceDemo.prototype, "scene", 2);
   __decorateClass([
-    property218(Laya.ProgressBar)
+    property219(Laya.ProgressBar)
   ], LoadResourceDemo.prototype, "loadingBar", 2);
   LoadResourceDemo = __decorateClass([
-    regClass219("dcc04071-d471-438c-933e-bfc361ac03a4", "../src/3D/Resource/LoadResourceDemo.ts")
+    regClass220("dcc04071-d471-438c-933e-bfc361ac03a4", "../src/3D/Resource/LoadResourceDemo.ts")
   ], LoadResourceDemo);
 
   // src/3D/Scene3D/EnvironmentalReflection.ts
@@ -18208,7 +18261,7 @@ void main()\r
   var CameraClearFlags10 = Laya.CameraClearFlags;
   var SkyBox4 = Laya.SkyBox;
   var PBRStandardMaterial5 = Laya.PBRStandardMaterial;
-  var { regClass: regClass220, property: property219 } = Laya;
+  var { regClass: regClass221, property: property220 } = Laya;
   var EnvironmentalReflection = class extends BaseScript {
     constructor() {
       super();
@@ -18252,17 +18305,17 @@ void main()\r
   };
   __name(EnvironmentalReflection, "EnvironmentalReflection");
   __decorateClass([
-    property219(Laya.Camera)
+    property220(Laya.Camera)
   ], EnvironmentalReflection.prototype, "camera", 2);
   __decorateClass([
-    property219(Laya.Scene3D)
+    property220(Laya.Scene3D)
   ], EnvironmentalReflection.prototype, "scene", 2);
   EnvironmentalReflection = __decorateClass([
-    regClass220("d610a4a9-c75b-463a-a39a-848d8fa1ff89", "../src/3D/Scene3D/EnvironmentalReflection.ts")
+    regClass221("d610a4a9-c75b-463a-a39a-848d8fa1ff89", "../src/3D/Scene3D/EnvironmentalReflection.ts")
   ], EnvironmentalReflection);
 
   // src/3D/Scene3D/FogScene.ts
-  var { regClass: regClass221, property: property220 } = Laya;
+  var { regClass: regClass222, property: property221 } = Laya;
   var FogScene = class extends BaseScript {
     constructor() {
       super(...arguments);
@@ -18332,22 +18385,22 @@ void main()\r
   };
   __name(FogScene, "FogScene");
   __decorateClass([
-    property220({ type: Laya.Camera })
+    property221({ type: Laya.Camera })
   ], FogScene.prototype, "camera", 2);
   __decorateClass([
-    property220({ type: Laya.Scene3D })
+    property221({ type: Laya.Scene3D })
   ], FogScene.prototype, "scene", 2);
   __decorateClass([
-    property220({ type: Laya.VSlider })
+    property221({ type: Laya.VSlider })
   ], FogScene.prototype, "slider", 2);
   __decorateClass([
-    property220(Number)
+    property221(Number)
   ], FogScene.prototype, "speed", 2);
   __decorateClass([
-    property220({ type: Laya.Button })
+    property221({ type: Laya.Button })
   ], FogScene.prototype, "fogEnableBTN", 2);
   FogScene = __decorateClass([
-    regClass221("c9c2bea8-c9a8-4977-a02d-2e9cffffed16", "../src/3D/Scene3D/FogScene.ts")
+    regClass222("c9c2bea8-c9a8-4977-a02d-2e9cffffed16", "../src/3D/Scene3D/FogScene.ts")
   ], FogScene);
 
   // src/3D/Scene3D/GriendSkyAmbientDemo.ts
@@ -18357,7 +18410,7 @@ void main()\r
   var AmbientMode2 = Laya.AmbientMode;
   var Color23 = Laya.Color;
   var PBRStandardMaterial6 = Laya.PBRStandardMaterial;
-  var { regClass: regClass222, property: property221 } = Laya;
+  var { regClass: regClass223, property: property222 } = Laya;
   var GriendSkyAmbientDemo = class extends BaseScript {
     constructor() {
       super();
@@ -18402,17 +18455,17 @@ void main()\r
   };
   __name(GriendSkyAmbientDemo, "GriendSkyAmbientDemo");
   __decorateClass([
-    property221(Laya.Camera)
+    property222(Laya.Camera)
   ], GriendSkyAmbientDemo.prototype, "camera", 2);
   __decorateClass([
-    property221(Laya.Scene3D)
+    property222(Laya.Scene3D)
   ], GriendSkyAmbientDemo.prototype, "scene", 2);
   GriendSkyAmbientDemo = __decorateClass([
-    regClass222("a938acc9-7759-4f01-b580-ebd51eacad0b", "../src/3D/Scene3D/GriendSkyAmbientDemo.ts")
+    regClass223("a938acc9-7759-4f01-b580-ebd51eacad0b", "../src/3D/Scene3D/GriendSkyAmbientDemo.ts")
   ], GriendSkyAmbientDemo);
 
   // src/3D/Scene3D/SceneLoad1.ts
-  var { regClass: regClass223, property: property222 } = Laya;
+  var { regClass: regClass224, property: property223 } = Laya;
   var SceneLoad1 = class extends BaseScript {
     constructor() {
       super();
@@ -18448,20 +18501,20 @@ void main()\r
   };
   __name(SceneLoad1, "SceneLoad1");
   __decorateClass([
-    property222(Laya.Camera)
+    property223(Laya.Camera)
   ], SceneLoad1.prototype, "camera", 2);
   __decorateClass([
-    property222(Laya.Scene3D)
+    property223(Laya.Scene3D)
   ], SceneLoad1.prototype, "scene", 2);
   __decorateClass([
-    property222(Laya.ProgressBar)
+    property223(Laya.ProgressBar)
   ], SceneLoad1.prototype, "loadingBar", 2);
   SceneLoad1 = __decorateClass([
-    regClass223("c6173b46-e841-4b3b-a762-0b55d1184ee8", "../src/3D/Scene3D/SceneLoad1.ts")
+    regClass224("c6173b46-e841-4b3b-a762-0b55d1184ee8", "../src/3D/Scene3D/SceneLoad1.ts")
   ], SceneLoad1);
 
   // src/3D/Script/ScriptDemo.ts
-  var { regClass: regClass224, property: property223 } = Laya;
+  var { regClass: regClass225, property: property224 } = Laya;
   var ScriptDemo = class extends BaseScript {
     constructor() {
       super();
@@ -18488,13 +18541,13 @@ void main()\r
   };
   __name(ScriptDemo, "ScriptDemo");
   __decorateClass([
-    property223(Laya.Camera)
+    property224(Laya.Camera)
   ], ScriptDemo.prototype, "camera", 2);
   __decorateClass([
-    property223(Laya.Scene3D)
+    property224(Laya.Scene3D)
   ], ScriptDemo.prototype, "scene", 2);
   ScriptDemo = __decorateClass([
-    regClass224("a9f82f8b-3ad9-4e61-9728-ecb2a33b85b4", "../src/3D/Script/ScriptDemo.ts")
+    regClass225("a9f82f8b-3ad9-4e61-9728-ecb2a33b85b4", "../src/3D/Script/ScriptDemo.ts")
   ], ScriptDemo);
   var _BoxControlScript = class _BoxControlScript extends Laya.Script3D {
     constructor() {
@@ -18533,7 +18586,7 @@ void main()\r
   var Vector363 = Laya.Vector3;
   var PrimitiveMesh29 = Laya.PrimitiveMesh;
   var Shader3D6 = Laya.Shader3D;
-  var { regClass: regClass225, property: property224 } = Laya;
+  var { regClass: regClass226, property: property225 } = Laya;
   var Shader_GlowingEdge = class extends BaseScript {
     constructor() {
       super();
@@ -18628,13 +18681,13 @@ void main()\r
   };
   __name(Shader_GlowingEdge, "Shader_GlowingEdge");
   __decorateClass([
-    property224(Laya.Camera)
+    property225(Laya.Camera)
   ], Shader_GlowingEdge.prototype, "camera", 2);
   __decorateClass([
-    property224(Laya.Scene3D)
+    property225(Laya.Scene3D)
   ], Shader_GlowingEdge.prototype, "scene", 2);
   Shader_GlowingEdge = __decorateClass([
-    regClass225("e882ec65-5502-4ad4-ac29-9d77e3d022b7", "../src/3D/Shader/Shader_GlowingEdge.ts")
+    regClass226("e882ec65-5502-4ad4-ac29-9d77e3d022b7", "../src/3D/Shader/Shader_GlowingEdge.ts")
   ], Shader_GlowingEdge);
   var _GlowingEdgeMaterial = class _GlowingEdgeMaterial extends Material5 {
     constructor() {
@@ -18695,7 +18748,7 @@ void main()\r
   var ShaderDataType5 = Laya.ShaderDataType;
   var SubShader5 = Laya.SubShader;
   var RenderState5 = Laya.RenderState;
-  var { regClass: regClass226, property: property225 } = Laya;
+  var { regClass: regClass227, property: property226 } = Laya;
   var Shader_MultiplePassOutline = class extends BaseScript {
     constructor() {
       super();
@@ -18727,16 +18780,16 @@ void main()\r
   };
   __name(Shader_MultiplePassOutline, "Shader_MultiplePassOutline");
   __decorateClass([
-    property225(Laya.Camera)
+    property226(Laya.Camera)
   ], Shader_MultiplePassOutline.prototype, "camera", 2);
   __decorateClass([
-    property225(Laya.Scene3D)
+    property226(Laya.Scene3D)
   ], Shader_MultiplePassOutline.prototype, "scene", 2);
   __decorateClass([
-    property225(Laya.Sprite3D)
+    property226(Laya.Sprite3D)
   ], Shader_MultiplePassOutline.prototype, "directionLight", 2);
   Shader_MultiplePassOutline = __decorateClass([
-    regClass226("26062f24-2085-4285-a5ab-14930e991ee7", "../src/3D/Shader/Shader_MultiplePassOutline.ts")
+    regClass227("26062f24-2085-4285-a5ab-14930e991ee7", "../src/3D/Shader/Shader_MultiplePassOutline.ts")
   ], Shader_MultiplePassOutline);
   var _MultiplePassOutlineMaterial = class _MultiplePassOutlineMaterial extends Material6 {
     /**
@@ -18821,7 +18874,7 @@ void main()\r
   var Shader3D8 = Laya.Shader3D;
   var Material7 = Laya.Material;
   var MaterialRenderMode = Laya.MaterialRenderMode;
-  var { regClass: regClass227, property: property226 } = Laya;
+  var { regClass: regClass228, property: property227 } = Laya;
   var Shader_Simple = class extends BaseScript {
     constructor() {
       super();
@@ -18854,13 +18907,13 @@ void main()\r
   };
   __name(Shader_Simple, "Shader_Simple");
   __decorateClass([
-    property226(Laya.Camera)
+    property227(Laya.Camera)
   ], Shader_Simple.prototype, "camera", 2);
   __decorateClass([
-    property226(Laya.Scene3D)
+    property227(Laya.Scene3D)
   ], Shader_Simple.prototype, "scene", 2);
   Shader_Simple = __decorateClass([
-    regClass227("6a5477d4-4ac4-4f25-bb34-c85456fbe961", "../src/3D/Shader/Shader_Simple.ts")
+    regClass228("6a5477d4-4ac4-4f25-bb34-c85456fbe961", "../src/3D/Shader/Shader_Simple.ts")
   ], Shader_Simple);
   var _CustomMaterial = class _CustomMaterial extends Material7 {
     constructor() {
@@ -18873,7 +18926,7 @@ void main()\r
   var CustomMaterial = _CustomMaterial;
 
   // src/3D/Shader/Shader_preCompile.ts
-  var { regClass: regClass228, property: property227 } = Laya;
+  var { regClass: regClass229, property: property228 } = Laya;
   var Shader_preCompile = class extends BaseScript {
     constructor() {
       super();
@@ -18962,22 +19015,22 @@ void main()\r
   };
   __name(Shader_preCompile, "Shader_preCompile");
   __decorateClass([
-    property227(Laya.Camera)
+    property228(Laya.Camera)
   ], Shader_preCompile.prototype, "camera", 2);
   __decorateClass([
-    property227(Laya.Scene3D)
+    property228(Laya.Scene3D)
   ], Shader_preCompile.prototype, "scene", 2);
   __decorateClass([
-    property227(Laya.Sprite3D)
+    property228(Laya.Sprite3D)
   ], Shader_preCompile.prototype, "directionLight", 2);
   __decorateClass([
-    property227(Laya.Label)
+    property228(Laya.Label)
   ], Shader_preCompile.prototype, "showIsPreCompile", 2);
   __decorateClass([
-    property227(Laya.Button)
+    property228(Laya.Button)
   ], Shader_preCompile.prototype, "reloadScene", 2);
   Shader_preCompile = __decorateClass([
-    regClass228("78840c86-e0dd-449e-a496-cb250eaa17c7", "../src/3D/Shader/Shader_preCompile.ts")
+    regClass229("78840c86-e0dd-449e-a496-cb250eaa17c7", "../src/3D/Shader/Shader_preCompile.ts")
   ], Shader_preCompile);
 
   // src/3D/Show/CerberusModelShow.ts
@@ -18985,8 +19038,8 @@ void main()\r
   var InputManager6 = Laya.InputManager;
   var Script3D = Laya.Script3D;
   var Text32 = Laya.Text;
-  var Event50 = Laya.Event;
-  var { regClass: regClass229, property: property228 } = Laya;
+  var Event51 = Laya.Event;
+  var { regClass: regClass230, property: property229 } = Laya;
   var CerberusModelShow = class extends BaseScript {
     constructor() {
       super();
@@ -19016,13 +19069,13 @@ void main()\r
   };
   __name(CerberusModelShow, "CerberusModelShow");
   __decorateClass([
-    property228(Laya.Camera)
+    property229(Laya.Camera)
   ], CerberusModelShow.prototype, "camera", 2);
   __decorateClass([
-    property228(Laya.Scene3D)
+    property229(Laya.Scene3D)
   ], CerberusModelShow.prototype, "scene", 2);
   CerberusModelShow = __decorateClass([
-    regClass229("9e930e25-774c-4af3-aa86-5a0f36168fa7", "../src/3D/Show/CerberusModelShow.ts")
+    regClass230("9e930e25-774c-4af3-aa86-5a0f36168fa7", "../src/3D/Show/CerberusModelShow.ts")
   ], CerberusModelShow);
   var _RotationScript2 = class _RotationScript2 extends Script3D {
     constructor() {
@@ -19030,11 +19083,11 @@ void main()\r
       this._mouseDown = false;
       this._rotate = new Vector366();
       this._autoRotateSpeed = new Vector366(0, 0.25, 0);
-      Laya.stage.on(Event50.MOUSE_DOWN, this, () => {
+      Laya.stage.on(Event51.MOUSE_DOWN, this, () => {
         this._mouseDown = true;
         this._lastMouseX = InputManager6.mouseX;
       });
-      Laya.stage.on(Event50.MOUSE_UP, this, () => {
+      Laya.stage.on(Event51.MOUSE_UP, this, () => {
         this._mouseDown = false;
       });
     }
@@ -19057,8 +19110,8 @@ void main()\r
   var InputManager7 = Laya.InputManager;
   var Script3D2 = Laya.Script3D;
   var Text33 = Laya.Text;
-  var Event51 = Laya.Event;
-  var { regClass: regClass230, property: property229 } = Laya;
+  var Event52 = Laya.Event;
+  var { regClass: regClass231, property: property230 } = Laya;
   var DamagedHelmetModelShow = class extends BaseScript {
     constructor() {
       super();
@@ -19088,13 +19141,13 @@ void main()\r
   };
   __name(DamagedHelmetModelShow, "DamagedHelmetModelShow");
   __decorateClass([
-    property229(Laya.Camera)
+    property230(Laya.Camera)
   ], DamagedHelmetModelShow.prototype, "camera", 2);
   __decorateClass([
-    property229(Laya.Scene3D)
+    property230(Laya.Scene3D)
   ], DamagedHelmetModelShow.prototype, "scene", 2);
   DamagedHelmetModelShow = __decorateClass([
-    regClass230("56ac9a0b-bb60-47e3-aeac-5934275aea57", "../src/3D/Show/DamagedHelmetModelShow.ts")
+    regClass231("56ac9a0b-bb60-47e3-aeac-5934275aea57", "../src/3D/Show/DamagedHelmetModelShow.ts")
   ], DamagedHelmetModelShow);
   var _RotationScript3 = class _RotationScript3 extends Script3D2 {
     constructor() {
@@ -19102,11 +19155,11 @@ void main()\r
       this._mouseDown = false;
       this._rotate = new Vector367();
       this._autoRotateSpeed = new Vector367(0, 0.25, 0);
-      Laya.stage.on(Event51.MOUSE_DOWN, this, () => {
+      Laya.stage.on(Event52.MOUSE_DOWN, this, () => {
         this._mouseDown = true;
         this._lastMouseX = InputManager7.mouseX;
       });
-      Laya.stage.on(Event51.MOUSE_UP, this, () => {
+      Laya.stage.on(Event52.MOUSE_UP, this, () => {
         this._mouseDown = false;
       });
     }
@@ -19129,8 +19182,8 @@ void main()\r
   var InputManager8 = Laya.InputManager;
   var Script3D3 = Laya.Script3D;
   var Text34 = Laya.Text;
-  var Event52 = Laya.Event;
-  var { regClass: regClass231, property: property230 } = Laya;
+  var Event53 = Laya.Event;
+  var { regClass: regClass232, property: property231 } = Laya;
   var GunDemo = class extends BaseScript {
     constructor() {
       super();
@@ -19158,13 +19211,13 @@ void main()\r
   };
   __name(GunDemo, "GunDemo");
   __decorateClass([
-    property230(Laya.Camera)
+    property231(Laya.Camera)
   ], GunDemo.prototype, "camera", 2);
   __decorateClass([
-    property230(Laya.Scene3D)
+    property231(Laya.Scene3D)
   ], GunDemo.prototype, "scene", 2);
   GunDemo = __decorateClass([
-    regClass231("f243b4bd-0fe2-416c-a7a9-301c361c4296", "../src/3D/Show/GunDemo.ts")
+    regClass232("f243b4bd-0fe2-416c-a7a9-301c361c4296", "../src/3D/Show/GunDemo.ts")
   ], GunDemo);
   var _RotationScript4 = class _RotationScript4 extends Script3D3 {
     constructor() {
@@ -19172,11 +19225,11 @@ void main()\r
       this._mouseDown = false;
       this._rotate = new Vector368();
       this._autoRotateSpeed = new Vector368(0, 0.25, 0);
-      Laya.stage.on(Event52.MOUSE_DOWN, this, () => {
+      Laya.stage.on(Event53.MOUSE_DOWN, this, () => {
         this._mouseDown = true;
         this._lastMouseX = InputManager8.mouseX;
       });
-      Laya.stage.on(Event52.MOUSE_UP, this, () => {
+      Laya.stage.on(Event53.MOUSE_UP, this, () => {
         this._mouseDown = false;
       });
     }
@@ -19196,7 +19249,7 @@ void main()\r
 
   // src/3D/Sky/Sky_Procedural.ts
   var Vector369 = Laya.Vector3;
-  var { regClass: regClass232, property: property231 } = Laya;
+  var { regClass: regClass233, property: property232 } = Laya;
   var Sky_Procedural = class extends BaseScript {
     constructor() {
       super();
@@ -19220,22 +19273,22 @@ void main()\r
   };
   __name(Sky_Procedural, "Sky_Procedural");
   __decorateClass([
-    property231(Laya.Camera)
+    property232(Laya.Camera)
   ], Sky_Procedural.prototype, "camera", 2);
   __decorateClass([
-    property231(Laya.Scene3D)
+    property232(Laya.Scene3D)
   ], Sky_Procedural.prototype, "scene", 2);
   __decorateClass([
-    property231(Laya.Sprite3D)
+    property232(Laya.Sprite3D)
   ], Sky_Procedural.prototype, "directionLight", 2);
   Sky_Procedural = __decorateClass([
-    regClass232("c4a1bcfb-da17-46d6-a7fa-70b3721d13b0", "../src/3D/Sky/Sky_Procedural.ts")
+    regClass233("c4a1bcfb-da17-46d6-a7fa-70b3721d13b0", "../src/3D/Sky/Sky_Procedural.ts")
   ], Sky_Procedural);
 
   // src/3D/Sky/Sky_SkyBox.ts
   var Vector370 = Laya.Vector3;
   var CameraClearFlags11 = Laya.CameraClearFlags;
-  var { regClass: regClass233, property: property232 } = Laya;
+  var { regClass: regClass234, property: property233 } = Laya;
   var Sky_SkyBox = class extends BaseScript {
     constructor() {
       super();
@@ -19266,13 +19319,13 @@ void main()\r
   };
   __name(Sky_SkyBox, "Sky_SkyBox");
   __decorateClass([
-    property232(Laya.Camera)
+    property233(Laya.Camera)
   ], Sky_SkyBox.prototype, "camera", 2);
   __decorateClass([
-    property232(Laya.Scene3D)
+    property233(Laya.Scene3D)
   ], Sky_SkyBox.prototype, "scene", 2);
   Sky_SkyBox = __decorateClass([
-    regClass233("2d0df284-0ddc-495f-ae6e-bd620726ad9e", "../src/3D/Sky/Sky_SkyBox.ts")
+    regClass234("2d0df284-0ddc-495f-ae6e-bd620726ad9e", "../src/3D/Sky/Sky_SkyBox.ts")
   ], Sky_SkyBox);
 
   // src/3D/Sprite3D/PixelLineSprite3DDemo.ts
@@ -19281,7 +19334,7 @@ void main()\r
   var PrimitiveMesh30 = Laya.PrimitiveMesh;
   var Color25 = Laya.Color;
   var PixelLineSprite3D5 = Laya.PixelLineSprite3D;
-  var { regClass: regClass234, property: property233 } = Laya;
+  var { regClass: regClass235, property: property234 } = Laya;
   var PixelLineSprite3DDemo = class extends BaseScript {
     constructor() {
       super();
@@ -19304,13 +19357,13 @@ void main()\r
   };
   __name(PixelLineSprite3DDemo, "PixelLineSprite3DDemo");
   __decorateClass([
-    property233(Laya.Camera)
+    property234(Laya.Camera)
   ], PixelLineSprite3DDemo.prototype, "camera", 2);
   __decorateClass([
-    property233(Laya.Scene3D)
+    property234(Laya.Scene3D)
   ], PixelLineSprite3DDemo.prototype, "scene", 2);
   PixelLineSprite3DDemo = __decorateClass([
-    regClass234("cc0f6877-b7f3-4e00-b4a7-a681765fca59", "../src/3D/Sprite3D/PixelLineSprite3DDemo.ts")
+    regClass235("cc0f6877-b7f3-4e00-b4a7-a681765fca59", "../src/3D/Sprite3D/PixelLineSprite3DDemo.ts")
   ], PixelLineSprite3DDemo);
   var _Tool3 = class _Tool3 {
     static linearModel(sprite3D, lineSprite3D, color) {
@@ -19390,7 +19443,7 @@ void main()\r
 
   // src/3D/Sprite3D/ScreenShot.ts
   var Vector372 = Laya.Vector3;
-  var { regClass: regClass235, property: property234 } = Laya;
+  var { regClass: regClass236, property: property235 } = Laya;
   var ScreenShot = class extends BaseScript {
     constructor() {
       super();
@@ -19444,18 +19497,18 @@ void main()\r
   };
   __name(ScreenShot, "ScreenShot");
   __decorateClass([
-    property234(Laya.Camera)
+    property235(Laya.Camera)
   ], ScreenShot.prototype, "camera", 2);
   __decorateClass([
-    property234(Laya.Scene3D)
+    property235(Laya.Scene3D)
   ], ScreenShot.prototype, "scene", 2);
   ScreenShot = __decorateClass([
-    regClass235("2d929ea3-aad3-4da4-afb3-6ccc73bd41f8", "../src/3D/Sprite3D/ScreenShot.ts")
+    regClass236("2d929ea3-aad3-4da4-afb3-6ccc73bd41f8", "../src/3D/Sprite3D/ScreenShot.ts")
   ], ScreenShot);
 
   // src/3D/Sprite3D/SkinnedMeshSprite3DDemo.ts
   var Vector373 = Laya.Vector3;
-  var { regClass: regClass236, property: property235 } = Laya;
+  var { regClass: regClass237, property: property236 } = Laya;
   var SkinnedMeshSprite3DDemo = class extends BaseScript {
     constructor() {
       super();
@@ -19474,18 +19527,18 @@ void main()\r
   };
   __name(SkinnedMeshSprite3DDemo, "SkinnedMeshSprite3DDemo");
   __decorateClass([
-    property235(Laya.Camera)
+    property236(Laya.Camera)
   ], SkinnedMeshSprite3DDemo.prototype, "camera", 2);
   __decorateClass([
-    property235(Laya.Scene3D)
+    property236(Laya.Scene3D)
   ], SkinnedMeshSprite3DDemo.prototype, "scene", 2);
   SkinnedMeshSprite3DDemo = __decorateClass([
-    regClass236("2696a176-66f9-4aac-81f7-dd3a6d9b0803", "../src/3D/Sprite3D/SkinnedMeshSprite3DDemo.ts")
+    regClass237("2696a176-66f9-4aac-81f7-dd3a6d9b0803", "../src/3D/Sprite3D/SkinnedMeshSprite3DDemo.ts")
   ], SkinnedMeshSprite3DDemo);
 
   // src/3D/Sprite3D/Sprite3DClone.ts
   var Vector374 = Laya.Vector3;
-  var { regClass: regClass237, property: property236 } = Laya;
+  var { regClass: regClass238, property: property237 } = Laya;
   var Sprite3DClone = class extends BaseScript {
     constructor() {
       super();
@@ -19503,21 +19556,21 @@ void main()\r
   };
   __name(Sprite3DClone, "Sprite3DClone");
   __decorateClass([
-    property236(Laya.Camera)
+    property237(Laya.Camera)
   ], Sprite3DClone.prototype, "camera", 2);
   __decorateClass([
-    property236(Laya.Scene3D)
+    property237(Laya.Scene3D)
   ], Sprite3DClone.prototype, "scene", 2);
   Sprite3DClone = __decorateClass([
-    regClass237("6492c680-4d83-4ad7-8e22-558f7502a378", "../src/3D/Sprite3D/Sprite3DClone.ts")
+    regClass238("6492c680-4d83-4ad7-8e22-558f7502a378", "../src/3D/Sprite3D/Sprite3DClone.ts")
   ], Sprite3DClone);
 
   // src/3D/Sprite3D/Sprite3DParent.ts
   var Vector375 = Laya.Vector3;
   var Handler22 = Laya.Handler;
   var Button10 = Laya.Button;
-  var Event53 = Laya.Event;
-  var { regClass: regClass238, property: property237 } = Laya;
+  var Event54 = Laya.Event;
+  var { regClass: regClass239, property: property238 } = Laya;
   var Sprite3DParent = class extends BaseScript {
     constructor() {
       super();
@@ -19546,7 +19599,7 @@ void main()\r
         this.changeActionButton.stateNum = 1;
         this.changeActionButton.labelColors = "#ffffff";
         this.changeActionButton.pos(this.pageWidth - 170, 120);
-        this.changeActionButton.on(Event53.CLICK, this, this.stypeFun0);
+        this.changeActionButton.on(Event54.CLICK, this, this.stypeFun0);
         this.changeActionButton1 = this.owner.addChild(new Button10("resources/image/img_btn_bg.png", "放大父级猴子"));
         this.changeActionButton1.size(120, 30);
         this.changeActionButton1.labelSize = 10;
@@ -19554,7 +19607,7 @@ void main()\r
         this.changeActionButton1.stateNum = 1;
         this.changeActionButton1.labelColors = "#ffffff";
         this.changeActionButton1.pos(this.pageWidth - 170, 160);
-        this.changeActionButton1.on(Event53.CLICK, this, this.stypeFun1);
+        this.changeActionButton1.on(Event54.CLICK, this, this.stypeFun1);
         this.changeActionButton2 = this.owner.addChild(new Button10("resources/image/img_btn_bg.png", "旋转父级猴子"));
         this.changeActionButton2.size(120, 30);
         this.changeActionButton2.labelSize = 10;
@@ -19562,7 +19615,7 @@ void main()\r
         this.changeActionButton2.stateNum = 1;
         this.changeActionButton2.labelColors = "#ffffff";
         this.changeActionButton2.pos(this.pageWidth - 170, 200);
-        this.changeActionButton2.on(Event53.CLICK, this, this.stypeFun2);
+        this.changeActionButton2.on(Event54.CLICK, this, this.stypeFun2);
         this.changeActionButton3 = this.owner.addChild(new Button10("resources/image/img_btn_bg.png", "移动子级猴子"));
         this.changeActionButton3.size(120, 30);
         this.changeActionButton3.labelSize = 10;
@@ -19570,7 +19623,7 @@ void main()\r
         this.changeActionButton3.stateNum = 1;
         this.changeActionButton3.labelColors = "#ffffff";
         this.changeActionButton3.pos(this.pageWidth - 170, 250);
-        this.changeActionButton3.on(Event53.CLICK, this, this.stypeFun3);
+        this.changeActionButton3.on(Event54.CLICK, this, this.stypeFun3);
         this.changeActionButton4 = this.owner.addChild(new Button10("resources/image/img_btn_bg.png", "放大子级猴子"));
         this.changeActionButton4.size(120, 30);
         this.changeActionButton4.labelSize = 10;
@@ -19578,7 +19631,7 @@ void main()\r
         this.changeActionButton4.stateNum = 1;
         this.changeActionButton4.labelColors = "#ffffff";
         this.changeActionButton4.pos(this.pageWidth - 170, 290);
-        this.changeActionButton4.on(Event53.CLICK, this, this.stypeFun4);
+        this.changeActionButton4.on(Event54.CLICK, this, this.stypeFun4);
         this.changeActionButton5 = this.owner.addChild(new Button10("resources/image/img_btn_bg.png", "旋转子级猴子"));
         this.changeActionButton5.size(120, 30);
         this.changeActionButton5.labelSize = 10;
@@ -19586,7 +19639,7 @@ void main()\r
         this.changeActionButton5.stateNum = 1;
         this.changeActionButton5.labelColors = "#ffffff";
         this.changeActionButton5.pos(this.pageWidth - 170, 330);
-        this.changeActionButton5.on(Event53.CLICK, this, this.stypeFun5);
+        this.changeActionButton5.on(Event54.CLICK, this, this.stypeFun5);
       }));
     }
     stypeFun0() {
@@ -19612,19 +19665,19 @@ void main()\r
   };
   __name(Sprite3DParent, "Sprite3DParent");
   __decorateClass([
-    property237(Laya.Camera)
+    property238(Laya.Camera)
   ], Sprite3DParent.prototype, "camera", 2);
   __decorateClass([
-    property237(Laya.Scene3D)
+    property238(Laya.Scene3D)
   ], Sprite3DParent.prototype, "scene", 2);
   Sprite3DParent = __decorateClass([
-    regClass238("8a84c63f-4b5c-4951-a103-ddc9725dfb18", "../src/3D/Sprite3D/Sprite3DParent.ts")
+    regClass239("8a84c63f-4b5c-4951-a103-ddc9725dfb18", "../src/3D/Sprite3D/Sprite3DParent.ts")
   ], Sprite3DParent);
 
   // src/3D/Sprite3D/TransformDemo.ts
   var Sprite3D16 = Laya.Sprite3D;
   var Vector376 = Laya.Vector3;
-  var { regClass: regClass239, property: property238 } = Laya;
+  var { regClass: regClass240, property: property239 } = Laya;
   var TransformDemo = class extends BaseScript {
     constructor() {
       super();
@@ -19675,17 +19728,17 @@ void main()\r
   };
   __name(TransformDemo, "TransformDemo");
   __decorateClass([
-    property238(Laya.Camera)
+    property239(Laya.Camera)
   ], TransformDemo.prototype, "camera", 2);
   __decorateClass([
-    property238(Laya.Scene3D)
+    property239(Laya.Scene3D)
   ], TransformDemo.prototype, "scene", 2);
   TransformDemo = __decorateClass([
-    regClass239("aaa3a9c3-1868-422a-bd97-2d89afac88e3", "../src/3D/Sprite3D/TransformDemo.ts")
+    regClass240("aaa3a9c3-1868-422a-bd97-2d89afac88e3", "../src/3D/Sprite3D/TransformDemo.ts")
   ], TransformDemo);
 
   // src/3D/SubPackageLoad/RemotePackageLoad.ts
-  var { regClass: regClass240, property: property239 } = Laya;
+  var { regClass: regClass241, property: property240 } = Laya;
   var RemotePackageLoad = class extends BaseScript {
     //组件被激活后执行，此时所有节点和组件均已创建完毕，此方法只执行一次
     onAwake() {
@@ -19708,20 +19761,20 @@ void main()\r
   };
   __name(RemotePackageLoad, "RemotePackageLoad");
   __decorateClass([
-    property239(Laya.Camera)
+    property240(Laya.Camera)
   ], RemotePackageLoad.prototype, "camera", 2);
   __decorateClass([
-    property239(Laya.Scene3D)
+    property240(Laya.Scene3D)
   ], RemotePackageLoad.prototype, "scene", 2);
   __decorateClass([
-    property239(Laya.Sprite3D)
+    property240(Laya.Sprite3D)
   ], RemotePackageLoad.prototype, "directionLight", 2);
   RemotePackageLoad = __decorateClass([
-    regClass240("317590ee-de73-4836-8462-1d18023a7f53", "../src/3D/SubPackageLoad/RemotePackageLoad.ts")
+    regClass241("317590ee-de73-4836-8462-1d18023a7f53", "../src/3D/SubPackageLoad/RemotePackageLoad.ts")
   ], RemotePackageLoad);
 
   // src/3D/SubPackageLoad/SubpackageLoad.ts
-  var { regClass: regClass241, property: property240 } = Laya;
+  var { regClass: regClass242, property: property241 } = Laya;
   var SubpackageLoad = class extends BaseScript {
     //组件被激活后执行，此时所有节点和组件均已创建完毕，此方法只执行一次
     onAwake() {
@@ -19744,16 +19797,16 @@ void main()\r
   };
   __name(SubpackageLoad, "SubpackageLoad");
   __decorateClass([
-    property240(Laya.Camera)
+    property241(Laya.Camera)
   ], SubpackageLoad.prototype, "camera", 2);
   __decorateClass([
-    property240(Laya.Scene3D)
+    property241(Laya.Scene3D)
   ], SubpackageLoad.prototype, "scene", 2);
   __decorateClass([
-    property240(Laya.Sprite3D)
+    property241(Laya.Sprite3D)
   ], SubpackageLoad.prototype, "directionLight", 2);
   SubpackageLoad = __decorateClass([
-    regClass241("0face2b3-400d-4432-816f-72f852478f01", "../src/3D/SubPackageLoad/SubpackageLoad.ts")
+    regClass242("0face2b3-400d-4432-816f-72f852478f01", "../src/3D/SubPackageLoad/SubpackageLoad.ts")
   ], SubpackageLoad);
 
   // src/3D/Texture/GPUCompression_ASTC.ts
@@ -19762,7 +19815,7 @@ void main()\r
   var MeshRenderer9 = Laya.MeshRenderer;
   var UnlitMaterial5 = Laya.UnlitMaterial;
   var Browser6 = Laya.Browser;
-  var { regClass: regClass242, property: property241 } = Laya;
+  var { regClass: regClass243, property: property242 } = Laya;
   var GPUCompression_ASTC = class extends BaseScript {
     constructor() {
       super();
@@ -19799,13 +19852,13 @@ void main()\r
   };
   __name(GPUCompression_ASTC, "GPUCompression_ASTC");
   __decorateClass([
-    property241(Laya.Camera)
+    property242(Laya.Camera)
   ], GPUCompression_ASTC.prototype, "camera", 2);
   __decorateClass([
-    property241(Laya.Scene3D)
+    property242(Laya.Scene3D)
   ], GPUCompression_ASTC.prototype, "scene", 2);
   GPUCompression_ASTC = __decorateClass([
-    regClass242("66473e24-1d08-4144-bc10-cbf7b21be996", "../src/3D/Texture/GPUCompression_ASTC.ts")
+    regClass243("66473e24-1d08-4144-bc10-cbf7b21be996", "../src/3D/Texture/GPUCompression_ASTC.ts")
   ], GPUCompression_ASTC);
 
   // src/3D/Texture/GPUCompression_ETC2.ts
@@ -19814,7 +19867,7 @@ void main()\r
   var MeshRenderer10 = Laya.MeshRenderer;
   var UnlitMaterial6 = Laya.UnlitMaterial;
   var Browser7 = Laya.Browser;
-  var { regClass: regClass243, property: property242 } = Laya;
+  var { regClass: regClass244, property: property243 } = Laya;
   var GPUCompression_ETC2 = class extends BaseScript {
     constructor() {
       super();
@@ -19852,13 +19905,13 @@ void main()\r
   };
   __name(GPUCompression_ETC2, "GPUCompression_ETC2");
   __decorateClass([
-    property242(Laya.Camera)
+    property243(Laya.Camera)
   ], GPUCompression_ETC2.prototype, "camera", 2);
   __decorateClass([
-    property242(Laya.Scene3D)
+    property243(Laya.Scene3D)
   ], GPUCompression_ETC2.prototype, "scene", 2);
   GPUCompression_ETC2 = __decorateClass([
-    regClass243("b4e4996e-ddc4-4a2f-ac32-6dfc7061d87d", "../src/3D/Texture/GPUCompression_ETC2.ts")
+    regClass244("b4e4996e-ddc4-4a2f-ac32-6dfc7061d87d", "../src/3D/Texture/GPUCompression_ETC2.ts")
   ], GPUCompression_ETC2);
 
   // src/3D/Texture/HalfFloatTexture.ts
@@ -19870,7 +19923,7 @@ void main()\r
   var FilterMode4 = Laya.FilterMode;
   var HalfFloatUtils = Laya.HalfFloatUtils;
   var TextureFormat2 = Laya.TextureFormat;
-  var { regClass: regClass244, property: property243 } = Laya;
+  var { regClass: regClass245, property: property244 } = Laya;
   var HalfFloatTexture = class extends BaseScript {
     constructor() {
       super();
@@ -19910,19 +19963,19 @@ void main()\r
   };
   __name(HalfFloatTexture, "HalfFloatTexture");
   __decorateClass([
-    property243(Laya.Camera)
+    property244(Laya.Camera)
   ], HalfFloatTexture.prototype, "camera", 2);
   __decorateClass([
-    property243(Laya.Scene3D)
+    property244(Laya.Scene3D)
   ], HalfFloatTexture.prototype, "scene", 2);
   HalfFloatTexture = __decorateClass([
-    regClass244("92353217-1135-41b9-8666-3566ab52481d", "../src/3D/Texture/HalfFloatTexture.ts")
+    regClass245("92353217-1135-41b9-8666-3566ab52481d", "../src/3D/Texture/HalfFloatTexture.ts")
   ], HalfFloatTexture);
 
   // src/3D/Texture/TextureDemo.ts
   var Sprite3D18 = Laya.Sprite3D;
   var Vector380 = Laya.Vector3;
-  var { regClass: regClass245, property: property244 } = Laya;
+  var { regClass: regClass246, property: property245 } = Laya;
   var TextureDemo = class extends BaseScript {
     constructor() {
       super();
@@ -19966,20 +20019,20 @@ void main()\r
   };
   __name(TextureDemo, "TextureDemo");
   __decorateClass([
-    property244(Laya.Camera)
+    property245(Laya.Camera)
   ], TextureDemo.prototype, "camera", 2);
   __decorateClass([
-    property244(Laya.Scene3D)
+    property245(Laya.Scene3D)
   ], TextureDemo.prototype, "scene", 2);
   TextureDemo = __decorateClass([
-    regClass245("773fb133-301c-42d7-9497-2c837fae0d70", "../src/3D/Texture/TextureDemo.ts")
+    regClass246("773fb133-301c-42d7-9497-2c837fae0d70", "../src/3D/Texture/TextureDemo.ts")
   ], TextureDemo);
 
   // src/3D/Texture/TextureGPUCompression.ts
   var Scene3D3 = Laya.Scene3D;
   var Vector381 = Laya.Vector3;
   var Handler23 = Laya.Handler;
-  var { regClass: regClass246, property: property245 } = Laya;
+  var { regClass: regClass247, property: property246 } = Laya;
   var TextureGPUCompression = class extends BaseScript {
     constructor() {
       super();
@@ -19995,13 +20048,13 @@ void main()\r
   };
   __name(TextureGPUCompression, "TextureGPUCompression");
   __decorateClass([
-    property245(Laya.Camera)
+    property246(Laya.Camera)
   ], TextureGPUCompression.prototype, "camera", 2);
   __decorateClass([
-    property245(Laya.Scene3D)
+    property246(Laya.Scene3D)
   ], TextureGPUCompression.prototype, "scene", 2);
   TextureGPUCompression = __decorateClass([
-    regClass246("9fcfabed-2691-4ea7-94a5-1f271b7976c8", "../src/3D/Texture/TextureGPUCompression.ts")
+    regClass247("9fcfabed-2691-4ea7-94a5-1f271b7976c8", "../src/3D/Texture/TextureGPUCompression.ts")
   ], TextureGPUCompression);
 
   // src/3D/Trail/TrailRender.ts
@@ -20009,7 +20062,7 @@ void main()\r
   var CameraClearFlags12 = Laya.CameraClearFlags;
   var Color26 = Laya.Color;
   var TrailRenderer = Laya.TrailRenderer;
-  var { regClass: regClass247, property: property246 } = Laya;
+  var { regClass: regClass248, property: property247 } = Laya;
   var TrailRender = class extends BaseScript {
     constructor() {
       super();
@@ -20044,17 +20097,104 @@ void main()\r
   };
   __name(TrailRender, "TrailRender");
   __decorateClass([
-    property246(Laya.Camera)
+    property247(Laya.Camera)
   ], TrailRender.prototype, "camera", 2);
   __decorateClass([
-    property246(Laya.Scene3D)
+    property247(Laya.Scene3D)
   ], TrailRender.prototype, "scene", 2);
   TrailRender = __decorateClass([
-    regClass247("0af430ec-19bc-47db-b124-a00c2705b152", "../src/3D/Trail/TrailRender.ts")
+    regClass248("0af430ec-19bc-47db-b124-a00c2705b152", "../src/3D/Trail/TrailRender.ts")
   ], TrailRender);
 
+  // src/3D/WebGPU/IndirectDraw.ts
+  var { regClass: regClass249, property: property248 } = Laya;
+  Laya.addAfterInitCallback(() => {
+    if (Laya.LayaGL.renderEngine.getCapable(Laya.RenderCapable.ComputeShader)) {
+      Laya.Browser.loadLib("js/otherJS/WebGPU.js");
+      console.log("  IndirectDraw log,  use gl is ", Laya.LayaGL.renderEngine);
+    } else {
+      Laya.Browser.loadLib("js/otherJS/WebGL.js");
+      console.log("  IndirectDraw log,  use gl is ", Laya.LayaGL.renderEngine);
+    }
+  });
+  var IndirectDraw = class extends Laya.Script {
+    //declare owner : Laya.Sprite3D;
+    //declare owner : Laya.Sprite;
+    //组件被启用后执行，例如节点被添加到舞台后
+    onEnable() {
+    }
+  };
+  __name(IndirectDraw, "IndirectDraw");
+  IndirectDraw = __decorateClass([
+    regClass249("1810930f-d6a6-4e60-a81f-e41353f0e35e", "../src/3D/WebGPU/IndirectDraw.ts")
+  ], IndirectDraw);
+
+  // src/3D/WebGPU/metaballDemo.ts
+  var { regClass: regClass250, property: property249 } = Laya;
+  var metaballDemo = class extends Laya.Script {
+    constructor() {
+      super(...arguments);
+      this.text = "";
+    }
+    //组件被激活后执行，此时所有节点和组件均已创建完毕，此方法只执行一次
+    //onAwake(): void {}
+    //组件被启用后执行，例如节点被添加到舞台后
+    //onEnable(): void {}
+    //组件被禁用时执行，例如从节点从舞台移除后
+    //onDisable(): void {}
+    //第一次执行update之前执行，只会执行一次
+    //onStart(): void {}
+    //手动调用节点销毁时执行
+    //onDestroy(): void {}
+    //每帧更新时执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
+    //onUpdate(): void {}
+    //每帧更新时执行，在update之后执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
+    //onLateUpdate(): void {}
+    //鼠标点击后执行。与交互相关的还有onMouseDown等十多个函数，具体请参阅文档。
+    //onMouseClick(): void {}
+  };
+  __name(metaballDemo, "metaballDemo");
+  __decorateClass([
+    property249(String)
+  ], metaballDemo.prototype, "text", 2);
+  metaballDemo = __decorateClass([
+    regClass250("f7f7d508-8461-4499-9da2-f872be4c9373", "../src/3D/WebGPU/metaballDemo.ts")
+  ], metaballDemo);
+
+  // src/3D/WebGPU/triangleDemo.ts
+  var { regClass: regClass251, property: property250 } = Laya;
+  var triangleDemo = class extends Laya.Script {
+    constructor() {
+      super(...arguments);
+      this.text = "";
+    }
+    //组件被激活后执行，此时所有节点和组件均已创建完毕，此方法只执行一次
+    //onAwake(): void {}
+    //组件被启用后执行，例如节点被添加到舞台后
+    //onEnable(): void {}
+    //组件被禁用时执行，例如从节点从舞台移除后
+    //onDisable(): void {}
+    //第一次执行update之前执行，只会执行一次
+    //onStart(): void {}
+    //手动调用节点销毁时执行
+    //onDestroy(): void {}
+    //每帧更新时执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
+    //onUpdate(): void {}
+    //每帧更新时执行，在update之后执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
+    //onLateUpdate(): void {}
+    //鼠标点击后执行。与交互相关的还有onMouseDown等十多个函数，具体请参阅文档。
+    //onMouseClick(): void {}
+  };
+  __name(triangleDemo, "triangleDemo");
+  __decorateClass([
+    property250(String)
+  ], triangleDemo.prototype, "text", 2);
+  triangleDemo = __decorateClass([
+    regClass251("ba926e2d-4b0c-4d0b-ad96-35a26c879ed4", "../src/3D/WebGPU/triangleDemo.ts")
+  ], triangleDemo);
+
   // src/3D/WebXR/WebXRStart.ts
-  var { regClass: regClass248, property: property247 } = Laya;
+  var { regClass: regClass252, property: property251 } = Laya;
   var WebXRStart = class extends Laya.Script {
     constructor() {
       super(...arguments);
@@ -20079,14 +20219,14 @@ void main()\r
   };
   __name(WebXRStart, "WebXRStart");
   __decorateClass([
-    property247(String)
+    property251(String)
   ], WebXRStart.prototype, "text", 2);
   WebXRStart = __decorateClass([
-    regClass248("05c6355c-8704-4892-b83d-b8dc57902187", "../src/3D/WebXR/WebXRStart.ts")
+    regClass252("05c6355c-8704-4892-b83d-b8dc57902187", "../src/3D/WebXR/WebXRStart.ts")
   ], WebXRStart);
 
   // src/3D/bulePrint/bluePrintDemo.ts
-  var { regClass: regClass249, property: property248 } = Laya;
+  var { regClass: regClass253, property: property252 } = Laya;
   var bluePrintDemo = class extends BaseScript {
     constructor() {
       super(...arguments);
@@ -20142,26 +20282,26 @@ void main()\r
   };
   __name(bluePrintDemo, "bluePrintDemo");
   __decorateClass([
-    property248(Laya.Camera)
+    property252(Laya.Camera)
   ], bluePrintDemo.prototype, "camera", 2);
   __decorateClass([
-    property248(Laya.Scene3D)
+    property252(Laya.Scene3D)
   ], bluePrintDemo.prototype, "scene", 2);
   __decorateClass([
-    property248(Laya.Sprite3D)
+    property252(Laya.Sprite3D)
   ], bluePrintDemo.prototype, "directionLight", 2);
   __decorateClass([
-    property248(Laya.Button)
+    property252(Laya.Button)
   ], bluePrintDemo.prototype, "btn", 2);
   __decorateClass([
-    property248(Laya.Button)
+    property252(Laya.Button)
   ], bluePrintDemo.prototype, "btnShader", 2);
   bluePrintDemo = __decorateClass([
-    regClass249("a1e017bb-a350-4179-99b3-45dbf377c52b", "../src/3D/bulePrint/bluePrintDemo.ts")
+    regClass253("a1e017bb-a350-4179-99b3-45dbf377c52b", "../src/3D/bulePrint/bluePrintDemo.ts")
   ], bluePrintDemo);
 
   // src/Entry.ts
-  var { regClass: regClass250, property: property249 } = Laya;
+  var { regClass: regClass254, property: property253 } = Laya;
   var entry = class extends Laya.Script {
     constructor() {
       super(...arguments);
@@ -20427,18 +20567,18 @@ void main()\r
   };
   __name(entry, "entry");
   __decorateClass([
-    property249(Boolean)
+    property253(Boolean)
   ], entry.prototype, "is2D", 2);
   __decorateClass([
-    property249(Boolean)
+    property253(Boolean)
   ], entry.prototype, "is3D", 2);
   entry = __decorateClass([
-    regClass250("ca351474-2c38-4638-b3fc-6c9899b3d731", "../src/Entry.ts")
+    regClass254("ca351474-2c38-4638-b3fc-6c9899b3d731", "../src/Entry.ts")
   ], entry);
 
   // src/Entry_WebGPU.ts
-  var { regClass: regClass251, property: property250 } = Laya;
-  var entry2 = class extends Laya.Script {
+  var { regClass: regClass255, property: property254 } = Laya;
+  var entry_WebGPU = class extends Laya.Script {
     constructor() {
       super(...arguments);
       this.is2D = false;
@@ -20479,6 +20619,7 @@ void main()\r
       this.bt.top = 580;
       this.bt.size(170, 40);
       this.bt.label = bt_label;
+      this.logAllExtMap();
       Laya.loader.load([DDPath, DDDPath], Laya.Loader.JSON).then(() => {
         let DD = Laya.loader.getRes(DDPath).data;
         let DDD = Laya.loader.getRes(DDDPath).data;
@@ -20486,11 +20627,7 @@ void main()\r
         this.Big_cb.selectHandler = new Laya.Handler(this, this.Bigonselect);
         this.Small_cb.selectHandler = new Laya.Handler(this, this.Smallonselect);
         this.bt.clickHandler = new Laya.Handler(this, this.Btonselect);
-        if (this.is2D) {
-          this.showDemo(DD, "resources/scene/2D/");
-        } else if (this.is3D) {
-          this.showDemo(DDD, "resources/scene/3D/");
-        }
+        this.showDemo(DDD, "resources/scene/");
       });
     }
     getExtAndCapable(index, isExt = true) {
@@ -20568,20 +20705,7 @@ void main()\r
     }
     logAllExtMap() {
       if (!Laya.LayaEnv.isConch) {
-        console.log("[TestLog] 获取GL为 ", Laya.LayaGL.renderEngine.gl);
-        console.log("[TestLog] 是否为WebGL2 ", Laya.LayaGL.renderEngine._isWebGL2);
-        let exmap = Laya.LayaGL.renderEngine._supportCapatable._extensionMap;
-        let capmap = Laya.LayaGL.renderEngine._supportCapatable._capabilityMap;
-        exmap.forEach((item, key) => {
-          if (item) {
-            console.log("[TestLog] extenstionMap扩展能力: " + this.getExtAndCapable(key, true) + "  存在");
-          }
-        });
-        capmap.forEach((item, key) => {
-          if (item) {
-            console.log("[TestLog] capableMap扩展能力: " + this.getExtAndCapable(key, false) + "  存在");
-          }
-        });
+        console.log("[TestLog] 获取RenderEngine为 ", Laya.LayaGL.renderEngine);
       }
     }
     showDemo(resource, resPath) {
@@ -20642,9 +20766,6 @@ void main()\r
       console.log("打开场景 " + Scenename);
     }
     destoryLastScene() {
-      Laya.Scene.unDestroyedScenes.forEach((item) => {
-        item.destroy();
-      });
     }
     Bigonselect(index) {
       if (index == -1)
@@ -20701,16 +20822,16 @@ void main()\r
       Laya.Scene.open(scenePath);
     }
   };
-  __name(entry2, "entry");
+  __name(entry_WebGPU, "entry_WebGPU");
   __decorateClass([
-    property250(Boolean)
-  ], entry2.prototype, "is2D", 2);
+    property254(Boolean)
+  ], entry_WebGPU.prototype, "is2D", 2);
   __decorateClass([
-    property250(Boolean)
-  ], entry2.prototype, "is3D", 2);
-  entry2 = __decorateClass([
-    regClass251("f8c91f84-e924-4d9c-b8b8-5a7bace657ae", "../src/Entry_WebGPU.ts")
-  ], entry2);
+    property254(Boolean)
+  ], entry_WebGPU.prototype, "is3D", 2);
+  entry_WebGPU = __decorateClass([
+    regClass255("f8c91f84-e924-4d9c-b8b8-5a7bace657ae", "../src/Entry_WebGPU.ts")
+  ], entry_WebGPU);
 
   // src/Main.generated.ts
   var _MainBase = class _MainBase extends Laya.Scene {
@@ -20719,7 +20840,7 @@ void main()\r
   var MainBase = _MainBase;
 
   // src/Main.ts
-  var { regClass: regClass252 } = Laya;
+  var { regClass: regClass256 } = Laya;
   var Main = class extends MainBase {
     constructor() {
       super(...arguments);
@@ -20936,7 +21057,7 @@ void main()\r
   };
   __name(Main, "Main");
   Main = __decorateClass([
-    regClass252("ad3cf108-21a0-4a90-9e86-6a401327d722", "../src/Main.ts")
+    regClass256("ad3cf108-21a0-4a90-9e86-6a401327d722", "../src/Main.ts")
   ], Main);
 })();
 //# sourceMappingURL=bundle.js.map

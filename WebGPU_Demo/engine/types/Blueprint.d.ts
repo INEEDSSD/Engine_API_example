@@ -1507,7 +1507,6 @@ declare module BP {
         constructor();
         protected onParseLinkData(node: IBPNode, manger: INodeManger<BlueprintRuntimeBaseNode>): void;
         private excuteHookFun;
-        protected excuteFun(context: IRunAble, runtimeDataMgr: IRuntimeDataManger, runner: IBPRutime, caller: any, parmsArray: any[], runId: number, fromPin: BlueprintPinRuntime): any;
         next(): BlueprintPinRuntime;
         addPin(pin: BlueprintPinRuntime): void;
         optimize(): void;
