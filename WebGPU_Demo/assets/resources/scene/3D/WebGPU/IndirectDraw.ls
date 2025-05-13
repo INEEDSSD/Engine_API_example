@@ -55,12 +55,12 @@
           },
           "nearPlane": 0.3,
           "farPlane": 1000,
-          "clearFlag": 1,
           "clearColor": {
             "_$type": "Color",
-            "r": 0.3921,
-            "g": 0.5843,
-            "b": 0.9294
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0
           }
         },
         {
@@ -90,6 +90,25 @@
                 "r": 0.6,
                 "g": 0.6,
                 "b": 0.6
+              }
+            }
+          ]
+        },
+        {
+          "_$id": "a7yybimx",
+          "_$type": "Sprite3D",
+          "name": "Sprite3D",
+          "_$comp": [
+            {
+              "_$type": "04233a5d-8526-40a2-ad48-148ec18a47e4",
+              "scriptPath": "resources/bundleCulling/BundleCullingScript.ts",
+              "a": 0,
+              "config": {
+                "_$type": "1c527cef-6fd6-4e46-bdb0-5c23cc356122",
+                "max_instance_per_drawable": 1000,
+                "culling_workgroup_size": 64,
+                "useOverHeadView": false,
+                "useRenderBundle": true
               }
             }
           ]

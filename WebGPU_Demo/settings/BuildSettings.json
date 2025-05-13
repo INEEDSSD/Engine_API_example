@@ -2,9 +2,8 @@
   "name": "LayaAir-API-Demo",
   "outputPath": "",
   "useCompressedEngine": false,
-  "startupScene": "res://47928c43-805c-4423-8e63-7076dc449864",
+  "startupScene": "res://c58ad7ea-742d-4da4-b72f-1161435f0f3e",
   "alwaysIncluded": [],
-  "copyBinFiles": false,
   "excludeFilesRule": [],
   "enableSubpackages": true,
   "subpackages": [

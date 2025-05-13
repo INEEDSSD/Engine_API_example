@@ -3,13 +3,13 @@ const { regClass, property } = Laya;
 
 Laya.addAfterInitCallback(()=>{
     if (Laya.LayaGL.renderEngine.getCapable(Laya.RenderCapable.ComputeShader)) {
-        Laya.Browser.loadLib("js/otherJS/WebGPU.js");
-
+        
         console.log("  IndirectDraw log,  use gl is ", Laya.LayaGL.renderEngine);
+        return Laya.Browser.loadLib("js/otherJS/WebGPU.js");
     } else {
-        Laya.Browser.loadLib("js/otherJS/WebGL.js");
-
+        
         console.log("  IndirectDraw log,  use gl is ", Laya.LayaGL.renderEngine);
+        return Laya.Browser.loadLib("js/otherJS/WebGL.js");
     }
 });
 

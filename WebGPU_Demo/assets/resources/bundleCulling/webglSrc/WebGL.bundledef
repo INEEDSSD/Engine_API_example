@@ -1,0 +1,9 @@
+{
+  "enabled": true,
+  "allowLoadInEditor": true,
+  "allowLoadInRuntime": true,
+  "autoLoad": false,
+  "includeAllFiles": true,
+  "loadBeforeMain": false,
+  "bundleExternals": false
+}

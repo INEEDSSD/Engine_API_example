@@ -18,6 +18,10 @@
       "",
       "js",
       "resources",
+      "resources/metaballs",
+      "resources/scene",
+      "resources/scene/3D",
+      "resources/scene/3D/WebGPU",
       "../src",
       "../src/3D",
       "../src/3D/WebGPU"
@@ -28,7 +32,7 @@
     "selected": "ef403867-0f24-44d5-833e-f55c08d373f4"
   },
   "BuildSettingsPanel": {
-    "platform": "hwgame"
+    "platform": "common"
   },
   "playButtonBehavior": "current",
   "SelectResourceDialog": {

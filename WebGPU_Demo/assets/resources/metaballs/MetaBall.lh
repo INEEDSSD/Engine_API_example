@@ -1,0 +1,472 @@
+{
+  "_$ver": 1,
+  "_$id": "ocdhfitp",
+  "_$type": "Sprite3D",
+  "name": "MetaBall",
+  "_$child": [
+    {
+      "_$id": "dq1zgob7",
+      "_$type": "Sprite3D",
+      "name": "metaball",
+      "_$comp": [
+        {
+          "_$type": "5fa29511-c70d-4e98-a1ba-de20933dcd65",
+          "scriptPath": "metaballs/MetaballScript.ts"
+        },
+        {
+          "_$type": "MeshFilter",
+          "sharedMesh": {
+            "_$uuid": "f1e48cc9-d67d-4196-92dd-77d9ee2f076c",
+            "_$type": "Mesh"
+          }
+        },
+        {
+          "_$type": "MeshRenderer",
+          "lightmapScaleOffset": {
+            "_$type": "Vector4"
+          },
+          "sharedMaterials": [
+            {
+              "_$uuid": "8e684c6c-195a-4d65-99a8-de6f0dd40ba9",
+              "_$type": "Material"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "54ay27g8",
+      "_$type": "Sprite3D",
+      "name": "dungeon",
+      "_$child": [
+        {
+          "_$id": "7np4b3qy",
+          "_$type": "Sprite3D",
+          "name": "RootNode (gltf orientation matrix)",
+          "_$child": [
+            {
+              "_$id": "t0a75bz2",
+              "_$type": "Sprite3D",
+              "name": "RootNode (model correction matrix)",
+              "transform": {
+                "localPosition": {
+                  "_$type": "Vector3",
+                  "x": 0.009455425664782524,
+                  "y": -0.23426306247711182,
+                  "z": -3.3182811737060547
+                },
+                "localRotation": {
+                  "_$type": "Quaternion",
+                  "y": -0.7071067811865466,
+                  "z": -0.7071067811865466,
+                  "w": 5.3385079434505786e-8
+                },
+                "localScale": {
+                  "_$type": "Vector3",
+                  "x": 0.01000000536441803,
+                  "y": 0.010000001639127731,
+                  "z": 0.010000001639127731
+                }
+              },
+              "_$child": [
+                {
+                  "_$id": "9vftrqxf",
+                  "_$type": "Sprite3D",
+                  "name": "c954de42f3ed45128d8a68fb872e899c.fbx",
+                  "transform": {
+                    "localPosition": {
+                      "_$type": "Vector3",
+                      "y": 0.00002751282045210246
+                    },
+                    "localRotation": {
+                      "_$type": "Quaternion",
+                      "x": 0.707106900395829,
+                      "w": 0.7071066619772459
+                    }
+                  },
+                  "_$child": [
+                    {
+                      "_$id": "i87p2tjw",
+                      "_$type": "Sprite3D",
+                      "name": "RootNode",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "z": 0.000006152288278826745
+                        }
+                      },
+                      "_$child": [
+                        {
+                          "_$id": "ru1bwqca",
+                          "_$type": "Sprite3D",
+                          "name": "Door",
+                          "transform": {
+                            "localPosition": {
+                              "_$type": "Vector3",
+                              "x": 0.9455483555793762,
+                              "y": 1.0030460357666016,
+                              "z": -41.736900329589844
+                            },
+                            "localRotation": {
+                              "_$type": "Quaternion",
+                              "y": 0.9999999999999971,
+                              "w": 7.549790836947047e-8
+                            },
+                            "localScale": {
+                              "_$type": "Vector3",
+                              "x": 179.31884765625,
+                              "y": 179.3188934326172,
+                              "z": 179.3188934326172
+                            }
+                          }
+                        },
+                        {
+                          "_$id": "5fbdzfr9",
+                          "_$type": "Sprite3D",
+                          "name": "floor1",
+                          "transform": {
+                            "localPosition": {
+                              "_$type": "Vector3",
+                              "z": 0.000006152288278826745
+                            }
+                          },
+                          "_$child": [
+                            {
+                              "_$id": "eic5gj5w",
+                              "_$type": "Sprite3D",
+                              "name": "floor1_dungeon_floor_mat_2_0",
+                              "transform": {
+                                "localPosition": {
+                                  "_$type": "Vector3",
+                                  "z": 0.000006152288278826745
+                                }
+                              },
+                              "_$comp": [
+                                {
+                                  "_$type": "MeshFilter",
+                                  "sharedMesh": {
+                                    "_$uuid": "b92d1466-0a98-4b53-b79e-662d45af7069@lm0",
+                                    "_$type": "Mesh"
+                                  }
+                                },
+                                {
+                                  "_$type": "MeshRenderer",
+                                  "receiveShadow": true,
+                                  "castShadow": true,
+                                  "lightmapScaleOffset": {
+                                    "_$type": "Vector4"
+                                  },
+                                  "sharedMaterials": [
+                                    {
+                                      "_$uuid": "b92d1466-0a98-4b53-b79e-662d45af7069@lmat0",
+                                      "_$type": "Material"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "_$id": "m25psinp",
+                          "_$type": "Sprite3D",
+                          "name": "floor2",
+                          "transform": {
+                            "localPosition": {
+                              "_$type": "Vector3",
+                              "z": 0.000006152288278826745
+                            }
+                          },
+                          "_$child": [
+                            {
+                              "_$id": "cm1xoke3",
+                              "_$type": "Sprite3D",
+                              "name": "floor2_dungeon_floor_1_mat_0",
+                              "transform": {
+                                "localPosition": {
+                                  "_$type": "Vector3",
+                                  "z": 0.000006152288278826745
+                                }
+                              },
+                              "_$comp": [
+                                {
+                                  "_$type": "MeshFilter",
+                                  "sharedMesh": {
+                                    "_$uuid": "b92d1466-0a98-4b53-b79e-662d45af7069@lm1",
+                                    "_$type": "Mesh"
+                                  }
+                                },
+                                {
+                                  "_$type": "MeshRenderer",
+                                  "receiveShadow": true,
+                                  "castShadow": true,
+                                  "lightmapScaleOffset": {
+                                    "_$type": "Vector4"
+                                  },
+                                  "sharedMaterials": [
+                                    {
+                                      "_$uuid": "b92d1466-0a98-4b53-b79e-662d45af7069@lmat1",
+                                      "_$type": "Material"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "_$id": "x3aihurh",
+                          "_$type": "Sprite3D",
+                          "name": "walls",
+                          "transform": {
+                            "localPosition": {
+                              "_$type": "Vector3",
+                              "z": 0.000006152288278826745
+                            }
+                          },
+                          "_$child": [
+                            {
+                              "_$id": "s88w2htu",
+                              "_$type": "Sprite3D",
+                              "name": "floor_ring",
+                              "transform": {
+                                "localPosition": {
+                                  "_$type": "Vector3",
+                                  "z": 0.000006152288278826745
+                                }
+                              },
+                              "_$comp": [
+                                {
+                                  "_$type": "MeshFilter",
+                                  "sharedMesh": {
+                                    "_$uuid": "b92d1466-0a98-4b53-b79e-662d45af7069@lm2",
+                                    "_$type": "Mesh"
+                                  }
+                                },
+                                {
+                                  "_$type": "MeshRenderer",
+                                  "receiveShadow": true,
+                                  "castShadow": true,
+                                  "lightmapScaleOffset": {
+                                    "_$type": "Vector4"
+                                  },
+                                  "sharedMaterials": [
+                                    {
+                                      "_$uuid": "b92d1466-0a98-4b53-b79e-662d45af7069@lmat2",
+                                      "_$type": "Material"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "_$id": "zm6dgna8",
+                              "_$type": "Sprite3D",
+                              "name": "walls_dungeon_mat3_0",
+                              "transform": {
+                                "localPosition": {
+                                  "_$type": "Vector3",
+                                  "z": 0.000006152288278826745
+                                }
+                              },
+                              "_$comp": [
+                                {
+                                  "_$type": "MeshFilter",
+                                  "sharedMesh": {
+                                    "_$uuid": "b92d1466-0a98-4b53-b79e-662d45af7069@lm3",
+                                    "_$type": "Mesh"
+                                  }
+                                },
+                                {
+                                  "_$type": "MeshRenderer",
+                                  "receiveShadow": true,
+                                  "castShadow": true,
+                                  "lightmapScaleOffset": {
+                                    "_$type": "Vector4"
+                                  },
+                                  "sharedMaterials": [
+                                    {
+                                      "_$uuid": "b92d1466-0a98-4b53-b79e-662d45af7069@lmat2",
+                                      "_$type": "Material"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "_$id": "4or1np4h",
+                          "_$type": "Sprite3D",
+                          "name": "webs",
+                          "transform": {
+                            "localPosition": {
+                              "_$type": "Vector3",
+                              "z": 0.000006152288278826745
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "f1i5nnu9",
+          "_$type": "Sprite3D",
+          "name": "LeftColumnLight",
+          "transform": {
+            "localPosition": {
+              "_$type": "Vector3",
+              "x": -2.400266170501709,
+              "y": 2.5715951919555664,
+              "z": 1.986985683441162
+            },
+            "localRotation": {
+              "_$type": "Quaternion",
+              "x": -0.34203388601611445,
+              "y": -0.5232753648805746,
+              "z": -0.28416624095834714,
+              "w": 0.7269424054389866
+            }
+          },
+          "_$child": [
+            {
+              "_$id": "84y6xnkr",
+              "_$type": "Sprite3D",
+              "name": "PointLight",
+              "_$comp": [
+                {
+                  "_$type": "PointLightCom",
+                  "intensity": 4.72,
+                  "lightmapBakedType": 0,
+                  "shadowCascadesMode": null,
+                  "power": 10,
+                  "radius": 0.01,
+                  "maxBounces": 1024
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "uxgx0lbh",
+          "_$type": "Sprite3D",
+          "name": "RightColumnLight",
+          "transform": {
+            "localPosition": {
+              "_$type": "Vector3",
+              "x": 2.42094087600708,
+              "y": 2.5715951919555664,
+              "z": 1.9869847297668457
+            },
+            "localRotation": {
+              "_$type": "Quaternion",
+              "x": -0.34203388601611445,
+              "y": -0.5232753648805746,
+              "z": -0.28416624095834714,
+              "w": 0.7269424054389866
+            }
+          },
+          "_$child": [
+            {
+              "_$id": "jwhcw4qg",
+              "_$type": "Sprite3D",
+              "name": "PointLight",
+              "_$comp": [
+                {
+                  "_$type": "PointLightCom",
+                  "intensity": 4.72,
+                  "lightmapBakedType": 0,
+                  "shadowCascadesMode": null,
+                  "power": 10,
+                  "radius": 0.01,
+                  "maxBounces": 1024
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "daualxdx",
+          "_$type": "Sprite3D",
+          "name": "LeftDoorLight",
+          "transform": {
+            "localPosition": {
+              "_$type": "Vector3",
+              "x": -2.273731231689453,
+              "y": 1.8924740552902222,
+              "z": -1.85154390335083
+            },
+            "localRotation": {
+              "_$type": "Quaternion",
+              "x": -0.34203388601611445,
+              "y": -0.5232753648805746,
+              "z": -0.28416624095834714,
+              "w": 0.7269424054389866
+            }
+          },
+          "_$child": [
+            {
+              "_$id": "v6fk05mn",
+              "_$type": "Sprite3D",
+              "name": "PointLight",
+              "_$comp": [
+                {
+                  "_$type": "PointLightCom",
+                  "intensity": 4.72,
+                  "lightmapBakedType": 0,
+                  "shadowCascadesMode": null,
+                  "power": 10,
+                  "radius": 0.01,
+                  "maxBounces": 1024
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "chh9wt01",
+          "_$type": "Sprite3D",
+          "name": "RightDoorLight",
+          "transform": {
+            "localPosition": {
+              "_$type": "Vector3",
+              "x": 2.2748069763183594,
+              "y": 1.8924740552902222,
+              "z": -1.8515446186065674
+            },
+            "localRotation": {
+              "_$type": "Quaternion",
+              "x": -0.34203388601611445,
+              "y": -0.5232753648805746,
+              "z": -0.28416624095834714,
+              "w": 0.7269424054389866
+            }
+          },
+          "_$child": [
+            {
+              "_$id": "2nldlqc2",
+              "_$type": "Sprite3D",
+              "name": "PointLight_1",
+              "_$comp": [
+                {
+                  "_$type": "PointLightCom",
+                  "intensity": 4.72,
+                  "lightmapBakedType": 0,
+                  "shadowCascadesMode": null,
+                  "power": 10,
+                  "radius": 0.01,
+                  "maxBounces": 1024
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

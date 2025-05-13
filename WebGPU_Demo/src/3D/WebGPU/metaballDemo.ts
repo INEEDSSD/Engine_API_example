@@ -5,14 +5,16 @@ export class metaballDemo extends Laya.Script {
     //declare owner : Laya.Sprite3D;
     //declare owner : Laya.Sprite;
 
-    @property(String)
-    public text: string = "";
-
     //组件被激活后执行，此时所有节点和组件均已创建完毕，此方法只执行一次
     //onAwake(): void {}
 
     //组件被启用后执行，例如节点被添加到舞台后
-    //onEnable(): void {}
+    onEnable(): void {
+        Laya.loader.load("resources/metaballs/MetaBall.lh").then(res => {
+            let metball = (res as Laya.PrefabImpl).create();
+            ((this.owner.scene as Laya.Scene).scene3D as Laya.Scene3D).addChild(metball);
+        })
+    }
 
     //组件被禁用时执行，例如从节点从舞台移除后
     //onDisable(): void {}

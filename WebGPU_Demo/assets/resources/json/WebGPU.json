@@ -1,6 +1,6 @@
 {
     "demoList": [{
-        "title": "WebGPU_Test",
+        "title": "基础API测试",
         "content": [
             {
                 "name": "空场景运行",
@@ -73,5 +73,26 @@
                 "desc": ""
             }
         ]
-    }]
+    },
+    {
+        "title": "高级API测试",
+        "content": [
+            {
+                "name": "triangleDemo",
+                "scene": "3D/WebGPU/triangleDemo",
+                "desc": ""
+            },
+            {
+                "name": "metaballDemo",
+                "scene": "3D/WebGPU/metaballDemo",
+                "desc": ""
+            },
+            {
+                "name": "IndirectDraw",
+                "scene": "3D/WebGPU/IndirectDraw",
+                "desc": ""
+            }
+        ]
+    }
+]
 }

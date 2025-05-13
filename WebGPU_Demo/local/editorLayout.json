@@ -2,7 +2,7 @@
   "default": {
     "width": 1916,
     "height": 927,
-    "id": "BsKTLXKw",
+    "id": "JxTx8vcz",
     "layout": 1,
     "children": [
       {
@@ -48,7 +48,7 @@
                 "width": 1058,
                 "height": 693,
                 "id": "7eatv6px",
-                "selected": 5,
+                "selected": 0,
                 "children": [
                   "ScenePanel",
                   "GamePanel",
@@ -94,7 +94,7 @@
       {
         "width": 346,
         "height": 438,
-        "id": "3IWp8D0F",
+        "id": "a4is1T6F",
         "selected": 0,
         "children": [
           "PreferencesPanel"
