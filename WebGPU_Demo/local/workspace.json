@@ -16,15 +16,7 @@
   "ProjectPanel": {
     "expandedNodes": [
       "",
-      "js",
-      "resources",
-      "resources/metaballs",
-      "resources/scene",
-      "resources/scene/3D",
-      "resources/scene/3D/WebGPU",
-      "../src",
-      "../src/3D",
-      "../src/3D/WebGPU"
+      "../src"
     ],
     "twoColumn": false,
     "firstColumnWidth": 347,
@@ -32,7 +24,7 @@
     "selected": "ef403867-0f24-44d5-833e-f55c08d373f4"
   },
   "BuildSettingsPanel": {
-    "platform": "common"
+    "platform": "hwgame"
   },
   "playButtonBehavior": "current",
   "SelectResourceDialog": {
@@ -68,6 +60,6 @@
     "height": 469
   },
   "ProjectSettingsPanel": {
-    "catalog": "PlayerSettings.WebGPUSettings"
+    "catalog": "PlayerSettings"
   }
 }

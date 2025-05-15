@@ -1,98 +1,656 @@
 {
-    "demoList": [{
-        "title": "基础API测试",
-        "content": [
-            {
-                "name": "空场景运行",
-                "scene": "3D/emptyScene",
-                "desc": ""
-            },
-            {
-                "name": "PBR示例",
-                "scene": "3D/Material/PBRMaterialDemo",
-                "desc": ""
-            },
-            {
-                "name": "粒子示例_永恒之光",
-                "scene": "3D/Particle/Particle_EternalLight",
-                "desc": ""
-            },
-            {
-                "name": "粒子示例_燃烧大地",
-                "scene": "3D/Particle/Particle_BurningGround",
-                "desc": ""
-            },
-            {
-                "name": "场景加载_骨骼动画",
-                "scene": "3D/Scene3D/SceneLoad1",
-                "desc": ""
-            },
-            {
-                "name": "环境光遮蔽",
-                "scene": "3D/PostProcess/PostProcessAO",
-                "desc": ""
-            },
-            {
-                "name": "实时阴影示例",
-                "scene": "3D/Light/RealTimeShadow",
-                "desc": ""
-            },
-            {
-                "name": "多光源示例",
-                "scene": "3D/Light/MultiLight",
-                "desc": ""
-            },
-            {
-                "name": "渲染cmd_轮廓示例",
-                "scene": "3D/Advance/CommandBuffer_Outline",
-                "desc": ""
-            },
-            {
-                "name": "instance示例",
-                "scene": "3D/PerformanceTest/DynamicBatchTest",
-                "desc": ""
-            },
-            {
-                "name": "多采样_MSAA示例",
-                "scene": "3D/Camera/CameraMSAADemo",
-                "desc": ""
-            },
-            {
-                "name": "环境光反射_TextureCube示例",
-                "scene": "3D/Scene3D/EnvironmentalReflection",
-                "desc": ""
-            },
-            {
-                "name": "2Dspine测试_SpineIDMesh",
-                "scene": "2D/Skeleton/Skeleton_SpineIKMesh",
-                "desc": ""
-            },
-            {
-                "name": "2D基础测试_显示图片",
-                "scene": "2D/Sprite/Sprite_DisplayImage",
-                "desc": ""
-            }
-        ]
-    },
-    {
-        "title": "高级API测试",
-        "content": [
-            {
-                "name": "triangleDemo",
-                "scene": "3D/WebGPU/triangleDemo",
-                "desc": ""
-            },
-            {
-                "name": "metaballDemo",
-                "scene": "3D/WebGPU/metaballDemo",
-                "desc": ""
-            },
-            {
-                "name": "IndirectDraw",
-                "scene": "3D/WebGPU/IndirectDraw",
-                "desc": ""
-            }
-        ]
-    }
-]
+    "demoList": [ 
+        {
+            "title": "基础API测试",
+            "content": [
+                {
+                    "name": "空场景运行",
+                    "scene": "3D/emptyScene",
+                    "desc": ""
+                },
+                {
+                    "name": "PBR示例",
+                    "scene": "3D/Material/PBRMaterialDemo",
+                    "desc": ""
+                },
+                {
+                    "name": "粒子示例_永恒之光",
+                    "scene": "3D/Particle/Particle_EternalLight",
+                    "desc": ""
+                },
+                {
+                    "name": "粒子示例_燃烧大地",
+                    "scene": "3D/Particle/Particle_BurningGround",
+                    "desc": ""
+                },
+                {
+                    "name": "场景加载_骨骼动画",
+                    "scene": "3D/Scene3D/SceneLoad1",
+                    "desc": ""
+                },
+                {
+                    "name": "环境光遮蔽",
+                    "scene": "3D/PostProcess/PostProcessAO",
+                    "desc": ""
+                },
+                {
+                    "name": "实时阴影示例",
+                    "scene": "3D/Light/RealTimeShadow",
+                    "desc": ""
+                },
+                {
+                    "name": "多光源示例",
+                    "scene": "3D/Light/MultiLight",
+                    "desc": ""
+                },
+                {
+                    "name": "渲染cmd_轮廓示例",
+                    "scene": "3D/Advance/CommandBuffer_Outline",
+                    "desc": ""
+                },
+                {
+                    "name": "instance示例",
+                    "scene": "3D/PerformanceTest/DynamicBatchTest",
+                    "desc": ""
+                },
+                {
+                    "name": "多采样_MSAA示例",
+                    "scene": "3D/Camera/CameraMSAADemo",
+                    "desc": ""
+                },
+                {
+                    "name": "环境光反射_TextureCube示例",
+                    "scene": "3D/Scene3D/EnvironmentalReflection",
+                    "desc": ""
+                },
+                {
+                    "name": "2Dspine测试_SpineIDMesh",
+                    "scene": "2D/Skeleton/Skeleton_SpineIKMesh",
+                    "desc": ""
+                },
+                {
+                    "name": "2D基础测试_显示图片",
+                    "scene": "2D/Sprite/Sprite_DisplayImage",
+                    "desc": ""
+                }
+            ]
+        },
+        {
+            "title": "高级API测试",
+            "content": [
+                {
+                    "name": "triangleDemo",
+                    "scene": "3D/WebGPU/triangleDemo",
+                    "desc": ""
+                },
+                {
+                    "name": "metaballDemo",
+                    "scene": "3D/WebGPU/metaballDemo",
+                    "desc": ""
+                },
+                {
+                    "name": "IndirectDraw",
+                    "scene": "3D/WebGPU/IndirectDraw",
+                    "desc": ""
+                }
+            ]
+        },
+        {
+            "title": "其他内容测试",
+            "content": [
+                {
+                    "name": "资源加载",
+                    "scene": "3D/Resource/LoadResourceDemo",
+                    "desc": ""
+                },
+                {
+                    "name": "释放显存",
+                    "scene": "3D/Resource/GarbageCollection",
+                    "desc": ""
+                },
+                {
+                    "name": "加载Fbx资源",
+                    "scene": "3D/Resource/LoadFbxRosource",
+                    "desc": ""
+                },
+                {
+                    "name": "加载Gltf资源",
+                    "scene": "3D/Resource/LoadGltfRosource",
+                    "desc": ""
+                },
+                {
+                    "name": "场景加载",
+                    "scene": "3D/Scene3D/SceneLoad1",
+                    "desc": ""
+                },
+                {
+                    "name": "环境反射",
+                    "scene": "3D/Scene3D/EnvironmentalReflection",
+                    "desc": "加载在场景中预先用天空盒烘焙出来的天空盒cubemap"
+                },
+                {
+                    "name": "切换环境光",
+                    "scene": "3D/Scene3D/GriendSkyAmbientDemo",
+                    "desc": "使用球谐光照，前提是在场景中先设置好天空盒，在ReflectionProbe中烘焙"
+                },
+                {
+                    "name": "场景雾效",
+                    "scene": "3D/Scene3D/FogDemo",
+                    "desc": ""
+                },
+                {
+                    "name": "切换背景",
+                    "scene": "3D/Camera/CameraDemo",
+                    "desc": ""
+                },
+                {
+                    "name": "正交摄像机",
+                    "scene": "3D/Camera/OrthographicCamera",
+                    "desc": ""
+                },
+                {
+                    "name": "摄像机捕捉目标",
+                    "scene": "3D/Camera/CameraLookAt",
+                    "desc": ""
+                },
+                {
+                    "name": "多摄像机",
+                    "scene": "3D/Camera/MultiCamera",
+                    "desc": ""
+                },
+                {
+                    "name": "创建射线",
+                    "scene": "3D/Camera/CameraRay",
+                    "desc": ""
+                },
+                {
+                    "name": "可视遮罩层",
+                    "scene": "3D/Camera/CameraLayer",
+                    "desc": ""
+                },
+                {
+                    "name": "3D空间转2D空间",
+                    "scene": "3D/Camera/D3SpaceToD2Space",
+                    "desc": ""
+                },
+                {
+                    "name": "拾取像素",
+                    "scene": "3D/Camera/PickPixel",
+                    "desc": ""
+                },
+                {
+                    "name": "多重采样",
+                    "scene": "3D/Camera/CameraMSAADemo",
+                    "desc": ""
+                },
+                {
+                    "name": "方向光",
+                    "scene": "3D/Light/DirectionLightDemo",
+                    "desc": ""
+                },
+                {
+                    "name": "点光",
+                    "scene": "3D/Light/PointLightDemo",
+                    "desc": ""
+                },
+                {
+                    "name": "聚光",
+                    "scene": "3D/Light/SpotLightDemo",
+                    "desc": ""
+                },
+                {
+                    "name": "实时阴影",
+                    "scene": "3D/Light/RealTimeShadow",
+                    "desc": ""
+                },
+                {
+                    "name": "Spot实时阴影",
+                    "scene": "3D/Light/SpotLightShadowMap",
+                    "desc": ""
+                },
+                {
+                    "name": "多光源",
+                    "scene": "3D/Light/MultiLight",
+                    "desc": ""
+                },
+                {
+                    "name": "光照烘焙",
+                    "scene": "3D/Light/LightmapScene",
+                    "desc": "设置好光源数据，使用光照烘焙出来的场景"
+                },
+                {
+                    "name": "VolumeGI",
+                    "scene": "3D/Light/VolumeGIDemo",
+                    "desc": ""
+                },
+                {
+                    "name": "蒙皮精灵",
+                    "scene": "3D/Sprite3D/SkinnedMeshSprite3DDemo",
+                    "desc": ""
+                },
+                {
+                    "name": "子父级关系",
+                    "scene": "3D/Sprite3D/Sprite3DParent",
+                    "desc": ""
+                },
+                {
+                    "name": "变换示例",
+                    "scene": "3D/Sprite3D/TransformDemo",
+                    "desc": ""
+                },
+                {
+                    "name": "克隆精灵",
+                    "scene": "3D/Sprite3D/Sprite3DClone",
+                    "desc": ""
+                },
+                {
+                    "name": "像素线精灵",
+                    "scene": "3D/Sprite3D/PixelLineSprite3DDemo",
+                    "desc": ""
+                },
+                {
+                    "name": "网格加载",
+                    "scene": "3D/Mesh/MeshLoad",
+                    "desc": ""
+                },
+                {
+                    "name": "自定义网格",
+                    "scene": "3D/Mesh/CustomMesh",
+                    "desc": ""
+                },
+                {
+                    "name": "切换网格",
+                    "scene": "3D/Mesh/ChangeMesh",
+                    "desc": ""
+                },
+                {
+                    "name": "BlendShape",
+                    "scene": "3D/Mesh/BlendShape",
+                    "desc": "在WebGL1中不支持控制该模型的动作"
+                },
+                {
+                    "name": "材质示例",
+                    "scene": "3D/Material/MaterialDemo",
+                    "desc": ""
+                },
+                {
+                    "name": "BlinnPhong-材质加载",
+                    "scene": "3D/Material/BlinnPhongMaterialLoad",
+                    "desc": ""
+                },
+                {
+                    "name": "BlinnPhong-漫反射贴图",
+                    "scene": "3D/Material/BlinnPhong_DiffuseMap",
+                    "desc": ""
+                },
+                {
+                    "name": "BlinnPhong-法线贴图",
+                    "scene": "3D/Material/BlinnPhong_NormalMap",
+                    "desc": ""
+                },
+                {
+                    "name": "BlinnPhong-高光贴图",
+                    "scene": "3D/Material/BlinnPhong_SpecularMap",
+                    "desc": ""
+                },
+                {
+                    "name": "PBR材质",
+                    "scene": "3D/Material/PBRMaterialDemo",
+                    "desc": ""
+                },
+                {
+                    "name": "PBR-Coat材质",
+                    "scene": "3D/Material/PBRCoatMaterialDemo",
+                    "desc": ""
+                },
+                {
+                    "name": "Effect材质",
+                    "scene": "3D/Material/EffectMaterialDemo",
+                    "desc": ""
+                },
+                {
+                    "name": "Unlit材质",
+                    "scene": "3D/Material/UnlitMaterialDemo",
+                    "desc": ""
+                },
+                {
+                    "name": "Stencil材质",
+                    "scene": "3D/Material/StencilDemo",
+                    "desc": ""
+                },
+                {
+                    "name": "纹理示例",
+                    "scene": "3D/Texture/TextureDemo",
+                    "desc": ""
+                },
+                {
+                    "name": "纹理压缩",
+                    "scene": "3D/Texture/TextureGPUCompression",
+                    "desc": ""
+                },
+                {
+                    "name": "半浮点数纹理",
+                    "scene": "3D/Texture/HalfFloatTexture",
+                    "desc": ""
+                },
+                {
+                    "name": "GPU压缩ASTC",
+                    "scene": "3D/Texture/GPUCompression_ASTC",
+                    "desc": ""
+                },
+                {
+                    "name": "GPU压缩ETC2",
+                    "scene": "3D/Texture/GPUCompression_ETC2",
+                    "desc": ""
+                },
+                {
+                    "name": "动画示例",
+                    "scene": "3D/Animation/AnimatorDemo",
+                    "desc": ""
+                },
+                {
+                    "name": "动画状态脚本",
+                    "scene": "3D/Animation/AnimatorStateScriptDemo",
+                    "desc": ""
+                },
+                {
+                    "name": "动画挂点",
+                    "scene": "3D/Animation/BoneLinkSprite3D",
+                    "desc": ""
+                },
+                {
+                    "name": "动画融合",
+                    "scene": "3D/Animation/AnimatorTransitionDemo",
+                    "desc": ""
+                },
+                {
+                    "name": "材质动画",
+                    "scene": "3D/Animation/MaterialAnimation",
+                    "desc": ""
+                },
+                {
+                    "name": "刚体动画",
+                    "scene": "3D/Animation/RigidbodyAnimationDemo",
+                    "desc": ""
+                },
+                {
+                    "name": "摄像机动画",
+                    "scene": "3D/Animation/CameraAnimation",
+                    "desc": ""
+                },
+                {
+                    "name": "骨骼动画遮罩",
+                    "scene": "3D/Animation/AvatarMask",
+                    "desc": ""
+                },
+                {
+                    "name": "预烘焙骨骼动画",
+                    "scene": "3D/Animation/SimpleSkinAnimationInstance",
+                    "desc": ""
+                },
+                {
+                    "name": "LOD组件",
+                    "scene": "3D/LOD/LODDemo",
+                    "desc": ""
+                },
+                {
+                    "name": "基础碰撞器",
+                    "scene": "3D/PhysicsWorld/PhysicsWorld_BaseCollider",
+                    "desc": ""
+                },
+                {
+                    "name": "角色碰撞器",
+                    "scene": "3D/PhysicsWorld/PhysicsWorld_Character",
+                    "desc": ""
+                },
+                {
+                    "name": "碰撞器过滤器",
+                    "scene": "3D/PhysicsWorld/PhysicsWorld_CollisionFiflter",
+                    "desc": ""
+                },
+                {
+                    "name": "连续碰撞检测",
+                    "scene": "3D/PhysicsWorld/PhysicsWorld_ContinueCollisionDetection",
+                    "desc": ""
+                },
+                {
+                    "name": "刚体碰撞",
+                    "scene": "3D/PhysicsWorld/PhysicsWorld_Kinematic",
+                    "desc": ""
+                },
+                {
+                    "name": "网格碰撞器",
+                    "scene": "3D/PhysicsWorld/PhysicsWorld_MeshCollider",
+                    "desc": ""
+                },
+                {
+                    "name": "射线检测",
+                    "scene": "3D/PhysicsWorld/PhysicsWorld_RayShapeCast",
+                    "desc": ""
+                },
+                {
+                    "name": "触发和碰撞事件",
+                    "scene": "3D/PhysicsWorld/PhysicsWorld_TriggerAndCollisionEvent",
+                    "desc": ""
+                },
+                {
+                    "name": "选取物体",
+                    "scene": "3D/PhysicsWorld/PhysicsWorld_BuildingBlocks",
+                    "desc": ""
+                },
+                {
+                    "name": "固定关节",
+                    "scene": "3D/PhysicsWorld/PhysicsWorld_ConstraintFixedJoint",
+                    "desc": ""
+                },
+                {
+                    "name": "可配置关节",
+                    "scene": "3D/PhysicsWorld/PhysicsWorld_ConfigurableJoint",
+                    "desc": ""
+                },
+                {
+                    "name": "Prefab刚体弹力",
+                    "scene": "3D/PhysicsWorld/PhysicsWorld_Rigidbody3DBounce",
+                    "desc": ""
+                },
+                {
+                    "name": "Prefab刚体摩擦力",
+                    "scene": "3D/PhysicsWorld/PhysicsWorld_Rigidbody3DFriction",
+                    "desc": ""
+                },
+                {
+                    "name": "鼠标交互",
+                    "scene": "3D/Interaction/MouseInteraction",
+                    "desc": ""
+                },
+                {
+                    "name": "多点触控",
+                    "scene": "3D/Interaction/MultiTouch",
+                    "desc": ""
+                },
+                {
+                    "name": "天空盒",
+                    "scene": "3D/Sky/Sky_SkyBox",
+                    "desc": ""
+                },
+                {
+                    "name": "程序化天空",
+                    "scene": "3D/Sky/Sky_Procedural",
+                    "desc": ""
+                },
+                {
+                    "name": "永恒之光",
+                    "scene": "3D/Particle/Particle_EternalLight",
+                    "desc": ""
+                },
+                {
+                    "name": "燃烧大地",
+                    "scene": "3D/Particle/Particle_BurningGround",
+                    "desc": ""
+                },
+                {
+                    "name": "拖尾示例",
+                    "scene": "3D/Trail/TrailRender",
+                    "desc": ""
+                },
+                {
+                    "name": "脚本示例",
+                    "scene": "3D/Script/ScriptDemo",
+                    "desc": ""
+                },
+                {
+                    "name": "简单Shader",
+                    "scene": "3D/Shader/Shader_Simple",
+                    "desc": ""
+                },
+                {
+                    "name": "边缘光照Shader",
+                    "scene": "3D/Shader/Shader_GlowingEdge",
+                    "desc": ""
+                },
+                {
+                    "name": "描边Shader",
+                    "scene": "3D/Shader/Shader_MultiplePassOutline",
+                    "desc": ""
+                },
+                {
+                    "name": "Shader预编译",
+                    "scene": "3D/Shader/Shader_preCompile",
+                    "desc": "Shader预编译"
+                },
+                {
+                    "name": "蓝图材质与shader",
+                    "scene": "3D/bluePrint/bluePrintDemo",
+                    "desc": ""
+                },
+                {
+                    "name": "后处理模糊",
+                    "scene": "3D/PostProcess/PostProcess_Blur",
+                    "desc": ""
+                },
+                {
+                    "name": "后处理AO示例",
+                    "scene": "3D/PostProcess/PostProcessAO",
+                    "desc": ""
+                },
+                {
+                    "name": "后处理Bloom示例",
+                    "scene": "3D/PostProcess/PostProcessBloom",
+                    "desc": ""
+                },
+                {
+                    "name": "后处理景深示例",
+                    "scene": "3D/PostProcess/PostProcessDoF",
+                    "desc": ""
+                },
+                {
+                    "name": "后处理边缘",
+                    "scene": "3D/PostProcess/PostProcess_Edge",
+                    "desc": ""
+                },
+                {
+                    "name": "动态合批",
+                    "scene": "3D/PerformanceTest/DynamicBatchTest",
+                    "desc": ""
+                },
+                {
+                    "name": "摄像机按键与摇杆操作示例",
+                    "scene": "3D/Advance/CameraInteraction",
+                    "desc": ""
+                },
+                {
+                    "name": "3D导航寻路",
+                    "scene": "3D/Advance/navMeshDemo",
+                    "desc": ""
+                },
+                {
+                    "name": "2D场景上添加加3D",
+                    "scene": "3D/Advance/Scene2DPlayer3D",
+                    "desc": ""
+                },
+                {
+                    "name": "3D场景上添加2D节点",
+                    "scene": "3D/Advance/Secne3DPlayer2D",
+                    "desc": ""
+                },
+                {
+                    "name": "视频纹理",
+                    "scene": "3D/Advance/VideoPlayIn3DWorld",
+                    "desc": "",
+                    "minigame": false
+                },
+                {
+                    "name": "草地",
+                    "scene": "3D/Advance/GrassDemo",
+                    "desc": "使用instance实现草地效果"
+                },
+                {
+                    "name": "Instance渲染",
+                    "scene": "3D/Advance/CommandBuffer_DrawCustomInstance",
+                    "desc": ""
+                },
+                {
+                    "name": "相机深度纹理",
+                    "scene": "3D/Advance/CameraDepthModeTextureDemo",
+                    "desc": ""
+                },
+                {
+                    "name": "轮廓",
+                    "scene": "3D/Advance/CommandBuffer_Outline",
+                    "desc": ""
+                },
+                {
+                    "name": "毛玻璃",
+                    "scene": "3D/Advance/BlurryGlass",
+                    "desc": ""
+                },
+                {
+                    "name": "反射探针",
+                    "scene": "3D/Advance/ReflectionProbe",
+                    "desc": ""
+                },
+                {
+                    "name": "次表面散射",
+                    "scene": "3D/Advance/SeparableSSS_RenderDemo",
+                    "desc": ""
+                },
+                {
+                    "name": "3D文字纹理",
+                    "scene": "3D/Advance/showFont",
+                    "desc": ""
+                },
+                {
+                    "name": "Laya3D与网页混合",
+                    "scene": "3D/Advance/Laya3DCombineHtml",
+                    "desc": "",
+                    "minigame": false
+                },
+                {
+                    "name": "UI3D示例",
+                    "scene": "3D/Advance/UI3D",
+                    "desc": ""
+                },
+                {
+                    "name": "UBO与instance材质合批",
+                    "scene": "3D/Advance/UBO_instance_matBatchDemo",
+                    "desc": "基于节点的使用uniformbuffer与instance的材质合批"
+                },
+                {
+                    "name": "损坏头盔展示",
+                    "scene": "3D/Show/DamagedHelmetModelShow",
+                    "desc": ""
+                },
+                {
+                    "name": "PBR枪械展示",
+                    "scene": "3D/Show/GunDemo",
+                    "desc": ""
+                },
+                {
+                    "name": "猎枪展示",
+                    "scene": "3D/Show/CerberusModelShow",
+                    "desc": ""
+                }
+            ]
+        }
+    ]
 }

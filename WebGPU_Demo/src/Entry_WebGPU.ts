@@ -208,10 +208,10 @@ export class entry_WebGPU extends Laya.Script {
         console.log("打开场景 " + Scenename);
     }
     destoryLastScene() {
-        // Laya.Scene.unDestroyedScenes.forEach((item) => {
-        //     item.destroy();
-        // });
-        // Laya.Resource.destroyUnusedResources();
+        Laya.Scene.unDestroyedScenes.forEach((item) => {
+            item.destroy();
+        });
+        Laya.Resource.destroyUnusedResources();
     }
     Bigonselect(index: number) {
         if (index == -1)
