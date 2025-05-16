@@ -55,7 +55,15 @@ export class MaterialDemo extends BaseScript {
 		this.index++;
 		if (this.index % 2 === 1) {
 			//切换至PBRStandard材质
-			this.sphere.getComponent(MeshRenderer).sharedMaterial = this.pbrStandardMaterial;
+			Laya.loader.load("resources/res/threeDimen/texture/earth.png").then((res: any) => {
+				//创建一个新的PBRStandard材质
+				this.pbrStandardMaterial = new PBRStandardMaterial();
+				//获取新的纹理
+				this.pbrTexture = Loader.getTexture2D("resources/res/threeDimen/texture/earth.png");
+				//为PBRStandard材质设置漫反射贴图
+				this.pbrStandardMaterial.albedoTexture = this.pbrTexture;
+				this.sphere.getComponent(MeshRenderer).sharedMaterial = this.pbrStandardMaterial;
+			});
 		} else {
 			//切换至BlinnPhong材质
 			this.sphere.getComponent(MeshRenderer).sharedMaterial = this.billinMaterial;
