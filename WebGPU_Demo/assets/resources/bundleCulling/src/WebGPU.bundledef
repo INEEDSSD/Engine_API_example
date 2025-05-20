@@ -2,7 +2,7 @@
   "enabled": true,
   "allowLoadInEditor": true,
   "allowLoadInRuntime": true,
-  "autoLoad": false,
+  "autoLoad": true,
   "includeAllFiles": false,
   "loadBeforeMain": false,
   "bundleExternals": false
