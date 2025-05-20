@@ -2,10 +2,10 @@
 varying vec2 v_Texcoord0;
 #include "Color.glsl";
 
-vec4 sampleMainTex(sampler2D tex, vec2 uv)
+vec4 sampleMainTex(vec2 uv)
 {
-    vec4 mainSampler = texture2D(tex, uv);
-#ifdef Gamma_u_texture
+    vec4 mainSampler = texture2D(u_MainTex, uv);
+#ifdef Gamma_u_MainTex
     mainSampler = gammaToLinear(mainSampler);
 #endif // Gamma_u_MainTex
 
@@ -17,10 +17,7 @@ vec4 sampleMainTex(sampler2D tex, vec2 uv)
 void main()
 {
     vec2 uv = v_Texcoord0;
-    #ifdef BLITSCREEN_INVERTY
-        uv.y = 1.0 - uv.y;
-    #endif
-    vec4 mainColor = sampleMainTex(u_MainTex,uv);
+    vec4 mainColor = sampleMainTex(uv);
     vec4 sourceColor = texture2D(u_sourceTexture0,v_Texcoord0);
     float factor = step(sourceColor.x+sourceColor.y+sourceColor.z,0.001);
     vec4 color = mix(sourceColor,mainColor,factor);

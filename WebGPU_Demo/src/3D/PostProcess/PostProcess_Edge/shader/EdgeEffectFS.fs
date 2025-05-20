@@ -5,9 +5,9 @@
 varying vec2 v_Texcoord0;
 
 
-vec4 sampleMainTex(sampler2D tex, vec2 uv)
+vec4 sampleMainTex(vec2 uv)
 {
-    vec4 mainSampler = texture2D(tex, uv);
+    vec4 mainSampler = texture2D(u_MainTex, uv);
 #ifdef Gamma_u_MainTex
     mainSampler = gammaToLinear(mainSampler);
 #endif // Gamma_u_MainTex
@@ -77,7 +77,7 @@ void SobelSample(in vec2 uv,out vec3 colorG, out vec3 normalG, out vec3 depthG) 
     for (int i = 0; i < 9; i++)
     {
         vec2 uvOffset = uv + offsets[i];
-        sampleTex[i] = sampleMainTex(u_MainTex, uvOffset).rgb;
+        sampleTex[i] = sampleMainTex(uvOffset).rgb;
         sampleDepth[i] = getDepth(uvOffset);
         sampleNormal[i] = (getNormal(uvOffset) + 1.0) / 2.0;
     }
@@ -138,7 +138,7 @@ void main() {
     vec3 fillColor = u_EdgeColor.xyz;
 
     #ifdef SOURCE
-        fillColor = sampleMainTex(u_MainTex, uv).rgb;
+        fillColor = sampleMainTex(uv).rgb;
     #endif
 
     vec3 finalColor = mix(fillColor, edgeColor, edgeValue);

@@ -3,9 +3,9 @@
 #include "Color.glsl";
 varying vec2 v_Texcoord0;
 varying vec4 v_ScreenTexcoord;
-vec4 sampleMainTex(sampler2D tex, vec2 uv)
+vec4 sampleMainTex(vec2 uv)
 {
-    vec4 mainSampler = texture2D(tex, uv);
+    vec4 mainSampler = texture2D(u_MainTex, uv);
 #ifdef Gamma_u_screenTexture
     mainSampler = gammaToLinear(mainSampler);
 #endif // Gamma_u_MainTex
@@ -18,8 +18,8 @@ vec4 sampleMainTex(sampler2D tex, vec2 uv)
 void main()
 {
 	vec4 color;
-	vec4 screenTexColor = sampleMainTex(u_screenTexture,v_ScreenTexcoord.xy/v_ScreenTexcoord.w);
-	vec4 tintTexColor = sampleMainTex(u_tintTexure, v_Texcoord0);
+	vec4 screenTexColor = texture2D(u_screenTexture,v_ScreenTexcoord.xy/v_ScreenTexcoord.w);
+	vec4 tintTexColor = texture2D(u_tintTexure, v_Texcoord0);
 	color = mix(screenTexColor, tintTexColor,0.5);
 	gl_FragColor = color;
 	gl_FragColor = outputTransform(gl_FragColor);

@@ -17,10 +17,10 @@ varying vec3 v_PositionWorld;
 uniform DirectionLight u_DirectionLight;
 #endif
 
-vec4 sampleMainTex(sampler2D tex, vec2 uv)
+vec4 sampleMainTex(vec2 uv)
 {
-    vec4 mainSampler = texture2D(tex, uv);
-#ifdef Gamma_u_texture
+    vec4 mainSampler = texture2D(u_MainTex, uv);
+#ifdef Gamma_u_MainTex
     mainSampler = gammaToLinear(mainSampler);
 #endif // Gamma_u_MainTex
     return mainSampler;
@@ -29,7 +29,7 @@ vec4 sampleMainTex(sampler2D tex, vec2 uv)
 
 void main()
 {
-	gl_FragColor=sampleMainTex(u_texture,v_Texcoord);
+	gl_FragColor=texture2D(u_texture,v_Texcoord);
 	
 	vec3 normal=normalize(v_Normal);
 	vec3 toEyeDir = normalize(u_CameraPos-v_PositionWorld);

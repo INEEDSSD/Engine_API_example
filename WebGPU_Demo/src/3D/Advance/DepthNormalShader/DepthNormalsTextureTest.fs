@@ -3,9 +3,9 @@
 #include "Camera.glsl";
 #include "DepthNormalUtil.glsl";
 
-vec4 sampleMainTex(sampler2D tex, vec2 uv)
+vec4 sampleMainTex(vec2 uv)
 {
-    vec4 mainSampler = texture2D(tex, uv);
+    vec4 mainSampler = texture2D(u_MainTex, uv);
 #ifdef Gamma_u_CameraDepthNormalsTexture
     mainSampler = gammaToLinear(mainSampler);
 #endif // Gamma_u_MainTex
@@ -15,7 +15,7 @@ varying vec2 v_Texcoord0;
 
 void main(){
     vec2 uv = vec2(v_Texcoord0.x,v_Texcoord0.y);
-    vec4 col = sampleMainTex(u_CameraDepthNormalsTexture,uv);
+    vec4 col = texture2D(u_CameraDepthNormalsTexture,uv);
     vec3 normals;
     float depth;
     DecodeDepthNormal(col,depth,normals);

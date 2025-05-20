@@ -21,10 +21,10 @@ uniform vec3 u_marginalColor;
 varying vec3 v_Normal;
 varying vec3 v_PositionWorld;
 
-vec4 sampleMainTex(sampler2D tex, vec2 uv)
+vec4 sampleMainTex(vec2 uv)
 {
-    vec4 mainSampler = texture2D(tex, uv);
-#ifdef Gamma_u_texture
+    vec4 mainSampler = texture2D(u_MainTex, uv);
+#ifdef Gamma_u_MainTex
     mainSampler = gammaToLinear(mainSampler);
 #endif // Gamma_u_MainTex
     return mainSampler;
@@ -32,7 +32,7 @@ vec4 sampleMainTex(sampler2D tex, vec2 uv)
 
 void main()
 {
-	gl_FragColor=sampleMainTex(u_texture, v_Texcoord);
+	gl_FragColor=texture2D(u_texture, v_Texcoord);
 	vec3 ambientCol = diffuseIrradiance(v_Normal);
 	vec3 normal=normalize(v_Normal);
 	vec3 toEyeDir = normalize(getViewDirection(v_PositionWorld));
@@ -40,7 +40,7 @@ void main()
 	vec3 lightColor = ambientCol;
 	vec3 Emissive = 2.0 * lightColor * u_marginalColor * pow(Rim,3.0);  
 	
-	gl_FragColor = sampleMainTex(u_texture, v_Texcoord) + vec4(Emissive,1.0);
+	gl_FragColor = texture2D(u_texture, v_Texcoord) + vec4(Emissive,1.0);
 	gl_FragColor = outputTransform(gl_FragColor);
 }
 

@@ -4,9 +4,9 @@ const int SamplerNum = 17;
 uniform vec4 u_kernel[17]; //兼容WGSL
 #include "Color.glsl";
 
-vec4 sampleMainTex(sampler2D tex, vec2 uv)
+vec4 sampleMainTex(vec2 uv)
 {
-    vec4 mainSampler = texture2D(tex, uv);
+    vec4 mainSampler = texture2D(u_MainTex, uv);
 #ifdef Gamma_u_MainTex
     mainSampler = gammaToLinear(mainSampler);
 #endif // Gamma_u_MainTex
@@ -20,7 +20,7 @@ vec4 Sample17Nums(vec2 finalStep,vec4 colorBlurred,float depthM,vec4 colorM){
       for (int i = 1; i < SamplerNum; i++) {
         // Fetch color and depth for current sample:
         vec2 offset = v_Texcoord0 + u_kernel[i].a * finalStep;
-        vec4 color = sampleMainTex(u_MainTex, offset);
+        vec4 color = sampleMainTex(offset);
 
             // // If the difference in depth is huge, we lerp color back to "colorM"://深度差异过大 我们把颜色还原为原色
         float depth = texture2D(u_depthTex, offset).r;
