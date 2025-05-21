@@ -574,12 +574,6 @@
                     "desc": ""
                 },
                 {
-                    "name": "视频纹理",
-                    "scene": "3D/Advance/VideoPlayIn3DWorld",
-                    "desc": "",
-                    "minigame": false
-                },
-                {
                     "name": "草地",
                     "scene": "3D/Advance/GrassDemo",
                     "desc": "使用instance实现草地效果"
@@ -592,11 +586,6 @@
                 {
                     "name": "相机深度纹理",
                     "scene": "3D/Advance/CameraDepthModeTextureDemo",
-                    "desc": ""
-                },
-                {
-                    "name": "轮廓",
-                    "scene": "3D/Advance/CommandBuffer_Outline",
                     "desc": ""
                 },
                 {
@@ -656,11 +645,6 @@
             "title": "2D测试",
             "content": [
                 {
-                    "name": "Sprite基础",
-                    "scene": "2D/Sprite/Sprite_DisplayImage",
-                    "desc": "Sprite.loadImage可以直接加载外部，也可以从缓冲区读取图片。Graphics.drawTexture绘制纹理。如果使用Sprite.loadImage显示图集中一张图，则图集必须已被加载"
-                },
-                {
                     "name": "Sprite容器",
                     "scene": "2D/Sprite/Sprite_Container",
                     "desc": "Sprite能够作为其他显示对象的容器"
@@ -709,6 +693,101 @@
                     "name": "Sprite新手引导",
                     "scene": "2D/Sprite/Sprite_Guide",
                     "desc": "模拟游戏的入手流程引导"
+                },
+                {
+                    "name": "UI-Label",
+                    "scene": "2D/UI/UI_Label",
+                    "desc": "Label组件示例"
+                },
+                {
+                    "name": "UI-Button",
+                    "scene": "2D/UI/UI_Button",
+                    "desc": "Button组件示例"
+                },
+                {
+                    "name": "UI-RadioGroup",
+                    "scene": "2D/UI/UI_RadioGroup",
+                    "desc": "RadioGroup组件示例"
+                },
+                {
+                    "name": "UI-CheckBox",
+                    "scene": "2D/UI/UI_CheckBox",
+                    "desc": "CheckBox组件示例"
+                },
+                {
+                    "name": "UI-Clip",
+                    "scene": "2D/UI/UI_Clip",
+                    "desc": "Clip组件示例"
+                },
+                {
+                    "name": "UI-FontClip",
+                    "scene": "2D/UI/UI_FontClip",
+                    "desc": "FontClip组件示例"
+                },
+                {
+                    "name": "UI-ColorPicker",
+                    "scene": "2D/UI/UI_ColorPicker",
+                    "desc": "ColorPicker组件示例"
+                },
+                {
+                    "name": "UI-ComboBox",
+                    "scene": "2D/UI/UI_ComboBox",
+                    "desc": "ComboBox组件示例"
+                },
+                {
+                    "name": "UI-Dialog",
+                    "scene": "2D/UI/UI_Dialog",
+                    "desc": "Dialog组件示例"
+                },
+                {
+                    "name": "UI-ScrollBar",
+                    "scene": "2D/UI/UI_ScrollBar",
+                    "desc": "ScrollBar组件示例"
+                },
+                {
+                    "name": "UI-Slider",
+                    "scene": "2D/UI/UI_Slider",
+                    "desc": "Slider组件示例"
+                },
+                {
+                    "name": "UI-Image",
+                    "scene": "2D/UI/UI_Image",
+                    "desc": "Image组件示例"
+                },
+                {
+                    "name": "UI-List",
+                    "scene": "2D/UI/UI_List",
+                    "desc": "List组件示例"
+                },
+                {
+                    "name": "UI-Panel",
+                    "scene": "2D/UI/UI_Panel",
+                    "desc": "Panel组件示例"
+                },
+                {
+                    "name": "UI-ProgressBar",
+                    "scene": "2D/UI/UI_ProgressBar",
+                    "desc": "ProgressBar组件示例"
+                },
+                {
+                    "name": "UI-Tab",
+                    "scene": "2D/UI/UI_Tab",
+                    "desc": "Tab组件示例"
+                },
+                {
+                    "name": "UI-Input",
+                    "scene": "2D/UI/UI_Input",
+                    "desc": "Input组件示例"
+                },
+                {
+                    "name": "UI-TextArea",
+                    "scene": "2D/UI/UI_TextArea",
+                    "desc": "TextArea组件示例"
+                },
+                {
+                    "name": "UI-Tree",
+                    "scene": "2D/UI/UI_Tree",
+                    "desc": "Tree组件示例"
                 },
                 {
                     "name": "动画-SWF",
@@ -869,101 +948,6 @@
                     "name": "文本-自动换行",
                     "scene": "2D/Text/Text_WordWrap",
                     "desc": "设置wordWrap为true使文本可以换行"
-                },
-                {
-                    "name": "UI-Label",
-                    "scene": "2D/UI/UI_Label",
-                    "desc": "Label组件示例"
-                },
-                {
-                    "name": "UI-Button",
-                    "scene": "2D/UI/UI_Button",
-                    "desc": "Button组件示例"
-                },
-                {
-                    "name": "UI-RadioGroup",
-                    "scene": "2D/UI/UI_RadioGroup",
-                    "desc": "RadioGroup组件示例"
-                },
-                {
-                    "name": "UI-CheckBox",
-                    "scene": "2D/UI/UI_CheckBox",
-                    "desc": "CheckBox组件示例"
-                },
-                {
-                    "name": "UI-Clip",
-                    "scene": "2D/UI/UI_Clip",
-                    "desc": "Clip组件示例"
-                },
-                {
-                    "name": "UI-FontClip",
-                    "scene": "2D/UI/UI_FontClip",
-                    "desc": "FontClip组件示例"
-                },
-                {
-                    "name": "UI-ColorPicker",
-                    "scene": "2D/UI/UI_ColorPicker",
-                    "desc": "ColorPicker组件示例"
-                },
-                {
-                    "name": "UI-ComboBox",
-                    "scene": "2D/UI/UI_ComboBox",
-                    "desc": "ComboBox组件示例"
-                },
-                {
-                    "name": "UI-Dialog",
-                    "scene": "2D/UI/UI_Dialog",
-                    "desc": "Dialog组件示例"
-                },
-                {
-                    "name": "UI-ScrollBar",
-                    "scene": "2D/UI/UI_ScrollBar",
-                    "desc": "ScrollBar组件示例"
-                },
-                {
-                    "name": "UI-Slider",
-                    "scene": "2D/UI/UI_Slider",
-                    "desc": "Slider组件示例"
-                },
-                {
-                    "name": "UI-Image",
-                    "scene": "2D/UI/UI_Image",
-                    "desc": "Image组件示例"
-                },
-                {
-                    "name": "UI-List",
-                    "scene": "2D/UI/UI_List",
-                    "desc": "List组件示例"
-                },
-                {
-                    "name": "UI-Panel",
-                    "scene": "2D/UI/UI_Panel",
-                    "desc": "Panel组件示例"
-                },
-                {
-                    "name": "UI-ProgressBar",
-                    "scene": "2D/UI/UI_ProgressBar",
-                    "desc": "ProgressBar组件示例"
-                },
-                {
-                    "name": "UI-Tab",
-                    "scene": "2D/UI/UI_Tab",
-                    "desc": "Tab组件示例"
-                },
-                {
-                    "name": "UI-Input",
-                    "scene": "2D/UI/UI_Input",
-                    "desc": "Input组件示例"
-                },
-                {
-                    "name": "UI-TextArea",
-                    "scene": "2D/UI/UI_TextArea",
-                    "desc": "TextArea组件示例"
-                },
-                {
-                    "name": "UI-Tree",
-                    "scene": "2D/UI/UI_Tree",
-                    "desc": "Tree组件示例"
                 },
                 {
                     "name": "计时器-延迟调用",
