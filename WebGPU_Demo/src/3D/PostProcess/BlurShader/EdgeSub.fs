@@ -1,19 +1,5 @@
 #define SHADER_NAME EdgeSub
-#include "Color.glsl";
 varying vec2 v_Texcoord0;
-
-vec4 sampleMainTex(vec2 uv)
-{
-    vec4 mainSampler = texture2D(u_MainTex, uv);
-#ifdef Gamma_u_sourceTexture0
-    mainSampler = gammaToLinear(mainSampler);
-#endif // Gamma_u_MainTex
-
-#ifdef Gamma_u_sourceTexture1
-    mainSampler = gammaToLinear(mainSampler);
-#endif // Gamma_u_MainTex
-    return mainSampler;
-}
 
 void main()
 {
@@ -24,5 +10,4 @@ void main()
     vec4 color = blurColor*factor;
     color = (1.0-step(color.x+color.y+color.z,0.15))*vec4(1.0,0.0,0.0,1.0);
     gl_FragColor = color;
-	gl_FragColor = outputTransform(gl_FragColor);
 }

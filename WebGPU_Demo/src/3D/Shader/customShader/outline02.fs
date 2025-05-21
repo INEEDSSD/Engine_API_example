@@ -9,7 +9,7 @@ varying vec2 v_Texcoord0;
 varying vec3 v_Normal;
 vec4 sampleMainTex(vec2 uv)
 {
-    vec4 mainSampler = texture2D(u_MainTex, uv);
+    vec4 mainSampler = texture2D(u_AlbedoTexture, uv);
 #ifdef Gamma_u_AlbedoTexture
     mainSampler = gammaToLinear(mainSampler);
 #endif // Gamma_u_MainTex
@@ -19,7 +19,7 @@ void main()
 {
     vec4 albedoTextureColor = vec4(1.0);
     
-    albedoTextureColor = texture2D(u_AlbedoTexture, v_Texcoord0);
+    albedoTextureColor = sampleMainTex(v_Texcoord0);
     gl_FragColor = albedoTextureColor;
     gl_FragColor = outputTransform(gl_FragColor);
 }

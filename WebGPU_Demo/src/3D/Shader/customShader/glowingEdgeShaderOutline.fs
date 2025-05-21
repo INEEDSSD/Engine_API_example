@@ -19,8 +19,8 @@ uniform DirectionLight u_DirectionLight;
 
 vec4 sampleMainTex(vec2 uv)
 {
-    vec4 mainSampler = texture2D(u_MainTex, uv);
-#ifdef Gamma_u_MainTex
+    vec4 mainSampler = texture2D(u_texture, uv);
+#ifdef Gamma_u_texture
     mainSampler = gammaToLinear(mainSampler);
 #endif // Gamma_u_MainTex
     return mainSampler;
@@ -29,7 +29,7 @@ vec4 sampleMainTex(vec2 uv)
 
 void main()
 {
-	gl_FragColor=texture2D(u_texture,v_Texcoord);
+	gl_FragColor=sampleMainTex(v_Texcoord);
 	
 	vec3 normal=normalize(v_Normal);
 	vec3 toEyeDir = normalize(u_CameraPos-v_PositionWorld);

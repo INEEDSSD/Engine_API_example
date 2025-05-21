@@ -1,11 +1,11 @@
 #define SHADER_NAME BlurHorizontal
-
-#include "Color.glsl";
-
 varying vec2 v_Texcoord0;
-
+#include "Color.glsl";
 vec4 sampleMainTex(vec2 uv)
 {
+#ifdef BLITSCREEN_INVERTY
+    uv.y = 1.0 - uv.y;
+#endif
     vec4 mainSampler = texture2D(u_MainTex, uv);
 #ifdef Gamma_u_MainTex
     mainSampler = gammaToLinear(mainSampler);

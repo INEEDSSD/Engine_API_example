@@ -21,25 +21,37 @@ uniform vec2 u_DiffuseScale5;
 
 varying vec2 v_Texcoord0;
 
-vec4 sampleMainTex(vec2 uv)
+vec4 sampleMainTex0(vec2 uv)
 {
-    vec4 mainSampler = texture2D(u_MainTex, uv);
+    vec4 mainSampler = texture2D(u_SplatAlphaTexture, uv);
 #ifdef Gamma_u_SplatAlphaTexture
     mainSampler = gammaToLinear(mainSampler);
 #endif // Gamma_u_MainTex
 
+    return mainSampler;
+}
+
+vec4 sampleMainTex1(vec2 uv)
+{
+    vec4 mainSampler = texture2D(u_DiffuseTexture1, uv);
 #ifdef Gamma_u_DiffuseTexture1
     mainSampler = gammaToLinear(mainSampler);
 #endif // Gamma_u_MainTex
 
+    return mainSampler;
+}
+
+vec4 sampleMainTex2(vec2 uv)
+{
+    vec4 mainSampler = texture2D(u_DiffuseTexture2, uv);
 
 #ifdef Gamma_u_DiffuseTexture2
     mainSampler = gammaToLinear(mainSampler);
 #endif // Gamma_u_MainTex
 
-
     return mainSampler;
 }
+
 
 void main()
 {
@@ -77,9 +89,9 @@ void main()
 	// #else
 	// 	gl_FragColor.xyz = vec3(0.0, 1.0, 0.0);
 
-	vec4 splatAlpha = texture2D(u_SplatAlphaTexture, v_Texcoord0);
-	vec4 color1 = texture2D(u_DiffuseTexture1, v_Texcoord0 * u_DiffuseScale1);
-	vec4 color2 = texture2D(u_DiffuseTexture2, v_Texcoord0 * u_DiffuseScale2);
+	vec4 splatAlpha = sampleMainTex0(v_Texcoord0);
+	vec4 color1 = sampleMainTex1(v_Texcoord0 * u_DiffuseScale1);
+	vec4 color2 = sampleMainTex2(v_Texcoord0 * u_DiffuseScale2);
 	gl_FragColor.xyz = color1.xyz * splatAlpha.r + color2.xyz * (1.0 - splatAlpha.r);
 	gl_FragColor = outputTransform(gl_FragColor);
 }
