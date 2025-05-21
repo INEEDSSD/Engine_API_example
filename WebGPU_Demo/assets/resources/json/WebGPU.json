@@ -651,6 +651,606 @@
                     "desc": ""
                 }
             ]
+        },
+        {
+            "title": "2D测试",
+            "content": [
+                {
+                    "name": "Sprite基础",
+                    "scene": "2D/Sprite/Sprite_DisplayImage",
+                    "desc": "Sprite.loadImage可以直接加载外部，也可以从缓冲区读取图片。Graphics.drawTexture绘制纹理。如果使用Sprite.loadImage显示图集中一张图，则图集必须已被加载"
+                },
+                {
+                    "name": "Sprite容器",
+                    "scene": "2D/Sprite/Sprite_Container",
+                    "desc": "Sprite能够作为其他显示对象的容器"
+                },
+                {
+                    "name": "Sprite旋转缩放",
+                    "scene": "2D/Sprite/Sprite_RoateAndScale",
+                    "desc": "设置Sprite的旋转角度和缩放系数"
+                },
+                {
+                    "name": "Sprite绘制路径",
+                    "scene": "2D/Sprite/Sprite_DrawPath",
+                    "desc": "drawPath可以绘制路径点"
+                },
+                {
+                    "name": "Sprite遮罩-放大镜",
+                    "scene": "2D/Sprite/Sprite_MagnifyingGlass",
+                    "desc": "移动鼠标观看放大的效果"
+                },
+                {
+                    "name": "Sprite绘制形状",
+                    "scene": "2D/Sprite/Sprite_DrawShapes",
+                    "desc": "使用Graphics绘制矢量图形"
+                },
+                {
+                    "name": "Sprite缓存",
+                    "scene": "2D/Sprite/Sprite_Cache",
+                    "desc": "通过将多个显示对象缓存成静态图像可以大幅提升渲染效率"
+                },
+                {
+                    "name": "Sprite节点控制",
+                    "scene": "2D/Sprite/Sprite_NodeControl",
+                    "desc": "通过控制容器改变自身以及子级外观"
+                },
+                {
+                    "name": "Sprite轴心点",
+                    "scene": "2D/Sprite/Sprite_Pivot",
+                    "desc": "改变pivot可以控制旋转和缩放的中心"
+                },
+                {
+                    "name": "Sprite切换纹理",
+                    "scene": "2D/Sprite/Sprite_SwitchTexture",
+                    "desc": "点击猩猩切换纹理。这里使用graphics.drawTexture，也可以使用loadImage"
+                },
+                {
+                    "name": "Sprite新手引导",
+                    "scene": "2D/Sprite/Sprite_Guide",
+                    "desc": "模拟游戏的入手流程引导"
+                },
+                {
+                    "name": "动画-SWF",
+                    "scene": "2D/Animation/Animation_SWF",
+                    "desc": "MovieClip可以加载并播放SWF动画。SWF由Flash IDE创建，这类SWF不能包含代码"
+                },
+                {
+                    "name": "动画-图集",
+                    "scene": "2D/Animation/Animation_Altas",
+                    "desc": "Animation可以加载并播放图集动画。图集可以使用LayaAir IDE或者TexturePacker导出"
+                },
+                {
+                    "name": "骨骼动画-多纹理",
+                    "scene": "2D/Skeleton/Skeleton_MultiTexture",
+                    "desc": "骨骼动画多纹理示例"
+                },
+                {
+                    "name": "骨骼动画-Spine事件",
+                    "scene": "2D/Skeleton/Skeleton_SpineEvent",
+                    "desc": "Spine动画事件示例"
+                },
+                {
+                    "name": "骨骼动画-橡胶人",
+                    "scene": "2D/Skeleton/Skeleton_SpineStretchyman",
+                    "desc": "Spine橡胶人动画示例"
+                },
+                {
+                    "name": "骨骼动画-藤蔓",
+                    "scene": "2D/Skeleton/Skeleton_SpineVine",
+                    "desc": "Spine藤蔓动画示例"
+                },
+                {
+                    "name": "骨骼动画-换装",
+                    "scene": "2D/Skeleton/Skeleton_ChangeSkin",
+                    "desc": "骨骼动画换装示例"
+                },
+                {
+                    "name": "骨骼动画-适配版Spine",
+                    "scene": "2D/Skeleton/Skeleton_SpineAdapted",
+                    "desc": "适配版Spine动画示例"
+                },
+                {
+                    "name": "混合模式-Lighter",
+                    "scene": "2D/BlendMode/BlendMode_Lighter",
+                    "desc": "设置blendMode指定混合模式"
+                },
+                {
+                    "name": "区块地图-动画地图",
+                    "scene": "2D/TiledMap/TiledMap_AnimationTile",
+                    "desc": "动画瓦块地图示例"
+                },
+                {
+                    "name": "区块地图-等角地图",
+                    "scene": "2D/TiledMap/TiledMap_IsometricWorld",
+                    "desc": "等角瓦块地图示例"
+                },
+                {
+                    "name": "区块地图-PerspectiveWall",
+                    "scene": "2D/TiledMap/TiledMap_PerspectiveWall",
+                    "desc": "正交瓦块地图示例"
+                },
+                {
+                    "name": "区块地图-滚动地图",
+                    "scene": "2D/TiledMap/TiledMap_SimpleDemo",
+                    "desc": "滚动瓦块地图示例"
+                },
+                {
+                    "name": "区块地图-层级组件",
+                    "scene": "2D/TiledMap/TiledMap_LayerDemo",
+                    "desc": "瓦块地图层级组件使用示例"
+                },
+                {
+                    "name": "滤镜-发光",
+                    "scene": "2D/Filters/Filters_Glow",
+                    "desc": "发光滤镜示例"
+                },
+                {
+                    "name": "滤镜-模糊",
+                    "scene": "2D/Filters/Filters_Blur",
+                    "desc": "模糊滤镜示例"
+                },
+                {
+                    "name": "滤镜-颜色",
+                    "scene": "2D/Filters/Filters_Color",
+                    "desc": "颜色滤镜示例"
+                },
+                {
+                    "name": "音频-播放演示",
+                    "scene": "2D/Sound/Sound_SimpleDemo",
+                    "desc": "音频播放示例"
+                },
+                {
+                    "name": "文本-自动调整尺寸",
+                    "scene": "2D/Text/Text_AutoSize",
+                    "desc": "autosize可以根据文本内容自适应其大小"
+                },
+                {
+                    "name": "文本-位图字体",
+                    "scene": "2D/Text/Text_BitmapFont",
+                    "desc": "使用BitmapFont加载显示位图字体"
+                },
+                {
+                    "name": "文本-复杂样式",
+                    "scene": "2D/Text/Text_ComplexStyle",
+                    "desc": "对齐、字号、字体、粗体、行距、描边、边框等多种设置"
+                },
+                {
+                    "name": "文本-禁止编辑",
+                    "scene": "2D/Text/Text_Editable",
+                    "desc": "只在PC生效，使文件不可编辑，只允许复制"
+                },
+                {
+                    "name": "文本-Overflow",
+                    "scene": "2D/Text/Text_Overflow",
+                    "desc": "设置overflow定义文本超出的行为"
+                },
+                {
+                    "name": "文本-下划线",
+                    "scene": "2D/Text/Text_Underline",
+                    "desc": "设置underline和underlineColor"
+                },
+                {
+                    "name": "文本-HTML",
+                    "scene": "2D/Text/Text_HTML",
+                    "desc": "HTML文本示例"
+                },
+                {
+                    "name": "文本-UBB",
+                    "scene": "2D/Text/Text_UBB",
+                    "desc": "UBB文本示例"
+                },
+                {
+                    "name": "文本-单行输入",
+                    "scene": "2D/Text/Text_InputSingleline",
+                    "desc": "单行文本输入示例"
+                },
+                {
+                    "name": "文本-多行输入",
+                    "scene": "2D/Text/Text_InputMultiline",
+                    "desc": "多行输入框可以使用Enter键"
+                },
+                {
+                    "name": "文本-字数限制",
+                    "scene": "2D/Text/Text_MaxChars",
+                    "desc": "设置maxChars限制字符数量"
+                },
+                {
+                    "name": "文本-字符限制",
+                    "scene": "2D/Text/Text_Restrict",
+                    "desc": "设置restrict限制字符"
+                },
+                {
+                    "name": "文本-滚动文本",
+                    "scene": "2D/Text/Text_Scroll",
+                    "desc": "设置overflow为scroll，并且使用scroll接口滚动文本"
+                },
+                {
+                    "name": "文本-自动换行",
+                    "scene": "2D/Text/Text_WordWrap",
+                    "desc": "设置wordWrap为true使文本可以换行"
+                },
+                {
+                    "name": "UI-Label",
+                    "scene": "2D/UI/UI_Label",
+                    "desc": "Label组件示例"
+                },
+                {
+                    "name": "UI-Button",
+                    "scene": "2D/UI/UI_Button",
+                    "desc": "Button组件示例"
+                },
+                {
+                    "name": "UI-RadioGroup",
+                    "scene": "2D/UI/UI_RadioGroup",
+                    "desc": "RadioGroup组件示例"
+                },
+                {
+                    "name": "UI-CheckBox",
+                    "scene": "2D/UI/UI_CheckBox",
+                    "desc": "CheckBox组件示例"
+                },
+                {
+                    "name": "UI-Clip",
+                    "scene": "2D/UI/UI_Clip",
+                    "desc": "Clip组件示例"
+                },
+                {
+                    "name": "UI-FontClip",
+                    "scene": "2D/UI/UI_FontClip",
+                    "desc": "FontClip组件示例"
+                },
+                {
+                    "name": "UI-ColorPicker",
+                    "scene": "2D/UI/UI_ColorPicker",
+                    "desc": "ColorPicker组件示例"
+                },
+                {
+                    "name": "UI-ComboBox",
+                    "scene": "2D/UI/UI_ComboBox",
+                    "desc": "ComboBox组件示例"
+                },
+                {
+                    "name": "UI-Dialog",
+                    "scene": "2D/UI/UI_Dialog",
+                    "desc": "Dialog组件示例"
+                },
+                {
+                    "name": "UI-ScrollBar",
+                    "scene": "2D/UI/UI_ScrollBar",
+                    "desc": "ScrollBar组件示例"
+                },
+                {
+                    "name": "UI-Slider",
+                    "scene": "2D/UI/UI_Slider",
+                    "desc": "Slider组件示例"
+                },
+                {
+                    "name": "UI-Image",
+                    "scene": "2D/UI/UI_Image",
+                    "desc": "Image组件示例"
+                },
+                {
+                    "name": "UI-List",
+                    "scene": "2D/UI/UI_List",
+                    "desc": "List组件示例"
+                },
+                {
+                    "name": "UI-Panel",
+                    "scene": "2D/UI/UI_Panel",
+                    "desc": "Panel组件示例"
+                },
+                {
+                    "name": "UI-ProgressBar",
+                    "scene": "2D/UI/UI_ProgressBar",
+                    "desc": "ProgressBar组件示例"
+                },
+                {
+                    "name": "UI-Tab",
+                    "scene": "2D/UI/UI_Tab",
+                    "desc": "Tab组件示例"
+                },
+                {
+                    "name": "UI-Input",
+                    "scene": "2D/UI/UI_Input",
+                    "desc": "Input组件示例"
+                },
+                {
+                    "name": "UI-TextArea",
+                    "scene": "2D/UI/UI_TextArea",
+                    "desc": "TextArea组件示例"
+                },
+                {
+                    "name": "UI-Tree",
+                    "scene": "2D/UI/UI_Tree",
+                    "desc": "Tree组件示例"
+                },
+                {
+                    "name": "计时器-延迟调用",
+                    "scene": "2D/Timer/Timer_CallLater",
+                    "desc": "延迟调用示例"
+                },
+                {
+                    "name": "计时器-延迟执行",
+                    "scene": "2D/Timer/Timer_DelayExcute",
+                    "desc": "延迟执行示例"
+                },
+                {
+                    "name": "计时器-间隔循环",
+                    "scene": "2D/Timer/Timer_Interval",
+                    "desc": "间隔循环示例"
+                },
+                {
+                    "name": "缓动-简单Tween",
+                    "scene": "2D/Tween/Tween_SimpleSample",
+                    "desc": "简单Tween示例"
+                },
+                {
+                    "name": "缓动-逐字缓动",
+                    "scene": "2D/Tween/Tween_Letters",
+                    "desc": "逐字缓动示例"
+                },
+                {
+                    "name": "缓动-缓动函数",
+                    "scene": "2D/Tween/Tween_EaseFunctionsDemo",
+                    "desc": "缓动函数演示"
+                },
+                {
+                    "name": "缓动-时间线",
+                    "scene": "2D/Tween/Tween_TimeLine",
+                    "desc": "时间线示例"
+                },
+                {
+                    "name": "2D物理-复合碰撞器",
+                    "scene": "2D/Physics/Physics_Tumbler",
+                    "desc": "复合碰撞器示例"
+                },
+                {
+                    "name": "2D物理-碰撞过滤器",
+                    "scene": "2D/Physics/Physics_CollisionFiltering",
+                    "desc": "碰撞过滤器示例"
+                },
+                {
+                    "name": "2D物理-碰撞事件",
+                    "scene": "2D/Physics/Physics_CollisionEvent",
+                    "desc": "碰撞事件与传感器示例"
+                },
+                {
+                    "name": "2D物理-桥",
+                    "scene": "2D/Physics/Physics_Bridge",
+                    "desc": "桥物理示例"
+                },
+                {
+                    "name": "2D物理-仿生机器人",
+                    "scene": "2D/Physics/Physics_Strandbeests",
+                    "desc": "仿生机器人物理示例"
+                },
+                {
+                    "name": "2D物理-摩擦力",
+                    "scene": "2D/Physics/Physics_Friction",
+                    "desc": "摩擦力系数示例"
+                },
+                {
+                    "name": "2D物理-重力与速度",
+                    "scene": "2D/Physics/Physics_GravityAndVelocity",
+                    "desc": "重力缩放系数与线速度、角速度示例"
+                },
+                {
+                    "name": "2D物理-碰撞分组",
+                    "scene": "2D/Physics/Physics_GroupAndSensor",
+                    "desc": "碰撞分组与碰撞掩码示例"
+                },
+                {
+                    "name": "2D物理-运动学刚体",
+                    "scene": "2D/Physics/Physics_KinematicBody",
+                    "desc": "运动学刚体与静态碰撞体的位移示例"
+                },
+                {
+                    "name": "2D物理-质量与质心",
+                    "scene": "2D/Physics/Physics_MassAndCenter",
+                    "desc": "质量、质心设置示例"
+                },
+                {
+                    "name": "2D物理-多形状刚体",
+                    "scene": "2D/Physics/Physics_MutiShapes",
+                    "desc": "多形状刚体示例"
+                },
+                {
+                    "name": "2D物理-弹力系数",
+                    "scene": "2D/Physics/Physics_Restitution",
+                    "desc": "弹力系数示例"
+                },
+                {
+                    "name": "2D物理-距离关节",
+                    "scene": "2D/Physics/Physics_DistanceJoint",
+                    "desc": "距离关节参数示例"
+                },
+                {
+                    "name": "2D物理-AABB查询",
+                    "scene": "2D/Physics/Physics_QueryAABB",
+                    "desc": "场景中查询AABB包围盒示例"
+                },
+                {
+                    "name": "2D物理-射线查询",
+                    "scene": "2D/Physics/Physics_RayCast",
+                    "desc": "场景中射线查询示例"
+                },
+                {
+                    "name": "交互-Hold",
+                    "scene": "2D/Interaction/Interaction_Hold",
+                    "desc": "持续按住猩猩两秒后产生互动"
+                },
+                {
+                    "name": "交互-拖动",
+                    "scene": "2D/Interaction/Interaction_Drag",
+                    "desc": "拖动显示对象，在超出边界后可以看到回弹效果"
+                },
+                {
+                    "name": "交互-双指旋转",
+                    "scene": "2D/Interaction/Interaction_Rotate",
+                    "desc": "以旋转手势旋转矩形。请在支持多点触控的设备中查看。"
+                },
+                {
+                    "name": "交互-双指缩放",
+                    "scene": "2D/Interaction/Interaction_Scale",
+                    "desc": "以扩张和挤压的手势缩放矩形。请在支持多点触控的设备中查看。"
+                },
+                {
+                    "name": "交互-滑动",
+                    "scene": "2D/Interaction/Interaction_Swipe",
+                    "desc": "滑动交互示例"
+                },
+                {
+                    "name": "交互-自定义事件",
+                    "scene": "2D/Interaction/Interaction_CustomEvent",
+                    "desc": "点击矩形触发自定义旋转事件"
+                },
+                {
+                    "name": "交互-键盘",
+                    "scene": "2D/Interaction/Interaction_Keyboard",
+                    "desc": "敲击键盘查看对应键控代码。需要在新标签中查看本示例"
+                },
+                {
+                    "name": "交互-鼠标",
+                    "scene": "2D/Interaction/Interaction_Mouse",
+                    "desc": "鼠标交互示例"
+                },
+                {
+                    "name": "交互-修正交互区域",
+                    "scene": "2D/Interaction/Interaction_FixInteractiveRegion",
+                    "desc": "修正交互区域示例"
+                },
+                {
+                    "name": "加载-清理纹理",
+                    "scene": "2D/Loader/Loader_ClearTextureRes",
+                    "desc": "销毁Texture使用的图片资源示例"
+                },
+                {
+                    "name": "加载-单一类型",
+                    "scene": "2D/Loader/Loader_SingleType",
+                    "desc": "单一类型资源加载示例"
+                },
+                {
+                    "name": "加载-多种类型",
+                    "scene": "2D/Loader/Loader_MultipleType",
+                    "desc": "多种类型资源加载示例"
+                },
+                {
+                    "name": "加载-加载序列",
+                    "scene": "2D/Loader/Loader_Sequence",
+                    "desc": "加载序列示例"
+                },
+                {
+                    "name": "加载-错误处理",
+                    "scene": "2D/Loader/Loader_ProgressAndErrorHandle",
+                    "desc": "错误处理和进度示例"
+                },
+                {
+                    "name": "输入设备-指南针",
+                    "scene": "2D/InputDevice/InputDevice_Compasss",
+                    "desc": "指南针示例"
+                },
+                {
+                    "name": "输入设备-摇一摇",
+                    "scene": "2D/InputDevice/InputDevice_Shake",
+                    "desc": "摇一摇示例"
+                },
+                {
+                    "name": "输入设备-贪吃蛇",
+                    "scene": "2D/InputDevice/InputDevice_GluttonousSnake",
+                    "desc": "通过倾斜设备移动蛇，猎食增加长度"
+                },
+                {
+                    "name": "网络-POST",
+                    "scene": "2D/Network/Network_POST",
+                    "desc": "POST请求示例"
+                },
+                {
+                    "name": "网络-GET",
+                    "scene": "2D/Network/Network_GET",
+                    "desc": "GET请求示例"
+                },
+                {
+                    "name": "网络-XML",
+                    "scene": "2D/Network/Network_XML",
+                    "desc": "XML解析示例"
+                },
+                {
+                    "name": "网络-Socket",
+                    "scene": "2D/Network/NetWork_Socket",
+                    "desc": "Socket通信示例"
+                },
+                {
+                    "name": "网络-ProtocolBuffer",
+                    "scene": "2D/Network/Network_ProtocolBuffer",
+                    "desc": "ProtocolBuffer示例"
+                },
+                {
+                    "name": "DOM-表单输入",
+                    "scene": "2D/DOM/DOM_Form",
+                    "desc": "使用H5表单输入API示例"
+                },
+                {
+                    "name": "DOM-视频",
+                    "scene": "2D/DOM/DOM_Video",
+                    "desc": "使用H5 video API示例"
+                },
+                {
+                    "name": "性能测试-虫子",
+                    "scene": "2D/PerformanceTest/PerformanceTest_Maggots",
+                    "desc": "5000只虫子每一帧执行位移、旋转、缩放"
+                },
+                {
+                    "name": "性能测试-卡通人物",
+                    "scene": "2D/PerformanceTest/PerformanceTest_Cartoon",
+                    "desc": "500个角色旋转和位移"
+                },
+                {
+                    "name": "性能测试-卡通人物2",
+                    "scene": "2D/PerformanceTest/PerformanceTest_Cartoon2",
+                    "desc": "500个动画乱序移动"
+                },
+                {
+                    "name": "性能测试-骨骼",
+                    "scene": "2D/PerformanceTest/PerformanceTest_Skeleton",
+                    "desc": "100个骨骼动画。点击切换动作"
+                },
+                {
+                    "name": "高级应用-自定义材质",
+                    "scene": "2D/Advance/Render_Material",
+                    "desc": "使用2D自定义材质与自定义shader"
+                },
+                {
+                    "name": "高级应用-2D相机",
+                    "scene": "2D/Advance/Render_2DCamera",
+                    "desc": "2D相机使用示例"
+                },
+                {
+                    "name": "高级应用-2D网格渲染器",
+                    "scene": "2D/Advance/Render_MeshRender",
+                    "desc": "2DMeshRender的使用示例"
+                },
+                {
+                    "name": "高级应用-2D灯光",
+                    "scene": "2D/Advance/Render_2DLight",
+                    "desc": "Light2D的使用示例"
+                },
+                {
+                    "name": "高级应用-2D线渲染器",
+                    "scene": "2D/Advance/Render_LineRender",
+                    "desc": "Line2DRender的使用示例"
+                },
+                {
+                    "name": "高级应用-2D拖尾渲染器",
+                    "scene": "2D/Advance/Render_TrailRender",
+                    "desc": "Trail2DRender的使用示例"
+                },
+                {
+                    "name": "高级应用-2D渲染命令",
+                    "scene": "2D/Advance/Render_CMDRender",
+                    "desc": "CommandBuffer2D的使用示例"
+                }
+            ]
         }
     ]
 }

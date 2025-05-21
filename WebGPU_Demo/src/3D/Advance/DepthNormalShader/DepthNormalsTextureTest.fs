@@ -5,7 +5,7 @@
 
 vec4 sampleMainTex(vec2 uv)
 {
-    vec4 mainSampler = texture2D(u_MainTex, uv);
+    vec4 mainSampler = texture2D(u_CameraDepthNormalsTexture, uv);
 #ifdef Gamma_u_CameraDepthNormalsTexture
     mainSampler = gammaToLinear(mainSampler);
 #endif // Gamma_u_MainTex
