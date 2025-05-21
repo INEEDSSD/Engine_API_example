@@ -13,14 +13,14 @@ export class CommandBuffer_Outline extends BaseScript {
 	private camera: Camera;
 	@property(Laya.Scene3D)
 	private scene: Scene3D;
-	@property(Laya.Button)
+	@property(Laya.Button)   
 	private effectBtn: Laya.Button;
 
 	private commandBuffer: Laya.CommandBuffer;
 	private cameraEventFlag: Laya.CameraEventFlags = Laya.CameraEventFlags.BeforeImageEffect;
 	private enableCommandBuffer: boolean = true;
 
-	constructor() {
+	constructor() { 
 		super();
 	}
 
@@ -71,7 +71,7 @@ export class CommandBuffer_Outline extends BaseScript {
 		camera.enableBuiltInRenderTexture = true;
 		//创建和屏幕一样大的Rendertexture
 		var viewPort: Laya.Viewport = camera.viewport;
-		var renderTexture = Laya.RenderTexture.createFromPool(viewPort.width, viewPort.height, Laya.RenderTargetFormat.R8G8B8A8, Laya.RenderTargetFormat.STENCIL_8);
+		var renderTexture = Laya.RenderTexture.createFromPool(viewPort.width, viewPort.height, Laya.RenderTargetFormat.R8G8B8A8, Laya.RenderTargetFormat.None, false, 1);
 		//将RenderTexture设置为渲染目标
 		//清楚渲染目标的颜色为黑色，不清理深度
 		buf.setRenderTarget(renderTexture, true, false);
@@ -81,7 +81,7 @@ export class CommandBuffer_Outline extends BaseScript {
 			buf.drawRender(renders[i], materials[i], 0);
 		}
 		//创建新的RenderTexture
-		var subRendertexture = Laya.RenderTexture.createFromPool(viewPort.width, viewPort.height, Laya.RenderTargetFormat.R8G8B8A8, Laya.RenderTargetFormat.STENCIL_8);
+		var subRendertexture = Laya.RenderTexture.createFromPool(viewPort.width, viewPort.height, Laya.RenderTargetFormat.R8G8B8A8, Laya.RenderTargetFormat.None, false, 1);
 		//将renderTexture的结果复制到subRenderTexture
 		buf.blitScreenQuad(renderTexture, subRendertexture);
 		//设置模糊的参数
@@ -94,12 +94,12 @@ export class CommandBuffer_Outline extends BaseScript {
 		blurMaterial.lock = true;
 
 		//创建降采样RenderTexture1
-		var downRenderTexture = Laya.RenderTexture.createFromPool(downSampleWidth, downSampleheigh, Laya.RenderTargetFormat.R8G8B8, Laya.RenderTargetFormat.STENCIL_8);
+		var downRenderTexture = Laya.RenderTexture.createFromPool(downSampleWidth, downSampleheigh, Laya.RenderTargetFormat.R8G8B8, Laya.RenderTargetFormat.None, false, 1);
 		//降采样  使用blurMaterial材质的0SubShader将Rendertexture渲染到DownRendertexture
 		buf.blitScreenQuadByMaterial(renderTexture, downRenderTexture, null, blurMaterial, 0);
 
 		//创建降采样RenderTexture2
-		var blurTexture: Laya.RenderTexture = Laya.RenderTexture.createFromPool(downSampleWidth, downSampleheigh, Laya.RenderTargetFormat.R8G8B8, Laya.RenderTargetFormat.STENCIL_8);
+		var blurTexture: Laya.RenderTexture = Laya.RenderTexture.createFromPool(downSampleWidth, downSampleheigh, Laya.RenderTargetFormat.R8G8B8, Laya.RenderTargetFormat.None, false, 1);
 		blurTexture.filterMode = Laya.FilterMode.Bilinear;
 
 		//Horizontal blur 使用blurMaterial材质的1SubShader

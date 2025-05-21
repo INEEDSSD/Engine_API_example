@@ -208,59 +208,31 @@ fn computeMain(@builtin(global_invocation_id) gloablId: vec3u) {
   var _BundleCullingRenderElement = class _BundleCullingRenderElement extends Laya.WebGPURenderElement3D {
     constructor() {
       super();
-      this.bindGroup = /* @__PURE__ */ new Map();
       this.cullShaderData = new Laya.WebGPUShaderData();
       this.isRender = true;
     }
-    getBaseRender3DNodeBindGroup(context, shaderInstance) {
-      let reCreateBindGroup = false;
-      let bindGroup = this.bindGroup.get(shaderInstance._id);
-      let shaderInstanceID = shaderInstance._id;
-      if (!bindGroup) {
-        reCreateBindGroup = true;
-      } else {
-        if (bindGroup.isNeedCreate(this.cullShaderData._getBindGroupLastUpdateMask(`${this.owner._commonUniformMap[0]}_${shaderInstanceID}`))) {
-          reCreateBindGroup = true;
-        }
-      }
-      if (reCreateBindGroup) {
-        let bindGroupArray = shaderInstance.uniformSetMap.get(2);
-        let shaderData = this.cullShaderData;
-        let bindGroupEntriys = [];
-        for (let com of this.owner._commonUniformMap) {
-          let comMap = Laya.LayaGL.renderDeviceFactory.createGlobalUniformMap(com);
-          if (comMap._ishasBuffer) {
-            shaderData.createSubUniformBuffer(com, com, comMap._idata);
-          }
-          shaderData.fillBindGroupEntry(com, `${com}_${shaderInstanceID}`, bindGroupEntriys, bindGroupArray);
-        }
-        let groupLayout = Laya.WebGPUBindGroupHelper.createBindGroupEntryLayout(bindGroupArray);
-        let bindGroupDescriptor = {
-          label: "GPUBindGroupDescriptor",
-          layout: groupLayout,
-          entries: bindGroupEntriys
-        };
-        let bindGroupGpu = Laya.WebGPURenderEngine._instance.getDevice().createBindGroup(bindGroupDescriptor);
-        bindGroup = new Laya.WebGPUBindGroup();
-        bindGroup.gpuRS = bindGroupGpu;
-        bindGroup.createMask = Laya.Stat.loopCount;
-        this.bindGroup.set(shaderInstanceID, bindGroup);
-      }
-      return bindGroup;
-    }
     _bindGroup(context, shaderInstance, command) {
-      if (shaderInstance.uniformSetMap.get(0).length > 0) {
-        command.setBindGroup(0, context._sceneBindGroup);
+      this.bindGroupMap.clear();
+      {
+        let sceneGroup = context._sceneBindGroup;
+        command.setBindGroup(0, sceneGroup);
+        this.bindGroupMap.set(0, sceneGroup);
       }
-      if (shaderInstance.uniformSetMap.get(1).length > 0) {
+      {
         command.setBindGroup(1, context._cameraBindGroup);
+        this.bindGroupMap.set(1, context._cameraBindGroup);
       }
-      if (this.owner) {
-        let bindgroup = this.getBaseRender3DNodeBindGroup(context, shaderInstance);
+      {
+        let shaderResource = shaderInstance.uniformSetMap.get(2);
+        let bindgroup = Laya.WebGPURenderEngine._instance.bindGroupCache.getBindGroup(this.owner._commonUniformMap, this.cullShaderData, null, shaderResource);
         command.setBindGroup(2, bindgroup);
+        this.bindGroupMap.set(2, bindgroup);
       }
-      if (shaderInstance.uniformSetMap.get(3).length > 0) {
-        command.setBindGroup(3, this.materialShaderData._createOrGetBindGroupByBindInfoArray("Material", this.subShader.owner.name, shaderInstance, 3, shaderInstance.uniformSetMap.get(3)));
+      {
+        let shaderResource = shaderInstance.uniformSetMap.get(3);
+        let bindgroup = Laya.WebGPURenderEngine._instance.bindGroupCache.getBindGroup([this.subShader._owner.name], this.materialShaderData, null, shaderResource);
+        command.setBindGroup(3, bindgroup);
+        this.bindGroupMap.set(3, bindgroup);
       }
     }
     _preUpdatePre(context) {
@@ -269,6 +241,27 @@ fn computeMain(@builtin(global_invocation_id) gloablId: vec3u) {
       let matSubBuffer = this.materialShaderData.createSubUniformBuffer("Material", subShader.owner.name, subShader._uniformMap);
       if (matSubBuffer.needUpload) {
         matSubBuffer.bufferBlock.needUpload();
+      }
+      if (this.renderShaderData && this.owner._commonUniformMap.length > 0) {
+        let nodemap = this.owner._commonUniformMap;
+        for (var i = 0, n = nodemap.length; i < n; i++) {
+          let moduleName = nodemap[i];
+          let unifomrMap = Laya.LayaGL.renderDeviceFactory.createGlobalUniformMap(nodemap[i]);
+          let uniformBuffer = this.renderShaderData.createSubUniformBuffer(moduleName, moduleName, unifomrMap._idata);
+          if (uniformBuffer && uniformBuffer.needUpload) {
+            uniformBuffer.bufferBlock.needUpload();
+          }
+        }
+      }
+      if (this.owner) {
+        for (let [key, value] of this.owner.additionShaderData) {
+          let shaderData = value;
+          let unifomrMap = Laya.LayaGL.renderDeviceFactory.createGlobalUniformMap(key);
+          let uniformBuffer = shaderData.createSubUniformBuffer(key, key, unifomrMap._idata);
+          if (uniformBuffer && uniformBuffer.needUpload) {
+            uniformBuffer.bufferBlock.needUpload();
+          }
+        }
       }
     }
     _render(context, command) {
@@ -281,8 +274,9 @@ fn computeMain(@builtin(global_invocation_id) gloablId: vec3u) {
         if (!shaderInstance.complete) {
           continue;
         }
-        command.setPipeline(this._getWebGPURenderPipeline(shaderInstance, context.destRT, context));
         this._bindGroup(context, shaderInstance, command);
+        let pipeline = this._getWebGPURenderPipeline(shaderInstance, context.destRT, context);
+        command.setPipeline(pipeline);
         this._uploadGeometry(command);
       }
       return 0;
