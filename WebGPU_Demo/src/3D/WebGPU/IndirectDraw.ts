@@ -5,11 +5,11 @@ Laya.addAfterInitCallback(()=>{
     if (Laya.LayaGL.renderEngine.getCapable(Laya.RenderCapable.ComputeShader)) {
         
         console.log("  IndirectDraw log,  use gl is ", Laya.LayaGL.renderEngine);
-        return Laya.Browser.loadLib("js/otherJS/WebGPU.js");
+        return Laya.Browser.loadLib("js/WebGPU.js");
     } else {
         
         console.log("  IndirectDraw log,  use gl is ", Laya.LayaGL.renderEngine);
-        return Laya.Browser.loadLib("js/otherJS/WebGL.js");
+        return Laya.Browser.loadLib("js/WebGL.js");
     }
 });
 

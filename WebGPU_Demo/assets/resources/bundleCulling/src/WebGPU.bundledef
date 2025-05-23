@@ -3,7 +3,7 @@
   "allowLoadInEditor": true,
   "allowLoadInRuntime": true,
   "autoLoad": true,
-  "includeAllFiles": false,
+  "includeAllFiles": true,
   "loadBeforeMain": false,
   "bundleExternals": false
 }

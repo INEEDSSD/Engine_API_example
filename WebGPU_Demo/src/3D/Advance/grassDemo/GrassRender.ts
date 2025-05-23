@@ -20,13 +20,39 @@ export class GlassRender {
      * @internal
      */
     private creatGrassMesh(): Laya.Mesh {
-        // 生成 单片 grass (一个 三角形)
-        var vertexArray: Float32Array = new Float32Array(3 * 3);
-        vertexArray[0] = -0.25;  // p1.x
-        vertexArray[3] = 0.25; // p2.x
-        vertexArray[7] = 1;     // p3.y
+        // 生成单片grass (一个三角形)
+        // 每个顶点包含: position(3) + uv(2) + normal(3) = 8个float
+        var vertexArray: Float32Array = new Float32Array(3 * 6);
+        
+        // 顶点1 (左下)
+        vertexArray[0] = -0.25;  // position.x
+        vertexArray[1] = 0.0;    // position.y
+        vertexArray[2] = 0.0;    // position.z
+        vertexArray[3] = 0.0;    // normal.x
+        vertexArray[4] = 1.0;    // normal.y
+        vertexArray[5] = 0.0;    // normal.z
+
+        // 顶点2 (右下)
+        vertexArray[6] = 0.25;   // position.x
+        vertexArray[7] = 0.0;    // position.y
+        vertexArray[8] = 0.0;   // position.z
+        vertexArray[9] = 0.0;   // normal.x
+        vertexArray[10] = 1.0;   // normal.y
+        vertexArray[11] = 0.0;   // normal.z
+        
+        // 顶点3 (顶部)
+        vertexArray[12] = 0.0;   // position.x
+        vertexArray[13] = 1.0;   // position.y
+        vertexArray[14] = 0.0;   // position.z
+        vertexArray[15] = 0.0;   // normal.x
+        vertexArray[16] = 1.0;   // normal.y
+        vertexArray[17] = 0.0;   // normal.z
+
         var indexArray: Uint16Array = new Uint16Array([2, 1, 0]);
-        var vertexDeclaration: Laya.VertexDeclaration = Laya.VertexMesh.getVertexDeclaration("POSITION");
+        
+        // 使用Laya引擎的顶点声明创建方法
+        var vertexDeclaration: Laya.VertexDeclaration = Laya.VertexMesh.getVertexDeclaration("POSITION,NORMAL");
+        
         //@ts-ignore
         var mesh = Laya.PrimitiveMesh._createMesh(vertexDeclaration, vertexArray, indexArray);
         return mesh;
