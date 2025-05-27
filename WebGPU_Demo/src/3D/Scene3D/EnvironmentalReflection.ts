@@ -81,6 +81,7 @@ export class EnvironmentalReflection extends BaseScript {
 		//加载在场景中预先用天空盒烘焙出来的天空盒cubemap
 		Laya.loader.load("resources/res/threeDimen/skyBox/DawnDusk/New Cubemap@0.ktx", Laya.Loader.TEXTURECUBE).then((res) => {
 			this.scene.sceneReflectionProb.iblTex = res;
+			this.scene.ambientMode = AmbientMode.SphericalHarmonics;
 		});
 	}
 }

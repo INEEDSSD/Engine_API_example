@@ -105,7 +105,7 @@ export class PickPixel extends BaseScript {
 			// this._sp.alpha = out[3] / 255;
 			// this._sp.graphics.drawRect(0, 0, 100, 100, color, "#ffffff");
 
-			let tex2D: Laya.Texture2D = new Laya.Texture2D(stageWidth, stageHeight, Laya.TextureFormat.R8G8B8A8, false, true);
+			let tex2D: Laya.Texture2D = new Laya.Texture2D(stageWidth, stageHeight, Laya.TextureFormat.R8G8B8A8, false, true, true);
 			tex2D.setPixelsData(out as ArrayBufferView, false, false);
 
 			let tex: Laya.Texture = new Laya.Texture(tex2D);
