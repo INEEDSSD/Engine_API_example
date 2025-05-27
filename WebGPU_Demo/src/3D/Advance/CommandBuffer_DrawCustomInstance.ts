@@ -70,7 +70,9 @@ export class CommandBuffer_DrawCustomInstance extends BaseScript {
         //设置属性
         this.materialBlock.setVectorArray("a_InstanceColor", this.colors1, Laya.InstanceLocation.CUSTOME0);
         //创建渲染命令  渲染900个小球
-        this.instanceCMD = buf.drawMeshInstance(Laya.PrimitiveMesh.createSphere(0.5), 0, this.matrixs1, this.mat, 0, this.materialBlock, 900);
+        let sphereMesh = Laya.PrimitiveMesh.createSphere(0.5);
+        sphereMesh.lock = true;
+        this.instanceCMD = buf.drawMeshInstance(sphereMesh, 0, this.matrixs1, this.mat, 0, this.materialBlock, 900);
         camera.addCommandBuffer(Laya.CameraEventFlags.BeforeTransparent, buf);
         return;
     }

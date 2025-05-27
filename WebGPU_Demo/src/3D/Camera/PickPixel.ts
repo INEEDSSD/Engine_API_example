@@ -82,19 +82,44 @@ export class PickPixel extends BaseScript {
 
 	onMouseDown(e: Event) {
 		this._sp.graphics.clear();
-		this._sp.x = e.target.mouseX;
-		this._sp.y = e.target.mouseY;
+		// this._sp.x = e.target.mouseX;
+		// this._sp.y = e.target.mouseY;
 		var posX: number = e.target.mouseX;
 		var posY: number = e.target.mouseY;
-		var out = new Uint8Array(4);
-		this.camera2.renderTarget.getDataAsync(posX, posY, 1, 1, out).then((out: any) => {
+		//选择渲染目标为纹理
+		var stageWidth: number = this.pageWidth;
+		var stageHeight: number = this.pageHeight;
+
+		if (Index.curPage) {
+			stageWidth = Index.pageWidth;
+			stageHeight = Index.pageHeight;
+		}
+		var out = new Uint8Array(stageWidth * stageHeight * 4);
+		this.camera2.renderTarget.getDataAsync(0, 0, stageWidth, stageHeight, out).then((out: any) => {
 			this.text.text = out[0] + " " + out[1] + " " + out[2] + " " + out[3];
 			let r = out[0].toString(16);
 			let g = out[1].toString(16);
 			let b = out[2].toString(16);
 			let color = `#${r}${g}${b}`
-			this._sp.alpha = out[3] / 255;
-			this._sp.graphics.drawRect(0, 0, 100, 100, color, "#ffffff");
+			// console.log("拾取到像素为", color);
+			// this._sp.alpha = out[3] / 255;
+			// this._sp.graphics.drawRect(0, 0, 100, 100, color, "#ffffff");
+
+			let tex2D: Laya.Texture2D = new Laya.Texture2D(stageWidth, stageHeight, Laya.TextureFormat.R8G8B8A8, false, true);
+			tex2D.setPixelsData(out as ArrayBufferView, false, false);
+
+			let tex: Laya.Texture = new Laya.Texture(tex2D);
+
+			// 如果需要缩放sp的话开启下面的注释
+			this._sp.scaleX = 0.5;
+			this._sp.scaleY = 0.5;
+
+			// 绘制到鼠标点击区域的话开启下面的注释
+			this._sp.x = posX;
+			this._sp.y = posY;
+
+
+			this._sp.graphics.drawTexture(tex);
 		});
 	}
 }

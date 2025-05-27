@@ -55,6 +55,7 @@ export class GlassRender {
         
         //@ts-ignore
         var mesh = Laya.PrimitiveMesh._createMesh(vertexDeclaration, vertexArray, indexArray);
+        mesh.lock = true;
         return mesh;
     }
 
