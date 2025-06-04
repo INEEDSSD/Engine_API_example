@@ -6,7 +6,6 @@ Shader3D Start
     supportReflectionProbe:true,
     shaderType:2,
     uniformMap:{
-        u_GlobalColor:{ type: Color, default:[1, 1, 1, 1] }
     },
     attributeMap: {
         a_posuv: Vector4,
@@ -64,7 +63,7 @@ GLSL Start
     {
         clip();
         vec4 color = getSpriteTextureColor();
-        color = color * u_GlobalColor;
+        color = color * u_MyGlobalColor;
         setglColor(color);
     }
     

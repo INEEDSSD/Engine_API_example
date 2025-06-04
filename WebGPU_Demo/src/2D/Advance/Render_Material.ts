@@ -41,8 +41,8 @@ export class Render_Material extends BaseScript {
             let mat = new Laya.Material();
             mat.setShaderName("custom2DShader_0");
             // 设置2D全局uniform变量
-            Laya.Graphics.add2DGlobalUniformData(Laya.Shader3D.propertyNameToID("u_GlobalColor"), "u_GlobalColor", Laya.ShaderDataType.Color);
-            (this.owner.scene as Laya.Scene).sceneShaderData.setColor(Laya.Shader3D.propertyNameToID("u_GlobalColor"), new Laya.Color(0.0, 1.0, 0.0, 1.0));
+            Laya.Graphics.add2DGlobalUniformData(Laya.Shader3D.propertyNameToID("u_MyGlobalColor"), "u_MyGlobalColor", Laya.ShaderDataType.Color);
+            (this.owner.scene as Laya.Scene).sceneShaderData.setColor(Laya.Shader3D.propertyNameToID("u_MyGlobalColor"), new Laya.Color(0.0, 1.0, 0.0, 1.0));
             sp.graphics.material = mat;
         });
     }
