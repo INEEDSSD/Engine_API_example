@@ -20,7 +20,7 @@ export class Skeleton_SpineAdapted extends BaseScript {
     onAwake(): void {
         super.base();
 
-        Laya.loader.load("resources/res/spine/spineboy-pro.skel", Loader.SPINE).then((templet: SpineTemplet) => {
+        Laya.loader.load("resources/res/spine/1/spineboy-pma.skel", Loader.SPINE).then((templet: SpineTemplet) => {
             this.skeleton = new Laya.Sprite();
             this.spineCom = this.skeleton.addComponent(Laya.Spine2DRenderNode);
             this.spineCom.templet = templet;
