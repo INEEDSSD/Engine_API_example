@@ -248,6 +248,7 @@ export class Render_2DLight extends BaseScript {
 
         let declaration = Laya.VertexMesh2D.getVertexDeclaration(["POSITION,UV"], false)[0];
         let mesh2D = Laya.Mesh2D.createMesh2DByPrimitive([vertices], [declaration], indices, Laya.IndexFormat.UInt16, [{ length: indices.length, start: 0 }]);
+        mesh2D.lock = true;
         return mesh2D;
     }
 

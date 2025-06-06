@@ -1235,6 +1235,17 @@
                     "desc": "CommandBuffer2D的使用示例"
                 }
             ]
+        },
+        {
+            "title": "WebGPUBatch",
+            "content": [
+                {
+                    "name": "3D-GCA",
+                    "scene": "3D/GCATest/GCA_Test",
+                    "desc": "GCA示例"
+                }
+            ]
         }
+
     ]
 }
