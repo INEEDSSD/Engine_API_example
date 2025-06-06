@@ -258,11 +258,18 @@ export class GCA_Test extends Laya.Script {
     @property({ type: Number, tips: "每帧变化的实例个数, 默认200" })
     preFrameChangeCount: number = 200;
 
+    @property({ type: Number, tips: "每帧增加的实例个数, 默认200" })
+    preFrameAddCount: number = 100;
+
     @property({ type: Number, tips: "实例之间的间距, 默认4" })
     insSpacing: number = 4;
 
     @property({ type: Laya.Label, tips: "提示信息" })
     tipLable: Laya.Label;
+
+    reduceArray: Array<IGCABVHCell> = [];
+
+    reAddArray: Array<IGCABVHCell> = [];
 
     /**
      * 颜色map
@@ -375,7 +382,6 @@ export class GCA_Test extends Laya.Script {
 
     dynamicChange() {
         // 动态减少
-        let outArray = [];
         for (let i = 0; i < this.preFrameChangeCount; i++) {
             let array = this.resMap.get(Math.floor(Math.random() * this.resCount));
             if (!array || array.length == 0) {
@@ -385,32 +391,24 @@ export class GCA_Test extends Laya.Script {
             let ins = array[index];
             array.splice(index, 1);
             this.testAgent.removeIns(ins);
-            outArray.push(ins);
-
-
-            // let array = this.resMap.get(this.resCount);
-            // if (!array || array.length == 0) {
-            //     continue;
-            // }
-            // let index = Math.floor((array.length - 1))
-            // let ins = array[index];
-            // array.splice(index, 1);
-            // this.testAgent.removeIns(ins);
-            // outArray.push(ins);
+            this.reduceArray.push(ins);
         }
 
         //动态增加到场景中
-        for (let i = 0; i < this.preFrameChangeCount; i++) {
-            let ins = outArray[i];
+        for (let i = 0; i < this.preFrameAddCount; i++) {
+            let index = Math.floor(Math.random() * this.reduceArray.length);
+            let ins = this.reduceArray[index];
             if (!ins) {
                 continue;
             }
+            this.reduceArray.splice(index, 1);
             ins.worldMatrix.getTranslationVector(_tempVector3);
             _tempVector3.set(_tempVector3.x + i / this.preFrameChangeCount * this.insSpacing, (_tempVector3.y + i / this.preFrameChangeCount * this.insSpacing) * Math.sin(i / 40 * Math.PI * 2), _tempVector3.z + i / this.preFrameChangeCount * this.insSpacing);
             this.tempMatrix.setTranslationVector(_tempVector3);
             this.testSystem._updateInsPos(ins, this.tempMatrix);
             this.testAgent.addIns(ins);
-            this.resMap.get(i % this.resCount).push(ins);
+            this.resMap.get(ins.resId % this.resCount).push(ins);
+            this.reAddArray.push(ins);
         }
     }
 

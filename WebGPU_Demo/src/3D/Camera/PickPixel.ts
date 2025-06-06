@@ -101,25 +101,25 @@ export class PickPixel extends BaseScript {
 			let g = out[1].toString(16);
 			let b = out[2].toString(16);
 			let color = `#${r}${g}${b}`
-			// console.log("拾取到像素为", color);
-			// this._sp.alpha = out[3] / 255;
-			// this._sp.graphics.drawRect(0, 0, 100, 100, color, "#ffffff");
+			console.log("拾取到像素为", color);
+			this._sp.alpha = out[3] / 255;
+			this._sp.graphics.drawRect(0, 0, 100, 100, color, "#ffffff");
 
-			let tex2D: Laya.Texture2D = new Laya.Texture2D(stageWidth, stageHeight, Laya.TextureFormat.R8G8B8A8, false, true, true);
-			tex2D.setPixelsData(out as ArrayBufferView, false, false);
+			// let tex2D: Laya.Texture2D = new Laya.Texture2D(stageWidth, stageHeight, Laya.TextureFormat.R8G8B8A8, false, true, true);
+			// tex2D.setPixelsData(out as ArrayBufferView, false, false);
 
-			let tex: Laya.Texture = new Laya.Texture(tex2D);
+			// let tex: Laya.Texture = new Laya.Texture(tex2D);
 
-			// 如果需要缩放sp的话开启下面的注释
-			this._sp.scaleX = 0.5;
-			this._sp.scaleY = 0.5;
+			// // 如果需要缩放sp的话开启下面的注释
+			// this._sp.scaleX = 0.5;
+			// this._sp.scaleY = 0.5;
 
-			// 绘制到鼠标点击区域的话开启下面的注释
-			this._sp.x = posX;
-			this._sp.y = posY;
+			// // 绘制到鼠标点击区域的话开启下面的注释
+			// this._sp.x = posX;
+			// this._sp.y = posY;
 
 
-			this._sp.graphics.drawTexture(tex);
+			// this._sp.graphics.drawTexture(tex);
 		});
 	}
 }

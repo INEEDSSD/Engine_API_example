@@ -1,6 +1,6 @@
 {
   "_$ver": 1,
-  "_$id": "hi235vdd",
+  "_$id": "12xalhuc",
   "_$type": "Scene",
   "left": 0,
   "right": 0,
@@ -9,6 +9,18 @@
   "name": "Scene2D",
   "width": 1440,
   "height": 680,
+  "_$comp": [
+    {
+      "_$type": "a8bb0e75-6999-43a1-96c9-46c9a17c7b05",
+      "scriptPath": "../src/3D/GCA/ComputerShaderStorage_Texture.ts",
+      "scene3D": {
+        "_$ref": "n9gjxcltvl"
+      },
+      "plane": {
+        "_$ref": "sa5yn3q5"
+      }
+    }
+  ],
   "_$child": [
     {
       "_$id": "n9gjxcltvl",
@@ -35,24 +47,6 @@
         "g": 0.5,
         "b": 0.5
       },
-      "_$comp": [
-        {
-          "_$type": "4ea77818-9a3a-44e5-bf0d-edd99b731c3b",
-          "scriptPath": "../src/3D/GCA/GCA_Test.ts",
-          "cam": {
-            "_$ref": "6jx8h8bvc6"
-          },
-          "resCount": 200,
-          "resInstanceCount": 150,
-          "isDynamicChange": true,
-          "preFrameChangeCount": 10,
-          "preFrameAddCount": 50,
-          "insSpacing": 4,
-          "tipLable": {
-            "_$ref": "dja2d5bm"
-          }
-        }
-      ],
       "_$child": [
         {
           "_$id": "6jx8h8bvc6",
@@ -61,25 +55,18 @@
           "transform": {
             "localPosition": {
               "_$type": "Vector3",
-              "x": -99.8021952,
-              "y": 49.4481594,
-              "z": 6.988694
-            },
-            "localRotation": {
-              "_$type": "Quaternion",
-              "x": -0.06438292682020234,
-              "y": -0.8717404528579703,
-              "z": -0.11919540641342713,
-              "w": 0.47086715395638234
+              "y": 1,
+              "z": 5
             }
           },
-          "nearPlane": 0.1,
-          "farPlane": 3000,
+          "nearPlane": 0.3,
+          "farPlane": 1000,
+          "clearFlag": 1,
           "clearColor": {
             "_$type": "Color",
-            "r": 0,
-            "g": 0,
-            "b": 0
+            "r": 0.3921,
+            "g": 0.5843,
+            "b": 0.9294
           }
         },
         {
@@ -112,22 +99,52 @@
               }
             }
           ]
+        },
+        {
+          "_$id": "sa5yn3q5",
+          "_$type": "Sprite3D",
+          "name": "Plane",
+          "transform": {
+            "localPosition": {
+              "_$type": "Vector3",
+              "y": 1.1057254249463417,
+              "z": -2.455203651377728e-16
+            },
+            "localRotation": {
+              "_$type": "Quaternion",
+              "x": 0.7071067811865475,
+              "w": 0.7071067811865476
+            },
+            "localScale": {
+              "_$type": "Vector3",
+              "x": 2,
+              "y": 2,
+              "z": 2
+            }
+          },
+          "_$comp": [
+            {
+              "_$type": "MeshFilter",
+              "sharedMesh": {
+                "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                "_$type": "Mesh"
+              }
+            },
+            {
+              "_$type": "MeshRenderer",
+              "lightmapScaleOffset": {
+                "_$type": "Vector4"
+              },
+              "sharedMaterials": [
+                {
+                  "_$uuid": "25284511-662f-4a04-a11c-a6958b2dd4c8",
+                  "_$type": "Material"
+                }
+              ]
+            }
+          ]
         }
       ]
-    },
-    {
-      "_$id": "dja2d5bm",
-      "_$type": "Label",
-      "name": "Label",
-      "x": 660,
-      "y": 100,
-      "width": 120,
-      "height": 28,
-      "top": 100,
-      "centerX": 0,
-      "text": "Label",
-      "fontSize": 30,
-      "color": "#f50000"
     }
   ]
 }

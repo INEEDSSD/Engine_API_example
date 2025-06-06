@@ -1,9 +1,7 @@
 {
-    "demoList": [ 
-        {
+    "demoList": [{
             "title": "基础API测试",
-            "content": [
-                {
+            "content": [{
                     "name": "空场景运行",
                     "scene": "3D/emptyScene",
                     "desc": ""
@@ -77,8 +75,7 @@
         },
         {
             "title": "高级API测试",
-            "content": [
-                {
+            "content": [{
                     "name": "triangleDemo",
                     "scene": "3D/WebGPU/triangleDemo",
                     "desc": ""
@@ -97,8 +94,7 @@
         },
         {
             "title": "其他内容测试",
-            "content": [
-                {
+            "content": [{
                     "name": "资源加载",
                     "scene": "3D/Resource/LoadResourceDemo",
                     "desc": ""
@@ -643,8 +639,7 @@
         },
         {
             "title": "2D测试",
-            "content": [
-                {
+            "content": [{
                     "name": "Sprite容器",
                     "scene": "2D/Sprite/Sprite_Container",
                     "desc": "Sprite能够作为其他显示对象的容器"
@@ -1238,11 +1233,15 @@
         },
         {
             "title": "WebGPUBatch",
-            "content": [
-                {
+            "content": [{
                     "name": "3D-GCA",
                     "scene": "3D/GCATest/GCA_Test",
-                    "desc": "GCA示例"
+                    "desc": "WebGPUInstanceBatch测试"
+                },
+                {
+                    "name": "ComputerShaderStorageTexture",
+                    "scene": "3D/GCATest/ComputerShaderStorage_Texture",
+                    "desc": "ComputerShader存储Texture示例"
                 }
             ]
         }
