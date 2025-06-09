@@ -110,7 +110,7 @@ export class MyhybridSystemUtil {
 
         }
 
-        for (let i = 0; i < (resCount / this.meshArray.length); i++) {
+        for (let i = 0; i < Math.ceil(resCount / this.meshArray.length); i++) {
             createOneMaterial(i, resCount);
         }
     }
@@ -163,7 +163,7 @@ export class MyhybridSystemUtil {
 
     _creatResDatas() {
         //创建多个resData
-        for (var i = 1; i < this.materialArray.length; i++) {
+        for (var i = 0; i < this.materialArray.length; i++) {
             for (var j = 0; j < this.meshArray.length; j++) {
                 this._createOneRes([this.materialArray[i]], [this.meshBatchArray[j]], j, this.materialArray[0], this.meshBatchArray[j]);
             }
@@ -246,11 +246,32 @@ export class GCA_Test extends Laya.Script {
     @property(Laya.Camera)
     cam: Laya.Camera;
 
-    @property({ type: Number, tips: "以颜色为区分种类的res的种类个数, 默认10" })
-    resCount: number = 10;
+    private _resCount: number = 10;
 
-    @property({ type: Number, tips: "每个res生成的实例个数, 默认200" })
-    resInstanceCount: number = 50;
+    @property({ type: Number, tips: "little的res个数" })
+    littleResCount: number = 8;
+
+    @property({ type: Number, tips: "little的ins个数" })
+    littleInstanceCount: number = 4;
+
+    @property({ type: Number, tips: "some的res个数" })
+    someResCount: number = 1;
+
+    @property({ type: Number, tips: "some的ins数量" })
+    someInstanceCount: number = 4;
+
+    @property({ type: Number, tips: "quait的res个数" })
+    quaitResCount: number = 1;
+
+    @property({ type: Number, tips: "quait的ins数量" })
+    quaitInstanceCount: number = 4;
+
+    @property({ type: Number, tips: "large的res个数" })
+    largeResCount: number;
+
+    @property({ type: Number, tips: "large的ins个数" })
+    largeInstanceCount: number;
+
 
     @property({ type: Boolean, tips: "是否动态添加删除实例, 默认false" })
     isDynamicChange: boolean = false;
@@ -258,18 +279,11 @@ export class GCA_Test extends Laya.Script {
     @property({ type: Number, tips: "每帧变化的实例个数, 默认200" })
     preFrameChangeCount: number = 200;
 
-    @property({ type: Number, tips: "每帧增加的实例个数, 默认200" })
-    preFrameAddCount: number = 100;
-
     @property({ type: Number, tips: "实例之间的间距, 默认4" })
     insSpacing: number = 4;
 
     @property({ type: Laya.Label, tips: "提示信息" })
     tipLable: Laya.Label;
-
-    reduceArray: Array<IGCABVHCell> = [];
-
-    reAddArray: Array<IGCABVHCell> = [];
 
     /**
      * 颜色map
@@ -304,7 +318,8 @@ export class GCA_Test extends Laya.Script {
             this.cam.addComponent(CameraMove);
             testGCAShader.initShader();
             this.testSystem._createMesh();
-            this.testSystem._createMaterial(this.resCount);
+            this._resCount = this.littleResCount + this.someResCount + this.quaitResCount + this.largeResCount;
+            this.testSystem._createMaterial(this._resCount);
             this.testSystem._creatResDatas();
             let sprite = this.owner.addChild(new Laya.Sprite3D());
             let baseRender = sprite.addComponent(TestGCARender);
@@ -318,7 +333,7 @@ export class GCA_Test extends Laya.Script {
                 GCA_OneBatchInfo.setCustomCommandmap(customData);
             }
             this.initColorMap();
-            this.createResInstance(this.resCount, this.resInstanceCount, false);
+            this.createResInstance(false);
 
             Laya.timer.once(5000, this, () => {
                 this.isDynamicChange && (this.beginChange = true);
@@ -349,41 +364,59 @@ export class GCA_Test extends Laya.Script {
      * 根据res的种类个数, 生成颜色map
      */
     initColorMap() {
-        for (let i = 0; i < this.resCount; i++) {
+        for (let i = 0; i < this._resCount; i++) {
             this.colorMap.set(i, new Laya.Color(i / 255, 0, 0, 1));
             this.resMap.set(i, []);
         }
     }
 
+    //x
+    private xMaxLine = 100;
+    createResInstance(isOutReAdd: boolean) {
+        let createInsByType = (resCount: number, insCounts: number, startIndex: number) => {
+            for (let i = 0; i < resCount; i++) {
+                let posIndex = startIndex + i;
+                let y = (posIndex / this.xMaxLine) | 0;
+                let x = posIndex % this.xMaxLine;
+                for (let j = 0; j < insCounts; j++) {
 
-    createResInstance(resCount: number, insCount: number, isOutReAdd: boolean) {
-        for (let i = 0; i < resCount; i++) {
-            for (let j = 0; j < insCount; j++) {
-                let pos = new Laya.Vector3(i * this.insSpacing, isOutReAdd ? i * 2 : 0, j * this.insSpacing);
-                Laya.Matrix4x4.createAffineTransformation(pos, Laya.Quaternion.DEFAULT, Laya.Vector3.ONE, this.tempMatrix);
-                let ins = this.testSystem._createIns(
-                    i,
-                    this.tempMatrix,
-                    true,
-                    true,
-                    true,
-                    0,
-                    {
-                        color1: this.colorMap.get(i),
-                        color2: new Laya.Color(1 - this.colorMap.get(i).r, 1 - this.colorMap.get(i).g, 1 - this.colorMap.get(i).b, 1),
-                        customDataArray: new Float32Array([this.colorMap.get(i).r, this.colorMap.get(i).g, this.colorMap.get(i).b, this.colorMap.get(i).a, 1 - this.colorMap.get(i).r, 1 - this.colorMap.get(i).g, 1 - this.colorMap.get(i).b, 1])
-                    }
-                );
-                this.testAgent.addIns(ins);
-                this.resMap.get(i).push(ins);
+                    let pos = new Laya.Vector3(x * this.insSpacing, (isOutReAdd ? posIndex * 2 : 0) + y * this.insSpacing, j * this.insSpacing);
+                    Laya.Matrix4x4.createAffineTransformation(pos, Laya.Quaternion.DEFAULT, Laya.Vector3.ONE, this.tempMatrix);
+                    let ins = this.testSystem._createIns(
+                        posIndex,
+                        this.tempMatrix,
+                        true,
+                        true,
+                        true,
+                        0,
+                        {
+                            color1: this.colorMap.get(posIndex),
+                            color2: new Laya.Color(1 - this.colorMap.get(posIndex).r, 1 - this.colorMap.get(posIndex).g, 1 - this.colorMap.get(posIndex).b, 1),
+                            customDataArray: new Float32Array([this.colorMap.get(posIndex).r, this.colorMap.get(posIndex).g, this.colorMap.get(posIndex).b, this.colorMap.get(posIndex).a, 1 - this.colorMap.get(posIndex).r, 1 - this.colorMap.get(posIndex).g, 1 - this.colorMap.get(posIndex).b, 1])
+                        }
+                    );
+                    this.testAgent.addIns(ins);
+                    this.resMap.get(posIndex).push(ins);
+                }
             }
         }
+        let index = 0;
+        createInsByType(this.littleResCount, this.littleInstanceCount, index);
+        index += this.littleResCount;
+        createInsByType(this.someResCount, this.someInstanceCount, index);
+        index += this.someResCount;
+        createInsByType(this.quaitResCount, this.quaitInstanceCount, index);
+        index += this.quaitResCount;
+        createInsByType(this.largeResCount, this.largeInstanceCount, index);
+        index += this.largeResCount;
+
     }
 
     dynamicChange() {
         // 动态减少
+        let outArray = [];
         for (let i = 0; i < this.preFrameChangeCount; i++) {
-            let array = this.resMap.get(Math.floor(Math.random() * this.resCount));
+            let array = this.resMap.get(Math.floor(Math.random() * this._resCount));
             if (!array || array.length == 0) {
                 continue;
             }
@@ -391,24 +424,32 @@ export class GCA_Test extends Laya.Script {
             let ins = array[index];
             array.splice(index, 1);
             this.testAgent.removeIns(ins);
-            this.reduceArray.push(ins);
+            outArray.push(ins);
+
+
+            // let array = this.resMap.get(this.resCount);
+            // if (!array || array.length == 0) {
+            //     continue;
+            // }
+            // let index = Math.floor((array.length - 1))
+            // let ins = array[index];
+            // array.splice(index, 1);
+            // this.testAgent.removeIns(ins);
+            // outArray.push(ins);
         }
 
         //动态增加到场景中
-        for (let i = 0; i < this.preFrameAddCount; i++) {
-            let index = Math.floor(Math.random() * this.reduceArray.length);
-            let ins = this.reduceArray[index];
+        for (let i = 0; i < this.preFrameChangeCount; i++) {
+            let ins = outArray[i];
             if (!ins) {
                 continue;
             }
-            this.reduceArray.splice(index, 1);
             ins.worldMatrix.getTranslationVector(_tempVector3);
             _tempVector3.set(_tempVector3.x + i / this.preFrameChangeCount * this.insSpacing, (_tempVector3.y + i / this.preFrameChangeCount * this.insSpacing) * Math.sin(i / 40 * Math.PI * 2), _tempVector3.z + i / this.preFrameChangeCount * this.insSpacing);
             this.tempMatrix.setTranslationVector(_tempVector3);
             this.testSystem._updateInsPos(ins, this.tempMatrix);
             this.testAgent.addIns(ins);
-            this.resMap.get(ins.resId % this.resCount).push(ins);
-            this.reAddArray.push(ins);
+            this.resMap.get(i % this._resCount).push(ins);
         }
     }
 

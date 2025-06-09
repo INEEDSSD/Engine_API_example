@@ -211,7 +211,7 @@ export class entry_WebGPU extends Laya.Script {
         Laya.Scene.unDestroyedScenes.forEach((item) => {
             item.destroy();
         });
-        Laya.Resource.destroyUnusedResources();
+        // Laya.Resource.destroyUnusedResources();
     }
     Bigonselect(index: number) {
         if (index == -1)

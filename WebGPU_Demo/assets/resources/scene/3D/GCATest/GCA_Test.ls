@@ -42,11 +42,16 @@
           "cam": {
             "_$ref": "6jx8h8bvc6"
           },
-          "resCount": 200,
-          "resInstanceCount": 150,
-          "isDynamicChange": true,
-          "preFrameChangeCount": 10,
-          "preFrameAddCount": 50,
+          "littleResCount": 400,
+          "littleInstanceCount": 4,
+          "someResCount": 100,
+          "someInstanceCount": 16,
+          "quaitResCount": 80,
+          "quaitInstanceCount": 80,
+          "largeResCount": 20,
+          "largeInstanceCount": 500,
+          "isDynamicChange": false,
+          "preFrameChangeCount": 200,
           "insSpacing": 4,
           "tipLable": {
             "_$ref": "dja2d5bm"
