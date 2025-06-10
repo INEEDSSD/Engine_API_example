@@ -35,7 +35,7 @@ export class PickPixel extends BaseScript {
 	 * 组件被激活后执行，此时所有节点和组件均已创建完毕，此方法只执行一次
 	 */
 	onAwake(): void {
-		super.base(this.camera);
+		// super.base(this.camera);
 		//射线初始化（必须初始化）
 		this.ray = new Ray(new Vector3(0, 0, 0), new Vector3(0, 0, 0));
 		this._sp = new Laya.Sprite();
@@ -53,8 +53,8 @@ export class PickPixel extends BaseScript {
 		this.scene.addChild(this.scene1.scene3D);
 
 		//选择渲染目标为纹理
-		var stageWidth: number = this.pageWidth;
-		var stageHeight: number = this.pageHeight;
+		var stageWidth: number = Laya.stage.width;
+		var stageHeight: number = Laya.stage.height;
 
 		if (Index.curPage) {
 			stageWidth = Index.pageWidth;
@@ -74,7 +74,7 @@ export class PickPixel extends BaseScript {
 		this.text.x = (this.pageWidth - this.text.width) / 2;
 		this.text.y = 50;
 		this.text.overflow = Text.HIDDEN;
-		this.text.color = "#FFFFFF";
+		this.text.color = "#ff8080";
 		this.text.fontSize = 20;
 		this.text.text = "选中的颜色：";
 		this.owner.addChild(this.text);
@@ -87,39 +87,56 @@ export class PickPixel extends BaseScript {
 		var posX: number = e.target.mouseX;
 		var posY: number = e.target.mouseY;
 		//选择渲染目标为纹理
-		var stageWidth: number = this.pageWidth;
-		var stageHeight: number = this.pageHeight;
+		var stageWidth: number = Laya.stage.width;
+		var stageHeight: number = Laya.stage.height;
 
 		if (Index.curPage) {
 			stageWidth = Index.pageWidth;
 			stageHeight = Index.pageHeight;
 		}
+		// var out = new Uint8Array(4);
+		// this.camera2.renderTarget.getDataAsync(posX, posY, 1, 1, out).then((out: any) => {
+		// 	this.text.text = out[0] + " " + out[1] + " " + out[2] + " " + out[3];
+		// 	let r = out[0].toString(16);
+		// 	let g = out[1].toString(16);
+		// 	let b = out[2].toString(16);
+		// 	let color = `#${r}${g}${b}`
+		// 	console.log("拾取到像素为", color);
+		// 	this._sp.alpha = out[3] / 255;
+		// 	this._sp.graphics.drawRect(posX, posY, 100, 100, color, "#ffffff");
+
+		// 	// let tex2D: Laya.Texture2D = new Laya.Texture2D(stageWidth, stageHeight, Laya.TextureFormat.R8G8B8A8, false, true, true);
+		// 	// tex2D.setPixelsData(out as ArrayBufferView, false, false);
+
+		// 	// let tex: Laya.Texture = new Laya.Texture(tex2D);
+
+		// 	// // 如果需要缩放sp的话开启下面的注释
+		// 	// this._sp.scaleX = 0.5;
+		// 	// this._sp.scaleY = 0.5;
+
+		// 	// // 绘制到鼠标点击区域的话开启下面的注释
+		// 	// this._sp.x = posX;
+		// 	// this._sp.y = posY;
+
+
+		// 	// this._sp.graphics.drawTexture(tex);
+		// });
+
+
+		stageWidth = Math.floor(Laya.stage.width / 2);
+		stageHeight = Math.floor(Laya.stage.height / 2);
+
+
 		var out = new Uint8Array(stageWidth * stageHeight * 4);
-		this.camera2.renderTarget.getDataAsync(0, 0, stageWidth, stageHeight, out).then((out: any) => {
-			this.text.text = out[0] + " " + out[1] + " " + out[2] + " " + out[3];
-			let r = out[0].toString(16);
-			let g = out[1].toString(16);
-			let b = out[2].toString(16);
-			let color = `#${r}${g}${b}`
-			console.log("拾取到像素为", color);
-			this._sp.alpha = out[3] / 255;
-			this._sp.graphics.drawRect(0, 0, 100, 100, color, "#ffffff");
-
-			// let tex2D: Laya.Texture2D = new Laya.Texture2D(stageWidth, stageHeight, Laya.TextureFormat.R8G8B8A8, false, true, true);
-			// tex2D.setPixelsData(out as ArrayBufferView, false, false);
-
-			// let tex: Laya.Texture = new Laya.Texture(tex2D);
-
-			// // 如果需要缩放sp的话开启下面的注释
-			// this._sp.scaleX = 0.5;
-			// this._sp.scaleY = 0.5;
-
-			// // 绘制到鼠标点击区域的话开启下面的注释
-			// this._sp.x = posX;
-			// this._sp.y = posY;
-
-
-			// this._sp.graphics.drawTexture(tex);
+		this.camera2.renderTarget.getDataAsync(Laya.stage.width / 4, Laya.stage.height / 4, stageWidth, stageHeight, out).then((out2) => {
+			let tex2D = new Laya.Texture2D(stageWidth, stageHeight, Laya.TextureFormat.R8G8B8A8, false, true, true);
+			tex2D.setPixelsData(out2, false, false);
+			let tex = new Laya.Texture(tex2D);
+			this._sp.scaleX = 1;
+			this._sp.scaleY = 1;
+			this._sp.x = 0;
+			this._sp.y = 0;
+			this._sp.graphics.drawTexture(tex);
 		});
 	}
 }

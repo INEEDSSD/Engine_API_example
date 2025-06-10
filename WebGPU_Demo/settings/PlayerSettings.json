@@ -1,7 +1,8 @@
 {
   "resolution": {
-    "designWidth": 1440,
-    "designHeight": 680,
+    "designWidth": 1920,
+    "designHeight": 1080,
+    "scaleMode": "full",
     "screenMode": "horizontal",
     "backgroundColor": "rgba(0, 0, 0, 1)"
   },

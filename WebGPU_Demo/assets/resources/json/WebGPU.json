@@ -1,7 +1,12 @@
 {
     "demoList": [{
             "title": "基础API测试",
-            "content": [{
+            "content": [
+                {
+                    "name": "拾取像素",
+                    "scene": "3D/Camera/PickPixel",
+                    "desc": ""
+                },{
                     "name": "空场景运行",
                     "scene": "3D/emptyScene",
                     "desc": ""
