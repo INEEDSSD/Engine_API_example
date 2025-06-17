@@ -74,7 +74,8 @@ export class GCA_BatchRenderElement extends Laya.WebGPURenderElement3D {
             if (this.owner) {
                 passdata.additionShaderData = this.owner._additionShaderDataKeys;
             }
-            (pass.moduleData as any).geo = this.geometry;
+            let attributeLocations = this.geometry.bufferState._attriLocArray;
+            pass.moduleData.attributeLocations = attributeLocations;
             var shaderIns = pass.withCompile(comDef, false) as Laya.WebGPUShaderInstance;
 
             this._shaderInstances.add(shaderIns);
