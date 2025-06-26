@@ -1,0 +1,68 @@
+{
+  "_$ver": 1,
+  "_$id": "mv0lj34n",
+  "_$type": "Sprite3D",
+  "name": "Sprite3D",
+  "_$child": [
+    {
+      "_$id": "8z05g9n0",
+      "_$type": "Sprite3D",
+      "name": "Sphere",
+      "_$comp": [
+        {
+          "_$type": "MeshFilter",
+          "sharedMesh": {
+            "_$uuid": "f1e48cc9-d67d-4196-92dd-77d9ee2f076c",
+            "_$type": "Mesh"
+          }
+        },
+        {
+          "_$type": "MeshRenderer",
+          "receiveShadow": true,
+          "castShadow": true,
+          "lightmapScaleOffset": {
+            "_$type": "Vector4"
+          },
+          "sharedMaterials": [
+            {
+              "_$uuid": "542ac02f-9e4e-4a5f-9aae-db4c9d32ebe6",
+              "_$type": "Material"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "0jidbr7x",
+      "_$type": "Sprite3D",
+      "name": "Cylinder",
+      "transform": {
+        "localPosition": {
+          "_$type": "Vector3",
+          "y": -0.9553385461208754
+        }
+      },
+      "_$comp": [
+        {
+          "_$type": "MeshFilter",
+          "sharedMesh": {
+            "_$uuid": "7b10e9ed-7954-4485-a8f8-7774b2bc79ac",
+            "_$type": "Mesh"
+          }
+        },
+        {
+          "_$type": "MeshRenderer",
+          "lightmapScaleOffset": {
+            "_$type": "Vector4"
+          },
+          "sharedMaterials": [
+            {
+              "_$uuid": "93c90be5-64c6-443c-89be-8eff833b5888",
+              "_$type": "Material"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

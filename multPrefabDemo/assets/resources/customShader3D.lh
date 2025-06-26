@@ -1,0 +1,13 @@
+{
+  "_$ver": 1,
+  "_$id": "kvt9o2r0",
+  "_$type": "Sprite3D",
+  "name": "Sprite3D",
+  "_$comp": [
+    {
+      "_$type": "8bdfbeb8-927a-49b8-a2f8-20bdeeacfb2a",
+      "scriptPath": "../src/customShader3D.ts",
+      "shaderCount": 45
+    }
+  ]
+}

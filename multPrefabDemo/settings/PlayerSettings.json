@@ -1,0 +1,15 @@
+{
+  "physics2D": {
+    "defaultConfig": {
+      "subStep": null
+    }
+  },
+  "modules": {
+    "laya.ui": true,
+    "laya.d3": true
+  },
+  "splash": {
+    "fit": "center"
+  },
+  "stat": true
+}

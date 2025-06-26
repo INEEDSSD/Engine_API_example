@@ -1,0 +1,36 @@
+{
+  "_$ver": 1,
+  "_$id": "di7o2570",
+  "_$type": "Sprite3D",
+  "name": "Sprite3D",
+  "_$child": [
+    {
+      "_$id": "oea4fxki",
+      "_$type": "Sprite3D",
+      "name": "Cone",
+      "_$comp": [
+        {
+          "_$type": "MeshFilter",
+          "sharedMesh": {
+            "_$uuid": "51cd3a71-c75c-42b4-ae4e-dd493b26290b",
+            "_$type": "Mesh"
+          }
+        },
+        {
+          "_$type": "MeshRenderer",
+          "receiveShadow": true,
+          "castShadow": true,
+          "lightmapScaleOffset": {
+            "_$type": "Vector4"
+          },
+          "sharedMaterials": [
+            {
+              "_$uuid": "d83e688b-b40c-43da-b33d-9f1c6841b685",
+              "_$type": "Material"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "_$ver": 1,
+  "_$id": "zvkbfuip",
+  "_$type": "Sprite",
+  "name": "Sprite",
+  "width": 100,
+  "height": 100,
+  "_gcmds": [
+    {
+      "_$type": "DrawRectCmd",
+      "fillColor": "#ffffff"
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "9sby8yox",
+      "_$type": "Sprite",
+      "name": "Sprite",
+      "x": 7,
+      "y": 12,
+      "width": 25,
+      "height": 25,
+      "_$comp": [
+        {
+          "_$type": "Mesh2DRender",
+          "layer": 0,
+          "sharedMaterial": {
+            "_$uuid": "52ddfd68-fcc1-41ce-a063-8d24596a56b0",
+            "_$type": "Material"
+          },
+          "color": {
+            "_$type": "Color",
+            "g": 0,
+            "b": 0
+          },
+          "textureRange": {
+            "_$type": "Vector4",
+            "z": 1,
+            "w": 1
+          }
+        },
+        {
+          "_$type": "b2654594-4905-4b88-b53a-0db4f95450d9",
+          "scriptPath": "../src/baseRenderScript.ts",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "_$id": "sau8d6uk",
+      "_$type": "Sprite",
+      "name": "Sprite_1",
+      "x": 80,
+      "y": 14,
+      "width": 25,
+      "height": 25,
+      "_$comp": [
+        {
+          "_$type": "Mesh2DRender",
+          "layer": 0,
+          "sharedMaterial": {
+            "_$uuid": "06de54e5-8596-40d9-a579-138c246261f1",
+            "_$type": "Material"
+          },
+          "color": {
+            "_$type": "Color",
+            "r": 0,
+            "b": 0.4375
+          },
+          "textureRange": {
+            "_$type": "Vector4",
+            "z": 1,
+            "w": 1
+          }
+        },
+        {
+          "_$type": "b2654594-4905-4b88-b53a-0db4f95450d9",
+          "scriptPath": "../src/baseRenderScript.ts",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "_$id": "tqdw4ny2",
+      "_$type": "Sprite",
+      "name": "Sprite_2",
+      "x": 12,
+      "y": 83,
+      "width": 25,
+      "height": 25,
+      "_$comp": [
+        {
+          "_$type": "Mesh2DRender",
+          "layer": 0,
+          "sharedMaterial": {
+            "_$uuid": "1fde867f-92e7-46b8-a50b-7dacea500b04",
+            "_$type": "Material"
+          },
+          "color": {
+            "_$type": "Color",
+            "r": 0.9453125000000001,
+            "b": 0
+          },
+          "textureRange": {
+            "_$type": "Vector4",
+            "z": 1,
+            "w": 1
+          }
+        },
+        {
+          "_$type": "b2654594-4905-4b88-b53a-0db4f95450d9",
+          "scriptPath": "../src/baseRenderScript.ts",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "_$id": "0hyvhljp",
+      "_$type": "Sprite",
+      "name": "Sprite_3",
+      "x": 79,
+      "y": 83,
+      "width": 25,
+      "height": 25,
+      "_$comp": [
+        {
+          "_$type": "Mesh2DRender",
+          "layer": 0,
+          "sharedMaterial": {
+            "_$uuid": "3cd1ea09-9404-43aa-9e0c-ed1041000c24",
+            "_$type": "Material"
+          },
+          "color": {
+            "_$type": "Color",
+            "r": 0,
+            "g": 0.0390625
+          },
+          "textureRange": {
+            "_$type": "Vector4",
+            "z": 1,
+            "w": 1
+          }
+        },
+        {
+          "_$type": "b2654594-4905-4b88-b53a-0db4f95450d9",
+          "scriptPath": "../src/baseRenderScript.ts",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "_$id": "kj4b2ned",
+      "_$type": "Sprite",
+      "name": "Sprite_4",
+      "x": 48,
+      "y": 48,
+      "width": 25,
+      "height": 25,
+      "_$comp": [
+        {
+          "_$type": "Mesh2DRender",
+          "layer": 0,
+          "sharedMaterial": {
+            "_$uuid": "4b6fb10b-28b9-4683-b60c-25a7c72ba1a9",
+            "_$type": "Material"
+          },
+          "color": {
+            "_$type": "Color"
+          },
+          "textureRange": {
+            "_$type": "Vector4",
+            "z": 1,
+            "w": 1
+          }
+        },
+        {
+          "_$type": "b2654594-4905-4b88-b53a-0db4f95450d9",
+          "scriptPath": "../src/baseRenderScript.ts",
+          "text": ""
+        }
+      ]
+    }
+  ]
+}
