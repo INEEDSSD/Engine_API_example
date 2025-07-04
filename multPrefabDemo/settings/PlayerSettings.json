@@ -1,13 +1,15 @@
 {
-  "physics2D": {
-    "defaultConfig": {
-      "subStep": null
-    }
+  "resolution": {
+    "designWidth": 1920,
+    "designHeight": 1080,
+    "scaleMode": "full",
+    "screenMode": "horizontal"
   },
   "modules": {
     "laya.ui": true,
     "laya.d3": true
   },
+  "webgpu": true,
   "splash": {
     "fit": "center"
   },
