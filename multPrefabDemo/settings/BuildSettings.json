@@ -1,7 +1,11 @@
 {
   "name": "LayaProject3",
   "useCompressedEngine": false,
-  "startupScene": "res://0eab11bb-6fff-480a-9c81-2b4e1de5045c",
+  "startupScene": "res://9b931ecf-fde9-44dd-acf3-15f8dc807965",
+  "alwaysIncluded": [
+    "multPrefabDemo",
+    "scenes"
+  ],
   "copyBinFiles": false,
   "android": {
     "targetArchitectures": {

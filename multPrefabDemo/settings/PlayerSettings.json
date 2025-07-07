@@ -1,8 +1,8 @@
 {
   "resolution": {
-    "designWidth": 1920,
-    "designHeight": 1080,
-    "scaleMode": "full",
+    "designWidth": 1554,
+    "designHeight": 720,
+    "scaleMode": "fixedwidth",
     "screenMode": "horizontal"
   },
   "modules": {

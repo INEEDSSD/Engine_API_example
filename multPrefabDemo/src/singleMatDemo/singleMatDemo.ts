@@ -42,6 +42,19 @@ export class singleMatDemo extends Laya.Script {
             this.createMoreBox();
         }));
 
+
+
+        let txt = new Laya.Label();
+        txt.pos(100, 100);
+        txt.color = "#ffffff";
+        txt.fontSize = 30;
+        txt.font = "Arial";
+        this.owner.addChild(txt);
+        let camera = (this.owner as Laya.Scene).scene3D.getChildByName("Main Camera") as Laya.Camera;
+
+        txt.text = `当前viewport宽高为: ${camera.viewport.width}x${camera.viewport.height}`;
+
+
     }
 
     createMoreBox() {

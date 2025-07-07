@@ -101,8 +101,8 @@ export class Main extends Laya.Script {
         //     console.log("WebGLRenderElement3DCount: ", (window as any).WebGLRenderElement3DCount);
         //     console.log("WebGLInstanceRenderElement3DCount: ", (window as any).WebGLInstanceRenderElement3DCount);
         // });
-        Laya.loader.load("resources/prefabUI/UIContiner.lh").then(() => {
-            let uiRes: Laya.Prefab = Laya.loader.getRes("resources/prefabUI/UIContiner.lh");
+        Laya.loader.load("multPrefabDemo/prefabUI/UIContiner.lh").then(() => {
+            let uiRes: Laya.Prefab = Laya.loader.getRes("multPrefabDemo/prefabUI/UIContiner.lh");
             let uiIns: Laya.Sprite = uiRes.create() as Laya.Sprite;
             uiIns.scale(0.6, 0.6);
             this.boxBagUI.addChild(uiIns);
