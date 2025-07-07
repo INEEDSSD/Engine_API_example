@@ -1,0 +1,52 @@
+{
+  "version": "LAYAMATERIAL:04",
+  "props": {
+    "textures": [
+      {
+        "path": "res://e17aca1a-195b-4266-99d2-548aafba75ef",
+        "constructParams": [
+          512,
+          512,
+          1,
+          true,
+          false,
+          true
+        ],
+        "propertyParams": {
+          "filterMode": 1,
+          "wrapModeU": 0,
+          "wrapModeV": 0,
+          "anisoLevel": 4
+        },
+        "name": "u_Tex"
+      }
+    ],
+    "type": "Skybox/Cubemap",
+    "renderQueue": 1000,
+    "materialRenderMode": 0,
+    "s_Cull": 2,
+    "s_Blend": 0,
+    "s_BlendSrc": 1,
+    "s_BlendDst": 0,
+    "s_BlendSrcRGB": 0,
+    "s_BlendDstRGB": 0,
+    "s_BlendSrcAlpha": 0,
+    "s_BlendDstAlpha": 0,
+    "s_BlendEquation": 0,
+    "s_BlendEquationRGB": 0,
+    "s_BlendEquationAlpha": 0,
+    "s_DepthTest": 1,
+    "s_DepthWrite": true,
+    "u_Exposure": 1,
+    "u_Rotation": 0,
+    "u_Tint": [
+      0.5411764705882353,
+      0.7137254901960784,
+      0.9921568627450981,
+      1
+    ],
+    "defines": [
+      "TEXTURE"
+    ]
+  }
+}

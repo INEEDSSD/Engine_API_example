@@ -1,0 +1,13 @@
+{
+  "width": 1024,
+  "height": 1024,
+  "depth": 1,
+  "format": 1,
+  "mipmap": true,
+  "sRGB": true,
+  "premultiplyAlpha": false,
+  "invertY": false,
+  "textures": [
+    "res://68804af5-8b9c-46bd-8dda-a053889bebd0"
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "version": "LAYAMATERIAL:04",
+  "props": {
+    "textures": [
+      {
+        "path": "res://fc2facc1-3109-4e43-85b0-a7bf7f832fde",
+        "constructParams": [
+          1024,
+          1024,
+          1,
+          true,
+          false,
+          true
+        ],
+        "propertyParams": {
+          "filterMode": 1,
+          "wrapModeU": 0,
+          "wrapModeV": 0,
+          "anisoLevel": 4
+        },
+        "name": "u_MainTex"
+      },
+      {
+        "path": "res://02770802-32bf-4755-9caa-b8ebf0226123",
+        "constructParams": [
+          1024,
+          1024,
+          1,
+          true,
+          false,
+          true
+        ],
+        "propertyParams": {
+          "filterMode": 1,
+          "wrapModeU": 0,
+          "wrapModeV": 0,
+          "anisoLevel": 4
+        },
+        "name": "u_BumpMap"
+      },
+      {
+        "path": "res://1c22fb76-e571-4a51-9d48-f08707277e0c",
+        "constructParams": [
+          1024,
+          1024,
+          1,
+          true,
+          false,
+          true
+        ],
+        "propertyParams": {
+          "filterMode": 1,
+          "wrapModeU": 0,
+          "wrapModeV": 0,
+          "anisoLevel": 4
+        },
+        "name": "u_MainTex2"
+      },
+      {
+        "path": "res://99bfdd94-5ce9-4576-8510-9bcf692b9b8c",
+        "constructParams": [
+          1024,
+          1024,
+          1,
+          true,
+          false,
+          true
+        ],
+        "propertyParams": {
+          "filterMode": 1,
+          "wrapModeU": 0,
+          "wrapModeV": 0,
+          "anisoLevel": 4
+        },
+        "name": "u_BumpMap2"
+      }
+    ],
+    "type": "BlendSM3",
+    "renderQueue": 2000,
+    "materialRenderMode": 0,
+    "s_Cull": 2,
+    "s_Blend": 0,
+    "s_BlendSrc": 1,
+    "s_BlendDst": 0,
+    "s_DepthTest": 1,
+    "s_DepthWrite": true,
+    "u_Color": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "u_Opacity": 1,
+    "u_MainTex_ST": [
+      6,
+      6,
+      0,
+      0
+    ],
+    "u_BumpMap_ST": [
+      6,
+      6,
+      0,
+      0
+    ],
+    "u_MainTex2_ST": [
+      1,
+      1,
+      0,
+      0
+    ],
+    "u_BumpMap2_ST": [
+      1,
+      1,
+      0,
+      0
+    ],
+    "defines": [
+      "u_MainTex_Gamma",
+      "u_MainTex2_Gamma",
+      "BUMPMAP",
+      "u_BumpMap_Gamma",
+      "u_BumpMap2_Gamma",
+      "BUMPMAP2"
+    ]
+  }
+}
