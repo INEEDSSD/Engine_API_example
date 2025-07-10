@@ -113,6 +113,7 @@ export class Main extends Laya.Script {
                     this.bagBtn.label = "关闭背包界面";
                 }
                 this.boxBagUI.visible = !this.boxBagUI.visible;
+                this.boxBagUI.active = !this.boxBagUI.active;
             })
         });
 
@@ -123,6 +124,7 @@ export class Main extends Laya.Script {
                 this.custom2DShaderBtn.label = "关闭自定义2Dshader绘制色块";
             }
             this.boxShader2D.visible = !this.boxShader2D.visible;
+            this.boxShader2D.active = !this.boxShader2D.active;
         });
 
         this.insMeshBtn.on(Laya.Event.CLICK, this, () => {
