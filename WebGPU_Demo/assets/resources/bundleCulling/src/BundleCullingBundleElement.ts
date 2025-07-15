@@ -25,7 +25,7 @@ export class BundleCullingBundleElement extends Laya.WebGPURenderElement3D {
         }
     }
 
-    _render(context: Laya.WebGPURenderContext3D, command: Laya.WebGPURenderCommandEncoder | Laya.WebGPURenderBundle): number {
+    _render(context: Laya.WebGPURenderContext3D, command: Laya.WebGPURenderCommandEncoder | Laya.WebGPURenderBundle): 1 | 0 {
         if (this._needRecreateRenderBundle) {
             this._commandBunlde.startRender(context.destRT, "renderCullBundle");
             for (var i = 0; i < this._renderelements.length; i++) {
@@ -37,4 +37,17 @@ export class BundleCullingBundleElement extends Laya.WebGPURenderElement3D {
         (command as Laya.WebGPURenderCommandEncoder).excuteBundle([this._commandBunlde._gpuBundle])
         return 0;
     }
+
+    // _render(context: Laya.WebGPURenderContext3D, command: Laya.WebGPURenderCommandEncoder | Laya.WebGPURenderBundle): number {
+    //     if (this._needRecreateRenderBundle) {
+    //         this._commandBunlde.startRender(context.destRT, "renderCullBundle");
+    //         for (var i = 0; i < this._renderelements.length; i++) {
+    //             this._renderelements[i]._render(context, this._commandBunlde);
+    //         }
+    //         this._commandBunlde.finish("renderCullBundle");
+    //         this._needRecreateRenderBundle = false;
+    //     }
+    //     (command as Laya.WebGPURenderCommandEncoder).excuteBundle([this._commandBunlde._gpuBundle])
+    //     return 0;
+    // }
 };

@@ -9,96 +9,50 @@ export class BundleCullingRenderElement extends Laya.WebGPURenderElement3D {
         this.isRender = true;
     };
 
-    protected _bindGroup(context: Laya.WebGPURenderContext3D, shaderInstance: Laya.WebGPUShaderInstance, command: Laya.WebGPURenderCommandEncoder | Laya.WebGPURenderBundle): void {
-        this.bindGroupMap.clear();
+    protected _bindGroup(context: Laya.WebGPURenderContext3D, info: Laya.OneDrawCacheInfo, command: Laya.WebGPURenderCommandEncoder | Laya.WebGPURenderBundle) {
+        let shaderInstance = info.shaderInstance;
+
+        command.setBindGroup(0, context._sceneBindGroup);
+        command.setBindGroup(1, context._cameraBindGroup);
 
         {
-            let sceneGroup = context._sceneBindGroup;
-            command.setBindGroup(0, sceneGroup);
-            this.bindGroupMap.set(0, sceneGroup);
-        }
-        {
-            command.setBindGroup(1, context._cameraBindGroup);
-            this.bindGroupMap.set(1, context._cameraBindGroup);
-        }
-        {
-            let shaderResource = shaderInstance.uniformSetMap.get(2);
-            let bindgroup = Laya.WebGPURenderEngine._instance.bindGroupCache.getBindGroup(this.owner._commonUniformMap, this.cullShaderData, null, shaderResource);
+            //判断 nodePipeline是否有改变
+            if (this.owner) {
+                let bindgroupChangeFlag = this.owner.bindGroupChangeFlag;
+                if (info.shaderChange || this._spriteRenderDataChange || Laya.compareCahceFlag(bindgroupChangeFlag, info.renderNodeBindGroupCacheFlag)) {
+                    info.renderNodeBindGroupCacheFlag.setValue(Laya.Stat.loopCount, Laya.WebGPURenderEngine._instance._framePassCount);
+                    let shaderResource = shaderInstance.uniformSetMap.get(2);
+                    let textureExitsMask = shaderInstance.uniformTextureExits.get(2);
 
-            // let bindgroup = Laya.WebGPURenderEngine._instance.bindGroupCache.getBindGroupByNode(shaderResource, this.owner);
-
-            command.setBindGroup(2, bindgroup);
-            this.bindGroupMap.set(2, bindgroup);
-        }
-        {
-            let shaderResource = shaderInstance.uniformSetMap.get(3);
-
-            let bindgroup = Laya.WebGPURenderEngine._instance.bindGroupCache.getBindGroup([this.subShader._owner.name], this.materialShaderData, null, shaderResource);
-
-            command.setBindGroup(3, bindgroup);
-            this.bindGroupMap.set(3, bindgroup);
-        }
-
-    }
-
-    _preUpdatePre(context: Laya.WebGPURenderContext3D): void {
-        this._compileShader(context);
-
-        let subShader = this.subShader;
-        let matSubBuffer = this.materialShaderData.createSubUniformBuffer("Material", subShader.owner.name, subShader._uniformMap);
-        if (matSubBuffer.needUpload) {
-            matSubBuffer.bufferBlock.needUpload();
-        }
-
-        //sprite ubo
-        if (this.renderShaderData && this.owner._commonUniformMap.length > 0) {
-            let nodemap = this.owner._commonUniformMap;
-            for (var i = 0, n = nodemap.length; i < n; i++) {
-                let moduleName = nodemap[i];
-                let unifomrMap = <Laya.WebGPUCommandUniformMap>Laya.LayaGL.renderDeviceFactory.createGlobalUniformMap(nodemap[i]);
-                let uniformBuffer = this.renderShaderData.createSubUniformBuffer(moduleName, moduleName, unifomrMap._idata);
-                if (uniformBuffer && uniformBuffer.needUpload) {
-                    uniformBuffer.bufferBlock.needUpload();
+                    let commands = this.owner?._commonUniformMap;
+                    let shaderData = this.cullShaderData as Laya.WebGPUShaderData;
+                    let addition = this.owner?.additionShaderData;
+                    info.nodeBindGroup = Laya.WebGPURenderEngine._instance.bindGroupCache.getBindGroup(commands, shaderData, addition, shaderResource, textureExitsMask);
+                    Laya.coverCahceFlag(this.owner.bindGroupLayoutChangeFlag, this._pipelineChangeFlag);
                 }
+            } else {
+                info.nodeBindGroup = Laya.WebGPUBindGroupCache.emptyBindGroup;
             }
+            command.setBindGroup(2, info.nodeBindGroup);
         }
-        //additional ubo
-        if (this.owner) {
-            for (let [key, value] of this.owner.additionShaderData) {
-                let shaderData = value as Laya.WebGPUShaderData;
-                let unifomrMap = <Laya.WebGPUCommandUniformMap>Laya.LayaGL.renderDeviceFactory.createGlobalUniformMap(key);
-                let uniformBuffer = shaderData.createSubUniformBuffer(key, key, unifomrMap._idata);
-                if (uniformBuffer && uniformBuffer.needUpload) {
-                    uniformBuffer.bufferBlock.needUpload();
+        {
+            if (this._materialShaderData) {
+                if (info.shaderChange || this._materialRenderDataChange || Laya.compareCahceFlag(this._matBindGroupChangeFlag, info.matBindGroupCacheFlag)) {
+                    info.matBindGroupCacheFlag.setValue(Laya.Stat.loopCount, Laya.WebGPURenderEngine._instance._framePassCount);
+                    let shaderResource = shaderInstance.uniformSetMap.get(3);
+                    let textureExitsMask = shaderInstance.uniformTextureExits.get(3);
+
+                    info.matBindGroup = Laya.WebGPURenderEngine._instance.bindGroupCache.getBindGroup([this._subShader._owner.name], this._materialShaderData, null, shaderResource, textureExitsMask);
+                    Laya.coverCahceFlag(this._matBindGroupLayoutFlag, this._pipelineChangeFlag);
                 }
+            } else {
+                info.matBindGroup = Laya.WebGPUBindGroupCache.emptyBindGroup;
             }
+            command.setBindGroup(3, info.matBindGroup);
         }
     }
 
-    _render(context: Laya.WebGPURenderContext3D, command: Laya.WebGPURenderCommandEncoder | Laya.WebGPURenderBundle): number {
-
-        if (!this.isRender) {
-            return 0;
-        }
-
-        let shaders = this._shaderInstances.elements;
-
-        for (let j = 0, m = this._shaderInstances.length; j < m; j++) {
-            let shaderInstance = shaders[j];
-            if (!shaderInstance.complete) {
-                continue;
-            }
-
-            this._bindGroup(context, shaderInstance, command);
-
-            let pipeline = this._getWebGPURenderPipeline(shaderInstance, context.destRT, context);
-
-            command.setPipeline(pipeline);  //新建渲染管线
-
-            this._uploadGeometry(command);
-        }
-
-        return 0;
+    _render(context: Laya.WebGPURenderContext3D, command: Laya.WebGPURenderCommandEncoder | Laya.WebGPURenderBundle): 1 | 0 {
+        return super._render(context, command);
     }
-
 }
