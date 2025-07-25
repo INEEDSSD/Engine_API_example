@@ -1,0 +1,40 @@
+{
+  "resolution": {
+    "designWidth": 1334,
+    "designHeight": 750,
+    "scaleMode": "fixedwidth",
+    "alignV": "middle",
+    "alignH": "center",
+    "screenMode": "horizontal",
+    "backgroundColor": "#efeed7"
+  },
+  "2D": {
+    "useRetinalCanvas": true,
+    "defaultFont": "MicrosoftYaHei"
+  },
+  "physics2D": {
+    "defaultConfig": {
+      "debugDraw": false
+    }
+  },
+  "modules": {
+    "laya.d3": true,
+    "laya.ui": true,
+    "laya.ani": true,
+    "laya.device": false,
+    "laya.html": false,
+    "laya.tiledmap": true,
+    "laya.particle": true,
+    "laya.spine": true,
+    "laya.gltf": false,
+    "laya.physics": true,
+    "laya.physics3D": false,
+    "laya.physics3D.wasm": false,
+    "laya.physics2D": true,
+    "laya.line2D": true,
+    "laya.tiledmap_discarded": true
+  },
+  "splash": {
+    "fit": "center"
+  }
+}
