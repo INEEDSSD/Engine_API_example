@@ -1,0 +1,128 @@
+{
+  "_$ver": 1,
+  "_$id": "vzwmzfgv1o",
+  "_$preloads": [
+    "res://5146bc78-b380-4448-8a74-bfd451e7a3c8"
+  ],
+  "_$type": "Box",
+  "name": "View",
+  "width": 1000,
+  "height": 600,
+  "_mouseState": 2,
+  "_$comp": [
+    {
+      "_$type": "a93776c6-6457-4f88-b445-ef78aa5cb42e",
+      "scriptPath": "../src/scence/uiDemo/animation/SkeletonAni.ts",
+      "spineNode": {
+        "_$ref": "2f9peoui"
+      },
+      "spineBtn": {
+        "_$ref": "39z4eog1"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "myqv7ol5",
+      "_$type": "Panel",
+      "name": "layaAirSpine",
+      "x": 929,
+      "y": 178.00000000000006,
+      "width": 250,
+      "height": 185,
+      "scaleX": -1,
+      "_$child": [
+        {
+          "_$id": "cjb4zbzm",
+          "_$type": "Skeleton",
+          "name": "Skeleton",
+          "x": 120,
+          "y": 110,
+          "width": 41,
+          "height": 16,
+          "scaleX": 0.3,
+          "scaleY": 0.3,
+          "source": "res://1bb604f8-feb3-4f94-b704-2c8d75b7a908",
+          "animationName": "flying",
+          "preview": true
+        }
+      ]
+    },
+    {
+      "_$id": "vx1qh5zb",
+      "_$type": "Sprite",
+      "name": "skeletonNode",
+      "x": 31.999999999999968,
+      "y": 35.99999999999999,
+      "width": 300,
+      "height": 500,
+      "_mouseState": 2,
+      "_$child": [
+        {
+          "_$id": "opo998gd",
+          "_$type": "Button",
+          "name": "playAni",
+          "x": 51,
+          "y": 2.0000000000000213,
+          "width": 197,
+          "height": 73,
+          "_mouseState": 2,
+          "centerX": -1,
+          "stateNum": 1,
+          "skin": "resources/UI/images/bg/btn_Bg.png",
+          "label": "切换皮肤",
+          "labelSize": 30,
+          "labelAlign": "center",
+          "labelVAlign": "middle"
+        }
+      ]
+    },
+    {
+      "_$id": "vx1qh5zb",
+      "_$type": "Sprite",
+      "name": "spineBox",
+      "x": 336,
+      "y": 35,
+      "width": 300,
+      "height": 500,
+      "_mouseState": 2,
+      "_$child": [
+        {
+          "_$id": "39z4eog1",
+          "_$type": "Button",
+          "name": "playAni",
+          "x": 51,
+          "y": 3.0000000000000213,
+          "width": 197,
+          "height": 73,
+          "_mouseState": 2,
+          "centerX": -1,
+          "stateNum": 1,
+          "skin": "resources/UI/images/bg/btn_Bg.png",
+          "label": "切换动作",
+          "labelSize": 30,
+          "labelAlign": "center",
+          "labelVAlign": "middle"
+        },
+        {
+          "_$id": "2f9peoui",
+          "_$type": "Sprite",
+          "name": "spineNode",
+          "x": 220,
+          "y": 390,
+          "width": 100,
+          "height": 100,
+          "scaleX": 0.3,
+          "scaleY": 0.3,
+          "_$comp": [
+            {
+              "_$type": "Spine2DRenderNode",
+              "source": "res://5146bc78-b380-4448-8a74-bfd451e7a3c8",
+              "animationName": "aim"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
