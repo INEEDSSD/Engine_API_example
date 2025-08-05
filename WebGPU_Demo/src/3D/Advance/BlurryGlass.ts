@@ -89,9 +89,7 @@ export class BlurGlass extends BaseScript {
 		//vertical blur
 		buf.blitScreenTriangle(blurTexture, downRenderTexture, null, shader, shaderValue, 2);
 
-		//设置全局uniform变量  
-		var globalUniformNameID: number = Laya.Shader3D.propertyNameToID("u_screenTexture");
-		buf.setGlobalTexture(globalUniformNameID, downRenderTexture);
+		this.mat.setTexture("u_screenTexture", downRenderTexture);
 		//将commandBuffer加入渲染流程
 		camera.addCommandBuffer(Laya.CameraEventFlags.BeforeTransparent, buf);
 		return;

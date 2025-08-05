@@ -42,7 +42,6 @@ export class TiledMap_SimpleDemo extends BaseScript {
 
 	private onLoaded(): void {
 		this.tiledMap.mapSprite().removeSelf();
-		this.tiledMap.mapSprite().cacheAs = "bitmap";
 		this.box2D.addChild(this.tiledMap.mapSprite());
 	}
 

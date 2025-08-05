@@ -28,8 +28,8 @@ export class AvatarMask extends BaseScript {
 		this.loadFont();
 
 		//加载场景
-		Scene3D.load("resources/res/threeDimen/LayaScene_MaskModelTest/maskScene.ls", Handler.create(this, (scene: Scene3D) => {
-			(<Scene3D>this.scene.addChild(scene));
+		Laya.Sprite3D.load("resources/res/threeDimen/LayaScene_MaskModelTest/maskScene.lh", Handler.create(this, (prefab: Laya.Sprite3D) => {
+			this.scene.addChild(prefab);
 		}));
 	}
 

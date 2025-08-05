@@ -137,7 +137,7 @@ export class Main extends MainBase {
         this.loadingBar.value = 0.98;
         console.log("加载结束", this.loadingBar.value);
 
-        if (!Laya.Browser._isMiniGame) {
+        if (Laya.Browser.isDomSupported) {
             this.initDom();
             this.initAce();
         }

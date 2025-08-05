@@ -44,7 +44,7 @@ export class BlinnPhong_NormalMap extends BaseScript {
 		this.directionLight.transform.worldMatrix = mat;
 		this.directionLight.getComponent(Laya.DirectionLightCom).color.setValue(1, 1, 1, 1);
 
-		Laya.loader.load("resources/res/threeDimen/staticModel/lizard/lizard.lh").then((res) => {
+		Laya.loader.load("resources/res/threeDimen/staticModel/lizard/lizard.lh").then((res: any) => {
 			this.onComplete(res);
 		});
 	}
@@ -59,7 +59,7 @@ export class BlinnPhong_NormalMap extends BaseScript {
 		monster2.transform.localScale = new Vector3(0.075, 0.075, 0.075);
 		for (var i: number = 0; i < monster2.getChildByName("lizard").numChildren; i++) {
 			var meshSprite3D: Laya.Sprite3D = (monster2.getChildByName("lizard").getChildAt(i) as Laya.Sprite3D);
-			var material: BlinnPhongMaterial = (<BlinnPhongMaterial>meshSprite3D.getComponent(MeshRenderer).sharedMaterial);
+			var material: BlinnPhongMaterial = (<BlinnPhongMaterial>meshSprite3D.getComponent(MeshRenderer).material);
 			//法线贴图
 			Laya.loader.load(this.normalMapUrl[i]).then((texture: Texture2D) => {
 				// 对应 BlinnPhong shader

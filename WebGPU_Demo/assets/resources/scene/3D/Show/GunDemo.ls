@@ -7,6 +7,8 @@
   "top": 0,
   "bottom": 0,
   "name": "Scene2D",
+  "width": 1334,
+  "height": 640,
   "mouseThrough": true,
   "_$comp": [
     {
@@ -80,7 +82,6 @@
       "iblTexRGBD": true,
       "fogStart": 0,
       "fogEnd": 300,
-      "fogDensity": 0.01,
       "fogColor": {
         "_$type": "Color",
         "r": 0.5,
@@ -108,9 +109,6 @@
         "_$type": "LightingSettings"
       },
       "_device": "CUDA",
-      "componentElementDatasMap": {
-        "_$type": "Record"
-      },
       "_$child": [
         {
           "_$id": "6jx8h8bvc6",
@@ -137,7 +135,6 @@
               "z": 1.0000000167867436
             }
           },
-          "orthographicVerticalSize": 10,
           "fieldOfView": 90,
           "nearPlane": 0.01,
           "farPlane": 1000,
@@ -148,26 +145,9 @@
             "g": 0,
             "b": 0
           },
-          "enableHDR": true,
-          "msaa": true,
-          "fxaa": true,
-          "cullingMask": 2147483647,
           "postProcess": {
             "_$type": "PostProcess",
             "effects": [
-              {
-                "_$type": "ScalableAO",
-                "singleton": false,
-                "active": false,
-                "aoColor": {
-                  "_$type": "Color",
-                  "r": 0.09689922480620151,
-                  "g": 0.09689922480620151,
-                  "b": 0.09689922480620151
-                },
-                "intensity": 1,
-                "radius": 0.2
-              },
               {
                 "_$type": "BloomEffect",
                 "clamp": 65472.9,
@@ -245,11 +225,6 @@
               }
             ]
           },
-          "normalizedViewport": {
-            "_$type": "Viewport",
-            "width": 1,
-            "height": 1
-          },
           "depthTextureMode": 3,
           "depthTextureFormat": 35
         },
@@ -275,13 +250,7 @@
           "_$comp": [
             {
               "_$type": "DirectionLightCom",
-              "intensity": 1,
               "lightmapBakedType": 2,
-              "shadowStrength": 1,
-              "shadowDistance": 50,
-              "shadowDepthBias": 1,
-              "shadowNormalBias": 1,
-              "shadowNearPlane": 0.1,
               "strength": 1,
               "angle": 0.526,
               "maxBounces": 1024
@@ -293,13 +262,11 @@
           "_$prefab": "6c128cd3-8183-46c8-9c2c-8c3055c9179c",
           "name": "Gun",
           "active": true,
+          "isStatic": true,
           "layer": 0,
           "transform": {
             "localPosition": {
-              "_$type": "Vector3",
-              "x": 0,
-              "y": 0,
-              "z": 0
+              "_$type": "Vector3"
             },
             "localRotation": {
               "_$type": "Quaternion",
@@ -309,7 +276,6 @@
               "w": 0.9541426462920598
             }
           },
-          "isStatic": true,
           "_$child": [
             {
               "_$override": "#39",
@@ -1173,13 +1139,6 @@
           "_$comp": [
             {
               "_$type": "SpotLightCom",
-              "intensity": 1,
-              "lightmapBakedType": 1,
-              "shadowStrength": 1,
-              "shadowDistance": 50,
-              "shadowDepthBias": 1,
-              "shadowNormalBias": 1,
-              "shadowNearPlane": 0.1,
               "shadowCascadesMode": null,
               "range": 50,
               "spotAngle": 49,

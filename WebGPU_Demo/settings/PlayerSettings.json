@@ -1,8 +1,6 @@
 {
   "resolution": {
-    "designWidth": 1920,
-    "designHeight": 1080,
-    "scaleMode": "full",
+    "designWidth": 1334,
     "screenMode": "horizontal",
     "backgroundColor": "rgba(0, 0, 0, 1)"
   },
@@ -11,16 +9,12 @@
     "isAlpha": true
   },
   "physics2D": {
-    "debugDraw": true,
     "layers": [
       "Default",
       "bullet",
       "wall",
       "wall1"
-    ],
-    "defaultConfig": {
-      "subStep": null
-    }
+    ]
   },
   "physics3D": {
     "enableCCD": true

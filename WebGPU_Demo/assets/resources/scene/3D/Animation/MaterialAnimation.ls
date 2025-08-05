@@ -7,6 +7,8 @@
   "top": 0,
   "bottom": 0,
   "name": "Scene2D",
+  "width": 1334,
+  "height": 640,
   "_$comp": [
     {
       "_$type": "f2170105-c2c6-437f-8654-18d17eda81a1",
@@ -40,17 +42,12 @@
       },
       "fogStart": 0,
       "fogEnd": 300,
-      "fogDensity": 0.01,
       "fogColor": {
         "_$type": "Color",
         "r": 0.5,
         "g": 0.5,
         "b": 0.5,
         "a": null
-      },
-      "lightmaps": [],
-      "componentElementDatasMap": {
-        "_$type": "Record"
       },
       "_$child": [
         {
@@ -69,8 +66,6 @@
               "w": 0
             }
           },
-          "orthographicVerticalSize": 10,
-          "fieldOfView": 60,
           "nearPlane": 0.3,
           "farPlane": 1000,
           "clearFlag": 1,
@@ -80,12 +75,6 @@
             "g": 0.3019608,
             "b": 0.4745098,
             "a": 0
-          },
-          "cullingMask": 2147483647,
-          "normalizedViewport": {
-            "_$type": "Viewport",
-            "width": 1,
-            "height": 1
           },
           "depthTextureFormat": 35
         },
@@ -108,17 +97,7 @@
           },
           "_$comp": [
             {
-              "_$type": "DirectionLightCom",
-              "intensity": 1,
-              "lightmapBakedType": 1,
-              "shadowStrength": 1,
-              "shadowDistance": 50,
-              "shadowDepthBias": 1,
-              "shadowNormalBias": 1,
-              "shadowNearPlane": 0.1,
-              "strength": null,
-              "angle": null,
-              "maxBounces": null
+              "_$type": "DirectionLightCom"
             }
           ]
         },

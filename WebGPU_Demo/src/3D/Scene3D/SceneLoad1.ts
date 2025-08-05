@@ -23,14 +23,12 @@ export class SceneLoad1 extends BaseScript {
     onAwake(): void {
         super.base(this.camera);
 
-        Laya.loader.load("resources/res/threeDimen/scene/LayaScene_dudeScene/Conventional/dudeScene.ls", null, Laya.Handler.create(this, this.onLoading, null, false)).then((res) => {
+        Laya.loader.load("resources/res/threeDimen/scene/LayaScene_dudeScene/Conventional/dudeScene.lh", null, Laya.Handler.create(this, this.onLoading, null, false)).then((res: Laya.Prefab) => {
             this.loadingBar.visible = false;
 
             // lh/ls需要使用create()
             let scene = res.create();
-            //scene.scene3D 可以获得Scene3D资源
-            let scene3D = scene.scene3D;
-            this.scene.addChildAt(scene3D, 0);
+            this.scene.addChildAt(scene, 0);
 
         });
         // 侦听加载失败

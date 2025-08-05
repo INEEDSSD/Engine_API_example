@@ -31,7 +31,6 @@ export class TiledMap_AnimationTile extends BaseScript {
 
 	private onLoaded(): void {
 		this.tiledMap.mapSprite().removeSelf();
-		this.tiledMap.mapSprite().cacheAs = "bitmap";
         let map = this.tiledMap.mapSprite();
 		this.box2D.addChild(map);
 	}

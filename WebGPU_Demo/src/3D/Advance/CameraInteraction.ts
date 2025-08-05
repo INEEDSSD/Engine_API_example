@@ -40,15 +40,15 @@ export class CameraInteraction extends BaseScript {
         this.isMatrix = false;
 
         //预加载资源
-        Laya.loader.load("resources/res/threeDimen/scene/CourtyardScene/Courtyard.ls").then((res) => {
+        Laya.loader.load("resources/res/threeDimen/scene/CourtyardScene/Courtyard.lh").then((res: Laya.Prefab) => {
             this.onComplete(res);
         });
     }
 
     onComplete(res: any) {
         // 加载3D场景
-        var scene3D = res.create() as Laya.Scene;
-        this.scene.addChild(scene3D.scene3D);
+        var prefab = res.create() as Laya.Sprite3D;
+        this.scene.addChild(prefab);
         // 添加摄像机
         this.camera.transform.position = new Laya.Vector3(57, 2.5, 58);
         this.camera.transform.rotationEuler = new Laya.Vector3(-10, 150, 0);

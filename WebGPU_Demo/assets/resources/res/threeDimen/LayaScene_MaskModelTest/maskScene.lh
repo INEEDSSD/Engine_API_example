@@ -1,0 +1,83 @@
+{
+  "_$ver": 1,
+  "_$id": "c8kpxofp",
+  "_$type": "Sprite3D",
+  "name": "Sprite3D",
+  "_$child": [
+    {
+      "_$id": "whosd2c3",
+      "_$prefab": "df984515-6bf3-4014-afae-5a33490838bf",
+      "name": "Drunk Walk",
+      "active": true,
+      "layer": 0,
+      "transform": {
+        "localPosition": {
+          "_$type": "Vector3",
+          "x": -0.2934840351616591
+        },
+        "localRotation": {
+          "_$type": "Quaternion"
+        }
+      },
+      "_$comp": [
+        {
+          "_$override": "Animator",
+          "controller": {
+            "_$uuid": "015a41a1-7fba-404f-b0e7-c21220777fdb",
+            "_$type": "AnimationController"
+          }
+        }
+      ]
+    },
+    {
+      "_$id": "eleipot8",
+      "_$prefab": "df984515-6bf3-4014-afae-5a33490838bf",
+      "name": "Drunk Walk(1)",
+      "active": true,
+      "layer": 0,
+      "transform": {
+        "localPosition": {
+          "_$type": "Vector3",
+          "x": 2.4885818065080545
+        },
+        "localRotation": {
+          "_$type": "Quaternion"
+        }
+      },
+      "_$comp": [
+        {
+          "_$override": "Animator",
+          "controller": {
+            "_$uuid": "bc759258-8257-446b-9251-f098f23913c8",
+            "_$type": "AnimationController"
+          }
+        }
+      ]
+    },
+    {
+      "_$id": "93no875k",
+      "_$prefab": "df984515-6bf3-4014-afae-5a33490838bf",
+      "name": "Drunk Walk(2)",
+      "active": true,
+      "layer": 0,
+      "transform": {
+        "localPosition": {
+          "_$type": "Vector3",
+          "x": 1.064000430280762
+        },
+        "localRotation": {
+          "_$type": "Quaternion"
+        }
+      },
+      "_$comp": [
+        {
+          "_$override": "Animator",
+          "controller": {
+            "_$uuid": "3c232cfa-442d-47f5-b7fd-2066db1bb582",
+            "_$type": "AnimationController"
+          }
+        }
+      ]
+    }
+  ]
+}

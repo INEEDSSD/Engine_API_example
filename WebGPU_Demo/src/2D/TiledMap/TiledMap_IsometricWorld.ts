@@ -59,7 +59,6 @@ export class TiledMap_IsometricWorld extends BaseScript {
 		this.sprite.zOrder = 99999;
 		this.tiledMap.mapSprite().removeSelf();
         let map = this.tiledMap.mapSprite();
-		map.cacheAs = "bitmap";
         map.x -= (1600-this.pageWidth)/2;
 		this.box2D.addChild(map);
 	}

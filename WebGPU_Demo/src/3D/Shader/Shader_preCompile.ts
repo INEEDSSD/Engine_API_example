@@ -18,79 +18,19 @@ export class Shader_preCompile extends BaseScript {
     /**是否开启预编译 */
     private _openPreCom: boolean = false;
 
-    private shaderNames: string[] = [
-        "BLINNPHONG",
-        "BLINNPHONG",
-        "BLINNPHONG",
-        "SkyProcedural"
-    ];
-    private defines: string[][] = [
-        [
-            "FOG",
-            "BONE",
-            "TANGENT",
-            "UV",
-            "UV1",
-            "RECEIVESHADOW",
-            "DIRECTIONLIGHT",
-            "GI_IBL",
-            "IBL_RGBD",
-            "DIFFUSEMAP",
-            "NORMALMAP"
-        ],
-        [
-            "FOG",
-            "TANGENT",
-            "UV",
-            "UV1",
-            "RECEIVESHADOW",
-            "DIRECTIONLIGHT",
-            "GI_IBL",
-            "IBL_RGBD",
-            "DIFFUSEMAP"
-        ],
-        [
-            "FOG",
-            "TANGENT",
-            "UV",
-            "RECEIVESHADOW",
-            "DIRECTIONLIGHT",
-            "GI_IBL",
-            "IBL_RGBD",
-            "DIFFUSEMAP"
-        ],
-        [
-            "SUN_SIMPLE"
-        ]
-    ];
-    private nodeCommonMap: string[][] = [
-        [
-            "Sprite3D"
-        ],
-        [
-            "Sprite3D"
-        ],
-        [
-            "Sprite3D"
-        ],
-        [
-            "Sprite3D",
-            "SkyRenderer"
-        ]
-    ];
+    private shaderVariantCollection: Record<string, Laya.IShaderVariant[]> = {};
 
     constructor() {
         super();
     }
 
 
+
     onEnable(): void {
         super.base(this.camera);
         //开启Shader3D的debugMode
         Laya.Shader3D.debugMode = true;
-        this.preCompileShader();
         this.loadSceneAndOpen(null);
-
 
         // this.reloadScene.on(Laya.Event.CLICK, this, () => {
         //     this.scene.removeChildren(2, this.scene.numChildren - 1);
@@ -113,19 +53,40 @@ export class Shader_preCompile extends BaseScript {
 
 
     preCompileShader(): void {
-        for (let i = 0; i < this.shaderNames.length; i++) {
-            Laya.Shader3D.compileShaderByDefineNames(this.shaderNames[i], 0, 0, this.defines[i], this.nodeCommonMap[i]);
+        //@ts-ignore
+        let items: Record<string, Laya.IShaderVariant[]> = Laya.ShaderVariantCollection.active.items;
+
+        for (let key in items) {
+            let item = items[key];
+            this.shaderVariantCollection[key] = [];
+            for (let i = 0; i < item.length; i++) {
+                let variant = item[i] as Laya.IShaderVariant;
+                let shaderVariant = {
+                    is2D: variant.is2D,
+                    subShaderIndex: variant.subShaderIndex,
+                    passIndex: variant.passIndex,
+                    defines: variant.defines,
+                    nodeCommonMap: variant.nodeCommonMap,
+                    additionMap: variant.additionMap,
+                    attributeLocations: variant.attributeLocations,
+                }
+                this.shaderVariantCollection[key].push(shaderVariant);
+            }
         }
+
+        let shaderVariantCollection = new Laya.ShaderVariantCollection(this.shaderVariantCollection);
+        shaderVariantCollection.compileAll();
     }
 
     loadSceneAndOpen(callback: Function): void {
-        Laya.loader.load("resources/res/threeDimen/scene/LayaScene_dudeScene/Conventional/dudeScene.ls").then((res) => {
+        Laya.loader.load("resources/res/threeDimen/scene/LayaScene_dudeScene/Conventional/dudeScene.lh").then((res: Laya.Prefab) => {
             // lh/ls需要使用create()
             let scene = res.create();
-            //scene.scene3D 可以获得Scene3D资源
-            let scene3D = scene.scene3D;
-            this.scene.addChild(scene3D);
+            this.scene.addChild(scene);
             callback && callback();
+            Laya.timer.once(5000, this, () => {
+                this.preCompileShader();
+            });
         });
     }
 }
