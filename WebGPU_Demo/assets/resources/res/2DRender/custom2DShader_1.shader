@@ -6,12 +6,13 @@ Shader3D Start
     supportReflectionProbe:true,
     shaderType:2,
     uniformMap:{
-        u_TestColor: { type: Color,default: [1,1,1,1] }
+        u_TestColor: { type: Color,default: [1,1,1,1] },
     },
     attributeMap: {
         a_posuv: Vector4,
         a_attribColor: Vector4,
         a_attribFlags: Vector4,
+        a_customs: Vector4,
     },
     defines: {
         TEXTUREVS: { type: bool, default: true }
@@ -39,11 +40,11 @@ GLSL Start
 	    v_cliped = info.cliped;
 	    v_texcoordAlpha = info.texcoordAlpha;
 	    v_useTex = info.useTex;
+        v_useClip = info.useClip;
 	    v_color = info.color;
+        v_customs = info.customs;
 
-	    vec4 pos;
-	    getPosition(pos);
-	    gl_Position = pos;
+        gl_Position = getPosition(info.pos);
 
     }
 

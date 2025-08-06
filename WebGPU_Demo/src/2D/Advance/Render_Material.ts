@@ -2,6 +2,11 @@ import { BaseScript } from "../../BaseScript";
 
 const { regClass, property } = Laya;
 
+Laya.addAfterInitCallback(() => {
+    Laya.Graphics.add2DGlobalUniformData(Laya.Shader3D.propertyNameToID("u_GlobalColor"), "u_GlobalColor", Laya.ShaderDataType.Color);
+});
+
+
 @regClass()
 export class Render_Material extends BaseScript {
 
@@ -40,9 +45,12 @@ export class Render_Material extends BaseScript {
         Laya.loader.load("resources/res/2DRender/custom2DShader_0.shader").then(() => {
             let mat = new Laya.Material();
             mat.setShaderName("custom2DShader_0");
-            // 设置2D全局uniform变量
-            Laya.Graphics.add2DGlobalUniformData(Laya.Shader3D.propertyNameToID("u_MyGlobalColor"), "u_MyGlobalColor", Laya.ShaderDataType.Color);
-            (this.owner.scene as Laya.Scene).sceneShaderData.setColor(Laya.Shader3D.propertyNameToID("u_MyGlobalColor"), new Laya.Color(0.0, 1.0, 0.0, 1.0));
+            if (!Laya.WebGPURenderEngine) {
+                // WebGPU中设置全局uniform变量时候需要在afterInitCallback中设置,否则会报错
+                // 设置2D全局uniform变量
+                Laya.Graphics.add2DGlobalUniformData(Laya.Shader3D.propertyNameToID("u_GlobalColor"), "u_GlobalColor", Laya.ShaderDataType.Color);
+            }
+            (this.owner.scene as Laya.Scene).setglobalRenderData(Laya.Shader3D.propertyNameToID("u_GlobalColor"), Laya.ShaderDataType.Color, new Laya.Color(0.0, 1.0, 0.0, 1.0));
             sp.graphics.material = mat;
         });
     }

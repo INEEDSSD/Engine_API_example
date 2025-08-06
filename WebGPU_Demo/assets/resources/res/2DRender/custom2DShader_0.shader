@@ -11,6 +11,7 @@ Shader3D Start
         a_posuv: Vector4,
         a_attribColor: Vector4,
         a_attribFlags: Vector4,
+        a_customs: Vector4,
     },
     defines: {
         TEXTUREVS: { type: bool, default: true }
@@ -31,6 +32,8 @@ GLSL Start
     #define SHADER_NAME custom2DShader_0
     #include "Sprite2DVertex.glsl";
 
+
+
     void main() {
 	    vertexInfo info;
 	    getVertexInfo(info);
@@ -39,10 +42,11 @@ GLSL Start
 	    v_texcoordAlpha = info.texcoordAlpha;
 	    v_useTex = info.useTex;
 	    v_color = info.color;
+        v_useClip = info.useClip;
+        v_customs = info.customs;
 
-	    vec4 pos;
-	    getPosition(pos);
-	    gl_Position = pos;
+
+	    gl_Position = getPosition(info.pos);
 
     }
 
@@ -57,13 +61,15 @@ GLSL Start
         precision mediump float;
     #endif
 
+
+
     #include "Sprite2DFrag.glsl";
 
     void main()
     {
         clip();
         vec4 color = getSpriteTextureColor();
-        color = color * u_MyGlobalColor;
+        color = color * u_GlobalColor;
         setglColor(color);
     }
     
