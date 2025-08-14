@@ -1,0 +1,16 @@
+{
+  "_$ver": 1,
+  "_$id": "agxxefkw",
+  "_$type": "Sprite3D",
+  "name": "PointLight",
+  "_$comp": [
+    {
+      "_$type": "PointLightCom",
+      "lightmapBakedType": 0,
+      "shadowCascadesMode": null,
+      "power": 10,
+      "radius": 0.1,
+      "maxBounces": 1024
+    }
+  ]
+}

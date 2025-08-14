@@ -1,0 +1,14 @@
+{
+  "uuid": "d1dc1ba3-e168-44ef-b4da-ae096a8ba6b9",
+  "importer": {
+    "sRGB": true,
+    "generateMipmap": true,
+    "platformDefault": {
+      "format": 1
+    },
+    "wrapMode": 0,
+    "filterMode": 2,
+    "anisoLevel": 1,
+    "hdrEncodeFormat": 0
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "_$ver": 1,
+  "_$id": "x54o6d7x",
+  "_$type": "Sprite3D",
+  "name": "Sphere",
+  "transform": {
+    "localScale": {
+      "_$type": "Vector3",
+      "x": 0.1,
+      "y": 0.1,
+      "z": 0.1
+    }
+  },
+  "_$comp": [
+    {
+      "_$type": "MeshFilter",
+      "sharedMesh": {
+        "_$uuid": "f1e48cc9-d67d-4196-92dd-77d9ee2f076c",
+        "_$type": "Mesh"
+      }
+    },
+    {
+      "_$type": "MeshRenderer",
+      "lightmapScaleOffset": {
+        "_$type": "Vector4"
+      },
+      "sharedMaterials": [
+        {
+          "_$uuid": "16b18ce8-4292-42c0-853d-2e1c87e769cb",
+          "_$type": "Material"
+        }
+      ]
+    }
+  ]
+}

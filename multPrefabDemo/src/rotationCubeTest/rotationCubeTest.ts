@@ -16,7 +16,7 @@ export class RotationCubeTest extends Laya.Script {
     public targetCubeCount = 0;
     // 目标立方体数量
     public currentCubeCount = 0;
-    public gridSize = 8;
+    public gridSize = 16;
     // 初始网格大小
     public spacing = 2;
     // 间距

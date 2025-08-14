@@ -2,12 +2,16 @@
   "resolution": {
     "designWidth": 1554,
     "designHeight": 720,
-    "scaleMode": "fixedwidth",
     "screenMode": "horizontal"
   },
   "modules": {
     "laya.ui": true,
-    "laya.d3": true
+    "laya.d3": true,
+    "laya.ani": true,
+    "laya.particle": true,
+    "laya.trail2D": true,
+    "laya.particle3D": true,
+    "laya.trail3D": true
   },
   "webgpu": true,
   "splash": {

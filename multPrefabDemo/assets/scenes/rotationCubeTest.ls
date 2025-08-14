@@ -38,8 +38,7 @@
       "_$comp": [
         {
           "_$type": "15cd5127-05a8-43c6-9bfe-9e3da49dec66",
-          "scriptPath": "../src/rotationCubeTest/rotationCubeTest.ts",
-          "text": ""
+          "scriptPath": "../src/rotationCubeTest/rotationCubeTest.ts"
         }
       ],
       "_$child": [
@@ -51,7 +50,7 @@
             "localPosition": {
               "_$type": "Vector3",
               "y": 1,
-              "z": 5
+              "z": 20
             }
           },
           "nearPlane": 0.3,
@@ -62,7 +61,14 @@
             "r": 0.3921,
             "g": 0.5843,
             "b": 0.9294
-          }
+          },
+          "_$comp": [
+            {
+              "_$type": "fd46c0e3-b05d-44fb-971a-9b00b0a1c5fd",
+              "scriptPath": "../src/CameraMove.ts",
+              "speed": 0.01
+            }
+          ]
         },
         {
           "_$id": "6ni3p096l5",
