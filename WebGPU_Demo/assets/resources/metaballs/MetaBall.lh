@@ -11,7 +11,12 @@
       "_$comp": [
         {
           "_$type": "5fa29511-c70d-4e98-a1ba-de20933dcd65",
-          "scriptPath": "metaballs/MetaballScript.ts"
+          "scriptPath": "resources/metaballs/MetaballScript.ts",
+          "config": {
+            "_$type": "70555c3d-8ed3-49b4-9591-21d0ed853e9e",
+            "metaballMethod": "ComputeShader",
+            "a": 0
+          }
         },
         {
           "_$type": "MeshFilter",
@@ -38,6 +43,7 @@
       "_$id": "54ay27g8",
       "_$type": "Sprite3D",
       "name": "dungeon",
+      "active": false,
       "_$child": [
         {
           "_$id": "7np4b3qy",
@@ -109,8 +115,8 @@
                             },
                             "localRotation": {
                               "_$type": "Quaternion",
-                              "y": 0.9999999999999971,
-                              "w": 7.549790836947047e-8
+                              "y": 0.9999999999999973,
+                              "w": 7.549790836947048e-8
                             },
                             "localScale": {
                               "_$type": "Vector3",

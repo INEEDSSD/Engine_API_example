@@ -1,6 +1,6 @@
 import { BundleCullingRenderElement } from "./BundleCullingRenderElement";
 
-export class BundleCullingBundleElement extends Laya.WebGPURenderElement3D {
+export class BundleCullingBundleElement extends (Laya.WebGPURenderElement3D ? Laya.WebGPURenderElement3D : Laya.WebGLRenderElement3D) {
 
     private _renderelements: BundleCullingRenderElement[] = [];
     private _needRecreateRenderBundle: boolean = false;

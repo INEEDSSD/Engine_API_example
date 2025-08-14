@@ -1,6 +1,6 @@
 import { GCA_BatchRenderElement } from "./GCA_BatchRenderElement";
 
-export class GCA_BatchBundleElement extends Laya.WebGPURenderElement3D {
+export class GCA_BatchBundleElement extends (Laya.WebGPURenderElement3D ? Laya.WebGPURenderElement3D : Laya.WebGLRenderElement3D) {
     private _renderelements: GCA_BatchRenderElement[] = [];
     private _needRecreateRenderBundle: boolean = false;
     private _commadnBundle: Laya.WebGPURenderBundle = new Laya.WebGPURenderBundle();

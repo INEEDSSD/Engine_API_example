@@ -1,4 +1,4 @@
-export class GCA_BatchRenderElement extends Laya.WebGPURenderElement3D {
+export class GCA_BatchRenderElement extends (Laya.WebGPURenderElement3D ? Laya.WebGPURenderElement3D : Laya.WebGLRenderElement3D) {
     static CommandMap: string[] = ["GCA_RenderSprite"];
     constructor() {
         super();

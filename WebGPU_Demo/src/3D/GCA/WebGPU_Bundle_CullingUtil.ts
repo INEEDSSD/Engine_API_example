@@ -153,7 +153,7 @@ export class WebGPU_Bundle_CullingUtil {
 }
 
 
-export class webgpuDrawCullingELement extends Laya.WebGPURenderElement3D {
+export class webgpuDrawCullingELement extends (Laya.WebGPURenderElement3D ? Laya.WebGPURenderElement3D : Laya.WebGLRenderElement3D) {
     cullShaderData: Laya.WebGPUShaderData;
     constructor() {
         super();
@@ -226,7 +226,7 @@ export class webgpuDrawCullingELement extends Laya.WebGPURenderElement3D {
 }
 
 
-export class webgpuRenderBundleElement extends Laya.WebGPURenderElement3D {
+export class webgpuRenderBundleElement extends (Laya.WebGPURenderElement3D ? Laya.WebGPURenderElement3D : Laya.WebGLRenderElement3D) {
     private _renderelements: webgpuDrawCullingELement[] = [];
     private _needRecreateRenderBundle: boolean = false;
     private _commadnBundle: Laya.WebGPURenderBundle = new Laya.WebGPURenderBundle();

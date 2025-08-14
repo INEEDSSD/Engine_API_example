@@ -1,4 +1,4 @@
-export class BundleCullingRenderElement extends Laya.WebGPURenderElement3D {
+export class BundleCullingRenderElement extends (Laya.WebGPURenderElement3D ? Laya.WebGPURenderElement3D : Laya.WebGLRenderElement3D) {
 
     cullShaderData: Laya.WebGPUShaderData;
 

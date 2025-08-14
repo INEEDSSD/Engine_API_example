@@ -1,20 +1,14 @@
 {
   "_$ver": 1,
-  "_$id": "rzqpp88t",
+  "_$id": "eki4x749",
   "_$type": "Scene",
   "left": 0,
   "right": 0,
   "top": 0,
   "bottom": 0,
   "name": "Scene2D",
-  "width": 1440,
-  "height": 680,
-  "_$comp": [
-    {
-      "_$type": "f7f7d508-8461-4499-9da2-f872be4c9373",
-      "scriptPath": "../src/3D/WebGPU/metaballDemo.ts"
-    }
-  ],
+  "width": 1920,
+  "height": 1080,
   "_$child": [
     {
       "_$id": "n9gjxcltvl",
@@ -41,6 +35,13 @@
         "g": 0.5,
         "b": 0.5
       },
+      "_$comp": [
+        {
+          "_$type": "5490f135-7c2b-4bb1-96ee-1c193aa1e710",
+          "scriptPath": "../src/3D/GCA/MUltSpheres.ts",
+          "text": ""
+        }
+      ],
       "_$child": [
         {
           "_$id": "6jx8h8bvc6",
@@ -49,25 +50,18 @@
           "transform": {
             "localPosition": {
               "_$type": "Vector3",
-              "x": 0.0013782842098659168,
-              "y": 1.9502387330930109,
-              "z": 4.028210676669407
-            },
-            "localRotation": {
-              "_$type": "Quaternion",
-              "x": -0.11693105859432587,
-              "y": 0.002166700907419747,
-              "z": 0.00025510514740564947,
-              "w": 0.9931376379256562
+              "y": 1,
+              "z": 5
             }
           },
           "nearPlane": 0.3,
           "farPlane": 1000,
+          "clearFlag": 1,
           "clearColor": {
             "_$type": "Color",
-            "r": 0,
-            "g": 0,
-            "b": 0
+            "r": 0.3921,
+            "g": 0.5843,
+            "b": 0.9294
           }
         },
         {
