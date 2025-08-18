@@ -56,6 +56,6 @@ export class ClusteredShading extends Laya.Script {
 Laya.addBeforeInitCallback(() => {
     // Laya.Config.useWebGL2 = false;
     // Laya.Config.fixedFrames = false;
-    Laya.Config3D.maxLightCount = 1024;
+    // Laya.Config3D.maxLightCount = 1024;
     // Laya.Config3D.lightClusterCount = new Laya.Vector3(12, 12, 12);
 });
