@@ -549,7 +549,7 @@ Laya.Camera.prototype.render = function (scene) {
     }
     var time = performance.now();
     this._Render3DProcess.fowardRender(context._contextOBJ, this);
-    Laya.Stat.renderPassStatArray[Laya.RenderPassStatisticsInfo.T_CameraRender] += (performance.now() - time);
+    // Laya.Stat.renderPassStatArray[Laya.RenderPassStatisticsInfo.T_CameraRender] += (performance.now() - time);
     scene._componentDriver.callPostRender();
 }
 
