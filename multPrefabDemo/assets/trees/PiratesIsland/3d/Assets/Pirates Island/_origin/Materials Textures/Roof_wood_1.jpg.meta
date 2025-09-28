@@ -1,11 +1,7 @@
 {
-  "uuid": "3b66d136-6973-462e-8d8a-fb3c1ad6a11b",
+  "uuid": "c2e22be9-a84b-41c5-906f-e7c94d2a1fde",
   "importer": {
     "sRGB": true,
-    "alphaChannel": true,
-    "wrapMode": 0,
-    "generateMipmap": true,
-    "mipmapFilter": 1,
-    "npot": 1
+    "generateMipmap": true
   }
 }

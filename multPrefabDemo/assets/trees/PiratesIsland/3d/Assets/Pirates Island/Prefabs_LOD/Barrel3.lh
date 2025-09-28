@@ -1,311 +1,200 @@
 {
-	"_$ver":1,
-	"name":"Barrel3",
-	"active":true,
-	"isStatic":true,
-	"layer":0,
-	"transform":{
-		"localPosition":{
-			"_$type":"Vector3",
-			"x":25.79912,
-			"y":0,
-			"z":0
-		},
-		"localRotation":{
-			"_$type":"Quaternion",
-			"x":0,
-			"y":0,
-			"z":0,
-			"w":-1
-		},
-		"localScale":{
-			"_$type":"Vector3",
-			"x":1,
-			"y":1,
-			"z":1
-		}
-	},
-	"_$id":"#0",
-	"_$type":"Sprite3D",
-	"_$child":[
-		{
-			"name":"Barrel3(Clone)",
-			"active":true,
-			"isStatic":true,
-			"layer":0,
-			"transform":{
-				"localPosition":{
-					"_$type":"Vector3",
-					"x":0,
-					"y":0,
-					"z":0
-				},
-				"localRotation":{
-					"_$type":"Quaternion",
-					"x":0,
-					"y":0,
-					"z":0,
-					"w":-1
-				},
-				"localScale":{
-					"_$type":"Vector3",
-					"x":1,
-					"y":1,
-					"z":1
-				}
-			},
-			"_$id":"#1",
-			"_$type":"Sprite3D",
-			"_$child":[
-				{
-					"name":"Cube",
-					"active":true,
-					"isStatic":false,
-					"layer":0,
-					"transform":{
-						"localPosition":{
-							"_$type":"Vector3",
-							"x":-0.01023293,
-							"y":1.283746,
-							"z":0.03431368
-						},
-						"localRotation":{
-							"_$type":"Quaternion",
-							"x":0,
-							"y":0,
-							"z":0,
-							"w":-1
-						},
-						"localScale":{
-							"_$type":"Vector3",
-							"x":1.955096,
-							"y":1,
-							"z":1.234107
-						}
-					},
-					"_$id":"#2",
-					"_$type":"Sprite3D",
-					"_$type":"Sprite3D",
-					"_$comp":[
-						{
-							"_$type":"MeshFilter",
-							"sharedMesh":{
-								"_$uuid":"482e04a6-fc77-4e89-aed8-ad36829494be",
-								"_$type":"Mesh"
-							}
-						},
-						{
-							"_$type":"MeshRenderer",
-							"enabled":false,
-							"sharedMaterials":[
-								{
-									"_$type":"Material",
-									"_$uuid":"15272f49-ad6c-4638-8623-cc0fb4cd1cb1"
-								}
-							],
-							"receiveShadow":true,
-							"castShadow":true,
-							"lightmapIndex":-1,
-							"lightmapScaleOffset":{
-								"_$type":"Vector4",
-								"x":1,
-								"y":1,
-								"z":0,
-								"w":0
-							}
-						}
-					]
-				},
-				{
-					"name":"Cube",
-					"active":true,
-					"isStatic":false,
-					"layer":0,
-					"transform":{
-						"localPosition":{
-							"_$type":"Vector3",
-							"x":-0.01023293,
-							"y":0.3768809,
-							"z":-0.09863234
-						},
-						"localRotation":{
-							"_$type":"Quaternion",
-							"x":0,
-							"y":0,
-							"z":0,
-							"w":-1
-						},
-						"localScale":{
-							"_$type":"Vector3",
-							"x":2.925375,
-							"y":1,
-							"z":1.461977
-						}
-					},
-					"_$id":"#3",
-					"_$type":"Sprite3D",
-					"_$type":"Sprite3D",
-					"_$comp":[
-						{
-							"_$type":"MeshFilter",
-							"sharedMesh":{
-								"_$uuid":"482e04a6-fc77-4e89-aed8-ad36829494be",
-								"_$type":"Mesh"
-							}
-						},
-						{
-							"_$type":"MeshRenderer",
-							"enabled":false,
-							"sharedMaterials":[
-								{
-									"_$type":"Material",
-									"_$uuid":"15272f49-ad6c-4638-8623-cc0fb4cd1cb1"
-								}
-							],
-							"receiveShadow":true,
-							"castShadow":true,
-							"lightmapIndex":-1,
-							"lightmapScaleOffset":{
-								"_$type":"Vector4",
-								"x":1,
-								"y":1,
-								"z":0,
-								"w":0
-							}
-						}
-					]
-				}
-			],
-			"_$type":"Sprite3D",
-			"_$comp":[
-				{
-					"_$type":"MeshFilter",
-					"sharedMesh":{
-						"_$uuid":"7e7954ce-2730-420b-a6a5-c7dd3201acba",
-						"_$type":"Mesh"
-					}
-				},
-				{
-					"_$type":"MeshRenderer",
-					"enabled":true,
-					"sharedMaterials":[
-						{
-							"_$type":"Material",
-							"_$uuid":"4dc96cdd-d6c1-46f3-854a-1429a618d9a3"
-						}
-					],
-					"receiveShadow":true,
-					"castShadow":true,
-					"lightmapIndex":-1,
-					"lightmapScaleOffset":{
-						"_$type":"Vector4",
-						"x":1,
-						"y":1,
-						"z":0,
-						"w":0
-					}
-				}
-			]
-		},
-		{
-			"name":"Barrel3_LOD1(Clone)",
-			"active":true,
-			"isStatic":true,
-			"layer":0,
-			"transform":{
-				"localPosition":{
-					"_$type":"Vector3",
-					"x":0,
-					"y":0,
-					"z":0
-				},
-				"localRotation":{
-					"_$type":"Quaternion",
-					"x":0,
-					"y":0,
-					"z":0,
-					"w":-1
-				},
-				"localScale":{
-					"_$type":"Vector3",
-					"x":1,
-					"y":1,
-					"z":1
-				}
-			},
-			"_$id":"#4",
-			"_$type":"Sprite3D",
-			"_$type":"Sprite3D",
-			"_$comp":[
-				{
-					"_$type":"MeshFilter",
-					"sharedMesh":{
-						"_$uuid":"a936b4c8-4dba-4636-8585-f550492933c9",
-						"_$type":"Mesh"
-					}
-				},
-				{
-					"_$type":"MeshRenderer",
-					"enabled":true,
-					"sharedMaterials":[
-						{
-							"_$type":"Material",
-							"_$uuid":"4dc96cdd-d6c1-46f3-854a-1429a618d9a3"
-						}
-					],
-					"receiveShadow":true,
-					"castShadow":true,
-					"lightmapIndex":-1,
-					"lightmapScaleOffset":{
-						"_$type":"Vector4",
-						"x":1,
-						"y":1,
-						"z":0,
-						"w":0
-					}
-				}
-			]
-		}
-	],
-	"_$type":"Sprite3D",
-	"_$comp":[
-		{
-			"_$type":"LODGroup",
-			"enabled":true,
-			"lods":[
-				{
-					"_$type":"LODInfo",
-					"mincullRate":0.1752798,
-					"renders":[
-						{
-							"_$ref":[
-								"#1"
-							]
-						},
-						{
-							"_$ref":[
-								"#2"
-							]
-						},
-						{
-							"_$ref":[
-								"#3"
-							]
-						}
-					]
-				},
-				{
-					"_$type":"LODInfo",
-					"mincullRate":0.03372816,
-					"renders":[
-						{
-							"_$ref":[
-								"#4"
-							]
-						}
-					]
-				}
-			]
-		}
-	]
+  "_$ver": 1,
+  "_$id": "#0",
+  "_$type": "Sprite3D",
+  "name": "Barrel3",
+  "isStatic": true,
+  "transform": {
+    "localPosition": {
+      "_$type": "Vector3",
+      "x": 25.79912
+    },
+    "localRotation": {
+      "_$type": "Quaternion",
+      "w": -1
+    }
+  },
+  "_$comp": [
+    {
+      "_$type": "LODGroup",
+      "lods": [
+        {
+          "_$type": "LODInfo",
+          "mincullRate": 0.1752798,
+          "renders": [
+            {
+              "_$ref": "#1"
+            },
+            {
+              "_$ref": "#2"
+            },
+            {
+              "_$ref": "#3"
+            }
+          ]
+        },
+        {
+          "_$type": "LODInfo",
+          "mincullRate": 0.03372816,
+          "renders": [
+            {
+              "_$ref": "#4"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "#1",
+      "_$type": "Sprite3D",
+      "name": "Barrel3(Clone)",
+      "isStatic": true,
+      "transform": {
+        "localRotation": {
+          "_$type": "Quaternion",
+          "w": -1
+        }
+      },
+      "_$comp": [
+        {
+          "_$type": "MeshFilter"
+        },
+        {
+          "_$type": "MeshRenderer",
+          "receiveShadow": true,
+          "castShadow": true,
+          "sharedMaterials": [
+            {
+              "_$uuid": "4dc96cdd-d6c1-46f3-854a-1429a618d9a3",
+              "_$type": "Material"
+            }
+          ]
+        }
+      ],
+      "_$child": [
+        {
+          "_$id": "#2",
+          "_$type": "Sprite3D",
+          "name": "Cube",
+          "transform": {
+            "localPosition": {
+              "_$type": "Vector3",
+              "x": -0.01023293,
+              "y": 1.283746,
+              "z": 0.03431368
+            },
+            "localRotation": {
+              "_$type": "Quaternion",
+              "w": -1
+            },
+            "localScale": {
+              "_$type": "Vector3",
+              "x": 1.955096,
+              "y": 1,
+              "z": 1.234107
+            }
+          },
+          "_$comp": [
+            {
+              "_$type": "MeshFilter",
+              "sharedMesh": {
+                "_$uuid": "1bf31838-b4ab-41a6-93be-0a5911400d0b",
+                "_$type": "Mesh"
+              }
+            },
+            {
+              "_$type": "MeshRenderer",
+              "enabled": false,
+              "receiveShadow": true,
+              "castShadow": true,
+              "sharedMaterials": [
+                {
+                  "_$uuid": "15272f49-ad6c-4638-8623-cc0fb4cd1cb1",
+                  "_$type": "Material"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "#3",
+          "_$type": "Sprite3D",
+          "name": "Cube",
+          "transform": {
+            "localPosition": {
+              "_$type": "Vector3",
+              "x": -0.01023293,
+              "y": 0.3768809,
+              "z": -0.09863234
+            },
+            "localRotation": {
+              "_$type": "Quaternion",
+              "w": -1
+            },
+            "localScale": {
+              "_$type": "Vector3",
+              "x": 2.925375,
+              "y": 1,
+              "z": 1.461977
+            }
+          },
+          "_$comp": [
+            {
+              "_$type": "MeshFilter",
+              "sharedMesh": {
+                "_$uuid": "a936b4c8-4dba-4636-8585-f550492933c9",
+                "_$type": "Mesh"
+              }
+            },
+            {
+              "_$type": "MeshRenderer",
+              "enabled": false,
+              "receiveShadow": true,
+              "castShadow": true,
+              "sharedMaterials": [
+                {
+                  "_$uuid": "15272f49-ad6c-4638-8623-cc0fb4cd1cb1",
+                  "_$type": "Material"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "#4",
+      "_$type": "Sprite3D",
+      "name": "Barrel3_LOD1(Clone)",
+      "isStatic": true,
+      "transform": {
+        "localRotation": {
+          "_$type": "Quaternion",
+          "w": -1
+        }
+      },
+      "_$comp": [
+        {
+          "_$type": "MeshFilter",
+          "sharedMesh": {
+            "_$uuid": "a936b4c8-4dba-4636-8585-f550492933c9",
+            "_$type": "Mesh"
+          }
+        },
+        {
+          "_$type": "MeshRenderer",
+          "receiveShadow": true,
+          "castShadow": true,
+          "sharedMaterials": [
+            {
+              "_$uuid": "4dc96cdd-d6c1-46f3-854a-1429a618d9a3",
+              "_$type": "Material"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

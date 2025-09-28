@@ -1,1706 +1,692 @@
 {
-	"_$ver":1,
-	"name":"House9",
-	"active":true,
-	"isStatic":true,
-	"layer":0,
-	"transform":{
-		"localPosition":{
-			"_$type":"Vector3",
-			"x":0,
-			"y":0,
-			"z":11.62994
-		},
-		"localRotation":{
-			"_$type":"Quaternion",
-			"x":0,
-			"y":0,
-			"z":0,
-			"w":-1
-		},
-		"localScale":{
-			"_$type":"Vector3",
-			"x":1,
-			"y":1,
-			"z":1
-		}
-	},
-	"_$id":"#0",
-	"_$type":"Sprite3D",
-	"_$child":[
-		{
-			"name":"House9(Clone)",
-			"active":true,
-			"isStatic":true,
-			"layer":0,
-			"transform":{
-				"localPosition":{
-					"_$type":"Vector3",
-					"x":0,
-					"y":0,
-					"z":0
-				},
-				"localRotation":{
-					"_$type":"Quaternion",
-					"x":0,
-					"y":0,
-					"z":0,
-					"w":-1
-				},
-				"localScale":{
-					"_$type":"Vector3",
-					"x":1,
-					"y":1,
-					"z":1
-				}
-			},
-			"_$id":"#1",
-			"_$type":"Sprite3D",
-			"_$child":[
-				{
-					"name":"Base",
-					"active":true,
-					"isStatic":true,
-					"layer":0,
-					"transform":{
-						"localPosition":{
-							"_$type":"Vector3",
-							"x":0.02494797,
-							"y":0,
-							"z":-0.06923852
-						},
-						"localRotation":{
-							"_$type":"Quaternion",
-							"x":0,
-							"y":0,
-							"z":0,
-							"w":-1
-						},
-						"localScale":{
-							"_$type":"Vector3",
-							"x":1,
-							"y":1,
-							"z":1
-						}
-					},
-					"_$id":"#2",
-					"_$type":"Sprite3D",
-					"_$type":"Sprite3D",
-					"_$comp":[
-						{
-							"_$type":"MeshFilter",
-							"sharedMesh":{
-								"_$uuid":"a3044b64-8795-44a8-8f4c-09e23327639c",
-								"_$type":"Mesh"
-							}
-						},
-						{
-							"_$type":"MeshRenderer",
-							"enabled":true,
-							"sharedMaterials":[
-								{
-									"_$type":"Material",
-									"_$uuid":"b46cb08d-98f6-4bad-b4b8-df62c6ce96d9"
-								},
-								{
-									"_$type":"Material",
-									"_$uuid":"8fa0c67d-c619-4b68-b137-1c82ccb85670"
-								},
-								{
-									"_$type":"Material",
-									"_$uuid":"42a3ed33-b0f1-46b9-b2c0-fe5085ed24cf"
-								},
-								{
-									"_$type":"Material",
-									"_$uuid":"06b2d495-296f-4da0-a8b0-262ba9bb9278"
-								},
-								{
-									"_$type":"Material",
-									"_$uuid":"e2e0d85b-2802-4757-a145-0b35a2ba68be"
-								}
-							],
-							"receiveShadow":true,
-							"castShadow":true,
-							"lightmapIndex":-1,
-							"lightmapScaleOffset":{
-								"_$type":"Vector4",
-								"x":1,
-								"y":1,
-								"z":0,
-								"w":0
-							}
-						}
-					]
-				},
-				{
-					"name":"Cube",
-					"active":true,
-					"isStatic":false,
-					"layer":0,
-					"transform":{
-						"localPosition":{
-							"_$type":"Vector3",
-							"x":-0.008640289,
-							"y":5.314142,
-							"z":1.960309
-						},
-						"localRotation":{
-							"_$type":"Quaternion",
-							"x":9.999999E-07,
-							"y":-0.9914449,
-							"z":-0.130526,
-							"w":0
-						},
-						"localScale":{
-							"_$type":"Vector3",
-							"x":10.42269,
-							"y":0.423775,
-							"z":4.30139
-						}
-					},
-					"_$id":"#3",
-					"_$type":"Sprite3D",
-					"_$type":"Sprite3D",
-					"_$comp":[
-						{
-							"_$type":"MeshFilter",
-							"sharedMesh":{
-								"_$uuid":"482e04a6-fc77-4e89-aed8-ad36829494be",
-								"_$type":"Mesh"
-							}
-						},
-						{
-							"_$type":"MeshRenderer",
-							"enabled":false,
-							"sharedMaterials":[
-								{
-									"_$type":"Material",
-									"_$uuid":"15272f49-ad6c-4638-8623-cc0fb4cd1cb1"
-								}
-							],
-							"receiveShadow":true,
-							"castShadow":true,
-							"lightmapIndex":-1,
-							"lightmapScaleOffset":{
-								"_$type":"Vector4",
-								"x":1,
-								"y":1,
-								"z":0,
-								"w":0
-							}
-						}
-					]
-				},
-				{
-					"name":"Cube",
-					"active":true,
-					"isStatic":false,
-					"layer":0,
-					"transform":{
-						"localPosition":{
-							"_$type":"Vector3",
-							"x":-0.008640289,
-							"y":-1.060814,
-							"z":-0.02011013
-						},
-						"localRotation":{
-							"_$type":"Quaternion",
-							"x":1E-06,
-							"y":-1,
-							"z":0,
-							"w":0
-						},
-						"localScale":{
-							"_$type":"Vector3",
-							"x":9.921508,
-							"y":2.203608,
-							"z":7.189956
-						}
-					},
-					"_$id":"#4",
-					"_$type":"Sprite3D",
-					"_$type":"Sprite3D",
-					"_$comp":[
-						{
-							"_$type":"MeshFilter",
-							"sharedMesh":{
-								"_$uuid":"482e04a6-fc77-4e89-aed8-ad36829494be",
-								"_$type":"Mesh"
-							}
-						},
-						{
-							"_$type":"MeshRenderer",
-							"enabled":false,
-							"sharedMaterials":[
-								{
-									"_$type":"Material",
-									"_$uuid":"15272f49-ad6c-4638-8623-cc0fb4cd1cb1"
-								}
-							],
-							"receiveShadow":true,
-							"castShadow":true,
-							"lightmapIndex":-1,
-							"lightmapScaleOffset":{
-								"_$type":"Vector4",
-								"x":1,
-								"y":1,
-								"z":0,
-								"w":0
-							}
-						}
-					]
-				},
-				{
-					"name":"Cube",
-					"active":true,
-					"isStatic":false,
-					"layer":0,
-					"transform":{
-						"localPosition":{
-							"_$type":"Vector3",
-							"x":-0.008640289,
-							"y":5.274796,
-							"z":-1.974297
-						},
-						"localRotation":{
-							"_$type":"Quaternion",
-							"x":9.999998E-07,
-							"y":-0.9900427,
-							"z":0.140767,
-							"w":0
-						},
-						"localScale":{
-							"_$type":"Vector3",
-							"x":10.42269,
-							"y":0.423775,
-							"z":4.3533
-						}
-					},
-					"_$id":"#5",
-					"_$type":"Sprite3D",
-					"_$type":"Sprite3D",
-					"_$comp":[
-						{
-							"_$type":"MeshFilter",
-							"sharedMesh":{
-								"_$uuid":"482e04a6-fc77-4e89-aed8-ad36829494be",
-								"_$type":"Mesh"
-							}
-						},
-						{
-							"_$type":"MeshRenderer",
-							"enabled":false,
-							"sharedMaterials":[
-								{
-									"_$type":"Material",
-									"_$uuid":"15272f49-ad6c-4638-8623-cc0fb4cd1cb1"
-								}
-							],
-							"receiveShadow":true,
-							"castShadow":true,
-							"lightmapIndex":-1,
-							"lightmapScaleOffset":{
-								"_$type":"Vector4",
-								"x":1,
-								"y":1,
-								"z":0,
-								"w":0
-							}
-						}
-					]
-				},
-				{
-					"name":"Cube",
-					"active":true,
-					"isStatic":false,
-					"layer":0,
-					"transform":{
-						"localPosition":{
-							"_$type":"Vector3",
-							"x":-0.008640289,
-							"y":2.258872,
-							"z":-3.454727
-						},
-						"localRotation":{
-							"_$type":"Quaternion",
-							"x":1E-06,
-							"y":-1,
-							"z":0,
-							"w":0
-						},
-						"localScale":{
-							"_$type":"Vector3",
-							"x":9.921508,
-							"y":4.49104,
-							"z":0.2891809
-						}
-					},
-					"_$id":"#6",
-					"_$type":"Sprite3D",
-					"_$type":"Sprite3D",
-					"_$comp":[
-						{
-							"_$type":"MeshFilter",
-							"sharedMesh":{
-								"_$uuid":"482e04a6-fc77-4e89-aed8-ad36829494be",
-								"_$type":"Mesh"
-							}
-						},
-						{
-							"_$type":"MeshRenderer",
-							"enabled":false,
-							"sharedMaterials":[
-								{
-									"_$type":"Material",
-									"_$uuid":"15272f49-ad6c-4638-8623-cc0fb4cd1cb1"
-								}
-							],
-							"receiveShadow":true,
-							"castShadow":true,
-							"lightmapIndex":-1,
-							"lightmapScaleOffset":{
-								"_$type":"Vector4",
-								"x":1,
-								"y":1,
-								"z":0,
-								"w":0
-							}
-						}
-					]
-				},
-				{
-					"name":"Cube",
-					"active":true,
-					"isStatic":false,
-					"layer":0,
-					"transform":{
-						"localPosition":{
-							"_$type":"Vector3",
-							"x":4.783972,
-							"y":2.258872,
-							"z":-0.01088715
-						},
-						"localRotation":{
-							"_$type":"Quaternion",
-							"x":7.071076E-07,
-							"y":-0.7071076,
-							"z":7.07106E-07,
-							"w":-0.707106
-						},
-						"localScale":{
-							"_$type":"Vector3",
-							"x":6.883597,
-							"y":4.49104,
-							"z":0.289181
-						}
-					},
-					"_$id":"#7",
-					"_$type":"Sprite3D",
-					"_$type":"Sprite3D",
-					"_$comp":[
-						{
-							"_$type":"MeshFilter",
-							"sharedMesh":{
-								"_$uuid":"482e04a6-fc77-4e89-aed8-ad36829494be",
-								"_$type":"Mesh"
-							}
-						},
-						{
-							"_$type":"MeshRenderer",
-							"enabled":false,
-							"sharedMaterials":[
-								{
-									"_$type":"Material",
-									"_$uuid":"15272f49-ad6c-4638-8623-cc0fb4cd1cb1"
-								}
-							],
-							"receiveShadow":true,
-							"castShadow":true,
-							"lightmapIndex":-1,
-							"lightmapScaleOffset":{
-								"_$type":"Vector4",
-								"x":1,
-								"y":1,
-								"z":0,
-								"w":0
-							}
-						}
-					]
-				},
-				{
-					"name":"Cube",
-					"active":true,
-					"isStatic":false,
-					"layer":0,
-					"transform":{
-						"localPosition":{
-							"_$type":"Vector3",
-							"x":-4.83459,
-							"y":2.258872,
-							"z":-0.01088715
-						},
-						"localRotation":{
-							"_$type":"Quaternion",
-							"x":9.999998E-07,
-							"y":-0.7071078,
-							"z":9.999998E-07,
-							"w":-0.7071058
-						},
-						"localScale":{
-							"_$type":"Vector3",
-							"x":6.883597,
-							"y":4.49104,
-							"z":0.289181
-						}
-					},
-					"_$id":"#8",
-					"_$type":"Sprite3D",
-					"_$type":"Sprite3D",
-					"_$comp":[
-						{
-							"_$type":"MeshFilter",
-							"sharedMesh":{
-								"_$uuid":"482e04a6-fc77-4e89-aed8-ad36829494be",
-								"_$type":"Mesh"
-							}
-						},
-						{
-							"_$type":"MeshRenderer",
-							"enabled":false,
-							"sharedMaterials":[
-								{
-									"_$type":"Material",
-									"_$uuid":"15272f49-ad6c-4638-8623-cc0fb4cd1cb1"
-								}
-							],
-							"receiveShadow":true,
-							"castShadow":true,
-							"lightmapIndex":-1,
-							"lightmapScaleOffset":{
-								"_$type":"Vector4",
-								"x":1,
-								"y":1,
-								"z":0,
-								"w":0
-							}
-						}
-					]
-				},
-				{
-					"name":"Cube",
-					"active":true,
-					"isStatic":false,
-					"layer":0,
-					"transform":{
-						"localPosition":{
-							"_$type":"Vector3",
-							"x":-1.859974,
-							"y":2.258872,
-							"z":3.475683
-						},
-						"localRotation":{
-							"_$type":"Quaternion",
-							"x":1.414213E-06,
-							"y":-1,
-							"z":8.725766E-13,
-							"w":7.316897E-07
-						},
-						"localScale":{
-							"_$type":"Vector3",
-							"x":6.02003,
-							"y":4.49104,
-							"z":0.289181
-						}
-					},
-					"_$id":"#9",
-					"_$type":"Sprite3D",
-					"_$type":"Sprite3D",
-					"_$comp":[
-						{
-							"_$type":"MeshFilter",
-							"sharedMesh":{
-								"_$uuid":"482e04a6-fc77-4e89-aed8-ad36829494be",
-								"_$type":"Mesh"
-							}
-						},
-						{
-							"_$type":"MeshRenderer",
-							"enabled":false,
-							"sharedMaterials":[
-								{
-									"_$type":"Material",
-									"_$uuid":"15272f49-ad6c-4638-8623-cc0fb4cd1cb1"
-								}
-							],
-							"receiveShadow":true,
-							"castShadow":true,
-							"lightmapIndex":-1,
-							"lightmapScaleOffset":{
-								"_$type":"Vector4",
-								"x":1,
-								"y":1,
-								"z":0,
-								"w":0
-							}
-						}
-					]
-				},
-				{
-					"name":"Cube",
-					"active":true,
-					"isStatic":false,
-					"layer":0,
-					"transform":{
-						"localPosition":{
-							"_$type":"Vector3",
-							"x":-1.859974,
-							"y":2.258872,
-							"z":3.475683
-						},
-						"localRotation":{
-							"_$type":"Quaternion",
-							"x":1E-06,
-							"y":-1,
-							"z":0,
-							"w":1E-06
-						},
-						"localScale":{
-							"_$type":"Vector3",
-							"x":6.02003,
-							"y":4.49104,
-							"z":0.289181
-						}
-					},
-					"_$id":"#10",
-					"_$type":"Sprite3D",
-					"_$type":"Sprite3D",
-					"_$comp":[
-						{
-							"_$type":"MeshFilter",
-							"sharedMesh":{
-								"_$uuid":"482e04a6-fc77-4e89-aed8-ad36829494be",
-								"_$type":"Mesh"
-							}
-						},
-						{
-							"_$type":"MeshRenderer",
-							"enabled":false,
-							"sharedMaterials":[
-								{
-									"_$type":"Material",
-									"_$uuid":"15272f49-ad6c-4638-8623-cc0fb4cd1cb1"
-								}
-							],
-							"receiveShadow":true,
-							"castShadow":true,
-							"lightmapIndex":-1,
-							"lightmapScaleOffset":{
-								"_$type":"Vector4",
-								"x":1,
-								"y":1,
-								"z":0,
-								"w":0
-							}
-						}
-					]
-				},
-				{
-					"name":"Cube",
-					"active":true,
-					"isStatic":false,
-					"layer":0,
-					"transform":{
-						"localPosition":{
-							"_$type":"Vector3",
-							"x":3.774203,
-							"y":2.258872,
-							"z":3.475683
-						},
-						"localRotation":{
-							"_$type":"Quaternion",
-							"x":1E-06,
-							"y":-1,
-							"z":0,
-							"w":1E-06
-						},
-						"localScale":{
-							"_$type":"Vector3",
-							"x":2.286035,
-							"y":4.49104,
-							"z":0.289181
-						}
-					},
-					"_$id":"#11",
-					"_$type":"Sprite3D",
-					"_$type":"Sprite3D",
-					"_$comp":[
-						{
-							"_$type":"MeshFilter",
-							"sharedMesh":{
-								"_$uuid":"482e04a6-fc77-4e89-aed8-ad36829494be",
-								"_$type":"Mesh"
-							}
-						},
-						{
-							"_$type":"MeshRenderer",
-							"enabled":false,
-							"sharedMaterials":[
-								{
-									"_$type":"Material",
-									"_$uuid":"15272f49-ad6c-4638-8623-cc0fb4cd1cb1"
-								}
-							],
-							"receiveShadow":true,
-							"castShadow":true,
-							"lightmapIndex":-1,
-							"lightmapScaleOffset":{
-								"_$type":"Vector4",
-								"x":1,
-								"y":1,
-								"z":0,
-								"w":0
-							}
-						}
-					]
-				},
-				{
-					"name":"Cube",
-					"active":true,
-					"isStatic":false,
-					"layer":0,
-					"transform":{
-						"localPosition":{
-							"_$type":"Vector3",
-							"x":1.847279,
-							"y":3.515684,
-							"z":3.475683
-						},
-						"localRotation":{
-							"_$type":"Quaternion",
-							"x":1E-06,
-							"y":-1,
-							"z":0,
-							"w":1E-06
-						},
-						"localScale":{
-							"_$type":"Vector3",
-							"x":2.286035,
-							"y":2.398118,
-							"z":0.289181
-						}
-					},
-					"_$id":"#12",
-					"_$type":"Sprite3D",
-					"_$type":"Sprite3D",
-					"_$comp":[
-						{
-							"_$type":"MeshFilter",
-							"sharedMesh":{
-								"_$uuid":"482e04a6-fc77-4e89-aed8-ad36829494be",
-								"_$type":"Mesh"
-							}
-						},
-						{
-							"_$type":"MeshRenderer",
-							"enabled":false,
-							"sharedMaterials":[
-								{
-									"_$type":"Material",
-									"_$uuid":"15272f49-ad6c-4638-8623-cc0fb4cd1cb1"
-								}
-							],
-							"receiveShadow":true,
-							"castShadow":true,
-							"lightmapIndex":-1,
-							"lightmapScaleOffset":{
-								"_$type":"Vector4",
-								"x":1,
-								"y":1,
-								"z":0,
-								"w":0
-							}
-						}
-					]
-				},
-				{
-					"name":"Doors",
-					"active":true,
-					"isStatic":true,
-					"layer":0,
-					"transform":{
-						"localPosition":{
-							"_$type":"Vector3",
-							"x":2.611548,
-							"y":1.209484,
-							"z":3.500574
-						},
-						"localRotation":{
-							"_$type":"Quaternion",
-							"x":0,
-							"y":0,
-							"z":0,
-							"w":-1
-						},
-						"localScale":{
-							"_$type":"Vector3",
-							"x":1,
-							"y":1,
-							"z":1
-						}
-					},
-					"_$id":"#13",
-					"_$type":"Sprite3D",
-					"_$type":"Sprite3D",
-					"_$comp":[
-						{
-							"_$type":"MeshFilter",
-							"sharedMesh":{
-								"_$uuid":"3f5bb076-e79c-4b30-abf0-55b1f6c79c57",
-								"_$type":"Mesh"
-							}
-						},
-						{
-							"_$type":"MeshRenderer",
-							"enabled":true,
-							"sharedMaterials":[
-								{
-									"_$type":"Material",
-									"_$uuid":"42a3ed33-b0f1-46b9-b2c0-fe5085ed24cf"
-								},
-								{
-									"_$type":"Material",
-									"_$uuid":"8591c175-bdbc-4a59-b77d-4db0d1ea3b81"
-								}
-							],
-							"receiveShadow":true,
-							"castShadow":true,
-							"lightmapIndex":-1,
-							"lightmapScaleOffset":{
-								"_$type":"Vector4",
-								"x":1,
-								"y":1,
-								"z":0,
-								"w":0
-							}
-						}
-					]
-				},
-				{
-					"name":"Floor",
-					"active":true,
-					"isStatic":true,
-					"layer":0,
-					"transform":{
-						"localPosition":{
-							"_$type":"Vector3",
-							"x":0.0002835341,
-							"y":-7.80871E-16,
-							"z":-0.002133577
-						},
-						"localRotation":{
-							"_$type":"Quaternion",
-							"x":0,
-							"y":0,
-							"z":0,
-							"w":-1
-						},
-						"localScale":{
-							"_$type":"Vector3",
-							"x":1,
-							"y":1,
-							"z":1
-						}
-					},
-					"_$id":"#14",
-					"_$type":"Sprite3D",
-					"_$type":"Sprite3D",
-					"_$comp":[
-						{
-							"_$type":"MeshFilter",
-							"sharedMesh":{
-								"_$uuid":"5035468c-7917-4413-bc4a-8278ac8c8307",
-								"_$type":"Mesh"
-							}
-						},
-						{
-							"_$type":"MeshRenderer",
-							"enabled":true,
-							"sharedMaterials":[
-								{
-									"_$type":"Material",
-									"_$uuid":"36f352e7-2e28-4cc3-b828-74cd47303ed6"
-								},
-								{
-									"_$type":"Material",
-									"_$uuid":"8fa0c67d-c619-4b68-b137-1c82ccb85670"
-								}
-							],
-							"receiveShadow":true,
-							"castShadow":true,
-							"lightmapIndex":-1,
-							"lightmapScaleOffset":{
-								"_$type":"Vector4",
-								"x":1,
-								"y":1,
-								"z":0,
-								"w":0
-							}
-						}
-					]
-				},
-				{
-					"name":"Roof",
-					"active":true,
-					"isStatic":true,
-					"layer":0,
-					"transform":{
-						"localPosition":{
-							"_$type":"Vector3",
-							"x":0,
-							"y":0,
-							"z":0
-						},
-						"localRotation":{
-							"_$type":"Quaternion",
-							"x":0,
-							"y":0,
-							"z":0,
-							"w":-1
-						},
-						"localScale":{
-							"_$type":"Vector3",
-							"x":1,
-							"y":1,
-							"z":1
-						}
-					},
-					"_$id":"#15",
-					"_$type":"Sprite3D",
-					"_$type":"Sprite3D",
-					"_$comp":[
-						{
-							"_$type":"MeshFilter",
-							"sharedMesh":{
-								"_$uuid":"df3b60f9-6766-4af3-bdf2-aa1ac549c942",
-								"_$type":"Mesh"
-							}
-						},
-						{
-							"_$type":"MeshRenderer",
-							"enabled":true,
-							"sharedMaterials":[
-								{
-									"_$type":"Material",
-									"_$uuid":"65bba578-68b3-49db-bde4-c7114801d260"
-								},
-								{
-									"_$type":"Material",
-									"_$uuid":"b46cb08d-98f6-4bad-b4b8-df62c6ce96d9"
-								},
-								{
-									"_$type":"Material",
-									"_$uuid":"8fa0c67d-c619-4b68-b137-1c82ccb85670"
-								},
-								{
-									"_$type":"Material",
-									"_$uuid":"06b2d495-296f-4da0-a8b0-262ba9bb9278"
-								},
-								{
-									"_$type":"Material",
-									"_$uuid":"42a3ed33-b0f1-46b9-b2c0-fe5085ed24cf"
-								},
-								{
-									"_$type":"Material",
-									"_$uuid":"9cee703d-a795-4cc9-bfe3-1ae97bb17917"
-								},
-								{
-									"_$type":"Material",
-									"_$uuid":"e2e0d85b-2802-4757-a145-0b35a2ba68be"
-								}
-							],
-							"receiveShadow":true,
-							"castShadow":true,
-							"lightmapIndex":-1,
-							"lightmapScaleOffset":{
-								"_$type":"Vector4",
-								"x":1,
-								"y":1,
-								"z":0,
-								"w":0
-							}
-						}
-					]
-				}
-			],
-			"_$type":"Sprite3D",
-			"_$comp":[]
-		},
-		{
-			"name":"House9_LOD1(Clone)",
-			"active":true,
-			"isStatic":true,
-			"layer":0,
-			"transform":{
-				"localPosition":{
-					"_$type":"Vector3",
-					"x":0,
-					"y":0,
-					"z":0
-				},
-				"localRotation":{
-					"_$type":"Quaternion",
-					"x":0,
-					"y":0,
-					"z":0,
-					"w":-1
-				},
-				"localScale":{
-					"_$type":"Vector3",
-					"x":1,
-					"y":1,
-					"z":1
-				}
-			},
-			"_$id":"#16",
-			"_$type":"Sprite3D",
-			"_$child":[
-				{
-					"name":"Base",
-					"active":true,
-					"isStatic":true,
-					"layer":0,
-					"transform":{
-						"localPosition":{
-							"_$type":"Vector3",
-							"x":0.02494797,
-							"y":0,
-							"z":-0.06923852
-						},
-						"localRotation":{
-							"_$type":"Quaternion",
-							"x":0,
-							"y":0,
-							"z":0,
-							"w":-1
-						},
-						"localScale":{
-							"_$type":"Vector3",
-							"x":1,
-							"y":1,
-							"z":1
-						}
-					},
-					"_$id":"#17",
-					"_$type":"Sprite3D",
-					"_$type":"Sprite3D",
-					"_$comp":[
-						{
-							"_$type":"MeshFilter",
-							"sharedMesh":{
-								"_$uuid":"2366f077-a32a-4d4c-8bd8-975375a5c63e",
-								"_$type":"Mesh"
-							}
-						},
-						{
-							"_$type":"MeshRenderer",
-							"enabled":true,
-							"sharedMaterials":[
-								{
-									"_$type":"Material",
-									"_$uuid":"b46cb08d-98f6-4bad-b4b8-df62c6ce96d9"
-								},
-								{
-									"_$type":"Material",
-									"_$uuid":"8fa0c67d-c619-4b68-b137-1c82ccb85670"
-								},
-								{
-									"_$type":"Material",
-									"_$uuid":"42a3ed33-b0f1-46b9-b2c0-fe5085ed24cf"
-								},
-								{
-									"_$type":"Material",
-									"_$uuid":"06b2d495-296f-4da0-a8b0-262ba9bb9278"
-								},
-								{
-									"_$type":"Material",
-									"_$uuid":"e2e0d85b-2802-4757-a145-0b35a2ba68be"
-								}
-							],
-							"receiveShadow":true,
-							"castShadow":true,
-							"lightmapIndex":-1,
-							"lightmapScaleOffset":{
-								"_$type":"Vector4",
-								"x":1,
-								"y":1,
-								"z":0,
-								"w":0
-							}
-						}
-					]
-				},
-				{
-					"name":"Doors",
-					"active":true,
-					"isStatic":true,
-					"layer":0,
-					"transform":{
-						"localPosition":{
-							"_$type":"Vector3",
-							"x":2.611548,
-							"y":1.209484,
-							"z":3.500574
-						},
-						"localRotation":{
-							"_$type":"Quaternion",
-							"x":0,
-							"y":0,
-							"z":0,
-							"w":-1
-						},
-						"localScale":{
-							"_$type":"Vector3",
-							"x":1,
-							"y":1,
-							"z":1
-						}
-					},
-					"_$id":"#18",
-					"_$type":"Sprite3D",
-					"_$type":"Sprite3D",
-					"_$comp":[
-						{
-							"_$type":"MeshFilter",
-							"sharedMesh":{
-								"_$uuid":"5d294ee4-fed8-40a1-b8f0-753bbbf7cf5a",
-								"_$type":"Mesh"
-							}
-						},
-						{
-							"_$type":"MeshRenderer",
-							"enabled":true,
-							"sharedMaterials":[
-								{
-									"_$type":"Material",
-									"_$uuid":"42a3ed33-b0f1-46b9-b2c0-fe5085ed24cf"
-								},
-								{
-									"_$type":"Material",
-									"_$uuid":"8591c175-bdbc-4a59-b77d-4db0d1ea3b81"
-								}
-							],
-							"receiveShadow":true,
-							"castShadow":true,
-							"lightmapIndex":-1,
-							"lightmapScaleOffset":{
-								"_$type":"Vector4",
-								"x":1,
-								"y":1,
-								"z":0,
-								"w":0
-							}
-						}
-					]
-				},
-				{
-					"name":"Floor",
-					"active":true,
-					"isStatic":true,
-					"layer":0,
-					"transform":{
-						"localPosition":{
-							"_$type":"Vector3",
-							"x":0.0002835341,
-							"y":-7.80871E-16,
-							"z":-0.002133577
-						},
-						"localRotation":{
-							"_$type":"Quaternion",
-							"x":0,
-							"y":0,
-							"z":0,
-							"w":-1
-						},
-						"localScale":{
-							"_$type":"Vector3",
-							"x":1,
-							"y":1,
-							"z":1
-						}
-					},
-					"_$id":"#19",
-					"_$type":"Sprite3D",
-					"_$type":"Sprite3D",
-					"_$comp":[
-						{
-							"_$type":"MeshFilter",
-							"sharedMesh":{
-								"_$uuid":"8da7f394-7e62-40d1-ab7e-e0ffad48e13a",
-								"_$type":"Mesh"
-							}
-						},
-						{
-							"_$type":"MeshRenderer",
-							"enabled":true,
-							"sharedMaterials":[
-								{
-									"_$type":"Material",
-									"_$uuid":"36f352e7-2e28-4cc3-b828-74cd47303ed6"
-								},
-								{
-									"_$type":"Material",
-									"_$uuid":"8fa0c67d-c619-4b68-b137-1c82ccb85670"
-								}
-							],
-							"receiveShadow":true,
-							"castShadow":true,
-							"lightmapIndex":-1,
-							"lightmapScaleOffset":{
-								"_$type":"Vector4",
-								"x":1,
-								"y":1,
-								"z":0,
-								"w":0
-							}
-						}
-					]
-				},
-				{
-					"name":"Roof",
-					"active":true,
-					"isStatic":true,
-					"layer":0,
-					"transform":{
-						"localPosition":{
-							"_$type":"Vector3",
-							"x":0,
-							"y":0,
-							"z":0
-						},
-						"localRotation":{
-							"_$type":"Quaternion",
-							"x":0,
-							"y":0,
-							"z":0,
-							"w":-1
-						},
-						"localScale":{
-							"_$type":"Vector3",
-							"x":1,
-							"y":1,
-							"z":1
-						}
-					},
-					"_$id":"#20",
-					"_$type":"Sprite3D",
-					"_$type":"Sprite3D",
-					"_$comp":[
-						{
-							"_$type":"MeshFilter",
-							"sharedMesh":{
-								"_$uuid":"46ab48d2-06c9-4932-9459-cc2478a30d0c",
-								"_$type":"Mesh"
-							}
-						},
-						{
-							"_$type":"MeshRenderer",
-							"enabled":true,
-							"sharedMaterials":[
-								{
-									"_$type":"Material",
-									"_$uuid":"b46cb08d-98f6-4bad-b4b8-df62c6ce96d9"
-								},
-								{
-									"_$type":"Material",
-									"_$uuid":"8fa0c67d-c619-4b68-b137-1c82ccb85670"
-								},
-								{
-									"_$type":"Material",
-									"_$uuid":"06b2d495-296f-4da0-a8b0-262ba9bb9278"
-								},
-								{
-									"_$type":"Material",
-									"_$uuid":"e2e0d85b-2802-4757-a145-0b35a2ba68be"
-								},
-								{
-									"_$type":"Material",
-									"_$uuid":"65bba578-68b3-49db-bde4-c7114801d260"
-								},
-								{
-									"_$type":"Material",
-									"_$uuid":"42a3ed33-b0f1-46b9-b2c0-fe5085ed24cf"
-								},
-								{
-									"_$type":"Material",
-									"_$uuid":"9cee703d-a795-4cc9-bfe3-1ae97bb17917"
-								}
-							],
-							"receiveShadow":true,
-							"castShadow":true,
-							"lightmapIndex":-1,
-							"lightmapScaleOffset":{
-								"_$type":"Vector4",
-								"x":1,
-								"y":1,
-								"z":0,
-								"w":0
-							}
-						}
-					]
-				}
-			],
-			"_$type":"Sprite3D",
-			"_$comp":[]
-		},
-		{
-			"name":"House9_LOD2(Clone)",
-			"active":true,
-			"isStatic":true,
-			"layer":0,
-			"transform":{
-				"localPosition":{
-					"_$type":"Vector3",
-					"x":0,
-					"y":0,
-					"z":0
-				},
-				"localRotation":{
-					"_$type":"Quaternion",
-					"x":0,
-					"y":0,
-					"z":0,
-					"w":-1
-				},
-				"localScale":{
-					"_$type":"Vector3",
-					"x":1,
-					"y":1,
-					"z":1
-				}
-			},
-			"_$id":"#21",
-			"_$type":"Sprite3D",
-			"_$child":[
-				{
-					"name":"Base",
-					"active":true,
-					"isStatic":true,
-					"layer":0,
-					"transform":{
-						"localPosition":{
-							"_$type":"Vector3",
-							"x":0,
-							"y":0,
-							"z":0
-						},
-						"localRotation":{
-							"_$type":"Quaternion",
-							"x":0,
-							"y":0,
-							"z":0,
-							"w":-1
-						},
-						"localScale":{
-							"_$type":"Vector3",
-							"x":1,
-							"y":1,
-							"z":1
-						}
-					},
-					"_$id":"#22",
-					"_$type":"Sprite3D",
-					"_$type":"Sprite3D",
-					"_$comp":[
-						{
-							"_$type":"MeshFilter",
-							"sharedMesh":{
-								"_$uuid":"9cf2b4ef-88c4-4bff-80c5-40d63def9d2c",
-								"_$type":"Mesh"
-							}
-						},
-						{
-							"_$type":"MeshRenderer",
-							"enabled":true,
-							"sharedMaterials":[
-								{
-									"_$type":"Material",
-									"_$uuid":"8fa0c67d-c619-4b68-b137-1c82ccb85670"
-								},
-								{
-									"_$type":"Material",
-									"_$uuid":"b46cb08d-98f6-4bad-b4b8-df62c6ce96d9"
-								},
-								{
-									"_$type":"Material",
-									"_$uuid":"42a3ed33-b0f1-46b9-b2c0-fe5085ed24cf"
-								},
-								{
-									"_$type":"Material",
-									"_$uuid":"06b2d495-296f-4da0-a8b0-262ba9bb9278"
-								},
-								{
-									"_$type":"Material",
-									"_$uuid":"e2e0d85b-2802-4757-a145-0b35a2ba68be"
-								}
-							],
-							"receiveShadow":true,
-							"castShadow":true,
-							"lightmapIndex":-1,
-							"lightmapScaleOffset":{
-								"_$type":"Vector4",
-								"x":1,
-								"y":1,
-								"z":0,
-								"w":0
-							}
-						}
-					]
-				},
-				{
-					"name":"Doors",
-					"active":true,
-					"isStatic":true,
-					"layer":0,
-					"transform":{
-						"localPosition":{
-							"_$type":"Vector3",
-							"x":2.611548,
-							"y":1.209484,
-							"z":3.500574
-						},
-						"localRotation":{
-							"_$type":"Quaternion",
-							"x":0,
-							"y":0,
-							"z":0,
-							"w":-1
-						},
-						"localScale":{
-							"_$type":"Vector3",
-							"x":1,
-							"y":1,
-							"z":1
-						}
-					},
-					"_$id":"#23",
-					"_$type":"Sprite3D",
-					"_$type":"Sprite3D",
-					"_$comp":[
-						{
-							"_$type":"MeshFilter",
-							"sharedMesh":{
-								"_$uuid":"9223b87f-1a15-40d5-adc7-dfe44023d4cf",
-								"_$type":"Mesh"
-							}
-						},
-						{
-							"_$type":"MeshRenderer",
-							"enabled":true,
-							"sharedMaterials":[
-								{
-									"_$type":"Material",
-									"_$uuid":"8591c175-bdbc-4a59-b77d-4db0d1ea3b81"
-								}
-							],
-							"receiveShadow":true,
-							"castShadow":true,
-							"lightmapIndex":-1,
-							"lightmapScaleOffset":{
-								"_$type":"Vector4",
-								"x":1,
-								"y":1,
-								"z":0,
-								"w":0
-							}
-						}
-					]
-				},
-				{
-					"name":"Floor",
-					"active":true,
-					"isStatic":true,
-					"layer":0,
-					"transform":{
-						"localPosition":{
-							"_$type":"Vector3",
-							"x":0.0002835341,
-							"y":-7.80871E-16,
-							"z":-0.002133577
-						},
-						"localRotation":{
-							"_$type":"Quaternion",
-							"x":0,
-							"y":0,
-							"z":0,
-							"w":-1
-						},
-						"localScale":{
-							"_$type":"Vector3",
-							"x":1,
-							"y":1,
-							"z":1
-						}
-					},
-					"_$id":"#24",
-					"_$type":"Sprite3D",
-					"_$type":"Sprite3D",
-					"_$comp":[
-						{
-							"_$type":"MeshFilter",
-							"sharedMesh":{
-								"_$uuid":"013e0ab4-0012-4e47-9b88-cccc10f9c2e2",
-								"_$type":"Mesh"
-							}
-						},
-						{
-							"_$type":"MeshRenderer",
-							"enabled":true,
-							"sharedMaterials":[
-								{
-									"_$type":"Material",
-									"_$uuid":"36f352e7-2e28-4cc3-b828-74cd47303ed6"
-								},
-								{
-									"_$type":"Material",
-									"_$uuid":"8fa0c67d-c619-4b68-b137-1c82ccb85670"
-								}
-							],
-							"receiveShadow":true,
-							"castShadow":true,
-							"lightmapIndex":-1,
-							"lightmapScaleOffset":{
-								"_$type":"Vector4",
-								"x":1,
-								"y":1,
-								"z":0,
-								"w":0
-							}
-						}
-					]
-				},
-				{
-					"name":"Roof",
-					"active":true,
-					"isStatic":true,
-					"layer":0,
-					"transform":{
-						"localPosition":{
-							"_$type":"Vector3",
-							"x":0,
-							"y":0,
-							"z":0
-						},
-						"localRotation":{
-							"_$type":"Quaternion",
-							"x":0,
-							"y":0,
-							"z":0,
-							"w":-1
-						},
-						"localScale":{
-							"_$type":"Vector3",
-							"x":1,
-							"y":1,
-							"z":1
-						}
-					},
-					"_$id":"#25",
-					"_$type":"Sprite3D",
-					"_$type":"Sprite3D",
-					"_$comp":[
-						{
-							"_$type":"MeshFilter",
-							"sharedMesh":{
-								"_$uuid":"fcdd7811-f123-4199-9bf3-aa97456b9b70",
-								"_$type":"Mesh"
-							}
-						},
-						{
-							"_$type":"MeshRenderer",
-							"enabled":true,
-							"sharedMaterials":[
-								{
-									"_$type":"Material",
-									"_$uuid":"b46cb08d-98f6-4bad-b4b8-df62c6ce96d9"
-								},
-								{
-									"_$type":"Material",
-									"_$uuid":"06b2d495-296f-4da0-a8b0-262ba9bb9278"
-								},
-								{
-									"_$type":"Material",
-									"_$uuid":"8fa0c67d-c619-4b68-b137-1c82ccb85670"
-								},
-								{
-									"_$type":"Material",
-									"_$uuid":"e2e0d85b-2802-4757-a145-0b35a2ba68be"
-								},
-								{
-									"_$type":"Material",
-									"_$uuid":"65bba578-68b3-49db-bde4-c7114801d260"
-								},
-								{
-									"_$type":"Material",
-									"_$uuid":"42a3ed33-b0f1-46b9-b2c0-fe5085ed24cf"
-								},
-								{
-									"_$type":"Material",
-									"_$uuid":"9cee703d-a795-4cc9-bfe3-1ae97bb17917"
-								}
-							],
-							"receiveShadow":true,
-							"castShadow":true,
-							"lightmapIndex":-1,
-							"lightmapScaleOffset":{
-								"_$type":"Vector4",
-								"x":1,
-								"y":1,
-								"z":0,
-								"w":0
-							}
-						}
-					]
-				}
-			],
-			"_$type":"Sprite3D",
-			"_$comp":[]
-		}
-	],
-	"_$type":"Sprite3D",
-	"_$comp":[
-		{
-			"_$type":"LODGroup",
-			"enabled":true,
-			"lods":[
-				{
-					"_$type":"LODInfo",
-					"mincullRate":0.3004801,
-					"renders":[
-						{
-							"_$ref":[
-								"#2"
-							]
-						},
-						{
-							"_$ref":[
-								"#3"
-							]
-						},
-						{
-							"_$ref":[
-								"#4"
-							]
-						},
-						{
-							"_$ref":[
-								"#5"
-							]
-						},
-						{
-							"_$ref":[
-								"#6"
-							]
-						},
-						{
-							"_$ref":[
-								"#7"
-							]
-						},
-						{
-							"_$ref":[
-								"#8"
-							]
-						},
-						{
-							"_$ref":[
-								"#9"
-							]
-						},
-						{
-							"_$ref":[
-								"#10"
-							]
-						},
-						{
-							"_$ref":[
-								"#11"
-							]
-						},
-						{
-							"_$ref":[
-								"#12"
-							]
-						},
-						{
-							"_$ref":[
-								"#13"
-							]
-						},
-						{
-							"_$ref":[
-								"#14"
-							]
-						},
-						{
-							"_$ref":[
-								"#15"
-							]
-						}
-					]
-				},
-				{
-					"_$type":"LODInfo",
-					"mincullRate":0.152668,
-					"renders":[
-						{
-							"_$ref":[
-								"#17"
-							]
-						},
-						{
-							"_$ref":[
-								"#18"
-							]
-						},
-						{
-							"_$ref":[
-								"#19"
-							]
-						},
-						{
-							"_$ref":[
-								"#20"
-							]
-						}
-					]
-				},
-				{
-					"_$type":"LODInfo",
-					"mincullRate":0.06352485,
-					"renders":[
-						{
-							"_$ref":[
-								"#22"
-							]
-						},
-						{
-							"_$ref":[
-								"#23"
-							]
-						},
-						{
-							"_$ref":[
-								"#24"
-							]
-						},
-						{
-							"_$ref":[
-								"#25"
-							]
-						}
-					]
-				}
-			]
-		}
-	]
+  "_$ver": 1,
+  "_$id": "#0",
+  "_$type": "Sprite3D",
+  "name": "House9",
+  "isStatic": true,
+  "transform": {
+    "localPosition": {
+      "_$type": "Vector3",
+      "z": 11.62994
+    },
+    "localRotation": {
+      "_$type": "Quaternion",
+      "w": -1
+    }
+  },
+  "_$comp": [
+    {
+      "_$type": "LODGroup",
+      "lods": [
+        {
+          "_$type": "LODInfo",
+          "mincullRate": 0.3004801,
+          "renders": [
+            {
+              "_$ref": "#2"
+            },
+            {
+              "_$ref": "#13"
+            },
+            {
+              "_$ref": "#14"
+            },
+            {
+              "_$ref": "#15"
+            }
+          ]
+        },
+        {
+          "_$type": "LODInfo",
+          "mincullRate": 0.152668,
+          "renders": [
+            {
+              "_$ref": "#17"
+            },
+            {
+              "_$ref": "#18"
+            },
+            {
+              "_$ref": "#19"
+            },
+            {
+              "_$ref": "#20"
+            }
+          ]
+        },
+        {
+          "_$type": "LODInfo",
+          "mincullRate": 0.06352485,
+          "renders": [
+            {
+              "_$ref": "#22"
+            },
+            {
+              "_$ref": "#23"
+            },
+            {
+              "_$ref": "#24"
+            },
+            {
+              "_$ref": "#25"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "#1",
+      "_$type": "Sprite3D",
+      "name": "House9(Clone)",
+      "isStatic": true,
+      "transform": {
+        "localRotation": {
+          "_$type": "Quaternion",
+          "w": -1
+        }
+      },
+      "_$child": [
+        {
+          "_$id": "#2",
+          "_$type": "Sprite3D",
+          "name": "Base",
+          "isStatic": true,
+          "transform": {
+            "localPosition": {
+              "_$type": "Vector3",
+              "x": 0.02494797,
+              "z": -0.06923852
+            },
+            "localRotation": {
+              "_$type": "Quaternion",
+              "w": -1
+            }
+          },
+          "_$comp": [
+            {
+              "_$type": "MeshFilter",
+              "sharedMesh": {
+                "_$uuid": "a3044b64-8795-44a8-8f4c-09e23327639c",
+                "_$type": "Mesh"
+              }
+            },
+            {
+              "_$type": "MeshRenderer",
+              "receiveShadow": true,
+              "castShadow": true,
+              "sharedMaterials": [
+                {
+                  "_$uuid": "b46cb08d-98f6-4bad-b4b8-df62c6ce96d9",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "8fa0c67d-c619-4b68-b137-1c82ccb85670",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "42a3ed33-b0f1-46b9-b2c0-fe5085ed24cf",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "06b2d495-296f-4da0-a8b0-262ba9bb9278",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "e2e0d85b-2802-4757-a145-0b35a2ba68be",
+                  "_$type": "Material"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "#13",
+          "_$type": "Sprite3D",
+          "name": "Doors",
+          "isStatic": true,
+          "transform": {
+            "localPosition": {
+              "_$type": "Vector3",
+              "x": 2.611548,
+              "y": 1.209484,
+              "z": 3.500574
+            },
+            "localRotation": {
+              "_$type": "Quaternion",
+              "w": -1
+            }
+          },
+          "_$comp": [
+            {
+              "_$type": "MeshFilter",
+              "sharedMesh": {
+                "_$uuid": "3f5bb076-e79c-4b30-abf0-55b1f6c79c57",
+                "_$type": "Mesh"
+              }
+            },
+            {
+              "_$type": "MeshRenderer",
+              "receiveShadow": true,
+              "castShadow": true,
+              "sharedMaterials": [
+                {
+                  "_$uuid": "42a3ed33-b0f1-46b9-b2c0-fe5085ed24cf",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "8591c175-bdbc-4a59-b77d-4db0d1ea3b81",
+                  "_$type": "Material"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "#14",
+          "_$type": "Sprite3D",
+          "name": "Floor",
+          "isStatic": true,
+          "transform": {
+            "localPosition": {
+              "_$type": "Vector3",
+              "x": 0.0002835341,
+              "y": -7.80871e-16,
+              "z": -0.002133577
+            },
+            "localRotation": {
+              "_$type": "Quaternion",
+              "w": -1
+            }
+          },
+          "_$comp": [
+            {
+              "_$type": "MeshFilter",
+              "sharedMesh": {
+                "_$uuid": "5035468c-7917-4413-bc4a-8278ac8c8307",
+                "_$type": "Mesh"
+              }
+            },
+            {
+              "_$type": "MeshRenderer",
+              "receiveShadow": true,
+              "castShadow": true,
+              "sharedMaterials": [
+                {
+                  "_$uuid": "36f352e7-2e28-4cc3-b828-74cd47303ed6",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "8fa0c67d-c619-4b68-b137-1c82ccb85670",
+                  "_$type": "Material"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "#15",
+          "_$type": "Sprite3D",
+          "name": "Roof",
+          "isStatic": true,
+          "transform": {
+            "localRotation": {
+              "_$type": "Quaternion",
+              "w": -1
+            }
+          },
+          "_$comp": [
+            {
+              "_$type": "MeshFilter",
+              "sharedMesh": {
+                "_$uuid": "df3b60f9-6766-4af3-bdf2-aa1ac549c942",
+                "_$type": "Mesh"
+              }
+            },
+            {
+              "_$type": "MeshRenderer",
+              "receiveShadow": true,
+              "castShadow": true,
+              "sharedMaterials": [
+                {
+                  "_$uuid": "65bba578-68b3-49db-bde4-c7114801d260",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "b46cb08d-98f6-4bad-b4b8-df62c6ce96d9",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "8fa0c67d-c619-4b68-b137-1c82ccb85670",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "06b2d495-296f-4da0-a8b0-262ba9bb9278",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "42a3ed33-b0f1-46b9-b2c0-fe5085ed24cf",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "9cee703d-a795-4cc9-bfe3-1ae97bb17917",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "e2e0d85b-2802-4757-a145-0b35a2ba68be",
+                  "_$type": "Material"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "#16",
+      "_$type": "Sprite3D",
+      "name": "House9_LOD1(Clone)",
+      "isStatic": true,
+      "transform": {
+        "localRotation": {
+          "_$type": "Quaternion",
+          "w": -1
+        }
+      },
+      "_$child": [
+        {
+          "_$id": "#17",
+          "_$type": "Sprite3D",
+          "name": "Base",
+          "isStatic": true,
+          "transform": {
+            "localPosition": {
+              "_$type": "Vector3",
+              "x": 0.02494797,
+              "z": -0.06923852
+            },
+            "localRotation": {
+              "_$type": "Quaternion",
+              "w": -1
+            }
+          },
+          "_$comp": [
+            {
+              "_$type": "MeshFilter",
+              "sharedMesh": {
+                "_$uuid": "2366f077-a32a-4d4c-8bd8-975375a5c63e",
+                "_$type": "Mesh"
+              }
+            },
+            {
+              "_$type": "MeshRenderer",
+              "receiveShadow": true,
+              "castShadow": true,
+              "sharedMaterials": [
+                {
+                  "_$uuid": "b46cb08d-98f6-4bad-b4b8-df62c6ce96d9",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "8fa0c67d-c619-4b68-b137-1c82ccb85670",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "42a3ed33-b0f1-46b9-b2c0-fe5085ed24cf",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "06b2d495-296f-4da0-a8b0-262ba9bb9278",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "e2e0d85b-2802-4757-a145-0b35a2ba68be",
+                  "_$type": "Material"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "#18",
+          "_$type": "Sprite3D",
+          "name": "Doors",
+          "isStatic": true,
+          "transform": {
+            "localPosition": {
+              "_$type": "Vector3",
+              "x": 2.611548,
+              "y": 1.209484,
+              "z": 3.500574
+            },
+            "localRotation": {
+              "_$type": "Quaternion",
+              "w": -1
+            }
+          },
+          "_$comp": [
+            {
+              "_$type": "MeshFilter",
+              "sharedMesh": {
+                "_$uuid": "5d294ee4-fed8-40a1-b8f0-753bbbf7cf5a",
+                "_$type": "Mesh"
+              }
+            },
+            {
+              "_$type": "MeshRenderer",
+              "receiveShadow": true,
+              "castShadow": true,
+              "sharedMaterials": [
+                {
+                  "_$uuid": "42a3ed33-b0f1-46b9-b2c0-fe5085ed24cf",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "8591c175-bdbc-4a59-b77d-4db0d1ea3b81",
+                  "_$type": "Material"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "#19",
+          "_$type": "Sprite3D",
+          "name": "Floor",
+          "isStatic": true,
+          "transform": {
+            "localPosition": {
+              "_$type": "Vector3",
+              "x": 0.0002835341,
+              "y": -7.80871e-16,
+              "z": -0.002133577
+            },
+            "localRotation": {
+              "_$type": "Quaternion",
+              "w": -1
+            }
+          },
+          "_$comp": [
+            {
+              "_$type": "MeshFilter",
+              "sharedMesh": {
+                "_$uuid": "8da7f394-7e62-40d1-ab7e-e0ffad48e13a",
+                "_$type": "Mesh"
+              }
+            },
+            {
+              "_$type": "MeshRenderer",
+              "receiveShadow": true,
+              "castShadow": true,
+              "sharedMaterials": [
+                {
+                  "_$uuid": "36f352e7-2e28-4cc3-b828-74cd47303ed6",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "8fa0c67d-c619-4b68-b137-1c82ccb85670",
+                  "_$type": "Material"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "#20",
+          "_$type": "Sprite3D",
+          "name": "Roof",
+          "isStatic": true,
+          "transform": {
+            "localRotation": {
+              "_$type": "Quaternion",
+              "w": -1
+            }
+          },
+          "_$comp": [
+            {
+              "_$type": "MeshFilter",
+              "sharedMesh": {
+                "_$uuid": "46ab48d2-06c9-4932-9459-cc2478a30d0c",
+                "_$type": "Mesh"
+              }
+            },
+            {
+              "_$type": "MeshRenderer",
+              "receiveShadow": true,
+              "castShadow": true,
+              "sharedMaterials": [
+                {
+                  "_$uuid": "b46cb08d-98f6-4bad-b4b8-df62c6ce96d9",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "8fa0c67d-c619-4b68-b137-1c82ccb85670",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "06b2d495-296f-4da0-a8b0-262ba9bb9278",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "e2e0d85b-2802-4757-a145-0b35a2ba68be",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "65bba578-68b3-49db-bde4-c7114801d260",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "42a3ed33-b0f1-46b9-b2c0-fe5085ed24cf",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "9cee703d-a795-4cc9-bfe3-1ae97bb17917",
+                  "_$type": "Material"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "#21",
+      "_$type": "Sprite3D",
+      "name": "House9_LOD2(Clone)",
+      "isStatic": true,
+      "transform": {
+        "localRotation": {
+          "_$type": "Quaternion",
+          "w": -1
+        }
+      },
+      "_$child": [
+        {
+          "_$id": "#22",
+          "_$type": "Sprite3D",
+          "name": "Base",
+          "isStatic": true,
+          "transform": {
+            "localRotation": {
+              "_$type": "Quaternion",
+              "w": -1
+            }
+          },
+          "_$comp": [
+            {
+              "_$type": "MeshFilter",
+              "sharedMesh": {
+                "_$uuid": "9cf2b4ef-88c4-4bff-80c5-40d63def9d2c",
+                "_$type": "Mesh"
+              }
+            },
+            {
+              "_$type": "MeshRenderer",
+              "receiveShadow": true,
+              "castShadow": true,
+              "sharedMaterials": [
+                {
+                  "_$uuid": "8fa0c67d-c619-4b68-b137-1c82ccb85670",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "b46cb08d-98f6-4bad-b4b8-df62c6ce96d9",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "42a3ed33-b0f1-46b9-b2c0-fe5085ed24cf",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "06b2d495-296f-4da0-a8b0-262ba9bb9278",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "e2e0d85b-2802-4757-a145-0b35a2ba68be",
+                  "_$type": "Material"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "#23",
+          "_$type": "Sprite3D",
+          "name": "Doors",
+          "isStatic": true,
+          "transform": {
+            "localPosition": {
+              "_$type": "Vector3",
+              "x": 2.611548,
+              "y": 1.209484,
+              "z": 3.500574
+            },
+            "localRotation": {
+              "_$type": "Quaternion",
+              "w": -1
+            }
+          },
+          "_$comp": [
+            {
+              "_$type": "MeshFilter",
+              "sharedMesh": {
+                "_$uuid": "9223b87f-1a15-40d5-adc7-dfe44023d4cf",
+                "_$type": "Mesh"
+              }
+            },
+            {
+              "_$type": "MeshRenderer",
+              "receiveShadow": true,
+              "castShadow": true,
+              "sharedMaterials": [
+                {
+                  "_$uuid": "8591c175-bdbc-4a59-b77d-4db0d1ea3b81",
+                  "_$type": "Material"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "#24",
+          "_$type": "Sprite3D",
+          "name": "Floor",
+          "isStatic": true,
+          "transform": {
+            "localPosition": {
+              "_$type": "Vector3",
+              "x": 0.0002835341,
+              "y": -7.80871e-16,
+              "z": -0.002133577
+            },
+            "localRotation": {
+              "_$type": "Quaternion",
+              "w": -1
+            }
+          },
+          "_$comp": [
+            {
+              "_$type": "MeshFilter",
+              "sharedMesh": {
+                "_$uuid": "013e0ab4-0012-4e47-9b88-cccc10f9c2e2",
+                "_$type": "Mesh"
+              }
+            },
+            {
+              "_$type": "MeshRenderer",
+              "receiveShadow": true,
+              "castShadow": true,
+              "sharedMaterials": [
+                {
+                  "_$uuid": "36f352e7-2e28-4cc3-b828-74cd47303ed6",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "8fa0c67d-c619-4b68-b137-1c82ccb85670",
+                  "_$type": "Material"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "#25",
+          "_$type": "Sprite3D",
+          "name": "Roof",
+          "isStatic": true,
+          "transform": {
+            "localRotation": {
+              "_$type": "Quaternion",
+              "w": -1
+            }
+          },
+          "_$comp": [
+            {
+              "_$type": "MeshFilter",
+              "sharedMesh": {
+                "_$uuid": "fcdd7811-f123-4199-9bf3-aa97456b9b70",
+                "_$type": "Mesh"
+              }
+            },
+            {
+              "_$type": "MeshRenderer",
+              "receiveShadow": true,
+              "castShadow": true,
+              "sharedMaterials": [
+                {
+                  "_$uuid": "b46cb08d-98f6-4bad-b4b8-df62c6ce96d9",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "06b2d495-296f-4da0-a8b0-262ba9bb9278",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "8fa0c67d-c619-4b68-b137-1c82ccb85670",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "e2e0d85b-2802-4757-a145-0b35a2ba68be",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "65bba578-68b3-49db-bde4-c7114801d260",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "42a3ed33-b0f1-46b9-b2c0-fe5085ed24cf",
+                  "_$type": "Material"
+                },
+                {
+                  "_$uuid": "9cee703d-a795-4cc9-bfe3-1ae97bb17917",
+                  "_$type": "Material"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

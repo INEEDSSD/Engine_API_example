@@ -132,7 +132,14 @@
               }
             ]
           },
-          "depthTextureMode": 2
+          "depthTextureMode": 2,
+          "_$comp": [
+            {
+              "_$type": "fd46c0e3-b05d-44fb-971a-9b00b0a1c5fd",
+              "scriptPath": "../src/CameraMove.ts",
+              "speed": 0.289
+            }
+          ]
         },
         {
           "_$id": "#3",
@@ -193,6 +200,7 @@
           "_$id": "664wv0c0",
           "_$type": "Sprite3D",
           "name": "Detail Mesh",
+          "active": false,
           "_$child": [
             {
               "_$id": "6zzl6jei",
@@ -220,11 +228,7 @@
                   ]
                 },
                 {
-                  "_$type": "MeshFilter",
-                  "sharedMesh": {
-                    "_$uuid": "783c28b1-4e63-4d0b-ae99-79efa791f21f",
-                    "_$type": "Mesh"
-                  }
+                  "_$type": "MeshFilter"
                 }
               ]
             },
@@ -254,11 +258,7 @@
                   ]
                 },
                 {
-                  "_$type": "MeshFilter",
-                  "sharedMesh": {
-                    "_$uuid": "499ec8c2-e005-465d-9cae-9d2f1f3280f8",
-                    "_$type": "Mesh"
-                  }
+                  "_$type": "MeshFilter"
                 }
               ]
             },
@@ -390,11 +390,7 @@
                   ]
                 },
                 {
-                  "_$type": "MeshFilter",
-                  "sharedMesh": {
-                    "_$uuid": "5355845d-5c08-4925-8fc1-6a98b6331060",
-                    "_$type": "Mesh"
-                  }
+                  "_$type": "MeshFilter"
                 }
               ]
             },
@@ -424,11 +420,7 @@
                   ]
                 },
                 {
-                  "_$type": "MeshFilter",
-                  "sharedMesh": {
-                    "_$uuid": "f3426770-4547-49cd-8c51-f1260e0c922a",
-                    "_$type": "Mesh"
-                  }
+                  "_$type": "MeshFilter"
                 }
               ]
             },
@@ -458,11 +450,7 @@
                   ]
                 },
                 {
-                  "_$type": "MeshFilter",
-                  "sharedMesh": {
-                    "_$uuid": "0e284ddf-56eb-4320-872d-20da6550fa4a",
-                    "_$type": "Mesh"
-                  }
+                  "_$type": "MeshFilter"
                 }
               ]
             },
@@ -492,11 +480,7 @@
                   ]
                 },
                 {
-                  "_$type": "MeshFilter",
-                  "sharedMesh": {
-                    "_$uuid": "343128da-bff6-4138-aa97-bfbea54484a2",
-                    "_$type": "Mesh"
-                  }
+                  "_$type": "MeshFilter"
                 }
               ]
             },
@@ -7176,8 +7160,8 @@
                     },
                     "localRotation": {
                       "_$type": "Quaternion",
-                      "y": -0.9576397921868661,
-                      "w": 0.2879687976505375
+                      "y": -0.9576397921868659,
+                      "w": 0.28796879765053746
                     },
                     "localScale": {
                       "_$type": "Vector3",
@@ -7473,8 +7457,8 @@
                     },
                     "localRotation": {
                       "_$type": "Quaternion",
-                      "y": 0.8782296163645797,
-                      "w": -0.47823920891131827
+                      "y": 0.8782296163645795,
+                      "w": -0.47823920891131816
                     },
                     "localScale": {
                       "_$type": "Vector3",
@@ -7581,8 +7565,8 @@
                     },
                     "localRotation": {
                       "_$type": "Quaternion",
-                      "y": 0.4806648824962593,
-                      "w": -0.8769043680669273
+                      "y": 0.48066488249625944,
+                      "w": -0.8769043680669275
                     },
                     "localScale": {
                       "_$type": "Vector3",
@@ -7716,8 +7700,8 @@
                     },
                     "localRotation": {
                       "_$type": "Quaternion",
-                      "y": -0.9751637097936764,
-                      "w": 0.22148530222440124
+                      "y": -0.9751637097936766,
+                      "w": 0.2214853022244013
                     },
                     "localScale": {
                       "_$type": "Vector3",
@@ -7743,8 +7727,8 @@
                     },
                     "localRotation": {
                       "_$type": "Quaternion",
-                      "y": -0.6152480103383323,
-                      "w": 0.7883336132467796
+                      "y": -0.6152480103383324,
+                      "w": 0.7883336132467799
                     },
                     "localScale": {
                       "_$type": "Vector3",
@@ -7851,8 +7835,8 @@
                     },
                     "localRotation": {
                       "_$type": "Quaternion",
-                      "y": -0.9927024837292391,
-                      "w": 0.12058929802349679
+                      "y": -0.9927024837292393,
+                      "w": 0.12058929802349681
                     },
                     "localScale": {
                       "_$type": "Vector3",
@@ -7878,8 +7862,8 @@
                     },
                     "localRotation": {
                       "_$type": "Quaternion",
-                      "y": -0.34570831077695724,
-                      "w": -0.9383420292514573
+                      "y": -0.3457083107769573,
+                      "w": -0.9383420292514575
                     },
                     "localScale": {
                       "_$type": "Vector3",
@@ -10307,8 +10291,8 @@
                     },
                     "localRotation": {
                       "_$type": "Quaternion",
-                      "y": -0.767515674265764,
-                      "w": -0.6410301785067296
+                      "y": -0.7675156742657642,
+                      "w": -0.6410301785067297
                     },
                     "localScale": {
                       "_$type": "Vector3",
@@ -16211,7 +16195,7 @@
             {
               "_$type": "MeshFilter",
               "sharedMesh": {
-                "_$uuid": "84ddb3b5-0d28-405f-88a9-f3f0807802c4",
+                "_$uuid": "81a0fecd-cb54-4bc8-9299-6b4e9cd0c112",
                 "_$type": "Mesh"
               }
             },
@@ -16243,6 +16227,1997 @@
                 "_$uuid": "8b60e6d1-f66c-431a-8df0-eaf6f8aa8944",
                 "_$type": "Texture2DArray"
               }
+            },
+            {
+              "_$type": "b9d0dcd0-cd61-4b85-b26c-33444cc1be6a",
+              "enabled": false,
+              "scriptPath": "../src/multPrefabDemo/plantanything.ts",
+              "object": {
+                "_$uuid": "49997b09-ddaa-4209-996a-f809f822fd77",
+                "_$type": "Prefab"
+              },
+              "count": 10,
+              "down": 0,
+              "randGen": false
+            }
+          ],
+          "_$child": [
+            {
+              "_$id": "4r766xs7",
+              "_$type": "Sprite3D",
+              "name": "__xx_xx__",
+              "_$child": [
+                {
+                  "_$id": "msvmn7lm",
+                  "_$type": "Sprite3D",
+                  "name": "cao",
+                  "transform": {
+                    "localPosition": {
+                      "_$type": "Vector3",
+                      "x": -463.3166097005208,
+                      "y": 36.708485921223954,
+                      "z": 149.74875386555988
+                    }
+                  },
+                  "_$child": [
+                    {
+                      "_$id": "tme33rij",
+                      "_$type": "Sprite3D",
+                      "name": "Plane",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "x": -2.6400739046461704e-17,
+                          "y": 0.47559343412780253
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": 0.6826466056948434,
+                          "y": 0.1843735657118694,
+                          "z": -0.18437356571186939,
+                          "w": 0.6826466056948435
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "7qopmis3",
+                      "_$type": "Sprite3D",
+                      "name": "Plane_1",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "y": 0.49132922471466145
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": -0.02916894601150619,
+                          "y": 0.7065048991964443,
+                          "z": -0.7065048991964442,
+                          "w": -0.029168946011506193
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "vzufivge",
+                      "_$type": "Sprite3D",
+                      "name": "Plane_2",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "y": 0.49132922471466145
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": -0.45627378802331436,
+                          "y": -0.5401983250278138,
+                          "z": 0.5401983250278137,
+                          "w": -0.4562737880233145
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "oxrgxoey",
+                      "_$type": "Sprite3D",
+                      "name": "Plane_3",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "y": 0.49132922471466145,
+                          "z": 0.13891708238402162
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": 0.6342622236050245,
+                          "y": -0.312588278263293,
+                          "z": 0.31258827826329294,
+                          "w": 0.6342622236050246
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "_$id": "msvmn7lm",
+                  "_$type": "Sprite3D",
+                  "name": "cao",
+                  "transform": {
+                    "localPosition": {
+                      "_$type": "Vector3",
+                      "x": -142.71349080403644,
+                      "y": 4.24576210975647,
+                      "z": 598.9950154622395
+                    }
+                  },
+                  "_$child": [
+                    {
+                      "_$id": "tme33rij",
+                      "_$type": "Sprite3D",
+                      "name": "Plane",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "x": -2.6400739046461704e-17,
+                          "y": 0.47559343412780253
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": 0.6826466056948434,
+                          "y": 0.1843735657118694,
+                          "z": -0.18437356571186939,
+                          "w": 0.6826466056948435
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "7qopmis3",
+                      "_$type": "Sprite3D",
+                      "name": "Plane_1",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "y": 0.49132922471466145
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": -0.02916894601150619,
+                          "y": 0.7065048991964443,
+                          "z": -0.7065048991964442,
+                          "w": -0.029168946011506193
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "vzufivge",
+                      "_$type": "Sprite3D",
+                      "name": "Plane_2",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "y": 0.49132922471466145
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": -0.45627378802331436,
+                          "y": -0.5401983250278138,
+                          "z": 0.5401983250278137,
+                          "w": -0.4562737880233145
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "oxrgxoey",
+                      "_$type": "Sprite3D",
+                      "name": "Plane_3",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "y": 0.49132922471466145,
+                          "z": 0.13891708238402162
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": 0.6342622236050245,
+                          "y": -0.312588278263293,
+                          "z": 0.31258827826329294,
+                          "w": 0.6342622236050246
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "_$id": "msvmn7lm",
+                  "_$type": "Sprite3D",
+                  "name": "cao",
+                  "transform": {
+                    "localPosition": {
+                      "_$type": "Vector3",
+                      "x": -398.99482218424475,
+                      "y": 16.22945467631022,
+                      "z": 462.3116251627604
+                    }
+                  },
+                  "_$child": [
+                    {
+                      "_$id": "tme33rij",
+                      "_$type": "Sprite3D",
+                      "name": "Plane",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "x": -2.6400739046461704e-17,
+                          "y": 0.47559343412780253
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": 0.6826466056948434,
+                          "y": 0.1843735657118694,
+                          "z": -0.18437356571186939,
+                          "w": 0.6826466056948435
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "7qopmis3",
+                      "_$type": "Sprite3D",
+                      "name": "Plane_1",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "y": 0.49132922471466145
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": -0.02916894601150619,
+                          "y": 0.7065048991964443,
+                          "z": -0.7065048991964442,
+                          "w": -0.029168946011506193
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "vzufivge",
+                      "_$type": "Sprite3D",
+                      "name": "Plane_2",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "y": 0.49132922471466145
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": -0.45627378802331436,
+                          "y": -0.5401983250278138,
+                          "z": 0.5401983250278137,
+                          "w": -0.4562737880233145
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "oxrgxoey",
+                      "_$type": "Sprite3D",
+                      "name": "Plane_3",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "y": 0.49132922471466145,
+                          "z": 0.13891708238402162
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": 0.6342622236050245,
+                          "y": -0.312588278263293,
+                          "z": 0.31258827826329294,
+                          "w": 0.6342622236050246
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "_$id": "msvmn7lm",
+                  "_$type": "Sprite3D",
+                  "name": "cao",
+                  "transform": {
+                    "localPosition": {
+                      "_$type": "Vector3",
+                      "x": -429.14565022786456,
+                      "y": 41.342394510904946,
+                      "z": 186.9348398844401
+                    }
+                  },
+                  "_$child": [
+                    {
+                      "_$id": "tme33rij",
+                      "_$type": "Sprite3D",
+                      "name": "Plane",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "x": -2.6400739046461704e-17,
+                          "y": 0.47559343412780253
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": 0.6826466056948434,
+                          "y": 0.1843735657118694,
+                          "z": -0.18437356571186939,
+                          "w": 0.6826466056948435
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "7qopmis3",
+                      "_$type": "Sprite3D",
+                      "name": "Plane_1",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "y": 0.49132922471466145
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": -0.02916894601150619,
+                          "y": 0.7065048991964443,
+                          "z": -0.7065048991964442,
+                          "w": -0.029168946011506193
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "vzufivge",
+                      "_$type": "Sprite3D",
+                      "name": "Plane_2",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "y": 0.49132922471466145
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": -0.45627378802331436,
+                          "y": -0.5401983250278138,
+                          "z": 0.5401983250278137,
+                          "w": -0.4562737880233145
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "oxrgxoey",
+                      "_$type": "Sprite3D",
+                      "name": "Plane_3",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "y": 0.49132922471466145,
+                          "z": 0.13891708238402162
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": 0.6342622236050245,
+                          "y": -0.312588278263293,
+                          "z": 0.31258827826329294,
+                          "w": 0.6342622236050246
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "_$id": "msvmn7lm",
+                  "_$type": "Sprite3D",
+                  "name": "cao",
+                  "transform": {
+                    "localPosition": {
+                      "_$type": "Vector3",
+                      "x": -116.58298238118489,
+                      "y": 30.429487228393555,
+                      "z": 336.6834004720052
+                    }
+                  },
+                  "_$child": [
+                    {
+                      "_$id": "tme33rij",
+                      "_$type": "Sprite3D",
+                      "name": "Plane",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "x": -2.6400739046461704e-17,
+                          "y": 0.47559343412780253
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": 0.6826466056948434,
+                          "y": 0.1843735657118694,
+                          "z": -0.18437356571186939,
+                          "w": 0.6826466056948435
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "7qopmis3",
+                      "_$type": "Sprite3D",
+                      "name": "Plane_1",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "y": 0.49132922471466145
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": -0.02916894601150619,
+                          "y": 0.7065048991964443,
+                          "z": -0.7065048991964442,
+                          "w": -0.029168946011506193
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "vzufivge",
+                      "_$type": "Sprite3D",
+                      "name": "Plane_2",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "y": 0.49132922471466145
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": -0.45627378802331436,
+                          "y": -0.5401983250278138,
+                          "z": 0.5401983250278137,
+                          "w": -0.4562737880233145
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "oxrgxoey",
+                      "_$type": "Sprite3D",
+                      "name": "Plane_3",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "y": 0.49132922471466145,
+                          "z": 0.13891708238402162
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": 0.6342622236050245,
+                          "y": -0.312588278263293,
+                          "z": 0.31258827826329294,
+                          "w": 0.6342622236050246
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "_$id": "msvmn7lm",
+                  "_$type": "Sprite3D",
+                  "name": "cao",
+                  "transform": {
+                    "localPosition": {
+                      "_$type": "Vector3",
+                      "x": -595.9798787434895,
+                      "y": 2.258493661880493,
+                      "z": 474.37198893229163
+                    }
+                  },
+                  "_$child": [
+                    {
+                      "_$id": "tme33rij",
+                      "_$type": "Sprite3D",
+                      "name": "Plane",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "x": -2.6400739046461704e-17,
+                          "y": 0.47559343412780253
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": 0.6826466056948434,
+                          "y": 0.1843735657118694,
+                          "z": -0.18437356571186939,
+                          "w": 0.6826466056948435
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "7qopmis3",
+                      "_$type": "Sprite3D",
+                      "name": "Plane_1",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "y": 0.49132922471466145
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": -0.02916894601150619,
+                          "y": 0.7065048991964443,
+                          "z": -0.7065048991964442,
+                          "w": -0.029168946011506193
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "vzufivge",
+                      "_$type": "Sprite3D",
+                      "name": "Plane_2",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "y": 0.49132922471466145
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": -0.45627378802331436,
+                          "y": -0.5401983250278138,
+                          "z": 0.5401983250278137,
+                          "w": -0.4562737880233145
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "oxrgxoey",
+                      "_$type": "Sprite3D",
+                      "name": "Plane_3",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "y": 0.49132922471466145,
+                          "z": 0.13891708238402162
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": 0.6342622236050245,
+                          "y": -0.312588278263293,
+                          "z": 0.31258827826329294,
+                          "w": 0.6342622236050246
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "_$id": "msvmn7lm",
+                  "_$type": "Sprite3D",
+                  "name": "cao",
+                  "transform": {
+                    "localPosition": {
+                      "_$type": "Vector3",
+                      "x": -348.74376424153644,
+                      "y": 40.10185241699219,
+                      "z": 176.88444010416666
+                    }
+                  },
+                  "_$child": [
+                    {
+                      "_$id": "tme33rij",
+                      "_$type": "Sprite3D",
+                      "name": "Plane",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "x": -2.6400739046461704e-17,
+                          "y": 0.47559343412780253
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": 0.6826466056948434,
+                          "y": 0.1843735657118694,
+                          "z": -0.18437356571186939,
+                          "w": 0.6826466056948435
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "7qopmis3",
+                      "_$type": "Sprite3D",
+                      "name": "Plane_1",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "y": 0.49132922471466145
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": -0.02916894601150619,
+                          "y": 0.7065048991964443,
+                          "z": -0.7065048991964442,
+                          "w": -0.029168946011506193
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "vzufivge",
+                      "_$type": "Sprite3D",
+                      "name": "Plane_2",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "y": 0.49132922471466145
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": -0.45627378802331436,
+                          "y": -0.5401983250278138,
+                          "z": 0.5401983250278137,
+                          "w": -0.4562737880233145
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "oxrgxoey",
+                      "_$type": "Sprite3D",
+                      "name": "Plane_3",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "y": 0.49132922471466145,
+                          "z": 0.13891708238402162
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": 0.6342622236050245,
+                          "y": -0.312588278263293,
+                          "z": 0.31258827826329294,
+                          "w": 0.6342622236050246
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "_$id": "msvmn7lm",
+                  "_$type": "Sprite3D",
+                  "name": "cao",
+                  "transform": {
+                    "localPosition": {
+                      "_$type": "Vector3",
+                      "x": -230.15082295735675,
+                      "y": 67.23467508951822,
+                      "z": 214.07052612304688
+                    }
+                  },
+                  "_$child": [
+                    {
+                      "_$id": "tme33rij",
+                      "_$type": "Sprite3D",
+                      "name": "Plane",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "x": -2.6400739046461704e-17,
+                          "y": 0.47559343412780253
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": 0.6826466056948434,
+                          "y": 0.1843735657118694,
+                          "z": -0.18437356571186939,
+                          "w": 0.6826466056948435
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "7qopmis3",
+                      "_$type": "Sprite3D",
+                      "name": "Plane_1",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "y": 0.49132922471466145
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": -0.02916894601150619,
+                          "y": 0.7065048991964443,
+                          "z": -0.7065048991964442,
+                          "w": -0.029168946011506193
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "vzufivge",
+                      "_$type": "Sprite3D",
+                      "name": "Plane_2",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "y": 0.49132922471466145
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": -0.45627378802331436,
+                          "y": -0.5401983250278138,
+                          "z": 0.5401983250278137,
+                          "w": -0.4562737880233145
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "oxrgxoey",
+                      "_$type": "Sprite3D",
+                      "name": "Plane_3",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "y": 0.49132922471466145,
+                          "z": 0.13891708238402162
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": 0.6342622236050245,
+                          "y": -0.312588278263293,
+                          "z": 0.31258827826329294,
+                          "w": 0.6342622236050246
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "_$id": "msvmn7lm",
+                  "_$type": "Sprite3D",
+                  "name": "cao",
+                  "transform": {
+                    "localPosition": {
+                      "_$type": "Vector3",
+                      "x": -516.5828043619791,
+                      "y": 29.619435628255207,
+                      "z": 320.6029154459635
+                    }
+                  },
+                  "_$child": [
+                    {
+                      "_$id": "tme33rij",
+                      "_$type": "Sprite3D",
+                      "name": "Plane",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "x": -2.6400739046461704e-17,
+                          "y": 0.47559343412780253
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": 0.6826466056948434,
+                          "y": 0.1843735657118694,
+                          "z": -0.18437356571186939,
+                          "w": 0.6826466056948435
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "7qopmis3",
+                      "_$type": "Sprite3D",
+                      "name": "Plane_1",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "y": 0.49132922471466145
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": -0.02916894601150619,
+                          "y": 0.7065048991964443,
+                          "z": -0.7065048991964442,
+                          "w": -0.029168946011506193
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "vzufivge",
+                      "_$type": "Sprite3D",
+                      "name": "Plane_2",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "y": 0.49132922471466145
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": -0.45627378802331436,
+                          "y": -0.5401983250278138,
+                          "z": 0.5401983250278137,
+                          "w": -0.4562737880233145
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "oxrgxoey",
+                      "_$type": "Sprite3D",
+                      "name": "Plane_3",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "y": 0.49132922471466145,
+                          "z": 0.13891708238402162
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": 0.6342622236050245,
+                          "y": -0.312588278263293,
+                          "z": 0.31258827826329294,
+                          "w": 0.6342622236050246
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "_$id": "msvmn7lm",
+                  "_$type": "Sprite3D",
+                  "name": "cao",
+                  "transform": {
+                    "localPosition": {
+                      "_$type": "Vector3",
+                      "x": -134.67343648274738,
+                      "y": 31.20349057515462,
+                      "z": 111.55768585205078
+                    }
+                  },
+                  "_$child": [
+                    {
+                      "_$id": "tme33rij",
+                      "_$type": "Sprite3D",
+                      "name": "Plane",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "x": -2.6400739046461704e-17,
+                          "y": 0.47559343412780253
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": 0.6826466056948434,
+                          "y": 0.1843735657118694,
+                          "z": -0.18437356571186939,
+                          "w": 0.6826466056948435
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "7qopmis3",
+                      "_$type": "Sprite3D",
+                      "name": "Plane_1",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "y": 0.49132922471466145
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": -0.02916894601150619,
+                          "y": 0.7065048991964443,
+                          "z": -0.7065048991964442,
+                          "w": -0.029168946011506193
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "vzufivge",
+                      "_$type": "Sprite3D",
+                      "name": "Plane_2",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "y": 0.49132922471466145
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": -0.45627378802331436,
+                          "y": -0.5401983250278138,
+                          "z": 0.5401983250278137,
+                          "w": -0.4562737880233145
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "oxrgxoey",
+                      "_$type": "Sprite3D",
+                      "name": "Plane_3",
+                      "transform": {
+                        "localPosition": {
+                          "_$type": "Vector3",
+                          "y": 0.49132922471466145,
+                          "z": 0.13891708238402162
+                        },
+                        "localRotation": {
+                          "_$type": "Quaternion",
+                          "x": 0.6342622236050245,
+                          "y": -0.312588278263293,
+                          "z": 0.31258827826329294,
+                          "w": 0.6342622236050246
+                        },
+                        "localScale": {
+                          "_$type": "Vector3",
+                          "x": 0.9999999801325463,
+                          "y": 0.9999999801325463,
+                          "z": 1
+                        }
+                      },
+                      "_$comp": [
+                        {
+                          "_$type": "MeshFilter",
+                          "sharedMesh": {
+                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
+                            "_$type": "Mesh"
+                          }
+                        },
+                        {
+                          "_$type": "MeshRenderer",
+                          "lightmapScaleOffset": {
+                            "_$type": "Vector4"
+                          },
+                          "sharedMaterials": [
+                            {
+                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
+                              "_$type": "Material"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -46989,592 +48964,6 @@
                   }
                 },
                 {
-                  "_$override": "#3",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.323434,
-                      "y": 5.721773,
-                      "z": -0.007012725
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.17712408410674613,
-                      "y": -0.6845632385744891,
-                      "z": -0.17712268410687174,
-                      "w": -0.6845639385744262
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 11.59525,
-                      "y": 0.423775,
-                      "z": 5.553071
-                    }
-                  }
-                },
-                {
-                  "_$override": "#4",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.0001572371,
-                      "y": -1.06936,
-                      "z": -0.007010818
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 7.071065811861711e-7,
-                      "y": -0.7071065811861711,
-                      "z": 7.071069811861604e-7,
-                      "w": -0.7071069811861604
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 11.03768,
-                      "y": 2.157138,
-                      "z": 6.650119
-                    }
-                  }
-                },
-                {
-                  "_$override": "#5",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 2.23273,
-                      "y": 6.295327,
-                      "z": -0.007012862
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.1055681940879802,
-                      "y": -0.6991837608443786,
-                      "z": -0.1055702940878626,
-                      "w": 0.6991797608446025
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 11.59525,
-                      "y": 0.423775,
-                      "z": 4.915212
-                    }
-                  }
-                },
-                {
-                  "_$override": "#6",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 5.644598,
-                      "y": 0.3417442,
-                      "z": -4.8201
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.999997733927665e-7,
-                      "y": -0.7071067811858405,
-                      "z": 9.999997733927665e-7,
-                      "w": -0.7071067811858405
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3639643,
-                      "y": 5.069385,
-                      "z": 0.2840995
-                    }
-                  }
-                },
-                {
-                  "_$override": "#7",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 5.644598,
-                      "y": 0.341744,
-                      "z": -0.1135092
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.999997733927665e-7,
-                      "y": -0.7071067811858405,
-                      "z": 9.999997733927665e-7,
-                      "w": -0.7071067811858405
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.363964,
-                      "y": 5.069385,
-                      "z": 0.2840994
-                    }
-                  }
-                },
-                {
-                  "_$override": "#8",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 5.539649,
-                      "y": -0.222496,
-                      "z": 1.386545
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.999997733927665e-7,
-                      "y": -0.7071067811858405,
-                      "z": 9.999997733927665e-7,
-                      "w": -0.7071067811858405
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.363964,
-                      "y": 3.830555,
-                      "z": 0.2840994
-                    }
-                  }
-                },
-                {
-                  "_$override": "#9",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 4.505342,
-                      "y": 2.70885,
-                      "z": -2.42206
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.999997733927665e-7,
-                      "y": -0.7071067811858405,
-                      "z": 9.999997733927665e-7,
-                      "w": -0.7071067811858405
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 5.104919,
-                      "y": 0.46086,
-                      "z": 2.539515
-                    }
-                  }
-                },
-                {
-                  "_$override": "#10",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 4.442925,
-                      "y": 1.363749,
-                      "z": 1.535813
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.2646044077307341,
-                      "y": -0.6557320191579948,
-                      "z": -0.26460450773073707,
-                      "w": -0.6557320191579948
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 4.104148,
-                      "y": 0.46086,
-                      "z": 2.539516
-                    }
-                  }
-                },
-                {
-                  "_$override": "#11",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 5.630921,
-                      "y": 3.401232,
-                      "z": -2.496252
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.999997733927665e-7,
-                      "y": -0.7071067811858405,
-                      "z": 9.999997733927665e-7,
-                      "w": -0.7071067811858405
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 4.90499,
-                      "y": 1.107158,
-                      "z": 0.3561221
-                    }
-                  }
-                },
-                {
-                  "_$override": "#12",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 4.355279,
-                      "y": 3.401232,
-                      "z": -4.810628
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000014142129999982374,
-                      "y": -0.9999999999987537,
-                      "z": 8.776494999989062e-13,
-                      "w": -7.021423999991249e-7
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 2.828517,
-                      "y": 1.107158,
-                      "z": 0.356122
-                    }
-                  }
-                },
-                {
-                  "_$override": "#13",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 3.085382,
-                      "y": 4.381159,
-                      "z": 1.335566
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.999997733927665e-7,
-                      "y": -0.7071067811858405,
-                      "z": 9.999997733927665e-7,
-                      "w": -0.7071067811858405
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 8.209385,
-                      "y": 3.035115,
-                      "z": 0.3325034
-                    }
-                  }
-                },
-                {
-                  "_$override": "#14",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -3.163714,
-                      "y": 3.935091,
-                      "z": 0.01829076
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.999997733927665e-7,
-                      "y": -0.7071067811858405,
-                      "z": 9.999997733927665e-7,
-                      "w": -0.7071067811858405
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 10.77499,
-                      "y": 2.310507,
-                      "z": 0.332503
-                    }
-                  }
-                },
-                {
-                  "_$override": "#15",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.02030432,
-                      "y": 3.995544,
-                      "z": 5.217999
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.000001414212999997682,
-                      "y": -0.9999999999983609,
-                      "z": 1.425896999997663e-12,
-                      "w": -0.000001130578999998147
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 6.446942,
-                      "y": 2.397156,
-                      "z": 0.332503
-                    }
-                  }
-                },
-                {
-                  "_$override": "#16",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.020304,
-                      "y": 3.995544,
-                      "z": -5.248971
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.99999999999e-7,
-                      "y": -0.9999999999990001,
-                      "w": -9.99999999999e-7
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 6.446942,
-                      "y": 2.397156,
-                      "z": 0.332503
-                    }
-                  }
-                },
-                {
-                  "_$override": "#17",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 3.126262,
-                      "y": 4.154305,
-                      "z": -4.762949
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 7.071075811861657e-7,
-                      "y": -0.7071068811861843,
-                      "z": 7.071058811862109e-7,
-                      "w": -0.7071066811861896
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 1.192877,
-                      "y": 2.996459,
-                      "z": 0.332503
-                    }
-                  }
-                },
-                {
-                  "_$override": "#18",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.000157,
-                      "y": 1.367773,
-                      "z": -5.261026
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.999997733927665e-7,
-                      "y": -0.7071067811858405,
-                      "z": 9.999997733927665e-7,
-                      "w": -0.7071067811858405
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2724113,
-                      "y": 2.832851,
-                      "z": 6.650121
-                    }
-                  }
-                },
-                {
-                  "_$override": "#19",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.000157,
-                      "y": 1.367773,
-                      "z": 5.291542
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.999997733927665e-7,
-                      "y": -0.7071067811858405,
-                      "z": 9.999997733927665e-7,
-                      "w": -0.7071067811858405
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.272411,
-                      "y": 2.832851,
-                      "z": 6.650123
-                    }
-                  }
-                },
-                {
-                  "_$override": "#20",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 3.12106,
-                      "y": 1.403812,
-                      "z": 0.07174647
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.000001414212999997682,
-                      "y": -0.9999999999983609,
-                      "z": 1.425896999997663e-12,
-                      "w": -0.000001130578999998147
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.272411,
-                      "y": 2.904064,
-                      "z": 10.56885
-                    }
-                  }
-                },
-                {
-                  "_$override": "#21",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.000157,
-                      "y": 2.802163,
-                      "z": -0.007011
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.999997733927665e-7,
-                      "y": -0.7071067811858405,
-                      "z": 9.999997733927665e-7,
-                      "w": -0.7071067811858405
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 11.03768,
-                      "y": 0.1876242,
-                      "z": 6.650121
-                    }
-                  }
-                },
-                {
-                  "_$override": "#22",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -3.217619,
-                      "y": 1.367773,
-                      "z": 3.053806
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 1.439600999997663e-12,
-                      "y": -0.0000011165929999981874,
-                      "z": 0.0000014142129999977042,
-                      "w": -0.9999999999983766
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.272411,
-                      "y": 2.832851,
-                      "z": 4.513565
-                    }
-                  }
-                },
-                {
-                  "_$override": "#23",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -3.217619,
-                      "y": 1.367773,
-                      "z": -2.954386
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "y": -9.99999999999e-7,
-                      "z": 9.99999999999e-7,
-                      "w": -0.9999999999990001
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.272411,
-                      "y": 2.832851,
-                      "z": 4.513565
-                    }
-                  }
-                },
-                {
                   "_$override": "#24",
                   "name": "Doors",
                   "active": true,
@@ -48130,933 +49519,6 @@
                   }
                 },
                 {
-                  "_$override": "#3",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.5118246,
-                      "y": 0.2895319,
-                      "z": -7.661441
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "w": -1
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.4154582,
-                      "y": 4.776695,
-                      "z": 0.3544405
-                    }
-                  }
-                },
-                {
-                  "_$override": "#4",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -5.506536,
-                      "y": 2.724007,
-                      "z": 1.266303
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "w": -1
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 6.349691,
-                      "y": 0.8173697,
-                      "z": 0.1784575
-                    }
-                  }
-                },
-                {
-                  "_$override": "#5",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -5.512455,
-                      "y": 2.288873,
-                      "z": 0.3489266
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "w": -1
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 6.511725,
-                      "y": 0.4795303,
-                      "z": 2.142162
-                    }
-                  }
-                },
-                {
-                  "_$override": "#6",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -4.234506,
-                      "y": 7.095975,
-                      "z": -6.253675
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.7989391525589624,
-                      "y": -8.13692551682905e-7,
-                      "z": -0.0000010809419358136263,
-                      "w": -0.6014118642881404
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 8.178092,
-                      "y": 5.384165,
-                      "z": 0.6038405
-                    }
-                  }
-                },
-                {
-                  "_$override": "#7",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -4.117191,
-                      "y": 1.17752,
-                      "z": -7.793445
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "w": -1
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 7.417427,
-                      "y": 0.5423967,
-                      "z": 0.2392904
-                    }
-                  }
-                },
-                {
-                  "_$override": "#8",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -4.042998,
-                      "y": 4.5993,
-                      "z": -7.716446
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "y": -9.019806999996331e-7,
-                      "w": -0.9999999999995932
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 7.320948,
-                      "y": 4.198599,
-                      "z": 0.2361867
-                    }
-                  }
-                },
-                {
-                  "_$override": "#9",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.4203293,
-                      "y": 4.264555,
-                      "z": 1.376821
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "y": 0.7071060311862228,
-                      "w": -0.7071075311860768
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 4.822243,
-                      "y": 3.571255,
-                      "z": 0.2008918
-                    }
-                  }
-                },
-                {
-                  "_$override": "#10",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.421892,
-                      "y": 6.469061,
-                      "z": 1.306412
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.6269181440939154,
-                      "y": -0.0000010540789060014056,
-                      "z": -8.482020243606929e-7,
-                      "w": -0.7790851305242646
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 5.10235,
-                      "y": 4.841443,
-                      "z": 0.4737332
-                    }
-                  }
-                },
-                {
-                  "_$override": "#11",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.654755,
-                      "y": 5.8427,
-                      "z": 5.039234
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.6689702675146174,
-                      "y": -0.000001082431947436803,
-                      "z": -8.11292460603412e-7,
-                      "w": -0.743289163905671
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 4.783771,
-                      "y": 3.023566,
-                      "z": 0.4737332
-                    }
-                  }
-                },
-                {
-                  "_$override": "#12",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -3.89289,
-                      "y": 0.2895319,
-                      "z": -0.7966733
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "w": -1
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3860424,
-                      "y": 4.776695,
-                      "z": 0.4356419
-                    }
-                  }
-                },
-                {
-                  "_$override": "#13",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 3.246028,
-                      "y": 0.2895319,
-                      "z": -0.7966733
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "w": -1
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.4785748,
-                      "y": 4.776695,
-                      "z": 0.4356419
-                    }
-                  }
-                },
-                {
-                  "_$override": "#14",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -7.859591,
-                      "y": 1.737088,
-                      "z": -4.108669
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "w": -1
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2318999,
-                      "y": 1.620858,
-                      "z": 7.119613
-                    }
-                  }
-                },
-                {
-                  "_$override": "#15",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -3.827989,
-                      "y": 0.2895319,
-                      "z": -7.661441
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "w": -1
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.4154582,
-                      "y": 4.776695,
-                      "z": 0.3544405
-                    }
-                  }
-                },
-                {
-                  "_$override": "#16",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -3.524597,
-                      "y": 1.168444,
-                      "z": 2.801618
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "z": 0.3488388136806335,
-                      "w": -0.9371827367540914
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3348522,
-                      "y": 3.293093,
-                      "z": 1.642187
-                    }
-                  }
-                },
-                {
-                  "_$override": "#17",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -4.117191,
-                      "y": 1.020231,
-                      "z": -0.6820712
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "w": -1
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 7.417427,
-                      "y": 0.4795303,
-                      "z": 0.2392904
-                    }
-                  }
-                },
-                {
-                  "_$override": "#18",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.3109789,
-                      "y": 0.2895319,
-                      "z": 3.692312
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "w": -1
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.4785748,
-                      "y": 4.776695,
-                      "z": 0.4356419
-                    }
-                  }
-                },
-                {
-                  "_$override": "#19",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.6760246,
-                      "y": 4.264555,
-                      "z": 3.729029
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "y": -4.3621669999995857e-7,
-                      "w": -0.999999999999905
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 2.201788,
-                      "y": 3.571255,
-                      "z": 0.2008918
-                    }
-                  }
-                },
-                {
-                  "_$override": "#20",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.4155517,
-                      "y": 4.528189,
-                      "z": -4.227082
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "y": 0.7071057311858702,
-                      "w": -0.7071078311856658
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 7.205957,
-                      "y": 4.285558,
-                      "z": 0.2008918
-                    }
-                  }
-                },
-                {
-                  "_$override": "#21",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -7.651918,
-                      "y": 0.2895319,
-                      "z": -7.661441
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "w": -1
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.4154582,
-                      "y": 4.776695,
-                      "z": 0.3544405
-                    }
-                  }
-                },
-                {
-                  "_$override": "#22",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -7.765911,
-                      "y": 4.540473,
-                      "z": -4.22706
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "y": 0.7071057311858702,
-                      "w": -0.7071078311856658
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 7.205957,
-                      "y": 4.285558,
-                      "z": 0.2008918
-                    }
-                  }
-                },
-                {
-                  "_$override": "#23",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -7.721122,
-                      "y": 0.2895319,
-                      "z": -0.7966733
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "w": -1
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3860424,
-                      "y": 4.776695,
-                      "z": 0.4356419
-                    }
-                  }
-                },
-                {
-                  "_$override": "#24",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.4098453,
-                      "y": 4.128044,
-                      "z": 5.773235
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "y": 0.7071066311865251,
-                      "w": -0.7071069311865382
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.1844966,
-                      "y": 3.598411,
-                      "z": 0.2008918
-                    }
-                  }
-                },
-                {
-                  "_$override": "#25",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.6084578,
-                      "y": 2.288873,
-                      "z": 2.426113
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "w": -1
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 5.929291,
-                      "y": 0.4795303,
-                      "z": 6.937348
-                    }
-                  }
-                },
-                {
-                  "_$override": "#26",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.3599782,
-                      "y": 0.2895319,
-                      "z": -0.8308958
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "w": -1
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.5920576,
-                      "y": 4.776695,
-                      "z": 0.4356419
-                    }
-                  }
-                },
-                {
-                  "_$override": "#27",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 3.339052,
-                      "y": 3.017429,
-                      "z": 4.765563
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "y": 0.7071066311865251,
-                      "w": -0.7071069311865382
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 2.001573,
-                      "y": 1.203931,
-                      "z": 0.2008918
-                    }
-                  }
-                },
-                {
-                  "_$override": "#28",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.6056954,
-                      "y": 2.825859,
-                      "z": 5.882212
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "w": -1
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 5.607904,
-                      "y": 0.8173697,
-                      "z": 0.1784575
-                    }
-                  }
-                },
-                {
-                  "_$override": "#29",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 3.291543,
-                      "y": 0.2895319,
-                      "z": 3.692312
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "w": -1
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.4785748,
-                      "y": 4.776695,
-                      "z": 0.4356419
-                    }
-                  }
-                },
-                {
-                  "_$override": "#30",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.452965,
-                      "y": 4.540473,
-                      "z": -0.6483323
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "y": -0.0000013529709999987617,
-                      "w": -0.9999999999990847
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 4.525231,
-                      "y": 4.285558,
-                      "z": 0.2008918
-                    }
-                  }
-                },
-                {
-                  "_$override": "#31",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 3.339053,
-                      "y": 4.128044,
-                      "z": 5.803373
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "y": 0.7071066311865251,
-                      "w": -0.7071069311865382
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.1844966,
-                      "y": 3.598411,
-                      "z": 0.2008918
-                    }
-                  }
-                },
-                {
-                  "_$override": "#32",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -4.234493,
-                      "y": 7.062527,
-                      "z": -1.403236
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.6269181440939154,
-                      "y": -0.0000010540789060014056,
-                      "z": -8.482020243606929e-7,
-                      "w": -0.7790851305242646
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 7.936409,
-                      "y": 5.15664,
-                      "z": 0.4737332
-                    }
-                  }
-                },
-                {
-                  "_$override": "#33",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 3.298367,
-                      "y": 4.264555,
-                      "z": 1.376813
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "y": 0.7071060311862228,
-                      "w": -0.7071075311860768
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 4.822243,
-                      "y": 3.571255,
-                      "z": 0.2361867
-                    }
-                  }
-                },
-                {
-                  "_$override": "#34",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.511452,
-                      "y": 4.782784,
-                      "z": -0.8373778
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "y": -9.019806999996331e-7,
-                      "w": -0.9999999999995932
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.762832,
-                      "y": 4.198599,
-                      "z": 0.2361867
-                    }
-                  }
-                },
-                {
-                  "_$override": "#35",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.176709,
-                      "y": 2.862482,
-                      "z": 4.877806
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "y": 0.7071067811865476,
-                      "w": -0.7071067811865476
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 2.001573,
-                      "y": 0.782539,
-                      "z": 0.200892
-                    }
-                  }
-                },
-                {
-                  "_$override": "#36",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -6.991722,
-                      "y": 4.540473,
-                      "z": -0.648332
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "y": -9.999999999995e-7,
-                      "w": -0.9999999999995
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 1.647404,
-                      "y": 4.285558,
-                      "z": 0.200892
-                    }
-                  }
-                },
-                {
-                  "_$override": "#37",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -5.396197,
-                      "y": 5.575668,
-                      "z": -0.648332
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "y": -9.999999999995e-7,
-                      "w": -0.9999999999995
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 1.647404,
-                      "y": 1.147216,
-                      "z": 0.200892
-                    }
-                  }
-                },
-                {
-                  "_$override": "#38",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -4.075117,
-                      "y": 2.288873,
-                      "z": -4.318669
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "w": -1
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 7.340629,
-                      "y": 0.47953,
-                      "z": 7.189735
-                    }
-                  }
-                },
-                {
                   "_$override": "#39",
                   "name": "Doors",
                   "active": true,
@@ -49387,227 +49849,6 @@
                       "x": 0.9999999,
                       "y": 0.9999999,
                       "z": 0.9999999
-                    }
-                  }
-                },
-                {
-                  "_$override": "#3",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.007678986,
-                      "y": 5.36115,
-                      "z": 1.996616
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.999998867934968e-7,
-                      "y": -0.9914448869064784,
-                      "z": -0.13052599827620778,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 10.42269,
-                      "y": 0.423775,
-                      "z": 4.30139
-                    }
-                  }
-                },
-                {
-                  "_$override": "#4",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.007678986,
-                      "y": -1.064282,
-                      "z": 0.0161972
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.999999999995e-7,
-                      "y": -0.9999999999995,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 9.921508,
-                      "y": 2.153597,
-                      "z": 7.189956
-                    }
-                  }
-                },
-                {
-                  "_$override": "#5",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.007678986,
-                      "y": 5.321804,
-                      "z": -1.937988
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.999998519433486e-7,
-                      "y": -0.9900427514261434,
-                      "z": 0.1407670073119108,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 10.42269,
-                      "y": 0.423775,
-                      "z": 4.3533
-                    }
-                  }
-                },
-                {
-                  "_$override": "#6",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.007678509,
-                      "y": 2.29225,
-                      "z": 3.511707
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.999999999995e-7,
-                      "y": -0.9999999999995,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 9.921508,
-                      "y": 4.810538,
-                      "z": 0.2695912
-                    }
-                  }
-                },
-                {
-                  "_$override": "#7",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.007678509,
-                      "y": 2.29225,
-                      "z": -3.422089
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.999999999995e-7,
-                      "y": -0.9999999999995,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 9.921508,
-                      "y": 4.810538,
-                      "z": 0.269591
-                    }
-                  }
-                },
-                {
-                  "_$override": "#8",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 4.777054,
-                      "y": 2.29225,
-                      "z": 0.06872749
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 7.071071311860167e-7,
-                      "y": -0.7071072311860069,
-                      "z": 7.071063311860946e-7,
-                      "w": -0.7071063311860946
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 6.801983,
-                      "y": 4.810538,
-                      "z": 0.269591
-                    }
-                  }
-                },
-                {
-                  "_$override": "#9",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -4.871389,
-                      "y": 2.29225,
-                      "z": 1.581249
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.99999973392511e-7,
-                      "y": -0.7071072811856504,
-                      "z": 9.99999973392511e-7,
-                      "w": -0.707106281185677
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.999375,
-                      "y": 4.810538,
-                      "z": 0.269591
-                    }
-                  }
-                },
-                {
-                  "_$override": "#10",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -4.871389,
-                      "y": 2.29225,
-                      "z": -2.679806
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.99999973392511e-7,
-                      "y": -0.7071072811856504,
-                      "z": 9.99999973392511e-7,
-                      "w": -0.707106281185677
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 1.547353,
-                      "y": 4.810538,
-                      "z": 0.269591
                     }
                   }
                 },
@@ -49996,1630 +50237,6 @@
                   }
                 },
                 {
-                  "_$override": "#3",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.787658,
-                      "y": 3.700541,
-                      "z": 6.23588
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.10457569722385253,
-                      "y": -0.6993314814350048,
-                      "z": -0.10457399722389767,
-                      "w": 0.6993308814350206
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.215175,
-                      "y": 0.2848391,
-                      "z": 5.502857
-                    }
-                  }
-                },
-                {
-                  "_$override": "#4",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -1.579674,
-                      "y": 3.910352,
-                      "z": -2.484029
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.50000049999963,
-                      "y": -0.50000069999963,
-                      "z": -0.49999949999963006,
-                      "w": 0.49999929999963005
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 2.802696,
-                      "y": 0.2848391,
-                      "z": 7.72368
-                    }
-                  }
-                },
-                {
-                  "_$override": "#5",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.799126,
-                      "y": 0.4602495,
-                      "z": -4.777983
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.49999959999992505,
-                      "y": -0.5000001999999251,
-                      "z": -0.49999989999992506,
-                      "w": -0.500000299999925
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3459106,
-                      "y": 0.2659984,
-                      "z": 4.069035
-                    }
-                  }
-                },
-                {
-                  "_$override": "#6",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -5.617411,
-                      "y": 0.5251315,
-                      "z": -2.207199
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.7071067811865434,
-                      "y": -0.7071067811865434,
-                      "z": -5.737056847358457e-8,
-                      "w": -9.15682975637114e-8
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3802718,
-                      "y": 0.1387686,
-                      "z": 5.00342
-                    }
-                  }
-                },
-                {
-                  "_$override": "#7",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -8.029754,
-                      "y": 0.6405411,
-                      "z": -2.036075
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5,
-                      "y": -0.5,
-                      "z": -0.5,
-                      "w": -0.5
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2327924,
-                      "y": 0.2848391,
-                      "z": 3.669632
-                    }
-                  }
-                },
-                {
-                  "_$override": "#8",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -8.029754,
-                      "y": 0.5251312,
-                      "z": -2.2072
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.7071067811865434,
-                      "y": -0.7071067811865434,
-                      "z": -5.737056847358457e-8,
-                      "w": -9.15682975637114e-8
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 1.101927,
-                      "y": 0.2848391,
-                      "z": 5.00342
-                    }
-                  }
-                },
-                {
-                  "_$override": "#9",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -7.335647,
-                      "y": 3.565454,
-                      "z": -2.562791
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.14789119070853315,
-                      "y": -0.9890036378644904,
-                      "z": 0.000001060594933366669,
-                      "w": 7.008907559655773e-7
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.215175,
-                      "y": 0.2848391,
-                      "z": 5.848333
-                    }
-                  }
-                },
-                {
-                  "_$override": "#10",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -5.768983,
-                      "y": 0.6405411,
-                      "z": -2.026242
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5,
-                      "y": -0.5,
-                      "z": -0.5,
-                      "w": -0.5
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.1919032,
-                      "y": 0.268209,
-                      "z": 3.669632
-                    }
-                  }
-                },
-                {
-                  "_$override": "#11",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 7.769424,
-                      "y": 4.165477,
-                      "z": 2.052958
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.7071067811865434,
-                      "y": -0.7071067811865434,
-                      "z": -5.737056847358457e-8,
-                      "w": -9.15682975637114e-8
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.470691,
-                      "y": 0.2848391,
-                      "z": 5.191056
-                    }
-                  }
-                },
-                {
-                  "_$override": "#12",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.2177777,
-                      "y": 0.6405411,
-                      "z": -4.759083
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5,
-                      "y": -0.5,
-                      "z": -0.5,
-                      "w": -0.5
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.395943,
-                      "y": 0.4392011,
-                      "z": 3.669632
-                    }
-                  }
-                },
-                {
-                  "_$override": "#13",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -5.788532,
-                      "y": 0.6405411,
-                      "z": 2.096647
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5,
-                      "y": -0.5,
-                      "z": -0.5,
-                      "w": -0.5
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2424535,
-                      "y": 0.2668038,
-                      "z": 3.669632
-                    }
-                  }
-                },
-                {
-                  "_$override": "#14",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 3.732695,
-                      "y": 2.871981,
-                      "z": 4.565599
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5000005249997493,
-                      "y": -0.5000005249997493,
-                      "z": 0.4999994249996944,
-                      "w": -0.4999995249996994
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.6063858,
-                      "y": 0.1962783,
-                      "z": 3.475547
-                    }
-                  }
-                },
-                {
-                  "_$override": "#15",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.956707,
-                      "y": 5.716593,
-                      "z": -3.48876
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.10457569722385253,
-                      "y": -0.6993314814350048,
-                      "z": -0.10457399722389767,
-                      "w": 0.6993308814350206
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 2.895965,
-                      "y": 0.2848391,
-                      "z": 5.267692
-                    }
-                  }
-                },
-                {
-                  "_$override": "#16",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.820007,
-                      "y": 0.4672739,
-                      "z": 4.790768
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5000004749996294,
-                      "y": -0.5000006749996194,
-                      "z": -0.49999957499967446,
-                      "w": 0.4999992749996895
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3127026,
-                      "y": 0.1387686,
-                      "z": 4.19344
-                    }
-                  }
-                },
-                {
-                  "_$override": "#17",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -5.568573,
-                      "y": 0.6405411,
-                      "z": 4.743688
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5,
-                      "y": -0.5,
-                      "z": -0.5,
-                      "w": -0.5
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2327924,
-                      "y": 0.6514401,
-                      "z": 3.669632
-                    }
-                  }
-                },
-                {
-                  "_$override": "#18",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 3.896728,
-                      "y": 0.6405411,
-                      "z": -4.759083
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5,
-                      "y": -0.5,
-                      "z": -0.5,
-                      "w": -0.5
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.395943,
-                      "y": 0.4392011,
-                      "z": 3.669632
-                    }
-                  }
-                },
-                {
-                  "_$override": "#19",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 8.085866,
-                      "y": 0.8808419,
-                      "z": 2.681016
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000014162538621705749,
-                      "y": -0.000001894124815664309,
-                      "z": -0.7071068311845633,
-                      "w": 0.707106731184573
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3127026,
-                      "y": 0.1387686,
-                      "z": 4.19344
-                    }
-                  }
-                },
-                {
-                  "_$override": "#20",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -3.018,
-                      "y": 0.7312437,
-                      "z": -4.777983
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.49999959999992505,
-                      "y": -0.5000001999999251,
-                      "z": -0.49999989999992506,
-                      "w": -0.500000299999925
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3459106,
-                      "y": 0.2659984,
-                      "z": 5.391557
-                    }
-                  }
-                },
-                {
-                  "_$override": "#21",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -8.029754,
-                      "y": 0.5251301,
-                      "z": 3.379934
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.7071067811865434,
-                      "y": -0.7071067811865434,
-                      "z": -5.737056847358457e-8,
-                      "w": -9.15682975637114e-8
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 1.101927,
-                      "y": 0.2848391,
-                      "z": 2.701023
-                    }
-                  }
-                },
-                {
-                  "_$override": "#22",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 5.408437,
-                      "y": 2.871981,
-                      "z": -4.665216
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5000005249997493,
-                      "y": -0.5000005249997493,
-                      "z": 0.4999994249996944,
-                      "w": -0.4999995249996994
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.6063858,
-                      "y": 0.1962783,
-                      "z": 5.353907
-                    }
-                  }
-                },
-                {
-                  "_$override": "#23",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -5.554812,
-                      "y": 0.6405411,
-                      "z": 0.5187142
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5,
-                      "y": -0.5,
-                      "z": -0.5,
-                      "w": -0.5
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3553639,
-                      "y": 0.3049995,
-                      "z": 3.669632
-                    }
-                  }
-                },
-                {
-                  "_$override": "#24",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -8.029754,
-                      "y": 0.6405411,
-                      "z": -4.65538
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5,
-                      "y": -0.5,
-                      "z": -0.5,
-                      "w": -0.5
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2327924,
-                      "y": 0.2848391,
-                      "z": 3.669632
-                    }
-                  }
-                },
-                {
-                  "_$override": "#25",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 7.957964,
-                      "y": 0.441548,
-                      "z": -2.184608
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 3.4082959093176664e-7,
-                      "y": -3.4082959093176664e-7,
-                      "z": -0.7071067811864654,
-                      "w": -0.7071067811864654
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3459106,
-                      "y": 0.3494656,
-                      "z": 5.246256
-                    }
-                  }
-                },
-                {
-                  "_$override": "#26",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 8.010764,
-                      "y": 0.6405411,
-                      "z": 4.693627
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5,
-                      "y": -0.5,
-                      "z": -0.5,
-                      "w": -0.5
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.395943,
-                      "y": 0.4392011,
-                      "z": 3.669632
-                    }
-                  }
-                },
-                {
-                  "_$override": "#27",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -8.029754,
-                      "y": 0.6405411,
-                      "z": 2.091605
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5,
-                      "y": -0.5,
-                      "z": -0.5,
-                      "w": -0.5
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2327924,
-                      "y": 0.2848391,
-                      "z": 3.669632
-                    }
-                  }
-                },
-                {
-                  "_$override": "#28",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.075728,
-                      "y": 6.217764,
-                      "z": -3.427088
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.11909170064422239,
-                      "y": -0.6970063037704313,
-                      "z": -0.1190900006442132,
-                      "w": 0.6970057037704279
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.178942,
-                      "y": 0.2848391,
-                      "z": 3.303621
-                    }
-                  }
-                },
-                {
-                  "_$override": "#29",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -6.904658,
-                      "y": 1.192151,
-                      "z": 1.184539
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000014962219012305318,
-                      "y": -0.000001508630900411382,
-                      "z": 0.910540639892863,
-                      "w": -0.41341957270910734
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.317927,
-                      "y": 0.3605817,
-                      "z": 1.64208
-                    }
-                  }
-                },
-                {
-                  "_$override": "#30",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 3.816805,
-                      "y": 0.6405411,
-                      "z": 4.693627
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5,
-                      "y": -0.5,
-                      "z": -0.5,
-                      "w": -0.5
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.395943,
-                      "y": 0.4392011,
-                      "z": 3.669632
-                    }
-                  }
-                },
-                {
-                  "_$override": "#31",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -5.683735,
-                      "y": 2.734228,
-                      "z": 3.645962
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000014598289611554847,
-                      "y": -0.0000018136159517415842,
-                      "z": -0.7071067811846312,
-                      "w": 0.7071067811846312
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 1.500265,
-                      "y": 0.1212587,
-                      "z": 3.348333
-                    }
-                  }
-                },
-                {
-                  "_$override": "#32",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -5.617411,
-                      "y": 0.8967239,
-                      "z": 2.572984
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.7071067811865434,
-                      "y": -0.7071067811865434,
-                      "z": -5.737056847358457e-8,
-                      "w": -9.15682975637114e-8
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3802718,
-                      "y": 0.1387686,
-                      "z": 4.173164
-                    }
-                  }
-                },
-                {
-                  "_$override": "#33",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 8.010764,
-                      "y": 0.6405411,
-                      "z": 0.5681891
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5,
-                      "y": -0.5,
-                      "z": -0.5,
-                      "w": -0.5
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.395943,
-                      "y": 0.4392011,
-                      "z": 3.669632
-                    }
-                  }
-                },
-                {
-                  "_$override": "#34",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 7.943227,
-                      "y": 2.871981,
-                      "z": -3.406312
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.000001497786854236404,
-                      "y": -0.0000015979808444855931,
-                      "z": 0.7071067311848547,
-                      "w": -0.707106831184845
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.6063858,
-                      "y": 0.1962783,
-                      "z": 2.773052
-                    }
-                  }
-                },
-                {
-                  "_$override": "#35",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.787659,
-                      "y": 0.5251312,
-                      "z": 7.111135
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5000004749996294,
-                      "y": -0.5000006749996194,
-                      "z": -0.49999957499967446,
-                      "w": 0.4999992749996895
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 1.101927,
-                      "y": 0.2848391,
-                      "z": 5.00342
-                    }
-                  }
-                },
-                {
-                  "_$override": "#36",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -5.683735,
-                      "y": 3.275628,
-                      "z": -1.234236
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000014598289611554847,
-                      "y": -0.0000018136159517415842,
-                      "z": -0.7071067811846312,
-                      "w": 0.7071067811846312
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 1.500265,
-                      "y": 0.1212587,
-                      "z": 3.348333
-                    }
-                  }
-                },
-                {
-                  "_$override": "#37",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 5.885958,
-                      "y": 0.8492867,
-                      "z": -4.777983
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.49999959999992505,
-                      "y": -0.5000001999999251,
-                      "z": -0.49999989999992506,
-                      "w": -0.500000299999925
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3459106,
-                      "y": 0.2659984,
-                      "z": 4.069035
-                    }
-                  }
-                },
-                {
-                  "_$override": "#38",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -8.029754,
-                      "y": 0.6405411,
-                      "z": 4.743688
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5,
-                      "y": -0.5,
-                      "z": -0.5,
-                      "w": -0.5
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2327924,
-                      "y": 0.2848391,
-                      "z": 3.669632
-                    }
-                  }
-                },
-                {
-                  "_$override": "#39",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.633482,
-                      "y": 0.6405411,
-                      "z": 4.938208
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5,
-                      "y": -0.5,
-                      "z": -0.5,
-                      "w": -0.5
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2671041,
-                      "y": 0.2946967,
-                      "z": 3.669632
-                    }
-                  }
-                },
-                {
-                  "_$override": "#40",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 6.554182,
-                      "y": 5.63818,
-                      "z": 1.996124
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.14789119070853315,
-                      "y": -0.9890036378644904,
-                      "z": 0.000001060594933366669,
-                      "w": 7.008907559655773e-7
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 2.895965,
-                      "y": 0.2848391,
-                      "z": 5.267692
-                    }
-                  }
-                },
-                {
-                  "_$override": "#41",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 6.617302,
-                      "y": 3.062652,
-                      "z": 4.490624
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5000005249997493,
-                      "y": -0.5000005249997493,
-                      "z": 0.4999994249996944,
-                      "w": -0.4999995249996994
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 1.190147,
-                      "y": 0.2848391,
-                      "z": 2.369617
-                    }
-                  }
-                },
-                {
-                  "_$override": "#42",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.789339,
-                      "y": 0.7921478,
-                      "z": 4.790768
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5000004749996294,
-                      "y": -0.5000006749996194,
-                      "z": -0.49999957499967446,
-                      "w": 0.4999992749996895
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3127026,
-                      "y": 0.1387686,
-                      "z": 5.32307
-                    }
-                  }
-                },
-                {
-                  "_$override": "#43",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -8.029754,
-                      "y": 0.6405411,
-                      "z": 0.3169529
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5,
-                      "y": -0.5,
-                      "z": -0.5,
-                      "w": -0.5
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2327924,
-                      "y": 0.2848391,
-                      "z": 3.669632
-                    }
-                  }
-                },
-                {
-                  "_$override": "#44",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.808285,
-                      "y": 2.922263,
-                      "z": 4.876562
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.49999849999741497,
-                      "y": 0.49999829999741496,
-                      "z": -0.500001399997415,
-                      "w": 0.500001799997415
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 2.016843,
-                      "y": 0.1212587,
-                      "z": 5.376398
-                    }
-                  }
-                },
-                {
-                  "_$override": "#45",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 8.174664,
-                      "y": 1.984286,
-                      "z": -2.096382
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000014162538621705749,
-                      "y": -0.000001894124815664309,
-                      "z": -0.7071068311845633,
-                      "w": 0.707106731184573
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 1.118411,
-                      "y": 0.1387686,
-                      "z": 5.191271
-                    }
-                  }
-                },
-                {
-                  "_$override": "#46",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -5.658268,
-                      "y": 0.6405411,
-                      "z": -4.759083
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5,
-                      "y": -0.5,
-                      "z": -0.5,
-                      "w": -0.5
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.395943,
-                      "y": 0.4392011,
-                      "z": 3.669632
-                    }
-                  }
-                },
-                {
-                  "_$override": "#47",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.6747743,
-                      "y": 1.192151,
-                      "z": 5.98473
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.643849802860525,
-                      "y": -0.29233250129878796,
-                      "z": 0.6438491028605218,
-                      "w": -0.29233110129878176
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.317927,
-                      "y": 0.3605817,
-                      "z": 1.64208
-                    }
-                  }
-                },
-                {
-                  "_$override": "#48",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.142586,
-                      "y": 2.459676,
-                      "z": -0.001600027
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.9999999999993707,
-                      "y": -0.0000011165919999992974,
-                      "z": -1.0531559999993374e-7,
-                      "w": -2.4181569999984783e-8
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 13.96527,
-                      "y": 0.2848391,
-                      "z": 9.628733
-                    }
-                  }
-                },
-                {
-                  "_$override": "#49",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 5.54945,
-                      "y": 3.831939,
-                      "z": 2.052958
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.7071067811865434,
-                      "y": -0.7071067811865434,
-                      "z": -5.737056847358457e-8,
-                      "w": -9.15682975637114e-8
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 2.802696,
-                      "y": 0.2848391,
-                      "z": 5.191056
-                    }
-                  }
-                },
-                {
-                  "_$override": "#50",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.616535,
-                      "y": 0.6405411,
-                      "z": 7.111135
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 7.759843793534914e-7,
-                      "y": -0.707106781186108,
-                      "z": -0.707106781186108,
-                      "w": -8.006619786968979e-7
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2327924,
-                      "y": 0.2848391,
-                      "z": 3.669632
-                    }
-                  }
-                },
-                {
-                  "_$override": "#51",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.9696336,
-                      "y": 4.511405,
-                      "z": -4.687053
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5000004749996394,
-                      "y": -0.5000006749996294,
-                      "z": -0.49999947499968944,
-                      "w": 0.49999937499969443
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.916492,
-                      "y": 0.2141725,
-                      "z": 2.780244
-                    }
-                  }
-                },
-                {
-                  "_$override": "#52",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.2497516,
-                      "y": 0.6405411,
-                      "z": 4.795757
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5,
-                      "y": -0.5,
-                      "z": -0.5,
-                      "w": -0.5
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.4811548,
-                      "y": 0.3186056,
-                      "z": 3.669632
-                    }
-                  }
-                },
-                {
-                  "_$override": "#53",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.787658,
-                      "y": 3.700541,
-                      "z": 6.23588
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.10457569722385253,
-                      "y": -0.6993314814350048,
-                      "z": -0.10457399722389767,
-                      "w": 0.6993308814350206
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.215175,
-                      "y": 0.2848391,
-                      "z": 5.502857
-                    }
-                  }
-                },
-                {
-                  "_$override": "#54",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 5.939133,
-                      "y": 1.984286,
-                      "z": 4.868896
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.500000499999615,
-                      "y": -0.500000699999615,
-                      "z": -0.4999995999996151,
-                      "w": 0.49999919999961506
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 1.118411,
-                      "y": 0.1387686,
-                      "z": 4.089325
-                    }
-                  }
-                },
-                {
-                  "_$override": "#55",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.899871,
-                      "y": 4.24389,
-                      "z": -4.704002
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.50000049999963,
-                      "y": -0.50000069999963,
-                      "z": -0.49999949999963006,
-                      "w": 0.49999929999963005
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.470691,
-                      "y": 0.2848391,
-                      "z": 5.191056
-                    }
-                  }
-                },
-                {
-                  "_$override": "#56",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 5.811957,
-                      "y": 0.8808419,
-                      "z": 4.790768
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5000004749996294,
-                      "y": -0.5000006749996194,
-                      "z": -0.49999957499967446,
-                      "w": 0.4999992749996895
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3127026,
-                      "y": 0.1387686,
-                      "z": 4.19344
-                    }
-                  }
-                },
-                {
-                  "_$override": "#57",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -5.235839,
-                      "y": 0.6405411,
-                      "z": 7.111129
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 7.759843793534914e-7,
-                      "y": -0.707106781186108,
-                      "z": -0.707106781186108,
-                      "w": -8.006619786968979e-7
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2327924,
-                      "y": 0.2848391,
-                      "z": 3.669632
-                    }
-                  }
-                },
-                {
-                  "_$override": "#58",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.2635069,
-                      "y": 0.6405411,
-                      "z": 7.11114
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 7.759843793534914e-7,
-                      "y": -0.707106781186108,
-                      "z": -0.707106781186108,
-                      "w": -8.006619786968979e-7
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2327924,
-                      "y": 0.2848391,
-                      "z": 3.669632
-                    }
-                  }
-                },
-                {
-                  "_$override": "#59",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -6.894718,
-                      "y": 3.16754,
-                      "z": 3.459314
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.14789119070853315,
-                      "y": -0.9890036378644904,
-                      "z": 0.000001060594933366669,
-                      "w": 7.008907559655773e-7
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.215175,
-                      "y": 0.2848391,
-                      "z": 3.141435
-                    }
-                  }
-                },
-                {
-                  "_$override": "#60",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 8.010764,
-                      "y": 0.6405411,
-                      "z": -4.759083
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5,
-                      "y": -0.5,
-                      "z": -0.5,
-                      "w": -0.5
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.395943,
-                      "y": 0.4392011,
-                      "z": 3.669632
-                    }
-                  }
-                },
-                {
                   "_$override": "#61",
                   "name": "stairs1",
                   "active": true,
@@ -51835,281 +50452,6 @@
                       "x": 1,
                       "y": 1,
                       "z": 1
-                    }
-                  }
-                },
-                {
-                  "_$override": "#3",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.008640289,
-                      "y": 5.314142,
-                      "z": 1.960309
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.999998867934968e-7,
-                      "y": -0.9914448869064784,
-                      "z": -0.13052599827620778,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 10.42269,
-                      "y": 0.423775,
-                      "z": 4.30139
-                    }
-                  }
-                },
-                {
-                  "_$override": "#4",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.008640289,
-                      "y": -1.060814,
-                      "z": -0.02011013
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.999999999995e-7,
-                      "y": -0.9999999999995,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 9.921508,
-                      "y": 2.203608,
-                      "z": 7.189956
-                    }
-                  }
-                },
-                {
-                  "_$override": "#5",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.008640289,
-                      "y": 5.274796,
-                      "z": -1.974297
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.999998519433486e-7,
-                      "y": -0.9900427514261434,
-                      "z": 0.1407670073119108,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 10.42269,
-                      "y": 0.423775,
-                      "z": 4.3533
-                    }
-                  }
-                },
-                {
-                  "_$override": "#6",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.008640289,
-                      "y": 2.258872,
-                      "z": -3.454727
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.999999999995e-7,
-                      "y": -0.9999999999995,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 9.921508,
-                      "y": 4.49104,
-                      "z": 0.2891809
-                    }
-                  }
-                },
-                {
-                  "_$override": "#7",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 4.783972,
-                      "y": 2.258872,
-                      "z": -0.01088715
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 7.071075811857202e-7,
-                      "y": -0.70710758118572,
-                      "z": 7.071059811857628e-7,
-                      "w": -0.7071059811857627
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 6.883597,
-                      "y": 4.49104,
-                      "z": 0.289181
-                    }
-                  }
-                },
-                {
-                  "_$override": "#8",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -4.83459,
-                      "y": 2.258872,
-                      "z": -0.01088715
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.999997733917666e-7,
-                      "y": -0.7071077811851068,
-                      "z": 9.999997733917666e-7,
-                      "w": -0.70710578118516
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 6.883597,
-                      "y": 4.49104,
-                      "z": 0.289181
-                    }
-                  }
-                },
-                {
-                  "_$override": "#9",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -1.859974,
-                      "y": 2.258872,
-                      "z": 3.475683
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000014142129999982073,
-                      "y": -0.9999999999987323,
-                      "z": 8.725765999988938e-13,
-                      "w": 7.316896999990725e-7
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 6.02003,
-                      "y": 4.49104,
-                      "z": 0.289181
-                    }
-                  }
-                },
-                {
-                  "_$override": "#10",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -1.859974,
-                      "y": 2.258872,
-                      "z": 3.475683
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.99999999999e-7,
-                      "y": -0.9999999999990001,
-                      "w": 9.99999999999e-7
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 6.02003,
-                      "y": 4.49104,
-                      "z": 0.289181
-                    }
-                  }
-                },
-                {
-                  "_$override": "#11",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 3.774203,
-                      "y": 2.258872,
-                      "z": 3.475683
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.99999999999e-7,
-                      "y": -0.9999999999990001,
-                      "w": 9.99999999999e-7
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 2.286035,
-                      "y": 4.49104,
-                      "z": 0.289181
-                    }
-                  }
-                },
-                {
-                  "_$override": "#12",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.847279,
-                      "y": 3.515684,
-                      "z": 3.475683
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.99999999999e-7,
-                      "y": -0.9999999999990001,
-                      "w": 9.99999999999e-7
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 2.286035,
-                      "y": 2.398118,
-                      "z": 0.289181
                     }
                   }
                 },
@@ -52523,227 +50865,6 @@
                   }
                 },
                 {
-                  "_$override": "#3",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.007678986,
-                      "y": 5.36115,
-                      "z": 1.996616
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.999998867934968e-7,
-                      "y": -0.9914448869064784,
-                      "z": -0.13052599827620778,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 10.42269,
-                      "y": 0.423775,
-                      "z": 4.30139
-                    }
-                  }
-                },
-                {
-                  "_$override": "#4",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.007678986,
-                      "y": -1.064282,
-                      "z": 0.0161972
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.999999999995e-7,
-                      "y": -0.9999999999995,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 9.921508,
-                      "y": 2.153597,
-                      "z": 7.189956
-                    }
-                  }
-                },
-                {
-                  "_$override": "#5",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.007678986,
-                      "y": 5.321804,
-                      "z": -1.937988
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.999998519433486e-7,
-                      "y": -0.9900427514261434,
-                      "z": 0.1407670073119108,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 10.42269,
-                      "y": 0.423775,
-                      "z": 4.3533
-                    }
-                  }
-                },
-                {
-                  "_$override": "#6",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.007678509,
-                      "y": 2.29225,
-                      "z": 3.511707
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.999999999995e-7,
-                      "y": -0.9999999999995,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 9.921508,
-                      "y": 4.810538,
-                      "z": 0.2695912
-                    }
-                  }
-                },
-                {
-                  "_$override": "#7",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.007678509,
-                      "y": 2.29225,
-                      "z": -3.422089
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.999999999995e-7,
-                      "y": -0.9999999999995,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 9.921508,
-                      "y": 4.810538,
-                      "z": 0.269591
-                    }
-                  }
-                },
-                {
-                  "_$override": "#8",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 4.777054,
-                      "y": 2.29225,
-                      "z": 0.06872749
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 7.071071311860167e-7,
-                      "y": -0.7071072311860069,
-                      "z": 7.071063311860946e-7,
-                      "w": -0.7071063311860946
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 6.801983,
-                      "y": 4.810538,
-                      "z": 0.269591
-                    }
-                  }
-                },
-                {
-                  "_$override": "#9",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -4.871389,
-                      "y": 2.29225,
-                      "z": 1.581249
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.99999973392511e-7,
-                      "y": -0.7071072811856504,
-                      "z": 9.99999973392511e-7,
-                      "w": -0.707106281185677
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.999375,
-                      "y": 4.810538,
-                      "z": 0.269591
-                    }
-                  }
-                },
-                {
-                  "_$override": "#10",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -4.871389,
-                      "y": 2.29225,
-                      "z": -2.679806
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.99999973392511e-7,
-                      "y": -0.7071072811856504,
-                      "z": 9.99999973392511e-7,
-                      "w": -0.707106281185677
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 1.547353,
-                      "y": 4.810538,
-                      "z": 0.269591
-                    }
-                  }
-                },
-                {
                   "_$override": "#11",
                   "name": "Doors",
                   "active": true,
@@ -53131,727 +51252,6 @@
                   }
                 },
                 {
-                  "_$override": "#3",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.3612818,
-                      "y": 2.434417,
-                      "z": -0.1186571
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.7071071811854268,
-                      "y": -0.7071063811854481,
-                      "z": 1.7181669542833407e-8,
-                      "w": -0.0000016791169553223758
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3850135,
-                      "y": 8.016503,
-                      "z": 8.777948
-                    }
-                  }
-                },
-                {
-                  "_$override": "#4",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 3.678934,
-                      "y": 0.009761095,
-                      "z": 4.273656
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000027207159999899305,
-                      "y": 0.999999999996299,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3850135,
-                      "y": 5.127662,
-                      "z": 0.3862247
-                    }
-                  }
-                },
-                {
-                  "_$override": "#5",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -4.255818,
-                      "y": 0.009761095,
-                      "z": 4.273656
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000027207159999899305,
-                      "y": 0.999999999996299,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3850135,
-                      "y": 5.127662,
-                      "z": 0.3862247
-                    }
-                  }
-                },
-                {
-                  "_$override": "#6",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 3.678934,
-                      "y": 0.009761095,
-                      "z": -4.41533
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000027207159999899305,
-                      "y": 0.999999999996299,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3850135,
-                      "y": 5.127662,
-                      "z": 0.3862247
-                    }
-                  }
-                },
-                {
-                  "_$override": "#7",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.2888265,
-                      "y": 0.5327127,
-                      "z": 4.256449
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.499997599996085,
-                      "y": 0.500002499996085,
-                      "z": 0.500001299996085,
-                      "w": 0.49999859999608504
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3850136,
-                      "y": 7.934941,
-                      "z": 0.3862247
-                    }
-                  }
-                },
-                {
-                  "_$override": "#8",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -4.255818,
-                      "y": 0.009761095,
-                      "z": -4.41533
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000027207159999899305,
-                      "y": 0.999999999996299,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3850135,
-                      "y": 5.127662,
-                      "z": 0.3862247
-                    }
-                  }
-                },
-                {
-                  "_$override": "#9",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 3.542289,
-                      "y": 4.279314,
-                      "z": -1.140648
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.7071071811854268,
-                      "y": -0.7071063811854481,
-                      "z": 1.7181669542833407e-8,
-                      "w": -0.0000016791169553223758
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.446657,
-                      "y": 0.3888345,
-                      "z": 6.655199
-                    }
-                  }
-                },
-                {
-                  "_$override": "#10",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.6686227,
-                      "y": 6.522712,
-                      "z": -3.289863
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.1275876956899646,
-                      "y": 0.12758699568998824,
-                      "z": 0.6955009765053063,
-                      "w": -0.695500776505313
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3117305,
-                      "y": 6.958179,
-                      "z": 4.466662
-                    }
-                  }
-                },
-                {
-                  "_$override": "#11",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.401263,
-                      "y": 2.962004,
-                      "z": 4.082399
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.7071071811854268,
-                      "y": -0.7071063811854481,
-                      "z": 1.7181669542833407e-8,
-                      "w": -0.0000016791169553223758
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.7629737,
-                      "y": 3.852884,
-                      "z": 0.18987
-                    }
-                  }
-                },
-                {
-                  "_$override": "#12",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -4.255818,
-                      "y": 0.009761095,
-                      "z": 0.5315009
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000027207159999899305,
-                      "y": 0.999999999996299,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3850135,
-                      "y": 5.127662,
-                      "z": 0.3862247
-                    }
-                  }
-                },
-                {
-                  "_$override": "#13",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.26078,
-                      "y": 1.248523,
-                      "z": 5.258592
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.6426297023551415,
-                      "y": -0.6426297023551415,
-                      "z": -0.2950026010811403,
-                      "w": -0.2950044010811469
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3850135,
-                      "y": 1.603591,
-                      "z": 3.26839
-                    }
-                  }
-                },
-                {
-                  "_$override": "#14",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 3.678934,
-                      "y": 0.009761095,
-                      "z": -0.7254107
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000027207159999899305,
-                      "y": 0.999999999996299,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3850135,
-                      "y": 5.127662,
-                      "z": 0.3862247
-                    }
-                  }
-                },
-                {
-                  "_$override": "#15",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.6686227,
-                      "y": 6.522712,
-                      "z": 0.8311349
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.6955011587573912,
-                      "y": -0.6955005587574267,
-                      "z": -0.12758659243422693,
-                      "w": -0.12758829243412612
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3117305,
-                      "y": 6.958179,
-                      "z": 4.466662
-                    }
-                  }
-                },
-                {
-                  "_$override": "#16",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.321047,
-                      "y": 1.842183,
-                      "z": 4.325353
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.4999997499995975,
-                      "y": -0.5000001499995576,
-                      "z": -0.4999991499996575,
-                      "w": -0.5000009499994775
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3850135,
-                      "y": 5.074214,
-                      "z": 1.42062
-                    }
-                  }
-                },
-                {
-                  "_$override": "#17",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -4.203168,
-                      "y": 0.67186,
-                      "z": 2.356951
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.707106081186139,
-                      "y": -2.678038928745837e-7,
-                      "z": -3.9572828947091924e-7,
-                      "w": -0.7071074811861018
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3850135,
-                      "y": 3.66148,
-                      "z": 0.3862247
-                    }
-                  }
-                },
-                {
-                  "_$override": "#18",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 3.678934,
-                      "y": 0.67186,
-                      "z": -2.571802
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000019238389488055287,
-                      "y": 0.7071075811834566,
-                      "z": 0.7071059811834992,
-                      "w": -0.0000019238339488056618
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3850135,
-                      "y": 3.66148,
-                      "z": 0.3862247
-                    }
-                  }
-                },
-                {
-                  "_$override": "#19",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 3.678934,
-                      "y": 0.009761095,
-                      "z": 1.901198
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000027207159999899305,
-                      "y": 0.999999999996299,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3850135,
-                      "y": 5.127662,
-                      "z": 0.3862247
-                    }
-                  }
-                },
-                {
-                  "_$override": "#20",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -4.341218,
-                      "y": 1.842183,
-                      "z": 0.006931245
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.707106081186139,
-                      "y": -2.678038928745837e-7,
-                      "z": -3.9572828947091924e-7,
-                      "w": -0.7071074811861018
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3850135,
-                      "y": 8.311447,
-                      "z": 1.42062
-                    }
-                  }
-                },
-                {
-                  "_$override": "#21",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -4.203148,
-                      "y": 0.2283499,
-                      "z": -1.961857
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.707106081186139,
-                      "y": -2.678038928745837e-7,
-                      "z": -3.9572828947091924e-7,
-                      "w": -0.7071074811861018
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3850135,
-                      "y": 4.881368,
-                      "z": 0.3862247
-                    }
-                  }
-                },
-                {
-                  "_$override": "#22",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 3.678934,
-                      "y": 0.2283499,
-                      "z": 1.747007
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000019238389488055287,
-                      "y": 0.7071075811834566,
-                      "z": 0.7071059811834992,
-                      "w": -0.0000019238339488056618
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3850135,
-                      "y": 4.881368,
-                      "z": 0.3862247
-                    }
-                  }
-                },
-                {
-                  "_$override": "#23",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.2888265,
-                      "y": 0.5327127,
-                      "z": -4.482143
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.499997599996085,
-                      "y": 0.500002499996085,
-                      "z": 0.500001299996085,
-                      "w": 0.49999859999608504
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.1969269,
-                      "y": 7.934941,
-                      "z": 0.3862247
-                    }
-                  }
-                },
-                {
-                  "_$override": "#24",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.683472,
-                      "y": 4.279314,
-                      "z": -4.239146
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5000006499992675,
-                      "y": -0.49999864999946764,
-                      "z": 0.5000000499993276,
-                      "w": -0.5000006499992675
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.446658,
-                      "y": 0.3596784,
-                      "z": 6.239929
-                    }
-                  }
-                },
-                {
-                  "_$override": "#25",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.683472,
-                      "y": 4.279314,
-                      "z": 1.975169
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5000007749992094,
-                      "y": -0.4999986749993144,
-                      "z": 0.49999977499925935,
-                      "w": -0.5000007749992094
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.446659,
-                      "y": 0.359679,
-                      "z": 6.239931
-                    }
-                  }
-                },
-                {
-                  "_$override": "#26",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.361182,
-                      "y": 4.279314,
-                      "z": 0.2289534
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000014786409606568423,
-                      "y": 5.565693851909979e-7,
-                      "z": 0.7071071811855413,
-                      "w": -0.7071063811855626
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.446659,
-                      "y": 0.359679,
-                      "z": 3.67564
-                    }
-                  }
-                },
-                {
-                  "_$override": "#27",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.361182,
-                      "y": 4.279314,
-                      "z": -3.756188
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.99999973392511e-7,
-                      "y": 9.99999973392511e-7,
-                      "z": 0.7071072811856504,
-                      "w": -0.707106281185677
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.446659,
-                      "y": 0.359679,
-                      "z": 1.292558
-                    }
-                  }
-                },
-                {
-                  "_$override": "#28",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.361182,
-                      "y": 5.502598,
-                      "z": -2.385658
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.99999973392511e-7,
-                      "y": 9.99999973392511e-7,
-                      "z": 0.7071072811856504,
-                      "w": -0.707106281185677
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 1.029304,
-                      "y": 0.359679,
-                      "z": 1.599571
-                    }
-                  }
-                },
-                {
                   "_$override": "#29",
                   "name": "Doors",
                   "active": true,
@@ -54190,255 +51590,6 @@
                       "x": 0.9999999,
                       "y": 0.9999999,
                       "z": 0.9999999
-                    }
-                  }
-                },
-                {
-                  "_$override": "#4",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.00555706,
-                      "y": 5.219451,
-                      "z": 1.959631
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000013413959822842905,
-                      "y": -0.9914448869060667,
-                      "z": -0.1305259982761536,
-                      "w": -1.765978976676857e-7
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 10.42269,
-                      "y": 0.4237754,
-                      "z": 4.30139
-                    }
-                  }
-                },
-                {
-                  "_$override": "#5",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.00555706,
-                      "y": 5.180105,
-                      "z": -1.974972
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000013394989941545064,
-                      "y": -0.990042695679513,
-                      "z": 0.1407673993856995,
-                      "w": 1.9045429916886885e-7
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 10.42269,
-                      "y": 0.4237754,
-                      "z": 4.353301
-                    }
-                  }
-                },
-                {
-                  "_$override": "#6",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.00555706,
-                      "y": -1.088108,
-                      "z": -0.02078724
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000013529709999987617,
-                      "y": -0.9999999999990847,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 9.921508,
-                      "y": 2.270819,
-                      "z": 7.189956
-                    }
-                  }
-                },
-                {
-                  "_$override": "#7",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -4.83184,
-                      "y": 2.282376,
-                      "z": -0.02078724
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.999999999995e-7,
-                      "y": -0.9999999999995,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": -0.2530086,
-                      "y": 4.662662,
-                      "z": 7.189956
-                    }
-                  }
-                },
-                {
-                  "_$override": "#8",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 4.849027,
-                      "y": 2.282375,
-                      "z": -0.02078724
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.999999999995e-7,
-                      "y": -0.9999999999995,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": -0.253009,
-                      "y": 4.662662,
-                      "z": 7.189956
-                    }
-                  }
-                },
-                {
-                  "_$override": "#9",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.07220173,
-                      "y": 2.282375,
-                      "z": -3.455748
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 7.071075811857202e-7,
-                      "y": -0.70710758118572,
-                      "z": -7.071059811857628e-7,
-                      "w": 0.7071059811857627
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": -0.253009,
-                      "y": 4.662662,
-                      "z": 9.434387
-                    }
-                  }
-                },
-                {
-                  "_$override": "#10",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -1.809201,
-                      "y": 2.282375,
-                      "z": 3.457926
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.999997733917666e-7,
-                      "y": -0.7071077811851068,
-                      "z": -9.999997733917666e-7,
-                      "w": 0.70710578118516
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": -0.253009,
-                      "y": 4.662662,
-                      "z": 6.035342
-                    }
-                  }
-                },
-                {
-                  "_$override": "#11",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 3.773157,
-                      "y": 2.282375,
-                      "z": 3.457926
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.999997733917666e-7,
-                      "y": -0.7071077811851068,
-                      "z": -9.999997733917666e-7,
-                      "w": 0.70710578118516
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": -0.253009,
-                      "y": 4.662662,
-                      "z": 2.274901
-                    }
-                  }
-                },
-                {
-                  "_$override": "#12",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.999642,
-                      "y": 3.540123,
-                      "z": 3.457926
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.999997733917666e-7,
-                      "y": -0.7071077811851068,
-                      "z": -9.999997733917666e-7,
-                      "w": 0.70710578118516
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": -0.253009,
-                      "y": 2.415614,
-                      "z": 2.274902
                     }
                   }
                 },
@@ -54873,930 +52024,6 @@
                   }
                 },
                 {
-                  "_$override": "#3",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.3107632,
-                      "y": 1.774284,
-                      "z": 5.262162
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.25099790087312635,
-                      "y": 0.2510005008731354,
-                      "z": 0.6610577022995685,
-                      "w": 0.6610609022995797
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 1.81071,
-                      "y": 1.633586,
-                      "z": 0.2251639
-                    }
-                  }
-                },
-                {
-                  "_$override": "#4",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.3829494,
-                      "y": 1.334572,
-                      "z": -0.03969721
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.7071043811821849,
-                      "y": 7.071044811821823e-7,
-                      "z": 7.071091811820572e-7,
-                      "w": 0.7071091811820572
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.4347972,
-                      "y": 7.423181,
-                      "z": 0.4767997
-                    }
-                  }
-                },
-                {
-                  "_$override": "#5",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.2740179,
-                      "y": 7.548189,
-                      "z": -0.4103964
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.0000025292640553004932,
-                      "y": -0.7128073155850063,
-                      "z": -0.7013599153347174,
-                      "w": 0.000001943752042498705
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.968949,
-                      "y": 3.538709,
-                      "z": 0.9730814
-                    }
-                  }
-                },
-                {
-                  "_$override": "#6",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.6800551,
-                      "y": 7.251303,
-                      "z": 1.270308
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.6363607782593071,
-                      "y": 5.803996801711677e-7,
-                      "z": 8.143318721790851e-7,
-                      "w": 0.7713915736461017
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 8.128262,
-                      "y": 5.096765,
-                      "z": 0.2251639
-                    }
-                  }
-                },
-                {
-                  "_$override": "#7",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.2163069,
-                      "y": 1.770479,
-                      "z": -3.777164
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.49999939999617504,
-                      "y": -0.5000005999961751,
-                      "z": -0.49999729999617504,
-                      "w": 0.5000026999961751
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.4347972,
-                      "y": 7.423181,
-                      "z": 0.4767997
-                    }
-                  }
-                },
-                {
-                  "_$override": "#8",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 3.967227,
-                      "y": 1.334572,
-                      "z": -0.03969721
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.7071043811821849,
-                      "y": 7.071044811821823e-7,
-                      "z": 7.071091811820572e-7,
-                      "w": 0.7071091811820572
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.4347972,
-                      "y": 7.423181,
-                      "z": 0.4767997
-                    }
-                  }
-                },
-                {
-                  "_$override": "#9",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -3.373796,
-                      "y": 0.1772807,
-                      "z": 3.71186
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.1980229999933128e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.4347972,
-                      "y": 4.397256,
-                      "z": 0.4767997
-                    }
-                  }
-                },
-                {
-                  "_$override": "#10",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.680055,
-                      "y": 7.239499,
-                      "z": -2.933838
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.0000022539151496540483,
-                      "y": -0.7982548530020265,
-                      "z": -0.602319839992456,
-                      "w": 0.0000022572581498760147
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 8.128262,
-                      "y": 5.096765,
-                      "z": 0.2251639
-                    }
-                  }
-                },
-                {
-                  "_$override": "#11",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.2740114,
-                      "y": 8.305724,
-                      "z": 0.5161638
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.0000025292640553004932,
-                      "y": -0.7128073155850063,
-                      "z": -0.7013599153347174,
-                      "w": 0.000001943752042498705
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.968949,
-                      "y": 1.724984,
-                      "z": 0.5480683
-                    }
-                  }
-                },
-                {
-                  "_$override": "#12",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.04691982,
-                      "y": 2.410286,
-                      "z": -0.8142417
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.49999919999655495,
-                      "y": -0.500000799996555,
-                      "z": -0.49999749999655496,
-                      "w": 0.500002499996555
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 7.099879,
-                      "y": 9.13494,
-                      "z": 0.2251639
-                    }
-                  }
-                },
-                {
-                  "_$override": "#13",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.3649549,
-                      "y": 0.1772807,
-                      "z": -3.793308
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.1980229999933128e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.4347972,
-                      "y": 4.397256,
-                      "z": 0.4767997
-                    }
-                  }
-                },
-                {
-                  "_$override": "#14",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -3.930348,
-                      "y": 5.8441,
-                      "z": 1.76275
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.43005146867605415,
-                      "y": -0.5612982591163441,
-                      "z": -0.43004976867617795,
-                      "w": 0.5612995591162494
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 2.316508,
-                      "y": 2.128977,
-                      "z": 0.2251639
-                    }
-                  }
-                },
-                {
-                  "_$override": "#15",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.03586769,
-                      "y": 2.410286,
-                      "z": 3.681967
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.7071043811821849,
-                      "y": 7.071044811821823e-7,
-                      "z": 7.071091811820572e-7,
-                      "w": 0.7071091811820572
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 9.302653,
-                      "y": 1.923859,
-                      "z": 0.2251639
-                    }
-                  }
-                },
-                {
-                  "_$override": "#16",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -4.477533,
-                      "y": 3.024132,
-                      "z": 1.774153
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.49999919999655495,
-                      "y": -0.500000799996555,
-                      "z": -0.49999749999655496,
-                      "w": 0.500002499996555
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 2.026602,
-                      "y": 0.2850862,
-                      "z": 1.02064
-                    }
-                  }
-                },
-                {
-                  "_$override": "#17",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.3662079,
-                      "y": 0.6612309,
-                      "z": 6.576925
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.7071043811821849,
-                      "y": 7.071044811821823e-7,
-                      "z": 7.071091811820572e-7,
-                      "w": 0.7071091811820572
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 1.572561,
-                      "y": 1.633586,
-                      "z": 1.339673
-                    }
-                  }
-                },
-                {
-                  "_$override": "#18",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -3.930348,
-                      "y": 5.8441,
-                      "z": -2.493714
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.43005146867605415,
-                      "y": -0.5612982591163441,
-                      "z": -0.43004976867617795,
-                      "w": 0.5612995591162494
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.955717,
-                      "y": 2.128977,
-                      "z": 0.2251639
-                    }
-                  }
-                },
-                {
-                  "_$override": "#19",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.2163069,
-                      "y": 1.602767,
-                      "z": 3.651949
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.49999939999617504,
-                      "y": -0.5000005999961751,
-                      "z": -0.49999729999617504,
-                      "w": 0.5000026999961751
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.4347972,
-                      "y": 7.423181,
-                      "z": 0.4767997
-                    }
-                  }
-                },
-                {
-                  "_$override": "#20",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.3657042,
-                      "y": 0.1772807,
-                      "z": 3.71186
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.1980229999933128e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.4347972,
-                      "y": 4.397256,
-                      "z": 0.4767997
-                    }
-                  }
-                },
-                {
-                  "_$override": "#21",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -3.342366,
-                      "y": 1.334572,
-                      "z": -0.03969721
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.7071043811821849,
-                      "y": 7.071044811821823e-7,
-                      "z": 7.071091811820572e-7,
-                      "w": 0.7071091811820572
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.4347972,
-                      "y": 7.423181,
-                      "z": 0.4767997
-                    }
-                  }
-                },
-                {
-                  "_$override": "#22",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.9330768,
-                      "y": 0.5759796,
-                      "z": 6.576925
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.6449203897558976,
-                      "y": -0.2899556953942597,
-                      "z": 0.28995669539424385,
-                      "w": 0.6449251897558214
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 1.81071,
-                      "y": 1.633586,
-                      "z": 0.2251639
-                    }
-                  }
-                },
-                {
-                  "_$override": "#23",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 3.967227,
-                      "y": 0.1772807,
-                      "z": -0.03969716
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.1980229999933128e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.4347972,
-                      "y": 4.397256,
-                      "z": 0.4767997
-                    }
-                  }
-                },
-                {
-                  "_$override": "#24",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -3.37732,
-                      "y": 0.1772807,
-                      "z": -0.07571293
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.1980229999933128e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.4347972,
-                      "y": 4.397256,
-                      "z": 0.4767997
-                    }
-                  }
-                },
-                {
-                  "_$override": "#25",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 3.967227,
-                      "y": 0.1772807,
-                      "z": -3.793308
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.1980229999933128e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.4347972,
-                      "y": 4.397256,
-                      "z": 0.4767997
-                    }
-                  }
-                },
-                {
-                  "_$override": "#26",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.2740171,
-                      "y": 8.528498,
-                      "z": -0.4262683
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.0000022539151496540483,
-                      "y": -0.7982548530020265,
-                      "z": -0.602319839992456,
-                      "w": 0.0000022572581498760147
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 4.352074,
-                      "y": 3.871635,
-                      "z": 0.2251639
-                    }
-                  }
-                },
-                {
-                  "_$override": "#27",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -3.37732,
-                      "y": 0.1772807,
-                      "z": -3.793308
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.1980229999933128e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.4347972,
-                      "y": 4.397256,
-                      "z": 0.4767997
-                    }
-                  }
-                },
-                {
-                  "_$override": "#28",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -4.477533,
-                      "y": 3.024132,
-                      "z": -2.463262
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.49999919999655495,
-                      "y": -0.500000799996555,
-                      "z": -0.49999749999655496,
-                      "w": 0.500002499996555
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.684818,
-                      "y": 0.2850862,
-                      "z": 1.02064
-                    }
-                  }
-                },
-                {
-                  "_$override": "#29",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 4.43286,
-                      "y": 4.472567,
-                      "z": -0.7500027
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.7071043811821849,
-                      "y": 7.071044811821823e-7,
-                      "z": 7.071091811820572e-7,
-                      "w": 0.7071091811820572
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2716331,
-                      "y": 7.264898,
-                      "z": 4.35039
-                    }
-                  }
-                },
-                {
-                  "_$override": "#30",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 3.967227,
-                      "y": 0.1772807,
-                      "z": 3.71186
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.1980229999933128e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.4347972,
-                      "y": 4.397256,
-                      "z": 0.4767997
-                    }
-                  }
-                },
-                {
-                  "_$override": "#31",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.8169014,
-                      "y": 4.472567,
-                      "z": -4.247603
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.4999978499970275,
-                      "y": 0.5000020499966075,
-                      "z": 0.49999864999694754,
-                      "w": 0.5000014499966675
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.271633,
-                      "y": 7.264898,
-                      "z": 4.35039
-                    }
-                  }
-                },
-                {
-                  "_$override": "#32",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.807541,
-                      "y": 4.472567,
-                      "z": -0.8634105
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -6.954173814944863e-8,
-                      "y": 0.7071088811833679,
-                      "z": 0.7071046811834797,
-                      "w": 1.0242229727447536e-7
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.271633,
-                      "y": 6.995803,
-                      "z": 4.350391
-                    }
-                  }
-                },
-                {
-                  "_$override": "#33",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 2.412538,
-                      "y": 4.472567,
-                      "z": 2.740217
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.49999807499787446,
-                      "y": 0.5000019749976794,
-                      "z": 0.49999917499781943,
-                      "w": -0.5000007749977394
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.271633,
-                      "y": 4.277266,
-                      "z": 4.350391
-                    }
-                  }
-                },
-                {
-                  "_$override": "#34",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.043866,
-                      "y": 4.472567,
-                      "z": 2.740217
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.4999979999975,
-                      "y": 0.5000019999975,
-                      "z": 0.4999989999975,
-                      "w": -0.5000009999975
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.271633,
-                      "y": 1.702215,
-                      "z": 4.350392
-                    }
-                  }
-                },
-                {
-                  "_$override": "#35",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.4662473,
-                      "y": 5.823412,
-                      "z": 2.740217
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.4999979999975,
-                      "y": 0.5000019999975,
-                      "z": 0.4999989999975,
-                      "w": -0.5000009999975
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.271633,
-                      "y": 1.702215,
-                      "z": 1.677576
-                    }
-                  }
-                },
-                {
                   "_$override": "#36",
                   "name": "Doors",
                   "active": true,
@@ -56106,727 +52333,6 @@
                       "x": 1,
                       "y": 1,
                       "z": 1
-                    }
-                  }
-                },
-                {
-                  "_$override": "#3",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.3612818,
-                      "y": 2.434417,
-                      "z": -0.1186571
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.7071071811854268,
-                      "y": -0.7071063811854481,
-                      "z": 1.7181669542833407e-8,
-                      "w": -0.0000016791169553223758
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3850135,
-                      "y": 8.016503,
-                      "z": 8.777948
-                    }
-                  }
-                },
-                {
-                  "_$override": "#4",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 3.678934,
-                      "y": 0.009761095,
-                      "z": 4.273656
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000027207159999899305,
-                      "y": 0.999999999996299,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3850135,
-                      "y": 5.127662,
-                      "z": 0.3862247
-                    }
-                  }
-                },
-                {
-                  "_$override": "#5",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -4.255818,
-                      "y": 0.009761095,
-                      "z": 4.273656
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000027207159999899305,
-                      "y": 0.999999999996299,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3850135,
-                      "y": 5.127662,
-                      "z": 0.3862247
-                    }
-                  }
-                },
-                {
-                  "_$override": "#6",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 3.678934,
-                      "y": 0.009761095,
-                      "z": -4.41533
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000027207159999899305,
-                      "y": 0.999999999996299,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3850135,
-                      "y": 5.127662,
-                      "z": 0.3862247
-                    }
-                  }
-                },
-                {
-                  "_$override": "#7",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.2888265,
-                      "y": 0.5327127,
-                      "z": 4.256449
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.499997599996085,
-                      "y": 0.500002499996085,
-                      "z": 0.500001299996085,
-                      "w": 0.49999859999608504
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3850136,
-                      "y": 7.934941,
-                      "z": 0.3862247
-                    }
-                  }
-                },
-                {
-                  "_$override": "#8",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -4.255818,
-                      "y": 0.009761095,
-                      "z": -4.41533
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000027207159999899305,
-                      "y": 0.999999999996299,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3850135,
-                      "y": 5.127662,
-                      "z": 0.3862247
-                    }
-                  }
-                },
-                {
-                  "_$override": "#9",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 3.542289,
-                      "y": 4.279314,
-                      "z": -1.140648
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.7071071811854268,
-                      "y": -0.7071063811854481,
-                      "z": 1.7181669542833407e-8,
-                      "w": -0.0000016791169553223758
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.446657,
-                      "y": 0.3888345,
-                      "z": 6.655199
-                    }
-                  }
-                },
-                {
-                  "_$override": "#10",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.6686227,
-                      "y": 6.522712,
-                      "z": -3.289863
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.1275876956899646,
-                      "y": 0.12758699568998824,
-                      "z": 0.6955009765053063,
-                      "w": -0.695500776505313
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3117305,
-                      "y": 6.958179,
-                      "z": 4.466662
-                    }
-                  }
-                },
-                {
-                  "_$override": "#11",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.401263,
-                      "y": 2.962004,
-                      "z": 4.082399
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.7071071811854268,
-                      "y": -0.7071063811854481,
-                      "z": 1.7181669542833407e-8,
-                      "w": -0.0000016791169553223758
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.7629737,
-                      "y": 3.852884,
-                      "z": 0.18987
-                    }
-                  }
-                },
-                {
-                  "_$override": "#12",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -4.255818,
-                      "y": 0.009761095,
-                      "z": 0.5315009
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000027207159999899305,
-                      "y": 0.999999999996299,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3850135,
-                      "y": 5.127662,
-                      "z": 0.3862247
-                    }
-                  }
-                },
-                {
-                  "_$override": "#13",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.26078,
-                      "y": 1.248523,
-                      "z": 5.258592
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.6426297023551415,
-                      "y": -0.6426297023551415,
-                      "z": -0.2950026010811403,
-                      "w": -0.2950044010811469
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3850135,
-                      "y": 1.603591,
-                      "z": 3.26839
-                    }
-                  }
-                },
-                {
-                  "_$override": "#14",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 3.678934,
-                      "y": 0.009761095,
-                      "z": -0.7254107
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000027207159999899305,
-                      "y": 0.999999999996299,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3850135,
-                      "y": 5.127662,
-                      "z": 0.3862247
-                    }
-                  }
-                },
-                {
-                  "_$override": "#15",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.6686227,
-                      "y": 6.522712,
-                      "z": 0.8311349
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.6955011587573912,
-                      "y": -0.6955005587574267,
-                      "z": -0.12758659243422693,
-                      "w": -0.12758829243412612
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3117305,
-                      "y": 6.958179,
-                      "z": 4.466662
-                    }
-                  }
-                },
-                {
-                  "_$override": "#16",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.321047,
-                      "y": 1.842183,
-                      "z": 4.325353
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.4999997499995975,
-                      "y": -0.5000001499995576,
-                      "z": -0.4999991499996575,
-                      "w": -0.5000009499994775
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3850135,
-                      "y": 5.074214,
-                      "z": 1.42062
-                    }
-                  }
-                },
-                {
-                  "_$override": "#17",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -4.203168,
-                      "y": 0.67186,
-                      "z": 2.356951
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.707106081186139,
-                      "y": -2.678038928745837e-7,
-                      "z": -3.9572828947091924e-7,
-                      "w": -0.7071074811861018
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3850135,
-                      "y": 3.66148,
-                      "z": 0.3862247
-                    }
-                  }
-                },
-                {
-                  "_$override": "#18",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 3.678934,
-                      "y": 0.67186,
-                      "z": -2.571802
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000019238389488055287,
-                      "y": 0.7071075811834566,
-                      "z": 0.7071059811834992,
-                      "w": -0.0000019238339488056618
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3850135,
-                      "y": 3.66148,
-                      "z": 0.3862247
-                    }
-                  }
-                },
-                {
-                  "_$override": "#19",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 3.678934,
-                      "y": 0.009761095,
-                      "z": 1.901198
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000027207159999899305,
-                      "y": 0.999999999996299,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3850135,
-                      "y": 5.127662,
-                      "z": 0.3862247
-                    }
-                  }
-                },
-                {
-                  "_$override": "#20",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -4.341218,
-                      "y": 1.842183,
-                      "z": 0.006931245
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.707106081186139,
-                      "y": -2.678038928745837e-7,
-                      "z": -3.9572828947091924e-7,
-                      "w": -0.7071074811861018
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3850135,
-                      "y": 8.311447,
-                      "z": 1.42062
-                    }
-                  }
-                },
-                {
-                  "_$override": "#21",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -4.203148,
-                      "y": 0.2283499,
-                      "z": -1.961857
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.707106081186139,
-                      "y": -2.678038928745837e-7,
-                      "z": -3.9572828947091924e-7,
-                      "w": -0.7071074811861018
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3850135,
-                      "y": 4.881368,
-                      "z": 0.3862247
-                    }
-                  }
-                },
-                {
-                  "_$override": "#22",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 3.678934,
-                      "y": 0.2283499,
-                      "z": 1.747007
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000019238389488055287,
-                      "y": 0.7071075811834566,
-                      "z": 0.7071059811834992,
-                      "w": -0.0000019238339488056618
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3850135,
-                      "y": 4.881368,
-                      "z": 0.3862247
-                    }
-                  }
-                },
-                {
-                  "_$override": "#23",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.2888265,
-                      "y": 0.5327127,
-                      "z": -4.482143
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.499997599996085,
-                      "y": 0.500002499996085,
-                      "z": 0.500001299996085,
-                      "w": 0.49999859999608504
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.1969269,
-                      "y": 7.934941,
-                      "z": 0.3862247
-                    }
-                  }
-                },
-                {
-                  "_$override": "#24",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.683472,
-                      "y": 4.279314,
-                      "z": -4.239146
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5000006499992675,
-                      "y": -0.49999864999946764,
-                      "z": 0.5000000499993276,
-                      "w": -0.5000006499992675
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.446658,
-                      "y": 0.3596784,
-                      "z": 6.239929
-                    }
-                  }
-                },
-                {
-                  "_$override": "#25",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.683472,
-                      "y": 4.279314,
-                      "z": 1.975169
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5000007749992094,
-                      "y": -0.4999986749993144,
-                      "z": 0.49999977499925935,
-                      "w": -0.5000007749992094
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.446659,
-                      "y": 0.359679,
-                      "z": 6.239931
-                    }
-                  }
-                },
-                {
-                  "_$override": "#26",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.361182,
-                      "y": 4.279314,
-                      "z": 0.2289534
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000014786409606568423,
-                      "y": 5.565693851909979e-7,
-                      "z": 0.7071071811855413,
-                      "w": -0.7071063811855626
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.446659,
-                      "y": 0.359679,
-                      "z": 3.67564
-                    }
-                  }
-                },
-                {
-                  "_$override": "#27",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.361182,
-                      "y": 4.279314,
-                      "z": -3.756188
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.99999973392511e-7,
-                      "y": 9.99999973392511e-7,
-                      "z": 0.7071072811856504,
-                      "w": -0.707106281185677
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.446659,
-                      "y": 0.359679,
-                      "z": 1.292558
-                    }
-                  }
-                },
-                {
-                  "_$override": "#28",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.361182,
-                      "y": 5.502598,
-                      "z": -2.385658
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.99999973392511e-7,
-                      "y": 9.99999973392511e-7,
-                      "z": 0.7071072811856504,
-                      "w": -0.707106281185677
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 1.029304,
-                      "y": 0.359679,
-                      "z": 1.599571
                     }
                   }
                 },
@@ -57168,474 +52674,6 @@
                   }
                 },
                 {
-                  "_$override": "#2",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.338661,
-                      "y": 15.20564,
-                      "z": -0.0608919
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000017660749684415036,
-                      "y": 9.386051832277968e-7,
-                      "z": 0.4693035916138805,
-                      "w": 0.8830368842207625
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2683457,
-                      "y": 3.542285,
-                      "z": 4.043507
-                    }
-                  }
-                },
-                {
-                  "_$override": "#3",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.010937,
-                      "y": 12.29994,
-                      "z": -0.06277913
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000021213209435529657,
-                      "y": 0.7071059811843485,
-                      "z": -7.071043811843911e-7,
-                      "w": 0.7071075811843058
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.629696,
-                      "y": 1.398478,
-                      "z": 0.1960673
-                    }
-                  }
-                },
-                {
-                  "_$override": "#4",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -1.248518,
-                      "y": 15.20564,
-                      "z": -0.06089168
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.46930359161114915,
-                      "y": -0.8830368842156232,
-                      "z": 0.0000027246339512968827,
-                      "w": 0.0000028664309487622465
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2683457,
-                      "y": 3.542285,
-                      "z": 4.043507
-                    }
-                  }
-                },
-                {
-                  "_$override": "#5",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -1.971291,
-                      "y": 5.898065,
-                      "z": 1.698348
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.000001999999999995,
-                      "z": 9.999999999975e-7,
-                      "w": 0.9999999999975
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.4222176,
-                      "y": 17.31868,
-                      "z": 0.4686599
-                    }
-                  }
-                },
-                {
-                  "_$override": "#6",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.92977,
-                      "y": 5.898065,
-                      "z": -1.749543
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.000001999999999995,
-                      "z": 9.999999999975e-7,
-                      "w": 0.9999999999975
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.4222176,
-                      "y": 17.31868,
-                      "z": 0.4686599
-                    }
-                  }
-                },
-                {
-                  "_$override": "#7",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.05266026,
-                      "y": 11.37037,
-                      "z": -0.0276695
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.000001999999999995,
-                      "z": 9.999999999975e-7,
-                      "w": 0.9999999999975
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 4.258427,
-                      "y": 0.4341355,
-                      "z": 3.78616
-                    }
-                  }
-                },
-                {
-                  "_$override": "#8",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.03785467,
-                      "y": 7.297203,
-                      "z": 1.698348
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.000001999999999995,
-                      "z": 9.999999999975e-7,
-                      "w": 0.9999999999975
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.736135,
-                      "y": 8.731756,
-                      "z": 0.2598337
-                    }
-                  }
-                },
-                {
-                  "_$override": "#9",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.92977,
-                      "y": 5.898065,
-                      "z": 1.698348
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.000001999999999995,
-                      "z": 9.999999999975e-7,
-                      "w": 0.9999999999975
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.4222176,
-                      "y": 17.31868,
-                      "z": 0.4686599
-                    }
-                  }
-                },
-                {
-                  "_$override": "#10",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.05266026,
-                      "y": 12.29994,
-                      "z": 1.716721
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.000001999999999995,
-                      "z": 9.999999999975e-7,
-                      "w": 0.9999999999975
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 4.258427,
-                      "y": 1.398478,
-                      "z": 0.1960673
-                    }
-                  }
-                },
-                {
-                  "_$override": "#11",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -1.939827,
-                      "y": 7.297203,
-                      "z": -0.05313444
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 7.071092811842608e-7,
-                      "y": -0.7071059811843485,
-                      "z": 0.000002121319943552992,
-                      "w": 0.7071075811843058
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.595999,
-                      "y": 8.731756,
-                      "z": 0.2598337
-                    }
-                  }
-                },
-                {
-                  "_$override": "#12",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 2.201628,
-                      "y": 4.415609,
-                      "z": 0.01096248
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000014142149623670473,
-                      "y": -0.0000014142119623671273,
-                      "z": -0.7071052811835823,
-                      "w": 0.7071082811835024
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 14.32273,
-                      "y": 0.1089626,
-                      "z": 0.9656116
-                    }
-                  }
-                },
-                {
-                  "_$override": "#13",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -1.971291,
-                      "y": 5.898065,
-                      "z": -1.781443
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.000001999999999995,
-                      "z": 9.999999999975e-7,
-                      "w": 0.9999999999975
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.4222176,
-                      "y": 17.31868,
-                      "z": 0.4686599
-                    }
-                  }
-                },
-                {
-                  "_$override": "#14",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.976098,
-                      "y": 12.29994,
-                      "z": 1.150897
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000021213209435529657,
-                      "y": 0.7071059811843485,
-                      "z": -7.071043811843911e-7,
-                      "w": 0.7071075811843058
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.9468827,
-                      "y": 1.398478,
-                      "z": 0.1960673
-                    }
-                  }
-                },
-                {
-                  "_$override": "#15",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.862675,
-                      "y": 6.947441,
-                      "z": -0.03919512
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.0000021213179435421844,
-                      "y": -0.707109181180643,
-                      "z": 7.0711418118051e-7,
-                      "w": -0.7071043811807708
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.595999,
-                      "y": 8.635489,
-                      "z": 0.2598337
-                    }
-                  }
-                },
-                {
-                  "_$override": "#16",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.09523726,
-                      "y": 7.340096,
-                      "z": -1.808941
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -9.999954999949575e-7,
-                      "y": -0.9999999999949576,
-                      "z": 0.000002000001999989915,
-                      "w": 0.0000022549499999886293
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.595999,
-                      "y": 7.830793,
-                      "z": 0.2598337
-                    }
-                  }
-                },
-                {
-                  "_$override": "#17",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.976098,
-                      "y": 12.29994,
-                      "z": -1.280357
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000021213209435529657,
-                      "y": 0.7071059811843485,
-                      "z": -7.071043811843911e-7,
-                      "w": 0.7071075811843058
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.9468827,
-                      "y": 1.398478,
-                      "z": 0.1960673
-                    }
-                  }
-                },
-                {
-                  "_$override": "#18",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.05266026,
-                      "y": 12.29994,
-                      "z": -1.840374
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.000001999999999995,
-                      "z": 9.999999999975e-7,
-                      "w": 0.9999999999975
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 4.258427,
-                      "y": 1.398478,
-                      "z": 0.1960673
-                    }
-                  }
-                },
-                {
                   "_$override": "#19",
                   "name": "Tower1_LOD1(Clone)",
                   "active": true,
@@ -57797,314 +52835,6 @@
                   }
                 },
                 {
-                  "_$override": "#2",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.04779792,
-                      "y": 3.526687,
-                      "z": -2.586861
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 10.86259,
-                      "y": 0.6519652,
-                      "z": 0.1841415
-                    }
-                  }
-                },
-                {
-                  "_$override": "#3",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -1.769125,
-                      "y": 1.607078,
-                      "z": -2.474491
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3652767,
-                      "y": 5.676987,
-                      "z": 0.2899507
-                    }
-                  }
-                },
-                {
-                  "_$override": "#4",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 5.259804,
-                      "y": 1.057748,
-                      "z": 2.444508
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3196171,
-                      "y": 4.541591,
-                      "z": 0.2899507
-                    }
-                  }
-                },
-                {
-                  "_$override": "#5",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -5.377624,
-                      "y": 1.057748,
-                      "z": 2.444508
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3196171,
-                      "y": 4.541591,
-                      "z": 0.2899507
-                    }
-                  }
-                },
-                {
-                  "_$override": "#6",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.714128,
-                      "y": 1.607078,
-                      "z": -2.474491
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3196171,
-                      "y": 5.676987,
-                      "z": 0.2899507
-                    }
-                  }
-                },
-                {
-                  "_$override": "#7",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.705329,
-                      "y": 1.057748,
-                      "z": 2.444508
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3196171,
-                      "y": 4.541591,
-                      "z": 0.2899507
-                    }
-                  }
-                },
-                {
-                  "_$override": "#8",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -5.327287,
-                      "y": 1.607078,
-                      "z": -2.474491
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3652767,
-                      "y": 5.676987,
-                      "z": 0.2899507
-                    }
-                  }
-                },
-                {
-                  "_$override": "#9",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -1.740949,
-                      "y": 1.057748,
-                      "z": 2.444508
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3196171,
-                      "y": 4.541591,
-                      "z": 0.2899507
-                    }
-                  }
-                },
-                {
-                  "_$override": "#10",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.02517033,
-                      "y": 3.907519,
-                      "z": 0.0117259
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.10601369675625763,
-                      "y": -1.0601369675625761e-7,
-                      "z": 9.94364369575046e-7,
-                      "w": 0.9943646695750369
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 11.87047,
-                      "y": 0.284839,
-                      "z": 5.684057
-                    }
-                  }
-                },
-                {
-                  "_$override": "#11",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.04779792,
-                      "y": 0.6174915,
-                      "z": 2.56617
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 10.86259,
-                      "y": 0.892708,
-                      "z": 0.1841415
-                    }
-                  }
-                },
-                {
-                  "_$override": "#12",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 5.259804,
-                      "y": 1.607078,
-                      "z": -2.474491
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3196171,
-                      "y": 5.676987,
-                      "z": 0.2899507
-                    }
-                  }
-                },
-                {
                   "_$override": "#13",
                   "name": "Shed8_LOD1(Clone)",
                   "active": true,
@@ -58200,90 +52930,6 @@
                   }
                 },
                 {
-                  "_$override": "#2",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.332262,
-                      "y": 1.32701,
-                      "z": -0.3393154
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2334896,
-                      "y": 3.659225,
-                      "z": 1.439788
-                    }
-                  }
-                },
-                {
-                  "_$override": "#3",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.01082087,
-                      "y": 3.228266,
-                      "z": -0.02248955
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.09369536128515653,
-                      "y": 9.36908612850948e-8,
-                      "z": 9.956013136559966e-7,
-                      "w": 0.995600913655991
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 2.894953,
-                      "y": 0.1637091,
-                      "z": 2.138976
-                    }
-                  }
-                },
-                {
-                  "_$override": "#4",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -1.342162,
-                      "y": 1.327004,
-                      "z": -0.3393154
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2334896,
-                      "y": 3.659225,
-                      "z": 1.439788
-                    }
-                  }
-                },
-                {
                   "_$override": "#5",
                   "name": "Shed3_LOD1(Clone)",
                   "active": true,
@@ -58353,90 +52999,6 @@
                       "x": 1,
                       "y": 1,
                       "z": 1
-                    }
-                  }
-                },
-                {
-                  "_$override": "#2",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.332262,
-                      "y": 1.32701,
-                      "z": -0.3393154
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2334896,
-                      "y": 3.659225,
-                      "z": 1.439788
-                    }
-                  }
-                },
-                {
-                  "_$override": "#3",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.01082087,
-                      "y": 3.228266,
-                      "z": -0.02248955
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.09369536128515653,
-                      "y": 9.36908612850948e-8,
-                      "z": 9.956013136559966e-7,
-                      "w": 0.995600913655991
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 2.894953,
-                      "y": 0.1637091,
-                      "z": 2.138976
-                    }
-                  }
-                },
-                {
-                  "_$override": "#4",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -1.342162,
-                      "y": 1.327004,
-                      "z": -0.3393154
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2334896,
-                      "y": 3.659225,
-                      "z": 1.439788
                     }
                   }
                 },
@@ -58514,118 +53076,6 @@
                   }
                 },
                 {
-                  "_$override": "#2",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 2.168996,
-                      "y": 1.367029,
-                      "z": 0.06915092
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5000017749981794,
-                      "y": -0.5000006749982343,
-                      "z": 0.49999917499830937,
-                      "w": 0.49999837499834937
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 4.100834,
-                      "y": 0.284839,
-                      "z": 2.794173
-                    }
-                  }
-                },
-                {
-                  "_$override": "#3",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.030443,
-                      "y": 1.36702,
-                      "z": 0.06915283
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5000017749981794,
-                      "y": -0.5000006749982343,
-                      "z": 0.49999917499830937,
-                      "w": 0.49999837499834937
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 4.100834,
-                      "y": 0.284839,
-                      "z": 2.794173
-                    }
-                  }
-                },
-                {
-                  "_$override": "#4",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.04845619,
-                      "y": 1.367015,
-                      "z": 1.96673
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.7071085811838551,
-                      "y": 7.071051811839455e-7,
-                      "z": 7.071082811838631e-7,
-                      "w": 0.7071049811839508
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 4.260626,
-                      "y": 0.284839,
-                      "z": 2.794173
-                    }
-                  }
-                },
-                {
-                  "_$override": "#5",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.04845238,
-                      "y": 3.141957,
-                      "z": 0.1519241
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.13052870403954106,
-                      "y": 1.305242040394018e-7,
-                      "z": 9.914451306827786e-7,
-                      "w": 0.99144453068276
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 5.062407,
-                      "y": 0.284839,
-                      "z": 4.383026
-                    }
-                  }
-                },
-                {
                   "_$override": "#6",
                   "name": "Shed2_LOD1(Clone)",
                   "active": true,
@@ -58694,118 +53144,6 @@
                       "x": 1,
                       "y": 1,
                       "z": 1
-                    }
-                  }
-                },
-                {
-                  "_$override": "#2",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.8157549,
-                      "y": 0.968007,
-                      "z": 0.00040555
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000015944929575711932,
-                      "y": 0.0000015944899575712731,
-                      "z": -0.7071058811842009,
-                      "w": 0.7071076811841531
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.574231,
-                      "y": 0.2349922,
-                      "z": 3.014444
-                    }
-                  }
-                },
-                {
-                  "_$override": "#3",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.004059792,
-                      "y": 2.956542,
-                      "z": 0.0004144869
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.000002223834944642539,
-                      "y": 3.7331979070702813e-7,
-                      "z": -0.16555549587886145,
-                      "w": 0.9862004754507168
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 2.487972,
-                      "y": 0.2349922,
-                      "z": 3.014444
-                    }
-                  }
-                },
-                {
-                  "_$override": "#4",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.1485825,
-                      "y": 0.9680114,
-                      "z": -1.466768
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5000014749982794,
-                      "y": -0.4999980749984494,
-                      "z": -0.5000007749983144,
-                      "w": 0.4999996749983694
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.574231,
-                      "y": 0.170411,
-                      "z": 2.087567
-                    }
-                  }
-                },
-                {
-                  "_$override": "#5",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.1485796,
-                      "y": 0.9679984,
-                      "z": 1.402947
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5000014749982794,
-                      "y": -0.4999980749984494,
-                      "z": -0.5000007749983144,
-                      "w": 0.4999996749983694
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.574231,
-                      "y": 0.170411,
-                      "z": 2.087567
                     }
                   }
                 },
@@ -58883,118 +53221,6 @@
                   }
                 },
                 {
-                  "_$override": "#2",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.8157549,
-                      "y": 0.968007,
-                      "z": 0.00040555
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000015944929575711932,
-                      "y": 0.0000015944899575712731,
-                      "z": -0.7071058811842009,
-                      "w": 0.7071076811841531
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.574231,
-                      "y": 0.2349922,
-                      "z": 3.014444
-                    }
-                  }
-                },
-                {
-                  "_$override": "#3",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.004059792,
-                      "y": 2.956542,
-                      "z": 0.0004144869
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.000002223834944642539,
-                      "y": 3.7331979070702813e-7,
-                      "z": -0.16555549587886145,
-                      "w": 0.9862004754507168
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 2.487972,
-                      "y": 0.2349922,
-                      "z": 3.014444
-                    }
-                  }
-                },
-                {
-                  "_$override": "#4",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.1485825,
-                      "y": 0.9680114,
-                      "z": -1.466768
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5000014749982794,
-                      "y": -0.4999980749984494,
-                      "z": -0.5000007749983144,
-                      "w": 0.4999996749983694
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.574231,
-                      "y": 0.170411,
-                      "z": 2.087567
-                    }
-                  }
-                },
-                {
-                  "_$override": "#5",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.1485796,
-                      "y": 0.9679984,
-                      "z": 1.402947
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5000014749982794,
-                      "y": -0.4999980749984494,
-                      "z": -0.5000007749983144,
-                      "w": 0.4999996749983694
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.574231,
-                      "y": 0.170411,
-                      "z": 2.087567
-                    }
-                  }
-                },
-                {
                   "_$override": "#6",
                   "name": "Shed6_LOD1(Clone)",
                   "active": true,
@@ -59064,118 +53290,6 @@
                       "x": 1,
                       "y": 1,
                       "z": 1
-                    }
-                  }
-                },
-                {
-                  "_$override": "#2",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 2.168996,
-                      "y": 1.367029,
-                      "z": 0.06915092
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5000017749981794,
-                      "y": -0.5000006749982343,
-                      "z": 0.49999917499830937,
-                      "w": 0.49999837499834937
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 4.100834,
-                      "y": 0.284839,
-                      "z": 2.794173
-                    }
-                  }
-                },
-                {
-                  "_$override": "#3",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.030443,
-                      "y": 1.36702,
-                      "z": 0.06915283
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5000017749981794,
-                      "y": -0.5000006749982343,
-                      "z": 0.49999917499830937,
-                      "w": 0.49999837499834937
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 4.100834,
-                      "y": 0.284839,
-                      "z": 2.794173
-                    }
-                  }
-                },
-                {
-                  "_$override": "#4",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.04845619,
-                      "y": 1.367015,
-                      "z": 1.96673
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.7071085811838551,
-                      "y": 7.071051811839455e-7,
-                      "z": 7.071082811838631e-7,
-                      "w": 0.7071049811839508
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 4.260626,
-                      "y": 0.284839,
-                      "z": 2.794173
-                    }
-                  }
-                },
-                {
-                  "_$override": "#5",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.04845238,
-                      "y": 3.141957,
-                      "z": 0.1519241
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.13052870403954106,
-                      "y": 1.305242040394018e-7,
-                      "z": 9.914451306827786e-7,
-                      "w": 0.99144453068276
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 5.062407,
-                      "y": 0.284839,
-                      "z": 4.383026
                     }
                   }
                 },
@@ -60632,34 +54746,6 @@
                   }
                 },
                 {
-                  "_$override": "#2",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.03732109,
-                      "y": 1.086709,
-                      "z": 0.1816275
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.3826854061826942,
-                      "y": 3.826812061826263e-7,
-                      "z": 9.238804149262814e-7,
-                      "w": 0.923878714926254
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 2.793076,
-                      "y": 0.284839,
-                      "z": 3.478036
-                    }
-                  }
-                },
-                {
                   "_$override": "#3",
                   "name": "Pier_Stairs2_LOD1(Clone)",
                   "active": true,
@@ -60804,34 +54890,6 @@
                       "x": 1,
                       "y": 1,
                       "z": 1
-                    }
-                  }
-                },
-                {
-                  "_$override": "#2",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.03732109,
-                      "y": 1.086709,
-                      "z": 0.1816275
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.3826854061826942,
-                      "y": 3.826812061826263e-7,
-                      "z": 9.238804149262814e-7,
-                      "w": 0.923878714926254
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 2.793076,
-                      "y": 0.284839,
-                      "z": 3.478036
                     }
                   }
                 },
@@ -61037,34 +55095,6 @@
                   }
                 },
                 {
-                  "_$override": "#2",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.03732109,
-                      "y": 1.086709,
-                      "z": 0.1816275
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.3826854061826942,
-                      "y": 3.826812061826263e-7,
-                      "z": 9.238804149262814e-7,
-                      "w": 0.923878714926254
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 2.793076,
-                      "y": 0.284839,
-                      "z": 3.478036
-                    }
-                  }
-                },
-                {
                   "_$override": "#3",
                   "name": "Pier_Stairs2_LOD1(Clone)",
                   "active": true,
@@ -61155,1015 +55185,6 @@
                       "x": 1,
                       "y": 1,
                       "z": 1
-                    }
-                  }
-                },
-                {
-                  "_$override": "#2",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.18145,
-                      "y": 2.251016,
-                      "z": -5.583006
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 8.576596999996846e-7,
-                      "y": -0.9999999999996323,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3160542,
-                      "y": 7.294919,
-                      "z": 0.3152912
-                    }
-                  }
-                },
-                {
-                  "_$override": "#3",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.273066,
-                      "y": 2.067491,
-                      "z": -2.669775
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.7071097811801037,
-                      "y": 0.7071037811802634,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3160542,
-                      "y": 2.462137,
-                      "z": 0.108333
-                    }
-                  }
-                },
-                {
-                  "_$override": "#4",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.18145,
-                      "y": 2.251016,
-                      "z": 2.763
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 8.576596999996846e-7,
-                      "y": -0.9999999999996323,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3160542,
-                      "y": 7.294919,
-                      "z": 0.3152912
-                    }
-                  }
-                },
-                {
-                  "_$override": "#5",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -1.091217,
-                      "y": 1.898195,
-                      "z": 2.909881
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.7071097811801037,
-                      "y": 0.7071037811802634,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.1777796,
-                      "y": 2.462137,
-                      "z": 0.08723158
-                    }
-                  }
-                },
-                {
-                  "_$override": "#6",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.1469517,
-                      "y": 1.910677,
-                      "z": 0.08306491
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 6.064577838638277e-7,
-                      "y": -0.7071075811858136,
-                      "z": -0.7071059811858563,
-                      "w": -6.06456383863865e-7
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.1841369,
-                      "y": 11.76531,
-                      "z": 0.7905087
-                    }
-                  }
-                },
-                {
-                  "_$override": "#7",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.177597,
-                      "y": 2.962754,
-                      "z": 0.08306491
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 6.064577838638277e-7,
-                      "y": -0.7071075811858136,
-                      "z": -0.7071059811858563,
-                      "w": -6.06456383863865e-7
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.1841369,
-                      "y": 11.76531,
-                      "z": 0.3356201
-                    }
-                  }
-                },
-                {
-                  "_$override": "#8",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.18145,
-                      "y": 2.251016,
-                      "z": 5.467665
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 8.576596999996846e-7,
-                      "y": -0.9999999999996323,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3160542,
-                      "y": 7.294919,
-                      "z": 0.3152912
-                    }
-                  }
-                },
-                {
-                  "_$override": "#9",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.01506543,
-                      "y": 2.251016,
-                      "z": 5.467665
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 8.576596999996846e-7,
-                      "y": -0.9999999999996323,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3160542,
-                      "y": 7.294919,
-                      "z": 0.3152912
-                    }
-                  }
-                },
-                {
-                  "_$override": "#10",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -1.091217,
-                      "y": 4.305462,
-                      "z": -2.598103
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.7071097811801037,
-                      "y": 0.7071037811802634,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3160542,
-                      "y": 2.462137,
-                      "z": 0.108333
-                    }
-                  }
-                },
-                {
-                  "_$override": "#11",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 2.398952,
-                      "y": 1.910677,
-                      "z": 0.08306491
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 6.064577838638277e-7,
-                      "y": -0.7071075811858136,
-                      "z": -0.7071059811858563,
-                      "w": -6.06456383863865e-7
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.1841369,
-                      "y": 11.76531,
-                      "z": 0.7905087
-                    }
-                  }
-                },
-                {
-                  "_$override": "#12",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.273066,
-                      "y": 3.61663,
-                      "z": 0.03390217
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.7071097811801037,
-                      "y": 0.7071037811802634,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3160542,
-                      "y": 2.462137,
-                      "z": 0.108333
-                    }
-                  }
-                },
-                {
-                  "_$override": "#13",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.273066,
-                      "y": 3.945135,
-                      "z": -5.742781
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.7071097811801037,
-                      "y": 0.7071037811802634,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3160542,
-                      "y": 2.462137,
-                      "z": 0.108333
-                    }
-                  }
-                },
-                {
-                  "_$override": "#14",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -1.091217,
-                      "y": 4.54757,
-                      "z": -5.745984
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.7071097811801037,
-                      "y": 0.7071037811802634,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3160542,
-                      "y": 2.462137,
-                      "z": 0.108333
-                    }
-                  }
-                },
-                {
-                  "_$override": "#15",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.01506543,
-                      "y": 2.251016,
-                      "z": 2.763
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 8.576596999996846e-7,
-                      "y": -0.9999999999996323,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3160542,
-                      "y": 7.294919,
-                      "z": 0.3152912
-                    }
-                  }
-                },
-                {
-                  "_$override": "#16",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.068746,
-                      "y": 1.945208,
-                      "z": 2.909881
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.7071097811801037,
-                      "y": 0.7071037811802634,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.1777796,
-                      "y": 2.21611,
-                      "z": 0.08723158
-                    }
-                  }
-                },
-                {
-                  "_$override": "#17",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.01506543,
-                      "y": 2.251016,
-                      "z": -2.721747
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 8.576596999996846e-7,
-                      "y": -0.9999999999996323,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3160542,
-                      "y": 7.294919,
-                      "z": 0.3152912
-                    }
-                  }
-                },
-                {
-                  "_$override": "#18",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.388652,
-                      "y": 1.910677,
-                      "z": 0.08306491
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 6.064577838638277e-7,
-                      "y": -0.7071075811858136,
-                      "z": -0.7071059811858563,
-                      "w": -6.06456383863865e-7
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.1841369,
-                      "y": 11.76531,
-                      "z": 0.7905087
-                    }
-                  }
-                },
-                {
-                  "_$override": "#19",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 2.225673,
-                      "y": 2.251016,
-                      "z": -0.08654976
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 8.576596999996846e-7,
-                      "y": -0.9999999999996323,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3160542,
-                      "y": 7.294919,
-                      "z": 0.3152912
-                    }
-                  }
-                },
-                {
-                  "_$override": "#20",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 2.225673,
-                      "y": 2.251016,
-                      "z": 5.467665
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 8.576596999996846e-7,
-                      "y": -0.9999999999996323,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3160542,
-                      "y": 7.294919,
-                      "z": 0.3152912
-                    }
-                  }
-                },
-                {
-                  "_$override": "#21",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -1.091217,
-                      "y": 2.067491,
-                      "z": -5.50234
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.7071097811801037,
-                      "y": 0.7071037811802634,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3160542,
-                      "y": 2.462137,
-                      "z": 0.108333
-                    }
-                  }
-                },
-                {
-                  "_$override": "#22",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 2.398952,
-                      "y": 5.366844,
-                      "z": 0.08306491
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 6.064577838638277e-7,
-                      "y": -0.7071075811858136,
-                      "z": -0.7071059811858563,
-                      "w": -6.06456383863865e-7
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.1841369,
-                      "y": 11.76531,
-                      "z": 0.7905087
-                    }
-                  }
-                },
-                {
-                  "_$override": "#23",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.177597,
-                      "y": 3.928836,
-                      "z": 0.08306491
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 6.064577838638277e-7,
-                      "y": -0.7071075811858136,
-                      "z": -0.7071059811858563,
-                      "w": -6.06456383863865e-7
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.1841369,
-                      "y": 11.76531,
-                      "z": 0.3356201
-                    }
-                  }
-                },
-                {
-                  "_$override": "#24",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -1.091217,
-                      "y": 4.521258,
-                      "z": 2.650117
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.7071097811801037,
-                      "y": 0.7071037811802634,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3160542,
-                      "y": 2.462137,
-                      "z": 0.108333
-                    }
-                  }
-                },
-                {
-                  "_$override": "#25",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.388652,
-                      "y": 4.012726,
-                      "z": 0.08306491
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 6.064577838638277e-7,
-                      "y": -0.7071075811858136,
-                      "z": -0.7071059811858563,
-                      "w": -6.06456383863865e-7
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.1841369,
-                      "y": 11.76531,
-                      "z": 0.4919203
-                    }
-                  }
-                },
-                {
-                  "_$override": "#26",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.03413773,
-                      "y": 6.290093,
-                      "z": 0.0391618
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5000004749990894,
-                      "y": -0.5000006749990794,
-                      "z": -0.5000004749990894,
-                      "w": 0.4999983749991945
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.1841369,
-                      "y": 11.92784,
-                      "z": 5.247002
-                    }
-                  }
-                },
-                {
-                  "_$override": "#27",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.01506543,
-                      "y": 2.251016,
-                      "z": -5.583006
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 8.576596999996846e-7,
-                      "y": -0.9999999999996323,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3160542,
-                      "y": 7.294919,
-                      "z": 0.3152912
-                    }
-                  }
-                },
-                {
-                  "_$override": "#28",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.273066,
-                      "y": 3.413581,
-                      "z": -2.916988
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.7071097811801037,
-                      "y": 0.7071037811802634,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3160542,
-                      "y": 2.462137,
-                      "z": 0.108333
-                    }
-                  }
-                },
-                {
-                  "_$override": "#29",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.01506543,
-                      "y": 2.251016,
-                      "z": -0.08654976
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 8.576596999996846e-7,
-                      "y": -0.9999999999996323,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3160542,
-                      "y": 7.294919,
-                      "z": 0.3152912
-                    }
-                  }
-                },
-                {
-                  "_$override": "#30",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.388652,
-                      "y": 5.366844,
-                      "z": 0.08306491
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 6.064577838638277e-7,
-                      "y": -0.7071075811858136,
-                      "z": -0.7071059811858563,
-                      "w": -6.06456383863865e-7
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.1841369,
-                      "y": 11.76531,
-                      "z": 0.7905087
-                    }
-                  }
-                },
-                {
-                  "_$override": "#31",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 2.225673,
-                      "y": 2.251016,
-                      "z": 2.763
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 8.576596999996846e-7,
-                      "y": -0.9999999999996323,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3160542,
-                      "y": 7.294919,
-                      "z": 0.3152912
-                    }
-                  }
-                },
-                {
-                  "_$override": "#32",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -1.091217,
-                      "y": 2.798197,
-                      "z": -0.1717019
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.7071097811801037,
-                      "y": 0.7071037811802634,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3160542,
-                      "y": 2.462137,
-                      "z": 0.1971982
-                    }
-                  }
-                },
-                {
-                  "_$override": "#33",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.18145,
-                      "y": 2.251016,
-                      "z": -2.721747
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 8.576596999996846e-7,
-                      "y": -0.9999999999996323,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3160542,
-                      "y": 7.294919,
-                      "z": 0.3152912
-                    }
-                  }
-                },
-                {
-                  "_$override": "#34",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -1.091217,
-                      "y": 2.584818,
-                      "z": -2.839079
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.7071097811801037,
-                      "y": 0.7071037811802634,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3160542,
-                      "y": 2.462137,
-                      "z": 0.1971982
-                    }
-                  }
-                },
-                {
-                  "_$override": "#35",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.18145,
-                      "y": 2.251016,
-                      "z": -0.08654976
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 8.576596999996846e-7,
-                      "y": -0.9999999999996323,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3160542,
-                      "y": 7.294919,
-                      "z": 0.3152912
-                    }
-                  }
-                },
-                {
-                  "_$override": "#36",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 2.225673,
-                      "y": 2.251016,
-                      "z": -5.583006
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 8.576596999996846e-7,
-                      "y": -0.9999999999996323,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3160542,
-                      "y": 7.294919,
-                      "z": 0.3152912
-                    }
-                  }
-                },
-                {
-                  "_$override": "#37",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 2.398952,
-                      "y": 4.012726,
-                      "z": 0.08306491
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 6.064577838638277e-7,
-                      "y": -0.7071075811858136,
-                      "z": -0.7071059811858563,
-                      "w": -6.06456383863865e-7
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.1841369,
-                      "y": 11.76531,
-                      "z": 0.4919203
-                    }
-                  }
-                },
-                {
-                  "_$override": "#38",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 2.225673,
-                      "y": 2.251016,
-                      "z": -2.721747
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 8.576596999996846e-7,
-                      "y": -0.9999999999996323,
-                      "w": 0
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3160542,
-                      "y": 7.294919,
-                      "z": 0.3152912
                     }
                   }
                 },
@@ -62365,34 +55386,6 @@
                       "x": 1,
                       "y": 1,
                       "z": 1
-                    }
-                  }
-                },
-                {
-                  "_$override": "#2",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.01252627,
-                      "y": 0.6164899,
-                      "z": 0.1237186
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.3826854061826942,
-                      "y": 3.826812061826263e-7,
-                      "z": 9.238804149262814e-7,
-                      "w": 0.923878714926254
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 2.520299,
-                      "y": 0.284839,
-                      "z": 1.88401
                     }
                   }
                 },
@@ -85654,314 +78647,6 @@
                   }
                 },
                 {
-                  "_$override": "#2",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.226744,
-                      "y": 0.9138269,
-                      "z": -1.110565
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.49999894999910255,
-                      "y": -0.4999990499990925,
-                      "z": 0.5000009499989025,
-                      "w": 0.5000010499988925
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.6219083,
-                      "y": 2.547276,
-                      "z": 0.210619
-                    }
-                  }
-                },
-                {
-                  "_$override": "#3",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -1.036996,
-                      "y": 0.883954,
-                      "z": -2.411884
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 7.071067811847797e-7,
-                      "y": -0.7071067811847798,
-                      "z": 0.00000212131994355435,
-                      "w": 0.7071067811847798
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.202935,
-                      "y": 4.051933,
-                      "z": 0.210619
-                    }
-                  }
-                },
-                {
-                  "_$override": "#4",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.226744,
-                      "y": 0.6257019,
-                      "z": 1.413149
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.49999894999910255,
-                      "y": -0.4999990499990925,
-                      "z": 0.5000009499989025,
-                      "w": 0.5000010499988925
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 1.021923,
-                      "y": 2.256489,
-                      "z": 0.210619
-                    }
-                  }
-                },
-                {
-                  "_$override": "#5",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.226744,
-                      "y": 0.8644266,
-                      "z": 0.2216659
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 7.071067811847797e-7,
-                      "y": -0.7071067811847798,
-                      "z": 0.00000212131994355435,
-                      "w": 0.7071067811847798
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.202935,
-                      "y": 4.051933,
-                      "z": 0.210619
-                    }
-                  }
-                },
-                {
-                  "_$override": "#6",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.03082562,
-                      "y": 3.095598,
-                      "z": 0.01345609
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5609853823088606,
-                      "y": -0.430459486425103,
-                      "z": 0.5609862823088323,
-                      "w": 0.43045838642513773
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 5.390042,
-                      "y": 2.735167,
-                      "z": 0.210619
-                    }
-                  }
-                },
-                {
-                  "_$override": "#7",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.09840554,
-                      "y": 0.9215879,
-                      "z": 2.581934
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.7071067311830211,
-                      "y": -0.7071068311830113,
-                      "z": 0.0000021916357867058155,
-                      "w": 0.000002275929778502163
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2038676,
-                      "y": 2.256489,
-                      "z": 0.2106189
-                    }
-                  }
-                },
-                {
-                  "_$override": "#8",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.226744,
-                      "y": 0.8644266,
-                      "z": -2.411883
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 7.071067811847797e-7,
-                      "y": -0.7071067811847798,
-                      "z": 0.00000212131994355435,
-                      "w": 0.7071067811847798
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.202935,
-                      "y": 4.051933,
-                      "z": 0.210619
-                    }
-                  }
-                },
-                {
-                  "_$override": "#9",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.226744,
-                      "y": 0.8644266,
-                      "z": 2.581789
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 7.071067811847797e-7,
-                      "y": -0.7071067811847798,
-                      "z": 0.00000212131994355435,
-                      "w": 0.7071067811847798
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.202935,
-                      "y": 4.051933,
-                      "z": 0.210619
-                    }
-                  }
-                },
-                {
-                  "_$override": "#10",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -1.036996,
-                      "y": 0.883954,
-                      "z": 0.2216656
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 7.071067811847797e-7,
-                      "y": -0.7071067811847798,
-                      "z": 0.00000212131994355435,
-                      "w": 0.7071067811847798
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.202935,
-                      "y": 4.051933,
-                      "z": 0.210619
-                    }
-                  }
-                },
-                {
-                  "_$override": "#11",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.9867374,
-                      "y": 0.5426054,
-                      "z": 0.1471683
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.49999894999910255,
-                      "y": -0.4999990499990925,
-                      "z": 0.5000009499989025,
-                      "w": 0.5000010499988925
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 1.119915,
-                      "y": 5.035253,
-                      "z": 0.210619
-                    }
-                  }
-                },
-                {
-                  "_$override": "#12",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -1.036996,
-                      "y": 0.883954,
-                      "z": 2.581788
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 7.071067811847797e-7,
-                      "y": -0.7071067811847798,
-                      "z": 0.00000212131994355435,
-                      "w": 0.7071067811847798
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.202935,
-                      "y": 4.051933,
-                      "z": 0.210619
-                    }
-                  }
-                },
-                {
                   "_$override": "#13",
                   "name": "Stall2_LOD1(Clone)",
                   "active": true,
@@ -86035,254 +78720,6 @@
                   }
                 },
                 {
-                  "_$override": "#2",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.01388598,
-                      "y": 3.15489,
-                      "z": -0.004389288
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.8065128968785762,
-                      "y": -0.0000010115239960851276,
-                      "z": 9.272304964113663e-7,
-                      "w": 0.5912164977118317
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 3.212401,
-                      "y": 3.133125,
-                      "z": 0.210619
-                    }
-                  }
-                },
-                {
-                  "_$override": "#3",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.307443,
-                      "y": 1.16458,
-                      "z": -1.074389
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.000001999999999995,
-                      "z": 9.999999999975e-7,
-                      "w": 0.9999999999975
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2281361,
-                      "y": 4.707178,
-                      "z": 0.2662131
-                    }
-                  }
-                },
-                {
-                  "_$override": "#4",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.307701,
-                      "y": 0.1168232,
-                      "z": 0.04560105
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.4999977749968594,
-                      "y": -0.4999986749968144,
-                      "z": 0.5000017749966594,
-                      "w": 0.5000017749966594
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2038681,
-                      "y": 2.25649,
-                      "z": 0.210619
-                    }
-                  }
-                },
-                {
-                  "_$override": "#5",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -1.340002,
-                      "y": 0.864427,
-                      "z": -1.07439
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.000001999999999995,
-                      "z": 9.999999999975e-7,
-                      "w": 0.9999999999975
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.202935,
-                      "y": 4.051933,
-                      "z": 0.210619
-                    }
-                  }
-                },
-                {
-                  "_$override": "#6",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.307781,
-                      "y": 0.883954,
-                      "z": 1.152583
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.000001999999999995,
-                      "z": 9.999999999975e-7,
-                      "w": 0.9999999999975
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.202935,
-                      "y": 4.051933,
-                      "z": 0.210619
-                    }
-                  }
-                },
-                {
-                  "_$override": "#7",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -1.340002,
-                      "y": 0.883954,
-                      "z": 1.189367
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.000001999999999995,
-                      "z": 9.999999999975e-7,
-                      "w": 0.9999999999975
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.202935,
-                      "y": 4.051933,
-                      "z": 0.210619
-                    }
-                  }
-                },
-                {
-                  "_$override": "#8",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.02688756,
-                      "y": 0.542605,
-                      "z": 1.164408
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.90450873646855e-7,
-                      "y": 9.90450873646855e-7,
-                      "z": 0.7071067811858539,
-                      "w": 0.7071067811858539
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 1.119915,
-                      "y": 2.598496,
-                      "z": 0.210619
-                    }
-                  }
-                },
-                {
-                  "_$override": "#9",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.0268873,
-                      "y": 2.902814,
-                      "z": -1.015403
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 9.90450873646855e-7,
-                      "y": 9.90450873646855e-7,
-                      "z": 0.7071067811858539,
-                      "w": 0.7071067811858539
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 1.049673,
-                      "y": 2.598496,
-                      "z": 0.210619
-                    }
-                  }
-                },
-                {
-                  "_$override": "#10",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -1.325634,
-                      "y": 0.1168232,
-                      "z": 0.04560074
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.4999977749968594,
-                      "y": -0.4999986749968144,
-                      "z": 0.5000017749966594,
-                      "w": 0.5000017749966594
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2038681,
-                      "y": 2.25649,
-                      "z": 0.210619
-                    }
-                  }
-                },
-                {
                   "_$override": "#11",
                   "name": "Stall3_LOD1(Clone)",
                   "active": true,
@@ -86351,314 +78788,6 @@
                       "x": 1,
                       "y": 1,
                       "z": 1
-                    }
-                  }
-                },
-                {
-                  "_$override": "#2",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.226744,
-                      "y": 0.9138269,
-                      "z": -1.110565
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.49999894999910255,
-                      "y": -0.4999990499990925,
-                      "z": 0.5000009499989025,
-                      "w": 0.5000010499988925
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.6219083,
-                      "y": 2.547276,
-                      "z": 0.210619
-                    }
-                  }
-                },
-                {
-                  "_$override": "#3",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -1.036996,
-                      "y": 0.883954,
-                      "z": -2.411884
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 7.071067811847797e-7,
-                      "y": -0.7071067811847798,
-                      "z": 0.00000212131994355435,
-                      "w": 0.7071067811847798
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.202935,
-                      "y": 4.051933,
-                      "z": 0.210619
-                    }
-                  }
-                },
-                {
-                  "_$override": "#4",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.226744,
-                      "y": 0.6257019,
-                      "z": 1.413149
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.49999894999910255,
-                      "y": -0.4999990499990925,
-                      "z": 0.5000009499989025,
-                      "w": 0.5000010499988925
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 1.021923,
-                      "y": 2.256489,
-                      "z": 0.210619
-                    }
-                  }
-                },
-                {
-                  "_$override": "#5",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.226744,
-                      "y": 0.8644266,
-                      "z": 0.2216659
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 7.071067811847797e-7,
-                      "y": -0.7071067811847798,
-                      "z": 0.00000212131994355435,
-                      "w": 0.7071067811847798
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.202935,
-                      "y": 4.051933,
-                      "z": 0.210619
-                    }
-                  }
-                },
-                {
-                  "_$override": "#6",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.03082562,
-                      "y": 3.095598,
-                      "z": 0.01345609
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.5609853823088606,
-                      "y": -0.430459486425103,
-                      "z": 0.5609862823088323,
-                      "w": 0.43045838642513773
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 5.390042,
-                      "y": 2.735167,
-                      "z": 0.210619
-                    }
-                  }
-                },
-                {
-                  "_$override": "#7",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.09840554,
-                      "y": 0.9215879,
-                      "z": 2.581934
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.7071067311830211,
-                      "y": -0.7071068311830113,
-                      "z": 0.0000021916357867058155,
-                      "w": 0.000002275929778502163
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2038676,
-                      "y": 2.256489,
-                      "z": 0.2106189
-                    }
-                  }
-                },
-                {
-                  "_$override": "#8",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.226744,
-                      "y": 0.8644266,
-                      "z": -2.411883
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 7.071067811847797e-7,
-                      "y": -0.7071067811847798,
-                      "z": 0.00000212131994355435,
-                      "w": 0.7071067811847798
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.202935,
-                      "y": 4.051933,
-                      "z": 0.210619
-                    }
-                  }
-                },
-                {
-                  "_$override": "#9",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 1.226744,
-                      "y": 0.8644266,
-                      "z": 2.581789
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 7.071067811847797e-7,
-                      "y": -0.7071067811847798,
-                      "z": 0.00000212131994355435,
-                      "w": 0.7071067811847798
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.202935,
-                      "y": 4.051933,
-                      "z": 0.210619
-                    }
-                  }
-                },
-                {
-                  "_$override": "#10",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -1.036996,
-                      "y": 0.883954,
-                      "z": 0.2216656
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 7.071067811847797e-7,
-                      "y": -0.7071067811847798,
-                      "z": 0.00000212131994355435,
-                      "w": 0.7071067811847798
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.202935,
-                      "y": 4.051933,
-                      "z": 0.210619
-                    }
-                  }
-                },
-                {
-                  "_$override": "#11",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.9867374,
-                      "y": 0.5426054,
-                      "z": 0.1471683
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.49999894999910255,
-                      "y": -0.4999990499990925,
-                      "z": 0.5000009499989025,
-                      "w": 0.5000010499988925
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 1.119915,
-                      "y": 5.035253,
-                      "z": 0.210619
-                    }
-                  }
-                },
-                {
-                  "_$override": "#12",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -1.036996,
-                      "y": 0.883954,
-                      "z": 2.581788
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 7.071067811847797e-7,
-                      "y": -0.7071067811847798,
-                      "z": 0.00000212131994355435,
-                      "w": 0.7071067811847798
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.202935,
-                      "y": 4.051933,
-                      "z": 0.210619
                     }
                   }
                 },
@@ -86737,342 +78866,6 @@
                   }
                 },
                 {
-                  "_$override": "#2",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.457104,
-                      "y": 1.040031,
-                      "z": 0.8989096
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2029351,
-                      "y": 4.322082,
-                      "z": 0.2106188
-                    }
-                  }
-                },
-                {
-                  "_$override": "#3",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.1190357,
-                      "y": 3.011997,
-                      "z": -1.35083
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 4.987111,
-                      "y": 1.05871,
-                      "z": 0.1298854
-                    }
-                  }
-                },
-                {
-                  "_$override": "#4",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.2051063,
-                      "y": 1.040031,
-                      "z": 0.8989096
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2029351,
-                      "y": 4.322082,
-                      "z": 0.2106188
-                    }
-                  }
-                },
-                {
-                  "_$override": "#5",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 2.541939,
-                      "y": 0.05268431,
-                      "z": -0.237421
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.70710758118572,
-                      "y": -7.071074811857228e-7,
-                      "z": 7.071059811857628e-7,
-                      "w": 0.7071059811857627
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.1412588,
-                      "y": 2.171846,
-                      "z": 0.1579642
-                    }
-                  }
-                },
-                {
-                  "_$override": "#6",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.01207972,
-                      "y": 3.749629,
-                      "z": 0.02410984
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.5772723703929564,
-                      "y": 5.772724703929513e-7,
-                      "z": 8.165516581208424e-7,
-                      "w": 0.8165516581208425
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 5.35534,
-                      "y": 3.568739,
-                      "z": 0.1298854
-                    }
-                  }
-                },
-                {
-                  "_$override": "#7",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.470795,
-                      "y": 0.06946516,
-                      "z": -0.237421
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.70710758118572,
-                      "y": -7.071074811857228e-7,
-                      "z": 7.071059811857628e-7,
-                      "w": 0.7071059811857627
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.1412588,
-                      "y": 2.171846,
-                      "z": 0.1579642
-                    }
-                  }
-                },
-                {
-                  "_$override": "#8",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.2051063,
-                      "y": 1.040031,
-                      "z": -1.33695
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2029351,
-                      "y": 4.322082,
-                      "z": 0.2106188
-                    }
-                  }
-                },
-                {
-                  "_$override": "#9",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.457104,
-                      "y": 1.040031,
-                      "z": -1.33695
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2029351,
-                      "y": 4.322082,
-                      "z": 0.2106188
-                    }
-                  }
-                },
-                {
-                  "_$override": "#10",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 2.549215,
-                      "y": 1.040031,
-                      "z": -1.33695
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2029351,
-                      "y": 4.322082,
-                      "z": 0.2106188
-                    }
-                  }
-                },
-                {
-                  "_$override": "#11",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 2.549215,
-                      "y": 1.040031,
-                      "z": 0.8989096
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2029351,
-                      "y": 4.322082,
-                      "z": 0.2106188
-                    }
-                  }
-                },
-                {
-                  "_$override": "#12",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.1903081,
-                      "y": 0.06946516,
-                      "z": -0.237421
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.70710758118572,
-                      "y": -7.071074811857228e-7,
-                      "z": 7.071059811857628e-7,
-                      "w": 0.7071059811857627
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.1412588,
-                      "y": 2.171846,
-                      "z": 0.1579642
-                    }
-                  }
-                },
-                {
-                  "_$override": "#13",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.1190357,
-                      "y": 0.5549285,
-                      "z": 0.946682
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 4.987111,
-                      "y": 1.05871,
-                      "z": 0.1298854
-                    }
-                  }
-                },
-                {
                   "_$override": "#14",
                   "name": "Stall1_LOD1(Clone)",
                   "active": true,
@@ -87142,342 +78935,6 @@
                       "x": 1,
                       "y": 1,
                       "z": 1
-                    }
-                  }
-                },
-                {
-                  "_$override": "#2",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.457104,
-                      "y": 1.040031,
-                      "z": 0.8989096
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2029351,
-                      "y": 4.322082,
-                      "z": 0.2106188
-                    }
-                  }
-                },
-                {
-                  "_$override": "#3",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.1190357,
-                      "y": 3.011997,
-                      "z": -1.35083
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 4.987111,
-                      "y": 1.05871,
-                      "z": 0.1298854
-                    }
-                  }
-                },
-                {
-                  "_$override": "#4",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.2051063,
-                      "y": 1.040031,
-                      "z": 0.8989096
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2029351,
-                      "y": 4.322082,
-                      "z": 0.2106188
-                    }
-                  }
-                },
-                {
-                  "_$override": "#5",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 2.541939,
-                      "y": 0.05268431,
-                      "z": -0.237421
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.70710758118572,
-                      "y": -7.071074811857228e-7,
-                      "z": 7.071059811857628e-7,
-                      "w": 0.7071059811857627
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.1412588,
-                      "y": 2.171846,
-                      "z": 0.1579642
-                    }
-                  }
-                },
-                {
-                  "_$override": "#6",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.01207972,
-                      "y": 3.749629,
-                      "z": 0.02410984
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.5772723703929564,
-                      "y": 5.772724703929513e-7,
-                      "z": 8.165516581208424e-7,
-                      "w": 0.8165516581208425
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 5.35534,
-                      "y": 3.568739,
-                      "z": 0.1298854
-                    }
-                  }
-                },
-                {
-                  "_$override": "#7",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.470795,
-                      "y": 0.06946516,
-                      "z": -0.237421
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.70710758118572,
-                      "y": -7.071074811857228e-7,
-                      "z": 7.071059811857628e-7,
-                      "w": 0.7071059811857627
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.1412588,
-                      "y": 2.171846,
-                      "z": 0.1579642
-                    }
-                  }
-                },
-                {
-                  "_$override": "#8",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.2051063,
-                      "y": 1.040031,
-                      "z": -1.33695
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2029351,
-                      "y": 4.322082,
-                      "z": 0.2106188
-                    }
-                  }
-                },
-                {
-                  "_$override": "#9",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.457104,
-                      "y": 1.040031,
-                      "z": -1.33695
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2029351,
-                      "y": 4.322082,
-                      "z": 0.2106188
-                    }
-                  }
-                },
-                {
-                  "_$override": "#10",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 2.549215,
-                      "y": 1.040031,
-                      "z": -1.33695
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2029351,
-                      "y": 4.322082,
-                      "z": 0.2106188
-                    }
-                  }
-                },
-                {
-                  "_$override": "#11",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 2.549215,
-                      "y": 1.040031,
-                      "z": 0.8989096
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2029351,
-                      "y": 4.322082,
-                      "z": 0.2106188
-                    }
-                  }
-                },
-                {
-                  "_$override": "#12",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.1903081,
-                      "y": 0.06946516,
-                      "z": -0.237421
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.70710758118572,
-                      "y": -7.071074811857228e-7,
-                      "z": 7.071059811857628e-7,
-                      "w": 0.7071059811857627
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.1412588,
-                      "y": 2.171846,
-                      "z": 0.1579642
-                    }
-                  }
-                },
-                {
-                  "_$override": "#13",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 0.1190357,
-                      "y": 0.5549285,
-                      "z": 0.946682
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 4.987111,
-                      "y": 1.05871,
-                      "z": 0.1298854
                     }
                   }
                 },
@@ -87686,258 +79143,6 @@
                       "x": 1,
                       "y": 1,
                       "z": 1
-                    }
-                  }
-                },
-                {
-                  "_$override": "#2",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.367667,
-                      "y": 0.6178043,
-                      "z": 1.037361
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3375729,
-                      "y": 4.21428,
-                      "z": 0.2855951
-                    }
-                  }
-                },
-                {
-                  "_$override": "#3",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.36767,
-                      "y": 1.969307,
-                      "z": -0.9429584
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3375729,
-                      "y": 7.057758,
-                      "z": 0.2855951
-                    }
-                  }
-                },
-                {
-                  "_$override": "#4",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 2.340473,
-                      "y": 1.969317,
-                      "z": -0.9429584
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3375729,
-                      "y": 7.057758,
-                      "z": 0.2855951
-                    }
-                  }
-                },
-                {
-                  "_$override": "#5",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 2.314746,
-                      "y": 0.6178137,
-                      "z": 1.037361
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3375729,
-                      "y": 4.21428,
-                      "z": 0.2855951
-                    }
-                  }
-                },
-                {
-                  "_$override": "#6",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.01521969,
-                      "y": 5.556762,
-                      "z": 0.03531676
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 5.401134,
-                      "y": 0.284839,
-                      "z": 2.343786
-                    }
-                  }
-                },
-                {
-                  "_$override": "#7",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.471182,
-                      "y": 5.076573,
-                      "z": 0.0971069
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.000002301598101503638,
-                      "y": -0.7071066311843738,
-                      "z": -8.873844391348728e-7,
-                      "w": 0.7071069311843869
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 2.174405,
-                      "y": 0.7183026,
-                      "z": 0.1356577
-                    }
-                  }
-                },
-                {
-                  "_$override": "#8",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.04424763,
-                      "y": 2.845873,
-                      "z": 0.001463637
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 4.96656,
-                      "y": 0.284839,
-                      "z": 2.077059
-                    }
-                  }
-                },
-                {
-                  "_$override": "#9",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 2.473377,
-                      "y": 5.076583,
-                      "z": 0.07285927
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.000002301598101503638,
-                      "y": -0.7071066311843738,
-                      "z": -8.873844391348728e-7,
-                      "w": 0.7071069311843869
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 2.065391,
-                      "y": 0.7183026,
-                      "z": 0.1356577
-                    }
-                  }
-                },
-                {
-                  "_$override": "#10",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.0205512,
-                      "y": 4.157132,
-                      "z": 1.037377
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 4.972698,
-                      "y": 2.73639,
-                      "z": 0.2855951
                     }
                   }
                 },
@@ -88185,258 +79390,6 @@
                       "x": 1,
                       "y": 1,
                       "z": 1
-                    }
-                  }
-                },
-                {
-                  "_$override": "#2",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.367667,
-                      "y": 0.6178043,
-                      "z": 1.037361
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3375729,
-                      "y": 4.21428,
-                      "z": 0.2855951
-                    }
-                  }
-                },
-                {
-                  "_$override": "#3",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.36767,
-                      "y": 1.969307,
-                      "z": -0.9429584
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3375729,
-                      "y": 7.057758,
-                      "z": 0.2855951
-                    }
-                  }
-                },
-                {
-                  "_$override": "#4",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 2.340473,
-                      "y": 1.969317,
-                      "z": -0.9429584
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3375729,
-                      "y": 7.057758,
-                      "z": 0.2855951
-                    }
-                  }
-                },
-                {
-                  "_$override": "#5",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 2.314746,
-                      "y": 0.6178137,
-                      "z": 1.037361
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3375729,
-                      "y": 4.21428,
-                      "z": 0.2855951
-                    }
-                  }
-                },
-                {
-                  "_$override": "#6",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.01521969,
-                      "y": 5.556762,
-                      "z": 0.03531676
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 5.401134,
-                      "y": 0.284839,
-                      "z": 2.343786
-                    }
-                  }
-                },
-                {
-                  "_$override": "#7",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.471182,
-                      "y": 5.076573,
-                      "z": 0.0971069
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.000002301598101503638,
-                      "y": -0.7071066311843738,
-                      "z": -8.873844391348728e-7,
-                      "w": 0.7071069311843869
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 2.174405,
-                      "y": 0.7183026,
-                      "z": 0.1356577
-                    }
-                  }
-                },
-                {
-                  "_$override": "#8",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.04424763,
-                      "y": 2.845873,
-                      "z": 0.001463637
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 4.96656,
-                      "y": 0.284839,
-                      "z": 2.077059
-                    }
-                  }
-                },
-                {
-                  "_$override": "#9",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 2.473377,
-                      "y": 5.076583,
-                      "z": 0.07285927
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.000002301598101503638,
-                      "y": -0.7071066311843738,
-                      "z": -8.873844391348728e-7,
-                      "w": 0.7071069311843869
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 2.065391,
-                      "y": 0.7183026,
-                      "z": 0.1356577
-                    }
-                  }
-                },
-                {
-                  "_$override": "#10",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.0205512,
-                      "y": 4.157132,
-                      "z": 1.037377
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 4.972698,
-                      "y": 2.73639,
-                      "z": 0.2855951
                     }
                   }
                 },
@@ -88984,398 +79937,6 @@
                   }
                 },
                 {
-                  "_$override": "#2",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.08627535,
-                      "y": 2.932544,
-                      "z": 0.06446061
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 5.236971,
-                      "y": 0.2349922,
-                      "z": 2.127088
-                    }
-                  }
-                },
-                {
-                  "_$override": "#3",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 2.380397,
-                      "y": 3.377208,
-                      "z": 1.039896
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3273108,
-                      "y": 9.93416,
-                      "z": 0.3067634
-                    }
-                  }
-                },
-                {
-                  "_$override": "#4",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.08627797,
-                      "y": 4.178456,
-                      "z": -0.8788228
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.707108281184563,
-                      "y": 7.071050811846482e-7,
-                      "z": 7.071084811845577e-7,
-                      "w": 0.7071052811846429
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 4.777885,
-                      "y": 0.152671,
-                      "z": 2.66024
-                    }
-                  }
-                },
-                {
-                  "_$override": "#5",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.498754,
-                      "y": 3.356667,
-                      "z": 0.03272032
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.50000179999866,
-                      "y": -0.50000019999866,
-                      "z": 0.49999919999865994,
-                      "w": 0.49999879999866
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 2.030602,
-                      "y": 0.152671,
-                      "z": 1.024161
-                    }
-                  }
-                },
-                {
-                  "_$override": "#6",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.46323,
-                      "y": 6.749236,
-                      "z": 0.03273435
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.50000179999866,
-                      "y": -0.50000019999866,
-                      "z": 0.49999919999865994,
-                      "w": 0.49999879999866
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 2.030602,
-                      "y": 0.152671,
-                      "z": 0.8192165
-                    }
-                  }
-                },
-                {
-                  "_$override": "#7",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.08628333,
-                      "y": 6.953397,
-                      "z": 0.9927641
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": -0.7071057311855166,
-                      "y": -7.071089311852052e-7,
-                      "z": 7.071049311855944e-7,
-                      "w": 0.7071078311853123
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 4.777885,
-                      "y": 0.08707181,
-                      "z": 2.66024
-                    }
-                  }
-                },
-                {
-                  "_$override": "#8",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.384914,
-                      "y": 3.377208,
-                      "z": -0.9690166
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3273108,
-                      "y": 9.93416,
-                      "z": 0.3067634
-                    }
-                  }
-                },
-                {
-                  "_$override": "#9",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.08628602,
-                      "y": 8.285457,
-                      "z": 0.06448478
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 5.236971,
-                      "y": 0.2349922,
-                      "z": 2.127088
-                    }
-                  }
-                },
-                {
-                  "_$override": "#10",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 2.380397,
-                      "y": 3.377217,
-                      "z": -0.9690166
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3273108,
-                      "y": 9.93416,
-                      "z": 0.3067634
-                    }
-                  }
-                },
-                {
-                  "_$override": "#11",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": 2.448741,
-                      "y": 3.356677,
-                      "z": 0.03271411
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.50000179999866,
-                      "y": -0.50000019999866,
-                      "z": 0.49999919999865994,
-                      "w": 0.49999879999866
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 2.030602,
-                      "y": 0.152671,
-                      "z": 1.024161
-                    }
-                  }
-                },
-                {
-                  "_$override": "#12",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.08628333,
-                      "y": 6.953397,
-                      "z": 0.9927641
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.707108281184563,
-                      "y": 7.071050811846482e-7,
-                      "z": 7.071084811845577e-7,
-                      "w": 0.7071052811846429
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 4.777885,
-                      "y": 0.08707181,
-                      "z": 2.66024
-                    }
-                  }
-                },
-                {
-                  "_$override": "#13",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.01200486,
-                      "y": 4.178448,
-                      "z": 0.990582
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.707108281184563,
-                      "y": 7.071050811846482e-7,
-                      "z": 7.071084811845577e-7,
-                      "w": 0.7071052811846429
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.2024932,
-                      "y": 0.08707181,
-                      "z": 2.66024
-                    }
-                  }
-                },
-                {
-                  "_$override": "#14",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -2.384914,
-                      "y": 3.377198,
-                      "z": 1.039896
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 0.3273108,
-                      "y": 9.93416,
-                      "z": 0.3067634
-                    }
-                  }
-                },
-                {
-                  "_$override": "#15",
-                  "name": "Cube",
-                  "active": true,
-                  "isStatic": false,
-                  "layer": 8,
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -0.08628068,
-                      "y": 5.559016,
-                      "z": 0.06447245
-                    },
-                    "localRotation": {
-                      "_$type": "Quaternion",
-                      "x": 0.0000022549519999931394,
-                      "y": -2.2701409999930934e-12,
-                      "z": 9.999999999969574e-7,
-                      "w": 0.9999999999969575
-                    },
-                    "localScale": {
-                      "_$type": "Vector3",
-                      "x": 5.236971,
-                      "y": 0.2349922,
-                      "z": 2.127088
-                    }
-                  }
-                },
-                {
                   "_$override": "#16",
                   "name": "Scaff2_LOD1(Clone)",
                   "active": true,
@@ -89606,7 +80167,7 @@
           "_$id": "ukwioc3w",
           "_$prefab": "8c1e7ded-f4f9-4e9c-8bd2-54eaa0a433de",
           "name": "Galleon_LODed",
-          "active": true,
+          "active": false,
           "isStatic": true,
           "layer": 0,
           "transform": {

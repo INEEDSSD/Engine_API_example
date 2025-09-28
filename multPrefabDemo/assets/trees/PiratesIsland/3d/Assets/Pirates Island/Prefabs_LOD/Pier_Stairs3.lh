@@ -1,263 +1,124 @@
 {
-	"_$ver":1,
-	"name":"Pier_Stairs3",
-	"active":true,
-	"isStatic":true,
-	"layer":0,
-	"transform":{
-		"localPosition":{
-			"_$type":"Vector3",
-			"x":102.5323,
-			"y":0,
-			"z":0
-		},
-		"localRotation":{
-			"_$type":"Quaternion",
-			"x":0,
-			"y":0,
-			"z":0,
-			"w":-1
-		},
-		"localScale":{
-			"_$type":"Vector3",
-			"x":1,
-			"y":1,
-			"z":1
-		}
-	},
-	"_$id":"#0",
-	"_$type":"Sprite3D",
-	"_$child":[
-		{
-			"name":"Pier_Stairs3(Clone)",
-			"active":true,
-			"isStatic":true,
-			"layer":0,
-			"transform":{
-				"localPosition":{
-					"_$type":"Vector3",
-					"x":0,
-					"y":0,
-					"z":0
-				},
-				"localRotation":{
-					"_$type":"Quaternion",
-					"x":0,
-					"y":0,
-					"z":0,
-					"w":-1
-				},
-				"localScale":{
-					"_$type":"Vector3",
-					"x":1,
-					"y":1,
-					"z":1
-				}
-			},
-			"_$id":"#1",
-			"_$type":"Sprite3D",
-			"_$child":[
-				{
-					"name":"Cube",
-					"active":true,
-					"isStatic":false,
-					"layer":0,
-					"transform":{
-						"localPosition":{
-							"_$type":"Vector3",
-							"x":-0.01252627,
-							"y":0.6164899,
-							"z":0.1237186
-						},
-						"localRotation":{
-							"_$type":"Quaternion",
-							"x":0.3826854,
-							"y":3.826812E-07,
-							"z":9.238804E-07,
-							"w":0.9238787
-						},
-						"localScale":{
-							"_$type":"Vector3",
-							"x":2.520299,
-							"y":0.284839,
-							"z":1.88401
-						}
-					},
-					"_$id":"#2",
-					"_$type":"Sprite3D",
-					"_$type":"Sprite3D",
-					"_$comp":[
-						{
-							"_$type":"MeshFilter",
-							"sharedMesh":{
-								"_$uuid":"482e04a6-fc77-4e89-aed8-ad36829494be",
-								"_$type":"Mesh"
-							}
-						},
-						{
-							"_$type":"MeshRenderer",
-							"enabled":false,
-							"sharedMaterials":[
-								{
-									"_$type":"Material",
-									"_$uuid":"15272f49-ad6c-4638-8623-cc0fb4cd1cb1"
-								}
-							],
-							"receiveShadow":true,
-							"castShadow":true,
-							"lightmapIndex":-1,
-							"lightmapScaleOffset":{
-								"_$type":"Vector4",
-								"x":1,
-								"y":1,
-								"z":0,
-								"w":0
-							}
-						}
-					]
-				}
-			],
-			"_$type":"Sprite3D",
-			"_$comp":[
-				{
-					"_$type":"MeshFilter",
-					"sharedMesh":{
-						"_$uuid":"a2273de8-6de7-4d10-98de-bac4d2a45582",
-						"_$type":"Mesh"
-					}
-				},
-				{
-					"_$type":"MeshRenderer",
-					"enabled":true,
-					"sharedMaterials":[
-						{
-							"_$type":"Material",
-							"_$uuid":"8591c175-bdbc-4a59-b77d-4db0d1ea3b81"
-						},
-						{
-							"_$type":"Material",
-							"_$uuid":"42a3ed33-b0f1-46b9-b2c0-fe5085ed24cf"
-						},
-						{
-							"_$type":"Material",
-							"_$uuid":"b46cb08d-98f6-4bad-b4b8-df62c6ce96d9"
-						}
-					],
-					"receiveShadow":true,
-					"castShadow":true,
-					"lightmapIndex":-1,
-					"lightmapScaleOffset":{
-						"_$type":"Vector4",
-						"x":1,
-						"y":1,
-						"z":0,
-						"w":0
-					}
-				}
-			]
-		},
-		{
-			"name":"Pier_Stairs3_LOD1(Clone)",
-			"active":true,
-			"isStatic":true,
-			"layer":0,
-			"transform":{
-				"localPosition":{
-					"_$type":"Vector3",
-					"x":0,
-					"y":0,
-					"z":0
-				},
-				"localRotation":{
-					"_$type":"Quaternion",
-					"x":0,
-					"y":0,
-					"z":0,
-					"w":-1
-				},
-				"localScale":{
-					"_$type":"Vector3",
-					"x":1,
-					"y":1,
-					"z":1
-				}
-			},
-			"_$id":"#3",
-			"_$type":"Sprite3D",
-			"_$type":"Sprite3D",
-			"_$comp":[
-				{
-					"_$type":"MeshFilter",
-					"sharedMesh":{
-						"_$uuid":"cda66551-d1ab-4975-bcf6-35da39e5c6b6",
-						"_$type":"Mesh"
-					}
-				},
-				{
-					"_$type":"MeshRenderer",
-					"enabled":true,
-					"sharedMaterials":[
-						{
-							"_$type":"Material",
-							"_$uuid":"42a3ed33-b0f1-46b9-b2c0-fe5085ed24cf"
-						},
-						{
-							"_$type":"Material",
-							"_$uuid":"8591c175-bdbc-4a59-b77d-4db0d1ea3b81"
-						},
-						{
-							"_$type":"Material",
-							"_$uuid":"b46cb08d-98f6-4bad-b4b8-df62c6ce96d9"
-						}
-					],
-					"receiveShadow":true,
-					"castShadow":true,
-					"lightmapIndex":-1,
-					"lightmapScaleOffset":{
-						"_$type":"Vector4",
-						"x":1,
-						"y":1,
-						"z":0,
-						"w":0
-					}
-				}
-			]
-		}
-	],
-	"_$type":"Sprite3D",
-	"_$comp":[
-		{
-			"_$type":"LODGroup",
-			"enabled":true,
-			"lods":[
-				{
-					"_$type":"LODInfo",
-					"mincullRate":0.1896174,
-					"renders":[
-						{
-							"_$ref":[
-								"#1"
-							]
-						},
-						{
-							"_$ref":[
-								"#2"
-							]
-						}
-					]
-				},
-				{
-					"_$type":"LODInfo",
-					"mincullRate":0.02865023,
-					"renders":[
-						{
-							"_$ref":[
-								"#3"
-							]
-						}
-					]
-				}
-			]
-		}
-	]
+  "_$ver": 1,
+  "_$id": "#0",
+  "_$type": "Sprite3D",
+  "name": "Pier_Stairs3",
+  "isStatic": true,
+  "transform": {
+    "localPosition": {
+      "_$type": "Vector3",
+      "x": 102.5323
+    },
+    "localRotation": {
+      "_$type": "Quaternion",
+      "w": -1
+    }
+  },
+  "_$comp": [
+    {
+      "_$type": "LODGroup",
+      "lods": [
+        {
+          "_$type": "LODInfo",
+          "mincullRate": 0.1896174,
+          "renders": [
+            {
+              "_$ref": "#1"
+            }
+          ]
+        },
+        {
+          "_$type": "LODInfo",
+          "mincullRate": 0.02865023,
+          "renders": [
+            {
+              "_$ref": "#3"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "#1",
+      "_$type": "Sprite3D",
+      "name": "Pier_Stairs3(Clone)",
+      "isStatic": true,
+      "transform": {
+        "localRotation": {
+          "_$type": "Quaternion",
+          "w": -1
+        }
+      },
+      "_$comp": [
+        {
+          "_$type": "MeshFilter",
+          "sharedMesh": {
+            "_$uuid": "a2273de8-6de7-4d10-98de-bac4d2a45582",
+            "_$type": "Mesh"
+          }
+        },
+        {
+          "_$type": "MeshRenderer",
+          "receiveShadow": true,
+          "castShadow": true,
+          "sharedMaterials": [
+            {
+              "_$uuid": "8591c175-bdbc-4a59-b77d-4db0d1ea3b81",
+              "_$type": "Material"
+            },
+            {
+              "_$uuid": "42a3ed33-b0f1-46b9-b2c0-fe5085ed24cf",
+              "_$type": "Material"
+            },
+            {
+              "_$uuid": "b46cb08d-98f6-4bad-b4b8-df62c6ce96d9",
+              "_$type": "Material"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "#3",
+      "_$type": "Sprite3D",
+      "name": "Pier_Stairs3_LOD1(Clone)",
+      "isStatic": true,
+      "transform": {
+        "localRotation": {
+          "_$type": "Quaternion",
+          "w": -1
+        }
+      },
+      "_$comp": [
+        {
+          "_$type": "MeshFilter",
+          "sharedMesh": {
+            "_$uuid": "cda66551-d1ab-4975-bcf6-35da39e5c6b6",
+            "_$type": "Mesh"
+          }
+        },
+        {
+          "_$type": "MeshRenderer",
+          "receiveShadow": true,
+          "castShadow": true,
+          "sharedMaterials": [
+            {
+              "_$uuid": "42a3ed33-b0f1-46b9-b2c0-fe5085ed24cf",
+              "_$type": "Material"
+            },
+            {
+              "_$uuid": "8591c175-bdbc-4a59-b77d-4db0d1ea3b81",
+              "_$type": "Material"
+            },
+            {
+              "_$uuid": "b46cb08d-98f6-4bad-b4b8-df62c6ce96d9",
+              "_$type": "Material"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
