@@ -103,12 +103,9 @@
           "fieldOfView": 45,
           "nearPlane": 0.3,
           "farPlane": 1000,
-          "clearFlag": 1,
           "clearColor": {
             "_$type": "Color",
-            "r": 0.4801038,
-            "g": 0.8029819,
-            "b": 0.8823529,
+            "r": 0.6666666666666666,
             "a": 0.01960784
           },
           "msaa": true,
@@ -132,12 +129,11 @@
               }
             ]
           },
-          "depthTextureMode": 2,
           "_$comp": [
             {
               "_$type": "fd46c0e3-b05d-44fb-971a-9b00b0a1c5fd",
               "scriptPath": "../src/CameraMove.ts",
-              "speed": 0.289
+              "speed": 0.01
             }
           ]
         },
@@ -171,7 +167,7 @@
               },
               "intensity": 1.3,
               "shadowMode": 2,
-              "shadowDistance": 200,
+              "shadowDistance": 170,
               "shadowDepthBias": 1.339,
               "shadowNormalBias": 0.519,
               "shadowNearPlane": 1.3
@@ -601,7 +597,7 @@
                   "_$id": "dqihrbun",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (1)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -736,7 +732,7 @@
                   "_$id": "zvt39b3g",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (6)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -763,7 +759,7 @@
                   "_$id": "mtqj9c8o",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (7)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -952,7 +948,7 @@
                   "_$id": "vysnuyb7",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (14)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -1006,7 +1002,7 @@
                   "_$id": "xy7pbt9f",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (16)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -1114,7 +1110,7 @@
                   "_$id": "j440pz03",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (20)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -1141,7 +1137,7 @@
                   "_$id": "nixe2pbu",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (21)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -1276,7 +1272,7 @@
                   "_$id": "pxc5ne4d",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (26)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -1546,7 +1542,7 @@
                   "_$id": "wsx3eyl3",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (36)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -2194,7 +2190,7 @@
                   "_$id": "774w76v8",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (60)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -3571,7 +3567,7 @@
                   "_$id": "icob3e9x",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (111)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -3652,7 +3648,7 @@
                   "_$id": "jhlzfyjx",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (114)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -3706,7 +3702,7 @@
                   "_$id": "wc65n57e",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (116)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -3760,7 +3756,7 @@
                   "_$id": "kwfzbzrr",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (118)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -3787,7 +3783,7 @@
                   "_$id": "6v9fal6p",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (119)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -3814,7 +3810,7 @@
                   "_$id": "3yual3m1",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (120)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -3841,7 +3837,7 @@
                   "_$id": "rextakxe",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (121)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -3868,7 +3864,7 @@
                   "_$id": "co919wzd",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (122)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -3895,7 +3891,7 @@
                   "_$id": "ndor319z",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (123)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -3949,7 +3945,7 @@
                   "_$id": "appmq8cv",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (125)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -3976,7 +3972,7 @@
                   "_$id": "9fq2u18k",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (126)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -4003,7 +3999,7 @@
                   "_$id": "mmqm8z6m",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (127)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -4030,7 +4026,7 @@
                   "_$id": "4vcir1zy",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (128)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -4057,7 +4053,7 @@
                   "_$id": "wlu9gsjp",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (129)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -4084,7 +4080,7 @@
                   "_$id": "bhbpdz7p",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (130)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -4111,7 +4107,7 @@
                   "_$id": "kcbpnxel",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (131)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -4138,7 +4134,7 @@
                   "_$id": "8yo4bvez",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (132)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -4165,7 +4161,7 @@
                   "_$id": "ieqgogpv",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (133)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -4192,7 +4188,7 @@
                   "_$id": "bbbx6znw",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (134)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -4219,7 +4215,7 @@
                   "_$id": "0k257gf2",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (135)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -4246,7 +4242,7 @@
                   "_$id": "atnt3ujg",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (136)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -4273,7 +4269,7 @@
                   "_$id": "845omrmy",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (137)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -4300,7 +4296,7 @@
                   "_$id": "yd197b9u",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (138)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -4327,7 +4323,7 @@
                   "_$id": "gnha0b0s",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (139)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -4354,7 +4350,7 @@
                   "_$id": "jzgfrwka",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (140)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -4381,7 +4377,7 @@
                   "_$id": "6whudl5v",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (141)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -4408,7 +4404,7 @@
                   "_$id": "qguyy9cm",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (142)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -4435,7 +4431,7 @@
                   "_$id": "xtpcvbxw",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (143)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -4462,7 +4458,7 @@
                   "_$id": "j9ueixwe",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (144)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -4489,7 +4485,7 @@
                   "_$id": "i2fhq3ew",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (145)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -4516,7 +4512,7 @@
                   "_$id": "hydbp7cl",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (146)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -4543,7 +4539,7 @@
                   "_$id": "q1wg4imu",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (147)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -4570,7 +4566,7 @@
                   "_$id": "z0iencv8",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (148)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -4597,7 +4593,7 @@
                   "_$id": "ocrx7vq6",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (149)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -4624,7 +4620,7 @@
                   "_$id": "akxsg68t",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (150)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -4651,7 +4647,7 @@
                   "_$id": "t4lvxi6h",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (151)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -4705,7 +4701,7 @@
                   "_$id": "xjaad6hq",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (153)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -4732,7 +4728,7 @@
                   "_$id": "7xsiza7a",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (154)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -4759,7 +4755,7 @@
                   "_$id": "wf35bm6u",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (155)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -4786,7 +4782,7 @@
                   "_$id": "t2utel99",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (156)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -4813,7 +4809,7 @@
                   "_$id": "bp6yzv85",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (157)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -4840,7 +4836,7 @@
                   "_$id": "rbfu6yjh",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (158)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -4894,7 +4890,7 @@
                   "_$id": "7bg2wesh",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (160)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -4921,7 +4917,7 @@
                   "_$id": "s76ggvws",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (161)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -4948,7 +4944,7 @@
                   "_$id": "rrl83we0",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (162)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -4975,7 +4971,7 @@
                   "_$id": "f9mazbrs",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (163)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -5002,7 +4998,7 @@
                   "_$id": "3bcqw1f2",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (164)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -5029,7 +5025,7 @@
                   "_$id": "ef755wmf",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (165)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -5056,7 +5052,7 @@
                   "_$id": "pja35z0m",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (166)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -5083,7 +5079,7 @@
                   "_$id": "ry4wo749",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (167)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -5110,7 +5106,7 @@
                   "_$id": "3l5ju9bo",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (168)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -5137,7 +5133,7 @@
                   "_$id": "ohps0mso",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (169)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -5164,7 +5160,7 @@
                   "_$id": "03r63iuz",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (170)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -5191,7 +5187,7 @@
                   "_$id": "azbwr79j",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (171)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -5218,7 +5214,7 @@
                   "_$id": "64tp38p0",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (172)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -5245,7 +5241,7 @@
                   "_$id": "6wurkdv4",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (173)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -5272,7 +5268,7 @@
                   "_$id": "hazo82it",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (174)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -5299,7 +5295,7 @@
                   "_$id": "9a9cwlud",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (175)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -5326,7 +5322,7 @@
                   "_$id": "oi9fsuwp",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (176)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -5353,7 +5349,7 @@
                   "_$id": "xxelpdpz",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (177)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -5380,7 +5376,7 @@
                   "_$id": "ydzshv7n",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (178)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -5407,7 +5403,7 @@
                   "_$id": "znqoyp61",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (179)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -5434,7 +5430,7 @@
                   "_$id": "ttejphvt",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (180)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -5461,7 +5457,7 @@
                   "_$id": "ibcz69ox",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (181)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -5488,7 +5484,7 @@
                   "_$id": "6nc7i0wx",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (182)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -5515,7 +5511,7 @@
                   "_$id": "i1hf0yh3",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (183)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -5596,7 +5592,7 @@
                   "_$id": "j11i28cq",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (186)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -5623,7 +5619,7 @@
                   "_$id": "yibfmfq0",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (187)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -5650,7 +5646,7 @@
                   "_$id": "c1p972ur",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (188)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -5677,7 +5673,7 @@
                   "_$id": "g6tczmqs",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (189)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -5704,7 +5700,7 @@
                   "_$id": "nilsoadb",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (190)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -5758,7 +5754,7 @@
                   "_$id": "i4kwmixk",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (192)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -5785,7 +5781,7 @@
                   "_$id": "b42mzdi8",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (193)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -6622,7 +6618,7 @@
                   "_$id": "naqtwds4",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (224)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -6838,7 +6834,7 @@
                   "_$id": "dj5wf67a",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (232)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -6865,7 +6861,7 @@
                   "_$id": "fetirqa7",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (233)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -7081,7 +7077,7 @@
                   "_$id": "20ok1h6h",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (241)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -7108,7 +7104,7 @@
                   "_$id": "ixpcswec",
                   "_$prefab": "22d7585f-0c82-46a3-9922-d2e2338ba68e",
                   "name": "Tree1 (242)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -7148,7 +7144,7 @@
                   "_$id": "2fuq1jh9",
                   "_$prefab": "8eb4ca32-c84c-4a70-9289-4411b33af9e0",
                   "name": "Tree2",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -7472,7 +7468,7 @@
                   "_$id": "t337r6r5",
                   "_$prefab": "8eb4ca32-c84c-4a70-9289-4411b33af9e0",
                   "name": "Tree2 (12)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -7499,7 +7495,7 @@
                   "_$id": "tfrk7tbk",
                   "_$prefab": "8eb4ca32-c84c-4a70-9289-4411b33af9e0",
                   "name": "Tree2 (13)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -7526,7 +7522,7 @@
                   "_$id": "ix3y95zm",
                   "_$prefab": "8eb4ca32-c84c-4a70-9289-4411b33af9e0",
                   "name": "Tree2 (14)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -7553,7 +7549,7 @@
                   "_$id": "yaie21z2",
                   "_$prefab": "8eb4ca32-c84c-4a70-9289-4411b33af9e0",
                   "name": "Tree2 (15)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -7850,7 +7846,7 @@
                   "_$id": "oup75jms",
                   "_$prefab": "8eb4ca32-c84c-4a70-9289-4411b33af9e0",
                   "name": "Tree2 (26)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -8147,7 +8143,7 @@
                   "_$id": "5bqa75co",
                   "_$prefab": "8eb4ca32-c84c-4a70-9289-4411b33af9e0",
                   "name": "Tree2 (37)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -8174,7 +8170,7 @@
                   "_$id": "4p35ivgh",
                   "_$prefab": "8eb4ca32-c84c-4a70-9289-4411b33af9e0",
                   "name": "Tree2 (38)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -8538,7 +8534,7 @@
                   "_$id": "fu1oksau",
                   "_$prefab": "da722923-0f8a-4afd-a50a-129fd1d49895",
                   "name": "PalmTree1 (11)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -8646,7 +8642,7 @@
                   "_$id": "not8wr2q",
                   "_$prefab": "da722923-0f8a-4afd-a50a-129fd1d49895",
                   "name": "PalmTree1 (15)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -8727,7 +8723,7 @@
                   "_$id": "2v35vov1",
                   "_$prefab": "da722923-0f8a-4afd-a50a-129fd1d49895",
                   "name": "PalmTree1 (18)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -8754,7 +8750,7 @@
                   "_$id": "05umpbq0",
                   "_$prefab": "da722923-0f8a-4afd-a50a-129fd1d49895",
                   "name": "PalmTree1 (19)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -8781,7 +8777,7 @@
                   "_$id": "6ukp48pr",
                   "_$prefab": "da722923-0f8a-4afd-a50a-129fd1d49895",
                   "name": "PalmTree1 (20)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -8808,7 +8804,7 @@
                   "_$id": "aa2pdm0j",
                   "_$prefab": "da722923-0f8a-4afd-a50a-129fd1d49895",
                   "name": "PalmTree1 (21)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -8835,7 +8831,7 @@
                   "_$id": "q8in9j1y",
                   "_$prefab": "da722923-0f8a-4afd-a50a-129fd1d49895",
                   "name": "PalmTree1 (22)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -8889,7 +8885,7 @@
                   "_$id": "kd63g5aq",
                   "_$prefab": "da722923-0f8a-4afd-a50a-129fd1d49895",
                   "name": "PalmTree1 (24)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -9267,7 +9263,7 @@
                   "_$id": "eyhdzbnm",
                   "_$prefab": "da722923-0f8a-4afd-a50a-129fd1d49895",
                   "name": "PalmTree1 (38)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -9294,7 +9290,7 @@
                   "_$id": "0un0cc6g",
                   "_$prefab": "da722923-0f8a-4afd-a50a-129fd1d49895",
                   "name": "PalmTree1 (39)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -9564,7 +9560,7 @@
                   "_$id": "kjqywc0q",
                   "_$prefab": "da722923-0f8a-4afd-a50a-129fd1d49895",
                   "name": "PalmTree1 (49)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -9591,7 +9587,7 @@
                   "_$id": "rlj0lwcl",
                   "_$prefab": "da722923-0f8a-4afd-a50a-129fd1d49895",
                   "name": "PalmTree1 (50)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -9780,7 +9776,7 @@
                   "_$id": "isyq181w",
                   "_$prefab": "da722923-0f8a-4afd-a50a-129fd1d49895",
                   "name": "PalmTree1 (57)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -9807,7 +9803,7 @@
                   "_$id": "59ljg2ct",
                   "_$prefab": "da722923-0f8a-4afd-a50a-129fd1d49895",
                   "name": "PalmTree1 (58)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -9888,7 +9884,7 @@
                   "_$id": "6z4crk20",
                   "_$prefab": "da722923-0f8a-4afd-a50a-129fd1d49895",
                   "name": "PalmTree1 (61)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -9942,7 +9938,7 @@
                   "_$id": "gmkckhz2",
                   "_$prefab": "da722923-0f8a-4afd-a50a-129fd1d49895",
                   "name": "PalmTree1 (63)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -9969,7 +9965,7 @@
                   "_$id": "c6l2h5wo",
                   "_$prefab": "da722923-0f8a-4afd-a50a-129fd1d49895",
                   "name": "PalmTree1 (64)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -10117,7 +10113,7 @@
                   "_$id": "rujp5w1a",
                   "_$prefab": "63b370dd-e0e1-429b-806b-b85429fc5126",
                   "name": "PalmTree2 (4)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -10171,7 +10167,7 @@
                   "_$id": "a5pq7pao",
                   "_$prefab": "63b370dd-e0e1-429b-806b-b85429fc5126",
                   "name": "PalmTree2 (6)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -10198,7 +10194,7 @@
                   "_$id": "j078buhw",
                   "_$prefab": "63b370dd-e0e1-429b-806b-b85429fc5126",
                   "name": "PalmTree2 (7)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -10319,7 +10315,7 @@
                   "_$id": "vqwc31bh",
                   "_$prefab": "c58ec1aa-2f28-41bc-93fa-577e42e2e35c",
                   "name": "PalmTree3",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -10859,7 +10855,7 @@
                   "_$id": "6p3d0qv0",
                   "_$prefab": "c58ec1aa-2f28-41bc-93fa-577e42e2e35c",
                   "name": "PalmTree3 (20)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -10886,7 +10882,7 @@
                   "_$id": "arumb5da",
                   "_$prefab": "c58ec1aa-2f28-41bc-93fa-577e42e2e35c",
                   "name": "PalmTree3 (21)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -11061,7 +11057,7 @@
                   "_$id": "3kwhhry3",
                   "_$prefab": "1f1249a6-3eee-4e5e-bab9-d81c790e0596",
                   "name": "Tree3A (5)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -11088,7 +11084,7 @@
                   "_$id": "25m9rtno",
                   "_$prefab": "1f1249a6-3eee-4e5e-bab9-d81c790e0596",
                   "name": "Tree3A (6)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -11196,7 +11192,7 @@
                   "_$id": "i4zvo4hr",
                   "_$prefab": "1f1249a6-3eee-4e5e-bab9-d81c790e0596",
                   "name": "Tree3A (10)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -11223,7 +11219,7 @@
                   "_$id": "m5htm9uh",
                   "_$prefab": "1f1249a6-3eee-4e5e-bab9-d81c790e0596",
                   "name": "Tree3A (11)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -11425,7 +11421,7 @@
                   "_$id": "rj38p27u",
                   "_$prefab": "0ffb0170-8c39-4823-9643-acbee86f0a62",
                   "name": "Tree3B (5)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -11506,7 +11502,7 @@
                   "_$id": "4l1zxqcf",
                   "_$prefab": "0ffb0170-8c39-4823-9643-acbee86f0a62",
                   "name": "Tree3B (8)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -11681,7 +11677,7 @@
                   "_$id": "qdeyi2xa",
                   "_$prefab": "ec1a14a0-9b6c-48a4-976d-2ba2ce4e2e7c",
                   "name": "PalmTree4 (5)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -11708,7 +11704,7 @@
                   "_$id": "f3ww8mt5",
                   "_$prefab": "ec1a14a0-9b6c-48a4-976d-2ba2ce4e2e7c",
                   "name": "PalmTree4 (6)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -11735,7 +11731,7 @@
                   "_$id": "gr45le06",
                   "_$prefab": "ec1a14a0-9b6c-48a4-976d-2ba2ce4e2e7c",
                   "name": "PalmTree4 (7)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -11789,7 +11785,7 @@
                   "_$id": "fgt1pmnv",
                   "_$prefab": "ec1a14a0-9b6c-48a4-976d-2ba2ce4e2e7c",
                   "name": "PalmTree4 (9)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -11816,7 +11812,7 @@
                   "_$id": "h9r3mjyf",
                   "_$prefab": "ec1a14a0-9b6c-48a4-976d-2ba2ce4e2e7c",
                   "name": "PalmTree4 (10)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -11953,6 +11949,7 @@
               "_$id": "r3lveyqy",
               "_$type": "Sprite3D",
               "name": "Bush1",
+              "active": false,
               "transform": {
                 "localRotation": {
                   "_$type": "Quaternion",
@@ -12396,7 +12393,7 @@
                   "_$id": "ubkf4z7t",
                   "_$prefab": "190c65cc-05fa-4ef9-a202-2c85acf93a91",
                   "name": "Bush1 (16)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -13125,7 +13122,7 @@
                   "_$id": "xig6b28h",
                   "_$prefab": "190c65cc-05fa-4ef9-a202-2c85acf93a91",
                   "name": "Bush1 (43)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -13179,7 +13176,7 @@
                   "_$id": "ok0dyxwz",
                   "_$prefab": "190c65cc-05fa-4ef9-a202-2c85acf93a91",
                   "name": "Bush1 (45)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -13287,7 +13284,7 @@
                   "_$id": "wto17bj1",
                   "_$prefab": "190c65cc-05fa-4ef9-a202-2c85acf93a91",
                   "name": "Bush1 (49)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -13408,7 +13405,7 @@
                   "_$id": "9ps28xkd",
                   "_$prefab": "aac70869-b036-461c-a441-11001330af1e",
                   "name": "Tree4A (3)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -13435,7 +13432,7 @@
                   "_$id": "yzdcav6a",
                   "_$prefab": "aac70869-b036-461c-a441-11001330af1e",
                   "name": "Tree4A (4)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -13570,7 +13567,7 @@
                   "_$id": "lnbc6mf3",
                   "_$prefab": "aac70869-b036-461c-a441-11001330af1e",
                   "name": "Tree4A (9)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -13597,7 +13594,7 @@
                   "_$id": "y0jhmtmb",
                   "_$prefab": "aac70869-b036-461c-a441-11001330af1e",
                   "name": "Tree4A",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -13826,7 +13823,7 @@
                   "_$id": "nc58ty8d",
                   "_$prefab": "bb70c0bc-edee-42c2-bd61-823ee0c6adf0",
                   "name": "Tree6 (7)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -13853,7 +13850,7 @@
                   "_$id": "hxg5r01q",
                   "_$prefab": "bb70c0bc-edee-42c2-bd61-823ee0c6adf0",
                   "name": "Tree6 (8)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -13988,7 +13985,7 @@
                   "_$id": "stytwmcq",
                   "_$prefab": "bb70c0bc-edee-42c2-bd61-823ee0c6adf0",
                   "name": "Tree6 (13)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -14015,7 +14012,7 @@
                   "_$id": "04chp73l",
                   "_$prefab": "bb70c0bc-edee-42c2-bd61-823ee0c6adf0",
                   "name": "Tree6 (14)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -14042,7 +14039,7 @@
                   "_$id": "dpgcmjgg",
                   "_$prefab": "bb70c0bc-edee-42c2-bd61-823ee0c6adf0",
                   "name": "Tree6 (15)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -14098,6 +14095,7 @@
               "_$id": "tkzgtm50",
               "_$type": "Sprite3D",
               "name": "Bush2",
+              "active": false,
               "transform": {
                 "localRotation": {
                   "_$type": "Quaternion",
@@ -14379,7 +14377,7 @@
                   "_$id": "7grlm0ky",
                   "_$prefab": "9761d000-b56f-4a64-a43c-14092488e68b",
                   "name": "Bush2 (10)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -14433,7 +14431,7 @@
                   "_$id": "rxy6fxm1",
                   "_$prefab": "9761d000-b56f-4a64-a43c-14092488e68b",
                   "name": "Bush2 (12)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -15310,7 +15308,7 @@
                   "_$id": "87tfphfu",
                   "_$prefab": "8d7cfa0f-6a7c-4367-a769-de57d649e021",
                   "name": "Tree5 (4)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -15337,7 +15335,7 @@
                   "_$id": "wen6ngak",
                   "_$prefab": "8d7cfa0f-6a7c-4367-a769-de57d649e021",
                   "name": "Tree5 (5)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -15364,7 +15362,7 @@
                   "_$id": "6xp8o72q",
                   "_$prefab": "8d7cfa0f-6a7c-4367-a769-de57d649e021",
                   "name": "Tree5 (6)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -15580,7 +15578,7 @@
                   "_$id": "4s0khdgq",
                   "_$prefab": "8d7cfa0f-6a7c-4367-a769-de57d649e021",
                   "name": "Tree5 (14)",
-                  "active": true,
+                  "active": false,
                   "isStatic": false,
                   "layer": 0,
                   "transform": {
@@ -15609,6 +15607,7 @@
               "_$id": "abjah8xd",
               "_$type": "Sprite3D",
               "name": "Tree7",
+              "active": false,
               "transform": {
                 "localRotation": {
                   "_$type": "Quaternion",
@@ -16230,1994 +16229,21 @@
             },
             {
               "_$type": "b9d0dcd0-cd61-4b85-b26c-33444cc1be6a",
-              "enabled": false,
               "scriptPath": "../src/multPrefabDemo/plantanything.ts",
               "object": {
                 "_$uuid": "49997b09-ddaa-4209-996a-f809f822fd77",
                 "_$type": "Prefab"
               },
-              "count": 10,
+              "count": 20000,
               "down": 0,
-              "randGen": false
+              "randGen": true
             }
           ],
           "_$child": [
             {
-              "_$id": "4r766xs7",
+              "_$id": "ylipl60v",
               "_$type": "Sprite3D",
-              "name": "__xx_xx__",
-              "_$child": [
-                {
-                  "_$id": "msvmn7lm",
-                  "_$type": "Sprite3D",
-                  "name": "cao",
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -463.3166097005208,
-                      "y": 36.708485921223954,
-                      "z": 149.74875386555988
-                    }
-                  },
-                  "_$child": [
-                    {
-                      "_$id": "tme33rij",
-                      "_$type": "Sprite3D",
-                      "name": "Plane",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "x": -2.6400739046461704e-17,
-                          "y": 0.47559343412780253
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": 0.6826466056948434,
-                          "y": 0.1843735657118694,
-                          "z": -0.18437356571186939,
-                          "w": 0.6826466056948435
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "_$id": "7qopmis3",
-                      "_$type": "Sprite3D",
-                      "name": "Plane_1",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "y": 0.49132922471466145
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": -0.02916894601150619,
-                          "y": 0.7065048991964443,
-                          "z": -0.7065048991964442,
-                          "w": -0.029168946011506193
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "_$id": "vzufivge",
-                      "_$type": "Sprite3D",
-                      "name": "Plane_2",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "y": 0.49132922471466145
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": -0.45627378802331436,
-                          "y": -0.5401983250278138,
-                          "z": 0.5401983250278137,
-                          "w": -0.4562737880233145
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "_$id": "oxrgxoey",
-                      "_$type": "Sprite3D",
-                      "name": "Plane_3",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "y": 0.49132922471466145,
-                          "z": 0.13891708238402162
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": 0.6342622236050245,
-                          "y": -0.312588278263293,
-                          "z": 0.31258827826329294,
-                          "w": 0.6342622236050246
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "_$id": "msvmn7lm",
-                  "_$type": "Sprite3D",
-                  "name": "cao",
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -142.71349080403644,
-                      "y": 4.24576210975647,
-                      "z": 598.9950154622395
-                    }
-                  },
-                  "_$child": [
-                    {
-                      "_$id": "tme33rij",
-                      "_$type": "Sprite3D",
-                      "name": "Plane",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "x": -2.6400739046461704e-17,
-                          "y": 0.47559343412780253
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": 0.6826466056948434,
-                          "y": 0.1843735657118694,
-                          "z": -0.18437356571186939,
-                          "w": 0.6826466056948435
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "_$id": "7qopmis3",
-                      "_$type": "Sprite3D",
-                      "name": "Plane_1",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "y": 0.49132922471466145
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": -0.02916894601150619,
-                          "y": 0.7065048991964443,
-                          "z": -0.7065048991964442,
-                          "w": -0.029168946011506193
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "_$id": "vzufivge",
-                      "_$type": "Sprite3D",
-                      "name": "Plane_2",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "y": 0.49132922471466145
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": -0.45627378802331436,
-                          "y": -0.5401983250278138,
-                          "z": 0.5401983250278137,
-                          "w": -0.4562737880233145
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "_$id": "oxrgxoey",
-                      "_$type": "Sprite3D",
-                      "name": "Plane_3",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "y": 0.49132922471466145,
-                          "z": 0.13891708238402162
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": 0.6342622236050245,
-                          "y": -0.312588278263293,
-                          "z": 0.31258827826329294,
-                          "w": 0.6342622236050246
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "_$id": "msvmn7lm",
-                  "_$type": "Sprite3D",
-                  "name": "cao",
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -398.99482218424475,
-                      "y": 16.22945467631022,
-                      "z": 462.3116251627604
-                    }
-                  },
-                  "_$child": [
-                    {
-                      "_$id": "tme33rij",
-                      "_$type": "Sprite3D",
-                      "name": "Plane",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "x": -2.6400739046461704e-17,
-                          "y": 0.47559343412780253
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": 0.6826466056948434,
-                          "y": 0.1843735657118694,
-                          "z": -0.18437356571186939,
-                          "w": 0.6826466056948435
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "_$id": "7qopmis3",
-                      "_$type": "Sprite3D",
-                      "name": "Plane_1",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "y": 0.49132922471466145
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": -0.02916894601150619,
-                          "y": 0.7065048991964443,
-                          "z": -0.7065048991964442,
-                          "w": -0.029168946011506193
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "_$id": "vzufivge",
-                      "_$type": "Sprite3D",
-                      "name": "Plane_2",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "y": 0.49132922471466145
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": -0.45627378802331436,
-                          "y": -0.5401983250278138,
-                          "z": 0.5401983250278137,
-                          "w": -0.4562737880233145
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "_$id": "oxrgxoey",
-                      "_$type": "Sprite3D",
-                      "name": "Plane_3",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "y": 0.49132922471466145,
-                          "z": 0.13891708238402162
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": 0.6342622236050245,
-                          "y": -0.312588278263293,
-                          "z": 0.31258827826329294,
-                          "w": 0.6342622236050246
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "_$id": "msvmn7lm",
-                  "_$type": "Sprite3D",
-                  "name": "cao",
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -429.14565022786456,
-                      "y": 41.342394510904946,
-                      "z": 186.9348398844401
-                    }
-                  },
-                  "_$child": [
-                    {
-                      "_$id": "tme33rij",
-                      "_$type": "Sprite3D",
-                      "name": "Plane",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "x": -2.6400739046461704e-17,
-                          "y": 0.47559343412780253
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": 0.6826466056948434,
-                          "y": 0.1843735657118694,
-                          "z": -0.18437356571186939,
-                          "w": 0.6826466056948435
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "_$id": "7qopmis3",
-                      "_$type": "Sprite3D",
-                      "name": "Plane_1",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "y": 0.49132922471466145
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": -0.02916894601150619,
-                          "y": 0.7065048991964443,
-                          "z": -0.7065048991964442,
-                          "w": -0.029168946011506193
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "_$id": "vzufivge",
-                      "_$type": "Sprite3D",
-                      "name": "Plane_2",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "y": 0.49132922471466145
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": -0.45627378802331436,
-                          "y": -0.5401983250278138,
-                          "z": 0.5401983250278137,
-                          "w": -0.4562737880233145
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "_$id": "oxrgxoey",
-                      "_$type": "Sprite3D",
-                      "name": "Plane_3",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "y": 0.49132922471466145,
-                          "z": 0.13891708238402162
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": 0.6342622236050245,
-                          "y": -0.312588278263293,
-                          "z": 0.31258827826329294,
-                          "w": 0.6342622236050246
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "_$id": "msvmn7lm",
-                  "_$type": "Sprite3D",
-                  "name": "cao",
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -116.58298238118489,
-                      "y": 30.429487228393555,
-                      "z": 336.6834004720052
-                    }
-                  },
-                  "_$child": [
-                    {
-                      "_$id": "tme33rij",
-                      "_$type": "Sprite3D",
-                      "name": "Plane",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "x": -2.6400739046461704e-17,
-                          "y": 0.47559343412780253
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": 0.6826466056948434,
-                          "y": 0.1843735657118694,
-                          "z": -0.18437356571186939,
-                          "w": 0.6826466056948435
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "_$id": "7qopmis3",
-                      "_$type": "Sprite3D",
-                      "name": "Plane_1",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "y": 0.49132922471466145
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": -0.02916894601150619,
-                          "y": 0.7065048991964443,
-                          "z": -0.7065048991964442,
-                          "w": -0.029168946011506193
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "_$id": "vzufivge",
-                      "_$type": "Sprite3D",
-                      "name": "Plane_2",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "y": 0.49132922471466145
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": -0.45627378802331436,
-                          "y": -0.5401983250278138,
-                          "z": 0.5401983250278137,
-                          "w": -0.4562737880233145
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "_$id": "oxrgxoey",
-                      "_$type": "Sprite3D",
-                      "name": "Plane_3",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "y": 0.49132922471466145,
-                          "z": 0.13891708238402162
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": 0.6342622236050245,
-                          "y": -0.312588278263293,
-                          "z": 0.31258827826329294,
-                          "w": 0.6342622236050246
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "_$id": "msvmn7lm",
-                  "_$type": "Sprite3D",
-                  "name": "cao",
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -595.9798787434895,
-                      "y": 2.258493661880493,
-                      "z": 474.37198893229163
-                    }
-                  },
-                  "_$child": [
-                    {
-                      "_$id": "tme33rij",
-                      "_$type": "Sprite3D",
-                      "name": "Plane",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "x": -2.6400739046461704e-17,
-                          "y": 0.47559343412780253
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": 0.6826466056948434,
-                          "y": 0.1843735657118694,
-                          "z": -0.18437356571186939,
-                          "w": 0.6826466056948435
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "_$id": "7qopmis3",
-                      "_$type": "Sprite3D",
-                      "name": "Plane_1",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "y": 0.49132922471466145
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": -0.02916894601150619,
-                          "y": 0.7065048991964443,
-                          "z": -0.7065048991964442,
-                          "w": -0.029168946011506193
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "_$id": "vzufivge",
-                      "_$type": "Sprite3D",
-                      "name": "Plane_2",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "y": 0.49132922471466145
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": -0.45627378802331436,
-                          "y": -0.5401983250278138,
-                          "z": 0.5401983250278137,
-                          "w": -0.4562737880233145
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "_$id": "oxrgxoey",
-                      "_$type": "Sprite3D",
-                      "name": "Plane_3",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "y": 0.49132922471466145,
-                          "z": 0.13891708238402162
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": 0.6342622236050245,
-                          "y": -0.312588278263293,
-                          "z": 0.31258827826329294,
-                          "w": 0.6342622236050246
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "_$id": "msvmn7lm",
-                  "_$type": "Sprite3D",
-                  "name": "cao",
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -348.74376424153644,
-                      "y": 40.10185241699219,
-                      "z": 176.88444010416666
-                    }
-                  },
-                  "_$child": [
-                    {
-                      "_$id": "tme33rij",
-                      "_$type": "Sprite3D",
-                      "name": "Plane",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "x": -2.6400739046461704e-17,
-                          "y": 0.47559343412780253
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": 0.6826466056948434,
-                          "y": 0.1843735657118694,
-                          "z": -0.18437356571186939,
-                          "w": 0.6826466056948435
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "_$id": "7qopmis3",
-                      "_$type": "Sprite3D",
-                      "name": "Plane_1",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "y": 0.49132922471466145
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": -0.02916894601150619,
-                          "y": 0.7065048991964443,
-                          "z": -0.7065048991964442,
-                          "w": -0.029168946011506193
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "_$id": "vzufivge",
-                      "_$type": "Sprite3D",
-                      "name": "Plane_2",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "y": 0.49132922471466145
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": -0.45627378802331436,
-                          "y": -0.5401983250278138,
-                          "z": 0.5401983250278137,
-                          "w": -0.4562737880233145
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "_$id": "oxrgxoey",
-                      "_$type": "Sprite3D",
-                      "name": "Plane_3",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "y": 0.49132922471466145,
-                          "z": 0.13891708238402162
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": 0.6342622236050245,
-                          "y": -0.312588278263293,
-                          "z": 0.31258827826329294,
-                          "w": 0.6342622236050246
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "_$id": "msvmn7lm",
-                  "_$type": "Sprite3D",
-                  "name": "cao",
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -230.15082295735675,
-                      "y": 67.23467508951822,
-                      "z": 214.07052612304688
-                    }
-                  },
-                  "_$child": [
-                    {
-                      "_$id": "tme33rij",
-                      "_$type": "Sprite3D",
-                      "name": "Plane",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "x": -2.6400739046461704e-17,
-                          "y": 0.47559343412780253
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": 0.6826466056948434,
-                          "y": 0.1843735657118694,
-                          "z": -0.18437356571186939,
-                          "w": 0.6826466056948435
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "_$id": "7qopmis3",
-                      "_$type": "Sprite3D",
-                      "name": "Plane_1",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "y": 0.49132922471466145
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": -0.02916894601150619,
-                          "y": 0.7065048991964443,
-                          "z": -0.7065048991964442,
-                          "w": -0.029168946011506193
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "_$id": "vzufivge",
-                      "_$type": "Sprite3D",
-                      "name": "Plane_2",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "y": 0.49132922471466145
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": -0.45627378802331436,
-                          "y": -0.5401983250278138,
-                          "z": 0.5401983250278137,
-                          "w": -0.4562737880233145
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "_$id": "oxrgxoey",
-                      "_$type": "Sprite3D",
-                      "name": "Plane_3",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "y": 0.49132922471466145,
-                          "z": 0.13891708238402162
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": 0.6342622236050245,
-                          "y": -0.312588278263293,
-                          "z": 0.31258827826329294,
-                          "w": 0.6342622236050246
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "_$id": "msvmn7lm",
-                  "_$type": "Sprite3D",
-                  "name": "cao",
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -516.5828043619791,
-                      "y": 29.619435628255207,
-                      "z": 320.6029154459635
-                    }
-                  },
-                  "_$child": [
-                    {
-                      "_$id": "tme33rij",
-                      "_$type": "Sprite3D",
-                      "name": "Plane",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "x": -2.6400739046461704e-17,
-                          "y": 0.47559343412780253
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": 0.6826466056948434,
-                          "y": 0.1843735657118694,
-                          "z": -0.18437356571186939,
-                          "w": 0.6826466056948435
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "_$id": "7qopmis3",
-                      "_$type": "Sprite3D",
-                      "name": "Plane_1",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "y": 0.49132922471466145
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": -0.02916894601150619,
-                          "y": 0.7065048991964443,
-                          "z": -0.7065048991964442,
-                          "w": -0.029168946011506193
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "_$id": "vzufivge",
-                      "_$type": "Sprite3D",
-                      "name": "Plane_2",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "y": 0.49132922471466145
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": -0.45627378802331436,
-                          "y": -0.5401983250278138,
-                          "z": 0.5401983250278137,
-                          "w": -0.4562737880233145
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "_$id": "oxrgxoey",
-                      "_$type": "Sprite3D",
-                      "name": "Plane_3",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "y": 0.49132922471466145,
-                          "z": 0.13891708238402162
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": 0.6342622236050245,
-                          "y": -0.312588278263293,
-                          "z": 0.31258827826329294,
-                          "w": 0.6342622236050246
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "_$id": "msvmn7lm",
-                  "_$type": "Sprite3D",
-                  "name": "cao",
-                  "transform": {
-                    "localPosition": {
-                      "_$type": "Vector3",
-                      "x": -134.67343648274738,
-                      "y": 31.20349057515462,
-                      "z": 111.55768585205078
-                    }
-                  },
-                  "_$child": [
-                    {
-                      "_$id": "tme33rij",
-                      "_$type": "Sprite3D",
-                      "name": "Plane",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "x": -2.6400739046461704e-17,
-                          "y": 0.47559343412780253
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": 0.6826466056948434,
-                          "y": 0.1843735657118694,
-                          "z": -0.18437356571186939,
-                          "w": 0.6826466056948435
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "_$id": "7qopmis3",
-                      "_$type": "Sprite3D",
-                      "name": "Plane_1",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "y": 0.49132922471466145
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": -0.02916894601150619,
-                          "y": 0.7065048991964443,
-                          "z": -0.7065048991964442,
-                          "w": -0.029168946011506193
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "_$id": "vzufivge",
-                      "_$type": "Sprite3D",
-                      "name": "Plane_2",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "y": 0.49132922471466145
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": -0.45627378802331436,
-                          "y": -0.5401983250278138,
-                          "z": 0.5401983250278137,
-                          "w": -0.4562737880233145
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "_$id": "oxrgxoey",
-                      "_$type": "Sprite3D",
-                      "name": "Plane_3",
-                      "transform": {
-                        "localPosition": {
-                          "_$type": "Vector3",
-                          "y": 0.49132922471466145,
-                          "z": 0.13891708238402162
-                        },
-                        "localRotation": {
-                          "_$type": "Quaternion",
-                          "x": 0.6342622236050245,
-                          "y": -0.312588278263293,
-                          "z": 0.31258827826329294,
-                          "w": 0.6342622236050246
-                        },
-                        "localScale": {
-                          "_$type": "Vector3",
-                          "x": 0.9999999801325463,
-                          "y": 0.9999999801325463,
-                          "z": 1
-                        }
-                      },
-                      "_$comp": [
-                        {
-                          "_$type": "MeshFilter",
-                          "sharedMesh": {
-                            "_$uuid": "4a4afb22-ef83-40a2-a6a8-212a2d20c52f",
-                            "_$type": "Mesh"
-                          }
-                        },
-                        {
-                          "_$type": "MeshRenderer",
-                          "lightmapScaleOffset": {
-                            "_$type": "Vector4"
-                          },
-                          "sharedMaterials": [
-                            {
-                              "_$uuid": "36ac5a95-2dbf-41f2-88a1-f21419d18c11",
-                              "_$type": "Material"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
+              "name": "__xx_xx__"
             }
           ]
         },
@@ -18364,7 +16390,7 @@
               "_$id": "#14",
               "_$prefab": "718ed094-3e2a-4fe9-88c0-e74f28ea2dfc",
               "name": "Rock1",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -18714,7 +16740,7 @@
               "_$id": "#32",
               "_$prefab": "718ed094-3e2a-4fe9-88c0-e74f28ea2dfc",
               "name": "Rock1",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -18741,7 +16767,7 @@
               "_$id": "#35",
               "_$prefab": "718ed094-3e2a-4fe9-88c0-e74f28ea2dfc",
               "name": "Rock1",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -19267,7 +17293,17 @@
                   "y": 1.677163,
                   "z": 1.677163
                 }
-              }
+              },
+              "_$child": [
+                {
+                  "_$override": "#1",
+                  "active": false
+                },
+                {
+                  "_$override": "#2",
+                  "active": false
+                }
+              ]
             },
             {
               "_$id": "#74",
@@ -19455,7 +17491,7 @@
               "_$id": "#89",
               "_$prefab": "718ed094-3e2a-4fe9-88c0-e74f28ea2dfc",
               "name": "Rock1",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -19581,7 +17617,7 @@
               "_$id": "#98",
               "_$prefab": "718ed094-3e2a-4fe9-88c0-e74f28ea2dfc",
               "name": "Rock1",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -19800,7 +17836,7 @@
               "_$id": "#107",
               "_$prefab": "718ed094-3e2a-4fe9-88c0-e74f28ea2dfc",
               "name": "Rock1",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -19977,7 +18013,7 @@
               "_$id": "#116",
               "_$prefab": "cd4f7cb3-f663-4358-9327-09c7341a83f8",
               "name": "Rock2",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -20079,7 +18115,7 @@
               "_$id": "#122",
               "_$prefab": "cd4f7cb3-f663-4358-9327-09c7341a83f8",
               "name": "Rock2",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -20106,7 +18142,7 @@
               "_$id": "#125",
               "_$prefab": "cd4f7cb3-f663-4358-9327-09c7341a83f8",
               "name": "Rock2",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -20207,7 +18243,7 @@
               "_$id": "#131",
               "_$prefab": "cd4f7cb3-f663-4358-9327-09c7341a83f8",
               "name": "Rock2",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -20280,7 +18316,7 @@
               "_$id": "#134",
               "_$prefab": "cd4f7cb3-f663-4358-9327-09c7341a83f8",
               "name": "Rock2",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -20506,7 +18542,7 @@
               "_$id": "#149",
               "_$prefab": "cd4f7cb3-f663-4358-9327-09c7341a83f8",
               "name": "Rock2",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -20652,7 +18688,7 @@
               "_$id": "#155",
               "_$prefab": "cd4f7cb3-f663-4358-9327-09c7341a83f8",
               "name": "Rock2",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -20826,7 +18862,7 @@
               "_$id": "#164",
               "_$prefab": "cd4f7cb3-f663-4358-9327-09c7341a83f8",
               "name": "Rock2",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -20979,7 +19015,7 @@
               "_$id": "#176",
               "_$prefab": "cd4f7cb3-f663-4358-9327-09c7341a83f8",
               "name": "Rock2",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -21205,7 +19241,7 @@
               "_$id": "#191",
               "_$prefab": "cd4f7cb3-f663-4358-9327-09c7341a83f8",
               "name": "Rock2",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -21292,7 +19328,7 @@
               "_$id": "#200",
               "_$prefab": "a19e9ef1-461f-42cb-bb58-65456468e097",
               "name": "Rock2B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -21529,7 +19565,7 @@
               "_$id": "#215",
               "_$prefab": "a19e9ef1-461f-42cb-bb58-65456468e097",
               "name": "Rock2B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -21558,7 +19594,7 @@
               "_$id": "#218",
               "_$prefab": "a19e9ef1-461f-42cb-bb58-65456468e097",
               "name": "Rock2B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -21691,7 +19727,7 @@
               "_$id": "#227",
               "_$prefab": "a19e9ef1-461f-42cb-bb58-65456468e097",
               "name": "Rock2B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -21870,7 +19906,7 @@
               "_$id": "#236",
               "_$prefab": "a19e9ef1-461f-42cb-bb58-65456468e097",
               "name": "Rock2B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -21899,7 +19935,7 @@
               "_$id": "#239",
               "_$prefab": "a19e9ef1-461f-42cb-bb58-65456468e097",
               "name": "Rock2B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -22176,7 +20212,7 @@
               "_$id": "#254",
               "_$prefab": "a19e9ef1-461f-42cb-bb58-65456468e097",
               "name": "Rock2B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -22277,7 +20313,7 @@
               "_$id": "#260",
               "_$prefab": "a19e9ef1-461f-42cb-bb58-65456468e097",
               "name": "Rock2B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -22450,7 +20486,7 @@
               "_$id": "#269",
               "_$prefab": "a19e9ef1-461f-42cb-bb58-65456468e097",
               "name": "Rock2B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -22641,7 +20677,7 @@
               "_$id": "#284",
               "_$prefab": "a19e9ef1-461f-42cb-bb58-65456468e097",
               "name": "Rock2B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -22878,7 +20914,7 @@
               "_$id": "#299",
               "_$prefab": "a19e9ef1-461f-42cb-bb58-65456468e097",
               "name": "Rock2B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -23141,7 +21177,7 @@
               "_$id": "#317",
               "_$prefab": "a19e9ef1-461f-42cb-bb58-65456468e097",
               "name": "Rock2B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -23228,7 +21264,7 @@
               "_$id": "#326",
               "_$prefab": "a19e9ef1-461f-42cb-bb58-65456468e097",
               "name": "Rock2B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -23257,7 +21293,7 @@
               "_$id": "#329",
               "_$prefab": "a19e9ef1-461f-42cb-bb58-65456468e097",
               "name": "Rock2B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -23847,7 +21883,7 @@
               "_$id": "#362",
               "_$prefab": "a19e9ef1-461f-42cb-bb58-65456468e097",
               "name": "Rock2B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -24101,7 +22137,7 @@
               "_$id": "#374",
               "_$prefab": "a19e9ef1-461f-42cb-bb58-65456468e097",
               "name": "Rock2B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -24488,7 +22524,7 @@
               "_$id": "#395",
               "_$prefab": "a19e9ef1-461f-42cb-bb58-65456468e097",
               "name": "Rock2B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -24647,7 +22683,7 @@
               "_$id": "#407",
               "_$prefab": "a19e9ef1-461f-42cb-bb58-65456468e097",
               "name": "Rock2B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -24751,7 +22787,7 @@
               "_$id": "#413",
               "_$prefab": "a19e9ef1-461f-42cb-bb58-65456468e097",
               "name": "Rock2B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -24780,7 +22816,7 @@
               "_$id": "#416",
               "_$prefab": "a19e9ef1-461f-42cb-bb58-65456468e097",
               "name": "Rock2B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -24893,7 +22929,7 @@
               "_$id": "#428",
               "_$prefab": "a19e9ef1-461f-42cb-bb58-65456468e097",
               "name": "Rock2B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -25072,7 +23108,7 @@
               "_$id": "#437",
               "_$prefab": "a19e9ef1-461f-42cb-bb58-65456468e097",
               "name": "Rock2B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -25210,7 +23246,7 @@
               "_$id": "#452",
               "_$prefab": "83f31bc1-22b1-4172-8723-b8b37ef2942e",
               "name": "Rock3",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -25237,7 +23273,7 @@
               "_$id": "#455",
               "_$prefab": "83f31bc1-22b1-4172-8723-b8b37ef2942e",
               "name": "Rock3",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -25476,7 +23512,7 @@
               "_$id": "#476",
               "_$prefab": "83f31bc1-22b1-4172-8723-b8b37ef2942e",
               "name": "Rock3",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -25754,7 +23790,7 @@
               "_$id": "#491",
               "_$prefab": "83f31bc1-22b1-4172-8723-b8b37ef2942e",
               "name": "Rock3",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -26125,7 +24161,7 @@
               "_$id": "#512",
               "_$prefab": "83f31bc1-22b1-4172-8723-b8b37ef2942e",
               "name": "Rock3",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -26198,7 +24234,7 @@
               "_$id": "#515",
               "_$prefab": "83f31bc1-22b1-4172-8723-b8b37ef2942e",
               "name": "Rock3",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -26299,7 +24335,7 @@
               "_$id": "#521",
               "_$prefab": "0bf207de-97fd-403c-8fcb-e40d658ec446",
               "name": "Rock3B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -27145,7 +25181,7 @@
               "_$id": "#566",
               "_$prefab": "0bf207de-97fd-403c-8fcb-e40d658ec446",
               "name": "Rock3B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -27405,7 +25441,7 @@
               "_$id": "#584",
               "_$prefab": "0bf207de-97fd-403c-8fcb-e40d658ec446",
               "name": "Rock3B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -27596,7 +25632,7 @@
               "_$id": "#599",
               "_$prefab": "0bf207de-97fd-403c-8fcb-e40d658ec446",
               "name": "Rock3B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -27651,7 +25687,7 @@
               "_$id": "#605",
               "_$prefab": "0bf207de-97fd-403c-8fcb-e40d658ec446",
               "name": "Rock3B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -27709,7 +25745,7 @@
               "_$id": "#611",
               "_$prefab": "0bf207de-97fd-403c-8fcb-e40d658ec446",
               "name": "Rock3B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -27813,7 +25849,7 @@
               "_$id": "#617",
               "_$prefab": "0bf207de-97fd-403c-8fcb-e40d658ec446",
               "name": "Rock3B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -27941,7 +25977,7 @@
               "_$id": "#626",
               "_$prefab": "0bf207de-97fd-403c-8fcb-e40d658ec446",
               "name": "Rock3B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -27970,7 +26006,7 @@
               "_$id": "#629",
               "_$prefab": "0bf207de-97fd-403c-8fcb-e40d658ec446",
               "name": "Rock3B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -28207,7 +26243,7 @@
               "_$id": "#644",
               "_$prefab": "0bf207de-97fd-403c-8fcb-e40d658ec446",
               "name": "Rock3B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -28311,7 +26347,7 @@
               "_$id": "#650",
               "_$prefab": "0bf207de-97fd-403c-8fcb-e40d658ec446",
               "name": "Rock3B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -28424,7 +26460,7 @@
               "_$id": "#662",
               "_$prefab": "0bf207de-97fd-403c-8fcb-e40d658ec446",
               "name": "Rock3B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -28800,7 +26836,7 @@
               "_$id": "#692",
               "_$prefab": "0bf207de-97fd-403c-8fcb-e40d658ec446",
               "name": "Rock3B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -28907,7 +26943,17 @@
                   "y": 1,
                   "z": 1
                 }
-              }
+              },
+              "_$child": [
+                {
+                  "_$override": "#1",
+                  "active": false
+                },
+                {
+                  "_$override": "#2",
+                  "active": false
+                }
+              ]
             },
             {
               "_$id": "#704",
@@ -29092,7 +27138,7 @@
               "_$id": "#713",
               "_$prefab": "0bf207de-97fd-403c-8fcb-e40d658ec446",
               "name": "Rock3B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -29121,7 +27167,7 @@
               "_$id": "#716",
               "_$prefab": "0bf207de-97fd-403c-8fcb-e40d658ec446",
               "name": "Rock3B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -29150,7 +27196,7 @@
               "_$id": "#719",
               "_$prefab": "0bf207de-97fd-403c-8fcb-e40d658ec446",
               "name": "Rock3B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -29462,7 +27508,7 @@
               "_$id": "#737",
               "_$prefab": "0bf207de-97fd-403c-8fcb-e40d658ec446",
               "name": "Rock3B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -29933,7 +27979,7 @@
               "_$id": "#767",
               "_$prefab": "f79359e6-a51b-44f0-b8f0-cf8d2f32130b",
               "name": "Rock3C",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -30112,7 +28158,7 @@
               "_$id": "#776",
               "_$prefab": "f79359e6-a51b-44f0-b8f0-cf8d2f32130b",
               "name": "Rock3C",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -30216,7 +28262,7 @@
               "_$id": "#782",
               "_$prefab": "f79359e6-a51b-44f0-b8f0-cf8d2f32130b",
               "name": "Rock3C",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -30482,7 +28528,7 @@
               "_$id": "#800",
               "_$prefab": "f79359e6-a51b-44f0-b8f0-cf8d2f32130b",
               "name": "Rock3C",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -30731,7 +28777,7 @@
               "_$id": "#821",
               "_$prefab": "f79359e6-a51b-44f0-b8f0-cf8d2f32130b",
               "name": "Rock3C",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -30760,7 +28806,7 @@
               "_$id": "#824",
               "_$prefab": "f79359e6-a51b-44f0-b8f0-cf8d2f32130b",
               "name": "Rock3C",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -31387,7 +29433,7 @@
               "_$id": "#866",
               "_$prefab": "f79359e6-a51b-44f0-b8f0-cf8d2f32130b",
               "name": "Rock3C",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -31416,7 +29462,7 @@
               "_$id": "#869",
               "_$prefab": "f79359e6-a51b-44f0-b8f0-cf8d2f32130b",
               "name": "Rock3C",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -32089,7 +30135,7 @@
               "_$id": "#911",
               "_$prefab": "f79359e6-a51b-44f0-b8f0-cf8d2f32130b",
               "name": "Rock3C",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -32147,7 +30193,7 @@
               "_$id": "#917",
               "_$prefab": "f79359e6-a51b-44f0-b8f0-cf8d2f32130b",
               "name": "Rock3C",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -32176,7 +30222,7 @@
               "_$id": "#920",
               "_$prefab": "f79359e6-a51b-44f0-b8f0-cf8d2f32130b",
               "name": "Rock3C",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -32251,7 +30297,7 @@
               "_$id": "#923",
               "_$prefab": "f79359e6-a51b-44f0-b8f0-cf8d2f32130b",
               "name": "Rock3C",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -32439,7 +30485,7 @@
               "_$id": "#938",
               "_$prefab": "f79359e6-a51b-44f0-b8f0-cf8d2f32130b",
               "name": "Rock3C",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -32497,7 +30543,7 @@
               "_$id": "#944",
               "_$prefab": "f79359e6-a51b-44f0-b8f0-cf8d2f32130b",
               "name": "Rock3C",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -32702,7 +30748,7 @@
               "_$id": "#956",
               "_$prefab": "f79359e6-a51b-44f0-b8f0-cf8d2f32130b",
               "name": "Rock3C",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -32760,7 +30806,7 @@
               "_$id": "#962",
               "_$prefab": "f79359e6-a51b-44f0-b8f0-cf8d2f32130b",
               "name": "Rock3C",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -32949,7 +30995,7 @@
               "_$id": "#977",
               "_$prefab": "f79359e6-a51b-44f0-b8f0-cf8d2f32130b",
               "name": "Rock3C",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -33111,7 +31157,7 @@
               "_$id": "#989",
               "_$prefab": "f79359e6-a51b-44f0-b8f0-cf8d2f32130b",
               "name": "Rock3C",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -33140,7 +31186,7 @@
               "_$id": "#992",
               "_$prefab": "f79359e6-a51b-44f0-b8f0-cf8d2f32130b",
               "name": "Rock3C",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -33394,7 +31440,7 @@
               "_$id": "#1004",
               "_$prefab": "f79359e6-a51b-44f0-b8f0-cf8d2f32130b",
               "name": "Rock3C",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -33556,7 +31602,7 @@
               "_$id": "#1016",
               "_$prefab": "f79359e6-a51b-44f0-b8f0-cf8d2f32130b",
               "name": "Rock3C",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -33786,7 +31832,7 @@
               "_$id": "#1031",
               "_$prefab": "11953b6f-522d-4655-b2c9-7ef8071b0908",
               "name": "Rock4",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -33838,7 +31884,7 @@
               "_$id": "#1037",
               "_$prefab": "11953b6f-522d-4655-b2c9-7ef8071b0908",
               "name": "Rock4",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -34394,7 +32440,7 @@
               "_$id": "#1073",
               "_$prefab": "11953b6f-522d-4655-b2c9-7ef8071b0908",
               "name": "Rock4",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -34614,7 +32660,7 @@
               "_$id": "#1082",
               "_$prefab": "11953b6f-522d-4655-b2c9-7ef8071b0908",
               "name": "Rock4",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -34832,7 +32878,7 @@
               "_$id": "#1091",
               "_$prefab": "11953b6f-522d-4655-b2c9-7ef8071b0908",
               "name": "Rock4",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -34939,7 +32985,7 @@
               "_$id": "#1103",
               "_$prefab": "11953b6f-522d-4655-b2c9-7ef8071b0908",
               "name": "Rock4",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -35658,7 +33704,7 @@
               "_$id": "#1142",
               "_$prefab": "11953b6f-522d-4655-b2c9-7ef8071b0908",
               "name": "Rock4",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -35731,7 +33777,7 @@
               "_$id": "#1145",
               "_$prefab": "0ed83ad8-56d2-4daa-b2cd-4c057765e53b",
               "name": "Rock5A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -36026,7 +34072,7 @@
               "_$id": "#1166",
               "_$prefab": "0ed83ad8-56d2-4daa-b2cd-4c057765e53b",
               "name": "Rock5A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -36217,7 +34263,7 @@
               "_$id": "#1181",
               "_$prefab": "0ed83ad8-56d2-4daa-b2cd-4c057765e53b",
               "name": "Rock5A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -36246,7 +34292,7 @@
               "_$id": "#1184",
               "_$prefab": "0ed83ad8-56d2-4daa-b2cd-4c057765e53b",
               "name": "Rock5A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -36376,7 +34422,7 @@
               "_$id": "#1193",
               "_$prefab": "0ed83ad8-56d2-4daa-b2cd-4c057765e53b",
               "name": "Rock5A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -36405,7 +34451,7 @@
               "_$id": "#1196",
               "_$prefab": "0ed83ad8-56d2-4daa-b2cd-4c057765e53b",
               "name": "Rock5A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -36567,7 +34613,7 @@
               "_$id": "#1208",
               "_$prefab": "0ed83ad8-56d2-4daa-b2cd-4c057765e53b",
               "name": "Rock5A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -36989,7 +35035,7 @@
               "_$id": "#1238",
               "_$prefab": "0ed83ad8-56d2-4daa-b2cd-4c057765e53b",
               "name": "Rock5A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -37047,7 +35093,7 @@
               "_$id": "#1244",
               "_$prefab": "0ed83ad8-56d2-4daa-b2cd-4c057765e53b",
               "name": "Rock5A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -37151,7 +35197,7 @@
               "_$id": "#1250",
               "_$prefab": "0ed83ad8-56d2-4daa-b2cd-4c057765e53b",
               "name": "Rock5A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -37255,7 +35301,7 @@
               "_$id": "#1256",
               "_$prefab": "0ed83ad8-56d2-4daa-b2cd-4c057765e53b",
               "name": "Rock5A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -37359,7 +35405,7 @@
               "_$id": "#1262",
               "_$prefab": "0ed83ad8-56d2-4daa-b2cd-4c057765e53b",
               "name": "Rock5A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -37417,7 +35463,7 @@
               "_$id": "#1268",
               "_$prefab": "0ed83ad8-56d2-4daa-b2cd-4c057765e53b",
               "name": "Rock5A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -37652,7 +35698,7 @@
               "_$id": "#1283",
               "_$prefab": "0ed83ad8-56d2-4daa-b2cd-4c057765e53b",
               "name": "Rock5A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -38031,7 +36077,7 @@
               "_$id": "#1313",
               "_$prefab": "0ed83ad8-56d2-4daa-b2cd-4c057765e53b",
               "name": "Rock5A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -38060,7 +36106,7 @@
               "_$id": "#1316",
               "_$prefab": "0ed83ad8-56d2-4daa-b2cd-4c057765e53b",
               "name": "Rock5A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -38164,7 +36210,7 @@
               "_$id": "#1322",
               "_$prefab": "0ed83ad8-56d2-4daa-b2cd-4c057765e53b",
               "name": "Rock5A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -38193,7 +36239,7 @@
               "_$id": "#1325",
               "_$prefab": "0ed83ad8-56d2-4daa-b2cd-4c057765e53b",
               "name": "Rock5A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -38781,7 +36827,7 @@
               "_$id": "#1358",
               "_$prefab": "0ed83ad8-56d2-4daa-b2cd-4c057765e53b",
               "name": "Rock5A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -38972,7 +37018,7 @@
               "_$id": "#1373",
               "_$prefab": "0ed83ad8-56d2-4daa-b2cd-4c057765e53b",
               "name": "Rock5A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -39122,7 +37168,7 @@
               "_$id": "#1379",
               "_$prefab": "0ed83ad8-56d2-4daa-b2cd-4c057765e53b",
               "name": "Rock5A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -39255,7 +37301,7 @@
               "_$id": "#1388",
               "_$prefab": "0ed83ad8-56d2-4daa-b2cd-4c057765e53b",
               "name": "Rock5A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -39284,7 +37330,7 @@
               "_$id": "#1391",
               "_$prefab": "0ed83ad8-56d2-4daa-b2cd-4c057765e53b",
               "name": "Rock5A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -39446,7 +37492,7 @@
               "_$id": "#1403",
               "_$prefab": "0ed83ad8-56d2-4daa-b2cd-4c057765e53b",
               "name": "Rock5A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -39796,7 +37842,7 @@
               "_$id": "#1430",
               "_$prefab": "0ed83ad8-56d2-4daa-b2cd-4c057765e53b",
               "name": "Rock5A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -40001,7 +38047,7 @@
               "_$id": "#1442",
               "_$prefab": "422dfb38-da14-4c1a-9592-97199c4edbc1",
               "name": "Rock5B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -40399,7 +38445,7 @@
               "_$id": "#1475",
               "_$prefab": "422dfb38-da14-4c1a-9592-97199c4edbc1",
               "name": "Rock5B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -40989,7 +39035,7 @@
               "_$id": "#1508",
               "_$prefab": "c39e171a-0015-4efb-ad2d-25be7cf41284",
               "name": "Rock6A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -41047,7 +39093,7 @@
               "_$id": "#1514",
               "_$prefab": "c39e171a-0015-4efb-ad2d-25be7cf41284",
               "name": "Rock6A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -41615,7 +39661,7 @@
               "_$id": "#1559",
               "_$prefab": "c39e171a-0015-4efb-ad2d-25be7cf41284",
               "name": "Rock6A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -41644,7 +39690,7 @@
               "_$id": "#1562",
               "_$prefab": "c39e171a-0015-4efb-ad2d-25be7cf41284",
               "name": "Rock6A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -42064,7 +40110,7 @@
               "_$id": "#1601",
               "_$prefab": "c39e171a-0015-4efb-ad2d-25be7cf41284",
               "name": "Rock6A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -42558,7 +40604,7 @@
               "_$id": "#1643",
               "_$prefab": "c39e171a-0015-4efb-ad2d-25be7cf41284",
               "name": "Rock6A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -42643,7 +40689,7 @@
               "_$id": "#1652",
               "_$prefab": "c39e171a-0015-4efb-ad2d-25be7cf41284",
               "name": "Rock6A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -42730,7 +40776,7 @@
               "_$id": "#1661",
               "_$prefab": "c39e171a-0015-4efb-ad2d-25be7cf41284",
               "name": "Rock6A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -42759,7 +40805,7 @@
               "_$id": "#1664",
               "_$prefab": "c39e171a-0015-4efb-ad2d-25be7cf41284",
               "name": "Rock6A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -42788,7 +40834,7 @@
               "_$id": "#1667",
               "_$prefab": "c39e171a-0015-4efb-ad2d-25be7cf41284",
               "name": "Rock6A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -42846,7 +40892,7 @@
               "_$id": "#1673",
               "_$prefab": "c39e171a-0015-4efb-ad2d-25be7cf41284",
               "name": "Rock6A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -43302,7 +41348,7 @@
               "_$id": "#1715",
               "_$prefab": "c39e171a-0015-4efb-ad2d-25be7cf41284",
               "name": "Rock6A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -43331,7 +41377,7 @@
               "_$id": "#1718",
               "_$prefab": "c39e171a-0015-4efb-ad2d-25be7cf41284",
               "name": "Rock6A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -43444,7 +41490,7 @@
               "_$id": "#1730",
               "_$prefab": "c39e171a-0015-4efb-ad2d-25be7cf41284",
               "name": "Rock6A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -43502,7 +41548,7 @@
               "_$id": "#1736",
               "_$prefab": "c39e171a-0015-4efb-ad2d-25be7cf41284",
               "name": "Rock6A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -43635,7 +41681,7 @@
               "_$id": "#1745",
               "_$prefab": "c39e171a-0015-4efb-ad2d-25be7cf41284",
               "name": "Rock6A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -43664,7 +41710,7 @@
               "_$id": "#1748",
               "_$prefab": "c39e171a-0015-4efb-ad2d-25be7cf41284",
               "name": "Rock6A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -43882,7 +41928,7 @@
               "_$id": "#1766",
               "_$prefab": "c39e171a-0015-4efb-ad2d-25be7cf41284",
               "name": "Rock6A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -43969,7 +42015,7 @@
               "_$id": "#1775",
               "_$prefab": "c39e171a-0015-4efb-ad2d-25be7cf41284",
               "name": "Rock6A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -44414,7 +42460,7 @@
               "_$id": "#1820",
               "_$prefab": "c39e171a-0015-4efb-ad2d-25be7cf41284",
               "name": "Rock6A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -44534,7 +42580,7 @@
               "_$id": "#1832",
               "_$prefab": "c39e171a-0015-4efb-ad2d-25be7cf41284",
               "name": "Rock6A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -44650,7 +42696,7 @@
               "_$id": "#1844",
               "_$prefab": "c39e171a-0015-4efb-ad2d-25be7cf41284",
               "name": "Rock6A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -44754,7 +42800,7 @@
               "_$id": "#1850",
               "_$prefab": "c39e171a-0015-4efb-ad2d-25be7cf41284",
               "name": "Rock6A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -44783,7 +42829,7 @@
               "_$id": "#1853",
               "_$prefab": "c39e171a-0015-4efb-ad2d-25be7cf41284",
               "name": "Rock6A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -44870,7 +42916,7 @@
               "_$id": "#1862",
               "_$prefab": "c39e171a-0015-4efb-ad2d-25be7cf41284",
               "name": "Rock6A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -44899,7 +42945,7 @@
               "_$id": "#1865",
               "_$prefab": "c39e171a-0015-4efb-ad2d-25be7cf41284",
               "name": "Rock6A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -44928,7 +42974,7 @@
               "_$id": "#1868",
               "_$prefab": "c39e171a-0015-4efb-ad2d-25be7cf41284",
               "name": "Rock6A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -45279,7 +43325,7 @@
               "_$id": "#1895",
               "_$prefab": "c39e171a-0015-4efb-ad2d-25be7cf41284",
               "name": "Rock6A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -45308,7 +43354,7 @@
               "_$id": "#1898",
               "_$prefab": "c39e171a-0015-4efb-ad2d-25be7cf41284",
               "name": "Rock6A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -45366,7 +43412,7 @@
               "_$id": "#1904",
               "_$prefab": "c39e171a-0015-4efb-ad2d-25be7cf41284",
               "name": "Rock6A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -45424,7 +43470,7 @@
               "_$id": "#1910",
               "_$prefab": "c39e171a-0015-4efb-ad2d-25be7cf41284",
               "name": "Rock6A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -45482,7 +43528,7 @@
               "_$id": "#1916",
               "_$prefab": "c39e171a-0015-4efb-ad2d-25be7cf41284",
               "name": "Rock6A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -45511,7 +43557,7 @@
               "_$id": "#1919",
               "_$prefab": "c39e171a-0015-4efb-ad2d-25be7cf41284",
               "name": "Rock6A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -45772,7 +43818,7 @@
               "_$id": "#1946",
               "_$prefab": "f834b9bb-57d4-460b-bd19-232c54d67882",
               "name": "Rock6B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -45801,7 +43847,7 @@
               "_$id": "#1949",
               "_$prefab": "f834b9bb-57d4-460b-bd19-232c54d67882",
               "name": "Rock6B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -45946,7 +43992,7 @@
               "_$id": "#1964",
               "_$prefab": "f834b9bb-57d4-460b-bd19-232c54d67882",
               "name": "Rock6B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -46095,7 +44141,7 @@
               "_$id": "#1979",
               "_$prefab": "f834b9bb-57d4-460b-bd19-232c54d67882",
               "name": "Rock6B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -46269,7 +44315,7 @@
               "_$id": "#1997",
               "_$prefab": "f834b9bb-57d4-460b-bd19-232c54d67882",
               "name": "Rock6B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -46414,7 +44460,7 @@
               "_$id": "#2012",
               "_$prefab": "f834b9bb-57d4-460b-bd19-232c54d67882",
               "name": "Rock6B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -46605,7 +44651,7 @@
               "_$id": "#2027",
               "_$prefab": "f834b9bb-57d4-460b-bd19-232c54d67882",
               "name": "Rock6B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -46808,7 +44854,7 @@
               "_$id": "#2048",
               "_$prefab": "f834b9bb-57d4-460b-bd19-232c54d67882",
               "name": "Rock6B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -46866,7 +44912,7 @@
               "_$id": "#2054",
               "_$prefab": "f834b9bb-57d4-460b-bd19-232c54d67882",
               "name": "Rock6B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -47219,7 +45265,7 @@
               "_$id": "#2081",
               "_$prefab": "f834b9bb-57d4-460b-bd19-232c54d67882",
               "name": "Rock6B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -47323,7 +45369,7 @@
               "_$id": "#2087",
               "_$prefab": "f834b9bb-57d4-460b-bd19-232c54d67882",
               "name": "Rock6B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -47352,7 +45398,7 @@
               "_$id": "#2090",
               "_$prefab": "f834b9bb-57d4-460b-bd19-232c54d67882",
               "name": "Rock6B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -47468,7 +45514,7 @@
               "_$id": "#2102",
               "_$prefab": "f834b9bb-57d4-460b-bd19-232c54d67882",
               "name": "Rock6B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -47526,7 +45572,7 @@
               "_$id": "#2108",
               "_$prefab": "f834b9bb-57d4-460b-bd19-232c54d67882",
               "name": "Rock6B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -47630,7 +45676,7 @@
               "_$id": "#2114",
               "_$prefab": "f834b9bb-57d4-460b-bd19-232c54d67882",
               "name": "Rock6B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -47920,7 +45966,7 @@
               "_$id": "7g1d1wtd",
               "_$prefab": "ab5fa8c3-f795-4947-ae91-d6d378f521fc",
               "name": "Cliff1A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -48093,7 +46139,7 @@
               "_$id": "82vzx1ui",
               "_$prefab": "ab5fa8c3-f795-4947-ae91-d6d378f521fc",
               "name": "Cliff1A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -48166,7 +46212,7 @@
               "_$id": "9bwgcoic",
               "_$prefab": "ab5fa8c3-f795-4947-ae91-d6d378f521fc",
               "name": "Cliff1A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -48239,7 +46285,7 @@
               "_$id": "4tbo095v",
               "_$prefab": "ab5fa8c3-f795-4947-ae91-d6d378f521fc",
               "name": "Cliff1A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -48412,7 +46458,7 @@
               "_$id": "bc39u3h9",
               "_$prefab": "ab5fa8c3-f795-4947-ae91-d6d378f521fc",
               "name": "Cliff1A",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -48774,7 +46820,7 @@
               "_$id": "hk7gd61g",
               "_$prefab": "8dae7909-b1dc-475a-a6ee-1209c56e003c",
               "name": "Cliff1E",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -48800,7 +46846,7 @@
               "_$id": "99277icm",
               "_$prefab": "8dae7909-b1dc-475a-a6ee-1209c56e003c",
               "name": "Cliff1E",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -48821,7 +46867,13 @@
                   "y": 0.7745361,
                   "z": 0.7745361
                 }
-              }
+              },
+              "_$child": [
+                {
+                  "_$override": "#1",
+                  "active": false
+                }
+              ]
             },
             {
               "_$id": "vrfzg6ms",
@@ -48854,7 +46906,7 @@
               "_$id": "h4iv4yi9",
               "_$prefab": "7635d805-7993-4c7a-bf08-3fa2c9712178",
               "name": "Cliff1F",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -50767,7 +48819,7 @@
               "_$id": "yz3w673b",
               "_$prefab": "3c270858-b41e-4f09-a49d-d77ee88fbae6",
               "name": "House6",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -51956,7 +50008,7 @@
               "_$id": "sprei719",
               "_$prefab": "67e4f299-7d02-4721-846b-9c406f04f188",
               "name": "House5",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -52267,7 +50319,7 @@
               "_$id": "rdi7a98g",
               "_$prefab": "94e727ea-7e16-437c-8d15-8de5d27f0f31",
               "name": "House4",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -52596,7 +50648,7 @@
               "_$id": "nn7ey8i9",
               "_$prefab": "e5695841-e963-40c7-a8bc-350e9a9fda53",
               "name": "Tower2",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -52790,7 +50842,7 @@
               "_$id": "1ze434ee",
               "_$prefab": "ce9fa0b7-5e6e-4841-8350-1966000d77bc",
               "name": "Shed8",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -54821,7 +52873,7 @@
               "_$id": "p6iqgp6a",
               "_$prefab": "a0e8f03c-8a9d-469e-9a38-12ddc41fec6b",
               "name": "Pier2",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -54943,7 +52995,7 @@
               "_$id": "i2l2bbne",
               "_$prefab": "a0e8f03c-8a9d-469e-9a38-12ddc41fec6b",
               "name": "Pier2",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -54997,7 +53049,7 @@
               "_$id": "nk4d35u9",
               "_$prefab": "a0e8f03c-8a9d-469e-9a38-12ddc41fec6b",
               "name": "Pier2",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -55238,7 +53290,7 @@
               "_$id": "imbb20bl",
               "_$prefab": "a0e8f03c-8a9d-469e-9a38-12ddc41fec6b",
               "name": "Pier2",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -55292,7 +53344,7 @@
               "_$id": "n17saomh",
               "_$prefab": "dd2e42d9-aee9-4353-9dfc-bea578e52914",
               "name": "Pier1",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -55446,7 +53498,7 @@
               "_$id": "4hkxug2l",
               "_$prefab": "dd2e42d9-aee9-4353-9dfc-bea578e52914",
               "name": "Pier1",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -55472,7 +53524,7 @@
               "_$id": "uok018xs",
               "_$prefab": "d44d3189-a1a4-4aff-aea1-7543e6fce675",
               "name": "Pier_Stairs1",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -55553,7 +53605,7 @@
               "_$id": "xxm6bkfc",
               "_$prefab": "a0e8f03c-8a9d-469e-9a38-12ddc41fec6b",
               "name": "Pier2",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -55646,7 +53698,7 @@
               "_$id": "9l9ncof6",
               "_$prefab": "674decfb-b909-4da3-a767-56c1b8624de5",
               "name": "Mast",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -56901,7 +54953,7 @@
               "_$id": "h1mbwks7",
               "_$prefab": "93e0ec21-01d6-4bfe-8ca8-fad00c95f9c7",
               "name": "Chest2B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -57072,7 +55124,7 @@
               "_$id": "82ktd00i",
               "_$prefab": "2420b9e1-99e7-42f6-8db4-69d62fa6f81a",
               "name": "Chest3",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -57629,7 +55681,7 @@
               "_$id": "lew2nf30",
               "_$prefab": "93e0ec21-01d6-4bfe-8ca8-fad00c95f9c7",
               "name": "Chest2B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -58618,7 +56670,7 @@
               "_$id": "iov8a8ge",
               "_$prefab": "210466dc-1c4b-442b-983f-d34a973533f1",
               "name": "Chest4",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -58902,7 +56954,7 @@
               "_$id": "u1kl97ah",
               "_$prefab": "fc95790e-008d-445f-b5dd-e9167a7c3c77",
               "name": "Chest3B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -59410,7 +57462,7 @@
               "_$id": "gxm8r7cr",
               "_$prefab": "2a102be4-a9b0-44b6-a203-de9388b57115",
               "name": "Chest1",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -59891,7 +57943,7 @@
               "_$id": "06oa8wfi",
               "_$prefab": "210466dc-1c4b-442b-983f-d34a973533f1",
               "name": "Chest4",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -60722,7 +58774,7 @@
               "_$id": "5xewa17o",
               "_$prefab": "fea6573a-7942-4d8b-a7ac-b5b2bac65d76",
               "name": "Barrel1",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -61139,7 +59191,7 @@
               "_$id": "z31iv77d",
               "_$prefab": "fea6573a-7942-4d8b-a7ac-b5b2bac65d76",
               "name": "Barrel1",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -62957,7 +61009,7 @@
               "_$id": "sifnkqos",
               "_$prefab": "c24616cc-92d4-4c74-994c-a1fa3dc339cf",
               "name": "Fence2B",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -68270,7 +66322,7 @@
               "_$id": "b2jjpxtp",
               "_$prefab": "3bad0272-cbfd-462d-a3b9-334c060aabcb",
               "name": "Fence3",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -68885,6 +66937,7 @@
           "_$id": "lazpo4ji",
           "_$type": "Sprite3D",
           "name": "Platform",
+          "active": false,
           "transform": {
             "localRotation": {
               "_$type": "Quaternion",
@@ -68896,7 +66949,7 @@
               "_$id": "7welo43p",
               "_$prefab": "bd42d623-16c2-45a4-96a0-a3f1d887c555",
               "name": "Platform1",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -69740,6 +67793,7 @@
           "_$id": "m3bycupf",
           "_$type": "Sprite3D",
           "name": "Fishnet",
+          "active": false,
           "transform": {
             "localRotation": {
               "_$type": "Quaternion",
@@ -70522,7 +68576,7 @@
               "_$id": "lxxr0cq2",
               "_$prefab": "c95d6504-f527-4a2e-84ab-9403e8b5fe18",
               "name": "Fishnet1",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -70607,6 +68661,7 @@
           "_$id": "qjuw4rfw",
           "_$type": "Sprite3D",
           "name": "Garbage",
+          "active": false,
           "transform": {
             "localRotation": {
               "_$type": "Quaternion",
@@ -73351,7 +71406,7 @@
               "_$id": "j6dk7umy",
               "_$prefab": "fb58c856-a0d3-48e9-b331-779c01eee2ba",
               "name": "Boat3",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -73500,7 +71555,7 @@
               "_$id": "828g0tww",
               "_$prefab": "0e195c61-0f46-4731-aabf-046fb94f9981",
               "name": "Boat_BaseStand",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -73526,7 +71581,7 @@
               "_$id": "0v5ilnj4",
               "_$prefab": "33ac644e-3883-4348-9dba-3922781c30d5",
               "name": "Boat2",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -73621,7 +71676,7 @@
               "_$id": "zbf6fb7f",
               "_$prefab": "f73d7188-2da5-47cb-846f-3fc6f3d0b6d0",
               "name": "Boat1",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -73650,7 +71705,7 @@
               "_$id": "9zc0qltz",
               "_$prefab": "f73d7188-2da5-47cb-846f-3fc6f3d0b6d0",
               "name": "Boat1",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -73747,7 +71802,7 @@
               "_$id": "9okevwsi",
               "_$prefab": "0e195c61-0f46-4731-aabf-046fb94f9981",
               "name": "Boat_BaseStand",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 8,
               "transform": {
@@ -73996,6 +72051,7 @@
           "_$id": "06ch7duw",
           "_$type": "Sprite3D",
           "name": "Pole",
+          "active": false,
           "transform": {
             "localRotation": {
               "_$type": "Quaternion",
@@ -74007,7 +72063,7 @@
               "_$id": "o9l8lviw",
               "_$prefab": "c738860e-f873-42c2-9aad-6a668a77f48d",
               "name": "Pole2",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -74033,7 +72089,7 @@
               "_$id": "jfqtd5oy",
               "_$prefab": "a676611b-2521-413c-9a51-750075125cf3",
               "name": "Pole1",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -74141,7 +72197,7 @@
               "_$id": "1y7sy13j",
               "_$prefab": "a676611b-2521-413c-9a51-750075125cf3",
               "name": "Pole1",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -74167,7 +72223,7 @@
               "_$id": "cqvm6jdb",
               "_$prefab": "c738860e-f873-42c2-9aad-6a668a77f48d",
               "name": "Pole2",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -74187,7 +72243,13 @@
                   "y": 1.134721,
                   "z": 1.134721
                 }
-              }
+              },
+              "_$child": [
+                {
+                  "_$override": "#3",
+                  "active": false
+                }
+              ]
             },
             {
               "_$id": "jzj1j5ly",
@@ -74272,7 +72334,7 @@
               "_$id": "gzwr70lx",
               "_$prefab": "a676611b-2521-413c-9a51-750075125cf3",
               "name": "Pole1",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -74355,7 +72417,7 @@
               "_$id": "zzfhjuz3",
               "_$prefab": "a676611b-2521-413c-9a51-750075125cf3",
               "name": "Pole1",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -74382,7 +72444,7 @@
               "_$id": "i82kkzdi",
               "_$prefab": "a676611b-2521-413c-9a51-750075125cf3",
               "name": "Pole1",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -74631,6 +72693,7 @@
           "_$id": "49lll9ku",
           "_$type": "Sprite3D",
           "name": "Barrier",
+          "active": false,
           "transform": {
             "localRotation": {
               "_$type": "Quaternion",
@@ -74741,7 +72804,7 @@
               "_$id": "5deul48b",
               "_$prefab": "eb2468ca-d593-4f36-9125-09e031c56424",
               "name": "Barrier1",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -74894,7 +72957,7 @@
               "_$id": "pxampw17",
               "_$prefab": "eb2468ca-d593-4f36-9125-09e031c56424",
               "name": "Barrier1",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -74973,7 +73036,7 @@
               "_$id": "d6vf3ly1",
               "_$prefab": "eb2468ca-d593-4f36-9125-09e031c56424",
               "name": "Barrier1",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -75052,7 +73115,7 @@
               "_$id": "fn3dkcw3",
               "_$prefab": "423b16e8-4c50-4f7d-ad8d-a000522ccd9b",
               "name": "Barrier2",
-              "active": true,
+              "active": false,
               "isStatic": true,
               "layer": 0,
               "transform": {
@@ -75081,6 +73144,7 @@
           "_$id": "7s3b2tdb",
           "_$type": "Sprite3D",
           "name": "Coconut",
+          "active": false,
           "transform": {
             "localRotation": {
               "_$type": "Quaternion",
@@ -75602,6 +73666,7 @@
           "_$id": "i7ns0qkz",
           "_$type": "Sprite3D",
           "name": "Lamp",
+          "active": false,
           "transform": {
             "localRotation": {
               "_$type": "Quaternion",
@@ -78138,6 +76203,7 @@
                   "_$id": "m696fmxz",
                   "_$type": "Sprite3D",
                   "name": "Lamp1A_LOD2(Clone)",
+                  "active": false,
                   "isStatic": true,
                   "transform": {
                     "localRotation": {
@@ -78285,6 +76351,7 @@
           "_$id": "7yg4kem5",
           "_$type": "Sprite3D",
           "name": "Rope",
+          "active": false,
           "transform": {
             "localRotation": {
               "_$type": "Quaternion",
@@ -78590,6 +76657,7 @@
           "_$id": "b3difdjq",
           "_$type": "Sprite3D",
           "name": "Stall",
+          "active": false,
           "transform": {
             "localRotation": {
               "_$type": "Quaternion",
