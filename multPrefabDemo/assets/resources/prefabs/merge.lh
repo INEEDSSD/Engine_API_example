@@ -1,0 +1,150 @@
+{
+  "_$ver": 1,
+  "_$id": "jfdhf93x",
+  "_$type": "Sprite3D",
+  "name": "Sprite3D",
+  "_$child": [
+    {
+      "_$id": "l3h1uqnj",
+      "_$prefab": "cd4f7cb3-f663-4358-9327-09c7341a83f8",
+      "name": "Rock2",
+      "active": true,
+      "isStatic": true,
+      "layer": 8,
+      "transform": {
+        "localPosition": {
+          "_$type": "Vector3",
+          "x": -229.18299865722656,
+          "y": 33.64019012451172,
+          "z": 349.2543029785156
+        },
+        "localRotation": {
+          "_$type": "Quaternion"
+        },
+        "localScale": {
+          "_$type": "Vector3",
+          "x": 2.9902560710906982,
+          "y": 2.9902560710906982,
+          "z": 2.9902560710906982
+        }
+      },
+      "_$child": [
+        {
+          "_$override": "#1",
+          "active": false
+        },
+        {
+          "_$override": "#2",
+          "active": true
+        }
+      ]
+    },
+    {
+      "_$id": "ovzaywq4",
+      "_$prefab": "83f31bc1-22b1-4172-8723-b8b37ef2942e",
+      "name": "Rock3",
+      "active": true,
+      "isStatic": true,
+      "layer": 8,
+      "transform": {
+        "localPosition": {
+          "_$type": "Vector3",
+          "x": -234.87840270996094,
+          "y": 32.72747039794922,
+          "z": 339.9363098144531
+        },
+        "localRotation": {
+          "_$type": "Quaternion",
+          "y": 0.8595147422649907,
+          "w": 0.511110954518827
+        },
+        "localScale": {
+          "_$type": "Vector3",
+          "x": 4.648389849052524,
+          "y": 4.64838981628418,
+          "z": 4.648389849052524
+        }
+      },
+      "_$child": [
+        {
+          "_$override": "#1",
+          "active": false
+        },
+        {
+          "_$override": "#2",
+          "active": true
+        }
+      ]
+    },
+    {
+      "_$id": "fddg1ylg",
+      "_$prefab": "83f31bc1-22b1-4172-8723-b8b37ef2942e",
+      "name": "Rock3",
+      "active": true,
+      "isStatic": true,
+      "layer": 8,
+      "transform": {
+        "localPosition": {
+          "_$type": "Vector3",
+          "x": -222.8302001953125,
+          "y": 30.964420318603516,
+          "z": 359.4451904296875
+        },
+        "localRotation": {
+          "_$type": "Quaternion"
+        },
+        "localScale": {
+          "_$type": "Vector3",
+          "x": 3.5981099605560303,
+          "y": 3.5981099605560303,
+          "z": 3.5981099605560303
+        }
+      },
+      "_$child": [
+        {
+          "_$override": "#1",
+          "active": false
+        },
+        {
+          "_$override": "#2",
+          "active": true
+        }
+      ]
+    },
+    {
+      "_$id": "z555ccqk",
+      "_$prefab": "cd4f7cb3-f663-4358-9327-09c7341a83f8",
+      "name": "Rock2",
+      "active": true,
+      "isStatic": true,
+      "layer": 0,
+      "transform": {
+        "localPosition": {
+          "_$type": "Vector3",
+          "x": -272.4143981933594,
+          "y": 29.690290451049805,
+          "z": 390.0531921386719
+        },
+        "localRotation": {
+          "_$type": "Quaternion"
+        },
+        "localScale": {
+          "_$type": "Vector3",
+          "x": 1.407315969467163,
+          "y": 1.407315969467163,
+          "z": 1.407315969467163
+        }
+      },
+      "_$child": [
+        {
+          "_$override": "#1",
+          "active": false
+        },
+        {
+          "_$override": "#2",
+          "active": true
+        }
+      ]
+    }
+  ]
+}
