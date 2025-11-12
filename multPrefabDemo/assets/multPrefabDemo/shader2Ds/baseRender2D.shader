@@ -4,7 +4,7 @@ Shader3D Start
     name:myCustom2DShader,
     enableInstancing:true,
     supportReflectionProbe:true,
-    shaderType:4,
+    shaderType:None,
     uniformMap:{
         
     },
@@ -15,7 +15,6 @@ Shader3D Start
     },
     defines: {
         BASERENDER2D: { type: bool, default: true }
-        TEXTUREVS
     }
     shaderPass:[
         {

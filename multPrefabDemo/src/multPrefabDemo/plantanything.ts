@@ -39,7 +39,7 @@ export class plantanything extends Laya.Script {
     randGen = false;
 
 
-    testGen() {
+    async testGen() {
         if (!this.owner) {
             console.log('没有设置预制体');
             return;
@@ -55,8 +55,10 @@ export class plantanything extends Laya.Script {
         this.owner.addChild(c);
 
         let tris = this.trangles;
+        if(tris.length===0)
+            return;
         let vpos = new Vector3();
-        for (let n = 0; n < this.count; n++) {
+        for (let i = 0; i < this.count; i++) {
             let trid = (Math.random() * this.trangles.length) | 0;
             let vt = tris[trid];
             let v0 = vt[0];
@@ -78,6 +80,8 @@ export class plantanything extends Laya.Script {
                 n.transform.localScale = new Vector3(sx, sy, sz);
             }
             c.addChild(n);
+            if(i%500===0)
+                await new Promise(resolve => setTimeout(resolve, 1));
         }
         /*
         for(let i=0; i<tris.length; i++){

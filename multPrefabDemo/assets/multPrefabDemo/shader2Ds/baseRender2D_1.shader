@@ -4,7 +4,7 @@ Shader3D Start
     name:myCustom2DShader1,
     enableInstancing:true,
     supportReflectionProbe:true,
-    shaderType:4,
+    shaderType:None,
     uniformMap:{
         
     },
