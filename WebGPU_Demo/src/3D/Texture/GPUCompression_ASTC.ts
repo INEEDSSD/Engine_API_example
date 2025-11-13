@@ -41,7 +41,7 @@ export class GPUCompression_ASTC extends BaseScript {
 
         this.text = new Laya.Label();
 
-        if (!Browser.onAndroid && !Browser.onIOS && !Browser.onOpenHarmonyOS) {
+        if (!Browser.onAndroid && !Browser.onIOS && !Browser.onOpenHarmonyOS && !Browser.onHWMiniGame) {
             //设置文本显示框位置
             this.text.text = "PC不支持ASTC纹理，请使用安卓或者苹果设备";
             //显示文本显示框

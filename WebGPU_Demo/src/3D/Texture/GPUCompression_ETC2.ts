@@ -40,7 +40,7 @@ export class GPUCompression_ETC2 extends BaseScript {
         meshSprite.getComponent(MeshRenderer).sharedMaterial = this.mat;
 
         this.text = new Laya.Label();
-        if (!Browser.onAndroid && !Browser.onOpenHarmonyOS) {
+        if (!Browser.onAndroid && !Browser.onOpenHarmonyOS && !Browser.onHWMiniGame) {
             console.log("只有安卓支持ETC");
             //设置文本显示框位置
             this.text.text = "PC不支持ETC纹理，只有安卓支持";
