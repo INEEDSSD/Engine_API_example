@@ -1418,7 +1418,10 @@
                 "_$type": "Vector4"
               },
               "sharedMaterials": [
-                null,
+                {
+                  "_$uuid": "7a87f8e5-adf4-4d8f-9582-8dc41c90fc0d",
+                  "_$type": "Material"
+                },
                 {
                   "_$uuid": "7a131a0a-6e82-4d5d-a58e-a260cd3443cf",
                   "_$type": "Material"
