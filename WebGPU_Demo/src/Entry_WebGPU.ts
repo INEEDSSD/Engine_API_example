@@ -33,7 +33,7 @@ export class entry_WebGPU extends Laya.Script {
         this.Big_cb.itemHeight = 20;
         this.Big_cb.size(170, 40);
         this.Big_cb.left = 90;
-        this.Big_cb.top = 580;
+        this.Big_cb.top = 550;
         this.Big_cb.itemColors = "#394f55";
         this.Big_cb.labels = this.big_labs;
         this.Big_cb.scrollType = Laya.ScrollType.Vertical;
@@ -43,7 +43,7 @@ export class entry_WebGPU extends Laya.Script {
         this.Small_cb.skin = "resources/res/ui/combobox.png";
         this.Small_cb.itemHeight = 20;
         this.Small_cb.left = 320;
-        this.Small_cb.top = 580;
+        this.Small_cb.top = 550;
         this.Small_cb.size(170, 40);
         this.Small_cb.labels = this.small_labs;
         this.Small_cb.scrollType = Laya.ScrollType.Vertical;
@@ -52,7 +52,7 @@ export class entry_WebGPU extends Laya.Script {
         let bt_label = "\u4E0B\u4E00\u4E2A";
         this.bt.skin = "resources/res/ui/combobox.png";
         this.bt.left = 550;
-        this.bt.top = 580;
+        this.bt.top = 550;
         this.bt.size(170, 40);
         this.bt.label = bt_label;
         this.logAllExtMap();

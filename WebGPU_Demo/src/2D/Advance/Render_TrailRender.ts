@@ -44,7 +44,7 @@ export class Render_TrailRender extends BaseScript {
         this.trail2Drender.widthMultiplier = 50;
         this.trail2Drender.time = 0.5;
         this.trail2Drender.minVertexDistance = 1;
-        this.trail2Drender.texture = img.bitmap;
+        this.trail2Drender.texture = Laya.loader.getRes("resources/res/apes/monkey2.png", Laya.Loader.TEXTURE2D);
         this.trail2Drender.color = Laya.Color.WHITE;
         Laya.timer.frameLoop(1, this, () => {
             this.rotateSprite.rotation += 1;

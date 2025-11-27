@@ -8,7 +8,7 @@
   "bottom": 0,
   "name": "Scene2D",
   "width": 1334,
-  "height": 640,
+  "height": 750,
   "mouseThrough": true,
   "_$comp": [
     {
@@ -262,7 +262,7 @@
           "_$prefab": "6c128cd3-8183-46c8-9c2c-8c3055c9179c",
           "name": "Gun",
           "active": true,
-          "isStatic": true,
+          "isStatic": false,
           "layer": 0,
           "transform": {
             "localPosition": {
@@ -279,7 +279,7 @@
           "_$child": [
             {
               "_$override": "#39",
-              "isStatic": true,
+              "isStatic": false,
               "_$comp": [
                 {
                   "_$override": "MeshRenderer",
@@ -302,7 +302,7 @@
             },
             {
               "_$override": "#40",
-              "isStatic": true,
+              "isStatic": false,
               "_$comp": [
                 {
                   "_$override": "MeshRenderer",
@@ -325,7 +325,7 @@
             },
             {
               "_$override": "#41",
-              "isStatic": true,
+              "isStatic": false,
               "_$comp": [
                 {
                   "_$override": "MeshRenderer",
@@ -348,7 +348,7 @@
             },
             {
               "_$override": "#42",
-              "isStatic": true,
+              "isStatic": false,
               "_$comp": [
                 {
                   "_$override": "MeshRenderer",
@@ -371,7 +371,7 @@
             },
             {
               "_$override": "#43",
-              "isStatic": true,
+              "isStatic": false,
               "_$comp": [
                 {
                   "_$override": "MeshRenderer",
@@ -394,7 +394,7 @@
             },
             {
               "_$override": "#44",
-              "isStatic": true,
+              "isStatic": false,
               "_$comp": [
                 {
                   "_$override": "MeshRenderer",
@@ -417,7 +417,7 @@
             },
             {
               "_$override": "#45",
-              "isStatic": true,
+              "isStatic": false,
               "_$comp": [
                 {
                   "_$override": "MeshRenderer",
@@ -440,7 +440,7 @@
             },
             {
               "_$override": "#46",
-              "isStatic": true,
+              "isStatic": false,
               "_$comp": [
                 {
                   "_$override": "MeshRenderer",
@@ -463,7 +463,7 @@
             },
             {
               "_$override": "#47",
-              "isStatic": true,
+              "isStatic": false,
               "_$comp": [
                 {
                   "_$override": "MeshRenderer",
@@ -486,7 +486,7 @@
             },
             {
               "_$override": "#48",
-              "isStatic": true,
+              "isStatic": false,
               "_$comp": [
                 {
                   "_$override": "MeshRenderer",
@@ -509,7 +509,7 @@
             },
             {
               "_$override": "#49",
-              "isStatic": true,
+              "isStatic": false,
               "_$comp": [
                 {
                   "_$override": "MeshRenderer",
@@ -532,7 +532,7 @@
             },
             {
               "_$override": "#50",
-              "isStatic": true,
+              "isStatic": false,
               "_$comp": [
                 {
                   "_$override": "MeshRenderer",
@@ -555,7 +555,7 @@
             },
             {
               "_$override": "#51",
-              "isStatic": true,
+              "isStatic": false,
               "_$comp": [
                 {
                   "_$override": "MeshRenderer",
@@ -578,7 +578,7 @@
             },
             {
               "_$override": "#52",
-              "isStatic": true,
+              "isStatic": false,
               "_$comp": [
                 {
                   "_$override": "MeshRenderer",
@@ -601,7 +601,7 @@
             },
             {
               "_$override": "#53",
-              "isStatic": true,
+              "isStatic": false,
               "_$comp": [
                 {
                   "_$override": "MeshRenderer",
@@ -624,7 +624,7 @@
             },
             {
               "_$override": "#54",
-              "isStatic": true,
+              "isStatic": false,
               "_$comp": [
                 {
                   "_$override": "MeshRenderer",
@@ -647,7 +647,7 @@
             },
             {
               "_$override": "#55",
-              "isStatic": true,
+              "isStatic": false,
               "_$comp": [
                 {
                   "_$override": "MeshRenderer",
@@ -670,7 +670,7 @@
             },
             {
               "_$override": "#56",
-              "isStatic": true,
+              "isStatic": false,
               "_$comp": [
                 {
                   "_$override": "MeshRenderer",
@@ -693,7 +693,7 @@
             },
             {
               "_$override": "#57",
-              "isStatic": true,
+              "isStatic": false,
               "_$comp": [
                 {
                   "_$override": "MeshRenderer",
@@ -716,7 +716,7 @@
             },
             {
               "_$override": "#58",
-              "isStatic": true,
+              "isStatic": false,
               "_$comp": [
                 {
                   "_$override": "MeshRenderer",
@@ -739,7 +739,7 @@
             },
             {
               "_$override": "#59",
-              "isStatic": true,
+              "isStatic": false,
               "_$comp": [
                 {
                   "_$override": "MeshRenderer",
@@ -762,7 +762,7 @@
             },
             {
               "_$override": "#60",
-              "isStatic": true,
+              "isStatic": false,
               "_$comp": [
                 {
                   "_$override": "MeshRenderer",
@@ -785,7 +785,7 @@
             },
             {
               "_$override": "#61",
-              "isStatic": true,
+              "isStatic": false,
               "_$comp": [
                 {
                   "_$override": "MeshRenderer",
@@ -808,7 +808,7 @@
             },
             {
               "_$override": "#62",
-              "isStatic": true,
+              "isStatic": false,
               "_$comp": [
                 {
                   "_$override": "MeshRenderer",
@@ -831,7 +831,7 @@
             },
             {
               "_$override": "#63",
-              "isStatic": true,
+              "isStatic": false,
               "_$comp": [
                 {
                   "_$override": "MeshRenderer",
@@ -854,7 +854,7 @@
             },
             {
               "_$override": "#64",
-              "isStatic": true,
+              "isStatic": false,
               "_$comp": [
                 {
                   "_$override": "MeshRenderer",
@@ -877,7 +877,7 @@
             },
             {
               "_$override": "#65",
-              "isStatic": true,
+              "isStatic": false,
               "_$comp": [
                 {
                   "_$override": "MeshRenderer",
@@ -900,7 +900,7 @@
             },
             {
               "_$override": "#66",
-              "isStatic": true,
+              "isStatic": false,
               "_$comp": [
                 {
                   "_$override": "MeshRenderer",
@@ -923,7 +923,7 @@
             },
             {
               "_$override": "#67",
-              "isStatic": true,
+              "isStatic": false,
               "_$comp": [
                 {
                   "_$override": "MeshRenderer",
@@ -946,7 +946,7 @@
             },
             {
               "_$override": "#68",
-              "isStatic": true,
+              "isStatic": false,
               "_$comp": [
                 {
                   "_$override": "MeshRenderer",
@@ -969,7 +969,7 @@
             },
             {
               "_$override": "#69",
-              "isStatic": true,
+              "isStatic": false,
               "_$comp": [
                 {
                   "_$override": "MeshRenderer",
@@ -992,7 +992,7 @@
             },
             {
               "_$override": "#70",
-              "isStatic": true,
+              "isStatic": false,
               "_$comp": [
                 {
                   "_$override": "MeshRenderer",
@@ -1015,7 +1015,7 @@
             },
             {
               "_$override": "#71",
-              "isStatic": true,
+              "isStatic": false,
               "_$comp": [
                 {
                   "_$override": "MeshRenderer",
@@ -1132,8 +1132,8 @@
             },
             "localRotation": {
               "_$type": "Quaternion",
-              "x": -0.9812926639922454,
-              "w": 0.1925219665259075
+              "x": -0.9812926639922451,
+              "w": 0.19252196652590745
             }
           },
           "_$comp": [

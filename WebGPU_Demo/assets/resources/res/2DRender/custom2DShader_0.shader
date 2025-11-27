@@ -4,7 +4,7 @@ Shader3D Start
     name:custom2DShader_0,
     enableInstancing:true,
     supportReflectionProbe:true,
-    shaderType:2,
+    shaderType:None,
     uniformMap:{
     },
     attributeMap: {
@@ -41,12 +41,16 @@ GLSL Start
 	    v_cliped = info.cliped;
 	    v_texcoordAlpha = info.texcoordAlpha;
 	    v_useTex = info.useTex;
-	    v_color = info.color;
         v_useClip = info.useClip;
         v_customs = info.customs;
+	    v_color = info.color;
 
+        #ifdef USE_TEX_ARRAY
+            // 复用 a_attribFlags.w 作为 layer（需引擎端写入）
+            v_texLayer = a_attribFlags.w;
+        #endif
 
-	    gl_Position = getPosition(info.pos);
+        gl_Position = getPosition(info.pos);
 
     }
 

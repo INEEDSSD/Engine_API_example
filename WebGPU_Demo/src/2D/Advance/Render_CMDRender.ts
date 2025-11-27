@@ -15,9 +15,9 @@ export class Render_CMDRender extends BaseScript {
 
     //组件被启用后执行，例如节点被添加到舞台后
     onEnable(): void {
-        Laya.loader.load(["resources/res/apes/monkey2.png"]).then(() => {
+        Laya.loader.load(["resources/res/apes/monkey2.png"], Laya.Loader.TEXTURE2D).then(() => {
             let mesh = this.generateCircleVerticesAndUV(100, 100);
-            var t = Laya.loader.getRes("resources/res/apes/monkey2.png")._bitmap;
+            var t: Laya.Texture2D = Laya.loader.getRes("resources/res/apes/monkey2.png", Laya.Loader.TEXTURE2D);
 
             let rtMesh = new Laya.RenderTexture(500, 500, Laya.RenderTargetFormat.R8G8B8A8, Laya.RenderTargetFormat.None);
             this.createMesh2DCMD(rtMesh, mesh, t);

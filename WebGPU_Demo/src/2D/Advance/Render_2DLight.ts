@@ -20,7 +20,7 @@ export class Render_2DLight extends BaseScript {
         this.owner.addChild(this.area);
 
         Laya.loader.load(["resources/res/light.png", "resources/res/bg2.png", "resources/res/apes/monkey2.png", "resources/res/apes/monkey1.png"]).then(() => {
-            let monkey: Laya.Texture = Laya.loader.getRes("resources/res/apes/monkey2.png");
+            let monkey: Laya.Texture2D = Laya.loader.getRes("resources/res/apes/monkey2.png", Laya.Loader.TEXTURE2D);
             let light: Laya.Texture = Laya.loader.getRes("resources/res/light.png");
             this.addLight2D(light);
             this.add2DLightOccluder(monkey);
@@ -138,7 +138,7 @@ export class Render_2DLight extends BaseScript {
      * 创建2D自定义形状的灯光遮挡器
      * @param res 
      */
-    add2DLightOccluder(res: Laya.Texture): void {
+    add2DLightOccluder(res: Laya.Texture2D): void {
         let tex = Laya.loader.getRes("res/bg2.png");
         let bk = this.area.addChild(new Laya.Sprite());
         let mesh2Drender = bk.addComponent(Laya.Mesh2DRender);
@@ -151,7 +151,7 @@ export class Render_2DLight extends BaseScript {
         let ape = this.area.addChild(new Laya.Sprite());
         let mesh2DrenderApe = ape.addComponent(Laya.Mesh2DRender);
         mesh2DrenderApe.sharedMesh = this.generateRectVerticesAndUV(110, 145);
-        mesh2DrenderApe.texture = res.bitmap;
+        mesh2DrenderApe.texture = res;
         mesh2DrenderApe.lightReceive = true;
         ape.x = 500;
         ape.y = 300;
@@ -192,7 +192,7 @@ export class Render_2DLight extends BaseScript {
 
         ape.addComponent(testMove);
         ape.addChild(this.camera);
-        
+
         this.camera.isMain = true;
 
 
