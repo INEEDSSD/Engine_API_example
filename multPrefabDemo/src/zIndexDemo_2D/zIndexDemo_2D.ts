@@ -9,9 +9,9 @@ export class zIndexDemo_2D extends Laya.Script {
 
     // 三个精灵使用的图片 - 使用更好看的图标
     private spriteURLs: string[] = [
-        "resources/images/icon1_smiley.png",
-        "resources/images/icon2_star.png",
-        "resources/images/icon3_square.png",
+        "OtherRes/images/icon1_smiley.png",
+        "OtherRes/images/icon2_star.png",
+        "OtherRes/images/icon3_square.png",
     ];
 
     //组件被激活后执行，此时所有节点和组件均已创建完毕，此方法只执行一次

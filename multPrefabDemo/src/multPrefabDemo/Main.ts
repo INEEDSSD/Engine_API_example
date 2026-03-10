@@ -281,7 +281,7 @@ export class Main extends Laya.Script {
     }
 
     createInstance() {
-        Laya.loader.load("resources/images/layabox.png").then((res: Laya.Texture2D) => {
+        Laya.loader.load("OtherRes/images/layabox.png").then((res: Laya.Texture2D) => {
             var count: number = this.insCount;
             var boxMesh = Laya.PrimitiveMesh.createBox(1, 1, 1);
             var mat: Laya.UnlitMaterial = new Laya.UnlitMaterial();

@@ -23,7 +23,7 @@ export class multMatDemo extends Laya.Script {
         this.mat2.albedoColor = new Laya.Color(1, 0, 0, 1);
         this.mat3 = new Laya.UnlitMaterial();
         //漫反射贴图
-        Laya.Texture2D.load("resources/images/layabox.png", Laya.Handler.create(this, (texture: Laya.Texture2D) => {
+        Laya.Texture2D.load("OtherRes/images/layabox.png", Laya.Handler.create(this, (texture: Laya.Texture2D) => {
             //在U方向上使用WRAPMODE_CLAMP
             texture.wrapModeU = Laya.WrapMode.Clamp;
             //在V方向使用WRAPMODE_REPEAT

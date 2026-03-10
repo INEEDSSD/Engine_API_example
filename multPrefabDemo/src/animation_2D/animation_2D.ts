@@ -27,7 +27,7 @@ class Character extends Laya.Sprite {
 
     private createBloodBar(): void {
         this.bloodBar = new Laya.Sprite();
-        this.bloodBar.loadImage("resources/characters/blood_1_r.png");
+        this.bloodBar.loadImage("Ani_Characters/characters/blood_1_r.png");
         this.bloodBar.x = 20;
         this.addChild(this.bloodBar);
     }
@@ -62,38 +62,38 @@ class Character extends Laya.Sprite {
 export class animation_2D extends Laya.Script {
     private amount: number = 500;
 
-    private character1: any[] = ["resources/characters/yd-6_01.png",
-        "resources/characters/yd-6_02.png",
-        "resources/characters/yd-6_03.png",
-        "resources/characters/yd-6_04.png",
-        "resources/characters/yd-6_05.png",
-        "resources/characters/yd-6_06.png",
-        "resources/characters/yd-6_07.png",
-        "resources/characters/yd-6_08.png"];
-    private character2: any[] = ["resources/characters/yd-3_01.png",
-        "resources/characters/yd-3_02.png",
-        "resources/characters/yd-3_03.png",
-        "resources/characters/yd-3_04.png",
-        "resources/characters/yd-3_05.png",
-        "resources/characters/yd-3_06.png",
-        "resources/characters/yd-3_07.png",
-        "resources/characters/yd-3_08.png"];
-    private character3: any[] = ["resources/characters/yd-2_01.png",
-        "resources/characters/yd-2_02.png",
-        "resources/characters/yd-2_03.png",
-        "resources/characters/yd-2_04.png",
-        "resources/characters/yd-2_05.png",
-        "resources/characters/yd-2_06.png",
-        "resources/characters/yd-2_07.png",
-        "resources/characters/yd-2_08.png"];
-    private character4: any[] = ["resources/characters/wyd-1_01.png",
-        "resources/characters/wyd-1_02.png",
-        "resources/characters/wyd-1_03.png",
-        "resources/characters/wyd-1_04.png",
-        "resources/characters/wyd-1_05.png",
-        "resources/characters/wyd-1_06.png",
-        "resources/characters/wyd-1_07.png",
-        "resources/characters/wyd-1_08.png"];
+    private character1: any[] = ["Ani_Characters/characters/yd-6_01.png",
+        "Ani_Characters/characters/yd-6_02.png",
+        "Ani_Characters/characters/yd-6_03.png",
+        "Ani_Characters/characters/yd-6_04.png",
+        "Ani_Characters/characters/yd-6_05.png",
+        "Ani_Characters/characters/yd-6_06.png",
+        "Ani_Characters/characters/yd-6_07.png",
+        "Ani_Characters/characters/yd-6_08.png"];
+    private character2: any[] = ["Ani_Characters/characters/yd-3_01.png",
+        "Ani_Characters/characters/yd-3_02.png",
+        "Ani_Characters/characters/yd-3_03.png",
+        "Ani_Characters/characters/yd-3_04.png",
+        "Ani_Characters/characters/yd-3_05.png",
+        "Ani_Characters/characters/yd-3_06.png",
+        "Ani_Characters/characters/yd-3_07.png",
+        "Ani_Characters/characters/yd-3_08.png"];
+    private character3: any[] = ["Ani_Characters/characters/yd-2_01.png",
+        "Ani_Characters/characters/yd-2_02.png",
+        "Ani_Characters/characters/yd-2_03.png",
+        "Ani_Characters/characters/yd-2_04.png",
+        "Ani_Characters/characters/yd-2_05.png",
+        "Ani_Characters/characters/yd-2_06.png",
+        "Ani_Characters/characters/yd-2_07.png",
+        "Ani_Characters/characters/yd-2_08.png"];
+    private character4: any[] = ["Ani_Characters/characters/wyd-1_01.png",
+        "Ani_Characters/characters/wyd-1_02.png",
+        "Ani_Characters/characters/wyd-1_03.png",
+        "Ani_Characters/characters/wyd-1_04.png",
+        "Ani_Characters/characters/wyd-1_05.png",
+        "Ani_Characters/characters/wyd-1_06.png",
+        "Ani_Characters/characters/wyd-1_07.png",
+        "Ani_Characters/characters/wyd-1_08.png"];
 
     private characterSkins: any[] = [this.character1, this.character2, this.character3, this.character4];
 
@@ -104,7 +104,7 @@ export class animation_2D extends Laya.Script {
     //组件被启用后执行，例如节点被添加到舞台后
     onEnable(): void {
         this.image = new Laya.Image();
-        this.image.skin = "resources/characters/background.jpg";
+        this.image.skin = "Ani_Characters/characters/background.jpg";
         this.owner.addChild(this.image);
 
         this.createCharacters();

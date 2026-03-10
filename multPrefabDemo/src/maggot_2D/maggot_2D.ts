@@ -9,7 +9,7 @@ class Maggot extends Laya.Sprite {
 
 @regClass()
 export class maggot_2D extends Laya.Script {
-    private texturePath: string = "resources/images/tinyMaggot.png";
+    private texturePath: string = "OtherRes/images/tinyMaggot.png";
 
     private padding: number = 100;
     private maggotAmount: number = 5000;

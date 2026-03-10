@@ -15,6 +15,7 @@
   },
   "webgpu": true,
   "splash": {
+    "enabled": false,
     "fit": "center"
   },
   "stat": true

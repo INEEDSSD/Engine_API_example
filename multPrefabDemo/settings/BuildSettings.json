@@ -1,12 +1,68 @@
 {
   "name": "LayaProject3",
   "useCompressedEngine": false,
-  "startupScene": "res://9b931ecf-fde9-44dd-acf3-15f8dc807965",
-  "alwaysIncluded": [
-    "multPrefabDemo",
-    "scenes"
-  ],
+  "startupScene": "res://a1240c60-e938-4934-aa6a-297cf6161e8d",
+  "alwaysIncluded": [],
   "copyBinFiles": false,
+  "enableSubpackages": true,
+  "subpackages": [
+    {
+      "path": "Ani_Characters",
+      "packAllAssets": true,
+      "autoLoad": true,
+      "remote": true,
+      "remoteUrl": "http://10.1.125.12:8888/"
+    },
+    {
+      "path": "ClusteredShading",
+      "packAllAssets": true,
+      "autoLoad": true,
+      "remote": true,
+      "remoteUrl": "http://10.1.125.12:8888/"
+    },
+    {
+      "path": "cubesTest",
+      "packAllAssets": true,
+      "autoLoad": true,
+      "remote": true,
+      "remoteUrl": "http://10.1.125.12:8888/"
+    },
+    {
+      "path": "dragon",
+      "packAllAssets": true,
+      "autoLoad": true,
+      "remote": true,
+      "remoteUrl": "http://10.1.125.12:8888/"
+    },
+    {
+      "path": "GLTFModel",
+      "packAllAssets": true,
+      "autoLoad": true,
+      "remote": true,
+      "remoteUrl": "http://10.1.125.12:8888/"
+    },
+    {
+      "path": "multPrefabDemo",
+      "packAllAssets": true,
+      "autoLoad": true,
+      "remote": true,
+      "remoteUrl": "http://10.1.125.12:8888/"
+    },
+    {
+      "path": "OtherRes",
+      "packAllAssets": true,
+      "autoLoad": true,
+      "remote": true,
+      "remoteUrl": "http://10.1.125.12:8888/"
+    },
+    {
+      "path": "trees",
+      "packAllAssets": true,
+      "autoLoad": true,
+      "remote": true,
+      "remoteUrl": "http://10.1.125.12:8888/"
+    }
+  ],
   "android": {
     "targetArchitectures": {
       "ARMv7": true,

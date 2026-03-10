@@ -10,7 +10,7 @@ export class DynamictTest extends Laya.Script {
 
     //组件被启用后执行，例如节点被添加到舞台后
     onEnable(): void {
-        Laya.Texture2D.load("resources/images/layabox.png", Laya.Handler.create(this, (tex: Laya.Texture2D) => {
+        Laya.Texture2D.load("OtherRes/images/layabox.png", Laya.Handler.create(this, (tex: Laya.Texture2D) => {
             var radius: Laya.Vector3 = new Laya.Vector3(0, 0, 1);
             var radMatrix: Laya.Matrix4x4 = new Laya.Matrix4x4();
             var circleCount: number = 50;
