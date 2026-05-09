@@ -138,9 +138,9 @@ Shader3D Start
         u_Layer_15_MetallicOcclusionSmoothness: {caption:"MetallicOcclusionSmoothness", type: Vector4, default: [0, 1, 0, 0] },
         u_Layer_15_TilingOffset: {caption:"TilingOffset", type: Vector4, default: [1, 1, 0, 0] },
 
-        //u_SplatArr:{type:Texture2DArray},
-        //u_DiffuseArr:{type:Texture2DArray},
-        //u_NormalArr:{type:Texture2DArray},
+        u_SplatArr:{type:Texture2DArray},
+        u_DiffuseArr:{type:Texture2DArray},
+        u_NormalArr:{type:Texture2DArray},
 
 
     },
@@ -257,9 +257,9 @@ GLSL Start
     #include "../Standard/glsl/StandardFrag.glsl";
     #include "./Defines.glsl";
 
-    uniform sampler2DArray u_SplatArr;
-    uniform sampler2DArray u_DiffuseArr;
-    uniform sampler2DArray u_NormalArr;
+    // uniform sampler2DArray u_SplatArr;
+    // uniform sampler2DArray u_DiffuseArr;
+    // uniform sampler2DArray u_NormalArr;
     
     vec3 TerrainToMeshNormalStrength(vec3 In, float Strength)
     {
@@ -703,9 +703,9 @@ GLSL Start
 
     varying vec4 v_PositionCS;
 
-    uniform sampler2DArray u_SplatArr;
-    uniform sampler2DArray u_DiffuseArr;
-    uniform sampler2DArray u_NormalArr;
+    // uniform sampler2DArray u_SplatArr;
+    // uniform sampler2DArray u_DiffuseArr;
+    // uniform sampler2DArray u_NormalArr;
 
     void main()
     {
